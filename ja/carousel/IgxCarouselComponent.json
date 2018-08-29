@@ -1,0 +1,334 @@
+﻿{
+    "IgxCarouselComponent": {
+        "comment": {
+            "text": [
+                "Ignite UI Carousel はスライド コレクションのブラウズやナビゲーションに使用されます。",
+                "スライドは画像またはカードなどのカスタム コンテンツを含みます。チュートリアルまたはページに分割されるインターフェイスなどに使用できます。",
+                "別の全画面要素として使用、またはその他のコンポーネントに含むことができます。",
+                "",
+                "例:",
+                "```html",
+                "<igx-carousel>",
+                "  <igx-slide>",
+                "    <h3>First Slide Header</h3>",
+                "    <p>First slide Content</p>",
+                "  <igx-slide>",
+                "  <igx-slide>",
+                "    <h3>Second Slide Header</h3>",
+                "    <p>Second Slide Content</p>",
+                "</igx-carousel>",
+                "```",
+                ""
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Carousel** -",
+                "[ヘルプ](https://www.infragistics.com/products/ignite-ui-angular/angular/components/carousel.html)"
+            ]
+        },
+        "properties": {
+            "role": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルの `role` 属性を返します。",
+                        "```typescript",
+                        "let carouselRole =  this.carousel.role;",
+                        "```"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルの `id` を設定します。",
+                        "設定されない場合、最初のカルーセル コンポーネントの `id` は `\"igx-carousel-0\"` になります。",
+                        "```html",
+                        "<igx-carousel id=\"my-first-carousel\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "loop": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルが最後のスライドの後に最初のスライドに戻る (`loop`) かどうかを設定します。",
+                        "デフォルト値は `true` です。",
+                        "```html",
+                        "<igx-carousel [loop]=\"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "pause": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルがユーザー インタラクションでスライド トランジションを一時停止する (`pause`) かどうかを設定します。",
+                        "デフォルト値は `true` です。",
+                        "```html",
+                        " <igx-carousel [pause]=\"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "navigation": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルに左/右のナビゲーション (`navigation`) ボタンを描画するかどうかを制御します。",
+                        "デフォルト値は `true` です。",
+                        "```html",
+                        "<igx-carousel [navigation] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onSlideChanged": {
+                "comment": {
+                    "shortText": [
+                        "スライド トランジションが実行された後に発生するイベント。",
+                        "イベント引数として `IgxCarouselComponent` および `IgxSlideComponent` への参照を提供します。",
+                        "```html",
+                        "<igx-carousel (onSlideChanged)=\"onSlideChanged($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onSlideAdded": {
+                "comment": {
+                    "shortText": [
+                        "スライドがカルーセルに追加された後に発生するイベント。",
+                        "イベント引数として `IgxCarouselComponent` および `IgxSlideComponent` への参照を提供します。",
+                        "```html",
+                        "<igx-carousel (onSlideAdded)=\"onSlideAdded($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onSlideRemoved": {
+                "comment": {
+                    "shortText": [
+                        "スライドがカルーセルから削除された後に発生するイベント。",
+                        "イベント引数として `IgxCarouselComponent` および `IgxSlideComponent` への参照を提供します。",
+                        "```html",
+                        "<igx-carousel (onSlideRemoved)=\"onSlideRemoved($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onCarouselPaused": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルが一時停止された後に発生するイベント。",
+                        "イベント引数として `IgxCarouselComponent` への参照を提供します。",
+                        "```html",
+                        "<igx-carousel (onCarouselPaused)=\"onCarouselPaused($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onCarouselPlaying": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルが `slides` の間の移動を再開した後に発生するイベント。",
+                        "イベント引数として `IgxCarouselComponent` への参照を提供します。",
+                        "```html",
+                        "<igx-carousel (onCarouselPlaying)=\"onCarouselPlaying($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "slides": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルにある `slides` のコレクション。",
+                        "```typescript",
+                        "let slides: IgxSlideComponent[] = this.carousel.slides;",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "get": {
+                "comment": {
+                    "shortText": [
+                        "既定の `index` に対応するスライドまたは null を返します。",
+                        "```typescript",
+                        "let slide1 =  this.carousel.get(1);",
+                        "```"
+                    ]
+                }
+            },
+            "add": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルに新しいスライドを追加します。",
+                        "```typescript",
+                        "this.carousel.add(newSlide);",
+                        "```"
+                    ]
+                }
+            },
+            "remove": {
+                "comment": {
+                    "shortText": [
+                        "スライドをカルーセルから削除します。",
+                        "```typescript",
+                        "this.carousel.remove(slide);",
+                        "```"
+                    ]
+                }
+            },
+            "select": {
+                "comment": {
+                    "shortText": [
+                        "指定した `direction` に移動する指定したスライドのトランジションを実行します。",
+                        "```typescript",
+                        "this.carousel.select(this.carousel.get(2), Direction.NEXT);",
+                        "```"
+                    ]
+                }
+            },
+            "next": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルで次のスライドに移動します。",
+                        "```typescript",
+                        "this.carousel.next();",
+                        "```"
+                    ]
+                }
+            },
+            "prev": {
+                "comment": {
+                    "shortText": [
+                        "カルーセルで前のスライドに移動します。",
+                        "```typescript",
+                        "this.carousel.prev();",
+                        "```"
+                    ]
+                }
+            },
+            "play": {
+                "comment": {
+                    "shortText": [
+                        "一時停止状態の場合、カルーセルの再生を再開します。",
+                        "それ以外の場合、動作しません。",
+                        "```typescript",
+                        "this.carousel.play();",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "stop": {
+                "comment": {
+                    "shortText": [
+                        "`pause` オプションが `true` に設定される場合、スライドのトランジションを停止します。",
+                        "それ以外の場合、動作しません。",
+                        "```typescript",
+                        " this.carousel.stop();",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "interval": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "スライドが変わる前の間隔 (`interval`) をミリ秒で返します。",
+                            "```typescript",
+                            "let timeInterval = this.carousel.interval;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "スライドが変わる前の間隔 (`interval`) をミリ秒で設定します。",
+                            "設定されない場合、カルーセルは `slides` を自動的に変更しません。",
+                            "```html",
+                            "<igx-carousel [interval] = \"1000\"></carousel>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "tabIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "カルーセル コンポーネントの `tabIndex` を返します。",
+                            "```typescript",
+                            "let tabIndex =  this.carousel.tabIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "total": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "カルーセルで `slides` の総数を返します。",
+                            "```typescript",
+                            "let slideCount =  this.carousel.total;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "current": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "表示しているスライドのインデックス。",
+                            "```typescript",
+                            "let currentSlideNumber =  this.carousel.current;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isPlaying": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "カルーセルが再生しているかどうかを示すブール値を返します。",
+                            "```typescript",
+                            "let isPlaying =  this.carousel.isPlaying;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isDestroyed": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "カルーセルが破棄されたかどうかを示すブール値を返します。",
+                            "```typescript",
+                            "let isDestroyed =  this.carousel.isDestroyed;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "DOM でカルーセル要素への参照を返します。",
+                            "```typescript",
+                            "let nativeElement =  this.carousel.nativeElement;",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}
