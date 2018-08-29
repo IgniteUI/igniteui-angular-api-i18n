@@ -1,0 +1,334 @@
+{
+    "IgxSliderComponent": {
+        "comment": {
+            "text": [
+                "The Ignite UI Slider allows selection in a given range by moving the thumb along the track. The track",
+                "can be defined as continuous or stepped, and you can choose between single and range slider types.",
+                "",
+                "Example:",
+                "```html",
+                "<igx-slider id=\"slider\"",
+                "           [minValue]=\"0\" [maxValue]=\"100\"",
+                "           [isContinuous]=true [(ngModel)]=\"volume\">",
+                "</igx-slider>",
+                "```",
+                ""
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Slider** -",
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/slider.html)"
+            ]
+        },
+        "properties": {
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the value of the `id` attribute.",
+                        "If not provided it will be automatically generated.",
+                        "```html",
+                        "<igx-slider [id]=\"'igx-slider-32'\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\" [lowerBound]=\"20\">",
+                        "```"
+                    ]
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that disables or enables UI interaction.",
+                        "```html",
+                        "<igx-slider #slider [disabled]=\"'true'\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\" [lowerBound]=\"20\">",
+                        "```"
+                    ]
+                }
+            },
+            "isContinuous": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that marks the `IgxSliderComponent` as continuous.",
+                        "By default is considered that the `IgxSliderComponent` is discrete.",
+                        "Discrete `IgxSliderComponent` does not have ticks and does not shows bubble labels for values.",
+                        "```html",
+                        "<igx-slider #slider [isContinuous]=\"'true'\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\" [lowerBound]=\"20\">",
+                        "```"
+                    ]
+                }
+            },
+            "type": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the type of the `IgxSliderComponent`. The slider can be SliderType.SLIDER(default) or SliderType.RANGE.",
+                        "```typescript",
+                        "sliderType: SliderType = SliderType.RANGE;",
+                        "//...",
+                        "```",
+                        "```html",
+                        "<igx-slider #slider2 [type]=\"sliderType\" [(ngModel)]=\"rangeValue\" [minValue]=\"0\" [maxValue]=\"100\">",
+                        "```"
+                    ]
+                }
+            },
+            "thumbLabelVisibilityDuration": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the duration visibility of thumbs labels. The default value is 750 milliseconds.",
+                        "```html",
+                        "<igx-slider #slider [thumbLabelVisibilityDuration]=\"3000\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\">",
+                        "```"
+                    ]
+                }
+            },
+            "step": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the incremental/decremental step of the value when dragging the thumb.",
+                        "The default step is 1, and step should not be less or equal than 0.",
+                        "```html",
+                        "<igx-slider #slider [(ngModel)]=\"task.percentCompleted\" [step]=\"5\">",
+                        "```"
+                    ]
+                }
+            },
+            "onValueChange": {
+                "comment": {
+                    "shortText": [
+                        "This event is emitted when user has stopped interacting the thumb and value is changed.",
+                        "```typescript",
+                        "public change(event){",
+                        "   alert(\"The value has been changed!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-slider (onValueChange)=\"change($event)\" #slider [(ngModel)]=\"task.percentCompleted\" [step]=\"5\">",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "isRange": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns whether the `IgxSliderComponent` type is RANGE.",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "   let sliderRange = this.slider.isRange;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "maxValue": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the maximum value for the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "   let sliderMax = this.slider.maxValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the maximal value for the `IgxSliderComponent`.",
+                            "The default maximum value is 100.",
+                            "```html",
+                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"256\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "minValue": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the minimal value of the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "   let sliderMin = this.slider.minValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the minimal value for the `IgxSliderComponent`.",
+                            "The default minimal value is 0.",
+                            "```html",
+                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"100\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "lowerBound": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the lower boundary of the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "   let sliderLowBound = this.slider.lowerBound;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the lower boundary of the `IgxSliderComponent`.",
+                            "If not set is the same as min value.",
+                            "```html",
+                            "<igx-slider [step]=\"5\" [lowerBound]=\"20\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "upperBound": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the upper boundary of the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "   let sliderUpBound = this.slider.upperBound;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the upper boundary of the `IgxSliderComponent`.",
+                            "If not set is the same as max value.",
+                            "```html",
+                            "<igx-slider [step]=\"5\" [upperBound]=\"20\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "lowerValue": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the lower value of the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "public lowValue(event){",
+                            "   let sliderLowValue = this.slider.lowerValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the lower value of the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "public lowValue(event){",
+                            "   this.slider.lowerValue = 120;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "upperValue": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the upper value of the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "public upperValue(event){",
+                            "   let upperValue = this.slider.upperValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the upper value of the `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "public upperValue(event){",
+                            "   this.slider.upperValue = 120;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the slider value. If the slider is of type SLIDER the returned value is number.",
+                            "If the slider type is RANGE the returned value is object containing lower and upper properties for the values.",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "public sliderValue(event){",
+                            "   let sliderVal = this.slider.value;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the slider value.",
+                            "If the slider is of type SLIDER the argument is number. By default if no value is set the default value is",
+                            "same as lower upper bound.",
+                            "If the slider type is RANGE the the argument is object containing lower and upper properties for the values.",
+                            "By default if no value is set the default value is for lower value it is the same as lower bound and if no",
+                            "value is set for the upper value it is the same as the upper bound.",
+                            "```typescript",
+                            "rangeValue = {",
+                            "  lower: 30,",
+                            "  upper: 60",
+                            "};",
+                            "```",
+                            "```html",
+                            "<igx-slider [type]=\"sliderType\" [(ngModel)]=\"rangeValue\" [minValue]=\"56\" [maxValue]=\"256\">",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}

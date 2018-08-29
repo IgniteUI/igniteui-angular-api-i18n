@@ -1,0 +1,348 @@
+{
+    "IgxDatePickerComponent": {
+        "comment": {
+            "text": [
+                "The Ignite UI Date Picker displays a popup calendar that lets users select a single date.",
+                "",
+                "Example:",
+                "```html",
+                "<igx-date-picker [(ngModel)]=\"selectedDate\"></igx-date-picker>",
+                "```",
+                ""
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Date Picker** -",
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/date_picker.html)"
+            ]
+        },
+        "properties": {
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the value of `id` attribute. If not provided it will be automatically generated.",
+                        "```html",
+                        "<igx-date-picker [id]=\"'igx-date-picker-3'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "formatter": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that applies custom formatter on the selected or passed date.",
+                        "```typescript",
+                        "public date: Date = new Date();",
+                        "private dayFormatter = new Intl.DateTimeFormat(\"en\", { weekday: \"long\" });",
+                        "private monthFormatter = new Intl.DateTimeFormat(\"en\", { month: \"long\" });",
+                        "public formatter = (date: Date) => { return `You selected",
+                        "                    ${this.dayFormatter.format(date)},",
+                        "                    ${date.getDate()} ${this.monthFormatter.format(date)},",
+                        "                    ${date.getFullYear()}`;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-date-picker [value]=\"date\" [formatter]=\"formatter\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that disables the `IgxDatePickerComponent`.",
+                        "```html",
+                        "<igx-date-picker [disabled]=\"'true'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "value": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the selected date.",
+                        "```typescript",
+                        "public date: Date = new Date();",
+                        "```",
+                        "```html",
+                        "<igx-date-picker [value]=\"date\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "label": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the `IgxDatePickerComponent` label.",
+                        "The default label is 'Date'.",
+                        "```html",
+                        "<igx-date-picker [label]=\"Calendar\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "labelVisibility": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the `IgxDatePickerComponent` label visibility.",
+                        "By default the visibility is set to true.",
+                        "<igx-date-picker [labelVisibility]=\"false\"></igx-date-picker>"
+                    ]
+                }
+            },
+            "locale": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets locales. Default locale is en.",
+                        "```html",
+                        "<igx-date-picker locale=\"ja-JP\" [value]=\"date\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "weekStart": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets on which day the week starts.",
+                        "```html",
+                        "<igx-date-picker [weekStart]=\"WEEKDAYS.FRIDAY\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "vertical": {
+                "comment": {
+                    "shortText": [
+                        "An @Input proeprty that sets the orientation of the `IgxDatePickerComponent` header.",
+                        "```html",
+                        "<igx-date-picker [vertical]=\"'true'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "todayButtonLabel": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that renders today button with custom label.",
+                        "```html",
+                        "<igx-date-picker cancelButtonLabel=\"cancel\" todayButtonLabel=\"Tomorrow\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "cancelButtonLabel": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that renders cancel button with custom label.",
+                        "```html",
+                        "<igx-date-picker cancelButtonLabel=\"Close\" todayButtonLabel=\"Today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "onOpen": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted when the `IgxDatePickerComponent` is opened.",
+                        "```typescript",
+                        "public open(event){",
+                        "   alert(\"The date-picker has been opened!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-date-picker (onOpen)=\"open($event)\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "onClose": {
+                "comment": {
+                    "shortText": [
+                        "\"An event that is emitted when the `IgxDatePickerComponent` is closed.",
+                        "```typescript",
+                        "public close(event){",
+                        "   alert(\"The date-picker has been closed!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-date-picker (onClose)=\"close($event)\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "onSelection": {
+                "comment": {
+                    "shortText": [
+                        "An @Output property that is fired when selection is made in the calendar.",
+                        "```typescript",
+                        "public selection(event){",
+                        "   alert(\"A date has been selected!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-date-picker (onSelection)=\"selection($event)\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "writeValue": {
+                "comment": {
+                    "shortText": [
+                        "Method that sets the selected date.",
+                        "```typescript",
+                        "public date = new Date();",
+                        "@ViewChild(\"MyDatePicker\")",
+                        "public datePicker: IgxDatePickerComponent;",
+                        "ngAfterViewInit(){",
+                        "   this.datePicker.writeValue(this.date);",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "triggerTodaySelection": {
+                "comment": {
+                    "shortText": [
+                        "Selects today's date from calendar and change the input field value, @calendar.viewDate and @calendar.value.",
+                        "```typescript",
+                        "@ViewChild(\"MyDatePicker\")",
+                        "public datePicker: IgxDatePickerComponent;",
+                        "ngAfterViewInit(){",
+                        "this.datePicker.triggerTodaySelection();",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "selectDate": {
+                "comment": {
+                    "shortText": [
+                        "Change the calendar selection and calling this method will emit the @calendar.onSelection event,",
+                        "which will fire @handleSelection method.",
+                        "```typescript",
+                        "@ViewChild(\"MyDatePicker\")",
+                        "public datePicker: IgxDatePickerComponent;",
+                        "ngAfterViewInit(){",
+                        "this.datePicker.selectDate(this.date);",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "formatOptions": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the format options of the `IgxDatePickerComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   let formatOptions = this.datePicker.formatOptions;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the format options of the `IgxDatePickerComponent`.",
+                            "```typescript",
+                            "public Options;",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   this.Options = {",
+                            "       day: \"numeric\",",
+                            "       month: \"long\",",
+                            "       weekday: \"long\",",
+                            "       year: \"numeric\"",
+                            "   }",
+                            "this.datePicker.formatOptions = this.Options;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "formatViews": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the format views of the `IgxDatePickerComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   let formatViews = this.datePicker.formatViews;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the format views of the `IgxDatePickerComponent`.",
+                            "```typescript",
+                            "public Views;",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   this.Views = {day:false, month: false, year:false};",
+                            "   this.datePicker.formatViews = this.Views;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "displayData": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Retruns the formatted date.",
+                            "```typescript",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "public selection(event){",
+                            "   let selectedDate = this.datePicker.displayData;",
+                            "   alert(selectedDate);",
+                            "}",
+                            "```",
+                            "```html",
+                            "<igx-date-picker #MyDatePicker (onSelection)=\"selection()\" todayButtonLabel=\"today\"></igx-date-picker>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "template": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the input group template.",
+                            "```typescript",
+                            "let template = this.template();",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "context": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the context passed to the input group template."
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}

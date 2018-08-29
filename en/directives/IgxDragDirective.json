@@ -1,0 +1,202 @@
+{
+    "IgxDragDirective": {
+        "properties": {
+            "data": {
+                "comment": {
+                    "shortText": [
+                        "- Save data inside the `igxDrag` directive. This can be set when instancing `igxDrag` on an element.",
+                        "```html",
+                        "<div [igxDrag]=\"{ source: myElement }\"></div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragTolerance": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that indicates when the drag should start",
+                        "By default the drag starts after the draggable element is moved by 5px",
+                        "```html",
+                        "<div igxDrag [dragTolerance]=\"100\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostImageClass": {
+                "comment": {
+                    "shortText": [
+                        "Sets a custom class that will be added to the `dragGhost` element.",
+                        "```html",
+                        "<div igxDrag [ghostImageClass]=\"'dragGhost'\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "hideBaseOnDrag": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that hides the draggable element.",
+                        "By default it's set to false.",
+                        "```html",
+                        "<div igxDrag [dragTolerance]=\"100\" [hideBaseOnDrag]=\"'true'\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "animateOnRelease": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that enables/disables the draggable element animation",
+                        "when the element is released.",
+                        "By default it's set to false.",
+                        "```html",
+                        "<div igxDrag [animateOnRelease]=\"'true'\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragStart": {
+                "comment": {
+                    "shortText": [
+                        "Event triggered when the draggable element drag starts.",
+                        "```html",
+                        "<div igxDrag [animateOnRelease]=\"'true'\" (dragStart)=\"onDragStart()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragStart(){",
+                        "     alert(\"The drag has stared!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "dragEnd": {
+                "comment": {
+                    "shortText": [
+                        "Event triggered when the draggable element is released.",
+                        "```html",
+                        "<div igxDrag [animateOnRelease]=\"'true'\" (dragEnd)=\"onDragEnd()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragEnd(){",
+                        "     alert(\"The drag has ended!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "returnMoveEnd": {
+                "comment": {
+                    "shortText": [
+                        "Event triggered after the draggable element is released and after its animation has finished.",
+                        "```html",
+                        "<div igxDrag [animateOnRelease]=\"'true'\" (returnMoveEnd)=\"onMoveEnd()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onMoveEnd(){",
+                        "     alert(\"The move has ended!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "dragClicked": {
+                "comment": {
+                    "shortText": [
+                        "Event triggered when the draggable element is clicked.",
+                        "```html",
+                        "<div igxDrag [animateOnRelease]=\"'true'\" (dragClicked)=\"dragClicked()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public dragClicked(){",
+                        "     alert(\"The elemented has been clicked!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "visible": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the visibility of the draggable element.",
+                            "```typescript",
+                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                            "public myDrag: IgxDragDirective;",
+                            "ngAfterViewInit(){",
+                            "    this.myDrag.visible = false;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the visibility state of the draggable element.",
+                            "```typescript",
+                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                            "public myDrag: IgxDragDirective;",
+                            "ngAfterViewInit(){",
+                            "    let dragVisibilty = this.myDrag.visible;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "pointerEventsEnabled": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns if the browser supports pointer events.",
+                            "```typescript",
+                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                            "public myDrag: IgxDragDirective;",
+                            "ngAfterViewInit(){",
+                            "    let pointerEvents = this.myDrag.pointerEventsEnabled;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "touchEventsEnabled": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns if the browser supports touch events.",
+                            "```typescript",
+                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                            "public myDrag: IgxDragDirective;",
+                            "ngAfterViewInit(){",
+                            "    let touchEvents = this.myDrag.pointerEventsEnabled;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}

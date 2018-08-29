@@ -1,0 +1,334 @@
+{
+    "IgxCarouselComponent": {
+        "comment": {
+            "text": [
+                "The Ignite UI Carousel is used to browse or navigate through a collection of slides. Slides can contain custom",
+                "content such as images or cards and be used for things such as on-boarding tutorials or page-based interfaces.",
+                "It can be used as a separate fullscreen element or inside another component.",
+                "",
+                "Example:",
+                "```html",
+                "<igx-carousel>",
+                "  <igx-slide>",
+                "    <h3>First Slide Header</h3>",
+                "    <p>First slide Content</p>",
+                "  <igx-slide>",
+                "  <igx-slide>",
+                "    <h3>Second Slide Header</h3>",
+                "    <p>Second Slide Content</p>",
+                "</igx-carousel>",
+                "```",
+                ""
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Carousel** -",
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/carousel.html)"
+            ]
+        },
+        "properties": {
+            "role": {
+                "comment": {
+                    "shortText": [
+                        "Returns the `role` attribute of the carousel.",
+                        "```typescript",
+                        "let carouselRole =  this.carousel.role;",
+                        "```"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "Sets the `id` of the carousel.",
+                        "If not set, the `id` of the first carousel component will be `\"igx-carousel-0\"`.",
+                        "```html",
+                        "<igx-carousel id=\"my-first-carousel\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "loop": {
+                "comment": {
+                    "shortText": [
+                        "Sets whether the carousel should `loop` back to the first slide after reaching the last slide.",
+                        "Default value is `true`.",
+                        "```html",
+                        "<igx-carousel [loop]=\"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "pause": {
+                "comment": {
+                    "shortText": [
+                        "Sets whether the carousel will `pause` the slide transitions on user interactions.",
+                        "Default value is `true`.",
+                        "```html",
+                        " <igx-carousel [pause]=\"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "navigation": {
+                "comment": {
+                    "shortText": [
+                        "Controls whether the carousel should render the left/right `navigation` buttons.",
+                        "Default value is `true`.",
+                        "```html",
+                        "<igx-carousel [navigation] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onSlideChanged": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted after a slide transition has happened.",
+                        "Provides references to the `IgxCarouselComponent` and `IgxSlideComponent` as event arguments.",
+                        "```html",
+                        "<igx-carousel (onSlideChanged)=\"onSlideChanged($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onSlideAdded": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted after a slide has been added to the carousel.",
+                        "Provides references to the `IgxCarouselComponent` and `IgxSlideComponent` as event arguments.",
+                        "```html",
+                        "<igx-carousel (onSlideAdded)=\"onSlideAdded($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onSlideRemoved": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted after a slide has been removed from the carousel.",
+                        "Provides references to the `IgxCarouselComponent` and `IgxSlideComponent` as event arguments.",
+                        "```html",
+                        "<igx-carousel (onSlideRemoved)=\"onSlideRemoved($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onCarouselPaused": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted after the carousel has been paused.",
+                        "Provides a reference to the `IgxCarouselComponent` as an event argument.",
+                        "```html",
+                        "<igx-carousel (onCarouselPaused)=\"onCarouselPaused($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "onCarouselPlaying": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted after the carousel has resumed transitioning between `slides`.",
+                        "Provides a reference to the `IgxCarouselComponent` as an event argument.",
+                        "```html",
+                        "<igx-carousel (onCarouselPlaying)=\"onCarouselPlaying($event)\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "slides": {
+                "comment": {
+                    "shortText": [
+                        "The collection of `slides` currently in the carousel.",
+                        "```typescript",
+                        "let slides: IgxSlideComponent[] = this.carousel.slides;",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "get": {
+                "comment": {
+                    "shortText": [
+                        "Returns the slide corresponding to the provided `index` or null.",
+                        "```typescript",
+                        "let slide1 =  this.carousel.get(1);",
+                        "```"
+                    ]
+                }
+            },
+            "add": {
+                "comment": {
+                    "shortText": [
+                        "Adds a new slide to the carousel.",
+                        "```typescript",
+                        "this.carousel.add(newSlide);",
+                        "```"
+                    ]
+                }
+            },
+            "remove": {
+                "comment": {
+                    "shortText": [
+                        "Removes a slide from the carousel.",
+                        "```typescript",
+                        "this.carousel.remove(slide);",
+                        "```"
+                    ]
+                }
+            },
+            "select": {
+                "comment": {
+                    "shortText": [
+                        "Kicks in a transition for a given slide with a given `direction`.",
+                        "```typescript",
+                        "this.carousel.select(this.carousel.get(2), Direction.NEXT);",
+                        "```"
+                    ]
+                }
+            },
+            "next": {
+                "comment": {
+                    "shortText": [
+                        "Transitions to the next slide in the carousel.",
+                        "```typescript",
+                        "this.carousel.next();",
+                        "```"
+                    ]
+                }
+            },
+            "prev": {
+                "comment": {
+                    "shortText": [
+                        "Transitions to the previous slide in the carousel.",
+                        "```typescript",
+                        "this.carousel.prev();",
+                        "```"
+                    ]
+                }
+            },
+            "play": {
+                "comment": {
+                    "shortText": [
+                        "Resumes playing of the carousel if in paused state.",
+                        "No operation otherwise.",
+                        "```typescript",
+                        "this.carousel.play();",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "stop": {
+                "comment": {
+                    "shortText": [
+                        "Stops slide transitions if the `pause` option is set to `true`.",
+                        "No operation otherwise.",
+                        "```typescript",
+                        " this.carousel.stop();",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "interval": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the time `interval` in milliseconds before the slide changes.",
+                            "```typescript",
+                            "let timeInterval = this.carousel.interval;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the time `interval` in milliseconds before the slide changes.",
+                            "If not set, the carousel will not change `slides` automatically.",
+                            "```html",
+                            "<igx-carousel [interval] = \"1000\"></carousel>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "tabIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the `tabIndex` of the carousel component.",
+                            "```typescript",
+                            "let tabIndex =  this.carousel.tabIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "total": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the total number of `slides` in the carousel.",
+                            "```typescript",
+                            "let slideCount =  this.carousel.total;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "current": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "The index of the slide being currently shown.",
+                            "```typescript",
+                            "let currentSlideNumber =  this.carousel.current;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isPlaying": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns a boolean indicating if the carousel is playing.",
+                            "```typescript",
+                            "let isPlaying =  this.carousel.isPlaying;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isDestroyed": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns а boolean indicating if the carousel is destroyed.",
+                            "```typescript",
+                            "let isDestroyed =  this.carousel.isDestroyed;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns a reference to the carousel element in the DOM.",
+                            "```typescript",
+                            "let nativeElement =  this.carousel.nativeElement;",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}

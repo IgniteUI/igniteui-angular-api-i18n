@@ -1,0 +1,268 @@
+{
+    "IgxChipComponent": {
+        "properties": {
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the value of `id` attribute. If not provided it will be automatically generated.",
+                        "```html",
+                        "<igx-chip [id]=\"'igx-chip-1'\"></igx-chip>",
+                        "```"
+                    ]
+                }
+            },
+            "draggable": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that defines if the `IgxChipComponent` can be dragged in order to change it's position.",
+                        "By default it is set to false.",
+                        "```html",
+                        "<igx-chip [id]=\"'igx-chip-1'\" [draggable]=\"true\"></igx-chip>",
+                        "```"
+                    ]
+                }
+            },
+            "removable": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that defines if the `IgxChipComponent` should render remove button and throw remove events.",
+                        "By default it is set to false.",
+                        "```html",
+                        "<igx-chip [id]=\"'igx-chip-1'\" [draggable]=\"true\" [removable]=\"true\"></igx-chip>",
+                        "```"
+                    ]
+                }
+            },
+            "selectable": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that defines if the `IgxChipComponent` can be selected on click or through navigation,",
+                        "By default it is set to false.",
+                        "```html",
+                        "<igx-chip [id]=\"chip.id\" [draggable]=\"true\" [removable]=\"true\" [selectable]=\"true\"></igx-chip>",
+                        "```"
+                    ]
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that defines if the `IgxChipComponent` is disabled.",
+                        "By default it is set to false.",
+                        "```html",
+                        "<igx-chip [id]=\"chip.id\" [disabled]=\"true\"></igx-chip>",
+                        "```"
+                    ]
+                }
+            },
+            "onMoveStart": {
+                "comment": {
+                    "shortText": [
+                        "Emits event when the `IgxChipComponent` moving starts.",
+                        "```typescript",
+                        "moveStarted(){",
+                        "    alert(\"The moving has started.\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onMoveStart)=\"moveStarted()\">",
+                        "```"
+                    ]
+                }
+            },
+            "onMoveEnd": {
+                "comment": {
+                    "shortText": [
+                        "Emits event when the `IgxChipComponent` moving ends.",
+                        "```typescript",
+                        "moveEnded(){",
+                        "    alert(\"The moving has ended.\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onMoveEnd)=\"moveEnded()\">",
+                        "```"
+                    ]
+                }
+            },
+            "onRemove": {
+                "comment": {
+                    "shortText": [
+                        "Emits event when the `IgxChipComponent` is removed.",
+                        "```typescript",
+                        "remove(){",
+                        "    alert(\"The chip has been removed.\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onRemove)=\"remove()\">",
+                        "```"
+                    ]
+                }
+            },
+            "onClick": {
+                "comment": {
+                    "shortText": [
+                        "Emits event when the `IgxChipComponent` is clicked.",
+                        "```typescript",
+                        "chipClick(){",
+                        "    alert(\"The chip has been clicked.\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onClick)=\"chipClick()\">",
+                        "```"
+                    ]
+                }
+            },
+            "onSelection": {
+                "comment": {
+                    "shortText": [
+                        "Emits event when the `IgxChipComponent` is selected.",
+                        "Returns the selected chip reference, whether the event should be canceled,",
+                        "and what is the next selection state.",
+                        "```typescript",
+                        "chipSelect(event: IChipSelectEventArgs){",
+                        "    const selectArgs = event;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onSelection)=\"chipSelect()\">",
+                        "```"
+                    ]
+                }
+            },
+            "onKeyDown": {
+                "comment": {
+                    "shortText": [
+                        "Emits event when the `IgxChipComponent` keyboard navigation is being used.",
+                        "```typescript",
+                        "chipKeyDown(){",
+                        "    alert(\"The chip keyboard navigation has been used.\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onKeyDown)=\"chipKeyDown()\">",
+                        "```"
+                    ]
+                }
+            },
+            "onDragEnter": {
+                "comment": {
+                    "shortText": [
+                        "Emits event when the `IgxChipComponent` has entered the `IgxChipsAreaComponent`.",
+                        "```typescript",
+                        "chipEnter(){",
+                        "    alert(\"The chip has entered the chiparea.\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onDragEnter)=\"chipEnter()\">",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the `IgxChipComponent` theme.",
+                            "```typescript",
+                            "@ViewChild('myChip')",
+                            "public chip: IgxChipComponent;",
+                            "    ngAfterViewInit(){",
+                            "    let chipTheme = this.chip.displayDensity;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that sets the `IgxChipComponent` theme.",
+                            "Available options are `compact`, `cosy`, `comfortable`.",
+                            "The default theme is `comfortable`.",
+                            "```html",
+                            "<igx-chip #myChip [id]=\"'igx-chip-1'\" [displayDensity]=\"'compact'\"></igx-chip>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "color": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that sets the `IgxChipComponent` background color.",
+                            "The `color` property supports string, rgb, hex.",
+                            "```html",
+                            "<igx-chip #myChip [id]=\"'igx-chip-1'\" [color]=\"'#ff0000'\"></igx-chip>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the background color of the `IgxChipComponent`.",
+                            "```typescript",
+                            "@ViewChild('myChip')",
+                            "public chip: IgxChipComponent;",
+                            "ngAfterViewInit(){",
+                            "    let chipColor = this.chip.color;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "selected": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns if the `IgxChipComponent` is selected.",
+                            "```typescript",
+                            "@ViewChild('myChip')",
+                            "public chip: IgxChipComponent;",
+                            "selectedChip(){",
+                            "    let selectedChip = this.chip.selected;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the `IgxChipComponent` to be selected.",
+                            "```html",
+                            "<igx-chip #myChip [id]=\"'igx-chip-1'\" [selectable]=\"true\" [selected]=\"true\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isLastChip": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns if the `IgxChipComponent` is the last one among its siblings.",
+                            "```typescript",
+                            "@ViewChild('myChip')",
+                            "public chip: IgxChipComponent;",
+                            "ngAfterViewInit(){",
+                            "    let lastChip = this.chip.isLastChip;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}

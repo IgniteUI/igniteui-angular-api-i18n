@@ -1,0 +1,228 @@
+{
+    "IgxListComponent": {
+        "comment": {
+            "text": [
+                "The Ignite UI List displays rows of items and supports one or more header items as well as search and filtering",
+                "of list items. Each list item is completely templateable and will support any valid HTML or Angular component.",
+                "",
+                "Example:",
+                "```html",
+                "<igx-list>",
+                "  <igx-list-item isHeader=\"true\">Contacts</igx-list-item>",
+                "  <igx-list-item *ngFor=\"let contact of contacts\">",
+                "    <span class=\"name\">{{ contact.name }}</span>",
+                "    <span class=\"phone\">{{ contact.phone }}</span>",
+                "  </igx-list-item>",
+                "</igx-list>",
+                "```",
+                ""
+            ],
+            "shortText": [
+                "**Ignite UI for Angular List** -",
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/list.html)"
+            ]
+        },
+        "properties": {
+            "children": {
+                "comment": {
+                    "shortText": [
+                        "Returns a collection of all items and headers in the list.",
+                        "```typescript",
+                        "let listChildren: QueryList = this.list.children;",
+                        "```"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "Sets/gets the `id` of the list.",
+                        "If not set, the `id` of the first list component will be `\"igx-list-0\"`.",
+                        "```html",
+                        "<igx-list id = \"my-first-list\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let listId =  this.list.id;",
+                        "```"
+                    ]
+                }
+            },
+            "allowLeftPanning": {
+                "comment": {
+                    "shortText": [
+                        "Sets/gets whether the left panning of an item is allowed.",
+                        "Default value is `false`.",
+                        "```html",
+                        " <igx-list [allowLeftPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let isLeftPanningAllowed = this.list.allowLeftPanning;",
+                        "```"
+                    ]
+                }
+            },
+            "allowRightPanning": {
+                "comment": {
+                    "shortText": [
+                        "Sets/gets whether the right panning of an item is allowed.",
+                        "Default value is `false`.",
+                        "```html",
+                        " <igx-list [allowRightPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let isRightPanningAllowed = this.list.allowRightPanning;",
+                        "```"
+                    ]
+                }
+            },
+            "isLoading": {
+                "comment": {
+                    "shortText": [
+                        "Sets/gets whether the list is currently loading data.",
+                        "Set it to display the dataLoadingTemplate while data is being retrieved.",
+                        "Default value is `false`.",
+                        "```html",
+                        " <igx-list [isLoading]=\"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let isLoading = this.list.isLoading;",
+                        "```"
+                    ]
+                }
+            },
+            "onLeftPan": {
+                "comment": {
+                    "shortText": [
+                        "Emits an event within the current list when left pan gesture is executed on list item.",
+                        "Provides reference to the `IgxListItemComponent` as an event argument.",
+                        "```html",
+                        "<igx-list [allowLeftPanning]=\"true\" (onLeftPan) = \"onLeftPan($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            },
+            "onRightPan": {
+                "comment": {
+                    "shortText": [
+                        "Emits an event within the current list when right pan gesture is executed on list item.",
+                        "Provides reference to the `IgxListItemComponent` as an event argument.",
+                        "```html",
+                        "<igx-list [allowRightPanning]=\"true\" (onRightPan) = \"onRightPan($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            },
+            "onPanStateChange": {
+                "comment": {
+                    "shortText": [
+                        "Emits an event within the current list when pan gesture is executed on list item.",
+                        "Provides references to the `IgxListItemComponent` and `IgxListPanState` as event arguments.",
+                        "```html",
+                        "<igx-list (onPanStateChange) = \"onPanStateChange($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            },
+            "onItemClicked": {
+                "comment": {
+                    "shortText": [
+                        "Emits an event within the current list when a list item has been clicked.",
+                        "Provides references to the `IgxListItemComponent` and `Event` as event arguments.",
+                        " ```html",
+                        "<igx-list (onItemClicked) = \"onItemClicked($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "role": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the `role` attribute.",
+                            "```typescript",
+                            "let listRole =  this.list.role;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isListEmpty": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns boolean indicating if the list is empty.",
+                            "```typescript",
+                            "let isEmpty =  this.list.isListEmpty;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "cssClass": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns boolean indicating if the list has a `cssClass` attribute.",
+                            "```typescript",
+                            "let hasCssClass =  this.list.cssClass;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "items": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the `items` in the list excluding the headers.",
+                            "```typescript",
+                            "let listItems: IgxListItemComponent[] = this.list.items;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "headers": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the headers in the list.",
+                            "```typescript",
+                            "let listHeaders: IgxListItemComponent[] =  this.list.headers;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "context": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the `context` object which represents the `template context` binding into the `list container`",
+                            "by providing the `$implicit` declaration which is the `IgxListComponent` itself.",
+                            "```typescript",
+                            "let listComponent =  this.list.context;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "template": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the `template` of an empty list.",
+                            "```typescript",
+                            "let listTemplate = this.list.template;",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}
