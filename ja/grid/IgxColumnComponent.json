@@ -1,0 +1,703 @@
+﻿{
+    "IgxColumnComponent": {
+        "comment": {
+            "text": [
+                "Ignite UI Column は `igx-grid` 要素で列が表示するデータを定義するために使用されます。",
+                "並べ替え、フィルタリング、編集などの機能は列レベルで有効にされます。",
+                "`ng-template` を使用して列のすべてのセルに使用されるカスタム コンテンツを含むテンプレートを設定できます。",
+                ""
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Column** -",
+                "[ヘルプ](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid.html#columns-configuration)"
+            ]
+        },
+        "properties": {
+            "field": {
+                "comment": {
+                    "shortText": [
+                        "`field` 値を取得または設定します。",
+                        "```typescript",
+                        "let columnField = this.column.field;",
+                        "```",
+                        "```html",
+                        "<igx-column [field] = \"'ID'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "header": {
+                "comment": {
+                    "shortText": [
+                        "`header` 値を取得または設定します。",
+                        "```typescript",
+                        "let columnHeader = this.column.header;",
+                        "```",
+                        "```html",
+                        "<igx-column [header] = \"'ID'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "sortable": {
+                "comment": {
+                    "shortText": [
+                        "列の並べ替えが可能かどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```typescript",
+                        "let isSortable = this.column.sortable;",
+                        "```",
+                        "```html",
+                        "<igx-column [sortable] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "groupable": {
+                "comment": {
+                    "shortText": [
+                        "列のグループ化が可能かどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```typescript",
+                        "let isGroupable = this.column.groupable;",
+                        "```",
+                        "```html",
+                        "<igx-column [groupable] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "editable": {
+                "comment": {
+                    "shortText": [
+                        "列の編集が可能かどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```typescript",
+                        "let isEditable = this.column.editable;",
+                        "```",
+                        "```html",
+                        "<igx-column [editable] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "filterable": {
+                "comment": {
+                    "shortText": [
+                        "列フィルターが可能かどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```typescript",
+                        "let isFilterable = this.column.filterable;",
+                        "```",
+                        "```html",
+                        "<igx-column [filterable] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "resizable": {
+                "comment": {
+                    "shortText": [
+                        "列のサイズ変更が可能かどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```typescript",
+                        "let isResizable = this.column.resizable;",
+                        "```",
+                        "```html",
+                        "<igx-column [resizable] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "hasSummary": {
+                "comment": {
+                    "shortText": [
+                        "列の集計を有効または無効にします。",
+                        "デフォルトは `false` です。",
+                        "```typescript",
+                        "let hasSummary = this.column.hasSummary;",
+                        "```",
+                        "```html",
+                        "<igx-column [hasSummary] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "movable": {
+                "comment": {
+                    "shortText": [
+                        "列が移動可能かどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```typescript",
+                        "let isMovable = this.column.movable;",
+                        "```",
+                        "```html",
+                        "<igx-column [movable] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "maxWidth": {
+                "comment": {
+                    "shortText": [
+                        "列の最大の `width` を取得または設定します。",
+                        "```typescript",
+                        "let columnMaxWidth = this.column.width;",
+                        "```",
+                        "```html",
+                        "<igx-column [maxWidth] = \"'75%'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "minWidth": {
+                "comment": {
+                    "shortText": [
+                        "列の最小の `width` を取得または設定します。",
+                        "Default value is `88`;",
+                        "```typescript",
+                        "let columnMinWidth = this.column.minWidth;",
+                        "```",
+                        "```html",
+                        "<igx-column [minWidth] = \"'15%'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "headerClasses": {
+                "comment": {
+                    "shortText": [
+                        "列ヘッダーのクラス セレクターを取得または設定します。",
+                        "```typescript",
+                        "let columnHeaderClass = this.column.headerClasses;",
+                        "```",
+                        "```html",
+                        "<igx-column [headerClasses] = \"'column-header'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "cellClasses": {
+                "comment": {
+                    "shortText": [
+                        "列セルのクラス セレクターを取得または設定します。",
+                        "```typescript",
+                        "let columnCellsClass = this.column.cellClasses;",
+                        "```",
+                        "```html",
+                        "<igx-column [cellClasses] = \"'column-cell'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "formatter": {
+                "comment": {
+                    "shortText": [
+                        "列のフォーマッタを取得または設定します。",
+                        "```typescript",
+                        "let columnFormatter = this.column.formatter;",
+                        "```",
+                        "```typescript",
+                        "this.column.formatter = (val: Date) => {",
+                        "return new Intl.DateTimeFormat(\"en-US\").format(val);",
+                        "```"
+                    ]
+                }
+            },
+            "filteringIgnoreCase": {
+                "comment": {
+                    "shortText": [
+                        "列フィルタリングが大文字と小文字を区別するかどうかを取得または設定します。",
+                        "デフォルト値は `true` です。",
+                        "```typescript",
+                        "let filteringIgnoreCase = this.column.filteringIgnoreCase;",
+                        "```",
+                        "```html",
+                        "<igx-column [filteringIgnoreCase] = \"false\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "sortingIgnoreCase": {
+                "comment": {
+                    "shortText": [
+                        "列並べ替えが大文字と小文字を区別するかどうかを取得または設定します。",
+                        "デフォルト値は `true` です。",
+                        "```typescript",
+                        "let sortingIgnoreCase = this.column.sortingIgnoreCase;",
+                        "```",
+                        "```html",
+                        "<igx-column [sortingIgnoreCase] = \"false\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "dataType": {
+                "comment": {
+                    "shortText": [
+                        "列値のデータ タイプを取得または設定します。",
+                        "デフォルトは `string` です。",
+                        "```typescript",
+                        "let columnDataType = this.column.dataType;",
+                        "```",
+                        "```html",
+                        "<igx-column [dataType] = \"'number'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "gridID": {
+                "comment": {
+                    "shortText": [
+                        "`igx-grid` の `id` を取得または設定します。",
+                        "```typescript",
+                        "let columnGridId = this.column.gridID;",
+                        "```",
+                        "```typescript",
+                        "this.column.gridID = 'grid-1';",
+                        "```"
+                    ]
+                }
+            },
+            "searchable": {
+                "comment": {
+                    "shortText": [
+                        "列が検索可能 (`searchable`) かどうかを取得または設定します。",
+                        "デフォルト値は `true` です。",
+                        "```typescript",
+                        "let isSearchable =  this.column.searchable';",
+                        "```",
+                        "```html",
+                        " <igx-column [searchable] = \"false\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "parent": {
+                "comment": {
+                    "shortText": [
+                        "親列を取得または設定します。",
+                        "```typescript",
+                        "let parentColumn = this.column.parent;",
+                        "```",
+                        "```typescript",
+                        "this.column.parent = higherLevelColumn;",
+                        "```"
+                    ]
+                }
+            },
+            "children": {
+                "comment": {
+                    "shortText": [
+                        "子列を取得または設定します。",
+                        "```typescript",
+                        "let columnChildren = this.column.children;",
+                        "```",
+                        "```typescript",
+                        "this.column.children = childrenColumns;",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "updateHighlights": {
+                "comment": {
+                    "shortText": [
+                        "列インデックスが変更されたときに強調表示を更新します。",
+                        "```typescript",
+                        "this.column.updateHighlights(1, 3);",
+                        "```"
+                    ]
+                }
+            },
+            "pin": {
+                "comment": {
+                    "shortText": [
+                        "ピン固定領域で指定したインデックスに列をピン固定します。指定されない場合、デフォルトのインデックスは `0` です。",
+                        "```typescript",
+                        "this.column.pin();",
+                        "```"
+                    ]
+                }
+            },
+            "unpin": {
+                "comment": {
+                    "shortText": [
+                        "列をピン固定解除してピン固定されない領域で指定したインデックスに配置します。指定されない場合、デフォルトのインデックスは `0` です。",
+                        "```typescript",
+                        "this.column.unpin();",
+                        "```"
+                    ]
+                }
+            },
+            "autosize": {
+                "comment": {
+                    "text": [
+                        "let column = this.grid.columnList.filter(c => c.field === 'ID')[0];",
+                        "column.autosize();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "列を現在表示中のセルヘッダーを含むセル値に自動でサイズ変更します。",
+                        "```typescript",
+                        "@ViewChild('grid') grid: IgxGridComponent;"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "hidden": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列が非表示にされるかどうかを取得します。",
+                            "```typescript",
+                            "let isHidden = this.column.hidden;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "列の hidden プロパティを設定します。",
+                            "デフォルトは `false` です。",
+                            "```typescript",
+                            "<igx-column [hidden] = \"true\"></igx-column>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "disableHiding": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "非表示が無効かどうかを取得します。",
+                            "```typescript",
+                            "let isHidingDisabled =  this.column.disableHiding;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "列の非表示を有効/無効にします。",
+                            "デフォルトは `false` です。",
+                            "```typescript",
+                            "<igx-column [hidden] = \"true\"></igx-column>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "width": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列の `width` を取得します。",
+                            "```typescript",
+                            "let columnWidth = this.column.width;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "列の `width` を設定します。",
+                            "```html",
+                            "<igx-column [width] = \"'25%'\"></igx-column>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "index": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列インデックスを取得します。",
+                            "```typescript",
+                            "let columnIndex = this.column.index;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "pinned": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列が `pinned` かどうかを取得します。",
+                            "```typescript",
+                            "let isPinned = this.column.pinned;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "列がピン固定されるかどうかを設定します。",
+                            "デフォルトは `false` です。",
+                            "```html",
+                            "<igx-column [pinned] = \"true\"></igx-column>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "summaries": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列の `summaries` を取得します。",
+                            "```typescript",
+                            "let columnSummaries = this.column.summaries;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "列の `summaries` を設定します。",
+                            "```typescript",
+                            "this.column.summaries = IgxNumberSummaryOperand;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filters": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列の `filters` を取得します。",
+                            "```typescript",
+                            "let columnFilters = this.column.filters'",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "列の `filters` を設定します。",
+                            "```typescript",
+                            "this.column.filters = IgxBooleanFilteringOperand.",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "defaultMinWidth": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列のデフォルト最小の `width` を取得します。",
+                            "```typescript",
+                            "let defaultMinWidth =  this.column.defaultMinWidth;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "grid": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`igx-grid` への参照を返します。",
+                            "```typescript",
+                            "let gridComponent = this.column.grid;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "bodyTemplate": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`bodyTemplate` への参照を返します。",
+                            "```typescript",
+                            "let bodyTemplate = this.column.bodyTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "本文のテンプレートを設定します。",
+                            "```html",
+                            "<ng-template #bodyTemplate igxCell let-val>",
+                            "   <div style = \"background-color: yellowgreen\" (click) = \"changeColor(val)\">",
+                            "      <span> {{val}} </span>",
+                            "   </div>",
+                            "</ng-template>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild(\"'bodyTemplate'\", {read: TemplateRef })",
+                            "public bodyTemplate: TemplateRef<any>;",
+                            "this.column.bodyTemplate = this.bodyTemplate;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "headerTemplate": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "ヘッダー テンプレートへの参照を返します。",
+                            "```typescript",
+                            "let headerTemplate = this.column.headerTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "ヘッダー テンプレートを設定します。",
+                            "```html",
+                            "<ng-template #headerTemplate>",
+                            "  <div style = \"background-color:black\" (click) = \"changeColor(val)\">",
+                            "      <span style=\"color:red\" >{{column.field}}</span>",
+                            "  </div>",
+                            "</ng-template>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild(\"'headerTemplate'\", {read: TemplateRef })",
+                            "public headerTemplate: TemplateRef<any>;",
+                            "this.column.headerTemplate = this.headerTemplate;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "inlineEditorTemplate": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "インライン エディター テンプレートへの参照を返します。",
+                            "```typescript",
+                            "let inlineEditorTemplate = this.column.inlineEditorTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "インライン エディター テンプレートを設定します。",
+                            "```html",
+                            "<ng-template #inlineEditorTemplate igxCellEditor let-cell=\"cell\">",
+                            "    <input type=\"string\" [(ngModel)]=\"cell.value\"/>",
+                            "</ng-template>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild(\"'inlineEditorTemplate'\", {read: TemplateRef })",
+                            "public inlineEditorTemplate: TemplateRef<any>;",
+                            "this.column.inlineEditorTemplate = this.inlineEditorTemplate;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "cells": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列のセルを取得します。",
+                            "```typescript",
+                            "let columnCells =  this.column.cells;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "visibleIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列の表示インデックスを取得します。",
+                            "列が表示されない場合、 `-1` が返されます。",
+                            "```typescript",
+                            "let visibleColumnIndex =  this.column.visibleIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "columnGroup": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列が `ColumnGroup` かどうかを示すブール値を返します。",
+                            "```typescript",
+                            "let columnGroup =  this.column.columnGroup;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "allChildren": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "子列のコレクションを返します。",
+                            "列が子列を含まない場合、空の配列を返します。",
+                            "```typescript",
+                            "let childrenColumns =  this.column.allChildren;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "level": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列グループの列のレベルを返します。",
+                            "列に `parent` がない場合、`0` を返します。",
+                            "```typescript",
+                            "let columnLevel =  this.column.level;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "topLevelParent": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "最上位の親列への参照を返します。",
+                            "```typescript",
+                            "let topLevelParent =  this.column.topLevelParent;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "headerCell": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列のヘッダーへの参照を返します。",
+                            "```typescript",
+                            "let column = this.grid.columnList.filter(c => c.field === 'ID')[0];",
+                            "let headerCell = column.headerCell;",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}

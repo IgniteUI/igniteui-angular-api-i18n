@@ -1,0 +1,101 @@
+﻿{
+    "IgxNumberSummaryOperand": {
+        "properties": {},
+        "methods": {
+            "min": {
+                "comment": {
+                    "shortText": [
+                        "提供されたデータ レコードの最小数値を返します。",
+                        "フィルタリングが適用される場合、フィルター済みのデータ レコードの最小値を返します。",
+                        "```typescript",
+                        "IgxNumberSummaryOperand.min(data);",
+                        "```"
+                    ]
+                }
+            },
+            "max": {
+                "comment": {
+                    "shortText": [
+                        "提供されたデータ レコードの最大数値を返します。",
+                        "フィルタリングが適用される場合、フィルター済みのデータ レコードの最大値を返します。",
+                        "```typescript",
+                        "IgxNumberSummaryOperand.max(data);",
+                        "```"
+                    ]
+                }
+            },
+            "sum": {
+                "comment": {
+                    "shortText": [
+                        "提供されたデータ レコードの数値の合計を返します。",
+                        "フィルタリングが適用される場合、データ レコードの数値の合計を返します。",
+                        "```typescript",
+                        "IgxNumberSummaryOperand.sum(data);",
+                        "```"
+                    ]
+                }
+            },
+            "average": {
+                "comment": {
+                    "shortText": [
+                        "提供されたデータ レコードの平均数値を返します。",
+                        "フィルタリングが適用される場合、フィルター済みのデータ レコードの平均数値を返します。",
+                        "```typescript",
+                        "IgxSummaryOperand.average(data);",
+                        "```"
+                    ]
+                }
+            },
+            "operate": {
+                "comment": {
+                    "shortText": [
+                        "静的メソッドを実行して `IgxSummaryResult[]` を返します。",
+                        "```typescript",
+                        "interface IgxSummaryResult {",
+                        "  key: string;",
+                        "  label: string;",
+                        "  summaryResult: any;",
+                        "}",
+                        "```",
+                        "`summary` をカスタマイズするために継承クラスでオーバーライドできます。",
+                        "```typescript",
+                        "class CustomNumberSummary extends IgxNumberSummaryOperand {",
+                        "  constructor() {",
+                        "    super();",
+                        "  }",
+                        "  public operate(data?: any[]): IgxSummaryResult[] {",
+                        "    const result = [];",
+                        "    result.push({",
+                        "      key: \"avg\",",
+                        "      label: \"Avg\",",
+                        "      summaryResult: IgxNumberSummaryOperand.average(data)",
+                        "    });",
+                        "    result.push({",
+                        "      key: \"max\",",
+                        "      label: \"Max\",",
+                        "      summaryResult: IgxNumberSummaryOperand.max(data)",
+                        "    });",
+                        "    return result;",
+                        "  }",
+                        "}",
+                        "this.grid.getColumnByName('ColumnName').summaries = CustomNumberSummary;",
+                        "```"
+                    ]
+                }
+            },
+            "count": {
+                "comment": {
+                    "shortText": [
+                        "データ ソース内のレコードをカウントします。",
+                        "フィルタリングが適用される場合、フィルター済みのレコードのみをカウントします。",
+                        "```typescript",
+                        "IgxSummaryOperand.count(dataSource);",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {},
+        "functions": {}
+    }
+}

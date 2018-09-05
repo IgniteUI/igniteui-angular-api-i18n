@@ -1,0 +1,486 @@
+﻿{
+    "IgxGridCellComponent": {
+        "comment": {
+            "shortText": [
+                "`IgxGridCellComponent` への参照を提供します:",
+                "```typescript",
+                "@ViewChild('grid', { read: IgxGridComponent })",
+                " public grid: IgxGridComponent;",
+                "```",
+                "```typescript",
+                " let column = this.grid.columnList.first;",
+                "```",
+                "```typescript",
+                " let cell = column.cells[0];",
+                "```"
+            ]
+        },
+        "properties": {
+            "column": {
+                "comment": {
+                    "shortText": [
+                        "セルの列を取得します。",
+                        "```typescript",
+                        " let cellColumn = this.cell.column;",
+                        "```"
+                    ]
+                }
+            },
+            "row": {
+                "comment": {
+                    "shortText": [
+                        "セルの行を取得します。",
+                        "```typescript",
+                        "let cellRow = this.cell.row;",
+                        "```"
+                    ]
+                }
+            },
+            "cellTemplate": {
+                "comment": {
+                    "shortText": [
+                        "セルのテンプレートを取得または設定します。",
+                        "```html",
+                        "<ng-template #cellTemplate igxCell let-value>",
+                        "  <div style=\"font-style: oblique; color:blueviolet; background:red\">",
+                        "      <span>{{value}}</span>",
+                        "  </div>",
+                        "</ng-template>",
+                        "```",
+                        "```typescript",
+                        "@ViewChild('cellTemplate',{read: TemplateRef})",
+                        "cellTemplate: TemplateRef<any>;",
+                        "```",
+                        "```typescript",
+                        "this.cell.cellTemplate = this.cellTemplate;",
+                        "```",
+                        "```typescript",
+                        "let template =  this.cell.cellTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "value": {
+                "comment": {
+                    "shortText": [
+                        "セル値を取得または設定します。",
+                        "```typescript",
+                        "this.cell.value = \"Cell Value\";",
+                        "```",
+                        "```typescript",
+                        "let cellValue = this.cell.value;",
+                        "```"
+                    ]
+                }
+            },
+            "highlightClass": {
+                "comment": {
+                    "shortText": [
+                        "セルの強調表示クラスを取得または設定します。",
+                        "デフォルト値は `\"igx-highlight\"` です。",
+                        "```typescript",
+                        "let highlightClass = this.cell.highlightClass;",
+                        "```",
+                        "```typescript",
+                        "this.cell.highlightClass = 'igx-cell-highlight';",
+                        "```"
+                    ]
+                }
+            },
+            "activeHighlightClass": {
+                "comment": {
+                    "shortText": [
+                        "セルのアクティブな強調表示クラスを取得または設定します。",
+                        "デフォルト値は `\"igx-highlight__active\"` です。",
+                        "```typescript",
+                        "let activeHighlightClass = this.cell.activeHighlightClass;",
+                        "```",
+                        "```typescript",
+                        "this.cell.activeHighlightClass = 'igx-cell-highlight_active';",
+                        "```"
+                    ]
+                }
+            },
+            "tabindex": {
+                "comment": {
+                    "shortText": [
+                        "セルの `tabindex` プロパティを取得または設定します。",
+                        "デフォルト値は `0` です。",
+                        "```typescript",
+                        "this.cell.tabindex = 1;",
+                        "```",
+                        "```typescript",
+                        "let cellTabIndex = this.cell.tabindex;",
+                        "```"
+                    ]
+                }
+            },
+            "role": {
+                "comment": {
+                    "shortText": [
+                        "セルの `role` プロパティを取得または設定します。",
+                        "デフォルト値は `\"gridcell\"` です。",
+                        "```typescript",
+                        "this.cell.role = 'grid-cell';",
+                        "```",
+                        "```typescript",
+                        "let cellRole = this.cell.role;",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "isCellSelected": {
+                "comment": {
+                    "shortText": [
+                        "セルが選択されているかどうかを取得します。",
+                        "```typescript",
+                        "let isCellSelected = thid.cell.isCellSelected();",
+                        "```"
+                    ]
+                }
+            },
+            "update": {
+                "comment": {
+                    "shortText": [
+                        "セルに新しい値を設定します。",
+                        "```typescript",
+                        "this.cell.update('New Value');",
+                        "```"
+                    ]
+                }
+            },
+            "highlightText": {
+                "comment": {
+                    "shortText": [
+                        "提供された文字列がセルのテキストと一致する場合、テキストが強調表示になります。",
+                        "```typescript",
+                        "this.cell.highlightText('Cell Value', true);",
+                        "```"
+                    ]
+                }
+            },
+            "clearHighlight": {
+                "comment": {
+                    "shortText": [
+                        "セルのテキストの強調表示をクリアします。",
+                        "```typescript",
+                        "this.cell.clearHighLight();",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "formatter": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セル フォーマッタを取得します。",
+                            "```typescript",
+                            "let cellForamatter = this.cell.formatter;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "context": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セル テンプレートのコンテキスト オブジェクトを取得します。",
+                            "```typescript",
+                            " let context = this.cell.context();",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "template": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セル テンプレートを取得します。",
+                            "```typescript",
+                            "let template = this.cell.template;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "gridID": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルに配置されるグリッドの `id` を取得します。",
+                            "```typescript",
+                            "let gridId = this.cell.gridID;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "grid": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルのグリッドを取得します。",
+                            "```typescript",
+                            "let grid = this.cell.grid;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "rowIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルに配置される行の `index` を取得します。",
+                            "```typescript",
+                            "let rowIndex = this.cell.rowIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "columnIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セル列の `index` を取得します。",
+                            "```typescript",
+                            "let columnIndex = this.cell.columnIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "visibleColumnIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルに配置される列の表示 `index` を取得します。",
+                            "```typescript",
+                            "let visibleColumnIndex = this.cell.visibleColumnIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "unpinnedColumnIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルに配置されるピン固定されない列の `index` を取得します。",
+                            "```typescript",
+                            "let unpinnedColumnIndex = this.cell.ununpinnedColumnIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "cellID": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルの ID を取得します。",
+                            "```typescript",
+                            "let cellID = this.cell.cellID;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルの nativeElement への参照を返します。",
+                            "```typescript",
+                            "let cellNativeElement = this.cell.nativeElement;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "inEditMode": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルが編集モードにあるかどうかを取得します。",
+                            "```typescript",
+                            "let isCellInEditMode = this.cell.inEditMode;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "セルの編集モードを有効または無効にします。",
+                            "```typescript",
+                            "this.cell.inEditMode = true;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "readonly": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルが編集可能かどうかを取得します。",
+                            "```typescript",
+                            "let isCellReadonly = this.cell.readonly;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "cellInEditMode": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルが編集モードにあるかどうかを取得します。",
+                            "`true` の場合、`\"igx_grid__cell--edit\"` クラスがセルに追加されます。",
+                            "```typescript",
+                            "let cellInEditMode = this.cell.cellInEditMode;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "describedby": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "グリッドの `id` および列の `field` を含む \"_\" によって連結される文字列を返します。",
+                            "```typescript",
+                            "let describedBy = this.cell.describedBy;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "styleClasses": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルのスタイル クラスを取得します。",
+                            "```typescript",
+                            "let cellStyleClasses = this.cell.styleClasses.",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "width": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルの幅を取得します。",
+                            "```typescript",
+                            "let cellWidth = this.cell.width;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "editModeCSS": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`true` の場合、`\"igx_grid___td--editing\"` クラスがセルに適用されます。",
+                            "```typescript",
+                            "let cellInEditMode = this.cell.editModeCSS();",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "focused": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルがフォーカスされるかどうかを取得します。",
+                            "```typescript",
+                            "let isFocused = this.cell.focused;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "セルのフォーカス状態を有効または無効にします。",
+                            "```typescript",
+                            "this.cell.focused = true;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isPinned": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルがピン固定列に配置されるかどうかを取得します。",
+                            "```typescript",
+                            "let isPinned = this.cell.isPinned;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isLastPinned": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルがピン固定領域の最後の列に配置されるかどうかを取得します。",
+                            "```typescript",
+                            "let isLastPinned = this.cell.isLastPinned;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isLastUnpinned": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルがピン固定されない領域の最後の列に配置されるかどうかを取得します。",
+                            "```typescript",
+                            "let isLastUnpinned = this.cell.isLastUnpinned;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "selected": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "セルが選択されているかどうかを取得します。",
+                            "```typescript",
+                            "let isSelected = this.cell.selected;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "セルを選択または選択解除します。",
+                            "```typescript",
+                            "this.cell.selected = true.",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}

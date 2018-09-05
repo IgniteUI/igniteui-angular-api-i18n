@@ -1,0 +1,74 @@
+﻿{
+    "IgxDateSummaryOperand": {
+        "properties": {},
+        "methods": {
+            "latest": {
+                "comment": {
+                    "shortText": [
+                        "データ レコードの最も遅い日付値を返します。",
+                        "フィルタリングが適用される場合、フィルター済みのデータ レコードの最新の日付値を返します。",
+                        "```typescript",
+                        "IgxDateSummaryOperand.latest(data);",
+                        "```"
+                    ]
+                }
+            },
+            "earliest": {
+                "comment": {
+                    "shortText": [
+                        "データ レコードの一番早い日付値を返します。",
+                        "フィルタリングが適用される場合、フィルター済みのデータ レコードの最新の日付値を返します。",
+                        "```typescript",
+                        "IgxDateSummaryOperand.earliest(data);",
+                        "```"
+                    ]
+                }
+            },
+            "operate": {
+                "comment": {
+                    "shortText": [
+                        "静的メソッドを実行して `IgxSummaryResult[]` を返します。",
+                        "```typescript",
+                        "interface IgxSummaryResult {",
+                        "  key: string;",
+                        "  label: string;",
+                        "  summaryResult: any;",
+                        "}",
+                        "```",
+                        "`summary` をカスタマイズするために継承クラスでオーバーライドできます。",
+                        "```typescript",
+                        "class CustomDateSummary extends IgxDateSummaryOperand {",
+                        "  constructor() {",
+                        "    super();",
+                        "  }",
+                        "  public operate(data?: any[]): IgxSummaryResult[] {",
+                        "    const result = [];",
+                        "    result.push({",
+                        "      key: \"latest\",",
+                        "      label: \"Latest Date\",",
+                        "      summaryResult: IgxDateSummaryOperand.latest(data)",
+                        "    });",
+                        "    return result;",
+                        "  }",
+                        "}",
+                        "this.grid.getColumnByName('ColumnName').summaries = CustomDateSummary;",
+                        "```"
+                    ]
+                }
+            },
+            "count": {
+                "comment": {
+                    "shortText": [
+                        "データ ソース内のレコードをカウントします。",
+                        "フィルタリングが適用される場合、フィルター済みのレコードのみをカウントします。",
+                        "```typescript",
+                        "IgxSummaryOperand.count(dataSource);",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {},
+        "functions": {}
+    }
+}

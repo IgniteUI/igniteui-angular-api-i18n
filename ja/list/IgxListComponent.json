@@ -1,0 +1,227 @@
+﻿{
+    "IgxListComponent": {
+        "comment": {
+            "text": [
+                "Ignite UI List は項目の行を表示し、ヘッダー項目を 1 つ以上、さらにリスト項目の検索およびフィルタリングをサポートします。",
+                "各リスト項目はすべての有効な HTML または Angular コンポーネントをサポートするテンプレートに設定できます。",
+                "",
+                "例:",
+                "```html",
+                "<igx-list>",
+                "  <igx-list-item isHeader=\"true\">Contacts</igx-list-item>",
+                "  <igx-list-item *ngFor=\"let contact of contacts\">",
+                "    <span class=\"name\">{{ contact.name }}</span>",
+                "    <span class=\"phone\">{{ contact.phone }}</span>",
+                "  </igx-list-item>",
+                "</igx-list>",
+                "```",
+                ""
+            ],
+            "shortText": [
+                "**Ignite UI for Angular List** -",
+                "[ヘルプ](https://www.infragistics.com/products/ignite-ui-angular/angular/components/list.html)"
+            ]
+        },
+        "properties": {
+            "children": {
+                "comment": {
+                    "shortText": [
+                        "リストのすべての項目およびヘッダーのコレクションを返します。",
+                        "```typescript",
+                        "let listChildren: QueryList = this.list.children;",
+                        "```"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "リストの `id` を取得または設定します。",
+                        "設定されない場合、最初のリスト コンポーネントの `id` は `\"igx-list-0\"` になります。",
+                        "```html",
+                        "<igx-list id = \"my-first-list\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let listId =  this.list.id;",
+                        "```"
+                    ]
+                }
+            },
+            "allowLeftPanning": {
+                "comment": {
+                    "shortText": [
+                        "項目の左パンニングが許可されるかどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```html",
+                        " <igx-list [allowLeftPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let isLeftPanningAllowed = this.list.allowLeftPanning;",
+                        "```"
+                    ]
+                }
+            },
+            "allowRightPanning": {
+                "comment": {
+                    "shortText": [
+                        "項目の右パンニングが許可されるかどうかを取得または設定します。",
+                        "デフォルトは `false` です。",
+                        "```html",
+                        " <igx-list [allowRightPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let isRightPanningAllowed = this.list.allowRightPanning;",
+                        "```"
+                    ]
+                }
+            },
+            "isLoading": {
+                "comment": {
+                    "shortText": [
+                        "リストがデータを読み込んでいるかどうかを取得または設定します。",
+                        "データの取得中に dataLoadingTemplate を表示するために設定します。",
+                        "デフォルトは `false` です。",
+                        "```html",
+                        " <igx-list [isLoading]=\"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let isLoading = this.list.isLoading;",
+                        "```"
+                    ]
+                }
+            },
+            "onLeftPan": {
+                "comment": {
+                    "shortText": [
+                        "左パンニング ジェスチャがリスト項目に実行されたときに現在のリストでイベントを発生します。",
+                        "イベント引数として `IgxListItemComponent` への参照を提供します。",
+                        "```html",
+                        "<igx-list [allowLeftPanning]=\"true\" (onLeftPan) = \"onLeftPan($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            },
+            "onRightPan": {
+                "comment": {
+                    "shortText": [
+                        "右パンニング ジェスチャがリスト項目に実行されたときに現在のリストでイベントを発生します。",
+                        "イベント引数として `IgxListItemComponent` への参照を提供します。",
+                        "```html",
+                        "<igx-list [allowRightPanning]=\"true\" (onRightPan) = \"onRightPan($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            },
+            "onPanStateChange": {
+                "comment": {
+                    "shortText": [
+                        "パンニング ジェスチャがリスト項目に実行されたときに現在のリストでイベントを発生します。",
+                        "イベント引数として `IgxListItemComponent` および `IgxListPanState` への参照を提供します。",
+                        "```html",
+                        "<igx-list (onPanStateChange) = \"onPanStateChange($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            },
+            "onItemClicked": {
+                "comment": {
+                    "shortText": [
+                        "リスト項目がクリックされたときに現在のリストでイベントを発生します。",
+                        "イベント引数として `IgxListItemComponent` および `Event` への参照を提供します。",
+                        " ```html",
+                        "<igx-list (onItemClicked) = \"onItemClicked($event)\"></igx-list>",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "role": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`role` 属性を取得します。",
+                            "```typescript",
+                            "let listRole =  this.list.role;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "isListEmpty": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "リストが空かどうかを示すブール値を返します。",
+                            "```typescript",
+                            "let isEmpty =  this.list.isListEmpty;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "cssClass": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "リストに `cssClass` 属性があるかどうかを示すブール値を返します。",
+                            "```typescript",
+                            "let hasCssClass =  this.list.cssClass;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "items": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "リストのヘッダー以外の `items` を返します。",
+                            "```typescript",
+                            "let listItems: IgxListItemComponent[] = this.list.items;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "headers": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "リストのヘッダーを返します。",
+                            "```typescript",
+                            "let listHeaders: IgxListItemComponent[] =  this.list.headers;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "context": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxListComponent` である `$implicit` 宣言を提供して `list container` への `template context` バインディングを表す `context` オブジェクトを返します。",
+                            "```typescript",
+                            "let listComponent =  this.list.context;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "template": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "空のリストの `template` を返します。",
+                            "```typescript",
+                            "let listTemplate = this.list.template;",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        },
+        "functions": {}
+    }
+}
