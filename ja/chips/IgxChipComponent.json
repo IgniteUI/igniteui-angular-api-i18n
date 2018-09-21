@@ -59,13 +59,14 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` の移動が開始するときにイベントを発生します。",
+						"移動している `IgxChipComponent` を返します。",
                         "```typescript",
-                        "moveStarted(){",
-                        "    alert(\"The moving has started.\");",
+                        "moveStarted(event: IBaseChipEventArgs){",
+                        "    let movingChip = event.owner;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onMoveStart)=\"moveStarted()\">",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onMoveStart)=\"moveStarted($event)\">",
                         "```"
                     ]
                 }
@@ -74,13 +75,14 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` の移動が終了するときにイベントを発生します。",
+						"移動した `IgxChipComponent` を返します。",
                         "```typescript",
-                        "moveEnded(){",
-                        "    alert(\"The moving has ended.\");",
+                        "moveEnded(event: IBaseChipEventArgs){",
+                        "    let movedChip = event.owner;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onMoveEnd)=\"moveEnded()\">",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onMoveEnd)=\"moveEnded($event)\">",
                         "```"
                     ]
                 }
@@ -89,13 +91,14 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` が削除されたときにイベントを発生します。",
+						"削除した `IgxChipComponent` を返します。",
                         "```typescript",
-                        "remove(){",
-                        "    alert(\"The chip has been removed.\");",
+                        "remove(event: IBaseChipEventArgs){",
+                        "    let removedChip = event.owner;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onRemove)=\"remove()\">",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onRemove)=\"remove($event)\">",
                         "```"
                     ]
                 }
@@ -104,13 +107,14 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` がクリックされたときにイベントを発生します。",
+						"クリックした `IgxChipComponent` およびイベントをキャンセルするかどうかを返します。",
                         "```typescript",
-                        "chipClick(){",
-                        "    alert(\"The chip has been clicked.\");",
+                        "chipClick(event: IChipClickEventArgs){",
+                        "    let clickedChip = event.owner;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onClick)=\"chipClick()\">",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onClick)=\"chipClick($event)\">",
                         "```"
                     ]
                 }
@@ -119,14 +123,14 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` が選択されたときにイベントを発生します。",
-                        "選択したチップの参照、イベントをキャンセルするかどうか、および次の選択状態を返します。",
+                        "選択したチップへの参照、イベントをキャンセルするかどうか、次の選択状態を返します。イベントがインタラクションでトリガーされた場合に `originalEvent` が提供されます。それ以外の場合、`originalEvent` は `null` です。,
                         "```typescript",
                         "chipSelect(event: IChipSelectEventArgs){",
-                        "    const selectArgs = event;",
+                        "    let selectedChip = event.owner;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onSelection)=\"chipSelect()\">",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onSelection)=\"chipSelect($event)\">",
                         "```"
                     ]
                 }
@@ -135,13 +139,14 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` のキーボード ナビゲーションが使用されるときにイベントを発生します。",
+						"フォーカス/選択された `IgxChipComponent`、イベントをキャンセルするかどうか、`alt`、`shift`、または `control` キーが押されたかどうか、押されたキーの名前を返します。",
                         "```typescript",
-                        "chipKeyDown(){",
-                        "    alert(\"The chip keyboard navigation has been used.\");",
+                        "chipKeyDown(event: IChipKeyDownEventArgs){",
+                        "    let keyDown = event.key;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onKeyDown)=\"chipKeyDown()\">",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onKeyDown)=\"chipKeyDown($event)\">",
                         "```"
                     ]
                 }
@@ -150,13 +155,14 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` が `IgxChipsAreaComponent` に入ったときにイベントを発生します。",
+						"ターゲットの `IgxChipComponent`、ドラッグしている `IgxChipComponent`、および元のドロップ イベント引数を返します。",
                         "```typescript",
-                        "chipEnter(){",
-                        "    alert(\"The chip has entered the chiparea.\");",
+                        "chipEnter(event: IChipEnterDragAreaEventArgs){",
+                        "    let targetChip = event.targetChip;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onDragEnter)=\"chipEnter()\">",
+                        "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onDragEnter)=\"chipEnter($event)\">",
                         "```"
                     ]
                 }

@@ -228,6 +228,20 @@
                         "```"
                     ]
                 }
+            },
+			"deselectDate": {
+                "comment": {
+                    "shortText": [
+                        "カレンダー日付を選択解除します。",
+                        "```typescript",
+                        "@ViewChild(\"MyDatePicker\")",
+                        "public datePicker: IgxDatePickerComponent;",
+                        "ngAfterViewInit(){",
+                        "this.datePicker.deselectDate();",
+                        "}",
+                        "```"
+                    ]
+                }
             }
         },
         "accessors": {
@@ -294,6 +308,62 @@
                             "ngAfterViewInit(){",
                             "   this.Views = {day:false, month: false, year:false};",
                             "   this.datePicker.formatViews = this.Views;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+			"disabledDates": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "無効な日付記述子を取得します。",
+                            "```typescript",
+                            "let disabledDates = this.datepicker.disabledDates;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "無効な日付記述子を設定します。",
+                            "```typescript",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   this.datePicker.disabledDates = [",
+                            "     new DateRangeDescriptor(DateRangeType.Between, [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]),",
+                            "     new DateRangeDescriptor(DateRangeType.Weekends)];",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "specialDates": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "特別な日付記述子を取得します。",
+                            "```typescript",
+                            "let specialDates = this.datepicker.specialDates;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "特別な日付記述子を設定します。",
+                            "```typescript",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   this.datePicker.specialDates = [",
+                            "     new DateRangeDescriptor(DateRangeType.Between, [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]),",
+                            "     new DateRangeDescriptor(DateRangeType.Weekends)];",
                             "}",
                             "```"
                         ]

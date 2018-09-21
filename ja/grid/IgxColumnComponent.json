@@ -180,12 +180,15 @@
             "cellClasses": {
                 "comment": {
                     "shortText": [
-                        "列セルのクラス セレクターを取得または設定します。",
+                        "列セルの条件付きクラス セレクターを設定します。",
+						"キーと値のペアを含むオブジェクト リテラルを受け取ります。キーは CSS クラスの名前です。値はブール値を返すコールバック関数またはブール値です。例:",
                         "```typescript",
-                        "let columnCellsClass = this.column.cellClasses;",
+                        "callback = (rowData, columnKey) => { return rowData[columnKey] > 6; }",
+                        "cellClasses = { 'className' : this.callback };",
                         "```",
                         "```html",
-                        "<igx-column [cellClasses] = \"'column-cell'\"></igx-column>",
+                        "<igx-column [cellClasses] = \"cellClasses\"></igx-column>",
+                        "<igx-column [cellClasses] = \"{'class1' : true }\"></igx-column>",
                         "```"
                     ]
                 }
@@ -270,6 +273,20 @@
                         "```html",
                         " <igx-column [searchable] = \"false\"></igx-column>",
                         "```"
+                    ]
+                }
+            },
+			"defaultWidth": {
+                "comment": {
+                    "shortText": [
+                        "非表示"
+                    ]
+                }
+            },
+            "widthSetByUser": {
+                "comment": {
+                    "shortText": [
+                        "非表示"
                     ]
                 }
             },
