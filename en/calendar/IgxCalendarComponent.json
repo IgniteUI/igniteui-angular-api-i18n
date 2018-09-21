@@ -82,6 +82,16 @@
                         "```"
                     ]
                 }
+            },
+            "deselectDate": {
+                "comment": {
+                    "shortText": [
+                        "Deselects date(s) (based on the selection type).",
+                        "```typescript",
+                        "this.calendar.deselectDate(new Date(`2018-06-12`));",
+                        "````"
+                    ]
+                }
             }
         },
         "accessors": {
@@ -231,6 +241,62 @@
                             "according to the locale and formatOptions, if any.",
                             "```html",
                             "<igx-calendar [formatViews] = \"{ day: true, month: false, year: true }\"></igx-calendar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "disabledDates": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the disabled dates descriptors.",
+                            "```typescript",
+                            "let disabledDates = this.calendar.disabledDates;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the disabled dates' descriptors.",
+                            "```typescript",
+                            "@ViewChild(\"MyCalendar\")",
+                            "public calendar: IgCalendarComponent;",
+                            "ngOnInit(){",
+                            "   this.calendar.disabledDates = [",
+                            "     new DateRangeDescriptor(DateRangeType.Between, [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]),",
+                            "     new DateRangeDescriptor(DateRangeType.Weekends)];",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "specialDates": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the special dates descriptors.",
+                            "```typescript",
+                            "let specialDates = this.calendar.specialDates;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the special dates' descriptors.",
+                            "```typescript",
+                            "@ViewChild(\"MyCalendar\")",
+                            "public calendar: IgCalendarComponent;",
+                            "ngOnInit(){",
+                            "   this.calendar.specialDates = [",
+                            "     new DateRangeDescriptor(DateRangeType.Between, [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]),",
+                            "     new DateRangeDescriptor(DateRangeType.Weekends)];",
+                            "}",
                             "```"
                         ]
                     }
