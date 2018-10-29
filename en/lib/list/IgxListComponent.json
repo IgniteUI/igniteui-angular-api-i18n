@@ -4,7 +4,6 @@
             "text": [
                 "The Ignite UI List displays rows of items and supports one or more header items as well as search and filtering",
                 "of list items. Each list item is completely templateable and will support any valid HTML or Angular component.",
-                "",
                 "Example:",
                 "```html",
                 "<igx-list>",
@@ -14,8 +13,7 @@
                 "    <span class=\"phone\">{{ contact.phone }}</span>",
                 "  </igx-list-item>",
                 "</igx-list>",
-                "```",
-                ""
+                "```"
             ],
             "shortText": [
                 "**Ignite UI for Angular List** -",
@@ -29,6 +27,65 @@
                         "Returns a collection of all items and headers in the list.",
                         "```typescript",
                         "let listChildren: QueryList = this.list.children;",
+                        "```"
+                    ]
+                }
+            },
+            "emptyListTemplate": {
+                "comment": {
+                    "shortText": [
+                        "Returns the template which will be used by the IgxList in case there are no list items defined and `isLoading` is set to `false`.",
+                        "```typescript",
+                        "let emptyTemplate = this.list.emptyListTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "dataLoadingTemplate": {
+                "comment": {
+                    "shortText": [
+                        "Returns the template which will be used by the IgxList in case there are no list items defined and `isLoading` is set to `true`.",
+                        "```typescript",
+                        "let loadingTemplate = this.list.dataLoadingTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "listItemLeftPanningTemplate": {
+                "comment": {
+                    "shortText": [
+                        "Sets/gets the template shown when left panning a list item.",
+                        "Default value is `null`.",
+                        "```html",
+                        " <igx-list [allowLeftPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let itemLeftPanTmpl = this.list.listItemLeftPanningTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "listItemRightPanningTemplate": {
+                "comment": {
+                    "shortText": [
+                        "Sets/gets the template shown when right panning a list item.",
+                        "Default value is `null`.",
+                        "```html",
+                        " <igx-list [allowLeftPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let itemRightPanTmpl = this.list.listItemRightPanningTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "panEndTriggeringThreshold": {
+                "comment": {
+                    "shortText": [
+                        "Provides a threshold after which the item's panning will be completed automatically.",
+                        "By default this property is set to 0.5 which is 50% of the list item's width.",
+                        "```typescript",
+                        "this.list.panEndTriggeringThreshold = 0.8;",
                         "```"
                     ]
                 }
@@ -93,10 +150,10 @@
             "onLeftPan": {
                 "comment": {
                     "shortText": [
-                        "Emits an event within the current list when left pan gesture is executed on list item.",
-                        "Provides reference to the `IgxListItemComponent` as an event argument.",
+                        "Emits an event within the current list when left pan gesture is executed on a list item.",
+                        "Provides a reference to an object of type `IListItemPanningEventArgs` as an event argument.",
                         "```html",
-                        "<igx-list [allowLeftPanning]=\"true\" (onLeftPan) = \"onLeftPan($event)\"></igx-list>",
+                        "<igx-list [allowLeftPanning]=\"true\" (onLeftPan)=\"onLeftPan($event)\"></igx-list>",
                         "```"
                     ]
                 }
@@ -104,10 +161,10 @@
             "onRightPan": {
                 "comment": {
                     "shortText": [
-                        "Emits an event within the current list when right pan gesture is executed on list item.",
-                        "Provides reference to the `IgxListItemComponent` as an event argument.",
+                        "Emits an event within the current list when right pan gesture is executed on a list item.",
+                        "Provides a reference to an object of type `IListItemPanningEventArgs` as an event argument.",
                         "```html",
-                        "<igx-list [allowRightPanning]=\"true\" (onRightPan) = \"onRightPan($event)\"></igx-list>",
+                        "<igx-list [allowRightPanning]=\"true\" (onRightPan)=\"onRightPan($event)\"></igx-list>",
                         "```"
                     ]
                 }
@@ -222,7 +279,6 @@
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }

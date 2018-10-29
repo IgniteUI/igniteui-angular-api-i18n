@@ -11,6 +11,16 @@
                     ]
                 }
             },
+            "data": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that stores data related to the chip.",
+                        "```html",
+                        "<igx-chip [data]=\"{ value: 'Country' }\"></igx-chip>",
+                        "```"
+                    ]
+                }
+            },
             "draggable": {
                 "comment": {
                     "shortText": [
@@ -33,6 +43,17 @@
                     ]
                 }
             },
+            "removeIcon": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that overrides the default icon that the chip applies to the remove button.",
+                        "```html",
+                        "<igx-chip [id]=\"chip.id\" [removable]=\"true\" [removeIcon]=\"iconTemplate\"></igx-chip>",
+                        "<ng-template #iconTemplate><igx-icon>delete</igx-icon></ng-template>",
+                        "```"
+                    ]
+                }
+            },
             "selectable": {
                 "comment": {
                     "shortText": [
@@ -44,10 +65,22 @@
                     ]
                 }
             },
+            "selectIcon": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that overrides the default icon that the chip applies when it is selected.",
+                        "```html",
+                        "<igx-chip [id]=\"chip.id\" [selectable]=\"true\" [selectIcon]=\"iconTemplate\"></igx-chip>",
+                        "<ng-template #iconTemplate><igx-icon>done_outline</igx-icon></ng-template>",
+                        "```"
+                    ]
+                }
+            },
             "disabled": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that defines if the `IgxChipComponent` is disabled.",
+                        "An @Input property that defines if the `IgxChipComponent` is disabled. When disabled it restricts user interactions",
+                        "like focusing on click or tab, selection on click or Space, dragging.",
                         "By default it is set to false.",
                         "```html",
                         "<igx-chip [id]=\"chip.id\" [disabled]=\"true\"></igx-chip>",
@@ -122,7 +155,7 @@
             "onSelection": {
                 "comment": {
                     "shortText": [
-                        "Emits event when the `IgxChipComponent` is selected.",
+                        "Emits event when the `IgxChipComponent` is selected/deselected.",
                         "Returns the selected chip reference, whether the event should be canceled, what is the next selection state and",
                         "when the event is triggered by interaction `originalEvent` is provided, otherwise `originalEvent` is `null`.",
                         "```typescript",
@@ -173,6 +206,32 @@
         },
         "methods": {},
         "accessors": {
+            "selected": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the `IgxChipComponent` selected state.",
+                            "```html",
+                            "<igx-chip #myChip [id]=\"'igx-chip-1'\" [selectable]=\"true\" [selected]=\"true\">",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns if the `IgxChipComponent` is selected.",
+                            "```typescript",
+                            "@ViewChild('myChip')",
+                            "public chip: IgxChipComponent;",
+                            "selectedChip(){",
+                            "    let selectedChip = this.chip.selected;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "displayDensity": {
                 "getter": {
                     "comment": {
@@ -227,50 +286,7 @@
                         ]
                     }
                 }
-            },
-            "selected": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns if the `IgxChipComponent` is selected.",
-                            "```typescript",
-                            "@ViewChild('myChip')",
-                            "public chip: IgxChipComponent;",
-                            "selectedChip(){",
-                            "    let selectedChip = this.chip.selected;",
-                            "}",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "Sets the `IgxChipComponent` to be selected.",
-                            "```html",
-                            "<igx-chip #myChip [id]=\"'igx-chip-1'\" [selectable]=\"true\" [selected]=\"true\">",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "isLastChip": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns if the `IgxChipComponent` is the last one among its siblings.",
-                            "```typescript",
-                            "@ViewChild('myChip')",
-                            "public chip: IgxChipComponent;",
-                            "ngAfterViewInit(){",
-                            "    let lastChip = this.chip.isLastChip;",
-                            "}",
-                            "```"
-                        ]
-                    }
-                }
             }
-        },
-        "functions": {}
+        }
     }
 }

@@ -34,9 +34,9 @@
             "id": {
                 "comment": {
                     "shortText": [
-                        "   An @Input property that sets the value of the `id` attribute.",
+                        " An @Input property that sets the value of the `id` attribute.",
                         "```html",
-                        "<igx-icon id=\"igx-icon-1\" fontSet=\"material\" name=\"settings\" color=\"blue\" [isActive]=\"false\"></igx-icon>",
+                        "<igx-icon id=\"igx-icon-1\" fontSet=\"material\" color=\"blue\" [isActive]=\"false\">settings</igx-icon>",
                         "```"
                     ]
                 }
@@ -44,9 +44,9 @@
             "font": {
                 "comment": {
                     "shortText": [
-                        "   An @Input property that sets the value of the `fontSet`. By default it's \"material\".",
+                        " An @Input property that sets the value of the `fontSet`. By default it's \"material\".",
                         "```html",
-                        "<igx-icon fontSet=\"material\" name=\"settings\" color=\"blue\" [isActive]=\"false\"></igx-icon>",
+                        "<igx-icon fontSet=\"material\" color=\"blue\" [isActive]=\"false\">settings</igx-icon>",
                         "```"
                     ]
                 }
@@ -54,9 +54,9 @@
             "active": {
                 "comment": {
                     "shortText": [
-                        "   An @Input property that allows you to disable the `active` property. By default it's applied.",
+                        " An @Input property that allows you to disable the `active` property. By default it's applied.",
                         "```html",
-                        "<igx-icon [isActive]=\"false\" fontSet=\"material\" name=\"settings\" color=\"blue\"></igx-icon>",
+                        "<igx-icon [isActive]=\"false\" fontSet=\"material\" color=\"blue\">settings</igx-icon>",
                         "```"
                     ]
                 }
@@ -64,9 +64,9 @@
             "iconColor": {
                 "comment": {
                     "shortText": [
-                        "   An @Input property that allows you to change the `iconColor` of the icon.",
+                        " An @Input property that allows you to change the `iconColor` of the icon.",
                         "```html",
-                        "<igx-icon color=\"blue\" [isActive]=\"true\" fontSet=\"material\" name=\"settings\" ></igx-icon>",
+                        "<igx-icon color=\"blue\" [isActive]=\"true\" fontSet=\"material\">settings</igx-icon>",
                         "```"
                     ]
                 }
@@ -74,11 +74,10 @@
             "iconName": {
                 "comment": {
                     "shortText": [
-                        "   An @Input property that allows you to change the `iconName` of the icon.",
-                        "   The `iconName` can be set using the `name`.",
-                        "   You can provide either ligature `name` or glyph `iconName`, but not both at the same time.",
+                        " An @Input property that allows you to set the `iconName` of the icon.",
+                        " The `iconName` can be set using the `name` property.",
                         "```html",
-                        "<igx-icon name=\"question_answer\" color=\"blue\" [isActive]=\"true\" fontSet=\"material\"></igx-icon>",
+                        "<igx-icon color=\"blue\" [isActive]=\"true\" fontSet=\"material\">question_answer</igx-icon>",
                         "```"
                     ]
                 }
@@ -97,9 +96,7 @@
             },
             "el": {
                 "comment": {
-                    "shortText": [
-                        "An ElementRef property of the `igx-icon` component."
-                    ]
+                    "shortText": "An ElementRef property of the `igx-icon` component."
                 }
             }
         },
@@ -109,7 +106,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "  An accessor that returns the value of the font property.",
+                            " An accessor that returns the value of the font property.",
                             "```typescript",
                             "@ViewChild(\"MyIcon\")",
                             "public icon: IgxIconComponent;",
@@ -125,7 +122,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "  An accessor that returns the value of the active property.",
+                            " An accessor that returns the value of the active property.",
                             "```typescript",
                             "@ViewChild(\"MyIcon\")",
                             "public icon: IgxIconComponent;",
@@ -141,7 +138,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "  An accessor that returns inactive property.",
+                            " An accessor that returns inactive property.",
                             "```typescript",
                             "@ViewChild(\"MyIcon\")",
                             "public icon: IgxIconComponent;",
@@ -157,7 +154,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "  An accessor that returns the opposite value of the `iconColor` property.",
+                            " An accessor that returns the opposite value of the `iconColor` property.",
                             "```typescript",
                             "@ViewChild(\"MyIcon\")",
                             "public icon: IgxIconComponent;",
@@ -173,7 +170,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "  An accessor that returns the value of the iconName property.",
+                            " An accessor that returns the value of the iconName property.",
                             "```typescript",
                             "@ViewChild(\"MyIcon\")",
                             "public icon: IgxIconComponent;",
@@ -185,11 +182,28 @@
                     }
                 }
             },
+            "getSvgKey": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            " An accessor that returns the key of the SVG image.",
+                            " The key consists of the fontSet and the iconName separated by underscore.",
+                            "```typescript",
+                            "@ViewChild(\"MyIcon\")",
+                            "public icon: IgxIconComponent;",
+                            "ngAfterViewInit() {",
+                            "   let svgKey = this.icon.getSvgKey;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "template": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "  An accessor that returns a TemplateRef to explicit, implicit or no ligature.",
+                            "  An accessor that returns a TemplateRef to explicit, svg or no ligature.",
                             "```typescript",
                             "@ViewChild(\"MyIcon\")",
                             "public icon: IgxIconComponent;",
@@ -201,7 +215,6 @@
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }

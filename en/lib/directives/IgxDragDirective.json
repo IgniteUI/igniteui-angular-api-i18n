@@ -132,7 +132,26 @@
                 }
             }
         },
-        "methods": {},
+        "methods": {
+            "dropFinished": {
+                "comment": {
+                    "shortText": [
+                        "Informs the `igxDrag` directive that it has been dropped/released.",
+                        "This should usully be called when `animateOnRelease` is set to `true`.",
+                        "When canceling or defining custom drop logic this tells the igxDrag to update it's positions and",
+                        "animate correctly to the new position.",
+                        "```typescript",
+                        "public onDropElem(event) {",
+                        "    // Function bound to the igxDrop directive event `onDrop`",
+                        "    // This cancels the default drop logic of the `igxDrop`",
+                        "    event.cancel = true;",
+                        "    event.drag.dropFinished();",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
         "accessors": {
             "visible": {
                 "setter": {
@@ -196,7 +215,6 @@
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }

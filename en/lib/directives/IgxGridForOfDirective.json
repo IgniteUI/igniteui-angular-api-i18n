@@ -1,0 +1,254 @@
+{
+    "IgxGridForOfDirective": {
+        "properties": {
+            "igxForOf": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the data to be rendered.",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\"></ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForScrollOrientation": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that specifies the scroll orientation.",
+                        "Scroll orientation can be \"vertical\" or \"horizontal\".",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\"></ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForScrollContainer": {
+                "comment": {
+                    "shortText": [
+                        "Optionally pass the parent `igxFor` instance to create a virtual template scrolling both horizontally and vertically.",
+                        "```html",
+                        "<ng-template #scrollContainer igxFor let-rowData [igxForOf]=\"data\"",
+                        "      [igxForScrollOrientation]=\"'vertical'\"",
+                        "      [igxForContainerSize]=\"'500px'\"",
+                        "      [igxForItemSize]=\"'50px'\"",
+                        "      let-rowIndex=\"index\">",
+                        "      <div [style.display]=\"'flex'\" [style.height]=\"'50px'\">",
+                        "          <ng-template #childContainer igxFor let-item [igxForOf]=\"data\"",
+                        "              [igxForScrollOrientation]=\"'horizontal'\"",
+                        "              [igxForScrollContainer]=\"parentVirtDir\"",
+                        "              [igxForContainerSize]=\"'500px'\">",
+                        "                  <div [style.min-width]=\"'50px'\">{{rowIndex}} : {{item.text}}</div>",
+                        "          </ng-template>",
+                        "      </div>",
+                        "</ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForContainerSize": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the px-affixed size of the container along the axis of scrolling.",
+                        "For \"horizontal\" orientation this value is the width of the container and for \"vertical\" is the height.",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForContainerSize]=\"'500px'\"",
+                        "     [igxForScrollOrientation]=\"'horizontal'\">",
+                        "</ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForItemSize": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the px-affixed size of the item along the axis of scrolling.",
+                        "For \"horizontal\" orientation this value is the width of the column and for \"vertical\" is the height or the row.",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" [igxForItemSize]=\"'50px'\"></ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "totalItemCount": {
+                "comment": {
+                    "shortText": [
+                        "The total count of the virtual data items, when using remote service.",
+                        "```typescript",
+                        "this.parentVirtDir.totalItemCount = data.Count;",
+                        "```"
+                    ]
+                }
+            },
+            "onChunkLoad": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted after a new chunk has been loaded.",
+                        "```html",
+                        "<ng-template igxFor [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" (onChunkLoad)=\"chunkLoad($event)\"></ng-template>",
+                        "```",
+                        "```typescript",
+                        "chunkLoad(e){",
+                        "alert(\"chunk loaded!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onChunkPreload": {
+                "comment": {
+                    "shortText": [
+                        "An event that is emitted on chunk loading to emit the current state information - startIndex, endIndex, totalCount.",
+                        "Can be used for implementing remote load on demand for the igxFor data.",
+                        "```html",
+                        "<ng-template igxFor [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" (onChunkPreload)=\"chunkPreload($event)\"></ng-template>",
+                        "```",
+                        "```typescript",
+                        "chunkPreload(e){",
+                        "alert(\"chunk is loading!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "addScrollTop": {
+                "comment": {
+                    "shortText": [
+                        "Shifts the scroll thumb position.",
+                        "```typescript",
+                        "this.parentVirtDir.addScrollTop(5);",
+                        "```"
+                    ]
+                }
+            },
+            "scrollTo": {
+                "comment": {
+                    "shortText": [
+                        "Scrolls to the specified index.",
+                        "```typescript",
+                        "this.parentVirtDir.scrollTo(5);",
+                        "```"
+                    ]
+                }
+            },
+            "scrollNext": {
+                "comment": {
+                    "shortText": [
+                        "Scrolls by one item into the appropriate next direction.",
+                        "For \"horizontal\" orientation that will be the right column and for \"vertical\" that is the lower row.",
+                        "```typescript",
+                        "this.parentVirtDir.scrollNext();",
+                        "```"
+                    ]
+                }
+            },
+            "scrollPrev": {
+                "comment": {
+                    "shortText": [
+                        "Scrolls by one item into the appropriate previous direction.",
+                        "For \"horizontal\" orientation that will be the left column and for \"vertical\" that is the upper row.",
+                        "```typescript",
+                        "this.parentVirtDir.scrollPrev();",
+                        "```"
+                    ]
+                }
+            },
+            "scrollNextPage": {
+                "comment": {
+                    "shortText": [
+                        "Scrolls by one page into the appropriate next direction.",
+                        "For \"horizontal\" orientation that will be one view to the right and for \"vertical\" that is one view to the bottom.",
+                        "```typescript",
+                        "this.parentVirtDir.scrollNextPage();",
+                        "```"
+                    ]
+                }
+            },
+            "scrollPrevPage": {
+                "comment": {
+                    "shortText": [
+                        "Scrolls by one page into the appropriate previous direction.",
+                        "For \"horizontal\" orientation that will be one view to the left and for \"vertical\" that is one view to the top.",
+                        "```typescript",
+                        "this.parentVirtDir.scrollPrevPage();",
+                        "```"
+                    ]
+                }
+            },
+            "getVerticalScroll": {
+                "comment": {
+                    "shortText": [
+                        "Returns a reference to the vertical scrollbar DOM element.",
+                        "```typescript",
+                        "this.parentVirtDir.getVerticalScroll();",
+                        "```"
+                    ]
+                }
+            },
+            "getItemCountInView": {
+                "comment": {
+                    "shortText": [
+                        "Returns the total number of items that are fully visible.",
+                        "```typescript",
+                        "this.parentVirtDir.getItemCountInView();",
+                        "```"
+                    ]
+                }
+            },
+            "getHorizontalScroll": {
+                "comment": {
+                    "shortText": [
+                        "Returns a reference to the horizontal scrollbar DOM element.",
+                        "```typescript",
+                        "this.parentVirtDir.getHorizontalScroll();",
+                        "```"
+                    ]
+                }
+            },
+            "getSizeAt": {
+                "comment": {
+                    "shortText": [
+                        "Returns the size of the element at the specified index.",
+                        "```typescript",
+                        "this.parentVirtDir.getSizeAt(1);",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "igxForTrackBy": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the function used to track changes in the items collection.",
+                            "By default the object references are compared. However this can be optimized if you have unique identifier",
+                            "value that can be used for the comparison instead of the object ref or if you have some other property values",
+                            "in the item object that should be tracked for changes.",
+                            "This option is similar to ngForTrackBy.",
+                            "```typescript",
+                            "const trackFunc = this.parentVirtDir.igxForTrackBy;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the function used to track changes in the items collection.",
+                            "This function can be set in scenarios where you want to optimize or",
+                            "customize the tracking of changes for the items in the collection.",
+                            "The igxForTrackBy function takes the index and the current item as arguments and needs to return the unique identifier for this item.",
+                            "```typescript",
+                            "this.parentVirtDir.igxForTrackBy = (index, item) => {",
+                            "     return item.id + item.width;",
+                            "};",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
