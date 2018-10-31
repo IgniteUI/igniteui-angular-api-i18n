@@ -1,4 +1,4 @@
-﻿{
+{
     "IgxGridComponent": {
         "comment": {
             "text": [
@@ -262,7 +262,7 @@
                 "comment": {
                     "shortText": [
                         "グリッドで `IgxGridCellComponent` または `IgxGridRowComponent` の編集が実行されたときにイベントを発生する @Output プロパティ。",
-                        "`IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが編集されている相対の `IgxGridCellComponent` および `IgxGridCellComponent` に属する `IgxGridRowComponent` のために定義されます。",
+                        "`IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが編集されている対応する `IgxGridCellComponent` および `IgxGridCellComponent` に属する `IgxGridRowComponent` のために定義されます。",
                         "`IgxGridRowComponent` 編集で、編集されている `IgxGridRowComponent` の `IgxGridRowComponent` オブジェクトのみが定義されます。",
                         "`IgxGridCellComponent` オブジェクトが `IgxGridRowComponent` 編集で null です。",
                         "```typescript",
@@ -396,7 +396,7 @@
             "onDataPreLoad": {
                 "comment": {
                     "shortText": [
-                        "新しいデータ チャンクが可視化から読み込まれたときに発生されます。",
+                        "新しいデータの塊が可視化から読み込まれたときに発生されます。",
                         "```typescript",
                         " <igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onDataPreLoad)='handleDataPreloadEvent()'></igx-grid>",
                         "```"
@@ -834,6 +834,7 @@
                 "comment": {
                     "shortText": [
                         "name が提供された場合、対応する `IgxColumnComponent` のフィルター状態をクリアします。それ以外の場合、すべての `IgxColumnComponent` のフィルター状態をクリアします。",
+                        "",
                         "```typescript",
                         "this.grid.clearFilter();",
                         "```"
@@ -844,6 +845,7 @@
                 "comment": {
                     "shortText": [
                         "name が提供された場合、対応する `IgxColumnComponent` の並べ替え状態をクリアします。それ以外の場合、すべての `IgxColumnComponent` の並べ替え状態をクリアします。",
+                        "",
                         "```typescript",
                         "this.grid.clearSort();",
                         "```"
@@ -1403,33 +1405,39 @@
                 }
             },
             "rowList": {
-                "comment": {
-                    "shortText": [
-                        "`IgxGridRowComponent` のリスト。",
-                        "```typescript",
-                        "const rowList = this.grid.rowList;",
-                        "```"
-                    ]
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxGridRowComponent` のリスト。",
+                            "```typescript",
+                            "const rowList = this.grid.rowList;",
+                            "```"
+                        ]
+                    }
                 }
             },
             "dataRowList": {
-                "comment": {
-                    "shortText": [
-                        "現在描画されている `IgxGridRowComponent` のリスト。",
-                        "```typescript",
-                        "const dataList = this.grid.dataRowList;",
-                        "```"
-                    ]
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "現在描画されている `IgxGridRowComponent` のリスト。",
+                            "```typescript",
+                            "const dataList = this.grid.dataRowList;",
+                            "```"
+                        ]
+                    }
                 }
             },
             "groupsRowList": {
-                "comment": {
-                    "shortText": [
-                        "すべてのグループ行のリスト。",
-                        "```typescript",
-                        "const groupList = this.grid.groupsRowList;",
-                        "```"
-                    ]
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "すべてのグループ行のリスト。",
+                            "```typescript",
+                            "const groupList = this.grid.groupsRowList;",
+                            "```"
+                        ]
+                    }
                 }
             },
             "sortingExpressions": {
@@ -1499,6 +1507,7 @@
                     "comment": {
                         "shortText": [
                             "`IgxColumnComponent` の定義済みの列非表示 UI のトグル ボタンに表示されるテキストを返します。",
+                            "",
                             "```typescript",
                             "const hiddenColText = this.grid.hiddenColumnsText;",
                             "``"
@@ -1509,6 +1518,7 @@
                     "comment": {
                         "shortText": [
                             "`IgxColumnComponent` の定義済みの列非表示 UI のトグル ボタンに表示されるテキストを設定します。",
+                            "",
                             "```typescript",
                             "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" [hiddenColumnsText]=\"'Hidden Columns'\"></igx-grid>",
                             "```"
@@ -1521,6 +1531,7 @@
                     "comment": {
                         "shortText": [
                             "`IgxColumnComponent` の定義済みの列ピン固定 UI のトグル ボタンに表示されるテキストを返します。",
+                            "",
                             "```typescript",
                             "const pinnedText = this.grid.pinnedColumnsText;",
                             "```"
@@ -1531,6 +1542,7 @@
                     "comment": {
                         "shortText": [
                             "`IgxColumnComponent` の定義済みの列ピン固定 UI のトグル ボタンに表示されるテキストを設定します。",
+                            "",
                             "```html",
                             "<igx-grid [pinnedColumnsText]=\"'PinnedCols Text\" [data]=\"data\" [width]=\"'100%'\" [height]=\"'500px'\"></igx-grid>",
                             "```"
