@@ -1,0 +1,85 @@
+{
+    "TransactionService": {
+        "properties": {
+            "enabled": {
+                "comment": {
+                    "shortText": "Returns whether transaction is enabled for this service"
+                }
+            },
+            "onStateUpdate": {
+                "comment": {
+                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo."
+                }
+            },
+            "canUndo": {
+                "comment": {}
+            },
+            "canRedo": {
+                "comment": {}
+            }
+        },
+        "methods": {
+            "add": {
+                "comment": {
+                    "shortText": "Adds provided  transaction with recordRef if any"
+                }
+            },
+            "getTransactionLog": {
+                "comment": {
+                    "shortText": "Returns an array of all T. If id is provided returns last transaction for provided id"
+                }
+            },
+            "undo": {
+                "comment": {
+                    "shortText": "Remove the last transaction if any"
+                }
+            },
+            "redo": {
+                "comment": {
+                    "shortText": "Applies the last undone transaction if any"
+                }
+            },
+            "aggregatedState": {
+                "comment": {
+                    "shortText": "Returns aggregated changes from all transactions"
+                }
+            },
+            "getState": {
+                "comment": {
+                    "shortText": "Returns the state of the record with provided id"
+                }
+            },
+            "getAggregatedValue": {
+                "comment": {
+                    "shortText": "Returns value of the required id including all uncommitted changes"
+                }
+            },
+            "commit": {
+                "comment": {
+                    "shortText": "Applies all transactions over the provided data"
+                }
+            },
+            "clear": {
+                "comment": {
+                    "shortText": "Clears all transactions"
+                }
+            },
+            "startPending": {
+                "comment": {
+                    "shortText": [
+                        "Starts pending transactions. All transactions passed after call to startPending",
+                        "will not be added to transaction log"
+                    ]
+                }
+            },
+            "endPending": {
+                "comment": {
+                    "shortText": [
+                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
+                        "commits pending states as single transaction"
+                    ]
+                }
+            }
+        }
+    }
+}

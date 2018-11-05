@@ -87,12 +87,12 @@
                 "comment": {
                     "shortText": [
                         "列フィルターが可能かどうかを取得または設定します。",
-                        "デフォルトは `false` です。",
+                        "Default value is `true`.",
                         "```typescript",
                         "let isFilterable = this.column.filterable;",
                         "```",
                         "```html",
-                        "<igx-column [filterable] = \"true\"></igx-column>",
+                        "<igx-column [filterable] = \"false\"></igx-column>",
                         "```"
                     ]
                 }
@@ -536,6 +536,39 @@
                     }
                 }
             },
+			"sortStrategy": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "class CustomSortingStrategy extends SortingStrategy {",
+                            "...",
+                            "}",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Gets the column `sortStrategy`.",
+                            "```typescript",
+                            "let sortStrategy = this.column.sortStrategy'",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "class CustomSortingStrategy extends SortingStrategy {",
+                            "...",
+                            "}",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Sets the column `sortStrategy`.",
+                            "```typescript",
+                            "this.column.sortStrategy = new CustomSortingStrategy()."
+                        ]
+                    }
+                }
+            },
             "grid": {
                 "getter": {
                     "comment": {
@@ -569,6 +602,18 @@
                             "列に `parent` がない場合、`0` を返します。",
                             "```typescript",
                             "let columnLevel =  this.column.level;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+			"filteringExpressionsTree": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the filteringExpressionsTree of the column.",
+                            "```typescript",
+                            "let tree =  this.column.filteringExpressionsTree;",
                             "```"
                         ]
                     }
