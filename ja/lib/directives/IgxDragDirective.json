@@ -1,4 +1,4 @@
-﻿{
+{
     "IgxDragDirective": {
         "properties": {
             "data": {
@@ -53,6 +53,7 @@
                 "comment": {
                     "shortText": [
                         "要素が解放されたときにドラッグ可能な要素のアニメーションを有効/無効にする @Input プロパティ。",
+                        "",
                         "デフォルトで false に設定されます。",
                         "```html",
                         "<div igxDrag [animateOnRelease]=\"'true'\">",
@@ -131,7 +132,26 @@
                 }
             }
         },
-        "methods": {},
+        "methods": {
+            "dropFinished": {
+                "comment": {
+                    "shortText": [
+                        "ドロップ/リリースしている igxDrag ディレクティブに通知します。",
+                        "通常 animateOnRelease を true に設定したときに呼び出されます。",
+                        "カスタム ドロップ ロジックをキャンセルまたは定義する場合、igxDrag の位置を更新して新しい位置に正しくアニメーションします。",
+                        "",
+                        "```typescript",
+                        "public onDropElem(event) {",
+                        "    // Function bound to the igxDrop directive event `onDrop`",
+                        "    // This cancels the default drop logic of the `igxDrop`",
+                        "    event.cancel = true;",
+                        "    event.drag.dropFinished();",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
         "accessors": {
             "visible": {
                 "setter": {
@@ -195,7 +215,6 @@
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }

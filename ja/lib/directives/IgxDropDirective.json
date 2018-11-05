@@ -1,6 +1,16 @@
-﻿{
+{
     "IgxDropDirective": {
         "properties": {
+            "data": {
+                "comment": {
+                    "shortText": [
+                        "- `igxDrop` ディレクティブ内にデータを保存します。要素で `igxDrop` のインスタンスを作成するときに設定できます。",
+                        "```html",
+                        "<div [igxDrop]=\"{ source: myElement }\"></div>",
+                        "```"
+                    ]
+                }
+            },
             "onEnter": {
                 "comment": {
                     "shortText": [
@@ -37,6 +47,8 @@
                 "comment": {
                     "shortText": [
                         "ドラッグされた要素が要素の領域にドロップされるときにトリガーされるイベント。",
+                        "`igxDrop` にはドロップした要素を子として追加するデフォルト ロジックがあるため、ここでキャンセルできます。",
+                        "デフォルト ロジックをキャンセルするには、イベントの `cancel` プロパティを true に設定する必要があります。",
                         "```html",
                         "<div class=\"cageArea\" igxDrop (onDrop)=\"dragDrop()\" (igxDragEnter)=\"onDragCageEnter()\" (igxDragLeave)=\"onDragCageLeave()\">",
                         "</div>",
@@ -51,7 +63,6 @@
             }
         },
         "methods": {},
-        "accessors": {},
-        "functions": {}
+        "accessors": {}
     }
 }

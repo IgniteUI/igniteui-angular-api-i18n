@@ -1,4 +1,4 @@
-﻿{
+{
     "IgxChipComponent": {
         "properties": {
             "id": {
@@ -7,6 +7,16 @@
                         "`id` 属性の値を設定する @Input プロパティ。提供されていない場合、自動的に生成されます。",
                         "```html",
                         "<igx-chip [id]=\"'igx-chip-1'\"></igx-chip>",
+                        "```"
+                    ]
+                }
+            },
+            "data": {
+                "comment": {
+                    "shortText": [
+                        "チップに関連するデータを保存する @Input プロパティ。",
+                        "```html",
+                        "<igx-chip [data]=\"{ value: 'Country' }\"></igx-chip>",
                         "```"
                     ]
                 }
@@ -33,6 +43,17 @@
                     ]
                 }
             },
+            "removeIcon": {
+                "comment": {
+                    "shortText": [
+                        "チップが削除ボタンに適用するデフォルト アイコンをオーバーライドする @Input プロパティ。",
+                        "```html",
+                        "<igx-chip [id]=\"chip.id\" [removable]=\"true\" [removeIcon]=\"iconTemplate\"></igx-chip>",
+                        "<ng-template #iconTemplate><igx-icon>delete</igx-icon></ng-template>",
+                        "```"
+                    ]
+                }
+            },
             "selectable": {
                 "comment": {
                     "shortText": [
@@ -44,10 +65,22 @@
                     ]
                 }
             },
+            "selectIcon": {
+                "comment": {
+                    "shortText": [
+                        "選択時にチップが適用するデフォルト アイコンをオーバーライドする @Input プロパティ。 ",
+                        "```html",
+                        "<igx-chip [id]=\"chip.id\" [selectable]=\"true\" [selectIcon]=\"iconTemplate\"></igx-chip>",
+                        "<ng-template #iconTemplate><igx-icon>done_outline</igx-icon></ng-template>",
+                        "```"
+                    ]
+                }
+            },
             "disabled": {
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` が無効かどうかを定義する @Input プロパティ。",
+                        "無効な場合、クリックまたはタブでフォーカス、クリックまたはスペースで選択、ドラッグなどのユーザー インタラクションを制限します。",
                         "デフォルトで false に設定されます。",
                         "```html",
                         "<igx-chip [id]=\"chip.id\" [disabled]=\"true\"></igx-chip>",
@@ -59,7 +92,7 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` の移動が開始するときにイベントを発生します。",
-						"移動している `IgxChipComponent` を返します。",
+                        "移動している `IgxChipComponent` を返します。",
                         "```typescript",
                         "moveStarted(event: IBaseChipEventArgs){",
                         "    let movingChip = event.owner;",
@@ -75,7 +108,7 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` の移動が終了するときにイベントを発生します。",
-						"移動した `IgxChipComponent` を返します。",
+                        "移動した `IgxChipComponent` を返します。",
                         "```typescript",
                         "moveEnded(event: IBaseChipEventArgs){",
                         "    let movedChip = event.owner;",
@@ -91,7 +124,7 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` が削除されたときにイベントを発生します。",
-						"削除した `IgxChipComponent` を返します。",
+                        "Returns the removed `IgxChipComponent`.",
                         "```typescript",
                         "remove(event: IBaseChipEventArgs){",
                         "    let removedChip = event.owner;",
@@ -107,7 +140,7 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` がクリックされたときにイベントを発生します。",
-						"クリックした `IgxChipComponent` およびイベントをキャンセルするかどうかを返します。",
+                        "クリックした `IgxChipComponent` およびイベントをキャンセルするかどうかを返します。",
                         "```typescript",
                         "chipClick(event: IChipClickEventArgs){",
                         "    let clickedChip = event.owner;",
@@ -122,8 +155,9 @@
             "onSelection": {
                 "comment": {
                     "shortText": [
-                        "`IgxChipComponent` が選択されたときにイベントを発生します。",
-                        "選択したチップへの参照、イベントをキャンセルするかどうか、次の選択状態を返します。イベントがインタラクションでトリガーされた場合に `originalEvent` が提供されます。それ以外の場合、`originalEvent` は `null` です。",
+                        "`IgxChipComponent` が選択/選択解除されたときにイベントを発生します。",
+                        "選択したチップへの参照、イベントをキャンセルするかどうか、次の選択状態を返します。",
+                        "イベントがインタラクションでトリガーされた場合に `originalEvent` が提供されます。それ以外の場合、`originalEvent` は `null` です。",
                         "```typescript",
                         "chipSelect(event: IChipSelectEventArgs){",
                         "    let selectedChip = event.owner;",
@@ -139,7 +173,8 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` のキーボード ナビゲーションが使用されるときにイベントを発生します。",
-						"フォーカス/選択された `IgxChipComponent`、イベントをキャンセルするかどうか、`alt`、`shift`、または `control` キーが押されたかどうか、押されたキーの名前を返します。",
+                        "フォーカス/選択した `IgxChipComponent`、イベントをキャンセルするかどうかを返します。",
+                        "`Alt、shift、control`、`shift`、`control` キーが押されていてキー名が押されたかどうか。",
                         "```typescript",
                         "chipKeyDown(event: IChipKeyDownEventArgs){",
                         "    let keyDown = event.key;",
@@ -155,7 +190,8 @@
                 "comment": {
                     "shortText": [
                         "`IgxChipComponent` が `IgxChipsAreaComponent` に入ったときにイベントを発生します。",
-						"ターゲットの `IgxChipComponent`、ドラッグしている `IgxChipComponent`、および元のドロップ イベント引数を返します。",
+                        "ターゲットの `IgxChipComponent`、ドラッグしている `IgxChipComponent`、および元のドロップ イベント引数を返します。",
+                        "",
                         "```typescript",
                         "chipEnter(event: IChipEnterDragAreaEventArgs){",
                         "    let targetChip = event.targetChip;",
@@ -170,6 +206,32 @@
         },
         "methods": {},
         "accessors": {
+            "selected": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxChipComponent` の選択状態を設定します。",
+                            "```html",
+                            "<igx-chip #myChip [id]=\"'igx-chip-1'\" [selectable]=\"true\" [selected]=\"true\">",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxChipComponent` が選択されるかどうかを返します。",
+                            "```typescript",
+                            "@ViewChild('myChip')",
+                            "public chip: IgxChipComponent;",
+                            "selectedChip(){",
+                            "    let selectedChip = this.chip.selected;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "displayDensity": {
                 "getter": {
                     "comment": {
@@ -224,50 +286,7 @@
                         ]
                     }
                 }
-            },
-            "selected": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxChipComponent` が選択されるかどうかを返します。",
-                            "```typescript",
-                            "@ViewChild('myChip')",
-                            "public chip: IgxChipComponent;",
-                            "selectedChip(){",
-                            "    let selectedChip = this.chip.selected;",
-                            "}",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "選択する `IgxChipComponent` を設定します。",
-                            "```html",
-                            "<igx-chip #myChip [id]=\"'igx-chip-1'\" [selectable]=\"true\" [selected]=\"true\">",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "isLastChip": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxChipComponent` が兄弟間で最後のコンポーネントかどうかを返します。",
-                            "```typescript",
-                            "@ViewChild('myChip')",
-                            "public chip: IgxChipComponent;",
-                            "ngAfterViewInit(){",
-                            "    let lastChip = this.chip.isLastChip;",
-                            "}",
-                            "```"
-                        ]
-                    }
-                }
             }
-        },
-        "functions": {}
+        }
     }
 }

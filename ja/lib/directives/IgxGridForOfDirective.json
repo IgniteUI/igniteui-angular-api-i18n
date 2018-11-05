@@ -1,0 +1,254 @@
+{
+    "IgxGridForOfDirective": {
+        "properties": {
+            "igxForOf": {
+                "comment": {
+                    "shortText": [
+                        "描画するデータを設定する @Input プロパティ。",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\"></ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForScrollOrientation": {
+                "comment": {
+                    "shortText": [
+                        "スクロール方向を指定する @Input プロパティ。",
+                        "スクロール方向を \"vertical\" または \"horizontal\" に設定できます。",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\"></ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForScrollContainer": {
+                "comment": {
+                    "shortText": [
+                        "水平と垂直の両方向にスクロールする仮想テンプレートを作成するために親 `igxFor` インスタンスをオプションに渡します。",
+                        "```html",
+                        "<ng-template #scrollContainer igxFor let-rowData [igxForOf]=\"data\"",
+                        "      [igxForScrollOrientation]=\"'vertical'\"",
+                        "      [igxForContainerSize]=\"'500px'\"",
+                        "      [igxForItemSize]=\"'50px'\"",
+                        "      let-rowIndex=\"index\">",
+                        "      <div [style.display]=\"'flex'\" [style.height]=\"'50px'\">",
+                        "          <ng-template #childContainer igxFor let-item [igxForOf]=\"data\"",
+                        "              [igxForScrollOrientation]=\"'horizontal'\"",
+                        "              [igxForScrollContainer]=\"parentVirtDir\"",
+                        "              [igxForContainerSize]=\"'500px'\">",
+                        "                  <div [style.min-width]=\"'50px'\">{{rowIndex}} : {{item.text}}</div>",
+                        "          </ng-template>",
+                        "      </div>",
+                        "</ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForContainerSize": {
+                "comment": {
+                    "shortText": [
+                        "スクロールする軸でコンテナの px 単位のサイズを設定する @Input プロパティ。",
+                        "\"horizontal\" 方向の場合、この値はコンテナの幅で、\"vertical\" 方向の場合、値はコンテナの高さです。",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForContainerSize]=\"'500px'\"",
+                        "     [igxForScrollOrientation]=\"'horizontal'\">",
+                        "</ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "igxForItemSize": {
+                "comment": {
+                    "shortText": [
+                        "スクロールする軸で項目の px 単位のサイズを設定する @Input プロパティ。",
+                        "\"horizontal\" 方向の場合、この値は列の幅で、\"vertical\" 方向の場合、値は行の高さです。",
+                        "```html",
+                        "<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" [igxForItemSize]=\"'50px'\"></ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "totalItemCount": {
+                "comment": {
+                    "shortText": [
+                        "リモート サービスを使用する場合、仮想データ項目の合計数。",
+                        "```typescript",
+                        "this.parentVirtDir.totalItemCount = data.Count;",
+                        "```"
+                    ]
+                }
+            },
+            "onChunkLoad": {
+                "comment": {
+                    "shortText": [
+                        "新しいチャンクが読み込んだ後に発生するイベント。",
+                        "```html",
+                        "<ng-template igxFor [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" (onChunkLoad)=\"chunkLoad($event)\"></ng-template>",
+                        "```",
+                        "```typescript",
+                        "chunkLoad(e){",
+                        "alert(\"chunk loaded!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onChunkPreload": {
+                "comment": {
+                    "shortText": [
+                        "startIndex、endIndex、totalCount の現在の状態情報を出力するためにチャンクの読み込みで発生されるイベント。",
+                        "igxFor データのリモートのロードオンデマンドを実装するために使用できます。",
+                        "```html",
+                        "<ng-template igxFor [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" (onChunkPreload)=\"chunkPreload($event)\"></ng-template>",
+                        "```",
+                        "```typescript",
+                        "chunkPreload(e){",
+                        "alert(\"chunk is loading!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "addScrollTop": {
+                "comment": {
+                    "shortText": [
+                        "スクロールのつまみ位置を移動します。",
+                        "```typescript",
+                        "this.parentVirtDir.addScrollTop(5);",
+                        "```"
+                    ]
+                }
+            },
+            "scrollTo": {
+                "comment": {
+                    "shortText": [
+                        "指定されたインデックスへスクロールします。",
+                        "```typescript",
+                        "this.parentVirtDir.scrollTo(5);",
+                        "```"
+                    ]
+                }
+            },
+            "scrollNext": {
+                "comment": {
+                    "shortText": [
+                        "「次」の方向に 1 項目スクロールします。",
+                        "\"horizontal\" 方向で右列です。\"vertical\" 方向の下の行です。",
+                        "```typescript",
+                        "this.parentVirtDir.scrollNext();",
+                        "```"
+                    ]
+                }
+            },
+            "scrollPrev": {
+                "comment": {
+                    "shortText": [
+                        "「前」の方向に 1 項目スクロールします。",
+                        "\"horizontal\" 方向で左列です。\"vertical\" 方向の上の行です。",
+                        "```typescript",
+                        "this.parentVirtDir.scrollPrev();",
+                        "```"
+                    ]
+                }
+            },
+            "scrollNextPage": {
+                "comment": {
+                    "shortText": [
+                        "Scrolls by one page into the appropriate next direction.",
+                        "\"horizontal\" 方向に右へ 1 ビューです。\"vertical\" 方向に下へ 1 ビューです。",
+                        "```typescript",
+                        "this.parentVirtDir.scrollNextPage();",
+                        "```"
+                    ]
+                }
+            },
+            "scrollPrevPage": {
+                "comment": {
+                    "shortText": [
+                        "「前」の方向に 1 ページ スクロールします。",
+                        "\"horizontal\" 方向に左へ 1 ビューです。\"vertical\" 方向に上へ 1 ビューです。",
+                        "```typescript",
+                        "this.parentVirtDir.scrollPrevPage();",
+                        "```"
+                    ]
+                }
+            },
+            "getVerticalScroll": {
+                "comment": {
+                    "shortText": [
+                        "垂直スクロールバーの DOM 要素への参照を返します。",
+                        "```typescript",
+                        "this.parentVirtDir.getVerticalScroll();",
+                        "```"
+                    ]
+                }
+            },
+            "getItemCountInView": {
+                "comment": {
+                    "shortText": [
+                        "完全に表示される項目の合計数を返します。",
+                        "```typescript",
+                        "this.parentVirtDir.getItemCountInView();",
+                        "```"
+                    ]
+                }
+            },
+            "getHorizontalScroll": {
+                "comment": {
+                    "shortText": [
+                        "水平スクロールバーの DOM 要素への参照を返します。",
+                        "```typescript",
+                        "this.parentVirtDir.getHorizontalScroll();",
+                        "```"
+                    ]
+                }
+            },
+            "getSizeAt": {
+                "comment": {
+                    "shortText": [
+                        "指定したインデックスの要素のサイズを返します。",
+                        "```typescript",
+                        "this.parentVirtDir.getSizeAt(1);",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "igxForTrackBy": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "項目コレクションで変更をトラックするために使用される関数を取得します。",
+                            "デフォルトでオブジェクト参照が比較されます。",
+                            "オブジェクト参照の代わりに比較で使用可能な一意の識別子値があるか、変更のためにトラックする項目オブジェクトにその他のプロパティ値がある場合、これを最適化できます。",
+                            "",
+                            "このオプションは ngForTrackBy と同様です。",
+                            "```typescript",
+                            "const trackFunc = this.parentVirtDir.igxForTrackBy;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "項目コレクションで変更をトラックするために使用される関数を設定します。",
+                            "オブジェクト参照の代わりに比較で使用可能な一意の識別子値があるか、変更のためにトラックする項目オブジェクトにその他のプロパティ値がある場合、これを最適化できます。",
+                            "",
+                            "igxForTrackBy 関数はインデックスおよび現在の項目を引数として受け、この項目の一意の識別子を返します。",
+                            "```typescript",
+                            "this.parentVirtDir.igxForTrackBy = (index, item) => {",
+                            "     return item.id + item.width;",
+                            "};",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
