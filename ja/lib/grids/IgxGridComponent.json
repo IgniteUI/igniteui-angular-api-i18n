@@ -83,6 +83,41 @@
                     ]
                 }
             },
+			 "dropAreaMessage": {
+                "comment": {
+                    "shortText": [
+                        "列にドラッグできる GroupBy のドロップ領域に表示されるメッセージを設定する @Input プロパティ。",
+                        "注: GroupBy 領域を表示するためにグリッドでグループ可能な列が 1 つ以上必要があります。",
+                        "```html",
+                        "<igx-grid dropAreaMessage=\"Drop here to group!\">",
+                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
+                        "</igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "dropAreaTemplate": {
+                "comment": {
+                    "text": [
+                        "<ng-template #myDropArea>",
+                        "     <span> カスタム ドロップ領域。 </span>",
+                        "</ng-template>",
+                        "```",
+                        "```ts",
+                        "@ViewChild('myDropArea', { read: TemplateRef })",
+                        "public dropAreaRef: TemplateRef<any>;",
+                        "```"
+                    ],
+                    "shortText": [
+                        "GroupBy ドロップ領域として描画されるテンプレートを設定する @Input プロパティ。",
+                        "注: GroupBy 領域を表示するためにグリッドでグループ可能な列が 1 つ以上必要があります。",
+                        "```html",
+                        "<igx-grid [dropAreaTemplate]=\"dropAreaRef\">",
+                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
+                        "</igx-grid>"
+                    ]
+                }
+            },
             "paginationTemplate": {
                 "comment": {
                     "shortText": [
@@ -226,11 +261,7 @@
 			"onCellEditCancel": {
                 "comment": {
                     "shortText": [
-                        "An @Output property emitting an event when `IgxGridCellComponent`",
-                        "editing has been performed in the grid and the values have **not** been submitted.",
-                        "On `IgxGridCellComponent` editing, both `IgxGridCellComponent` and `IgxGridRowComponent`",
-                        "objects in the event arguments are defined for the corresponding",
-                        "`IgxGridCellComponent` that is being edited and the `IgxGridRowComponent` the `IgxGridCellComponent` belongs to.",
+                        "グリッドで `IgxGridCellComponent` 編集が実行されて値は**送信されない**ときにイベントを発生する @Output プロパティ。 `IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが編集されている相対の `IgxGridCellComponent` および IgxGridCellComponent に属する `IgxGridRowComponent` のために定義されます。",
                         "```typescript",
                         "editCancel(event: IgxColumnComponent){",
                         "   const column: IgxColumnComponent = event;",
@@ -250,10 +281,7 @@
             "onCellEditEnter": {
                 "comment": {
                     "shortText": [
-                        "An @Output property emitting an event when `IgxGridCellComponent` enters edit mode.",
-                        "On `IgxGridCellComponent` editing, both `IgxGridCellComponent` and `IgxGridRowComponent`",
-                        "objects in the event arguments are defined for the corresponding",
-                        "`IgxGridCellComponent` that is being edited and the `IgxGridRowComponent` the `IgxGridCellComponent` belongs to.",
+                        "グリッドで `IgxGridCellComponent` 編集が実行されて値は**送信されない**ときにイベントを発生する @Output プロパティ。 `IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが編集されている相対の `IgxGridCellComponent` および IgxGridCellComponent に属する `IgxGridRowComponent` のために定義されます。",
                         "```typescript",
                         "editStart(event: IgxColumnComponent){",
                         "   const column: IgxColumnComponent = event;",
@@ -273,10 +301,7 @@
             "onCellEdit": {
                 "comment": {
                     "shortText": [
-                        "An @Output property emitting an event when `IgxGridCellComponent` editing has been performed in the grid.",
-                        "On `IgxGridCellComponent` editing, both `IgxGridCellComponent` and `IgxGridRowComponent`",
-                        "objects in the event arguments are defined for the corresponding",
-                        "`IgxGridCellComponent` that is being edited and the `IgxGridRowComponent` the `IgxGridCellComponent` belongs to.",
+                        "`IgxGridCellComponent` は編集モードに入るときに、イベントを発生する @Output プロパティ。 `IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが編集されている相対の `IgxGridCellComponent` および IgxGridCellComponent に属する `IgxGridRowComponent` のために定義されます。",
                         "```typescript",
                         "editDone(event: IgxColumnComponent){",
                         "   const column: IgxColumnComponent = event;",
@@ -296,8 +321,8 @@
 			"onRowEditEnter": {
                 "comment": {
                     "text": [
-                        "Emits the current row and it's state.",
-                        "Bind to the event in markup as follows:",
+                        "現在の行と状態を発生します。",
+                        "次のようにマークアップでのイベントにバインとします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEditEnter)=\"editStart($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
                         "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
@@ -314,14 +339,14 @@
                         "     }",
                         "```"
                     ],
-                    "shortText": "An @Output property emitting an event when [rowEditable]=\"true\" a row enters edit mode."
+                    "shortText": "[rowEditable]=\"true\ 行は編集モードに入るときに、イベントを発生する @Output プロパティ。"
                 }
             },
 			"onRowEdit": {
                 "comment": {
                     "text": [
-                        "Emits the current row and it's state.",
-                        "Bind to the event in markup as follows:",
+                        "現在の行と状態を発生します。",
+                        "次のようにマークアップでのイベントにバインとします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEdit)=\"editDone($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
                         "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
@@ -339,18 +364,15 @@
                         "```"
                     ],
                     "shortText": [
-                        "An @Output property emitting an event when [rowEditable]=\"true\" & `endEdit(true)` is called.",
-                        "Emitted when changing rows during edit mode, selecting an un-editable cell in the edited row,",
-                        "performing data operations (filtering, sorting, etc.) while editing a row, hitting the `Commit`",
-                        "button inside of the rowEditingOverlay or hitting the `Enter` key while editing a cell."
+                        "次のようにマークアップでのイベントにバインとします。編集モードのとき、編集された行の編集不可能なセルを選択して、行を編集するとき (フィルタリング、並べ替えなどの) データ操作をして、rowEditingOverlay 内に `Commit` ボタンを押して、またはセルを編集ときに `Enter` キーを押すと発生されます。"
                     ]
                 }
             },
 			"onRowEditCancel": {
                 "comment": {
                     "text": [
-                        "Emits the current row and it's state.",
-                        "Bind to the event in markup as follows:",
+                        "現在の行と状態を発生します。",
+                        "次のようにマークアップでのイベントにバインとします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEditCancel)=\"editCancel($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
                         "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
@@ -368,9 +390,8 @@
                         "```"
                     ],
                     "shortText": [
-                        "An @Output property emitting an event when [rowEditable]=\"true\" & `endEdit(false)` is called.",
-                        "Emitted when changing hitting `Esc` key during cell editing and when click on the `Cancel` button",
-                        "in the row editing overlay."
+                        "[rowEditable]=\"true\" & `endEdit(false)` は呼ばれるときに、イベントを発生する @Output プロパティ。",
+                        "セル編集のときに `Esc` キーを押すまたはキャンセル ボタンを押すと発生されます。"
                     ]
                 }
             },
@@ -1106,14 +1127,14 @@
 		"endEdit": {
                 "comment": {
                     "text": [
-                        "Binding to the event",
+                        "イベントにバインドします。",
                         "```html",
                         "<button igxButton (click)=\"grid.endEdit(true)\">Commit Row</button>",
                         "```"
                     ],
                     "shortText": [
-                        "Finishes the row transactions on the current row.",
-                        "If `commit === true`, passes them from the pending state to the data (or transaction service)"
+                        "現在の行の行トランザクションを完成します。",
+                        "`commit === true`の場合、未解決状態からデータ (またはトランザクション サービス) へ渡します。"
                     ]
                 }
             }
@@ -1516,7 +1537,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "Returns if the filtering is enabled.",
+                            "フィルタリングが有効かどうかを返します。",
                             "```typescript",
                             " let filtering = this.grid.allowFiltering;",
                             "```"
@@ -1526,8 +1547,8 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "Sets if the filtering is enabled.",
-                            "By default it's disabled.",
+                            "フィルタリングが有効かどうか設定します。",
+                            "デフォルトで無効です。",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
