@@ -175,7 +175,7 @@
             "onCellEditCancel": {
                 "comment": {
                     "shortText": [
-                        "グリッドで `IgxGridCellComponent` 編集が実行されて値は**送信されない**ときにイベントを発生する @Output プロパティ。`IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが編集されている相対の `IgxGridCellComponent` および IgxGridCellComponent に属する `IgxGridRowComponent` のために定義されます。",
+                        "グリッドで `IgxGridCellComponent` 編集を実行した後に値が**送信されてない**場合にイベントを発生する @Output プロパティ。`IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが、編集中の対応する `IgxGridCellComponent` および IgxGridCellComponent に属する `IgxGridRowComponent` のために定義されます。",
                         "```typescript",
                         "editCancel(event: IgxColumnComponent){",
                         "   const column: IgxColumnComponent = event;",
@@ -195,7 +195,7 @@
             "onCellEditEnter": {
                 "comment": {
                     "shortText": [
-                        "`IgxGridCellComponent` は編集モードに入るときに、イベントを発生する @Output プロパティ。 `IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが編集されている相対の `IgxGridCellComponent` および IgxGridCellComponent に属する `IgxGridRowComponent` のために定義されます。",
+                        "`IgxGridCellComponent` は編集モードに入るときに、イベントを発生する @Output プロパティ。`IgxGridCellComponent` 編集で、イベント引数の `IgxGridCellComponent` および `IgxGridRowComponent` オブジェクトが、編集中の対応する `IgxGridCellComponent` および IgxGridCellComponent に属する `IgxGridRowComponent` のために定義されます。",
                         "```typescript",
                         "editStart(event: IgxColumnComponent){",
                         "   const column: IgxColumnComponent = event;",
@@ -236,7 +236,7 @@
                 "comment": {
                     "text": [
                         "現在の行と状態を発生します。",
-                        "次のようにマークアップでのイベントにバインとします。",
+                        "次のようにマークアップでのイベントにバインドします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEditEnter)=\"editStart($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
                         "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
@@ -253,14 +253,14 @@
                         "     }",
                         "```"
                     ],
-                    "shortText": "[rowEditable]=\"true\" 行は編集モードに入るときに、イベントを発生する @Output プロパティ。"
+                    "shortText": "[rowEditable]=\"true\" 行が編集モードに入るときに、イベントを発生する @Output プロパティ。"
                 }
             },
             "onRowEdit": {
                 "comment": {
                     "text": [
                         "現在の行と状態を発生します。",
-                        "次のようにマークアップでのイベントにバインとします。",
+                        "次のようにマークアップでのイベントにバインドします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEdit)=\"editDone($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
                         "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
@@ -278,7 +278,7 @@
                         "```"
                     ],
                     "shortText": [
-                        "[rowEditable]=\"true\" & `endEdit(true)` は呼ばれるときに、イベントを発生する @Output プロパティ。 編集モードのとき、編集された行の編集不可能なセルを選択して、行を編集するとき (フィルタリング、並べ替えなどの) データ操作をして、rowEditingOverlay 内に `Commit` ボタンを押して、またはセルを編集ときに `Enter` キーを押すと発生されます。"
+                        "[rowEditable]=\"true\" & `endEdit(true)` はが呼び出されるときに、イベントを発生する @Output プロパティ。 編集モードで編集した行の編集禁止セルを選択し、行の編集時 (フィルタリング、並べ替えなど) にデータ操作をして、rowEditingOverlay 内で `Commit` ボタンを押下時、またはセル編集時に `Enter` キーを押すと発生されます。"
                     ]
                 }
             },
@@ -286,7 +286,7 @@
                 "comment": {
                     "text": [
                         "現在の行と状態を発生します。",
-                        "次のようにマークアップでのイベントにバインとします。",
+                        "次のようにマークアップでのイベントにバインドします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEditCancel)=\"editCancel($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
                         "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
@@ -304,7 +304,7 @@
                         "```"
                     ],
                     "shortText": [
-                        "[rowEditable]=\"true\" & `endEdit(false)` は呼ばれるときに、イベントを発生する @Output プロパティ。セル編集のときに `Esc` キーを押して、行編集オーバーレイにキャンセル ボタンを押すと発生されます。"
+                        "[rowEditable]=\"true\" & `endEdit(false)` が呼び出されるときにイベントを発生する。編集モードで編集した行の編集禁止セルを選択し、行の編集時 (フィルタリング、並べ替えなど) にデータ操作をして、rowEditingOverlay 内で `Commit` ボタンを押下時、またはセル編集時に `Enter` キーを押すと発生されます。"
                     ]
                 }
             },
@@ -407,7 +407,7 @@
             "onDataPreLoad": {
                 "comment": {
                     "shortText": [
-                        "新しいデータ チャンクが可視化から読み込まれたときに発生されます。",
+                        "新しいデータ チャンクが仮想化から読み込まれたときに発生されます。",
                         "```typescript",
                         " <igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onDataPreLoad)='handleDataPreloadEvent()'></igx-grid>",
                         "```"
@@ -604,7 +604,7 @@
             "getRowByKey": {
                 "comment": {
                     "shortText": [
-                        "指定されたプライマリ キーによって `IgxGridRowComponent` オブジェクトを返します。",
+                        "指定されたプライマリキーによって `IgxGridRowComponent` オブジェクトを返します。",
                         "`primaryKey` プロパティの設定が必要です。",
                         "```typescript",
                         "const myRow = this.grid1.getRowByKey(\"cell5\");",
@@ -676,7 +676,7 @@
             "markForCheck": {
                 "comment": {
                     "shortText": [
-                        "`IgxGridComponent` を変更検出のため手動的にマークします。",
+                        "`IgxGridComponent` を変更検出で手動的にマークします。",
                         "```typescript",
                         "this.grid1.markForCheck();",
                         "```"
@@ -700,7 +700,7 @@
             "deleteRow": {
                 "comment": {
                     "shortText": [
-                        "プライマリ キーによって `IgxGridRowComponent` および相対するデータ レコードを削除します",
+                        "プライマリ キーによって `IgxGridRowComponent` および対応するデータ レコードを削除します。",
                         "`primaryKey` プロパティの設定が必要です",
                         "メソッドは、rowID である rowSelector をパラメーターとして受け取ります。",
                         "```typescript",
