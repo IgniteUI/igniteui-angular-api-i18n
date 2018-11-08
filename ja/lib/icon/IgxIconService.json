@@ -1,0 +1,104 @@
+{
+    "IgxIconService": {
+        "comment": {
+            "text": [
+                "Ignite UI Icon Service は、カスタム SVG 画像を IgxIconComponent で使用できます。",
+                "指定した fontSet に従って IgxIconComponentに適用されるカスタム クラスに関連付けするために使用できます。",
+                "例:",
+                "```typescript",
+                "this.iconService.registerFontSetAlias('material', 'material-icons');",
+                "this.iconService.addSvgIcon('aruba', '/assets/svg/country_flags/aruba.svg', 'svg-flags');",
+                "```"
+            ],
+            "shortText": "**Ignite UI for Angular Icon サービス** -"
+        },
+        "properties": {},
+        "methods": {
+            "registerFontSetAlias": {
+                "comment": {
+                    "shortText": [
+                        " 指定した fontSet の IgxIconComponent に適用するカスタム クラスを登録します。",
+                        "```typescript",
+                        "  this.iconService.registerFontSetAlias('material', 'material-icons');",
+                        "```"
+                    ]
+                }
+            },
+            "fontSetClassName": {
+                "comment": {
+                    "shortText": [
+                        " 指定した fontSet に関連するカスタム クラスがある場合は返します。",
+                        "```typescript",
+                        "  const fontSetClass = this.iconService.fontSetClassName('material');",
+                        "```"
+                    ]
+                }
+            },
+            "addSvgIcon": {
+                "comment": {
+                    "shortText": [
+                        " キャッシュに SVG 画像を追加します。SVG ソースは url です。",
+                        "```typescript",
+                        "  this.iconService.addSvgIcon('aruba', '/assets/svg/country_flags/aruba.svg', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            },
+            "addSvgIconFromText": {
+                "comment": {
+                    "shortText": [
+                        " キャッシュに SVG 画像を追加します。SVG ソースはテキストです。",
+                        "```typescript",
+                        "  this.iconService.addSvgIcon('simple', '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\">",
+                        "  <path d=\"M74 74h54v54H74\" /></svg>', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            },
+            "isSvgIconCached": {
+                "comment": {
+                    "shortText": [
+                        " 指定した SVG 画像がキャッシュに存在するかどうかを返します。",
+                        "```typescript",
+                        "  const isSvgCached = this.iconService.isSvgIconCached('aruba', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            },
+            "getSvgIconKey": {
+                "comment": {
+                    "shortText": [
+                        " キャッシュした SVG 画像のキーを返します。",
+                        "```typescript",
+                        "  const svgIconKey = this.iconService.getSvgIconKey('aruba', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "defaultFontSet": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            " デフォルト フォント セットを返します。",
+                            "```typescript",
+                            "  const defaultFontSet = this.iconService.defaultFontSet;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            " デフォルト フォント セットを設定します。",
+                            "```typescript",
+                            "  this.iconService.defaultFontSet = 'svg-flags';",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
