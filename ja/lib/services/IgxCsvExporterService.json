@@ -1,0 +1,86 @@
+{
+    "IgxCsvExporterService": {
+        "comment": {
+            "text": [
+                "Ignite UI for CSV Exporter サービスは、文字区切り値 (CSV) 形式で生データ (配列) または `IgxGrid` からデータをエクスポートします。",
+                "例:",
+                "```typescript",
+                "public localData = [",
+                "  { Name: \"Eric Ridley\", Age: \"26\" },",
+                "  { Name: \"Alanis Brook\", Age: \"22\" },",
+                "  { Name: \"Jonathan Morris\", Age: \"23\" }",
+                "];",
+                "constructor(private csvExportService: IgxCsvExporterService) {",
+                "}",
+                "const opt: IgxCsvExporterOptions = new IgxCsvExporterOptions(\"FileName\", CsvFileTypes.CSV);",
+                "this.csvExportService.exportData(this.localData, opt);",
+                "```"
+            ],
+            "shortText": [
+                "****Ignite UI for Angular Icon サービス** -",
+                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/exporter_csv.html)""
+            ]
+        },
+        "properties": {
+            "onExportEnded": {
+                "comment": {
+                    "shortText": [
+                        "このイベントは、エクスポート処理が終了したときに発生します。",
+                        "```typescript",
+                        "this.exporterService.onExportEnded.subscribe((args: ICsvExportEndedEventArgs) => {",
+                        "// イベントをハンドルするコードをここに入力します。",
+                        "});",
+                        "```"
+                    ]
+                }
+            },
+            "onRowExport": {
+                "comment": {
+                    "shortText": [
+                        "このイベントは行がエクスポートされるときに発生します。",
+                        "```typescript",
+                        "this.exporterService.onRowExport.subscribe((args: IRowExportingEventArgs) => {",
+                        "// イベントをハンドルするコードをここに入力します。",
+                        "});",
+                        "```"
+                    ]
+                }
+            },
+            "onColumnExport": {
+                "comment": {
+                    "shortText": [
+                        "このイベントは列がエクスポートされるときに発生します。",
+                        "```typescript",
+                        "this.exporterService.onColumnExport.subscribe((args: IColumnExportingEventArgs) => {",
+                        "// イベントをハンドルするコードをここに入力します。",
+                        "});",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "export": {
+                "comment": {
+                    "shortText": [
+                        "IgxGrid コンポーネントのデータをエクスポートするメソッド。",
+                        "```typescript",
+                        "this.exporterService.export(this.igxGridForExport, this.exportOptions);",
+                        "```"
+                    ]
+                }
+            },
+            "exportData": {
+                "comment": {
+                    "shortText": [
+                        "任意の配列のデータをエクスポートするメソッド。",
+                        "```typescript",
+                        "this.exporterService.exportData(this.arrayForExport, this.exportOptions);",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {}
+    }
+}
