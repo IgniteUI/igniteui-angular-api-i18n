@@ -92,41 +92,6 @@
                     ]
                 }
             },
-            "dropAreaMessage": {
-                "comment": {
-                    "shortText": [
-                        "An @Input property that sets the message displayed inside the GroupBy drop area where columns can be dragged on.",
-                        "Note: The grid needs to have at least one groupable column in order the GroupBy area to be displayed.",
-                        "```html",
-                        "<igx-grid dropAreaMessage=\"Drop here to group!\">",
-                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
-                        "</igx-grid>",
-                        "```"
-                    ]
-                }
-            },
-            "dropAreaTemplate": {
-                "comment": {
-                    "text": [
-                        "<ng-template #myDropArea>",
-                        "     <span> Custom drop area! </span>",
-                        "</ng-template>",
-                        "```",
-                        "```ts",
-                        "@ViewChild('myDropArea', { read: TemplateRef })",
-                        "public dropAreaRef: TemplateRef<any>;",
-                        "```"
-                    ],
-                    "shortText": [
-                        "An @Input property that sets the template that will be rendered as a GroupBy drop area.",
-                        "Note: The grid needs to have at least one groupable column in order the GroupBy area to be displayed.",
-                        "```html",
-                        "<igx-grid [dropAreaTemplate]=\"dropAreaRef\">",
-                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
-                        "</igx-grid>"
-                    ]
-                }
-            },
             "columnHidingTitle": {
                 "comment": {
                     "shortText": [
@@ -204,33 +169,129 @@
                         "    }",
                         "}",
                         "```"
-                    ]
+						 ]
                 }
             },
-            "onEditDone": {
+            "onCellEditCancel": {
                 "comment": {
                     "shortText": [
-                        "An @Output property emitting an event when `IgxGridCellComponent` or `IgxGridRowComponent`",
-                        "editing has been performed in the grid.",
+                        "An @Output property emitting an event when `IgxGridCellComponent`",
+                        "editing has been performed in the grid and the values have **not** been submitted.",
                         "On `IgxGridCellComponent` editing, both `IgxGridCellComponent` and `IgxGridRowComponent`",
                         "objects in the event arguments are defined for the corresponding",
                         "`IgxGridCellComponent` that is being edited and the `IgxGridRowComponent` the `IgxGridCellComponent` belongs to.",
-                        "On `IgxGridRowComponent` editing, only the `IgxGridRowComponent` object is defined, for the `IgxGridRowComponent`",
-                        "that is being edited.",
-                        "The `IgxGridCellComponent` object is null on `IgxGridRowComponent` editing.",
                         "```typescript",
-                        "editDone(event: IgxColumnComponent){",
+                        "editCancel(event: IgxColumnComponent){",
                         "   const column: IgxColumnComponent = event;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-grid #grid3 (onEditDone)=\"editDone($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
+                        "<igx-grid #grid3 (onCellEditCancel)=\"editCancel($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
                         "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\">",
                         "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
                         "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
                         "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
                         "</igx-grid>",
                         "```"
+                    ]
+                }
+            },
+            "onCellEditEnter": {
+                "comment": {
+                    "shortText": [
+                        "An @Output property emitting an event when `IgxGridCellComponent` enters edit mode.",
+                        "On `IgxGridCellComponent` editing, both `IgxGridCellComponent` and `IgxGridRowComponent`",
+                        "objects in the event arguments are defined for the corresponding",
+                        "`IgxGridCellComponent` that is being edited and the `IgxGridRowComponent` the `IgxGridCellComponent` belongs to.",
+                        "```typescript",
+                        "editStart(event: IgxColumnComponent){",
+                        "   const column: IgxColumnComponent = event;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid3 (onCellEditEnter)=\"editStart($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
+                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\">",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
+                        "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
+                        "</igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+			"onCellEdit": {
+                "comment": {
+                    "shortText": [
+                        "An @Output property emitting an event when `IgxGridCellComponent` editing has been performed in the grid.",
+                        "On `IgxGridCellComponent` editing, both `IgxGridCellComponent` and `IgxGridRowComponent`",
+                        "objects in the event arguments are defined for the corresponding",
+                        "`IgxGridCellComponent` that is being edited and the `IgxGridRowComponent` the `IgxGridCellComponent` belongs to.",
+                        "```typescript",
+                        "editDone(event: IgxColumnComponent){",
+                        "   const column: IgxColumnComponent = event;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid3 (onCellEdit)=\"editDone($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
+                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\">",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
+                        "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
+                        "</igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+			"onRowEditEnter": {
+                "comment": {
+                    "text": [
+                        "Emits the current row and it's state.",
+                        "Bind to the event in markup as follows:",
+                        "```html",
+                        "<igx-grid #grid3 (onRowEditEnter)=\"editStart($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
+                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
+                        "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
+                        "</igx-grid>",
+                        "```",
+                        "```typescript",
+                        "     editStart(emitted: { row: IgxGridRowComponent, newValue: any, oldValue: any }): void {",
+                        "         const editedRow = emitted.row;",
+                        "         const cancelValue = emitted.newValue;",
+                        "         const oldValue = emitted.oldValue;",
+                        "     }",
+                        "```"
+                    ],
+                    "shortText": "An @Output property emitting an event when [rowEditable]=\"true\" a row enters edit mode."
+                }
+            },
+			"onRowEdit": {
+                "comment": {
+                    "text": [
+                        "Emits the current row and it's state.",
+                        "Bind to the event in markup as follows:",
+                        "```html",
+                        "<igx-grid #grid3 (onRowEdit)=\"editDone($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
+                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
+                        "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
+                        "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
+                        "</igx-grid>",
+                        "```",
+                        "```typescript",
+                        "     editDone(emitted: { row: IgxGridRowComponent, newValue: any, oldValue: any }): void {",
+                        "         const editedRow = emitted.row;",
+                        "         const newValue = emitted.newValue;",
+                        "         const oldValue = emitted.oldValue;",
+                        "     }",
+                        "```"
+                    ],
+                    "shortText": [
+                        "An @Output property emitting an event when [rowEditable]=\"true\" & `endEdit(true)` is called.",
+                        "Emitted when changing rows during edit mode, selecting an un-editable cell in the edited row,",
+                        "performing data operations (filtering, sorting, etc.) while editing a row, hitting the `Commit`",
+                        "button inside of the rowEditingOverlay or hitting the `Enter` key while editing a cell."
                     ]
                 }
             },
@@ -266,7 +327,7 @@
             "onRowEditCancel": {
                 "comment": {
                     "text": [
-                        "Emitts the current row and it's state.",
+                        "Emits the current row and it's state.",
                         "Bind to the event in markup as follows:",
                         "```html",
                         "<igx-grid #grid3 (onRowEditCancel)=\"editCancel($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
@@ -285,8 +346,8 @@
                         "```"
                     ],
                     "shortText": [
-                        "An @Output property emitting an event when [rowEditable]=\"true\" & `endRowEdit(false)` is called.",
-                        "Emiited when changing hitting `Esc` key during cell editing and when click on the `Cancel` button",
+                        "An @Output property emitting an event when [rowEditable]=\"true\" & `endEdit(false)` is called.",
+                        "Emitted when changing hitting `Esc` key during cell editing and when click on the `Cancel` button",
                         "in the row editing overlay."
                     ]
                 }
@@ -950,12 +1011,12 @@
                     ]
                 }
             },
-            "endRowEdit": {
+            "endEdit": {
                 "comment": {
                     "text": [
                         "Binding to the event",
                         "```html",
-                        "<button igxButton (click)=\"grid.endRowEdit(true)\">Commit Row</button>",
+                        "<button igxButton (click)=\"grid.endEdit(true)\">Commit Row</button>",
                         "```"
                     ],
                     "shortText": [
@@ -1323,6 +1384,29 @@
                             "By default it's disabled.",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" [columnPinning]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+			"allowFiltering": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns if the filtering is enabled.",
+                            "```typescript",
+                            " let filtering = this.grid.allowFiltering;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets if the filtering is enabled.",
+                            "By default it's disabled.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
