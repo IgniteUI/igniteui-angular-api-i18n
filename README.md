@@ -1,4 +1,4 @@
-# igniteui-angular-api-ja
+# igniteui-angular-api-i18n
 
 ## Purpose
 
