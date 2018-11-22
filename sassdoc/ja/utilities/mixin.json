@@ -1,0 +1,352 @@
+﻿{
+    "hide-default": {
+        "description": [
+            "<p>DOM から要素を非表示にします。</p>",
+            ""
+        ],
+        "example": [
+            {
+                "description": [
+                    "<p>例</p>",
+                    ""
+                ],
+                "code": [
+                    "input[type=\"checkbox\"] {",
+                    "  @include hide-default();",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "linear-gradient": {
+        "description": [
+            "<p>線状グラデーションを生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "direction": {
+                "description": [
+                    "<p>グラデーションの方向</p>",
+                    ""
+                ]
+            },
+            "color-stops": {
+                "description": [
+                    "<p>グラデーションに使用される色の境界リスト。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>例</p>",
+                    ""
+                ],
+                "code": [
+                    ".bozo {",
+                    "  background: @include linear-gradient(\"to right\", red, orange);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "register-component": {
+        "description": [
+            "<p>既知のコンポーネントのリストにコンポーネントを登録します。</p>",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "<p>登録するコンポーネント名。</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "ellipsis": {
+        "description": [
+            "<p>テキスト要素に text-overflow 省略記号を適用します。",
+            "Display flex 要素では動作しません。</p>",
+            ""
+        ]
+    },
+    "gen-color-class": {
+        "description": [
+            "<p>指定された 名前、バリアント、プレフィクスと接尾辞で CSS クラス名を生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "<p>メイン クラス名</p>",
+                    ""
+                ]
+            },
+            "variant": {
+                "description": [
+                    "<p>メイン クラス名に連結される追加文字列。</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>Name と variant 文字列に連結される suffix。</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "gen-color-classes": {
+        "description": [
+            "<p>クラス名に連結されたオプションのプレフィクスとサフィックスを持つ指定されたプロパティで色のパレットのすべての色の CSS クラス色を生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "prop": {
+                "description": [
+                    "<p>色のパレットに割り当てられる CSS プロパティ。</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>クラス名に連結するプレフィックス。</p>",
+                    ""
+                ]
+            },
+            "suffix": {
+                "description": [
+                    "<p>クラス名に連結される接尾辞。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>パレットの色でバックグラウンド クラスを生成します。</p>",
+                    ""
+                ],
+                "code": [
+                    "// 次のようなクラス名を生成します。",
+                    "// .my-primary-500-bg { ... };",
+                    "@include gen-color-classes(",
+                    "  $prop: 'background-color',",
+                    "  $prefix: 'my', $suffix: 'bg'",
+                    ");"
+                ]
+            }
+        ]
+    },
+    "css-vars-from-palette": {
+        "description": [
+            "<p>指定されたパレットのため CSS 変数を生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "palette": {
+                "description": [
+                    "<p>CSS 変数を生成するために使用する igx パレット。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p><code>$default-palette</code> のため生成された css 変数。</p>",
+                    ""
+                ],
+                "code": [
+                    "@include css-vars-from-palette($default-palette);"
+                ]
+            }
+        ]
+    },
+    "igx-palette-vars": {
+        "description": [
+            "<p>指定されたパレットのため CSS 変数を生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "palette": {
+                "description": [
+                    "<p>CSS 変数を生成するために使用する igx パレット。</p>",
+                    ""
+                ]
+            },
+            "scope": {
+                "description": [
+                    "<p>生成された css 変数の範囲。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p><code>$default-palette</code> のため生成された css 変数。</p>",
+                    ""
+                ],
+                "code": [
+                    "@include css-vars-from-palette($default-palette, ':root');"
+                ]
+            }
+        ]
+    },
+    "igx-color-classes": {
+        "description": [
+            "<p>クラス名に連結されたオプションのプレフィクスとサフィックスを持つ指定されたプロパティで色のパレットのすべての色の CSS クラス色を生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "prop": {
+                "description": [
+                    "<p>色のパレットに割り当てられる CSS プロパティ。</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>クラス名に連結するプレフィックス。</p>",
+                    ""
+                ]
+            },
+            "suffix": {
+                "description": [
+                    "<p>クラス名に連結される接尾辞。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>パレットの色でバックグラウンド クラスを生成します。</p>",
+                    ""
+                ],
+                "code": [
+                    "// 次のようなクラス名を生成します。",
+                    "// .igx-primary-500-bg { ... };",
+                    "@include igx-color-classes(",
+                    "  $prop: 'background-color',",
+                    "  $suffix: 'bg'",
+                    ");"
+                ]
+            }
+        ]
+    },
+    "css-vars-from-theme": {
+        "description": [
+            "<p>コンポーネント テーマのキー値のペアのマップを css 変数に解析します。</p>",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "<p>CSS 変数の生成に使用されるコンポーネント テーマ。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>テーマの色を CSS 変数に変換します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-theme: igx-avatar-theme($icon-color: red);",
+                    ":root {",
+                    "  @include css-vars-from-theme($my-theme);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "igx-root-css-vars": {
+        "description": [
+            "<p>グローバル ルート スコープにテーマの色を追加します。",
+            "操作が一度のみ完了されるようにします。</p>",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "<p>CSS 変数に scss Convert に変換する</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "ためのコンポーネント テーマ。"
+                ]
+            }
+        ]
+    },
+    "igx-css-vars": {
+        "description": [
+            "<p>特定の要素にスコープしたテーマの色を追加します。</p>",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "<p>CSS 変数に scss Convert に変換する</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "ためのコンポーネント テーマ"
+                ]
+            }
+        ]
+    },
+    "igx-scope": {
+        "description": [
+            "<p>定義済みの最上位の親セレクター CSS ルールをスコープします。",
+            "セレクター スコープと特定性を守ります。</p>",
+            ""
+        ],
+        "parameters": {
+            "parent": {
+                "description": [
+                    "<p>最上位レベルのスコープとして使用されるセレクター。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>&#39;.Igx-typography&#39; は存在するのみの場合、mixin スタイルのルールを適用します。</p>",
+                    ""
+                ],
+                "code": [
+                    "@mixin igx-card-typography {",
+                    "   @include igx-scope('.igx-typography') {",
+                    "     // スタイルのルール",
+                    "   }",
+                    "}",
+                    "",
+                    "// 後で",
+                    ".my-selector {",
+                    "  @include igx-card-typography();",
+                    "}",
+                    "",
+                    "// 生成された XAML",
+                    "// .igx-typography .my-selector {",
+                    "// igx-card-typography mixin に生成されたスタイルのルール",
+                    "// }"
+                ]
+            }
+        ]
+    }
+}

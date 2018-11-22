@@ -1,0 +1,265 @@
+{
+    "em": {
+        "description": [
+            "<p>Converts pixels to relative values (em).</p>",
+            ""
+        ],
+        "parameters": {
+            "pixels": {
+                "description": [
+                    "<p>The pixel value to be converted.</p>",
+                    ""
+                ]
+            },
+            "context": {
+                "description": [
+                    "<p>The base context to convert against.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "rem": {
+        "description": [
+            "<p>Pixels to root relative values (rem).</p>",
+            ""
+        ],
+        "parameters": {
+            "pixels": {
+                "description": [
+                    "<p>The pixel value to be converted.</p>",
+                    ""
+                ]
+            },
+            "context": {
+                "description": [
+                    "<p>The base context to convert against.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "luminance": {
+        "description": [
+            "<p>Calculates the luminance for a given color.",
+            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a>.</p>",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "<p>The color to calculate luminance for.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "contrast": {
+        "description": [
+            "<p>Calculates the contrast ratio between two colors.",
+            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a></p>",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "<p>The background color.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>The foreground color.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": [
+            "<p>The contrast ratio between the background and foreground colors.</p>",
+            ""
+        ]
+    },
+    "is-direction": {
+        "description": [
+            "<p>Test if <code>$value</code> is a valid direction.</p>",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "<p>The value to test.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "is-component": {
+        "description": [
+            "<p>Test if a component, or list of components",
+            "is in the list of known components.</p>",
+            ""
+        ],
+        "parameters": {
+            "excludes": {
+                "description": [
+                    "<p>The components list to check in.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": [
+            "<p>The list of passed items.</p>",
+            ""
+        ]
+    },
+    "to-string": {
+        "description": [
+            "<p>Converts numbers to HEX value strings.</p>",
+            ""
+        ],
+        "parameters": {
+            "num": {
+                "description": [
+                    "<p>The number to convert.</p>",
+                    ""
+                ]
+            },
+            "radix": {
+                "description": [
+                    "<p>The base radix to use for the conversion.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": [
+            "<p>The resulting string.</p>",
+            ""
+        ]
+    },
+    "hexrgba": {
+        "description": [
+            "<p>Converts a rgba color to a hexidecimal color.</p>",
+            ""
+        ],
+        "parameters": {
+            "rgba": {
+                "description": [
+                    "<p>The rgba color to convert.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": [
+            "<p>The hexidecimal representation of the rgba value.</p>",
+            ""
+        ]
+    },
+    "extend": {
+        "description": [
+            "<p>Extends a Map object with the properties of another Map object.</p>",
+            ""
+        ],
+        "parameters": {
+            "map1": {
+                "description": [
+                    "<p>The source map to get extended.</p>",
+                    ""
+                ]
+            },
+            "map2": {
+                "description": [
+                    "<p>The map extending the source map.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": [
+            "<p>Returns the original map extended with the properties of the second map.</p>",
+            ""
+        ]
+    },
+    "implode": {
+        "description": [
+            "<p>Returns a string from the elements of a list.",
+            "Works recursively so the elements can be lists themselves.</p>",
+            ""
+        ],
+        "parameters": {
+            "list": {
+                "description": [
+                    "<p>A list of elements to be turned into a string.</p>",
+                    ""
+                ]
+            },
+            "glue": {
+                "description": [
+                    "<p>A string symbol to join the elements by.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "--var": {
+        "description": [
+            "<p>Returns a CSS property value. It could return either css &#39;--var&#39; or",
+            "a plain string value based on theme configuration.</p>",
+            ""
+        ],
+        "parameters": {
+            "map": {
+                "description": [
+                    "<p>The source theme to be used to read values from.</p>",
+                    ""
+                ]
+            },
+            "key": {
+                "description": [
+                    "<p>A key from the theme map to assign as value to the property.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": [
+            "<p>The value of the key in the passed map, or the name of key concatenated with the key name.</p>",
+            ""
+        ],
+        "example": [
+            {
+                "description": [
+                    "<p>Assign the color property in a rule-set to a value from the default avatar theme.</p>",
+                    ""
+                ],
+                "code": [
+                    "%igx-avatar-icon {",
+                    "  color: --var($avatar-theme, 'icon-color');",
+                    "}",
+                    "// If legacy-support is off, it will produce the following:",
+                    "// %igx-avatar-icon {",
+                    "//   color: var(--igx-avatar-icon-color);",
+                    "// }",
+                    "// otherwise, it will return the value for key 'icon-color' in the '$avatar-theme';"
+                ]
+            }
+        ]
+    },
+    "str-split": {
+        "description": [
+            "<p>Splits a string into a list by a given separator.</p>",
+            ""
+        ],
+        "parameters": {
+            "string": {
+                "description": [
+                    "<p>The string to split.</p>",
+                    ""
+                ]
+            },
+            "separator": {
+                "description": [
+                    "<p>The string separator to split the string by.</p>",
+                    ""
+                ]
+            }
+        }
+    }
+}
