@@ -1,0 +1,76 @@
+﻿{
+    "bem-block": {
+        "description": [
+            "<p>Class-selector になります。この mixin の目的は BEM ブロックの開始を表すことです。</p>",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "<p>ブロックの名前。</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "bem-elem": {
+        "description": [
+            "<p>コンテキストに基づいて BEM 要素セレクターになります。",
+            "ブロックの中で、ルート レベルの <code>.block__elem</code> を作成します。",
+            "Mod または疑似セレクターの中に入れ子にされた <code>.block--mod .block__elem</code> を作成します。",
+            "$Mod を含む場合、ブロック セレクターに追加されます。複数 $mods はサポートしません。</p>",
+            ""
+        ],
+        "parameters": {
+            "elem": {
+                "description": [
+                    "<p>サブ要素の名前。</p>",
+                    ""
+                ]
+            },
+            "m": {
+                "description": [
+                    "<p>修飾の名前。</p>",
+                    ""
+                ]
+            },
+            "mod": {
+                "description": [
+                    "<p><code>$m</code> のエイリアス。</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "bem-mod": {
+        "description": [
+            "<p>BEM ブロック修飾になります。",
+            "この mixin は 要素修飾を生成しません。代わりに bem-elem mixin を使用してください。",
+            "操作の意味が不明なため、疑似セレクター内に bem-mod のネストはサポートしません。</p>",
+            ""
+        ],
+        "parameters": {
+            "mod": {
+                "description": [
+                    "<p>修飾の名前。</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "bem-mods": {
+        "description": [
+            "<p>block--modifier.[block--modifier...] .block__el になります。 ",
+            "Mixin はブロックまたはブロック要素に 2 つ以上の修飾は同時に適用されるときに役に立ちます。</p>",
+            ""
+        ],
+        "parameters": {
+            "mods": {
+                "description": [
+                    "<p>修飾のリスト。</p>",
+                    ""
+                ]
+            }
+        }
+    }
+}
