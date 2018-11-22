@@ -1,68 +1,118 @@
 {
-    "IgxGridComponent": {
+    "IgxTreeGridComponent": {
         "comment": {
             "text": [
-                "The Ignite UI Grid is used for presenting and manipulating tabular data in the simplest way possible.  Once data",
-                "has been bound, it can be manipulated through filtering, sorting & editing operations.",
+                "The Ignite UI Tree Grid displays and manipulates hierarchical data with consistent schema formatted as a table and",
+                "provides features such as sorting, filtering, editing, column pinning, paging, column moving and hiding.",
                 "Example:",
                 "```html",
-                "<igx-grid [data]=\"employeeData\" autoGenerate=\"false\">",
+                "<igx-tree-grid [data]=\"employeeData\" primaryKey=\"employeeID\" foreignKey=\"PID\" autoGenerate=\"false\">",
                 "  <igx-column field=\"first\" header=\"First Name\"></igx-column>",
                 "  <igx-column field=\"last\" header=\"Last Name\"></igx-column>",
                 "  <igx-column field=\"role\" header=\"Role\"></igx-column>",
-                "</igx-grid>",
+                "</igx-tree-grid>",
                 "```"
             ],
             "shortText": [
-                "**Ignite UI for Angular Grid** -",
+                "**Ignite UI for Angular Tree Grid** -",
                 "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid.html)"
             ]
         },
         "properties": {
-            "groupsExpanded": {
+            "rootRecords": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that determines whether created groups are rendered expanded or collapsed.",
-                        "The default rendered state is expanded.",
+                        "Returns an array of the root level `ITreeGridRecord`s.",
+                        "```typescript",
+                        "// gets the root record with index=2",
+                        "const states = this.grid.rootRecords[2];",
+                        "```"
+                    ]
+                }
+            },
+            "records": {
+                "comment": {
+                    "shortText": [
+                        "Returns a map of all `ITreeGridRecord`s.",
+                        "```typescript",
+                        "// gets the record with primaryKey=2",
+                        "const states = this.grid.records.get(2);",
+                        "```"
+                    ]
+                }
+            },
+            "processedRootRecords": {
+                "comment": {
+                    "shortText": [
+                        "Returns an array of processed (filtered and sorted) root `ITreeGridRecord`s.",
+                        "```typescript",
+                        "// gets the processed root record with index=2",
+                        "const states = this.grid.processedRootRecords[2];",
+                        "```"
+                    ]
+                }
+            },
+            "processedRecords": {
+                "comment": {
+                    "shortText": [
+                        "Returns a map of all processed (filtered and sorted) `ITreeGridRecord`s.",
+                        "```typescript",
+                        "// gets the processed record with primaryKey=2",
+                        "const states = this.grid.processedRecords.get(2);",
+                        "```"
+                    ]
+                }
+            },
+            "childDataKey": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the child data key of the `IgxTreeGridComponent`.",
                         "```html",
-                        "<igx-grid #grid [data]=\"Data\" [groupsExpanded]=\"false\" [autoGenerate]=\"true\"></igx-grid>",
+                        "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"employees\" [autoGenerate]=\"true\"></igx-tree-grid>",
                         "```"
                     ]
                 }
             },
-            "groupsRecords": {
+            "foreignKey": {
                 "comment": {
                     "shortText": [
-                        "A hierarchical representation of the group by records.",
-                        "```typescript",
-                        "let groupRecords = this.grid.groupsRecords;",
+                        "An @Input property that sets the foreign key of the `IgxTreeGridComponent`.",
+                        "```html",
+                        "<igx-tree-grid #grid [data]=\"employeeData\" [primaryKey]=\"employeeID\" [foreignKey]=\"parentID\" [autoGenerate]=\"true\"></igx-tree-grid>",
                         "```"
                     ]
                 }
             },
-            "onGroupingDone": {
+            "cascadeOnDelete": {
                 "comment": {
                     "shortText": [
-                        "Emitted when a new `IgxColumnComponent` gets grouped/ungrouped, or multiple columns get",
-                        "grouped/ungrouped at once by using the Group By API.",
-                        "The `onGroupingDone` event would be raised only once if several columns get grouped at once by calling",
-                        "the `groupBy()` or `clearGrouping()` API methods and passing an array as an argument.",
-                        "The event arguments provide the `expressions`, `groupedColumns` and `ungroupedColumns` properties, which contain",
-                        "the `ISortingExpression` and the `IgxColumnComponent` related to the grouping/ungrouping operation.",
-                        "Please note that `groupedColumns` and `ungroupedColumns` show only the **newly** changed columns (affected by the **last**",
-                        "grouping/ungrouping operation), not all columns which are currently grouped/ungrouped.",
-                        "columns.",
+                        "An @Input property indicating whether child records should be deleted when their parent gets deleted.",
+                        "By default it is set to true and deletes all children along with the parent.",
+                        "```html",
+                        "<igx-tree-grid [data]=\"employeeData\" [primaryKey]=\"employeeID\" [foreignKey]=\"parentID\" cascadeOnDelete=\"false\" [autoGenerate]=\"true\">",
+                        "</igx-tree-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "onRowToggle": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when the expanded state of a row gets changed.",
                         "```typescript",
-                        "groupingDone(event: IGroupingDoneEventArgs){",
-                        "    const expressions = event.expressions;",
-                        "    //the newly grouped columns",
-                        "    const groupedColumns = event.groupedColumns;",
-                        "    //the newly ungrouped columns",
-                        "    const ungroupedColumns = event.ungroupedColumns;",
+                        "rowToggle(event: IRowToggleEventArgs){",
+                        " // the id of the row",
+                        " const rowID = event.rowID;",
+                        " // the new expansion state",
+                        " const newExpandedState = event.expanded;",
+                        " // the original event that triggered onRowToggle",
+                        " const originalEvent = event.event;",
+                        " // whether the event should be cancelled",
+                        " event.cancel = true;",
                         "}",
                         "```",
                         "```html",
-                        "<igx-grid #grid [data]=\"localData\" (onGroupingDone)=\"groupingDone($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                        "<igx-tree-grid [data]=\"employeeData\" (onRowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-tree-grid>",
                         "```"
                     ]
                 }
@@ -155,41 +205,6 @@
                         "```html",
                         "<igx-grid #grid [data]=\"Data\" [emptyGridMessage]=\"'The grid is empty'\" [autoGenerate]=\"true\"></igx-grid>",
                         "```"
-                    ]
-                }
-            },
-            "dropAreaMessage": {
-                "comment": {
-                    "shortText": [
-                        "An @Input property that sets the message displayed inside the GroupBy drop area where columns can be dragged on.",
-                        "Note: The grid needs to have at least one groupable column in order the GroupBy area to be displayed.",
-                        "```html",
-                        "<igx-grid dropAreaMessage=\"Drop here to group!\">",
-                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
-                        "</igx-grid>",
-                        "```"
-                    ]
-                }
-            },
-            "dropAreaTemplate": {
-                "comment": {
-                    "text": [
-                        "<ng-template #myDropArea>",
-                        "     <span> Custom drop area! </span>",
-                        "</ng-template>",
-                        "```",
-                        "```ts",
-                        "@ViewChild('myDropArea', { read: TemplateRef })",
-                        "public dropAreaRef: TemplateRef<any>;",
-                        "```"
-                    ],
-                    "shortText": [
-                        "An @Input property that sets the template that will be rendered as a GroupBy drop area.",
-                        "Note: The grid needs to have at least one groupable column in order the GroupBy area to be displayed.",
-                        "```html",
-                        "<igx-grid [dropAreaTemplate]=\"dropAreaRef\">",
-                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
-                        "</igx-grid>"
                     ]
                 }
             },
@@ -367,7 +382,7 @@
                     "shortText": "An @Output property emitting an event when [rowEditable]=\"true\" a row enters edit mode."
                 }
             },
-			"onRowEdit": {
+            "onRowEdit": {
                 "comment": {
                     "text": [
                         "Emits the current row and it's state.",
@@ -684,74 +699,53 @@
             }
         },
         "methods": {
-            "groupBy": {
+            "expandRow": {
+                "comment": {
+                    "shortText": "Expands the `IgxTreeGridRowComponent` with the specified rowID."
+                }
+            },
+            "collapseRow": {
+                "comment": {
+                    "shortText": "Collapses the `IgxTreeGridRowComponent` with the specified rowID."
+                }
+            },
+            "toggleRow": {
+                "comment": {
+                    "shortText": "Toggles the expansion state of the `IgxTreeGridRowComponent` with the specified rowID."
+                }
+            },
+            "expandAll": {
                 "comment": {
                     "shortText": [
-                        "Groups by a new `IgxColumnComponent` based on the provided expression, or modifies an existing one.",
-                        "Also allows for multiple columns to be grouped at once if an array of `ISortingExpression` is passed.",
-                        "The onGroupingDone event would get raised only **once** if this method gets called multiple times with the same arguments.",
+                        "Expands all rows.",
                         "```typescript",
-                        "this.grid.groupBy({ fieldName: name, dir: SortingDirection.Asc, ignoreCase: false });",
-                        "this.grid.groupBy([",
-                        "{ fieldName: name1, dir: SortingDirection.Asc, ignoreCase: false },",
-                        "{ fieldName: name2, dir: SortingDirection.Desc, ignoreCase: true },",
-                        "{ fieldName: name3, dir: SortingDirection.Desc, ignoreCase: false }",
-                        "]);",
+                        "this.grid.expandAll();",
                         "```"
                     ]
                 }
             },
-            "clearGrouping": {
+            "collapseAll": {
                 "comment": {
                     "shortText": [
-                        "Clears all grouping in the grid, if no parameter is passed.",
-                        "If a parameter is provided, clears grouping for a particular column or an array of columns.",
+                        "Collapses all rows.",
                         "```typescript",
-                        "this.grid.clearGrouping(); //clears all grouping",
-                        "this.grid.clearGrouping(\"ID\"); //ungroups a single column",
-                        "this.grid.clearGrouping([\"ID\", \"Column1\", \"Column2\"]); //ungroups multiple columns",
+                        "this.grid.collapseAll();",
                         "```"
                     ]
                 }
             },
-            "isExpandedGroup": {
+            "addRow": {
                 "comment": {
                     "shortText": [
-                        "Returns if a group is expanded or not.",
+                        "Creates a new `IgxTreeGridRowComponent` with the given data. If a parentRowID is not specified, the newly created",
+                        "row would be added at the root level. Otherwise, it would be added as a child of the row whose primaryKey matches",
+                        "the specified parentRowID. If the parentRowID does not exist, an error would be thrown.",
                         "```typescript",
-                        "public groupRow: IGroupByRecord;",
-                        "const expandedGroup = this.grid.isExpandedGroup(this.groupRow);",
-                        "```"
-                    ]
-                }
-            },
-            "toggleGroup": {
-                "comment": {
-                    "shortText": [
-                        "Toggles the expansion state of a group.",
-                        "```typescript",
-                        "public groupRow: IGroupByRecord;",
-                        "const toggleExpGroup = this.grid.toggleGroup(this.groupRow);",
-                        "```"
-                    ]
-                }
-            },
-            "toggleAllGroupRows": {
-                "comment": {
-                    "shortText": [
-                        "Toggles the expansion state of all group rows recursively.",
-                        "```typescript",
-                        "this.grid.toggleAllGroupRows;",
-                        "```"
-                    ]
-                }
-            },
-            "getPinnedWidth": {
-                "comment": {
-                    "shortText": [
-                        "Gets calculated width of the pinned area.",
-                        "```typescript",
-                        "const pinnedWidth = this.grid.getPinnedWidth();",
+                        "const record = {",
+                        "    ID: this.grid.data[this.grid1.data.length - 1].ID + 1,",
+                        "    Name: this.newRecord",
+                        "};",
+                        "this.grid.addRow(record, 1); // Adds a new child row to the row with ID=1.",
                         "```"
                     ]
                 }
@@ -867,20 +861,6 @@
                         "Manually marks the `IgxGridComponent` for change detection.",
                         "```typescript",
                         "this.grid1.markForCheck();",
-                        "```"
-                    ]
-                }
-            },
-            "addRow": {
-                "comment": {
-                    "shortText": [
-                        "Creates a new `IgxGridRowComponent` and adds the data record to the end of the data source.",
-                        "```typescript",
-                        "const record = {",
-                        "    ID: this.grid1.data[this.grid1.data.length - 1].ID + 1,",
-                        "    Name: this.newRecord",
-                        "};",
-                        "this.grid1.addRow(record);",
                         "```"
                     ]
                 }
@@ -1049,45 +1029,12 @@
                     ]
                 }
             },
-            "findNext": {
+            "getPinnedWidth": {
                 "comment": {
                     "shortText": [
-                        "Finds the next occurrence of a given string in the grid and scrolls to the cell if it isn't visible.",
-                        "Returns how many times the grid contains the string.",
+                        "Gets calculated width of the pinned area.",
                         "```typescript",
-                        "this.grid.findNext(\"financial\");",
-                        "```"
-                    ]
-                }
-            },
-            "findPrev": {
-                "comment": {
-                    "shortText": [
-                        "Finds the previous occurrence of a given string in the grid and scrolls to the cell if it isn't visible.",
-                        "Returns how many times the grid contains the string.",
-                        "```typescript",
-                        "this.grid.findPrev(\"financial\");",
-                        "````"
-                    ]
-                }
-            },
-            "refreshSearch": {
-                "comment": {
-                    "shortText": [
-                        "Reapplies the existing search.",
-                        "Returns how many times the grid contains the last search.",
-                        "```typescript",
-                        "this.grid.refreshSearch();",
-                        "```"
-                    ]
-                }
-            },
-            "clearSearch": {
-                "comment": {
-                    "shortText": [
-                        "Removes all the highlights in the cell.",
-                        "```typescript",
-                        "this.grid.clearSearch();",
+                        "const pinnedWidth = this.grid.getPinnedWidth();",
                         "```"
                     ]
                 }
@@ -1167,7 +1114,7 @@
                         "shortText": [
                             "An @Input property that sets the value of the `id` attribute. If not provided it will be automatically generated.",
                             "```html",
-                            "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                            "<igx-tree-grid [id]=\"'igx-tree-grid-1'\"></igx-tree-grid>",
                             "```"
                         ]
                     }
@@ -1177,75 +1124,27 @@
                         "shortText": [
                             "An @Input property that sets the value of the `id` attribute. If not provided it will be automatically generated.",
                             "```html",
-                            "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                            "<igx-tree-grid [id]=\"'igx-tree-grid-1'\"></igx-tree-grid>",
                             "```"
                         ]
                     }
                 }
             },
-            "groupingExpressions": {
+            "transactions": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "Returns the group by state of the `IgxGridComponent`.",
-                            "```typescript",
-                            "let groupByState = this.grid.groupingExpressions;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "Sets the group by state of the `IgxGridComponent` and emits the `onGroupingDone`",
-                            "event with the appropriate arguments.",
-                            "```typescript",
-                            "this.grid.groupingExpressions = [{",
-                            "    fieldName: \"ID\",",
-                            "    dir: SortingDirection.Asc,",
-                            "    ignoreCase: false",
-                            "}];",
-                            "```"
-                        ]
+                        "shortText": "Get transactions service for the grid."
                     }
                 }
             },
-            "groupingExpansionState": {
+            "expansionDepth": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "Returns a list of expansion states for group rows.",
-                            "Includes only states that differ from the default one (controlled through groupsExpanded and states that the user has changed.",
-                            "Contains the expansion state (expanded: boolean) and the unique identifier for the group row (Array).",
-                            "```typescript",
-                            "const groupExpState = this.grid.groupingExpansionState;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "Sets a list of expansion states for group rows.",
-                            "```typescript",
-                            "     this.grid.groupingExpansionState = [{",
-                            "     expanded: false,",
-                            "     hierarchy: [{ fieldName: 'ID', value: 1 }]",
-                            "  }];",
-                            "// You can use DataUtil.getHierarchy(groupRow) to get the group `IgxGridRowComponent` hierarchy.",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "hideGroupedColumns": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "An @Input property that sets whether the grouped columns should be hidden as well.",
-                            "The default value is \"false\"",
+                            "An @Input property that sets the count of levels to be expanded in the `IgxTreeGridComponent`. By default it is",
+                            "set to `Infinity` which means all levels would be expanded.",
                             "```html",
-                            "<igx-grid #grid [data]=\"localData\" [hideGroupedColumns]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"employees\" expansionDepth=\"1\" [autoGenerate]=\"true\"></igx-tree-grid>",
                             "```"
                         ]
                     }
@@ -1253,34 +1152,22 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that sets whether the grouped columns should be hidden as well.",
-                            "The default value is \"false\"",
+                            "An @Input property that sets the count of levels to be expanded in the `IgxTreeGridComponent`. By default it is",
+                            "set to `Infinity` which means all levels would be expanded.",
                             "```html",
-                            "<igx-grid #grid [data]=\"localData\" [hideGroupedColumns]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"employees\" expansionDepth=\"1\" [autoGenerate]=\"true\"></igx-tree-grid>",
                             "```"
                         ]
                     }
                 }
             },
-            "groupsRowList": {
+            "expansionStates": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "A list of all group rows.",
+                            "Returns a list of key-value pairs [row ID, expansion state]. Includes only states that differ from the default one.",
                             "```typescript",
-                            "const groupList = this.grid.groupsRowList;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "groupRowTemplate": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns the template reference of the `IgxGridComponent`'s group row.",
-                            "```",
-                            "const groupRowTemplate = this.grid.groupRowTemplate;",
+                            "const expansionStates = this.grid.expansionStates;",
                             "```"
                         ]
                     }
@@ -1288,55 +1175,11 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "Sets the template reference of the `IgxGridComponent`'s group `IgxGridRowComponent`.",
+                            "Sets a list of key-value pairs [row ID, expansion state].",
                             "```typescript",
-                            "this.grid.groupRowTemplate = myRowTemplate.",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "groupAreaTemplate": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns the template reference of the `IgxGridComponent`'s group area.",
-                            "```typescript",
-                            "const groupAreaTemplate = this.grid.groupAreaTemplate;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "Sets the template reference of the `IgxGridComponent`'s group area.",
-                            "```typescript",
-                            "this.grid.groupAreaTemplate = myAreaTemplate.",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "hasGroupableColumns": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns if the `IgxGridComponent` has groupable columns.",
-                            "```typescript",
-                            "const groupableGrid = this.grid.hasGroupableColumns;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "dropAreaVisible": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns if the grid's group by drop area is visible.",
-                            "```typescript",
-                            "const dropVisible = this.grid.dropAreaVisible;",
+                            "const states = new Map<any, boolean>();",
+                            "states.set(1, true);",
+                            "this.grid.expansionStates = states;",
                             "```"
                         ]
                     }
@@ -1704,7 +1547,7 @@
                     }
                 }
             },
-			"allowFiltering": {
+            "allowFiltering": {
                 "getter": {
                     "comment": {
                         "shortText": [
@@ -1858,13 +1701,6 @@
                             "<igx-grid [pinnedColumnsText]=\"'PinnedCols Text\" [data]=\"data\" [width]=\"'100%'\" [height]=\"'500px'\"></igx-grid>",
                             "```"
                         ]
-                    }
-                }
-            },
-            "transactions": {
-                "getter": {
-                    "comment": {
-                        "shortText": "Get transactions service for the grid."
                     }
                 }
             },
@@ -2234,18 +2070,6 @@
                             "Returns if the `IgxGridComponent` has fiterable columns.",
                             "```typescript",
                             "const filterableGrid = this.grid.hasFilterableColumns;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "hasSummarizedColumns": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns if the `IgxGridComponent` has summarized columns.",
-                            "```typescript",
-                            "const summarizedGrid = this.grid.hasSummarizedColumns;",
                             "```"
                         ]
                     }
