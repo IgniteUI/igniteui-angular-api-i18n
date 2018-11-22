@@ -1,0 +1,80 @@
+{
+    "bem-block": {
+        "description": [
+            "<p>Simply unrolls into a class-selector. The main purpose of using this mixin",
+            "is to clearly denote the start of a BEM block.</p>",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "<p>The block name.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "bem-elem": {
+        "description": [
+            "<p>Unrolls into a proper BEM element selector, depending on the context.",
+            "Inside just a block, yields a root-level <code>.block__elem</code>.",
+            "Inside a mod or pseudo-selector, yields a nested <code>.block--mod .block__elem</code>.",
+            "If $mod is included, it is appended to the block selector. Multiple",
+            "$mods are not supported.</p>",
+            ""
+        ],
+        "parameters": {
+            "elem": {
+                "description": [
+                    "<p>The sub-element name.</p>",
+                    ""
+                ]
+            },
+            "m": {
+                "description": [
+                    "<p>The modifier name.</p>",
+                    ""
+                ]
+            },
+            "mod": {
+                "description": [
+                    "<p>An alias of <code>$m</code>.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "bem-mod": {
+        "description": [
+            "<p>Unrolls into a BEM block-modifier selector.",
+            "This mixin does not generate element-modifiers, the bem-elem mixin instead.",
+            "Nesting bem-mod inside a pseudo-selector is not supported, because what",
+            "that should mean isn&#39;t clear.</p>",
+            ""
+        ],
+        "parameters": {
+            "mod": {
+                "description": [
+                    "<p>The modifier name.</p>",
+                    ""
+                ]
+            }
+        }
+    },
+    "bem-mods": {
+        "description": [
+            "<p>Unrolls into a block--modifier.[block--modifier...] .block__el",
+            "This mixin is useful when we want to apply classes to a block,",
+            "or block element when two or more modifiers are applied in tandem</p>",
+            ""
+        ],
+        "parameters": {
+            "mods": {
+                "description": [
+                    "<p>A list of modifiers</p>",
+                    ""
+                ]
+            }
+        }
+    }
+}
