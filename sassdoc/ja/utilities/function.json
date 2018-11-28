@@ -149,7 +149,7 @@
             },
             "background": {
                 "description": [
-                    "<p>The background color to convert against.</p>",
+                    "<p>変換する背景色。</p>",
                     ""
                 ]
             }
@@ -268,25 +268,22 @@
         },
     "resolve-value": {
         "description": [
-            "<p>Returns a value for a given instruction map, where the",
-            "keys of the map are the names of the functions to be called,",
-            "and the value for a given key is the arguments the function",
-            "should be called with.",
-            "The instruction set is executed left-to-right. The output of",
-            "the first instruction is then passed as input to the next, and so on.</p>",
+            "<p>マップのキーは呼び出される関数の名前で、指定したキーの値は呼び出される関数の引数の指定したインストラクション マップの値を返します。",
+            "インストラクション マップは左から右へ実行します。",
+            "最初のインストラクションの出力は次のインストラクションの入力として渡されます。</p>",
             ""
         ],
         "parameters": {
             "ctx": {
                 "description": [
-                    "<p>The instruction map to be used.</p>",
+                    "<p>使用されるインストラクション マップ。</p>",
                     ""
                 ]
             },
             "extra": {
                 "description": [
-                    "<p>Additional arguments to be passed during function calls.",
-                    "Will only be applied for <code>igx-color</code> and <code>igx-contrast-color</code> functions.</p>",
+                    "<p>関数が呼ばれる時に渡される引数。",
+                    "<Code>igx-color</code> と <code>igx-contrast-color</code> 関数のみ適用されます。</p>",
                     ""
                 ]
             }
@@ -294,7 +291,7 @@
         "example": [
             {
                 "description": [
-                    "<p>Resolve <code>igx-color</code> and apply 80% opacity</p>",
+                    "<p><Code>igx-color</code> を解決して、80% 透明度を適用します。",
                     ""
                 ],
                 "code": [
@@ -302,7 +299,7 @@
                     "  igx-color: ('primary', 500),",
                     "  rgba: .2",
                     ");",
-                    "// $some-palette is a palette we pass as extra arguments",
+                    "// $some-palette は追加の引数として渡されたパレットです。",
                     "$resolved-color: resolve-value($instructions, $some-palette);"
                 ]
             }
@@ -310,31 +307,31 @@
     },
     "apply-palette": {
         "description": [
-            "<p>Applies an <code>igx-palette</code> to a given theme schema.</p>",
+            "<p>指定したテーマ スキーマに <code>igx-palette</code> を適用します。</p>",
             ""
         ],
         "parameters": {
             "schema": {
                 "description": [
-                    "<p>A theme schema.</p>",
+                    "<p>テーマ スキーマ。</p>",
                     ""
                 ]
             },
             "palette": {
                 "description": [
-                    "<p>An igx-palette map.</p>",
+                    "<p>Igx-palette のマップ。</p>",
                     ""
                 ]
             }
         },
         "returns": [
-            "<p>A map with the resolved palette values.</p>",
+            "<p>解決したパレットの値のマップ。</p>",
             ""
         ],
         "example": [
             {
                 "description": [
-                    "<p>Apply an <code>igx-palette</code> to theme schema</p>",
+                    "<p>テーマ スキーマに <code>igx-palette</code> を適用します。</p>",
                     ""
                 ],
                 "code": [
@@ -346,21 +343,20 @@
                     "  ),",
                     "  roundness: 5px",
                     ");",
-                    "$theme: apply-palette($custom-schema, $custom-palette); // A map with palette values resolved."
+                    "$theme: apply-palette($custom-schema, $custom-palette); // 解決したパレットの値のマップ。"
                 ]
             }
         ]
     },
     "is-root": {
         "description": [
-            "<p>Returns true if the scope where it&#39;s called",
-            "is the root of the document.</p>",
+            "<p>呼ばれた範囲がドキュメントのルートの場合、 true を返します。</p>",
             ""
         ],
         "example": [
             {
                 "description": [
-                    "<p>Check if the current scope is root</p>",
+                    "<p>現在の範囲がルートであるかどうかをチェックします。</p>",
                     ""
                 ],
                 "code": [
@@ -368,7 +364,7 @@
                     "  $scope: if(is-root(), ':root', '&');",
                     "",
                     "  #{$scope} {",
-                    "    /* style rules here */",
+                    "    /* スタイルのルールをここに入れます。 */",
                     "  }",
                     "}"
                 ]
@@ -377,7 +373,7 @@
     },
     "random-color": {
         "description": [
-            "<p>Returns a random color.</p>",
+            "<p>ランダムの色を返します。</p>",
             ""
         ]
     }
