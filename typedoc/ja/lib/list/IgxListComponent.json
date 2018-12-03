@@ -2,10 +2,9 @@
     "IgxListComponent": {
         "comment": {
             "text": [
-                "Ignite UI List は項目の行を表示し、ヘッダー項目を 1 つ以上、さらにリスト項目の検索およびフィルタリングをサポートします。",
-                "各リスト項目はすべての有効な HTML または Angular コンポーネントをサポートするテンプレートに設定できます。",
-                "",
-                "例:",
+                "The Ignite UI List displays rows of items and supports one or more header items as well as search and filtering",
+                "of list items. Each list item is completely templateable and will support any valid HTML or Angular component.",
+                "Example:",
                 "```html",
                 "<igx-list>",
                 "  <igx-list-item isHeader=\"true\">Contacts</igx-list-item>",
@@ -14,30 +13,136 @@
                 "    <span class=\"phone\">{{ contact.phone }}</span>",
                 "  </igx-list-item>",
                 "</igx-list>",
-                "```",
-                ""
+                "```"
             ],
             "shortText": [
                 "**Ignite UI for Angular List** -",
-                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/list.html)"
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/list.html)"
             ]
         },
         "properties": {
             "children": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "リストのすべての項目およびヘッダーのコレクションを返します。",
+                        "Returns a collection of all items and headers in the list.",
                         "```typescript",
                         "let listChildren: QueryList = this.list.children;",
                         "```"
                     ]
                 }
             },
-            "id": {
+            "emptyListTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Returns the template which will be used by the IgxList in case there are no list items defined and `isLoading` is set to `false`.",
+                        "```typescript",
+                        "let emptyTemplate = this.list.emptyListTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "dataLoadingTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Returns the template which will be used by the IgxList in case there are no list items defined and `isLoading` is set to `true`.",
+                        "```typescript",
+                        "let loadingTemplate = this.list.dataLoadingTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "listItemLeftPanningTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets/gets the template shown when left panning a list item.",
+                        "Default value is `null`.",
+                        "```html",
+                        " <igx-list [allowLeftPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let itemLeftPanTmpl = this.list.listItemLeftPanningTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "listItemRightPanningTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets/gets the template shown when right panning a list item.",
+                        "Default value is `null`.",
+                        "```html",
+                        " <igx-list [allowLeftPanning] = \"true\"></igx-list>",
+                        "```",
+                        "```typescript",
+                        "let itemRightPanTmpl = this.list.listItemRightPanningTemplate;",
+                        "```"
+                    ]
+                }
+            },
+            "panEndTriggeringThreshold": {
                 "comment": {
                     "shortText": [
-                        "リストの `id` を取得または設定します。",
-                        "設定されない場合、最初のリスト コンポーネントの `id` は `\"igx-list-0\"` になります。",
+                        "Provides a threshold after which the item's panning will be completed automatically.",
+                        "By default this property is set to 0.5 which is 50% of the list item's width.",
+                        "```typescript",
+                        "this.list.panEndTriggeringThreshold = 0.8;",
+                        "```"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets/gets the `id` of the list.",
+                        "If not set, the `id` of the first list component will be `\"igx-list-0\"`.",
                         "```html",
                         "<igx-list id = \"my-first-list\"></igx-list>",
                         "```",
@@ -49,9 +154,17 @@
             },
             "allowLeftPanning": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "項目の左パンニングが許可されるかどうかを取得または設定します。",
-                        "デフォルトは `false` です。",
+                        "Sets/gets whether the left panning of an item is allowed.",
+                        "Default value is `false`.",
                         "```html",
                         " <igx-list [allowLeftPanning] = \"true\"></igx-list>",
                         "```",
@@ -63,9 +176,17 @@
             },
             "allowRightPanning": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "項目の右パンニングが許可されるかどうかを取得または設定します。",
-                        "デフォルトは `false` です。",
+                        "Sets/gets whether the right panning of an item is allowed.",
+                        "Default value is `false`.",
                         "```html",
                         " <igx-list [allowRightPanning] = \"true\"></igx-list>",
                         "```",
@@ -77,10 +198,18 @@
             },
             "isLoading": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "リストがデータを読み込んでいるかどうかを取得または設定します。",
-                        "データの取得中に dataLoadingTemplate を表示するために設定します。",
-                        "デフォルトは `false` です。",
+                        "Sets/gets whether the list is currently loading data.",
+                        "Set it to display the dataLoadingTemplate while data is being retrieved.",
+                        "Default value is `false`.",
                         "```html",
                         " <igx-list [isLoading]=\"true\"></igx-list>",
                         "```",
@@ -92,31 +221,55 @@
             },
             "onLeftPan": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "左パンニング ジェスチャがリスト項目に実行されたときに現在のリストでイベントを発生します。",
-                        "イベント引数として `IgxListItemComponent` への参照を提供します。",
+                        "Emits an event within the current list when left pan gesture is executed on a list item.",
+                        "Provides a reference to an object of type `IListItemPanningEventArgs` as an event argument.",
                         "```html",
-                        "<igx-list [allowLeftPanning]=\"true\" (onLeftPan) = \"onLeftPan($event)\"></igx-list>",
+                        "<igx-list [allowLeftPanning]=\"true\" (onLeftPan)=\"onLeftPan($event)\"></igx-list>",
                         "```"
                     ]
                 }
             },
             "onRightPan": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "右パンニング ジェスチャがリスト項目に実行されたときに現在のリストでイベントを発生します。",
-                        "イベント引数として `IgxListItemComponent` への参照を提供します。",
+                        "Emits an event within the current list when right pan gesture is executed on a list item.",
+                        "Provides a reference to an object of type `IListItemPanningEventArgs` as an event argument.",
                         "```html",
-                        "<igx-list [allowRightPanning]=\"true\" (onRightPan) = \"onRightPan($event)\"></igx-list>",
+                        "<igx-list [allowRightPanning]=\"true\" (onRightPan)=\"onRightPan($event)\"></igx-list>",
                         "```"
                     ]
                 }
             },
             "onPanStateChange": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "パンニング ジェスチャがリスト項目に実行されたときに現在のリストでイベントを発生します。",
-                        "イベント引数として `IgxListItemComponent` および `IgxListPanState` への参照を提供します。",
+                        "Emits an event within the current list when pan gesture is executed on list item.",
+                        "Provides references to the `IgxListItemComponent` and `IgxListPanState` as event arguments.",
                         "```html",
                         "<igx-list (onPanStateChange) = \"onPanStateChange($event)\"></igx-list>",
                         "```"
@@ -125,9 +278,17 @@
             },
             "onItemClicked": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxListComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "リスト項目がクリックされたときに現在のリストでイベントを発生します。",
-                        "イベント引数として `IgxListItemComponent` および `Event` への参照を提供します。",
+                        "Emits an event within the current list when a list item has been clicked.",
+                        "Provides references to the `IgxListItemComponent` and `Event` as event arguments.",
                         " ```html",
                         "<igx-list (onItemClicked) = \"onItemClicked($event)\"></igx-list>",
                         "```"
@@ -140,8 +301,16 @@
             "role": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxListComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "`role` 属性を取得します。",
+                            "Gets the `role` attribute.",
                             "```typescript",
                             "let listRole =  this.list.role;",
                             "```"
@@ -152,8 +321,16 @@
             "isListEmpty": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxListComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "リストが空かどうかを示すブール値を返します。",
+                            "Returns boolean indicating if the list is empty.",
                             "```typescript",
                             "let isEmpty =  this.list.isListEmpty;",
                             "```"
@@ -164,8 +341,16 @@
             "cssClass": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxListComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "リストに `cssClass` 属性があるかどうかを示すブール値を返します。",
+                            "Returns boolean indicating if the list has a `cssClass` attribute.",
                             "```typescript",
                             "let hasCssClass =  this.list.cssClass;",
                             "```"
@@ -176,8 +361,16 @@
             "items": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxListComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "リストのヘッダー以外の `items` を返します。",
+                            "Returns the `items` in the list excluding the headers.",
                             "```typescript",
                             "let listItems: IgxListItemComponent[] = this.list.items;",
                             "```"
@@ -188,8 +381,16 @@
             "headers": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxListComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "リストのヘッダーを返します。",
+                            "Returns the headers in the list.",
                             "```typescript",
                             "let listHeaders: IgxListItemComponent[] =  this.list.headers;",
                             "```"
@@ -201,7 +402,8 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "`IgxListComponent` である `$implicit` 宣言を提供して `list container` への `template context` バインディングを表す `context` オブジェクトを返します。",
+                            "Returns the `context` object which represents the `template context` binding into the `list container`",
+                            "by providing the `$implicit` declaration which is the `IgxListComponent` itself.",
                             "```typescript",
                             "let listComponent =  this.list.context;",
                             "```"
@@ -212,8 +414,16 @@
             "template": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxListComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "空のリストの `template` を返します。",
+                            "Returns the `template` of an empty list.",
                             "```typescript",
                             "let listTemplate = this.list.template;",
                             "```"
@@ -221,7 +431,6 @@
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }
