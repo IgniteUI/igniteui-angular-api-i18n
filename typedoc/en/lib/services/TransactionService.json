@@ -1,4 +1,4 @@
-{
+﻿{
     "TransactionService": {
         "properties": {
             "enabled": {
@@ -8,64 +8,25 @@
             },
             "onStateUpdate": {
                 "comment": {
-                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo."
                 }
-            },
+			},
             "canUndo": {
-                "comment": {
-                    "tags": {
-                        "returns": {
-                            "comment": {
-                                "text": "if there are any transactions in the Undo stack",
-                                "tagName": "returns"
-                            }
-                        }
-                    }
-                }
+                "comment": {}
             },
             "canRedo": {
-                "comment": {
-                    "tags": {
-                        "returns": {
-                            "comment": {
-                                "text": "if there are any transactions in the Redo stack",
-                                "tagName": "returns"
-                            }
-                        }
-                    }
-                }
+                "comment": {}
             }
         },
         "methods": {
             "add": {
                 "comment": {
-                    "parameters": {
-                        "transaction": {
-                            "comment": {
-                                "text": "Transaction to be added"
-                            }
-                        },
-                        "recordRef": {
-                            "comment": {
-                                "text": "Reference to the value of the record in the data source related to the changed item"
-                            }
-                        }
-                    },
-                    "tags": {},
                     "shortText": "Adds provided  transaction with recordRef if any"
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "parameters": {
-                        "id": {
-                            "comment": {
-                                "text": "Optional record id to get transactions for"
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": "Returns all recorded transactions in chronological order"
+                    "shortText": "Returns an array of all T. If id is provided returns last transaction for provided id"
                 }
             },
             "undo": {
@@ -78,66 +39,23 @@
                     "shortText": "Applies the last undone transaction if any"
                 }
             },
-            "getAggregatedChanges": {
+            "aggregatedState": {
                 "comment": {
-                    "parameters": {
-                        "mergeChanges": {
-                            "comment": {
-                                "text": [
-                                    "If set to true will merge each state's value over relate recordRef",
-                                    "and will record resulting value in the related transaction"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {},
                     "shortText": "Returns aggregated changes from all transactions"
                 }
             },
             "getState": {
                 "comment": {
-                    "parameters": {
-                        "id": {
-                            "comment": {
-                                "text": "The id of the record"
-                            }
-                        }
-                    },
-                    "tags": {},
                     "shortText": "Returns the state of the record with provided id"
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "parameters": {
-                        "id": {
-                            "comment": {
-                                "text": "The id of the record to return value for"
-                            }
-                        },
-                        "mergeChanges": {
-                            "comment": {
-                                "text": [
-                                    "If set to true will merge state's value over relate recordRef",
-                                    "and will return merged value"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {},
                     "shortText": "Returns value of the required id including all uncommitted changes"
                 }
             },
             "commit": {
                 "comment": {
-                    "parameters": {
-                        "data": {
-                            "comment": {
-                                "text": "Data source to update"
-                            }
-                        }
-                    },
-                    "tags": {},
                     "shortText": "Applies all transactions over the provided data"
                 }
             },
@@ -156,14 +74,6 @@
             },
             "endPending": {
                 "comment": {
-                    "parameters": {
-                        "commit": {
-                            "comment": {
-                                "text": "Should commit the pending states"
-                            }
-                        }
-                    },
-                    "tags": {},
                     "shortText": [
                         "Clears all pending transactions and aggregated pending state. If commit is set to true",
                         "commits pending states as single transaction"

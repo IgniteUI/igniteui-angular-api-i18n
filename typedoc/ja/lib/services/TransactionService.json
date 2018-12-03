@@ -3,78 +3,170 @@
         "properties": {
             "enabled": {
                 "comment": {
-                    "shortText": "このサービスにトランザクションが有効されたかどうか返します。"
+                    "shortText": "Returns whether transaction is enabled for this service"
                 }
             },
             "onStateUpdate": {
                 "comment": {
-                    "shortText": "トランザクションの状態が変更されたとき発生されるイベント - トランザクションの追加、すべてのトランザクションをコミットする、元に戻す/やり直し。"
+                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
                 }
             },
             "canUndo": {
-                "comment": {}
+                "comment": {
+                    "tags": {
+                        "returns": {
+                            "comment": {
+                                "text": "if there are any transactions in the Undo stack",
+                                "tagName": "returns"
+                            }
+                        }
+                    }
+                }
             },
             "canRedo": {
-                "comment": {}
+                "comment": {
+                    "tags": {
+                        "returns": {
+                            "comment": {
+                                "text": "if there are any transactions in the Redo stack",
+                                "tagName": "returns"
+                            }
+                        }
+                    }
+                }
             }
         },
         "methods": {
             "add": {
                 "comment": {
-                    "shortText": "recordRef を持つ指定されたトランザクションがある場合、追加します。"
+                    "parameters": {
+                        "transaction": {
+                            "comment": {
+                                "text": "Transaction to be added"
+                            }
+                        },
+                        "recordRef": {
+                            "comment": {
+                                "text": "Reference to the value of the record in the data source related to the changed item"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Adds provided  transaction with recordRef if any"
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "shortText": "すべての T の配列を返します。ID は指定された場合、この ID の最後のトランザクションを返します。"
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "Optional record id to get transactions for"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns all recorded transactions in chronological order"
                 }
             },
             "undo": {
                 "comment": {
-                    "shortText": "最後のトランザクションを削除します。"
+                    "shortText": "Remove the last transaction if any"
                 }
             },
             "redo": {
                 "comment": {
-                    "shortText": "最後の元に戻されたトランザクションを削除します。"
+                    "shortText": "Applies the last undone transaction if any"
                 }
             },
-            "aggregatedState": {
+            "getAggregatedChanges": {
                 "comment": {
-                    "shortText": "すべてのトランザクションの集計された変更を返します。"
+                    "parameters": {
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "If set to true will merge each state's value over relate recordRef",
+                                    "and will record resulting value in the related transaction"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns aggregated changes from all transactions"
                 }
             },
             "getState": {
                 "comment": {
-                    "shortText": "指定された ID のレコードの状態を返します。"
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "The id of the record"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns the state of the record with provided id"
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "The id of the record to return value for"
+                            }
+                        },
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "If set to true will merge state's value over relate recordRef",
+                                    "and will return merged value"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns value of the required id including all uncommitted changes"
                 }
             },
             "commit": {
                 "comment": {
-                    "shortText": "指定されたデータ中にすべてのトランザクションを適用します。"
+                    "parameters": {
+                        "data": {
+                            "comment": {
+                                "text": "Data source to update"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Applies all transactions over the provided data"
                 }
             },
             "clear": {
                 "comment": {
-                    "shortText": "すべての選択をクリアします。"
+                    "shortText": "Clears all transactions"
                 }
             },
             "startPending": {
                 "comment": {
                     "shortText": [
-                        "保留された変更を開始します。startPending へのコールの後に渡されたトランザクションはトランザクション ログに追加されません。"
+                        "Starts pending transactions. All transactions passed after call to startPending",
+                        "will not be added to transaction log"
                     ]
                 }
             },
             "endPending": {
                 "comment": {
+                    "parameters": {
+                        "commit": {
+                            "comment": {
+                                "text": "Should commit the pending states"
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": [
-                        "すべての保留中のトランザクションと集計された保留中の状態をクリアします。コミットは true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"
+                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
+                        "commits pending states as single transaction"
                     ]
                 }
             }
