@@ -3,6 +3,14 @@
         "properties": {
             "id": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxExpansionPanelComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
                         "Sets/gets the `id` of the expansion panel component.",
                         "If not set, `id` will have value `\"igx-expansion-panel-0\"`;",
@@ -14,9 +22,100 @@
                         "```"
                     ]
                 }
+            },
+            "collapsed": {
+                "comment": {
+                    "shortText": [
+                        "Gets/sets whether the component is collapsed (its content is hidden)",
+                        "Get",
+                        "```typescript",
+                        " const myPanelState: boolean = this.panel.collapsed;",
+                        "```",
+                        "Set",
+                        "```html",
+                        " this.panel.collapsed = true;",
+                        "```"
+                    ]
+                }
+            },
+            "onCollapsed": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when the expansion panel finishes collapsing",
+                        "```typescript",
+                        " handleCollapsed(event: {",
+                        " panel: IgxExpansionPanelComponent,",
+                        " event: Event",
+                        "})",
+                        "```",
+                        "```html",
+                        " <igx-expansion-panel (onCollapsed)=\"handleCollapsed($event)\">",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        "```"
+                    ]
+                }
+            },
+            "onExpanded": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when the expansion panel finishes expanding",
+                        "```typescript",
+                        " handleExpanded(event: {",
+                        " panel: IgxExpansionPanelComponent,",
+                        " event: Event",
+                        "})",
+                        "```",
+                        "```html",
+                        " <igx-expansion-panel (onExpanded)=\"handleExpanded($event)\">",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        "```"
+                    ]
+                }
             }
         },
-        "methods": {},
+        "methods": {
+            "collapse": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        " <igx-expansion-panel #myPanel>",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        " <button (click)=\"myPanel.collapse($event)\">Collpase Panel</button>",
+                        "```"
+                    ],
+                    "shortText": "Collapses the panel"
+                }
+            },
+            "expand": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        " <igx-expansion-panel #myPanel>",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        " <button (click)=\"myPanel.expand($event)\">Expand Panel</button>",
+                        "```"
+                    ],
+                    "shortText": "Expands the panel"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        " <igx-expansion-panel #myPanel>",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        " <button (click)=\"myPanel.toggle($event)\">Expand Panel</button>",
+                        "```"
+                    ],
+                    "shortText": "Toggles the panel"
+                }
+            }
+        },
         "accessors": {}
     }
 }
