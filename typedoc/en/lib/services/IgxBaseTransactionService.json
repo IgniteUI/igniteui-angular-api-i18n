@@ -1,15 +1,5 @@
 {
-    "IgxHierarchicalTransactionService": {
-        "comment": {
-            "tags": {
-                "experimental": {
-                    "comment": {
-                        "text": "@hidden",
-                        "tagName": "experimental"
-                    }
-                }
-            }
-        },
+    "IgxBaseTransactionService": {
         "properties": {
             "onStateUpdate": {
                 "comment": {
@@ -20,19 +10,30 @@
         "methods": {
             "add": {
                 "comment": {
-                    "tags": {
-                        "inheritdoc": {
-                            "comment": {
-                                "tagName": "inheritdoc"
-                            }
-                        }
-                    }
+                    "tags": {},
+                    "shortText": "Adds provided  transaction with recordRef if any"
                 }
             },
             "getTransactionLog": {
                 "comment": {
                     "tags": {},
                     "shortText": "Returns all recorded transactions in chronological order"
+                }
+            },
+            "undo": {
+                "comment": {
+                    "shortText": "Remove the last transaction if any"
+                }
+            },
+            "redo": {
+                "comment": {
+                    "shortText": "Applies the last undone transaction if any"
+                }
+            },
+            "getAggregatedChanges": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Returns aggregated changes from all transactions"
                 }
             },
             "getState": {
@@ -47,15 +48,6 @@
                     "shortText": "Returns value of the required id including all uncommitted changes"
                 }
             },
-            "endPending": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
-                        "commits pending states as single transaction"
-                    ]
-                }
-            },
             "commit": {
                 "comment": {
                     "tags": {},
@@ -67,16 +59,6 @@
                     "shortText": "Clears all transactions"
                 }
             },
-            "undo": {
-                "comment": {
-                    "shortText": "Remove the last transaction if any"
-                }
-            },
-            "redo": {
-                "comment": {
-                    "shortText": "Applies the last undone transaction if any"
-                }
-            },
             "startPending": {
                 "comment": {
                     "shortText": [
@@ -84,10 +66,19 @@
                         "will not be added to transaction log"
                     ]
                 }
+            },
+            "endPending": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
+                        "commits pending states as single transaction"
+                    ]
+                }
             }
         },
         "accessors": {
-            "canUndo": {
+            "canRedo": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -100,7 +91,7 @@
                     }
                 }
             },
-            "canRedo": {
+            "canUndo": {
                 "getter": {
                     "comment": {
                         "tags": {
