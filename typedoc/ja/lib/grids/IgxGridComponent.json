@@ -522,7 +522,7 @@
                     ],
                     "shortText": [
                         "[rowEditable]=\"true\" & `endEdit(false)` が呼び出されるときに、イベントを発生する @Output プロパティ。",
-                        "Emitted when changing hitting `Esc` key during cell editing and when click on the `Cancel` button in the row editing overlay."
+                        "セル編集のときに `Esc` キーを押して、行編集オーバーレイにキャンセル ボタンを押すと発生されます。"
                     ]
                 }
             },
@@ -676,26 +676,22 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridComponent",
-                                "tagName": "次のメンバー"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "Emitted when a new `IgxColumnComponent` gets grouped/ungrouped, or multiple columns get",
-                        "grouped/ungrouped at once by using the Group By API.",
-                        "The `onGroupingDone` event would be raised only once if several columns get grouped at once by calling",
-                        "the `groupBy()` or `clearGrouping()` API methods and passing an array as an argument.",
-                        "The event arguments provide the `expressions`, `groupedColumns` and `ungroupedColumns` properties, which contain",
-                        "the `ISortingExpression` and the `IgxColumnComponent` related to the grouping/ungrouping operation.",
-                        "Please note that `groupedColumns` and `ungroupedColumns` show only the **newly** changed columns (affected by the **last**",
-                        "grouping/ungrouping operation), not all columns which are currently grouped/ungrouped.",
+                        "Group By API を使用して新しい `IgxColumnComponent` のグループ化/グループ解除、または複数列がグループ化/グループ化解除されたときに発生します。",
+                        "groupBy()` または `clearGrouping()` API メソッドを呼び出して引数として渡すことにより複数列がｚ一度にグループ化された場合に `onGroupingDone` イベントは一度のみ発生します。",
+                        "イベント引数は、`ISortingExpression` とグループ化/グループ解除操作と関連する `IgxColumnComponent` を含む `expressions`、`groupedColumns`、`ungroupedColumns` プロパティを提供します。",
+                        "`groupedColumns` と `ungroupedColumns` は新しく変更 (**最近**のグループ化/グループ解除操作によって影響) された列のみ表示し、現在グループ化/グループ解除されているすべての列ではありません。",
                         "columns.",
                         "```typescript",
                         "groupingDone(event: IGroupingDoneEventArgs){",
                         "    const expressions = event.expressions;",
-                        "    //the newly grouped columns",
+                        "    //新しくグループ化された列",
                         "    const groupedColumns = event.groupedColumns;",
-                        "    //the newly ungrouped columns",
+                        "    //新しくグループ解除された列",
                         "    const ungroupedColumns = event.ungroupedColumns;",
                         "}",
                         "```",
@@ -931,12 +927,12 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridBaseComponent",
-                                "tagName": "次のメンバー"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "Returns the template which will be used by the toolbar to show custom content.",
+                        "カスタム コンテンツを表示するためにツールバーで使用されるテンプレートを返します。",
                         "```typescript",
                         "let customContentTemplate = this.grid.toolbarCustomContentTemplate;",
                         "```"
@@ -1010,11 +1006,11 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridBaseComponent",
-                                "tagName": "次のメンバー"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
-                    "shortText": "Returns the `width` to be set on `IgxGridHeaderGroupComponent`."
+                    "shortText": "`IgxGridHeaderGroupComponent` に設定される  `width` を返します。"
                 }
             },
             "getColumnByName": {
@@ -1337,14 +1333,14 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridComponent",
-                                "tagName": "次のメンバー"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "Groups by a new `IgxColumnComponent` based on the provided expression, or modifies an existing one.",
-                        "Also allows for multiple columns to be grouped at once if an array of `ISortingExpression` is passed.",
-                        "The onGroupingDone event would get raised only **once** if this method gets called multiple times with the same arguments.",
+                        "新しい `IgxColumnComponent` を提供された式によってグループ化、または既存の式を変更します。",
+                        "`ISortingExpression` の配列が渡されると複数列を一度にグループ化できるようになります。",
+                        "このメソッドが同じ引数で複数回呼びだされた場合、onGroupingDone イベントは 1 度のみ発生します。",
                         "```typescript",
                         "this.grid.groupBy({ fieldName: name, dir: SortingDirection.Asc, ignoreCase: false });",
                         "this.grid.groupBy([",
@@ -1869,7 +1865,7 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
@@ -1884,7 +1880,7 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that sets the value of the `id` attribute. If not provided it will be automatically generated.",
+                            "`id` 属性の値を設定する @Input プロパティ。提供されていない場合、自動的に生成されます",
                             "```html",
                             "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
@@ -2041,7 +2037,7 @@
                             }
                         },
                         "shortText": [
-                            "Sets the group by state of the `IgxGridComponent` and emits the `onGroupingDone` event with the appropriate arguments.",
+                            "`IgxGridComponent` の状態によってグループ化を設定し、適切な引数で `onGroupingDone` イベントを発生します。",
                             "```typescript",
                             "this.grid.groupingExpressions = [{",
                             "    fieldName: \"ID\",",
@@ -2137,7 +2133,7 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
@@ -2154,7 +2150,7 @@
                 },
                 "getter": {
                     "comment": {
-                        "shortText": "An accessor that returns the message displayed inside the GroupBy drop area where columns can be dragged on."
+                        "shortText": "列にドラッグできる GroupBy のドロップ領域に表示されるメッセージを返すアクセサー。"
                     }
                 }
             },
@@ -2553,7 +2549,7 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
@@ -2567,7 +2563,7 @@
                 },
                 "getter": {
                     "comment": {
-                        "shortText": "An accessor that returns the message displayed when there are no records."
+                        "shortText": "レコードがない場合に表示されるメッセージを返すアクセサー。"
                     }
                 }
             },
@@ -2578,7 +2574,7 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
@@ -2592,7 +2588,7 @@
                 },
                 "getter": {
                     "comment": {
-                        "shortText": "An accessor that returns the message displayed when there are no records and the grid is filtered."
+                        "shortText": "レコードがなく、グリッドがフィルターされた場合に表示されるメッセージを返すアクセサー。"
                     }
                 }
             },
@@ -3352,14 +3348,14 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
                         "shortText": [
-                            "Returns the `IgxGridHeaderGroupComponent`'s minimum allowed width.",
-                            "Used internally for restricting header group component width.",
-                            "The values below depend on the header cell default right/left padding values."
+                            "`IgxGridHeaderGroupComponent` の最小許容幅を返します。",
+                            "ヘッダー グループ コンポーネントの幅を制限するために内部で使用されます。",
+                            "以下の値は、ヘッダーセルのデフォルトの右/左パディング値に基づいています。"
                         ]
                     }
                 }
@@ -3649,14 +3645,14 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An accessor that sets the resource strings.",
-                            "By default it uses EN resources."
+                            "リソース文字列を設定するアクセサー。",
+                            "デフォルトで EN リソースを使用します。"
                         ]
                     }
                 },
                 "getter": {
                     "comment": {
-                        "shortText": "An accessor that returns the resource strings."
+                        "shortText": "リソース文字列を返すアクセサー。"
                     }
                 }
             },

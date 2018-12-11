@@ -1,0 +1,185 @@
+{
+    "IgxBannerComponent": {
+        "comment": {
+            "text": [
+                "Ignite UI Banner は、テンプレート化が可能な簡単に使用できるバナーです。",
+                "使用方法:",
+                "```html",
+                "<igx-banner #banner>",
+                "  プライバシーの設定が変更されました。",
+                " <igx-banner-actions>",
+                "     <button igxButton=\"raised\">更に表示</button>",
+                "     <button igxButton=\"raised\">承諾して続行</button>",
+                " </igx-banner-actions>",
+                "</igx-banner>",
+                "```"
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Banner** -",
+                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/banner.html)"
+            ]
+        },
+        "properties": {
+            "onOpened": {
+                "comment": {
+                    "shortText": [
+                        "バナー表示後に発生します。",
+                        "```typescript",
+                        "public handleOpened(event) {",
+                        " ...",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-banner (onOpened)=\"handleOpened($event)\"></igx-banner>",
+                        "```"
+                    ]
+                }
+            },
+            "onOpening": {
+                "comment": {
+                    "shortText": [
+                        "バナー表示前に発生します。",
+                        "```typescript",
+                        "public handleOpening(event) {",
+                        " ...",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-banner (onOpening)=\"handleOpening($event)\"></igx-banner>",
+                        "```"
+                    ]
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "shortText": [
+                        "バナー非表示後に発生します。",
+                        "```typescript",
+                        "public handleClosed(event) {",
+                        " ...",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-banner (onClosed)=\"handleClosed($event)\"></igx-banner>",
+                        "```"
+                    ]
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "shortText": [
+                        "バナー非表示前に発生します。",
+                        "```typescript",
+                        "public handleClosing(event) {",
+                        " ...",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-banner (onClosing)=\"handleClosing($event)\"></igx-banner>",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "open": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        " myBanner.open();",
+                        "```",
+                        "```html",
+                        "<igx-banner #banner>",
+                        "...",
+                        "</igx-banner>",
+                        "<button (click)=\"banner.open()\">バナーを開く</button>",
+                        "```"
+                    ],
+                    "shortText": "バナーを開きます。"
+                }
+            },
+            "close": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        " myBanner.close();",
+                        "```",
+                        "```html",
+                        "<igx-banner #banner>",
+                        "...",
+                        "</igx-banner>",
+                        "<button (click)=\"banner.close()\">バナーを閉じる</button>",
+                        "```"
+                    ],
+                    "shortText": "バナーを閉じます。"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        " myBanner.toggle();",
+                        "```",
+                        "```html",
+                        "<igx-banner #banner>",
+                        "...",
+                        "</igx-banner>",
+                        "<button (click)=\"banner.toggle()\">バナーを切り替える</button>",
+                        "```"
+                    ],
+                    "shortText": "バナーを切り替えます。"
+                }
+            }
+        },
+        "accessors": {
+            "animationSettings": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "バナーの open/close メソッドで使用されるアニメーション設定を取得します。",
+                            "```typescript",
+                            "let currentAnimations: AnimationSettings = banner.animationSettings",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "バナーの open/close メソッドで使用されるアニメーション設定を設定します。",
+                            "```typescript",
+                            "import { slideInLeft, slideOutRight } from 'igniteui-angular';",
+                            "...",
+                            "banner.animationSettings: AnimationSettings = { openAnimation: slideInLeft, closeAnimation: slideOutRight };",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "const isCollapsed: boolean = banner.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "バナーが閉じられるかどうかを取得します。"
+                    }
+                }
+            },
+            "element": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "バナー コンポーネントのネイティブ要素を返します。",
+                            "```typescript",
+                            " const myBannerElement: HTMLElement = banner.element;",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

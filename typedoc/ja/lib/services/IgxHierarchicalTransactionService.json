@@ -5,7 +5,7 @@
                 "experimental": {
                     "comment": {
                         "text": "@hidden",
-                        "tagName": "experimental"
+                        "tagName": "試験"
                     }
                 }
             }
@@ -13,7 +13,7 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
-                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                    "shortText": "トランザクションの状態が変更されたとき発生されるイベント - トランザクションの追加、すべてのトランザクションをコミットする、元に戻す/やり直し。"
                 }
             }
         },
@@ -32,56 +32,54 @@
             "getTransactionLog": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Returns all recorded transactions in chronological order"
+                    "shortText": "登録されたすべてのレコードを時系列順に返します。"
                 }
             },
             "getState": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Returns the state of the record with provided id"
+                    "shortText": "指定された ID のレコードの状態を返します。"
                 }
             },
             "getAggregatedValue": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Returns value of the required id including all uncommitted changes"
+                    "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
                 }
             },
             "endPending": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
-                        "commits pending states as single transaction"
+                        "すべての保留中のトランザクションと集計された保留中の状態をクリアします。Commit は true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"
                     ]
                 }
             },
             "commit": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Applies all transactions over the provided data"
+                    "shortText": "指定されたデータ中にすべてのトランザクションを適用します。"
                 }
             },
             "clear": {
                 "comment": {
-                    "shortText": "Clears all transactions"
+                    "shortText": "すべてのトランザクションをクリアします。"
                 }
             },
             "undo": {
                 "comment": {
-                    "shortText": "Remove the last transaction if any"
+                    "shortText": "最後のトランザクションを削除します。"
                 }
             },
             "redo": {
                 "comment": {
-                    "shortText": "Applies the last undone transaction if any"
+                    "shortText": "最後の元に戻されたトランザクションを削除します。"
                 }
             },
             "startPending": {
                 "comment": {
                     "shortText": [
-                        "Starts pending transactions. All transactions passed after call to startPending",
-                        "will not be added to transaction log"
+                        "保留された変更を開始します。startPending へのコールの後に渡されたトランザクションはトランザクション ログに追加されません。"
                     ]
                 }
             }
@@ -123,7 +121,7 @@
                                 }
                             }
                         },
-                        "shortText": "Returns whether transaction is enabled for this service"
+                        "shortText": "このサービスにトランザクションが有効されたかどうか返します。"
                     }
                 }
             }
