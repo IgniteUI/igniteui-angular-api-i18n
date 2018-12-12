@@ -229,6 +229,17 @@
             }
         },
         "methods": {
+            "focusSearchInput": {
+                "comment": {
+                    "tags": {
+                        "hidden;": {
+                            "comment": {
+                                "tagName": "hidden;"
+                            }
+                        }
+                    }
+                }
+            },
             "toggle": {
                 "comment": {
                     "text": [
@@ -264,26 +275,88 @@
             },
             "selectedItems": {
                 "comment": {
+                    "tags": {},
                     "shortText": "Get current selection state"
                 }
             },
             "selectItems": {
                 "comment": {
+                    "parameters": {
+                        "newItems": {
+                            "comment": {
+                                "text": "new items to be selected"
+                            }
+                        },
+                        "clearCurrentSelection": {
+                            "comment": {
+                                "text": [
+                                    "if true clear previous selected items",
+                                    "```typescript",
+                                    "// get",
+                                    "this.combo.selectItems([\"New York\", \"New Jersey\"]);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "Select defined items"
                 }
             },
             "deselectItems": {
                 "comment": {
+                    "parameters": {
+                        "items": {
+                            "comment": {
+                                "text": [
+                                    "items to deselected",
+                                    "```typescript",
+                                    "// get",
+                                    "this.combo.deselectItems([\"New York\", \"New Jersey\"]);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "Deselect defined items"
                 }
             },
             "selectAllItems": {
                 "comment": {
+                    "parameters": {
+                        "ignoreFilter": {
+                            "comment": {
+                                "text": [
+                                    "if set to true, selects all items, otherwise selects only the filtered ones.",
+                                    "```typescript",
+                                    "// get",
+                                    "this.combo.selectAllItems();",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "Select all (filtered) items"
                 }
             },
             "deselectAllItems": {
                 "comment": {
+                    "parameters": {
+                        "ignoreFilter": {
+                            "comment": {
+                                "text": [
+                                    "if set to true, deselects all items, otherwise deselects only the filtered ones.",
+                                    "```typescript",
+                                    "// get",
+                                    "this.combo.deselectAllItems();",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "Deselect all (filtered) items"
                 }
             }
@@ -543,6 +616,25 @@
                             "```"
                         ],
                         "shortText": "Gets drop down state."
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the theme of the component.",
+                            "The default theme is `comfortable`.",
+                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the theme of the component."
                     }
                 }
             }
