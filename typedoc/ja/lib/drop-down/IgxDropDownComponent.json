@@ -4,7 +4,6 @@
             "text": [
                 "Ignite UI for Angular Drop Down は、単一項目の選択が可能なグループ項目をスクロール付きのリストで表示します。",
                 "項目をクリックまたはタップして選択するとドロップダウンが閉じられます。",
-                "",
                 "例:",
                 "```html",
                 "<igx-drop-down>",
@@ -12,8 +11,7 @@
                 "    {{ item.value }}",
                 "  </igx-drop-down-item>",
                 "</igx-drop-down>",
-                "```",
-                ""
+                "```"
             ],
             "shortText": [
                 "**Ignite UI for Angular DropDown** -",
@@ -26,8 +24,7 @@
                     "text": [
                         "```html",
                         "<igx-drop-down (onSelection)='handleSelection()'></igx-drop-down>",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "選択を完了する前にアイテム選択が変更されるときに発生されます。"
@@ -39,8 +36,7 @@
                     "text": [
                         "```html",
                         "<igx-drop-down (onOpening)='handleOpening()'></igx-drop-down>",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "ドロップダウンが開かれる前に発生されます。"
@@ -52,8 +48,7 @@
                     "text": [
                         "```html",
                         "<igx-drop-down (onOpened)='handleOpened()'></igx-drop-down>",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "ドロップダウンが開かれた後に発生されます。"
@@ -65,8 +60,7 @@
                     "text": [
                         "```html",
                         "<igx-drop-down (onClosing)='handleClosing()'></igx-drop-down>",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "ドロップダウンが閉じられる前に発生されます。"
@@ -78,8 +72,7 @@
                     "text": [
                         "```html",
                         "<igx-drop-down (onClosed)='handleClosed()'></igx-drop-down>",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "ドロップダウンが閉じられた後に発生されます。"
@@ -91,26 +84,47 @@
                     "text": [
                         "注: IgxDropDownItemNavigation ディレクティブの使用時はフォーカスの移動に注意してください。キーボード イベントを処理するためにディレクティブを各フォーカス可能な項目に配置または共有の先祖に配置します。",
                         "```typescript",
-                        "// get",
+                        "// 取得",
                         "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
                         "```",
-                        "",
                         "```html",
                         "<!--set-->",
                         "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "項目がフォーカスを取得するかどうかを取得または設定します。デフォルトで無効です。",
                         "有効な場合、ドロップダウン項目にタブ インデックスが指定され、アクティブな場合にフォーカスされます。これには、ドロップダウンを開き、キーボード ナビゲーションを使用して移動すると選択した項目のアクティブ化が含まれます。"
                     ]
                 }
+            },
+            "maxHeight": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let maxHeight = this.dropdown.maxHeight;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-drop-down [maxHeight]='200px'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップ ダウンのコンテナの最大の高さを取得または設定します。"
+                }
             }
         },
         "methods": {
             "setSelectedItem": {
                 "comment": {
+                    "parameters": {
+                        "index": {
+                            "comment": {
+                                "text": "選択する項目"
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": [
                         "項目をインデックスで選択します。"
                     ]
@@ -121,8 +135,7 @@
                     "text": [
                         "```typescript",
                         "this.dropdown.open();",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "ドロップダウンを開きます。"
@@ -134,8 +147,7 @@
                     "text": [
                         "```typescript",
                         "this.dropdown.close();",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "ドロップダウンを閉じます。"
@@ -147,8 +159,7 @@
                     "text": [
                         "```typescript",
                         "this.dropdown.toggle();",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "ドロップダウンを切り替えます。"
@@ -162,10 +173,9 @@
                     "comment": {
                         "text": [
                             "```typescript",
-                            "// get",
+                            "// 取得",
                             "let myDropDownCurrentWidth = this.dropdown.width;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             " ドロップダウンの幅を取得します。"
@@ -178,8 +188,7 @@
                             "```html",
                             "<!--set-->",
                             "<igx-drop-down [width]='160px'></igx-drop-down>",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "ドロップダウンの幅を設定します。"
@@ -192,10 +201,9 @@
                     "comment": {
                         "text": [
                             "```typescript",
-                            "// get",
+                            "// 取得",
                             "let myDropDownCurrentHeight = this.dropdown.height;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "ドロップダウンの高さを取得します。"
@@ -208,8 +216,7 @@
                             "```html",
                             "<!--set-->",
                             "<igx-drop-down [height]='400px'></igx-drop-down>",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "ドロップダウンの高さを設定します。"
@@ -222,10 +229,9 @@
                     "comment": {
                         "text": [
                             "```typescript",
-                            "// get",
+                            "// 取得",
                             "let myDropDownCurrentId = this.dropdown.id;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "ドロップダウンの id を取得します。"
@@ -238,8 +244,7 @@
                             "```html",
                             "<!--set-->",
                             "<igx-drop-down [id]='newDropDownId'></igx-drop-down>",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "ドロップダウンの id を設定します。"
@@ -253,8 +258,7 @@
                         "text": [
                             "```typescript",
                             "let isCollapsed = this.dropdown.collapsed;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "ドロップダウンが閉じたかどうかを取得します。"
@@ -268,8 +272,7 @@
                         "text": [
                             "```typescript",
                             "let currentItem = this.dropdown.selectedItem;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "現在選択している項目を取得します。"
@@ -283,8 +286,7 @@
                         "text": [
                             "```typescript",
                             "let myDropDownItems = this.dropdown.items;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "すべてのヘッダー以外の項目を取得します。"
@@ -298,8 +300,7 @@
                         "text": [
                             "```typescript",
                             "let myDropDownHeaderItems = this.dropdown.headers;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "すべてのヘッダー項目を取得します。"
@@ -313,8 +314,7 @@
                         "text": [
                             "```typescript",
                             "let myDropDownElement = this.dropdown.element;",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "ドロップダウンの HTML 要素を取得します。"
@@ -322,7 +322,6 @@
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }

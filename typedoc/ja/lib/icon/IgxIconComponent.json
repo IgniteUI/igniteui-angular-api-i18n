@@ -76,7 +76,6 @@
                     "shortText": [
                         "   アイコンの `iconName` の変更を許可する @Input プロパティ。",
                         "   `name` を使用して `iconName` を設定できます。",
-                        "   合字 `name` またはグリフ `iconName` を使用できますが、同時には使用できません。",
                         "```html",
                         "<igx-icon name=\"question_answer\" color=\"blue\" [isActive]=\"true\" fontSet=\"material\"></igx-icon>",
                         "```"
@@ -185,6 +184,23 @@
                     }
                 }
             },
+            "getSvgKey": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            " SVG 画像のキーを返すアクセサー。",
+                            " アンダースコアで区切られた fontSet と iconName で構成されるキー。",
+                            "```typescript",
+                            "@ViewChild(\"MyIcon\")",
+                            "public icon: IgxIconComponent;",
+                            "ngAfterViewInit() {",
+                            "   let svgKey = this.icon.getSvgKey;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "template": {
                 "getter": {
                     "comment": {
@@ -201,7 +217,6 @@
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }

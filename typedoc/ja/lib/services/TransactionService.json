@@ -12,21 +12,60 @@
                 }
             },
             "canUndo": {
-                "comment": {}
+                "comment": {
+                    "tags": {
+                        "returns": {
+                            "comment": {
+                                "text": "Undo スタックにトランザクションがあるかどうか。",
+                                "tagName": "返却"
+                            }
+                        }
+                    }
+                }
             },
             "canRedo": {
-                "comment": {}
+                "comment": {
+                    "tags": {
+                        "returns": {
+                            "comment": {
+                                "text": "Redo スタックにトランザクションがあるかどうか。",
+                                "tagName": "返却"
+                            }
+                        }
+                    }
+                }
             }
         },
         "methods": {
             "add": {
                 "comment": {
+                    "parameters": {
+                        "transaction": {
+                            "comment": {
+                                "text": "追加されるトランザクション。"
+                            }
+                        },
+                        "recordRef": {
+                            "comment": {
+                                "text": "変更された項目に関連するデータ ソースのレコードの値への参照。"
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "recordRef を持つ指定されたトランザクションがある場合、追加します。"
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "shortText": "すべての T の配列を返します。ID は指定された場合、この ID の最後のトランザクションを返します。"
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "トランザクションを取得するオプションのレコード id。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "すべての登録されたレコードを時系列順に返します。"
                 }
             },
             "undo": {
@@ -39,29 +78,70 @@
                     "shortText": "最後の元に戻されたトランザクションを削除します。"
                 }
             },
-            "aggregatedState": {
+            "getAggregatedChanges": {
                 "comment": {
+                    "parameters": {
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "True に設定されている場合、各状態の値を関連する recordRef にマージして、関連するトランザクションに結果の値を登録します。"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "すべてのトランザクションの集計された変更を返します。"
                 }
             },
             "getState": {
                 "comment": {
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "レコードの ID。"
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "指定された ID のレコードの状態を返します。"
                 }
             },
             "getAggregatedValue": {
                 "comment": {
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "レコードの IDのため返す値。"
+                            }
+                        },
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "True に設定されている場合、状態の値を関連する recordRef にマージして、マージされた値を返します。"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
                 }
             },
             "commit": {
                 "comment": {
+                    "parameters": {
+                        "data": {
+                            "comment": {
+                                "text": "変更されるデータ ソース。"
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": "指定されたデータ中にすべてのトランザクションを適用します。"
                 }
             },
             "clear": {
                 "comment": {
-                    "shortText": "すべての選択をクリアします。"
+                    "shortText": "すべてのトランザクションをクリアします。"
                 }
             },
             "startPending": {
@@ -73,8 +153,16 @@
             },
             "endPending": {
                 "comment": {
+                    "parameters": {
+                        "commit": {
+                            "comment": {
+                                "text": "保留中状態をコミットします。"
+                            }
+                        }
+                    },
+                    "tags": {},
                     "shortText": [
-                        "すべての保留中のトランザクションと集計された保留中の状態をクリアします。コミットは true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"
+                        "すべての保留中のトランザクションと集計された保留中の状態をクリアします。Commit は true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"
                     ]
                 }
             }

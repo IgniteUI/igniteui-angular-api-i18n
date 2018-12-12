@@ -1,46 +1,26 @@
 {
     "IgxGridRowComponent": {
         "properties": {
-            "rowData": {
-                "comment": {
-                    "text": [
-                        "```typescript",
-                        "// get the row data for the first selected row",
-                        "let selectedRowData = this.grid.selectedRows[0].rowData;",
-                        "```",
-                        ""
-                    ],
-                    "shortText": [
-                        " 行コンポーネントに渡されるデータ。"
-                    ]
-                }
-            },
             "index": {
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// get the index of the second selected row",
+                        "//2 番目に選択された項目のインデックスを取得します。",
                         "let selectedRowIndex = this.grid.selectedRows[1].index;",
-                        "```",
-                        ""
+                        "```"
                     ],
-                    "shortText": [
-                        "行のインデックス。"
-                    ]
+                    "shortText": "行のインデックス。"
                 }
             },
             "cells": {
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// get the cells of the third selected row",
+                        "//3 番目に選択された行のセルを取得します。",
                         "let selectedRowCells = this.grid.selectedRows[2].cells;",
-                        "```",
-                        ""
+                        "```"
                     ],
-                    "shortText": [
-                        "行コンポーネントの描画されるセル。"
-                    ]
+                    "shortText": "行コンポーネントの描画されるセル。"
                 }
             }
         },
@@ -52,8 +32,7 @@
                         "// update the second selected row's value",
                         "let newValue = \"Apple\";",
                         "this.grid.selectedRows[1].update(newValue);",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "指定した行オブジェクトおよびデータ ソース レコードを渡された値で更新します。",
@@ -67,8 +46,7 @@
                         "```typescript",
                         "// delete the third selected row from the grid",
                         "this.grid.selectedRows[2].delete();",
-                        "```",
-                        ""
+                        "```"
                     ],
                     "shortText": [
                         "グリッドのデータソースから指定した行を削除します。",
@@ -78,6 +56,30 @@
             }
         },
         "accessors": {
+            "rowData": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// 最初に選択された行のデータを取得します。",
+                            "let selectedRowData = this.grid.selectedRows[0].rowData;",
+                            "```"
+                        ],
+                        "shortText": "行コンポーネントに渡されるデータ。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// 最初に選択された行のデータを設定します。",
+                            "let selectedRowData = this.grid.selectedRows[0].rowData;",
+                            "```"
+                        ],
+                        "shortText": "行コンポーネントに渡されるデータ。"
+                    }
+                }
+            },
             "grid": {
                 "getter": {
                     "comment": {
@@ -88,14 +90,12 @@
                             " const grid = event.row.grid;",
                             "}",
                             "```",
-                            "",
                             "```html",
                             " <igx-grid",
                             "   [data]=\"data\"",
                             "   (onRowSelectionChange)=\"handleRowSelection($event)\">",
                             " </igx-grid>",
-                            "```",
-                            ""
+                            "```"
                         ],
                         "shortText": [
                             "選択した行を含むグリッドへの参照を取得します。"
@@ -108,18 +108,14 @@
                     "comment": {
                         "text": [
                             "```typescript",
-                            "// get the nativeElement of the second selected row",
+                            "// 選択された 2 番目の nativeElement を取得します。",
                             "let selectedRowNativeElement = this.grid.selectedRows[1].nativeElement;",
-                            "```",
-                            ""
+                            "```"
                         ],
-                        "shortText": [
-                            "行を表すネイティブ DOM 要素。特定の環境で null 値か可能です。"
-                        ]
+                        "shortText": "行を表すネイティブ DOM 要素。特定の環境で null 値か可能です。"
                     }
                 }
             }
-        },
-        "functions": {}
+        }
     }
 }

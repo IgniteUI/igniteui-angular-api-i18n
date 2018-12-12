@@ -3,9 +3,17 @@
         "properties": {
             "id": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxExpansionPanelComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "展開パネル コンポーネントの `id` を取得または設定します。",
-                        "設定されない場合、`id` の値は `\"igx-expansion-panel-0\"``;　になります。",
+                        "展開パネル コンポーネントの `id` を設定または取得します。",
+                        "設定しない場合、`id` は値 `\"igx-expansion-panel-0\"` を持ちます。 ",
                         "```html",
                         "<igx-expansion-panel id = \"my-first-expansion-panel\"></igx-expansion-panel>",
                         "```",
@@ -14,9 +22,100 @@
                         "```"
                     ]
                 }
+            },
+            "collapsed": {
+                "comment": {
+                    "shortText": [
+                        "コンポーネントが縮小された (コンテンツが非表示) かどうかを取得または設定します。",
+                        "取得",
+                        "```typescript",
+                        " const myPanelState: boolean = this.panel.collapsed;",
+                        "```",
+                        "設定",
+                        "```html",
+                        " this.panel.collapsed = true;",
+                        "```"
+                    ]
+                }
+            },
+            "onCollapsed": {
+                "comment": {
+                    "shortText": [
+                        "展開パネルが縮小を完了したときに発生されます。",
+                        "```typescript",
+                        " handleCollapsed(event: {",
+                        " panel: IgxExpansionPanelComponent,",
+                        " event: Event",
+                        "})",
+                        "```",
+                        "```html",
+                        " <igx-expansion-panel (onCollapsed)=\"handleCollapsed($event)\">",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        "```"
+                    ]
+                }
+            },
+            "onExpanded": {
+                "comment": {
+                    "shortText": [
+                        "展開パネルが展開を完了したときに発生されます。",
+                        "```typescript",
+                        " handleExpanded(event: {",
+                        " panel: IgxExpansionPanelComponent,",
+                        " event: Event",
+                        "})",
+                        "```",
+                        "```html",
+                        " <igx-expansion-panel (onExpanded)=\"handleExpanded($event)\">",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        "```"
+                    ]
+                }
             }
         },
-        "methods": {},
+        "methods": {
+            "collapse": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        " <igx-expansion-panel #myPanel>",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        " <button (click)=\"myPanel.collapse($event)\">Collpase Panel</button>",
+                        "```"
+                    ],
+                    "shortText": "パネルを縮小します。"
+                }
+            },
+            "expand": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        " <igx-expansion-panel #myPanel>",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        " <button (click)=\"myPanel.expand($event)\">Expand Panel</button>",
+                        "```"
+                    ],
+                    "shortText": "パネルを展開します。"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        " <igx-expansion-panel #myPanel>",
+                        "     ...",
+                        " </igx-expansion-panel>",
+                        " <button (click)=\"myPanel.toggle($event)\">Expand Panel</button>",
+                        "```"
+                    ],
+                    "shortText": "パネルを切り替えます。"
+                }
+            }
+        },
         "accessors": {}
     }
 }

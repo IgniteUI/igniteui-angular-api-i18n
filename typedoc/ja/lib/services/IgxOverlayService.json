@@ -1,38 +1,69 @@
 {
     "IgxOverlayService": {
+        "comment": {
+            "shortText": [
+                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/overlay_main.html)",
+                "オーバーレイ サービスは、ページのその他すべての要素のオーバーレイ div にコンポーネントを表示できます。"
+            ]
+        },
         "properties": {
             "onOpening": {
                 "comment": {
                     "shortText": [
-                        "コンポーネントが開かれる前に発生されます。"
+                        "コンポーネントが開かれる前に発生されます。",
+                        "```typescript",
+                        "onOpening(event: OverlayCancelableEventArgs){",
+                        "    const onOpening = event;",
+                        "}",
+                        "```"
                     ]
                 }
             },
             "onOpened": {
                 "comment": {
                     "shortText": [
-                        "コンポーネントが開いて、すべてのアニメーションが完了した後に発生します。"
+                        "コンポーネントが開いて、すべてのアニメーションが完了した後に発生します。",
+                        "```typescript",
+                        "onOpened(event: OverlayEventArgs){",
+                        "    const onOpened = event;",
+                        "}",
+                        "```"
                     ]
                 }
             },
             "onClosing": {
                 "comment": {
                     "shortText": [
-                        "コンポーネントが閉じられる前に発生されます。"
+                        "コンポーネントが閉じられる前に発生されます。",
+                        "```typescript",
+                        "onClosing(event: OverlayCancelableEventArgs){",
+                        "    const onClosing = event;",
+                        "}",
+                        "```"
                     ]
                 }
             },
             "onClosed": {
                 "comment": {
                     "shortText": [
-                        "コンポーネントが閉じて、すべてのアニメーションが完了した後に発生します。"
+                        "コンポーネントが閉じて、すべてのアニメーションが完了した後に発生します。",
+                        "```typescript",
+                        "onClosed(event: OverlayEventArgs){",
+                        "    const onClosed = event;",
+                        "}",
+                        "```"
                     ]
                 }
             },
             "onAnimation": {
                 "comment": {
                     "shortText": [
-                        "アニメーションを開始する前に発生されます。"
+                        "アニメーションを開始する前に発生されます。",
+                        "```typescript",
+                        "onAnimation(event: OverlayAnimationEventArgs){",
+                        "    const onAnimation = event;",
+                        "}",
+                        "```"
                     ]
                 }
             }
@@ -40,34 +71,53 @@
         "methods": {
             "show": {
                 "comment": {
-                    "shortText": [
-                        "提供されたコンポーネントを表示します。"
-                    ]
+                    "parameters": {
+                        "component": {
+                            "comment": {
+                                "text": "オーバーレイに ElementRef またはコンポーネントのタイプを表示します。"
+                            }
+                        },
+                        "settings": {
+                            "comment": {
+                                "text": "位置、スクロール/閉じる動作としてオーバーレイの設定を表示します。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "提供されたコンポーネントを表示します。"
                 }
             },
             "hide": {
                 "comment": {
                     "shortText": [
-                        "パラメーターとして提供された ID を持つコンポーネントを非表示します。"
+                        "パラメーターとして提供された ID を持つコンポーネントを非表示します。",
+                        "```typescript",
+                        "this.overlay.hide(id);",
+                        "```"
                     ]
                 }
             },
             "hideAll": {
                 "comment": {
                     "shortText": [
-                        "すべてのコンポーネントおよびオーバーレイを非表示します。"
+                        "すべてのコンポーネントおよびオーバーレイを非表示します。",
+                        "```typescript",
+                        "this.overlay.hideAll();",
+                        "```"
                     ]
                 }
             },
             "reposition": {
                 "comment": {
                     "shortText": [
-                        "パラメーターとして提供された ID を持つコンポーネントを位置変更します。"
+                        "パラメーターとして提供された ID を持つコンポーネントを位置変更します。",
+                        "```typescript",
+                        "this.overlay.reposition(id);",
+                        "```"
                     ]
                 }
             }
         },
-        "accessors": {},
-        "functions": {}
+        "accessors": {}
     }
 }
