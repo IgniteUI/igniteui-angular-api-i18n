@@ -44,10 +44,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>White if no palette, color, and variant matches found.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>White if no palette, color, and variant matches found.</p>",
+                ""
+            ]
+        }
     },
     "igx-contrast-color": {
         "description": [
@@ -74,10 +76,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>[#fff] - Returns white if now palette, color and/or variant matches found.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>[#fff] - Returns white if now palette, color and/or variant matches found.</p>",
+                ""
+            ]
+        }
     },
     "text-contrast": {
         "description": [
@@ -92,10 +96,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>Returns either white or black depending on the luminance of the input color.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>Returns either white or black depending on the luminance of the input color.</p>",
+                ""
+            ]
+        }
     },
     "generate-palette": {
         "description": [
@@ -108,12 +114,50 @@
                     "<p>The base color used to generate the palette.</p>",
                     ""
                 ]
+            },
+            "saturations": {
+                "description": [
+                    "<p>The saturation list of color variants.",
+                    "Based on the Material color system.</p>",
+                    ""
+                ]
             }
         },
-        "returns": [
-            "<p>A map consisting of 26 color variations.</p>",
+        "returns": {
+            "description": [
+                "<p>A map consisting of 14 color variations and 14",
+                "text contrast colors for each variation.</p>",
+                ""
+            ]
+        }
+    },
+    "grayscale-palette": {
+        "description": [
+            "<p>Generates grayscale color palette from a color.</p>",
             ""
-        ]
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "<p>The base color used to generate the palette.</p>",
+                    ""
+                ]
+            },
+            "shades": {
+                "description": [
+                    "<p>A map of variations as keys and opacities as values.",
+                    "Based on the Material color system.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>A map consisting of 10 grayscale color variations and 10",
+                "text contrast colors for each variation.</p>",
+                ""
+            ]
+        }
     },
     "igx-palette": {
         "description": [
@@ -156,12 +200,20 @@
                     "<p>The error color used throughout the application.</p>",
                     ""
                 ]
+            },
+            "grays": {
+                "description": [
+                    "<p>The color used for generating the grayscale palette.</p>",
+                    ""
+                ]
             }
         },
-        "returns": [
-            "<p>A map consisting of 74 color variations, including the <code>primary</code>, <code>secondary</code>, <code>grays</code>,",
-            "<code>info</code>, <code>success</code>, <code>warn</code>, and <code>error</code> colors.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>A map consisting of 74 color variations, including the <code>primary</code>, <code>secondary</code>, <code>grays</code>,",
+                "<code>info</code>, <code>success</code>, <code>warn</code>, and <code>error</code> colors.</p>",
+                ""
+            ]
+        }
     }
 }
