@@ -74,10 +74,12 @@
                 ]
             }
         },
-        "returns": [
+        "returns": {
+            "description": [
             "<p>背景色と前景色のコントラストの比率。</p>",
             ""
         ]
+    }
     },
     "is-direction": {
         "description": [
@@ -106,10 +108,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>渡された項目のリスト。</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>渡された項目のリスト。</p>",
+                ""
+            ]
+        }
     },
     "to-string": {
         "description": [
@@ -130,10 +134,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>結果の文字列。</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>結果の文字列。</p>",
+                ""
+            ]
+        }
     },
     "hexrgba": {
         "description": [
@@ -146,12 +152,20 @@
                     "<p>変換する rgba 色。</p>",
                     ""
                 ]
+            },
+            "background": {
+                "description": [
+                    "<p>変換する背景色。</p>",
+                    ""
+                ]
             }
         },
-        "returns": [
-            "<p>Rgba 値の 16 進法形表現。</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>Rgba 値の 16 進法形表現。</p>",
+                ""
+            ]
+        }
     },
     "extend": {
         "description": [
@@ -172,10 +186,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>2 番目のマップのプロパティで継承された元のマップを返します。</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>2 番目のマップのプロパティで継承された元のマップを返します。</p>",
+                ""
+            ]
+        }
     },
     "implode": {
         "description": [
@@ -217,10 +233,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>渡されたマップのキー値またはキー名で連結されたキーの名前。</p>",
-            ""
-        ],
+        "returns": {
+            "description": [
+                "<p>渡されたマップのキー値またはキー名で連結されたキーの名前。</p>",
+                ""
+            ]
+        },
         "example": [
             {
                 "description": [
@@ -259,5 +277,118 @@
                 ]
             }
         }
+        },
+    "resolve-value": {
+        "description": [
+            "<p>マップのキーは呼び出される関数の名前で、指定したキーの値は呼び出される関数の引数の指定したインストラクション マップの値を返します。",
+            "インストラクション マップは左から右へ実行します。",
+            "最初のインストラクションの出力は次のインストラクションの入力として渡されます。</p>",
+            ""
+        ],
+        "parameters": {
+            "ctx": {
+                "description": [
+                    "<p>使用されるインストラクション マップ。</p>",
+                    ""
+                ]
+            },
+            "extra": {
+                "description": [
+                    "<p>関数が呼ばれる時に渡される引数。",
+                    "<Code>igx-color</code> と <code>igx-contrast-color</code> 関数のみ適用されます。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p><Code>igx-color</code> を解決して、80% 透明度を適用します。",
+                    ""
+                ],
+                "code": [
+                    "$instructions: (",
+                    "  igx-color: ('primary', 500),",
+                    "  rgba: .2",
+                    ");",
+                    "// $some-palette は追加の引数として渡されたパレットです。",
+                    "$resolved-color: resolve-value($instructions, $some-palette);"
+                ]
+            }
+        ]
+    },
+    "apply-palette": {
+        "description": [
+            "<p>指定したテーマ スキーマに <code>igx-palette</code> を適用します。</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>テーマ スキーマ。</p>",
+                    ""
+                ]
+            },
+            "palette": {
+                "description": [
+                    "<p>Igx-palette のマップ。</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>解決したパレットの値のマップ。</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>テーマ スキーマに <code>igx-palette</code> を適用します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$custom-palette: igx-palette($primary: red, $secondary: blue);",
+                    "$custom-schema: (",
+                    "  my-color: (",
+                    "     igx-color: ('primary', 800),",
+                    "     rgba: .5",
+                    "  ),",
+                    "  roundness: 5px",
+                    ");",
+                    "$theme: apply-palette($custom-schema, $custom-palette); // 解決したパレットの値のマップ。"
+                ]
+            }
+        ]
+    },
+    "is-root": {
+        "description": [
+            "<p>呼ばれた範囲がドキュメントのルートの場合、 true を返します。</p>",
+            ""
+        ],
+        "example": [
+            {
+                "description": [
+                    "<p>現在の範囲がルートであるかどうかをチェックします。</p>",
+                    ""
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $scope: if(is-root(), ':root', '&');",
+                    "",
+                    "  #{$scope} {",
+                    "    /* スタイルのルールをここに入れます。 */",
+                    "  }",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "random-color": {
+        "description": [
+            "<p>ランダムの色を返します。</p>",
+            ""
+        ]
     }
 }
