@@ -19,6 +19,24 @@
             ]
         },
         "properties": {
+            "data": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that lets you fill the `IgxGridComponent` with an array of data.",
+                        "```html",
+                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "autoGenerate": {
                 "comment": {
                     "tags": {
@@ -982,19 +1000,6 @@
                     ]
                 }
             },
-            "getHeaderGroupWidth": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridBaseComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": "`IgxGridHeaderGroupComponent` に設定される  `width` を返します。"
-                }
-            },
             "getColumnByName": {
                 "comment": {
                     "tags": {
@@ -1574,6 +1579,25 @@
                         "グリッドの幅/高さのサイズを再計算します。グリッドのサイズに影響する DOM 要素を手動的にサイズ変更するときに実行します。",
                         "```typescript",
                         "this.grid.reflow();",
+                        "```"
+                    ]
+                }
+            },
+            "recalculateSummaries": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Recalculates grid summary area.",
+                        "Should be run for example when enabling or disabling summaries for a column.",
+                        "```typescript",
+                        "this.grid.recalculateSummaries();",
                         "```"
                     ]
                 }
@@ -2599,7 +2623,7 @@
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxGridBaseComponent",
+                                    "text": "IgxGridComponent",
                                     "tagName": "次のメンバー:"
                                 }
                             }
@@ -2617,7 +2641,7 @@
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxGridBaseComponent",
+                                    "text": "IgxGridComponent",
                                     "tagName": "次のメンバー:"
                                 }
                             }
@@ -2627,84 +2651,6 @@
                             "デフォルトで無効です。",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "summaryPosition": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "集計位置を返します。",
-                            "```typescript",
-                            " let summaryPosition = this.grid.summaryPosition;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "集計位置を設定します。",
-                            "デフォルトは bottom です。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"localData\" summaryPosition=\"top\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "summaryCalculationMode": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "集計計算モードを返します。",
-                            "```typescript",
-                            " let summaryCalculationMode = this.grid.summaryCalculationMode;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "集計計算モードを設定します。",
-                            "デフォルトは rootAndChildLevels で、集計はルート レベルと各子レベルが計算されます。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"localData\" summaryCalculationMode=\"rootLevelOnly\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -3381,25 +3327,6 @@
                     }
                 }
             },
-            "defaultHeaderGroupMinWidth": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridHeaderGroupComponent` の最小許容幅を返します。",
-                            "ヘッダー グループ コンポーネントの幅を制限するために内部で使用されます。",
-                            "以下の値は、ヘッダーセルのデフォルトの右/左パディング値に基づいています。"
-                        ]
-                    }
-                }
-            },
             "calcPinnedContainerMaxWidth": {
                 "getter": {
                     "comment": {
@@ -3681,36 +3608,6 @@
                     }
                 }
             },
-            "data": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "resourceStrings": {
                 "setter": {
                     "comment": {
@@ -3813,12 +3710,12 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "`IgxGridComponent` に集計可能な列があるかどうかを返します。",
+                            "Returns if the `IgxGridComponent` has summarized columns.",
                             "```typescript",
                             "const summarizedGrid = this.grid.hasSummarizedColumns;",
                             "```"

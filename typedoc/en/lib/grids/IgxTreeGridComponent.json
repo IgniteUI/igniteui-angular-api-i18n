@@ -181,6 +181,24 @@
                     ]
                 }
             },
+            "data": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that lets you fill the `IgxGridComponent` with an array of data.",
+                        "```html",
+                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "autoGenerate": {
                 "comment": {
                     "tags": {
@@ -1195,19 +1213,6 @@
                     ]
                 }
             },
-            "getHeaderGroupWidth": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridBaseComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": "Returns the `width` to be set on `IgxGridHeaderGroupComponent`."
-                }
-            },
             "getColumnByName": {
                 "comment": {
                     "tags": {
@@ -1678,6 +1683,25 @@
                     ]
                 }
             },
+            "recalculateSummaries": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Recalculates grid summary area.",
+                        "Should be run for example when enabling or disabling summaries for a column.",
+                        "```typescript",
+                        "this.grid.recalculateSummaries();",
+                        "```"
+                    ]
+                }
+            },
             "getPinnedWidth": {
                 "comment": {
                     "parameters": {
@@ -1924,36 +1948,6 @@
                             "const states = new Map<any, boolean>();",
                             "states.set(1, true);",
                             "this.grid.expansionStates = states;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "data": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "An @Input property that lets you fill the `IgxGridComponent` with an array of data.",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "An @Input property that lets you fill the `IgxGridComponent` with an array of data.",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -2576,7 +2570,7 @@
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxGridBaseComponent",
+                                    "text": "IgxGridComponent",
                                     "tagName": "memberof"
                                 }
                             }
@@ -2594,7 +2588,7 @@
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxGridBaseComponent",
+                                    "text": "IgxGridComponent",
                                     "tagName": "memberof"
                                 }
                             }
@@ -2604,84 +2598,6 @@
                             "By default it's disabled.",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "summaryPosition": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns the summary position.",
-                            "```typescript",
-                            " let summaryPosition = this.grid.summaryPosition;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets summary position.",
-                            "By default it is bottom.",
-                            "```html",
-                            "<igx-grid #grid [data]=\"localData\" summaryPosition=\"top\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "summaryCalculationMode": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns the summary calculation mode.",
-                            "```typescript",
-                            " let summaryCalculationMode = this.grid.summaryCalculationMode;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets summary calculation mode.",
-                            "By default it is rootAndChildLevels which means the summaries are calculated for the root level and each child level.",
-                            "```html",
-                            "<igx-grid #grid [data]=\"localData\" summaryCalculationMode=\"rootLevelOnly\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -3259,25 +3175,6 @@
                     }
                 }
             },
-            "defaultHeaderGroupMinWidth": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns the `IgxGridHeaderGroupComponent`'s minimum allowed width.",
-                            "Used internally for restricting header group component width.",
-                            "The values below depend on the header cell default right/left padding values."
-                        ]
-                    }
-                }
-            },
             "calcPinnedContainerMaxWidth": {
                 "getter": {
                     "comment": {
@@ -3594,26 +3491,6 @@
                             "Returns if the `IgxGridComponent` has fiterable columns.",
                             "```typescript",
                             "const filterableGrid = this.grid.hasFilterableColumns;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "hasSummarizedColumns": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns if the `IgxGridComponent` has summarized columns.",
-                            "```typescript",
-                            "const summarizedGrid = this.grid.hasSummarizedColumns;",
                             "```"
                         ]
                     }
