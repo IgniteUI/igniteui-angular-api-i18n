@@ -74,10 +74,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>The contrast ratio between the background and foreground colors.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>The contrast ratio between the background and foreground colors.</p>",
+                ""
+            ]
+        }
     },
     "is-direction": {
         "description": [
@@ -107,10 +109,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>The list of passed items.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>The list of passed items.</p>",
+                ""
+            ]
+        }
     },
     "to-string": {
         "description": [
@@ -131,10 +135,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>The resulting string.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>The resulting string.</p>",
+                ""
+            ]
+        }
     },
     "hexrgba": {
         "description": [
@@ -147,12 +153,20 @@
                     "<p>The rgba color to convert.</p>",
                     ""
                 ]
+            },
+            "background": {
+                "description": [
+                    "<p>The background color to convert against.</p>",
+                    ""
+                ]
             }
         },
-        "returns": [
-            "<p>The hexidecimal representation of the rgba value.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>The hexidecimal representation of the rgba value.</p>",
+                ""
+            ]
+        }
     },
     "extend": {
         "description": [
@@ -173,10 +187,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>Returns the original map extended with the properties of the second map.</p>",
-            ""
-        ]
+        "returns": {
+            "description": [
+                "<p>Returns the original map extended with the properties of the second map.</p>",
+                ""
+            ]
+        }
     },
     "implode": {
         "description": [
@@ -219,10 +235,12 @@
                 ]
             }
         },
-        "returns": [
-            "<p>The value of the key in the passed map, or the name of key concatenated with the key name.</p>",
-            ""
-        ],
+        "returns": {
+            "description": [
+                "<p>The value of the key in the passed map, or the name of key concatenated with the key name.</p>",
+                ""
+            ]
+        },
         "example": [
             {
                 "description": [
@@ -261,5 +279,122 @@
                 ]
             }
         }
+    },
+    "resolve-value": {
+        "description": [
+            "<p>Returns a value for a given instruction map, where the",
+            "keys of the map are the names of the functions to be called,",
+            "and the value for a given key is the arguments the function",
+            "should be called with.",
+            "The instruction set is executed left-to-right. The output of",
+            "the first instruction is then passed as input to the next, and so on.</p>",
+            ""
+        ],
+        "parameters": {
+            "ctx": {
+                "description": [
+                    "<p>The instruction map to be used.</p>",
+                    ""
+                ]
+            },
+            "extra": {
+                "description": [
+                    "<p>Additional arguments to be passed during function calls.",
+                    "Will only be applied for <code>igx-color</code> and <code>igx-contrast-color</code> functions.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Resolve <code>igx-color</code> and apply 80% opacity</p>",
+                    ""
+                ],
+                "code": [
+                    "$instructions: (",
+                    "  igx-color: ('primary', 500),",
+                    "  rgba: .2",
+                    ");",
+                    "// $some-palette is a palette we pass as extra arguments",
+                    "$resolved-color: resolve-value($instructions, $some-palette);"
+                ]
+            }
+        ]
+    },
+    "apply-palette": {
+        "description": [
+            "<p>Applies an <code>igx-palette</code> to a given theme schema.</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>A theme schema.</p>",
+                    ""
+                ]
+            },
+            "palette": {
+                "description": [
+                    "<p>An igx-palette map.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>A map with the resolved palette values.</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Apply an <code>igx-palette</code> to theme schema</p>",
+                    ""
+                ],
+                "code": [
+                    "$custom-palette: igx-palette($primary: red, $secondary: blue);",
+                    "$custom-schema: (",
+                    "  my-color: (",
+                    "     igx-color: ('primary', 800),",
+                    "     rgba: .5",
+                    "  ),",
+                    "  roundness: 5px",
+                    ");",
+                    "$theme: apply-palette($custom-schema, $custom-palette); // A map with palette values resolved."
+                ]
+            }
+        ]
+    },
+    "is-root": {
+        "description": [
+            "<p>Returns true if the scope where it&#39;s called",
+            "is the root of the document.</p>",
+            ""
+        ],
+        "example": [
+            {
+                "description": [
+                    "<p>Check if the current scope is root</p>",
+                    ""
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $scope: if(is-root(), ':root', '&');",
+                    "",
+                    "  #{$scope} {",
+                    "    /* style rules here */",
+                    "  }",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "random-color": {
+        "description": [
+            "<p>Returns a random color.</p>",
+            ""
+        ]
     }
 }

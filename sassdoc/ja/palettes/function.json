@@ -44,10 +44,12 @@
                 ]
             }
         },
-        "returns": [
+        "returns": {
+            "description": [
             "<p>パレット、色、またはバリアントが一致しない場合、white になります。</p>",
             ""
         ]
+        }
     },
     "igx-contrast-color": {
         "description": [
@@ -74,10 +76,12 @@
                 ]
             }
         },
-        "returns": [
+        "returns": {
+            "description": [
             "<p>[#fff] - パレット、色またはバリアントが一致しない場合、white を返します。</p>",
             ""
         ]
+        }
     },
     "text-contrast": {
         "description": [
@@ -92,10 +96,12 @@
                 ]
             }
         },
-        "returns": [
+        "returns": {
+            "description": [
             "<p>入力色の輝度によって white または black を返します。</p>",
             ""
         ]
+        }
     },
     "generate-palette": {
         "description": [
@@ -108,12 +114,49 @@
                     "<p>パレットの生成に使用する基本色。</p>",
                     ""
                 ]
+            },
+            "saturations": {
+                "description": [
+                    "<p>色バリアントの彩度リスト。",
+                    "マテリアル カラー システムに基づきます。</p>",
+                    ""
+                ]
             }
         },
-        "returns": [
-            "<p>26 色のバリエーションで構成されたマップ。</p>",
+        
+        "returns": {
+            "description": [
+                "<p>14 の色バリアントと各バリアントのための 14 テキストコントラスト色。</p>",
+                ""
+            ]
+        }
+    },
+    "grayscale-palette": {
+        "description": [
+            "<p>色からグレースケール色のパレットを生成します。</p>",
             ""
-        ]
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "<p>パレットの生成に使用する基本色。</p>",
+                    ""
+                ]
+            },
+            "shades": {
+                "description": [
+                    "<p>キーとしてバリエーションと不透明度として値のマップ。",
+                    "マテリアル カラー システムに基づきます。</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>10 のグレースケール色のバリアントと各バリアントのためのテキスト コントラスト 10 色。</p>",
+                ""
+            ]
+        }
     },
     "igx-palette": {
         "description": [
@@ -156,11 +199,20 @@
                     "<p>アプリケーション中に使用するエラー色。</p>",
                     ""
                 ]
-            }
+            },
+            "grays": {
+                "description": [
+                    "<p>グレースケール パレットの生成に使用する色。</p>",
+                    ""
+                ]
+            }  
         },
-        "returns": [
-            "<p><code>primary</code>、 <code>secondary</code>、 <code>grays</code>、 <code>info</code>、 <code>success</code>、 <code>warn</code>、 および <code>error</code> を含む 74 の色のバリエーションで構成されたマップ。</p>",
-            ""
-        ]
+        
+        "returns": {
+            "description": [
+                "<p><code>primary</code>、 <code>secondary</code>、 <code>grays</code>、 <code>info</code>、 <code>success</code>、 <code>warn</code>、 および <code>error</code> を含む 74 の色のバリエーションで構成されたマップ。</p>",
+                ""
+            ]
+        }    
     }
 }
