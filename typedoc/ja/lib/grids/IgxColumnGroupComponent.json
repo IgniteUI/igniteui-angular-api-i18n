@@ -464,8 +464,13 @@
                     },
                     "shortText": [
                         "ピン固定領域で指定したインデックスに列をピン固定します。指定されない場合、デフォルトのインデックスは `0` です。",
+                        "Returns `true` if the column is successfully pinned. Returns `false` if the column cannot be pinned.",
+                        "Column cannot be pinned if:",
+                        "- Is already pinned",
+                        "- index argument is out of range",
+                        "- The pinned area exceeds 80% of the grid width",
                         "```typescript",
-                        "this.column.pin();",
+                        "let success = this.column.pin();",
                         "```"
                     ]
                 }
@@ -482,8 +487,12 @@
                     },
                     "shortText": [
                         "列をピン固定解除してピン固定されない領域で指定したインデックスに配置します。指定されない場合、デフォルトのインデックスは `0` です。",
+                        "Returns `true` if the column is successfully unpinned. Returns `false` if the column cannot be unpinned.",
+                        "Column cannot be unpinned if:",
+                        "- Is already unpinned",
+                        "- index argument is out of range",
                         "```typescript",
-                        "this.column.unpin();",
+                        "let success = this.column.unpin();",
                         "```"
                     ]
                 }
