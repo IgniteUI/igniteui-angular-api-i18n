@@ -19,15 +19,24 @@
             ]
         },
         "properties": {
-            "onSelection": {
+            "allowItemsFocus": {
                 "comment": {
                     "text": [
+                        "Note: Keep that focus shift in mind when using the igxDropDownItemNavigation directive",
+                        "and ensure it's placed either on each focusable item or a common ancestor to allow it to handle keyboard events.",
+                        "```typescript",
+                        "// get",
+                        "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
+                        "```",
                         "```html",
-                        "<igx-drop-down (onSelection)='handleSelection()'></igx-drop-down>",
+                        "<!--set-->",
+                        "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
                         "```"
                     ],
                     "shortText": [
-                        "選択を完了する前にアイテム選択が変更されるときに発生されます。"
+                        "Gets/sets whether items take focus. Disabled by default.",
+                        "When enabled, drop down items gain tab index and are focused when active -",
+                        "this includes activating the selected item when opening the drop down and moving with keyboard navigation."
                     ]
                 }
             },
@@ -79,23 +88,44 @@
                     ]
                 }
             },
-            "allowItemsFocus": {
+            "onSelection": {
                 "comment": {
                     "text": [
-                        "注: IgxDropDownItemNavigation ディレクティブの使用時はフォーカスの移動に注意してください。キーボード イベントを処理するためにディレクティブを各フォーカス可能な項目に配置または共有の先祖に配置します。",
+                        "```html",
+                        "<igx-drop-down (onSelection)='handleSelection()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted when item selection is changing, before the selection completes"
+                }
+            },
+            "width": {
+                "comment": {
+                    "text": [
                         "```typescript",
-                        "// 取得",
-                        "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
+                        "// get",
+                        "let myDropDownCurrentWidth = this.dropdown.width;",
                         "```",
                         "```html",
                         "<!--set-->",
-                        "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
+                        "<igx-drop-down [width]='160px'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": [
-                        "項目がフォーカスを取得するかどうかを取得または設定します。デフォルトで無効です。",
-                        "有効な場合、ドロップダウン項目にタブ インデックスが指定され、アクティブな場合にフォーカスされます。これには、ドロップダウンを開き、キーボード ナビゲーションを使用して移動すると選択した項目のアクティブ化が含まれます。"
-                    ]
+                    "shortText": " Gets/Sets the width of the drop down"
+                }
+            },
+            "height": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get",
+                        "let myDropDownCurrentHeight = this.dropdown.height;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-drop-down [height]='400px'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Gets/Sets the height of the drop down"
                 }
             },
             "maxHeight": {
@@ -115,21 +145,6 @@
             }
         },
         "methods": {
-            "setSelectedItem": {
-                "comment": {
-                    "parameters": {
-                        "index": {
-                            "comment": {
-                                "text": "選択する項目"
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "項目をインデックスで選択します。"
-                    ]
-                }
-            },
             "open": {
                 "comment": {
                     "text": [
@@ -137,9 +152,7 @@
                         "this.dropdown.open();",
                         "```"
                     ],
-                    "shortText": [
-                        "ドロップダウンを開きます。"
-                    ]
+                    "shortText": "Opens the dropdown"
                 }
             },
             "close": {
@@ -149,9 +162,7 @@
                         "this.dropdown.close();",
                         "```"
                     ],
-                    "shortText": [
-                        "ドロップダウンを閉じます。"
-                    ]
+                    "shortText": "Closes the dropdown"
                 }
             },
             "toggle": {
@@ -161,108 +172,39 @@
                         "this.dropdown.toggle();",
                         "```"
                     ],
-                    "shortText": [
-                        "ドロップダウンを切り替えます。"
-                    ]
+                    "shortText": "Toggles the dropdown"
+                }
+            },
+            "setSelectedItem": {
+                "comment": {
+                    "parameters": {
+                        "index": {
+                            "comment": {
+                                "text": "of the item to select"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Select an item by index"
+                }
+            },
+            "navigateItem": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Navigates to the item on the specified index"
+                }
+            },
+            "onItemActionKey": {
+                "comment": {
+                    "shortText": "Keydown Handler"
                 }
             }
         },
         "accessors": {
-            "width": {
+            "listId": {
                 "getter": {
                     "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let myDropDownCurrentWidth = this.dropdown.width;",
-                            "```"
-                        ],
-                        "shortText": [
-                            " ドロップダウンの幅を取得します。"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "text": [
-                            "```html",
-                            "<!--set-->",
-                            "<igx-drop-down [width]='160px'></igx-drop-down>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "ドロップダウンの幅を設定します。"
-                        ]
-                    }
-                }
-            },
-            "height": {
-                "getter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let myDropDownCurrentHeight = this.dropdown.height;",
-                            "```"
-                        ],
-                        "shortText": [
-                            "ドロップダウンの高さを取得します。"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "text": [
-                            "```html",
-                            "<!--set-->",
-                            "<igx-drop-down [height]='400px'></igx-drop-down>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "ドロップダウンの高さを設定します。"
-                        ]
-                    }
-                }
-            },
-            "id": {
-                "getter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let myDropDownCurrentId = this.dropdown.id;",
-                            "```"
-                        ],
-                        "shortText": [
-                            "ドロップダウンの id を取得します。"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "text": [
-                            "```html",
-                            "<!--set-->",
-                            "<igx-drop-down [id]='newDropDownId'></igx-drop-down>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "ドロップダウンの id を設定します。"
-                        ]
-                    }
-                }
-            },
-            "collapsed": {
-                "getter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "let isCollapsed = this.dropdown.collapsed;",
-                            "```"
-                        ],
-                        "shortText": [
-                            "ドロップダウンが閉じたかどうかを取得します。"
-                        ]
+                        "shortText": "Id of the internal listbox of the drop down"
                     }
                 }
             },
@@ -274,9 +216,19 @@
                             "let currentItem = this.dropdown.selectedItem;",
                             "```"
                         ],
-                        "shortText": [
-                            "現在選択している項目を取得します。"
-                        ]
+                        "shortText": "Get currently selected item"
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let isCollapsed = this.dropdown.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "Gets if the dropdown is collapsed"
                     }
                 }
             },
@@ -288,9 +240,7 @@
                             "let myDropDownItems = this.dropdown.items;",
                             "```"
                         ],
-                        "shortText": [
-                            "すべてのヘッダー以外の項目を取得します。"
-                        ]
+                        "shortText": "Get all non-header items"
                     }
                 }
             },
@@ -302,9 +252,7 @@
                             "let myDropDownHeaderItems = this.dropdown.headers;",
                             "```"
                         ],
-                        "shortText": [
-                            "すべてのヘッダー項目を取得します。"
-                        ]
+                        "shortText": "Get all header items"
                     }
                 }
             },
@@ -316,9 +264,7 @@
                             "let myDropDownElement = this.dropdown.element;",
                             "```"
                         ],
-                        "shortText": [
-                            "ドロップダウンの HTML 要素を取得します。"
-                        ]
+                        "shortText": "Get dropdown html element"
                     }
                 }
             }

@@ -1,0 +1,282 @@
+{
+    "IgxSelectComponent": {
+        "comment": {
+            "text": [
+                "The `igxSelect` provides an input with dropdown list allowing selection of a single item.",
+                "Example:",
+                "```html",
+                "<igx-select #select1 [placeholder]=\"'Pick One'\">",
+                "  <label igxLabel>Select Label</label>",
+                "  <igx-select-item *ngFor=\"let item of items\" [value]=\"item.field\">",
+                "    {{ item.field }}",
+                "  </igx-select-item>",
+                "</igx-select>",
+                "```"
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Select** -",
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/select.html)"
+            ]
+        },
+        "properties": {
+            "placeholder": {
+                "comment": {
+                    "shortText": "An @Input property that sets input placeholder."
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that disables the `IgxSelectComponent`.",
+                        "```html",
+                        "<igx-select [disabled]=\"'true'\"></igx-select>",
+                        "```"
+                    ]
+                }
+            },
+            "overlaySettings": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets custom OverlaySettings `IgxSelectComponent`.",
+                        "```html",
+                        "<igx-select [overlaySettings] = \"customOverlaySettings\"></igx-select>",
+                        "```"
+                    ]
+                }
+            },
+            "type": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets how the select will be styled.",
+                        "The allowed values are `line`, `box` and `border`. The default is `line`.",
+                        "```html",
+                        "<igx-select [type]=\"'box'\">",
+                        "```"
+                    ]
+                }
+            },
+            "displayDensity": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets what display density to be used for the input group.",
+                        "The allowed values are `compact`, `cosy` and `comfortable`. The default is `comfortable`.",
+                        "```html",
+                        "<igx-select [displayDensity]=\"'compact'\">",
+                        "```"
+                    ]
+                }
+            },
+            "toggleIconTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.select.toggleIconTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-select #select>",
+                        "     ...",
+                        "     <ng-template igxSelectToggleIcon let-collapsed>",
+                        "         <igx-icon>{{ collapsed ? 'remove_circle' : 'remove_circle_outline'}}</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-select>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the select TOGGLE(open/close) button"
+                }
+            },
+            "onOpening": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onOpening)='handleOpening()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted before the dropdown is opened"
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onOpened)='handleOpened()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted after the dropdown is opened"
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onClosing)='handleClosing()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted before the dropdown is closed"
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onClosed)='handleClosed()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted after the dropdown is closed"
+                }
+            },
+            "onSelection": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onSelection)='handleSelection()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted when item selection is changing, before the selection completes"
+                }
+            },
+            "height": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get",
+                        "let myDropDownCurrentHeight = this.dropdown.height;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-drop-down [height]='400px'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Gets/Sets the height of the drop down"
+                }
+            }
+        },
+        "methods": {
+            "open": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.select.open();",
+                        "```"
+                    ],
+                    "shortText": "Opens the select"
+                }
+            },
+            "close": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.close();",
+                        "```"
+                    ],
+                    "shortText": "Closes the dropdown"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.toggle();",
+                        "```"
+                    ],
+                    "shortText": "Toggles the dropdown"
+                }
+            },
+            "setSelectedItem": {
+                "comment": {
+                    "parameters": {
+                        "index": {
+                            "comment": {
+                                "text": "of the item to select"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Select an item by index"
+                }
+            },
+            "navigateItem": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Navigates to the item on the specified index"
+                }
+            },
+            "onItemActionKey": {
+                "comment": {
+                    "shortText": "Keydown Handler"
+                }
+            }
+        },
+        "accessors": {
+            "value": {
+                "getter": {
+                    "comment": {
+                        "shortText": "An @Input property that sets the input value."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "An @Input property that sets the input value."
+                    }
+                }
+            },
+            "listId": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Id of the internal listbox of the drop down"
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let isCollapsed = this.dropdown.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "Gets if the dropdown is collapsed"
+                    }
+                }
+            },
+            "items": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let myDropDownItems = this.dropdown.items;",
+                            "```"
+                        ],
+                        "shortText": "Get all non-header items"
+                    }
+                }
+            },
+            "headers": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let myDropDownHeaderItems = this.dropdown.headers;",
+                            "```"
+                        ],
+                        "shortText": "Get all header items"
+                    }
+                }
+            },
+            "element": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let myDropDownElement = this.dropdown.element;",
+                            "```"
+                        ],
+                        "shortText": "Get dropdown html element"
+                    }
+                }
+            }
+        }
+    }
+}

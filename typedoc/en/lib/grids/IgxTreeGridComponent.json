@@ -218,6 +218,24 @@
                     ]
                 }
             },
+            "loadingGridTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that sets a custom template when the `IgxGridComponent` is loading.",
+                        "```html",
+                        "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [loadingGridTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "paginationTemplate": {
                 "comment": {
                     "tags": {
@@ -285,7 +303,21 @@
                     "shortText": [
                         "An @Input property that sets the primary key of the `IgxGridComponent`.",
                         "```html",
-                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [primaryKey]=\"6\" [autoGenerate]=\"true\"></igx-grid>",
+                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [primaryKey]=\"'ProductID'\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "shouldGenerate": {
+                "comment": {
+                    "shortText": [
+                        "A property that allows the columns to be auto-generated once again after the initialization of the grid.",
+                        "This will allow to bind the grid to remote data and having auto-generated columns at the same time.",
+                        "Note that after generating the columns, this property would be disabled to avoid re-creating",
+                        "columns each time a new data is assigned.",
+                        "```typescript",
+                        " this.grid.shouldGenerate = true;",
+                        " this.remoteData = this.remoteService.remoteData;",
                         "```"
                     ]
                 }
@@ -945,6 +977,22 @@
                     ]
                 }
             },
+            "onFocusChange": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when changing the focus while navigating with the keyboard.",
+                        "Return the focused cell or focused group row. This event is cancelable.",
+                        "```typescript",
+                        "changeFocus(event: IGridFocusChangeEventArgs) {",
+                        " const changedFocus = event;",
+                        "}",
+                        "```",
+                        "```html",
+                        "* <igx-grid (onFocusChange)=\"changeFocus($event)\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "emptyFilteredGridTemplate": {
                 "comment": {
                     "tags": {
@@ -977,24 +1025,6 @@
                         "A template reference for the template when the `IgxGridComponent` is empty.",
                         "```",
                         "const emptyTempalte = this.grid.emptyGridTemplate;",
-                        "```"
-                    ]
-                }
-            },
-            "toolbarCustomContentTemplate": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridBaseComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Returns the template which will be used by the toolbar to show custom content.",
-                        "```typescript",
-                        "let customContentTemplate = this.grid.toolbarCustomContentTemplate;",
                         "```"
                     ]
                 }
@@ -1678,6 +1708,115 @@
                     ]
                 }
             },
+            "findNext": {
+                "comment": {
+                    "parameters": {
+                        "text": {
+                            "comment": {
+                                "text": "the string to search."
+                            }
+                        },
+                        "caseSensitive": {
+                            "comment": {
+                                "text": "optionally, if the search should be case sensitive (defaults to false)."
+                            }
+                        },
+                        "exactMatch": {
+                            "comment": {
+                                "text": "optionally, if the text should match the entire value  (defaults to false)."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Finds the next occurrence of a given string in the grid and scrolls to the cell if it isn't visible.",
+                        "Returns how many times the grid contains the string.",
+                        "```typescript",
+                        "this.grid.findNext(\"financial\");",
+                        "```"
+                    ]
+                }
+            },
+            "findPrev": {
+                "comment": {
+                    "parameters": {
+                        "text": {
+                            "comment": {
+                                "text": "the string to search."
+                            }
+                        },
+                        "caseSensitive": {
+                            "comment": {
+                                "text": "optionally, if the search should be case sensitive (defaults to false)."
+                            }
+                        },
+                        "exactMatch": {
+                            "comment": {
+                                "text": "optionally, if the text should match the entire value (defaults to false)."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Finds the previous occurrence of a given string in the grid and scrolls to the cell if it isn't visible.",
+                        "Returns how many times the grid contains the string.",
+                        "```typescript",
+                        "this.grid.findPrev(\"financial\");",
+                        "````"
+                    ]
+                }
+            },
+            "refreshSearch": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Reapplies the existing search.",
+                        "Returns how many times the grid contains the last search.",
+                        "```typescript",
+                        "this.grid.refreshSearch();",
+                        "```"
+                    ]
+                }
+            },
+            "clearSearch": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Removes all the highlights in the cell.",
+                        "```typescript",
+                        "this.grid.clearSearch();",
+                        "```"
+                    ]
+                }
+            },
             "getPinnedWidth": {
                 "comment": {
                     "parameters": {
@@ -1842,6 +1981,77 @@
                     }
                 }
             },
+            "data": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTreeGridComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that lets you fill the `IgxTreeGridComponent` with an array of data.",
+                            "```html",
+                            "<igx-tree-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-tree-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that lets you fill the `IgxTreeGridComponent` with an array of data.",
+                            "```html",
+                            "<igx-tree-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-tree-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filteredData": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTreeGridComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns an array of objects containing the filtered data in the `IgxGridComponent`.",
+                            "```typescript",
+                            "let filteredData = this.grid.filteredData;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTreeGridComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets an array of objects containing the filtered data in the `IgxGridComponent`.",
+                            "```typescript",
+                            "this.grid.filteredData = [{",
+                            "      ID: 1,",
+                            "      Name: \"A\"",
+                            "}];",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "transactions": {
                 "getter": {
                     "comment": {
@@ -1924,36 +2134,6 @@
                             "const states = new Map<any, boolean>();",
                             "states.set(1, true);",
                             "this.grid.expansionStates = states;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "data": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "An @Input property that lets you fill the `IgxGridComponent` with an array of data.",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "An @Input property that lets you fill the `IgxGridComponent` with an array of data.",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -2064,47 +2244,6 @@
                 "setter": {
                     "comment": {
                         "shortText": "Sets the locale of the grid."
-                    }
-                }
-            },
-            "filteredData": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns an array of objects containing the filtered data in the `IgxGridComponent`.",
-                            "```typescript",
-                            "let filteredData = this.grid.filteredData;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets an array of objects containing the filtered data in the `IgxGridComponent`.",
-                            "```typescript",
-                            "this.grid.filteredData = [{",
-                            "      ID: 1,",
-                            "      Name: \"A\"",
-                            "}];",
-                            "```"
-                        ]
                     }
                 }
             },
@@ -2521,6 +2660,31 @@
                     }
                 }
             },
+            "isLoading": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that sets whether the grid is going to show loading indicator.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [isLoading]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "An accessor that returns whether the grid is showing loading indicator."
+                    }
+                }
+            },
             "emptyFilteredGridMessage": {
                 "setter": {
                     "comment": {
@@ -2619,6 +2783,45 @@
                             "By default it's disabled.",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filterMode": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns the filter mode.",
+                            "```typescript",
+                            " let filtering = this.grid.filterMode;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets filter mode.",
+                            "By default it's set to FilterMode.quickFilter.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"localData\" [filterMode]=\"'quickFilter'\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -2797,6 +3000,26 @@
                             "A list of `IgxGridRowComponent`, currently rendered.",
                             "```typescript",
                             "const dataList = this.grid.dataRowList;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "toolbarCustomContentTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns the template which will be used by the toolbar to show custom content.",
+                            "```typescript",
+                            "let customContentTemplate = this.grid.toolbarCustomContentTemplate;",
                             "```"
                         ]
                     }
@@ -3708,9 +3931,19 @@
                             }
                         },
                         "shortText": [
-                            "Returns an array containing the filtered data.",
+                            "Returns an array containing the filtered sorted data.",
                             "```typescript",
-                            "const filteredData = this.grid1.filteredSortedData;",
+                            "const filteredSortedData = this.grid1.filteredSortedData;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns an array containing the filtered sorted data.",
+                            "```typescript",
+                            "const filteredSortedData = this.grid1.filteredSortedData;",
                             "```"
                         ]
                     }

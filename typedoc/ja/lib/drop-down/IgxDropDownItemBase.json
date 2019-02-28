@@ -2,10 +2,35 @@
     "IgxDropDownItemBase": {
         "comment": {
             "shortText": [
-                "`<igx-drop-down-item>` は `<igx-drop-down>` コンテナの行項目のためのコンテナです。"
+                "An abstract class defining a drop-down item:",
+                "With properties / styles for selection, highlight, height",
+                "Bindable property for passing data (`value: any`)",
+                "Parent component (has to be used under a parent with type `IDropDownBase`)",
+                "Method for handling click on Host()"
             ]
         },
         "properties": {
+            "id": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxSelectItemComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets/gets the `id` of the item.",
+                        "```html",
+                        "<igx-select-item [id] = 'select-item-0'></igx-select-item>",
+                        "```",
+                        "```typescript",
+                        "let itemId =  this.item.id;",
+                        "```"
+                    ]
+                }
+            },
             "value": {
                 "comment": {
                     "text": [
@@ -48,44 +73,68 @@
                     ]
                 }
             },
-            "disabled": {
+            "role": {
                 "comment": {
                     "text": [
-                        "```typescript",
-                        " // 取得",
-                        " let mySelectedItem = this.dropdown.selectedItem;",
-                        " let myItemIsDisabled = mySelectedItem.disabled;",
-                        "```",
                         "```html",
-                        " <igx-drop-down-item *ngFor=\"let item of items\" disabled={{!item.disabled}}>",
-                        "     <div>",
-                        "         {{item.field}}",
-                        "     </div>",
-                        " </igx-drop-down-item>",
+                        " <igx-drop-down-item [role]=\"customRole\"></igx-drop-down-item>",
                         "```"
                     ],
-                    "shortText": "指定した項目が無効かどうかを取得または設定します。"
+                    "shortText": "Gets/sets the `role` attribute of the item. Default is 'option'."
                 }
             }
         },
         "methods": {},
         "accessors": {
-            "isSelected": {
+            "index": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the data index of the selected dropdown item",
+                            "let selectedItemIndex = this.dropdown.selectedItem.index",
+                            "```"
+                        ],
+                        "shortText": "The data index of the dropdown item."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the data index of the selected dropdown item",
+                            "let selectedItemIndex = this.dropdown.selectedItem.index",
+                            "```"
+                        ],
+                        "shortText": "The data index of the dropdown item."
+                    }
+                }
+            },
+            "selected": {
                 "getter": {
                     "comment": {
                         "text": [
                             "```typescript",
                             " let mySelectedItem = this.dropdown.selectedItem;",
-                            " let isMyItemSelected = mySelectedItem.isSelected; // true",
+                            " let isMyItemSelected = mySelectedItem.selected; // true",
                             "```"
                         ],
-                        "shortText": [
-                            "項目がドロップダウンで現在選択されている項目かどうかを取得します。"
-                        ]
+                        "shortText": "Sets/Gets if the item is the currently selected one in the dropdown"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            " let mySelectedItem = this.dropdown.selectedItem;",
+                            " let isMyItemSelected = mySelectedItem.selected; // true",
+                            "```"
+                        ],
+                        "shortText": "Sets/Gets if the item is the currently selected one in the dropdown"
                     }
                 }
             },
-            "isFocused": {
+            "focused": {
                 "getter": {
                     "comment": {
                         "shortText": [
@@ -108,6 +157,48 @@
                             " </igx-drop-down-item>",
                             "```"
                         ]
+                    }
+                }
+            },
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            " // get",
+                            " let mySelectedItem = this.dropdown.selectedItem;",
+                            " let myItemIsDisabled = mySelectedItem.disabled;",
+                            "```",
+                            "```html",
+                            " <igx-drop-down-item *ngFor=\"let item of items\" disabled={{!item.disabled}}>",
+                            "     <div>",
+                            "         {{item.field}}",
+                            "     </div>",
+                            " </igx-drop-down-item>",
+                            "```",
+                            "**NOTE:** Drop-down items inside of a disabled `IgxDropDownGroup` will always count as disabled"
+                        ],
+                        "shortText": "Sets/gets if the given item is disabled"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            " // get",
+                            " let mySelectedItem = this.dropdown.selectedItem;",
+                            " let myItemIsDisabled = mySelectedItem.disabled;",
+                            "```",
+                            "```html",
+                            " <igx-drop-down-item *ngFor=\"let item of items\" disabled={{!item.disabled}}>",
+                            "     <div>",
+                            "         {{item.field}}",
+                            "     </div>",
+                            " </igx-drop-down-item>",
+                            "```",
+                            "**NOTE:** Drop-down items inside of a disabled `IgxDropDownGroup` will always count as disabled"
+                        ],
+                        "shortText": "Sets/gets if the given item is disabled"
                     }
                 }
             }

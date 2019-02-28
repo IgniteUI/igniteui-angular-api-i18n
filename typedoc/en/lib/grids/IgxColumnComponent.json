@@ -277,6 +277,28 @@
                     ]
                 }
             },
+            "formatter": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets/gets formatter for the column.",
+                        "```typescript",
+                        "let columnFormatter = this.column.formatter;",
+                        "```",
+                        "```typescript",
+                        "this.column.formatter = (val: Date) => {",
+                        "return new Intl.DateTimeFormat(\"en-US\").format(val);",
+                        "```"
+                    ]
+                }
+            },
             "filteringIgnoreCase": {
                 "comment": {
                     "tags": {
@@ -440,24 +462,6 @@
             }
         },
         "methods": {
-            "updateHighlights": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxColumnComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Updates the highlights when a column index is changed.",
-                        "```typescript",
-                        "this.column.updateHighlights(1, 3);",
-                        "```"
-                    ]
-                }
-            },
             "pin": {
                 "comment": {
                     "tags": {
@@ -644,6 +648,45 @@
                     }
                 }
             },
+            "disablePinning": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Gets whether the pinning is disabled.",
+                            "```typescript",
+                            "let isPinningDisabled =  this.column.disablePinning;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Enables/disables pinning for the column.",
+                            "Default value is `false`.",
+                            "```typescript",
+                            "<igx-column [pinned] = \"true\"></igx-column>",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "width": {
                 "getter": {
                     "comment": {
@@ -697,45 +740,6 @@
                             "Gets the column index.",
                             "```typescript",
                             "let columnIndex = this.column.index;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "formatter": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Gets formatter for the column.",
-                            "```typescript",
-                            "let columnFormatter = this.column.formatter;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets formatter for the column.",
-                            "```typescript",
-                            "this.column.formatter = (val: Date) => {",
-                            " return new Intl.DateTimeFormat(\"en-US\").format(val); }",
                             "```"
                         ]
                     }
@@ -1305,6 +1309,21 @@
                             "let filterell = column.filterell;",
                             "```"
                         ]
+                    }
+                }
+            },
+            "headerGroup": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": "Returns a reference to the header group of the column."
                     }
                 }
             }

@@ -1,0 +1,106 @@
+{
+    "IgxAutocompleteDirective": {
+        "comment": {
+            "text": [
+                "The igxAutocomplete directive provides a way to enhance a text input",
+                "by showing a drop down of suggested options, provided by the developer.",
+                "Example:",
+                "```html",
+                "<input type=\"text\" [igxAutocomplete]=\"townsPanel\" />",
+                "<igx-drop-down #townsPanel>",
+                "    <igx-drop-down-item *ngFor=\"let town of towns | startsWith:townSelected\" [value]=\"town\">",
+                "        {{town}}",
+                "    </igx-drop-down-item>",
+                "</igx-drop-down>",
+                "```"
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Autocomplete** -",
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/autocomplete.html)"
+            ]
+        },
+        "properties": {
+            "target": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<!-- Set -->",
+                        "<input [igxAutocomplete]=\"dropdown\" />",
+                        "...",
+                        "<igx-drop-down #dropdown>",
+                        "...",
+                        "</igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Sets the target of the autocomplete directive"
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get",
+                        "let disabled = this.autocomplete.disabled;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<input type=\"text\" [igxAutocomplete]=\"townsPanel\" [igxAutocompleteDisabled]=\"disabled\"/>",
+                        "```",
+                        "```typescript",
+                        "// set",
+                        "public disabled = true;",
+                        "```"
+                    ],
+                    "shortText": "Enables/disables autocomplete component"
+                }
+            },
+            "autocompleteSettings": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get",
+                        "let settings = this.autocomplete.autocompleteSettings;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<input type=\"text\" [igxAutocomplete]=\"townsPanel\" [igxAutocompleteSettings]=\"settings\"/>",
+                        "```",
+                        "```typescript",
+                        "// set",
+                        "this.settings = {",
+                        " positionStrategy: new ConnectedPositioningStrategy({",
+                        "     closeAnimation: null,",
+                        "     openAnimation: null",
+                        " })",
+                        "};",
+                        "```"
+                    ],
+                    "shortText": "Provide overlay settings for the autocomplete drop down"
+                }
+            },
+            "onItemSelected": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<input igxInput [igxAutocomplete]=\"townsPanel\" (onItemSelected)='itemSelected($event)' />",
+                        "```"
+                    ],
+                    "shortText": "Emitted after item from the drop down is selected"
+                }
+            }
+        },
+        "methods": {
+            "close": {
+                "comment": {
+                    "shortText": "Closes autocomplete drop down"
+                }
+            },
+            "open": {
+                "comment": {
+                    "shortText": "Opens autocomplete drop down"
+                }
+            }
+        },
+        "accessors": {}
+    }
+}

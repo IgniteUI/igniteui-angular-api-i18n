@@ -1,6 +1,185 @@
 {
     "IgxComboComponent": {
         "properties": {
+            "itemTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.itemTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboItem>",
+                        "         <div class=\"custom-item\" let-item let-key=\"valueKey\">",
+                        "             <div class=\"custom-item__name\">{{ item[key] }}</div>",
+                        "             <div class=\"custom-item__cost\">{{ item.cost }}</div>",
+                        "         </div>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering ITEMS in the combo list"
+                }
+            },
+            "headerTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.headerTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboHeader>",
+                        "         <div class=\"combo__header\">",
+                        "             This is a custom header",
+                        "         </div>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the HEADER for the combo items list"
+                }
+            },
+            "footerTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.footerTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboFooter>",
+                        "         <div class=\"combo__footer\">",
+                        "             This is a custom footer",
+                        "         </div>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the FOOTER for the combo items list"
+                }
+            },
+            "headerItemTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.headerItemTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboHeaderItem let-item let-key=\"groupKey\">",
+                        "         <div class=\"custom-item--group\">Group header for {{ item[key] }}</div>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering HEADER ITEMS for groups in the combo list"
+                }
+            },
+            "addItemTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.addItemTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboAddItem>",
+                        "         <button class=\"combo__add-button\">",
+                        "             Click to add item",
+                        "         </button>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the ADD BUTTON in the combo drop down"
+                }
+            },
+            "emptyTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.emptyTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboEmpty>",
+                        "         <div class=\"combo--emtpy\">",
+                        "             There are no items to display",
+                        "         </div>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the ADD BUTTON in the combo drop down"
+                }
+            },
+            "toggleIconTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.toggleIconTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboToggleIcon let-collapsed>",
+                        "         <igx-icon>{{ collapsed ? 'remove_circle' : 'remove_circle_outline'}}</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the combo TOGGLE(open/close) button"
+                }
+            },
+            "clearIconTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.combo.clearIconTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-combo #combo>",
+                        "     ...",
+                        "     <ng-template igxComboClearIcon>",
+                        "         <igx-icon>clear</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the combo CLEAR button"
+                }
+            },
             "onSelectionChange": {
                 "comment": {
                     "text": [
@@ -96,6 +275,21 @@
                     "shortText": "コンボの id を取得または設定します。"
                 }
             },
+            "width": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get",
+                        "let myComboWidth = this.combo.width;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-combo [width]='250px'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "Sets the style width of the element"
+                }
+            },
             "allowCustomValues": {
                 "comment": {
                     "text": [
@@ -186,6 +380,21 @@
                     "shortText": "コンボ ドロップダウンの検索フィールドのプレースホルダー値を定義します。"
                 }
             },
+            "valueKey": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get",
+                        "let myComboValueKey = this.combo.valueKey;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-combo [valueKey]='myKey'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "Combo value data source propery."
+                }
+            },
             "filterable": {
                 "comment": {
                     "shortText": [
@@ -229,22 +438,16 @@
             }
         },
         "methods": {
-            "focusSearchInput": {
+            "triggerCheck": {
                 "comment": {
-                    "tags": {
-                        "hidden;": {
-                            "comment": {
-                                "tagName": "非表示;"
-                            }
-                        }
-                    }
+                    "shortText": "Triggers change detection on the combo view"
                 }
             },
             "toggle": {
                 "comment": {
                     "text": [
                         "```html",
-                        "<button (click)=\"combo.toggle()>Toggle Combo</button>",
+                        "<button (click)=\"combo.toggle()\">Toggle Combo</button>",
                         "<igx-combo #combo></igx-combo>",
                         "```"
                     ],
@@ -255,7 +458,7 @@
                 "comment": {
                     "text": [
                         "```html",
-                        "<button (click)=\"combo.open()>Open Combo</button>",
+                        "<button (click)=\"combo.open()\">Open Combo</button>",
                         "<igx-combo #combo></igx-combo>",
                         "```"
                     ],
@@ -266,7 +469,7 @@
                 "comment": {
                     "text": [
                         "```html",
-                        "<button (click)=\"combo.close()>Close Combo</button>",
+                        "<button (click)=\"combo.close()\">Close Combo</button>",
                         "<igx-combo #combo></igx-combo>",
                         "```"
                     ],
@@ -292,7 +495,6 @@
                                 "text": [
                                     "True の場合、前回選択した項目がクリアされます。",
                                     "```typescript",
-                                    "// 取得",
                                     "this.combo.selectItems([\"New York\", \"New Jersey\"]);",
                                     "```"
                                 ]
@@ -311,7 +513,6 @@
                                 "text": [
                                     "選択解除される項目。",
                                     "```typescript",
-                                    "// 取得",
                                     "this.combo.deselectItems([\"New York\", \"New Jersey\"]);",
                                     "```"
                                 ]
@@ -330,7 +531,6 @@
                                 "text": [
                                     "True に設定されている場合、すべての項目を設定します。そうでない場合、フィルターのみの項目を選択します。",
                                     "```typescript",
-                                    "// 取得",
                                     "this.combo.selectAllItems();",
                                     "```"
                                 ]
@@ -349,7 +549,6 @@
                                 "text": [
                                     "True に設定されている場合、すべての項目の選択を解除します。そうでない場合、フィルターのみの項目を選択解除します。",
                                     "```typescript",
-                                    "// 取得",
                                     "this.combo.deselectAllItems();",
                                     "```"
                                 ]
@@ -359,41 +558,35 @@
                     "tags": {},
                     "shortText": "フィルター済みのすべての項目の選択を解除します。"
                 }
-            }
         },
-        "accessors": {
-            "width": {
-                "getter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let myComboWidth = this.combo.width;",
-                            "```",
-                            "```html",
-                            "<!--set-->",
-                            "<igx-combo [width]='250px'></igx-combo>",
-                            "```"
-                        ],
-                        "shortText": "要素のスタイルの幅を設定します。"
+        "setSelectedItem": {
+            "comment": {
+                "parameters": {
+                    "itemID": {
+                        "comment": {
+                            "text": "the valueKey of the specified item"
+                        }
+                    },
+                    "select": {
+                        "comment": {
+                            "text": [
+                                "If the item should be selected (true) or deselcted (false)",
+                                "```typescript",
+                                "items: { field: string, region: string}[] = data;",
+                                "this.combo.setSelectedItem('Connecticut', true);",
+                                "// combo.valueKey === 'field'",
+                                "// items[n] === { field: 'Connecticut', state: 'New England'}",
+                                "```"
+                            ]
+                        }
                     }
                 },
-                "setter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let myComboWidth = this.combo.width;",
-                            "```",
-                            "```html",
-                            "<!--set-->",
-                            "<igx-combo [width]='250px'></igx-combo>",
-                            "```"
-                        ],
-                        "shortText": "要素のスタイルの幅を設定します。"
-                    }
-                }
-            },
+                "tags": {},
+                "shortText": "Selects/Deselects an item using it's valueKey value"
+            }
+        }
+    },
+        "accessors": {
             "data": {
                 "getter": {
                     "comment": {
@@ -415,38 +608,6 @@
                             "```"
                         ],
                         "shortText": "コンボのデータ ソース。"
-                    }
-                }
-            },
-            "valueKey": {
-                "getter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let myComboValueKey = this.combo.valueKey;",
-                            "```",
-                            "```html",
-                            "<!--set-->",
-                            "<igx-combo [valueKey]='myKey'></igx-combo>",
-                            "```"
-                        ],
-                        "shortText": "コンボ値データソース プロパティ。"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let myComboValueKey = this.combo.valueKey;",
-                            "```",
-                            "```html",
-                            "<!--set-->",
-                            "<igx-combo [valueKey]='myKey'></igx-combo>",
-                            "```"
-                        ],
-                        "shortText": "コンボ値データソース プロパティ。"
                     }
                 }
             },
@@ -558,30 +719,6 @@
                     }
                 }
             },
-            "valid": {
-                "getter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let valid = this.combo.valid;",
-                            "```"
-                        ],
-                        "shortText": "フォームで使用時のコントロールが有効化どうかを取得します。"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "this.combo.valid(IgxComboState.INVALID);",
-                            "```"
-                        ],
-                        "shortText": "コンボの有効な状態を設定します。"
-                    }
-                }
-            },
             "value": {
                 "getter": {
                     "comment": {
@@ -591,18 +728,7 @@
                             "let comboValue = this.combo.value;",
                             "```"
                         ],
-                        "shortText": "コンボの値"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "text": [
-                            "```html",
-                            "<!--set-->",
-                            "<igx-combo [value]='newValue'></igx-combo>",
-                            "```"
-                        ],
-                        "shortText": "コンボの値"
+                        "shortText": "The text displayed in the combo input"
                     }
                 }
             },
@@ -611,7 +737,6 @@
                     "comment": {
                         "text": [
                             "```typescript",
-                            "// 取得",
                             "let state = this.combo.collapsed;",
                             "```"
                         ],

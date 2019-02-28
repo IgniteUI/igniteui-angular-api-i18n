@@ -1,0 +1,74 @@
+{
+    "IgxDropDownItemNavigationDirective": {
+        "comment": {
+            "shortText": "Navigation Directive that handles keyboard events on its host and controls a targeted IgxDropDownBase component"
+        },
+        "properties": {},
+        "methods": {
+            "handleKeyDown": {
+                "comment": {
+                    "shortText": "Captures keydown events and calls the appropriate handlers on the target component"
+                }
+            },
+            "onArrowDownKeyDown": {
+                "comment": {
+                    "shortText": "Navigates to previous item"
+                }
+            },
+            "onArrowUpKeyDown": {
+                "comment": {
+                    "shortText": "Navigates to previous item"
+                }
+            },
+            "onEndKeyDown": {
+                "comment": {
+                    "shortText": "Navigates to target's last item"
+                }
+            },
+            "onHomeKeyDown": {
+                "comment": {
+                    "shortText": "Navigates to target's first item"
+                }
+            }
+        },
+        "accessors": {
+            "target": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// Get",
+                            "export class MyComponent {",
+                            " ...",
+                            " @ContentChild(IgxDropDownNavigationDirective)",
+                            " navDirective: IgxDropDownNavigationDirective = null",
+                            " ...",
+                            " const navTarget: IgxDropDownBase = navDirective.navTarget",
+                            "}",
+                            "```"
+                        ],
+                        "shortText": "Gets the target of the navigation directive;"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<!-- Set -->",
+                            "<input [igxDropDownItemNavigation]=\"dropdown\" />",
+                            "...",
+                            "<igx-drop-down #dropdown>",
+                            "...",
+                            "</igx-drop-down>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Sets the target of the navigation directive;",
+                            "If no valid target is passed, it falls back to the drop down context"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

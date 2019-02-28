@@ -53,35 +53,14 @@
             },
             "onSelection": {
                 "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxCalendarComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
                     "shortText": [
-                        "Emits an event when a selection is made in the calendar.",
-                        "Provides reference the `selectedDates` property in the `IgxCalendarComponent`.",
-                        "```html",
-                        "<igx-calendar (onSelection) = \"onSelection($event)\"></igx-calendar>",
-                        "```"
+                        "Emits an event when a date is selected.",
+                        "Provides reference the `selectedDates` property."
                     ]
                 }
             }
         },
         "methods": {
-            "selectDate": {
-                "comment": {
-                    "shortText": [
-                        "Selects date(s) (based on the selection type).",
-                        "```typescript",
-                        "this.calendar.selectDate(new Date(`2018-06-12`));",
-                        "```"
-                    ]
-                }
-            },
             "deselectDate": {
                 "comment": {
                     "shortText": [
@@ -91,345 +70,14 @@
                         "````"
                     ]
                 }
+            },
+            "selectDate": {
+                "comment": {
+                    "shortText": "Selects date(s) (based on the selection type)."
+                }
             }
         },
         "accessors": {
-            "weekStart": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Gets the start day of the week.",
-                            "Can return a numeric or an enum representation of the week day.",
-                            "Defaults to `Sunday` / `0`.",
-                            "```typescript",
-                            "let weekStart =  this.calendar.weekStart;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets the start day of the week.",
-                            "Can be assigned to a numeric value or to `WEEKDAYS` enum value.",
-                            "```html",
-                            "<igx-calendar [weekStart] = \"1\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "locale": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Gets the `locale` of the calendar.",
-                            "Default value is `\"en\"`.",
-                            "```typescript",
-                            "let locale =  this.calendar.locale;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets the `locale` of the calendar.",
-                            "Expects a valid BCP 47 language tag.",
-                            "Default value is `\"en\"`.",
-                            "```html",
-                            "<igx-calendar [locale] = \"de\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "selection": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Gets the selection type of the calendar.",
-                            "Default value is `\"single\"`.",
-                            "Changing the type of selection in the calendar resets the currently",
-                            "selected values if any.",
-                            "```typescript",
-                            "let selectionType =  this.calendar.selection;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets the selection type of the calendar.",
-                            "```html",
-                            "<igx-calendar [selection] = \"'multi'\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "viewDate": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Gets the date that is presented in the calendar.",
-                            "By default it is the current date.",
-                            "```typescript",
-                            "let date = this.calendar.viewDate;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets the date that will be presented in the default view when the calendar renders.",
-                            "```html",
-                            "<igx-calendar viewDate = \"15/06/2018\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "value": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "text": [
-                            "When the calendar selection is set to `single`, it returns",
-                            "a single `Date` object.",
-                            "Otherwise it is an array of `Date` objects.",
-                            "```typescript",
-                            "let selectedDates =  this.calendar.value;",
-                            "```"
-                        ],
-                        "shortText": "Gets the selected date(s) of the calendar."
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "text": [
-                            "When the calendar selection is set to `single`, it accepts",
-                            "a single `Date` object.",
-                            "Otherwise it is an array of `Date` objects.",
-                            "```typescript",
-                            " this.calendar.value =  new Date(`2016-06-12`);",
-                            "```"
-                        ],
-                        "shortText": "Sets the selected date(s) of the calendar."
-                    }
-                }
-            },
-            "formatOptions": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Gets the date format options of the calendar.",
-                            "```typescript",
-                            "let dateFormatOptions = this.calendar.formatOptions.",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets the date format options of the calendar.",
-                            "```html",
-                            "<igx-calendar> [formatOptions] = \"{ day: '2-digit', month: 'short', weekday: 'long', year: 'numeric' }\"</igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "formatViews": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Gets whether the `day`, `month` and `year` should be rendered",
-                            "according to the locale and formatOptions, if any.",
-                            "```typescript",
-                            "let formatViews = this.calendar.formatViews;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Gets whether the `day`, `month` and `year` should be rendered",
-                            "according to the locale and formatOptions, if any.",
-                            "```html",
-                            "<igx-calendar [formatViews] = \"{ day: true, month: false, year: true }\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "disabledDates": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Gets the disabled dates descriptors.",
-                            "```typescript",
-                            "let disabledDates = this.calendar.disabledDates;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "Sets the disabled dates' descriptors.",
-                            "```typescript",
-                            "@ViewChild(\"MyCalendar\")",
-                            "public calendar: IgCalendarComponent;",
-                            "ngOnInit(){",
-                            "   this.calendar.disabledDates = [",
-                            "    {type: DateRangeType.Between, dateRange: [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]},",
-                            "    {type: DateRangeType.Weekends}];",
-                            "}",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "specialDates": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Gets the special dates descriptors.",
-                            "```typescript",
-                            "let specialDates = this.calendar.specialDates;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "Sets the special dates' descriptors.",
-                            "```typescript",
-                            "@ViewChild(\"MyCalendar\")",
-                            "public calendar: IgCalendarComponent;",
-                            "ngOnInit(){",
-                            "   this.calendar.specialDates = [",
-                            "    {type: DateRangeType.Between, dateRange: [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]},",
-                            "    {type: DateRangeType.Weekends}];",
-                            "}",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "activeView": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Gets the current active view of the calendar.",
-                            "```typescript",
-                            "let activeView =  this.calendar.activeView;",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "headerTemplate": {
                 "getter": {
                     "comment": {
@@ -518,6 +166,189 @@
                             "or `igxCalendarSubHeaderYear` directive.",
                             "```typescript",
                             "let context =  this.calendar.context;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "formatViews": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets whether the `day`, `month` and `year` should be rendered",
+                            "according to the locale and formatOptions, if any."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets whether the `day`, `month` and `year` should be rendered",
+                            "according to the locale and formatOptions, if any."
+                        ]
+                    }
+                }
+            },
+            "activeView": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets the current active view."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the current active view."
+                    }
+                }
+            },
+            "weekStart": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the start day of the week.",
+                            "Can return a numeric or an enum representation of the week day.",
+                            "Defaults to `Sunday` / `0`."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the start day of the week.",
+                            "Can be assigned to a numeric value or to `WEEKDAYS` enum value."
+                        ]
+                    }
+                }
+            },
+            "locale": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the `locale` of the calendar.",
+                            "Default value is `\"en\"`."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the `locale` of the calendar.",
+                            "Expects a valid BCP 47 language tag.",
+                            "Default value is `\"en\"`."
+                        ]
+                    }
+                }
+            },
+            "formatOptions": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets the date format options of the days view."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the date format options of the days view.",
+                            "Default is { day: 'numeric', month: 'short', weekday: 'short', year: 'numeric' }"
+                        ]
+                    }
+                }
+            },
+            "selection": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the selection type.",
+                            "Default value is `\"single\"`.",
+                            "Changing the type of selection resets the currently",
+                            "selected values if any."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the selection."
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "When selection is set to `single`, it returns",
+                            "a single `Date` object.",
+                            "Otherwise it is an array of `Date` objects."
+                        ],
+                        "shortText": "Gets the selected date(s)."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "When selection is set to `single`, it accepts",
+                            "a single `Date` object.",
+                            "Otherwise it is an array of `Date` objects."
+                        ],
+                        "shortText": "Sets the selected date(s)."
+                    }
+                }
+            },
+            "viewDate": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the date that is presented.",
+                            "By default it is the current date."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the date that will be presented in the default view when the component renders."
+                    }
+                }
+            },
+            "disabledDates": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets the disabled dates descriptors."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the disabled dates' descriptors.",
+                            "```typescript",
+                            "@ViewChild(\"MyCalendar\")",
+                            "public calendar: IgxCalendarComponent;",
+                            "ngOnInit(){",
+                            "   this.calendar.disabledDates = [",
+                            "    {type: DateRangeType.Between, dateRange: [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]},",
+                            "    {type: DateRangeType.Weekends}];",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "specialDates": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets the special dates descriptors."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the special dates' descriptors.",
+                            "```typescript",
+                            "@ViewChild(\"MyCalendar\")",
+                            "public calendar: IgxCalendarComponent;",
+                            "ngOnInit(){",
+                            "   this.calendar.specialDates = [",
+                            "    {type: DateRangeType.Between, dateRange: [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]},",
+                            "    {type: DateRangeType.Weekends}];",
+                            "}",
                             "```"
                         ]
                     }

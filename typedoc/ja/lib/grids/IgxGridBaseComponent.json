@@ -38,6 +38,24 @@
                     ]
                 }
             },
+            "loadingGridTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that sets a custom template when the `IgxGridComponent` is loading.",
+                        "```html",
+                        "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [loadingGridTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "paginationTemplate": {
                 "comment": {
                     "tags": {
@@ -105,7 +123,21 @@
                     "shortText": [
                         "`IgxGridComponent` のプライマリ キーを設定する @Input プロパティ。",
                         "```html",
-                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [primaryKey]=\"6\" [autoGenerate]=\"true\"></igx-grid>",
+                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [primaryKey]=\"'ProductID'\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "shouldGenerate": {
+                "comment": {
+                    "shortText": [
+                        "A property that allows the columns to be auto-generated once again after the initialization of the grid.",
+                        "This will allow to bind the grid to remote data and having auto-generated columns at the same time.",
+                        "Note that after generating the columns, this property would be disabled to avoid re-creating",
+                        "columns each time a new data is assigned.",
+                        "```typescript",
+                        " this.grid.shouldGenerate = true;",
+                        " this.remoteData = this.remoteService.remoteData;",
                         "```"
                     ]
                 }
@@ -755,6 +787,23 @@
                     ]
                 }
             },
+            "onFocusChange": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when changing the focus while navigating with the keyboard.",
+                        "Return the focused cell or focused group row. This event is cancelable.",
+                        "```typescript",
+                        "changeFocus(event: IGridFocusChangeEventArgs) {",
+                        " const changedFocus = event;",
+                        "}",
+                        "```",
+                        "```html",
+                        "* <igx-grid (onFocusChange)=\"changeFocus($event)\"></igx-grid>",
+                        "```"
+
+                    ]
+                }
+            },
             "emptyFilteredGridTemplate": {
                 "comment": {
                     "tags": {
@@ -766,7 +815,7 @@
                         }
                     },
                     "shortText": [
-                        "フィルターされた `IgxGridComponent` が空の場合に表示されるテンプレートのテンプレート参照。",
+                        "A template reference for the template when the filtered `IgxGridComponent` is empty.",
                         "```",
                         "const emptyTempalte = this.grid.emptyGridTemplate;",
                         "```"
@@ -784,27 +833,9 @@
                         }
                     },
                     "shortText": [
-                        "`IgxGridComponent` が空の場合に表示されるテンプレートのテンプレート参照。",
+                        "A template reference for the template when the `IgxGridComponent` is empty.",
                         "```",
                         "const emptyTempalte = this.grid.emptyGridTemplate;",
-                        "```"
-                    ]
-                }
-            },
-            "toolbarCustomContentTemplate": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridBaseComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "カスタム コンテンツを表示するためにツールバーで使用されるテンプレートを返します。",
-                        "```typescript",
-                        "let customContentTemplate = this.grid.toolbarCustomContentTemplate;",
                         "```"
                     ]
                 }
@@ -1615,36 +1646,6 @@
             }
         },
         "accessors": {
-            "data": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。.",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "resourceStrings": {
                 "setter": {
                     "comment": {
@@ -1751,49 +1752,9 @@
                     "comment": {
                         "shortText": "グリッドのロケールを設定します。"
                     }
-                }
-            },
-            "filteredData": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のフィルター済みデータを含むオブジェクトの配列を返します。",
-                            "```typescript",
-                            "let filteredData = this.grid.filteredData;",
-                            "```"
-                        ]
+               
                     }
                 },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のフィルター済みデータを含むオブジェクトの配列を設定します。",
-                            "```typescript",
-                            "this.grid.filteredData = [{",
-                            "      ID: 1,",
-                            "      Name: \"A\"",
-                            "}];",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "paging": {
                 "getter": {
                     "comment": {
@@ -2207,6 +2168,31 @@
                     }
                 }
             },
+            "isLoading": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that sets whether the grid is going to show loading indicator.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [isLoading]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "An accessor that returns whether the grid is showing loading indicator."
+                    }
+                }
+            },
             "emptyFilteredGridMessage": {
                 "setter": {
                     "comment": {
@@ -2305,6 +2291,45 @@
                             "デフォルトで無効です。",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filterMode": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns the filter mode.",
+                            "```typescript",
+                            " let filtering = this.grid.filterMode;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets filter mode.",
+                            "By default it's set to FilterMode.quickFilter.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"localData\" [filterMode]=\"'quickFilter'\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -2483,6 +2508,26 @@
                             "現在描画されている `IgxGridRowComponent` のリスト。",
                             "```typescript",
                             "const dataList = this.grid.dataRowList;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "toolbarCustomContentTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns the template which will be used by the toolbar to show custom content.",
+                            "```typescript",
+                            "let customContentTemplate = this.grid.toolbarCustomContentTemplate;",
                             "```"
                         ]
                     }
@@ -3397,9 +3442,19 @@
                             }
                         },
                         "shortText": [
-                            "フィルターされたデータを含む配列を返します。",
+                            "Returns an array containing the filtered sorted data.",
                             "```typescript",
-                            "const filteredData = this.grid1.filteredSortedData;",
+                            "const filteredSortedData = this.grid1.filteredSortedData;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns an array containing the filtered sorted data.",
+                            "```typescript",
+                            "const filteredSortedData = this.grid1.filteredSortedData;",
                             "```"
                         ]
                     }

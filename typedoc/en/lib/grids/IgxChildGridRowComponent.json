@@ -1,0 +1,75 @@
+{
+    "IgxChildGridRowComponent": {
+        "properties": {
+            "expanded": {
+                "comment": {
+                    "shortText": [
+                        "Returns whether the row is expanded.",
+                        "```typescript",
+                        "const RowExpanded = this.grid1.rowList.first.expanded;",
+                        "```"
+                    ]
+                }
+            },
+            "rowData": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get the row data for the first selected row",
+                        "let selectedRowData = this.grid.selectedRows[0].rowData;",
+                        "```"
+                    ],
+                    "shortText": " The data passed to the row component."
+                }
+            },
+            "index": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get the index of the second selected row",
+                        "let selectedRowIndex = this.grid.selectedRows[1].index;",
+                        "```"
+                    ],
+                    "shortText": "The index of the row."
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "parentGrid": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "handleRowSelection(event) {",
+                            " // the grid on which the onRowSelectionChange event was triggered",
+                            " const grid = event.row.grid;",
+                            "}",
+                            "```",
+                            "```html",
+                            " <igx-grid",
+                            "   [data]=\"data\"",
+                            "   (onRowSelectionChange)=\"handleRowSelection($event)\">",
+                            " </igx-grid>",
+                            "```"
+                        ],
+                        "shortText": "Get a reference to the grid that contains the selected row."
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the nativeElement of the second selected row",
+                            "let selectedRowNativeElement = this.grid.selectedRows[1].nativeElement;",
+                            "```"
+                        ],
+                        "shortText": "The native DOM element representing the row. Could be null in certain environments."
+                    }
+                }
+            }
+        }
+    }
+}

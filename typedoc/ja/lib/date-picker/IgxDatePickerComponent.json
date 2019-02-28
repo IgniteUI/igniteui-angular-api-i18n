@@ -14,10 +14,64 @@
             ]
         },
         "properties": {
+            "label": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the `IgxDatePickerComponent` label.",
+                        "The default label is 'Date'.",
+                        "```html",
+                        "<igx-date-picker [label]=\"Calendar\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "labelVisibility": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the `IgxDatePickerComponent` label visibility.",
+                        "By default the visibility is set to true.",
+                        "<igx-date-picker [labelVisibility]=\"false\"></igx-date-picker>"
+                    ]
+                }
+            },
+            "locale": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets locales. Default locale is en.",
+                        "```html",
+                        "<igx-date-picker locale=\"ja-JP\" [value]=\"date\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "weekStart": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets on which day the week starts.",
+                        "```html",
+                        "<igx-date-picker [weekStart]=\"WEEKDAYS.FRIDAY\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "mask": {
+                "comment": {
+                    "shortText": [
+                        "Returns the date mask of the `IgxDatePickerComponent` when in edit mode.",
+                        "```typescript",
+                        "@ViewChild(\"MyDatePicker\")",
+                        "public datePicker: IgxDatePickerComponent;",
+                        "ngAfterViewInit(){",
+                        "   let mask = this.datePicker.mask;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
             "id": {
                 "comment": {
                     "shortText": [
-                        "`id` 属性の値を設定する @Input プロパティ。提供されていない場合、自動的に生成されます。",
+                        "An @Input property that sets the value of `id` attribute. If not provided it will be automatically generated.",
                         "```html",
                         "<igx-date-picker [id]=\"'igx-date-picker-3'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
                         "```"
@@ -27,7 +81,7 @@
             "formatter": {
                 "comment": {
                     "shortText": [
-                        "選択した日付または渡した日付にカスタム書式を適用する @Input プロパティ。",
+                        "An @Input property that applies a custom formatter function on the selected or passed date.",
                         "```typescript",
                         "public date: Date = new Date();",
                         "private dayFormatter = new Intl.DateTimeFormat(\"en\", { weekday: \"long\" });",
@@ -47,62 +101,9 @@
             "disabled": {
                 "comment": {
                     "shortText": [
-                        "`IgxDatePickerComponent` を無効にする @Input プロパティ。",
+                        "An @Input property that disables the `IgxDatePickerComponent`.",
                         "```html",
                         "<igx-date-picker [disabled]=\"'true'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "value": {
-                "comment": {
-                    "shortText": [
-                        "選択した日付を設定する @Input プロパティ。",
-                        "```typescript",
-                        "public date: Date = new Date();",
-                        "```",
-                        "```html",
-                        "<igx-date-picker [value]=\"date\"></igx-date-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "label": {
-                "comment": {
-                    "shortText": [
-                        "`IgxDatePickerComponent` ラベルを設定する @Input プロパティ。",
-                        "デフォルト ラベルは 'Date' です。",
-                        "```html",
-                        "<igx-date-picker [label]=\"Calendar\"></igx-date-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "labelVisibility": {
-                "comment": {
-                    "shortText": [
-                        "`IgxDatePickerComponent` ラベルの表示状態を設定する @Input プロパティ。",
-                        "デフォルトで表示状態は true に設定されます。",
-                        "<igx-date-picker [labelVisibility]=\"false\"></igx-date-picker>"
-                    ]
-                }
-            },
-            "locale": {
-                "comment": {
-                    "shortText": [
-                        "ロケールを設定する @Input プロパティ。デフォルト ロケールは en です。",
-                        "```html",
-                        "<igx-date-picker locale=\"ja-JP\" [value]=\"date\"></igx-date-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "weekStart": {
-                "comment": {
-                    "shortText": [
-                        "週の最初の曜日を設定する @Input プロパティ。",
-                        "```html",
-                        "<igx-date-picker [weekStart]=\"WEEKDAYS.FRIDAY\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
                         "```"
                     ]
                 }
@@ -137,13 +138,33 @@
                     ]
                 }
             },
+            "mode": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets whether `IgxDatePickerComponent` is readonly or editable.",
+                        "```html",
+                        "<igx-date-picker mode=\"editable\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "isSpinLoop": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets whether the `IgxDatePickerComponent` date parts would spin continuously or stop when min/max is reached.",
+                        "```html",
+                        "<igx-date-picker [isSpinLoop]=\"false\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
             "onOpen": {
                 "comment": {
                     "shortText": [
-                        "`IgxDatePickerComponent` が開いたときに発生されるイベント。",
+                        "`IgxDatePickerComponent` カレンダーが開いたときに発生されるイベント。",
                         "```typescript",
                         "public open(event){",
-                        "   alert(\"The date-picker has been opened!\");",
+                        "   alert(\"The date-picker calendar has been opened!\");",
                         "}",
                         "```",
                         "```html",
@@ -178,6 +199,36 @@
                         "```",
                         "```html",
                         "<igx-date-picker (onSelection)=\"selection($event)\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "onDisabledDate": {
+                "comment": {
+                    "shortText": [
+                        "An @Output property that fires when the user types/spins to a disabled date in the date-picker editor.",
+                        "```typescript",
+                        "public onDisabledDate(event){",
+                        "   alert(\"This date is disabled!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-date-picker (onDisabledDate)=\"onDisabledDate($event)\"></igx-date-picker>",
+                        "```"
+                    ]
+                }
+            },
+            "onValidationFailed": {
+                "comment": {
+                    "shortText": [
+                        "An @Output property that fires when the user types/spins invalid date in the date-picker editor.",
+                        "```typescript",
+                        "public onValidationFailed(event){",
+                        "   alert(\"This date is not valid!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-date-picker (onValidationFailed)=\"onValidationFailed($event)\"></igx-date-picker>",
                         "```"
                     ]
                 }
@@ -327,6 +378,35 @@
                     }
                 }
             },
+            "format": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the date display format of the editable `IgxDatePickerComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   let format = this.datePicker.format;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the date format of the `IgxDatePickerComponent` when in edit mode.",
+                            "```typescript",
+                            "@ViewChild(\"MyDatePicker\")",
+                            "public datePicker: IgxDatePickerComponent;",
+                            "this.datePicker.format = 'yyyy-M-d';",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "formatViews": {
                 "getter": {
                     "comment": {
@@ -419,7 +499,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "書式設定された日付を返します。",
+                            "Returns the formatted date when `IgxDatePickerComponent` is readonly.",
                             "```typescript",
                             "@ViewChild(\"MyDatePicker\")",
                             "public datePicker: IgxDatePickerComponent;",
@@ -435,13 +515,25 @@
                     }
                 }
             },
+            "transformedDate": {
+                "getter": {
+                    "comment": {
+                        "shortText": "hidden"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "hidden"
+                    }
+                }
+            },
             "template": {
                 "getter": {
                     "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxTimePickerComponent",
+                                    "text": "IgxDatePickerComponent",
                                     "tagName": "次のメンバー:"
                                 }
                             }
@@ -461,12 +553,40 @@
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxTimePickerComponent",
+                                    "text": "IgxDatePickerComponent",
                                     "tagName": "次のメンバー:"
                                 }
                             }
                         },
                         "shortText": "入力グループのテンプレートに渡されたコンテキストを取得します。"
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that gets/sets the selected date.",
+                            "```typescript",
+                            "public date: Date = new Date();",
+                            "```",
+                            "```html",
+                            "<igx-date-picker [value]=\"date\"></igx-date-picker>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that gets/sets the selected date.",
+                            "```typescript",
+                            "public date: Date = new Date();",
+                            "```",
+                            "```html",
+                            "<igx-date-picker [value]=\"date\"></igx-date-picker>",
+                            "```"
+                        ]
                     }
                 }
             }

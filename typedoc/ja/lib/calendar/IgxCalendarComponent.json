@@ -2,16 +2,16 @@
     "IgxCalendarComponent": {
         "comment": {
             "text": [
-                "Ignite UI Calendar はカレンダーを表示し、ユーザーは単一または複数の範囲を使用して日付を選択できます。",
-                "",
-                "例:",
+                "The Ignite UI Calendar provides an easy way to display a calendar and allow users to select dates using single, multiple",
+                "or range selection.",
+                "Example:",
                 "```html",
                 "<igx-calendar selection=\"range\"></igx-calendar>",
                 "```"
             ],
             "shortText": [
                 "**Ignite UI for Angular Calendar** -",
-                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/calendar.html)"
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/calendar.html)"
             ]
         },
         "properties": {
@@ -21,13 +21,13 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxCalendarComponent",
-                                "tagName": "次のメンバー:"
+                                "tagName": "memberof"
                             }
                         }
                     },
                     "shortText": [
-                        "カレンダーの `id` を取得または設定します。",
-                        "設定されない場合、`id` の値は `\"igx-calendar-0\"` になります。",
+                        "Sets/gets the `id` of the calendar.",
+                        "If not set, the `id` will have value `\"igx-calendar-0\"`.",
                         "```html",
                         "<igx-calendar id = \"my-first-calendar\"></igx-calendar>",
                         "```",
@@ -40,8 +40,8 @@
             "vertical": {
                 "comment": {
                     "shortText": [
-                        "カレンダー ヘッダーが垂直配置にあるかどうかを取得または設定します。",
-                        "デフォルトは `false` です。",
+                        "Sets/gets whether the calendar header will be in vertical position.",
+                        "Default value is `false`.",
                         "```html",
                         "<igx-calendar [vertical] = \"true\"></igx-calendar>",
                         "```",
@@ -53,64 +53,46 @@
             },
             "onSelection": {
                 "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxCalendarComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
                     "shortText": [
-                        "カレンダーで選択が実行されるときにイベントを発生します。",
-                        "`IgxCalendarComponent` で `selectedDates` プロパティへの参照を提供します。",
-                        "```html",
-                        "<igx-calendar (onSelection) = \"onSelection($event)\"></igx-calendar>",
-                        "```"
+                        "Emits an event when a date is selected.",
+                        "Provides reference the `selectedDates` property."
                     ]
                 }
             }
         },
         "methods": {
-            "selectDate": {
-                "comment": {
-                    "shortText": [
-                        "日付を選択タイプに基づいて選択します。",
-                        "```typescript",
-                        "this.calendar.selectDate(new Date(`2018-06-12`));",
-                        "```"
-                    ]
-                }
-            },
             "deselectDate": {
                 "comment": {
                     "shortText": [
-                        "日付を選択タイプに基づいて選択解除します。",
+                        "Deselects date(s) (based on the selection type).",
                         "```typescript",
                         "this.calendar.deselectDate(new Date(`2018-06-12`));",
                         "````"
                     ]
                 }
+            },
+            "selectDate": {
+                "comment": {
+                    "shortText": "Selects date(s) (based on the selection type)."
+                }
             }
         },
         "accessors": {
-            "weekStart": {
+            "headerTemplate": {
                 "getter": {
                     "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
                                     "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "週の最初の曜日を取得します。",
-                            "曜日の数値または列挙型の表現を返します。",
-                            "デフォルト値は `Sunday` / `0` です。",
+                            "Gets the header template.",
                             "```typescript",
-                            "let weekStart =  this.calendar.weekStart;",
+                            "let headerTemplate =  this.calendar.headerTeamplate;",
                             "```"
                         ]
                     }
@@ -121,36 +103,26 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "週の最初の曜日を設定します。",
-                            "数値または `WEEKDAYS` の列挙型の値に割り当てます。",
+                            "Sets the header template.",
                             "```html",
-                            "<igx-calendar [weekStart] = \"1\"></igx-calendar>",
+                            "<igx-calendar headerTemplateDirective = \"igxCalendarHeader\"></igx-calendar>",
                             "```"
                         ]
                     }
                 }
             },
-            "locale": {
+            "subheaderTemplate": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
                         "shortText": [
-                            "Gets the `locale` of the calendar.",
-                            "デフォルト値は `\"en\"` です。",
+                            "Gets the subheader template.",
                             "```typescript",
-                            "let locale =  this.calendar.locale;",
+                            "let subheaderTemplate = this.calendar.subheaderTemplate;",
                             "```"
                         ]
                     }
@@ -161,167 +133,39 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "Sets the `locale` of the calendar.",
-                            "有効な BCP 47 言語タグに設定します。",
-                            "デフォルト値は `\"en\"` です。",
+                            "Sets the subheader template.",
                             "```html",
-                            "<igx-calendar [locale] = \"de\"></igx-calendar>",
+                            "<igx-calendar subheaderTemplate = \"igxCalendarSubheader\"></igx-calendar>",
                             "```"
                         ]
                     }
                 }
             },
-            "selection": {
+            "headerContext": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
                         "shortText": [
-                            "カレンダーの選択タイプを取得します。",
-                            "デフォルト値は `\"single\"` です。",
-                            "カレンダーの選択タイプを変更すると、現在選択されている値をリセットします。",
+                            "Gets the context for the template marked with the `igxCalendarHeader` directive.",
                             "```typescript",
-                            "let selectionType =  this.calendar.selection;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "カレンダーの選択タイプを設定します。",
-                            "```html",
-                            "<igx-calendar [selection] = \"'multi'\"></igx-calendar>",
+                            "let headerContext =  this.calendar.headerContext;",
                             "```"
                         ]
                     }
                 }
             },
-            "viewDate": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "カレンダーで表示される日付を取得します。",
-                            "デフォルト値は現在の日付です。",
-                            "```typescript",
-                            "let date = this.calendar.viewDate;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "カレンダーを描画するときにデフォルト ビューで表示される日付を設定します。",
-                            "```html",
-                            "<igx-calendar viewDate = \"15/06/2018\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "value": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "text": [
-                            "カレンダーの選択が `single` に設定される場合、単一の `Date` オブジェクトを返します。",
-                            "それ以外の場合、`Date` オブジェクトの配列です。",
-                            "```typescript",
-                            "let selectedDates =  this.calendar.value;",
-                            "```"
-                        ],
-                        "shortText": "カレンダーで選択された日付を取得します。"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "text": [
-                            "カレンダーの選択が `single` に設定される場合、単一の `Date` オブジェクトを受け取ります。",
-                            "それ以外の場合、`Date` オブジェクトの配列です。",
-                            "```typescript",
-                            " this.calendar.value =  new Date(`2016-06-12`);",
-                            "```"
-                        ],
-                        "shortText": "カレンダーで選択された日付を設定します。"
-                    }
-                }
-            },
-            "formatOptions": {
+            "context": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "カレンダーの日付書式設定オプションを取得します。",
+                            "Gets the context for the template marked with either `igxCalendarSubHeaderMonth`",
+                            "or `igxCalendarSubHeaderYear` directive.",
                             "```typescript",
-                            "let dateFormatOptions = this.calendar.formatOptions.",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "カレンダーの日付書式設定オプションを設定します。",
-                            "```html",
-                            "<igx-calendar> [formatOptions] = \"{ day: '2-digit', month: 'short', weekday: 'long', year: 'numeric' }\"</igx-calendar>",
+                            "let context =  this.calendar.context;",
                             "```"
                         ]
                     }
@@ -331,51 +175,152 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "`day`、`month`、および `year` が locale および formatOptions によって描画されるかどうかを取得します。",
-                            "```typescript",
-                            "let formatViews = this.calendar.formatViews;",
-                            "```"
+                            "Gets whether the `day`, `month` and `year` should be rendered",
+                            "according to the locale and formatOptions, if any."
                         ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
                         "shortText": [
-                            "`day`、`month`、および `year` が locale および formatOptions によって描画されるかどうかを取得します。",
-                            "",
-                            "```html",
-                            "<igx-calendar [formatViews] = \"{ day: true, month: false, year: true }\"></igx-calendar>",
-                            "```"
+                            "Gets whether the `day`, `month` and `year` should be rendered",
+                            "according to the locale and formatOptions, if any."
                         ]
+                    }
+                }
+            },
+            "activeView": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets the current active view."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the current active view."
+                    }
+                }
+            },
+            "weekStart": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the start day of the week.",
+                            "Can return a numeric or an enum representation of the week day.",
+                            "Defaults to `Sunday` / `0`."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the start day of the week.",
+                            "Can be assigned to a numeric value or to `WEEKDAYS` enum value."
+                        ]
+                    }
+                }
+            },
+            "locale": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the `locale` of the calendar.",
+                            "Default value is `\"en\"`."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the `locale` of the calendar.",
+                            "Expects a valid BCP 47 language tag.",
+                            "Default value is `\"en\"`."
+                        ]
+                    }
+                }
+            },
+            "formatOptions": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets the date format options of the days view."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the date format options of the days view.",
+                            "Default is { day: 'numeric', month: 'short', weekday: 'short', year: 'numeric' }"
+                        ]
+                    }
+                }
+            },
+            "selection": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the selection type.",
+                            "Default value is `\"single\"`.",
+                            "Changing the type of selection resets the currently",
+                            "selected values if any."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the selection."
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "When selection is set to `single`, it returns",
+                            "a single `Date` object.",
+                            "Otherwise it is an array of `Date` objects."
+                        ],
+                        "shortText": "Gets the selected date(s)."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "When selection is set to `single`, it accepts",
+                            "a single `Date` object.",
+                            "Otherwise it is an array of `Date` objects."
+                        ],
+                        "shortText": "Sets the selected date(s)."
+                    }
+                }
+            },
+            "viewDate": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the date that is presented.",
+                            "By default it is the current date."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the date that will be presented in the default view when the component renders."
                     }
                 }
             },
             "disabledDates": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "無効な日付記述子を取得します。",
-                            "```typescript",
-                            "let disabledDates = this.calendar.disabledDates;",
-                            "```"
-                        ]
+                        "shortText": "Gets the disabled dates descriptors."
                     }
                 },
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "無効な日付記述子を設定します。",
+                            "Sets the disabled dates' descriptors.",
                             "```typescript",
                             "@ViewChild(\"MyCalendar\")",
-                            "public calendar: IgCalendarComponent;",
+                            "public calendar: IgxCalendarComponent;",
                             "ngOnInit(){",
                             "   this.calendar.disabledDates = [",
                             "    {type: DateRangeType.Between, dateRange: [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]},",
@@ -389,130 +334,21 @@
             "specialDates": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "特別な日付記述子を取得します。",
-                            "```typescript",
-                            "let specialDates = this.calendar.specialDates;",
-                            "```"
-                        ]
+                        "shortText": "Gets the special dates descriptors."
                     }
                 },
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "特別な日付記述子を設定します。",
+                            "Sets the special dates' descriptors.",
                             "```typescript",
                             "@ViewChild(\"MyCalendar\")",
-                            "public calendar: IgCalendarComponent;",
+                            "public calendar: IgxCalendarComponent;",
                             "ngOnInit(){",
                             "   this.calendar.specialDates = [",
                             "    {type: DateRangeType.Between, dateRange: [new Date(\"2020-1-1\"), new Date(\"2020-1-15\")]},",
                             "    {type: DateRangeType.Weekends}];",
                             "}",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "activeView": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "カレンダーの現在アクティブな表示を取得します。",
-                            "```typescript",
-                            "let activeView =  this.calendar.activeView;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "headerTemplate": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "ヘッダー テンプレートを取得します。",
-                            "```typescript",
-                            "let headerTemplate =  this.calendar.headerTeamplate;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "ヘッダー テンプレートを設定します。",
-                            "```html",
-                            "<igx-calendar headerTemplateDirective = \"igxCalendarHeader\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "subheaderTemplate": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "サブヘッダー テンプレートを取得します。",
-                            "```typescript",
-                            "let subheaderTemplate = this.calendar.subheaderTemplate;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCalendarComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "サブヘッダー テンプレートを設定します。",
-                            "```html",
-                            "<igx-calendar subheaderTemplate = \"igxCalendarSubheader\"></igx-calendar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "headerContext": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`igxCalendarHeader` ディレクティブとマークされるテンプレートのコンテキストを取得します。",
-                            "```typescript",
-                            "let headerContext =  this.calendar.headerContext;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "context": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "igxCalendarSubHeaderMonth` または `igxCalendarSubHeaderYear` ディレクティブとマークされるテンプレートのコンテキストを取得します。",
-                            "```typescript",
-                            "let context =  this.calendar.context;",
                             "```"
                         ]
                     }

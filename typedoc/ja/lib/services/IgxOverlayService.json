@@ -69,6 +69,29 @@
             }
         },
         "methods": {
+            "attach": {
+                "comment": {
+                    "parameters": {
+                        "component": {
+                            "comment": {
+                                "text": "Component Type to show in overlay"
+                            }
+                        },
+                        "settings": {
+                            "comment": {
+                                "text": "Display settings for the overlay, such as positioning and scroll/close behavior."
+                            }
+                        },
+                        "moduleRef": {
+                            "comment": {
+                                "text": "Optional reference to the NgModule that can resolve the component's factory"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Generates Id. Provide this Id when call `show(id, settings?)` method"
+                }
+            },
             "show": {
                 "comment": {
                     "parameters": {
@@ -83,7 +106,14 @@
                             }
                         }
                     },
-                    "tags": {},
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "Use `attach(component)` to obtain an Id. Then `show(id, settings?)` with provided Id.",
+                                "tagName": "deprecated"
+                            }
+                        }
+                    },
                     "shortText": "提供されたコンポーネントを表示します。"
                 }
             },
