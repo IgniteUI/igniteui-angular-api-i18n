@@ -261,22 +261,43 @@
                     ]
                 }
             },
+            "headerGroupClasses": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets/gets the class selector of the column group header.",
+                        "```typescript",
+                        "let columnHeaderClass = this.column.headerGroupClasses;",
+                        "```",
+                        "```html",
+                        "<igx-column [headerGroupClasses] = \"'column-group-header'\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
             "cellClasses": {
                 "comment": {
                     "tags": {
                         "memberof": {
                             "comment": {
                                 "text": "IgxColumnComponent",
-                                "tagName": "次のメンバー:"
+                                "tagName": "memberof"
                             }
                         }
                     },
                     "shortText": [
-                        "列セルの条件付きクラス セレクターを設定します。",
-                        "キーと値のペアを含むオブジェクト リテラルを受け取ります。",
-                        "キーは CSS クラスの名前です。",
-                        "値はブール値を返すコールバック関数またはブール値です。",
-                        "例:",
+                        "Sets a conditional class selector of the column cells.",
+                        "Accepts an object literal, containing key-value pairs,",
+                        "where the key is the name of the CSS class, while the",
+                        "value is either a callback function that returns a boolean,",
+                        "or boolean, like so:",
                         "```typescript",
                         "callback = (rowData, columnKey) => { return rowData[columnKey] > 6; }",
                         "cellClasses = { 'className' : this.callback };",
@@ -284,28 +305,6 @@
                         "```html",
                         "<igx-column [cellClasses] = \"cellClasses\"></igx-column>",
                         "<igx-column [cellClasses] = \"{'class1' : true }\"></igx-column>",
-                        "```"
-                    ]
-                }
-            },
-            "formatter": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxColumnComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "列のフォーマッタを取得または設定します。",
-                        "```typescript",
-                        "let columnFormatter = this.column.formatter;",
-                        "```",
-                        "```typescript",
-                        "this.column.formatter = (val: Date) => {",
-                        "return new Intl.DateTimeFormat(\"en-US\").format(val);",
                         "```"
                     ]
                 }
@@ -838,6 +837,45 @@
                             "列インデックスを取得します。",
                             "```typescript",
                             "let columnIndex = this.column.index;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "formatter": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Gets formatter for the column.",
+                            "```typescript",
+                            "let columnFormatter = this.column.formatter;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets formatter for the column.",
+                            "```typescript",
+                            "this.column.formatter = (val: Date) => {",
+                            " return new Intl.DateTimeFormat(\"en-US\").format(val); }",
                             "```"
                         ]
                     }
