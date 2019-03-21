@@ -1,16 +1,6 @@
 {
     "IgxTabsComponent": {
         "properties": {
-            "tabs": {
-                "comment": {
-                    "shortText": [
-                        "すべての `IgxTabItemComponent` の監視可能コレクションを提供します。",
-                        "```typescript",
-                        "const tabItems = this.myTabComponent.tabs;",
-                        "```"
-                    ]
-                }
-            },
             "groups": {
                 "comment": {
                     "shortText": [
@@ -34,13 +24,21 @@
                     ]
                 }
             },
-            "selectedIndex": {
+            "onTabItemDeselected": {
                 "comment": {
                     "shortText": [
-                        "`selectedIndex` の値を設定する @Input プロパティ。",
-                        "デフォルト値は 0 です。",
+                        "Emitted when a tab item is deselected.",
                         "```html",
-                        "<igx-tabs selectedIndex=\"1\">",
+                        "<igx-tabs (onTabItemDeselected)=\"itemDeselected($event)\">",
+                        "     <igx-tabs-group label=\"Tab 1\">This is Tab 1 content.</igx-tabs-group>",
+                        "     <igx-tabs-group label=\"Tab 2\">This is Tab 2 content.</igx-tabs-group>",
+                        "</igx-tabs>",
+                        "```",
+                        "```typescript",
+                        "itemDeselected(e){",
+                        "     const tabGroup = e.group;",
+                        "     const tabItem = e.tab;",
+                        "}",
                         "```"
                     ]
                 }
@@ -64,21 +62,12 @@
                     ]
                 }
             },
-            "onTabItemDeselected": {
+            "tabs": {
                 "comment": {
                     "shortText": [
-                        "タブ項目が選択解除された時に発生されます。",
-                        "```html",
-                        "<igx-tabs (onTabItemDeselected)=\"itemDeselected($event)\">",
-                        "     <igx-tabs-group label=\"Tab 1\">This is Tab 1 content.</igx-tabs-group>",
-                        "     <igx-tabs-group label=\"Tab 2\">This is Tab 2 content.</igx-tabs-group>",
-                        "</igx-tabs>",
-                        "```",
+                        "Provides an observable collection of all `IgxTabItemComponent`s.",
                         "```typescript",
-                        "itemDeselected(e){",
-                        "     const tabGroup = e.group;",
-                        "     const tabItem = e.tab;",
-                        "}",
+                        "const tabItems = this.myTabComponent.tabs;",
                         "```"
                     ]
                 }
@@ -86,6 +75,30 @@
         },
         "methods": {},
         "accessors": {
+            "selectedIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that sets the value of the `selectedIndex`.",
+                            "Default value is 0.",
+                            "```html",
+                            "<igx-tabs selectedIndex=\"1\">",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that sets the value of the `selectedIndex`.",
+                            "Default value is 0.",
+                            "```html",
+                            "<igx-tabs selectedIndex=\"1\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "selectedTabItem": {
                 "getter": {
                     "comment": {
