@@ -52,6 +52,24 @@
                     ]
                 }
             },
+            "rowData": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridCellComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Gets the data of the row of the cell.",
+                        "```typescript",
+                        "let rowData = this.cell.rowData;",
+                        "```"
+                    ]
+                }
+            },
             "cellTemplate": {
                 "comment": {
                     "tags": {
@@ -149,6 +167,47 @@
                     ]
                 }
             },
+            "formatter": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridCellComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Gets the cell formatter.",
+                        "```typescript",
+                        "let cellForamatter = this.cell.formatter;",
+                        "```"
+                    ]
+                }
+            },
+            "visibleColumnIndex": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridCellComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Gets the visible `index` of the in which the cell is stored.",
+                        "```typescript",
+                        "let visibleColumnIndex = this.cell.visibleColumnIndex;",
+                        "```"
+                    ]
+                }
+            },
+            "editMode": {
+                "comment": {
+                    "shortText": "Returns whether the cell is in edit mode."
+                }
+            },
             "tabindex": {
                 "comment": {
                     "tags": {
@@ -192,6 +251,24 @@
                         "```"
                     ]
                 }
+            },
+            "width": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridCellComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Gets the width of the cell.",
+                        "```typescript",
+                        "let cellWidth = this.cell.width;",
+                        "```"
+                    ]
+                }
             }
         },
         "methods": {
@@ -211,6 +288,16 @@
                         "let isCellSelected = thid.cell.isCellSelected();",
                         "```"
                     ]
+                }
+            },
+            "setEditMode": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "cell.setEditMode(true);",
+                        "```"
+                    ],
+                    "shortText": "Starts/ends edit mode for the cell."
                 }
             },
             "update": {
@@ -269,26 +356,6 @@
             }
         },
         "accessors": {
-            "formatter": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セル フォーマッタを取得します。",
-                            "```typescript",
-                            "let cellForamatter = this.cell.formatter;",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "context": {
                 "getter": {
                     "comment": {
@@ -409,46 +476,6 @@
                     }
                 }
             },
-            "visibleColumnIndex": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルに配置される列の表示 `index` を取得します。",
-                            "```typescript",
-                            "let visibleColumnIndex = this.cell.visibleColumnIndex;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "unpinnedColumnIndex": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルに配置されるピン固定されない列の `index` を取得します。",
-                            "```typescript",
-                            "let unpinnedColumnIndex = this.cell.ununpinnedColumnIndex;",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "cellID": {
                 "getter": {
                     "comment": {
@@ -493,38 +520,30 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `cell.editMode` as a getter and",
+                                        "`cell.setEditMode(true | false)` to start/exit edit mode.",
+                                        "Gets/sets whether the cell is in edit mode.",
+                                        "```typescript",
+                                        "let isCellInEditMode = this.cell.inEditMode;",
+                                        "```"
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "memberof": {
                                 "comment": {
                                     "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
-                        },
-                        "shortText": [
-                            "セルが編集モードにあるかどうかを取得します。",
-                            "```typescript",
-                            "let isCellInEditMode = this.cell.inEditMode;",
-                            "```"
-                        ]
+                        }
                     }
                 },
                 "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルの編集モードを有効または無効にします。",
-                            "```typescript",
-                            "this.cell.inEditMode = true;",
-                            "```"
-                        ]
-                    }
+                    "comment": {}
                 }
             },
             "readonly": {
@@ -562,106 +581,6 @@
                             "グリッドの `id` および列の `field` を含む \"_\" によって連結される文字列を返します。",
                             "```typescript",
                             "let describedBy = this.cell.describedBy;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "styleClasses": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルのスタイル クラスを取得します。",
-                            "```typescript",
-                            "let cellStyleClasses = this.cell.styleClasses.",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "width": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルの幅を取得します。",
-                            "```typescript",
-                            "let cellWidth = this.cell.width;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "isPinned": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルがピン固定列に配置されるかどうかを取得します。",
-                            "```typescript",
-                            "let isPinned = this.cell.isPinned;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "isLastPinned": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルがピン固定領域の最後の列に配置されるかどうかを取得します。",
-                            "```typescript",
-                            "let isLastPinned = this.cell.isLastPinned;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "isLastUnpinned": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "セルがピン固定されない領域の最後の列に配置されるかどうかを取得します。",
-                            "```typescript",
-                            "let isLastUnpinned = this.cell.isLastUnpinned;",
                             "```"
                         ]
                     }
@@ -720,7 +639,7 @@
                             "Sets the current edit value while a cell is in edit mode.",
                             "Only for cell editing mode.",
                             "```typescript",
-                            "let isLastPinned = this.cell.isLastPinned;",
+                            "this.cell.editValue = value;",
                             "```"
                         ]
                     }
@@ -742,6 +661,13 @@
                             "let editValue = this.cell.editValue;",
                             "```"
                         ]
+                    }
+                }
+            },
+            "editable": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns whether the cell is editable."
                     }
                 }
             }

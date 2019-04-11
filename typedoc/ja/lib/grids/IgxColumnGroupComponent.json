@@ -309,6 +309,24 @@
                     ]
                 }
             },
+            "formatter": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Gets formatter for the column.",
+                        "```typescript",
+                        "let columnFormatter = this.column.formatter;",
+                        "```"
+                    ]
+                }
+            },
             "filteringIgnoreCase": {
                 "comment": {
                     "tags": {
@@ -378,28 +396,51 @@
             "gridID": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Gets/Sets the `id` of the `igx-grid`.",
+                                    "```typescript",
+                                    "let columnGridId = this.column.gridID;",
+                                    "```",
+                                    "```typescript",
+                                    "this.column.gridID = 'grid-1';",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxColumnComponent",
-                                "tagName": "次のメンバー:"
+                                "tagName": "memberof"
                             }
                         }
-                    },
-                    "shortText": [
-                        "`igx-grid` の `id` を取得または設定します。",
-                        "```typescript",
-                        "let columnGridId = this.column.gridID;",
-                        "```",
-                        "```typescript",
-                        "this.column.gridID = 'grid-1';",
-                        "```"
-                    ]
+                    }
                 }
             },
             "defaultWidth": {
                 "comment": {
                     "shortText": [
                         "非表示"
+                    ]
+                }
+            },
+            "grid": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "The reference to the `igx-grid` owner.",
+                        "```typescript",
+                        "let gridComponent = this.column.grid;",
+                        "```"
                     ]
                 }
             },
@@ -863,45 +904,6 @@
                     }
                 }
             },
-            "formatter": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "列のフォーマッタを取得まします。",
-                            "```typescript",
-                            "let columnFormatter = this.column.formatter;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "列のフォーマッタを取得またします。",
-                            "```typescript",
-                            "this.column.formatter = (val: Date) => {",
-                            " return new Intl.DateTimeFormat(\"en-US\").format(val); }",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "pinned": {
                 "getter": {
                     "comment": {
@@ -1029,21 +1031,46 @@
                     }
                 }
             },
-            "grid": {
+            "filterCellTemplate": {
                 "getter": {
                     "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
                                     "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "`igx-grid` への参照を返します。",
+                            "Returns a reference to the `filterCellTemplate`.",
                             "```typescript",
-                            "let gridComponent = this.column.grid;",
+                            "let filterCellTemplate = this.column.filterCellTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets the quick filter template.",
+                            "```html",
+                            "<ng-template #filterCellTemplate IgxFilterCellTemplate let-column=\"column\">",
+                            "   <input (input)=\"onInput()\">",
+                            "</ng-template>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild(\"'filterCellTemplate'\", {read: TemplateRef })",
+                            "public filterCellTemplate: TemplateRef<any>;",
+                            "this.column.filterCellTemplate = this.filterCellTemplate;",
                             "```"
                         ]
                     }
