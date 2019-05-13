@@ -848,18 +848,30 @@
             },
             "onFocusChange": {
                 "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "onGridKeydown イベントを使用してください。",
+                                "tagName": "非推奨。"
+                            }
+                        }
+                    }
+                }
+            },
+            "onGridKeydown": {
+                "comment": {
                     "shortText": [
-                        "キーボードでナビゲーションするときにフォーカスを変えると発生されます。",
-                        "フォーカスされたセルまたはフォーカスされたグループ行を返します。このイベントはキャンセルできます。",
+                        "グリッドの内の要素に対してキーダウンがトリガーされたときに発生します。",
+                        "このイベントは、グリッドでキーの組み合わせがサポートされている場合にのみ発生します。",
+                        "ターゲット タイプ、ターゲット オブジェクト、および元のイベントを返します。このイベントはキャンセルできます。",
                         "```typescript",
-                        "changeFocus(event: IGridFocusChangeEventArgs) {",
-                        " const changedFocus = event;",
+                        "customKeydown(args: IGridKeydownEventArgs) {",
+                        " const keydownEvent = args.event;",
                         "}",
                         "```",
                         "```html",
-                        "* <igx-grid (onFocusChange)=\"changeFocus($event)\"></igx-grid>",
+                        " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
                         "```"
-
                     ]
                 }
             },
