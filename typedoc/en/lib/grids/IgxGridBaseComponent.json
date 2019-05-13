@@ -853,16 +853,29 @@
             },
             "onFocusChange": {
                 "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "you should use onGridKeydown event",
+                                "tagName": "deprecated"
+                            }
+                        }
+                    }
+                }
+            },
+            "onGridKeydown": {
+                "comment": {
                     "shortText": [
-                        "Emitted when changing the focus while navigating with the keyboard.",
-                        "Return the focused cell or focused group row. This event is cancelable.",
+                        "Emitted when keydown is triggered over element inside grid's body.",
+                        "This event is fired only if the key combination is supported in the grid.",
+                        "Return the target type, target object and the original event. This event is cancelable.",
                         "```typescript",
-                        "changeFocus(event: IGridFocusChangeEventArgs) {",
-                        " const changedFocus = event;",
+                        "customKeydown(args: IGridKeydownEventArgs) {",
+                        " const keydownEvent = args.event;",
                         "}",
                         "```",
                         "```html",
-                        "* <igx-grid (onFocusChange)=\"changeFocus($event)\"></igx-grid>",
+                        " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
                         "```"
                     ]
                 }
