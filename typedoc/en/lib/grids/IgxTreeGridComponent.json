@@ -108,7 +108,7 @@
                     "shortText": [
                         "An @Input property that sets the child data key of the `IgxTreeGridComponent`.",
                         "```html",
-                        "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"employees\" [autoGenerate]=\"true\"></igx-tree-grid>",
+                        "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"'employees'\" [autoGenerate]=\"true\"></igx-tree-grid>",
                         "```"
                     ]
                 }
@@ -126,7 +126,30 @@
                     "shortText": [
                         "An @Input property that sets the foreign key of the `IgxTreeGridComponent`.",
                         "```html",
-                        "<igx-tree-grid #grid [data]=\"employeeData\" [primaryKey]=\"employeeID\" [foreignKey]=\"parentID\" [autoGenerate]=\"true\"></igx-tree-grid>",
+                        "<igx-tree-grid #grid [data]=\"employeeData\" [primaryKey]=\"'employeeID'\" [foreignKey]=\"'parentID'\" [autoGenerate]=\"true\">",
+                        "</igx-tree-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "hasChildrenKey": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxTreeGridComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that sets the key indicating whether a row has children.",
+                        "This property is only used for load on demand scenarios.",
+                        "```html",
+                        "<igx-tree-grid #grid [data]=\"employeeData\" [primaryKey]=\"'employeeID'\" [foreignKey]=\"'parentID'\"",
+                        "               [loadChildrenOnDemand]=\"loadChildren\"",
+                        "               [hasChildrenKey]=\"'hasEmployees'\">",
+                        "</igx-tree-grid>",
                         "```"
                     ]
                 }
@@ -145,8 +168,53 @@
                         "An @Input property indicating whether child records should be deleted when their parent gets deleted.",
                         "By default it is set to true and deletes all children along with the parent.",
                         "```html",
-                        "<igx-tree-grid [data]=\"employeeData\" [primaryKey]=\"employeeID\" [foreignKey]=\"parentID\" cascadeOnDelete=\"false\" [autoGenerate]=\"true\">",
+                        "<igx-tree-grid [data]=\"employeeData\" [primaryKey]=\"'employeeID'\" [foreignKey]=\"'parentID'\" cascadeOnDelete=\"false\">",
                         "</igx-tree-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "dragIndicatorIconTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.dragIndicatorIconTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-grid #grid>",
+                        "     ...",
+                        "     <ng-template igxDragIndicatorIcon>",
+                        "         <igx-icon fontSet=\"material\">info</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-grid>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the row drag indicator icon"
+                }
+            },
+            "loadChildrenOnDemand": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxTreeGridComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that provides a callback for loading child rows on demand.",
+                        "```html",
+                        "<igx-tree-grid [data]=\"employeeData\" [primaryKey]=\"'employeeID'\" [foreignKey]=\"'parentID'\" [loadChildrenOnDemand]=\"loadChildren\">",
+                        "</igx-tree-grid>",
+                        "```",
+                        "```typescript",
+                        "public loadChildren = (parentID: any, done: (children: any[]) => void) => {",
+                        "    this.dataService.getData(parentID, children => done(children));",
+                        "}",
                         "```"
                     ]
                 }
@@ -1033,30 +1101,33 @@
             },
             "onFocusChange": {
                 "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": "you should use onGridKeydown event",
-                                "tagName": "deprecated"
-                            }
-                        }
-                    }
-                }
-            },
-            "onGridKeydown": {
-                "comment": {
                     "shortText": [
-                        "Emitted when keydown is triggered over element inside grid's body.",
-                        "This event is fired only if the key combination is supported in the grid.",
-                        "Return the target type, target object and the original event. This event is cancelable.",
+                        "Emitted when changing the focus while navigating with the keyboard.",
+                        "Return the focused cell or focused group row. This event is cancelable.",
                         "```typescript",
-                        "customKeydown(args: IGridKeydownEventArgs) {",
-                        " const keydownEvent = args.event;",
+                        "changeFocus(event: IGridFocusChangeEventArgs) {",
+                        " const changedFocus = event;",
                         "}",
                         "```",
                         "```html",
-                        " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
+                        "* <igx-grid (onFocusChange)=\"changeFocus($event)\"></igx-grid>",
                         "```"
+                    ]
+                }
+            },
+            "onRowDragStart": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when start dragging a row.",
+                        "Return the dragged row."
+                    ]
+                }
+            },
+            "onRowDragEnd": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when dropping a row.",
+                        "Return the dropped row."
                     ]
                 }
             },
@@ -2149,7 +2220,7 @@
                             "An @Input property that sets the count of levels to be expanded in the `IgxTreeGridComponent`. By default it is",
                             "set to `Infinity` which means all levels would be expanded.",
                             "```html",
-                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"employees\" expansionDepth=\"1\" [autoGenerate]=\"true\"></igx-tree-grid>",
+                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"'employees'\" expansionDepth=\"1\" [autoGenerate]=\"true\"></igx-tree-grid>",
                             "```"
                         ]
                     }
@@ -2160,7 +2231,7 @@
                             "An @Input property that sets the count of levels to be expanded in the `IgxTreeGridComponent`. By default it is",
                             "set to `Infinity` which means all levels would be expanded.",
                             "```html",
-                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"employees\" expansionDepth=\"1\" [autoGenerate]=\"true\"></igx-tree-grid>",
+                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"'employees'\" expansionDepth=\"1\" [autoGenerate]=\"true\"></igx-tree-grid>",
                             "```"
                         ]
                     }
@@ -2202,6 +2273,52 @@
                             "states.set(1, true);",
                             "this.grid.expansionStates = states;",
                             "```"
+                        ]
+                    }
+                }
+            },
+            "rowLoadingIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTreeGridComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "text": [
+                            "<igx-tree-grid #grid [data]=\"employeeData\" [primaryKey]=\"'ID'\" [foreignKey]=\"'parentID'\"",
+                            "               [loadChildrenOnDemand]=\"loadChildren\"",
+                            "               [rowLoadingIndicatorTemplate]=\"rowLoadingTemplate\">",
+                            "</igx-tree-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "An @Input property that provides a template for the row loading indicator when load on demand is enabled.",
+                            "```html",
+                            "<ng-template #rowLoadingTemplate>",
+                            "    <igx-icon fontSet=\"material\">loop</igx-icon>",
+                            "</ng-template>"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "<igx-tree-grid #grid [data]=\"employeeData\" [primaryKey]=\"'ID'\" [foreignKey]=\"'parentID'\"",
+                            "               [loadChildrenOnDemand]=\"loadChildren\"",
+                            "               [rowLoadingIndicatorTemplate]=\"rowLoadingTemplate\">",
+                            "</igx-tree-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "An @Input property that provides a template for the row loading indicator when load on demand is enabled.",
+                            "```html",
+                            "<ng-template #rowLoadingTemplate>",
+                            "    <igx-icon fontSet=\"material\">loop</igx-icon>",
+                            "</ng-template>"
                         ]
                     }
                 }
@@ -2494,6 +2611,36 @@
                             "Sets whether rows can be selected.",
                             "```html",
                             "<igx-grid #grid [showToolbar]=\"true\" [rowSelectable]=\"true\" [columnHiding]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "rowDraggable": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets whether rows can be moved.",
+                            "```html",
+                            "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets whether rows can be moved.",
+                            "```html",
+                            "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -3961,6 +4108,26 @@
                             "Returns if the `IgxGridComponent` has column groups.",
                             "```typescript",
                             "const groupGrid = this.grid.hasColumnGroups;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "hasColumnLayouts": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns if the `IgxGridComponent` has column layouts for multi-row layout definition.",
+                            "```typescript",
+                            "const layoutGrid = this.grid.hasColumnLayouts;",
                             "```"
                         ]
                     }

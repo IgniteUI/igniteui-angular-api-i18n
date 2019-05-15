@@ -19,6 +19,27 @@
             ]
         },
         "properties": {
+            "dragIndicatorIconTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.dragIndicatorIconTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-grid #grid>",
+                        "     ...",
+                        "     <ng-template igxDragIndicatorIcon>",
+                        "         <igx-icon fontSet=\"material\">info</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-grid>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the row drag indicator icon"
+                }
+            },
             "autoGenerate": {
                 "comment": {
                     "tags": {
@@ -963,20 +984,19 @@
                     ]
                 }
             },
-            "onGridKeydown": {
+            "onRowDragStart": {
                 "comment": {
                     "shortText": [
-                        "グリッドの内の要素に対してキーダウンがトリガーされたときに発生します。",
-                        "このイベントは、グリッドでキーの組み合わせがサポートされている場合にのみ発生します。",
-                        "ターゲット タイプ、ターゲット オブジェクト、および元のイベントを返します。このイベントはキャンセルできます。",
-                        "```typescript",
-                        "customKeydown(args: IGridKeydownEventArgs) {",
-                        " const keydownEvent = args.event;",
-                        "}",
-                        "```",
-                        "```html",
-                        " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
-                        "```"
+                        "Emitted when start dragging a row.",
+                        "Return the dragged row."
+                    ]
+                }
+            },
+            "onRowDragEnd": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when dropping a row.",
+                        "Return the dropped row."
                     ]
                 }
             },
@@ -2441,6 +2461,36 @@
                     }
                 }
             },
+            "rowDraggable": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets whether rows can be moved.",
+                            "```html",
+                            "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets whether rows can be moved.",
+                            "```html",
+                            "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            }
             "rowEditable": {
                 "getter": {
                     "comment": {
@@ -4057,6 +4107,26 @@
                             "`IgxGridComponent` に列グループがあるかどうかを返します。",
                             "```typescript",
                             "const groupGrid = this.grid.hasColumnGroups;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "hasColumnLayouts": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns if the `IgxGridComponent` has column layouts for multi-row layout definition.",
+                            "```typescript",
+                            "const layoutGrid = this.grid.hasColumnLayouts;",
                             "```"
                         ]
                     }

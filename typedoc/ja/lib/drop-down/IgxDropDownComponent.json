@@ -19,25 +19,6 @@
             ]
         },
         "properties": {
-            "allowItemsFocus": {
-                "comment": {
-                    "text": [
-                        "注: IgxDropDownItemNavigation ディレクティブの使用時はフォーカスの移動に注意してください。キーボード イベントを処理するためにディレクティブを各フォーカス可能な項目に配置または共有の先祖に配置します。",
-                        "```typescript",
-                        "// 取得",
-                        "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": [
-                        "項目がフォーカスを取得するかどうかを取得または設定します。デフォルトで無効です。",
-                        "有効な場合、ドロップダウン項目にタブ インデックスが指定され、アクティブな場合にフォーカスされます。これには、ドロップダウンを開き、キーボード ナビゲーションを使用して移動すると選択した項目のアクティブ化が含まれます。"
-                    ]
-                }
-            },
             "onOpening": {
                 "comment": {
                     "text": [
@@ -83,6 +64,25 @@
                     ],
                     "shortText": [
                         "ドロップダウンが閉じられた後に発生されます。"
+                    ]
+                }
+            },
+            "allowItemsFocus": {
+                "comment": {
+                    "text": [
+                        "注: IgxDropDownItemNavigation ディレクティブの使用時はフォーカスの移動に注意してください。キーボード イベントを処理するためにディレクティブを各フォーカス可能な項目に配置または共有の先祖に配置します。",
+                        "```typescript",
+                        "// 取得",
+                        "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": [
+                        "項目がフォーカスを取得するかどうかを取得または設定します。デフォルトで無効です。",
+                        "有効な場合、ドロップダウン項目にタブ インデックスが指定され、アクティブな場合にフォーカスされます。これには、ドロップダウンを開き、キーボード ナビゲーションを使用して移動すると選択した項目のアクティブ化が含まれます。"
                     ]
                 }
             },
@@ -178,7 +178,7 @@
                     "parameters": {
                         "index": {
                             "comment": {
-                                "text": "選択する項目"
+                                "text": "of the item to select; If the drop down uses *igxFor, pass the index in data"
                             }
                         }
                     },
@@ -189,7 +189,10 @@
             "navigateItem": {
                 "comment": {
                     "tags": {},
-                    "shortText": "指定されたインデックスにある項目へ移動。"
+                    "shortText": [
+                        "Navigates to the item on the specified index",
+                        "If the data in the drop-down is virtualized, pass the index of the item in the virtualized data."
+                    ]
                 }
             },
             "onItemActionKey": {

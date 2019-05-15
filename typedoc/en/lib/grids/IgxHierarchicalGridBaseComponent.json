@@ -1,6 +1,27 @@
 {
     "IgxHierarchicalGridBaseComponent": {
         "properties": {
+            "dragIndicatorIconTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.dragIndicatorIconTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-grid #grid>",
+                        "     ...",
+                        "     <ng-template igxDragIndicatorIcon>",
+                        "         <igx-icon fontSet=\"material\">info</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-grid>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering the row drag indicator icon"
+                }
+            },
             "autoGenerate": {
                 "comment": {
                     "tags": {
@@ -853,30 +874,33 @@
             },
             "onFocusChange": {
                 "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": "you should use onGridKeydown event",
-                                "tagName": "deprecated"
-                            }
-                        }
-                    }
-                }
-            },
-            "onGridKeydown": {
-                "comment": {
                     "shortText": [
-                        "Emitted when keydown is triggered over element inside grid's body.",
-                        "This event is fired only if the key combination is supported in the grid.",
-                        "Return the target type, target object and the original event. This event is cancelable.",
+                        "Emitted when changing the focus while navigating with the keyboard.",
+                        "Return the focused cell or focused group row. This event is cancelable.",
                         "```typescript",
-                        "customKeydown(args: IGridKeydownEventArgs) {",
-                        " const keydownEvent = args.event;",
+                        "changeFocus(event: IGridFocusChangeEventArgs) {",
+                        " const changedFocus = event;",
                         "}",
                         "```",
                         "```html",
-                        " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
+                        "* <igx-grid (onFocusChange)=\"changeFocus($event)\"></igx-grid>",
                         "```"
+                    ]
+                }
+            },
+            "onRowDragStart": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when start dragging a row.",
+                        "Return the dragged row."
+                    ]
+                }
+            },
+            "onRowDragEnd": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when dropping a row.",
+                        "Return the dropped row."
                     ]
                 }
             },
@@ -2013,6 +2037,36 @@
                             "Sets whether rows can be selected.",
                             "```html",
                             "<igx-grid #grid [showToolbar]=\"true\" [rowSelectable]=\"true\" [columnHiding]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "rowDraggable": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets whether rows can be moved.",
+                            "```html",
+                            "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets whether rows can be moved.",
+                            "```html",
+                            "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -3487,6 +3541,26 @@
                             "Returns if the `IgxGridComponent` has column groups.",
                             "```typescript",
                             "const groupGrid = this.grid.hasColumnGroups;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "hasColumnLayouts": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns if the `IgxGridComponent` has column layouts for multi-row layout definition.",
+                            "```typescript",
+                            "const layoutGrid = this.grid.hasColumnLayouts;",
                             "```"
                         ]
                     }
