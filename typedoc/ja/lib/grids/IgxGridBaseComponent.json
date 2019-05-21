@@ -848,16 +848,29 @@
             },
             "onFocusChange": {
                 "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "you should use onGridKeydown event",
+                                "tagName": "deprecated"
+                            }
+                        }
+                    }
+                }
+            },
+            "onGridKeydown": {
+                "comment": {
                     "shortText": [
-                        "キーボードでナビゲーションするときにフォーカスを変えると発生されます。",
-                        "フォーカスされたセルまたはフォーカスされたグループ行を返します。このイベントはキャンセルできます。",
+                        "Emitted when keydown is triggered over element inside grid's body.",
+                        "This event is fired only if the key combination is supported in the grid.",
+                        "Return the target type, target object and the original event. This event is cancelable.",
                         "```typescript",
-                        "changeFocus(event: IGridFocusChangeEventArgs) {",
-                        " const changedFocus = event;",
+                        "customKeydown(args: IGridKeydownEventArgs) {",
+                        " const keydownEvent = args.event;",
                         "}",
                         "```",
                         "```html",
-                        "* <igx-grid (onFocusChange)=\"changeFocus($event)\"></igx-grid>",
+                        " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
                         "```"
                     ]
                 }
@@ -1700,6 +1713,69 @@
                         "this.grid.deselectAllRows();",
                         "```",
                         "注: フィルタリング機能が有効にされる場合、selectAllRows() および deselectAllRows() はフィルターされた行のみを選択/選択解除します。"
+                    ]
+                }
+            },
+            "navigateTo": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "This method allows you to navigate to a position",
+                        "in the grid based on provided `rowindex` and `visibleColumnIndex`,",
+                        "also to execute a custom logic over the target element,",
+                        "through a callback function that accepts { targetType: GridKeydownTargetType, target: Object }",
+                        "```typescript",
+                        " this.grid.navigateTo(10, 3, (args) => { args.target.nativeElement.focus(); });",
+                        "```"
+                    ]
+                }
+            },
+            "getNextCell": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Returns `ICellPosition` which defines the next cell,",
+                        "according to the current position, that match specific criteria.",
+                        "You can pass callback function as a third parameter of `getPreviousCell` method.",
+                        "The callback function accepts IgxColumnComponent as a param",
+                        "```typescript",
+                        " const nextEditableCellPosition = this.grid.getNextCell(0, 3, (column) => column.editable);",
+                        "```"
+                    ]
+                }
+            },
+            "getPreviousCell": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Returns `ICellPosition` which defines the previous cell,",
+                        "according to the current position, that match specific criteria.",
+                        "You can pass callback function as a third parameter of `getPreviousCell` method.",
+                        "The callback function accepts IgxColumnComponent as a param",
+                        "```typescript",
+                        " const previousEditableCellPosition = this.grid.getPreviousCell(0, 3, (column) => column.editable);",
+                        "```"
                     ]
                 }
             },
