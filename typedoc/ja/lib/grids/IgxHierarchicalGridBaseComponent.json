@@ -872,8 +872,8 @@
                     "tags": {
                         "deprecated": {
                             "comment": {
-                                "text": "you should use onGridKeydown event",
-                                "tagName": "deprecated"
+                                "text": "onGridKeydown イベントを使用してください。",
+                                "tagName": "非推奨。"
                             }
                         }
                     }
@@ -882,9 +882,9 @@
             "onGridKeydown": {
                 "comment": {
                     "shortText": [
-                        "Emitted when keydown is triggered over element inside grid's body.",
-                        "This event is fired only if the key combination is supported in the grid.",
-                        "Return the target type, target object and the original event. This event is cancelable.",
+                        "グリッドの内の要素に対してキーダウンがトリガーされたときに発生します。",
+                        "このイベントは、グリッドでキーの組み合わせがサポートされている場合にのみ発生します。",
+                        "ターゲット タイプ、ターゲット オブジェクト、および元のイベントを返します。このイベントはキャンセルできます。",
                         "```typescript",
                         "customKeydown(args: IGridKeydownEventArgs) {",
                         " const keydownEvent = args.event;",
@@ -1743,15 +1743,12 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridBaseComponent",
-                                "tagName": "memberof"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "This method allows you to navigate to a position",
-                        "in the grid based on provided `rowindex` and `visibleColumnIndex`,",
-                        "also to execute a custom logic over the target element,",
-                        "through a callback function that accepts { targetType: GridKeydownTargetType, target: Object }",
+                        "このメソッドは提供された `rowindex` と `visibleColumnIndex` に基づいてグリッド内の位置にナビゲートすることを可能にし、{targetType：GridKeydownTargetType、target：Object} を受け入れるコールバック関数を通してターゲット要素上でカスタム ロジックを実行することもできます。",
                         "```typescript",
                         " this.grid.navigateTo(10, 3, (args) => { args.target.nativeElement.focus(); });",
                         "```"
@@ -1764,15 +1761,14 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridBaseComponent",
-                                "tagName": "memberof"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "Returns `ICellPosition` which defines the next cell,",
-                        "according to the current position, that match specific criteria.",
-                        "You can pass callback function as a third parameter of `getPreviousCell` method.",
-                        "The callback function accepts IgxColumnComponent as a param",
+                        "特定の基準に一致する、現在位置に従って次のセルを定義する `ICellPosition` を返します。",
+                        "`getPreviousCell` メソッド の 3 番目のパラメーターとしてコールバック関数を渡すことができます。",
+                        "コールバック関数は、引数として IgxColumnComponent を受け入れます。",
                         "```typescript",
                         " const nextEditableCellPosition = this.grid.getNextCell(0, 3, (column) => column.editable);",
                         "```"
@@ -1785,15 +1781,14 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridBaseComponent",
-                                "tagName": "memberof"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "Returns `ICellPosition` which defines the previous cell,",
-                        "according to the current position, that match specific criteria.",
-                        "You can pass callback function as a third parameter of `getPreviousCell` method.",
-                        "The callback function accepts IgxColumnComponent as a param",
+                        "特定の基準に一致する、現在位置に従って前のセルを定義する `ICellPosition` を返します。",
+                        "`getPreviousCell` メソッド の 3 番目のパラメーターとしてコールバック関数を渡すことができます。",
+                        "コールバック関数は、引数として IgxColumnComponent を受け入れます。",
                         "```typescript",
                         " const previousEditableCellPosition = this.grid.getPreviousCell(0, 3, (column) => column.editable);",
                         "```"
