@@ -651,21 +651,34 @@
                     }
                 }
             },
-            "hidden": {
+            "visibleIndex": {
                 "getter": {
                     "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxColumnGroupComponent",
+                                    "text": "IgxColumnComponent",
                                     "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "Gets whether the column layout is hidden.",
+                            "Gets the column visible index.",
+                            "If the column is not visible, returns `-1`.",
                             "```typescript",
-                            "let isHidden = this.columnGroup.hidden;",
+                            "let visibleColumnIndex =  this.column.visibleIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "hidden": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the column layout hidden property.",
+                            "```typescript",
+                            "<igx-column-layout [hidden] = \"true\"></igx-column->",
                             "```"
                         ]
                     }
@@ -1154,7 +1167,7 @@
                     }
                 }
             },
-            "visibleIndex": {
+            "columnLayoutChild": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -1166,10 +1179,9 @@
                             }
                         },
                         "shortText": [
-                            "Gets the column visible index.",
-                            "If the column is not visible, returns `-1`.",
+                            "Returns a boolean indicating if the column is a child of a `ColumnLayout` for multi-row layout.",
                             "```typescript",
-                            "let visibleColumnIndex =  this.column.visibleIndex;",
+                            "let columnLayoutChild =  this.column.columnLayoutChild;",
                             "```"
                         ]
                     }

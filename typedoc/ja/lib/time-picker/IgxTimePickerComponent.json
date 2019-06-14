@@ -173,7 +173,11 @@
             },
             "onOpen": {
                 "comment": {
-                    "shortText": [
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use 'onOpened' instead.",
                         "timePicker が開いているときに発生します。",
                         "```html",
                         "@ViewChild(\"toast\")",
@@ -187,10 +191,39 @@
                         "<igx-time-picker [minValue]=\"min\" [maxValue]=\"max\" (onOpen)=\"onOpen($event)\"></igx-time-picker>",
                         "<igx-toast #toast message=\"The time picker has been opened!\"></igx-toast>",
                         "```"
-                    ]
+                    ],
+                    "tagName": "deprecated"
+                }
+            }
+        }
+    }
+},
+"onOpened": {
+    "comment": {
+        "shortText": "Emitted when a timePicker is opened."
                 }
             },
             "onClose": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use 'onClosed' instead.",
+                                    "Emitted when a timePicker is being closed."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        }
+                    }
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "shortText": "Emitted when a timePicker is closed."
+                }
+            },
+            "onClosing": {
                 "comment": {
                     "shortText": [
                         "timePicker が閉じているときに発生します。"
@@ -344,6 +377,20 @@
                         "ngAfterViewInit(){",
                         "   let ApInView = this.picker.ampmInView;",
                         "}",
+                        "```"
+                    ]
+                }
+            },
+            "close": {
+                "comment": {
+                    "shortText": [
+                        "Closes the dropdown/dialog.",
+                        "```html",
+                        "<igx-time-picker #timePicker></igx-time-picker>",
+                        "```",
+                        "```typescript",
+                        "@ViewChild('timePicker', { read: IgxTimePickerComponent }) picker: IgxTimePickerComponent;",
+                        "picker.close();",
                         "```"
                     ]
                 }

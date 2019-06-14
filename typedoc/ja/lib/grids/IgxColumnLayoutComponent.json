@@ -648,21 +648,34 @@
                     }
                 }
             },
-            "hidden": {
+            "visibleIndex": {
                 "getter": {
                     "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "次のメンバー:"
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "列レイアウトが非表示されるかどうかを取得します。",
+                            "Gets the column visible index.",
+                            "If the column is not visible, returns `-1`.",
                             "```typescript",
-                            "let isHidden = this.columnGroup.hidden;",
+                            "let visibleColumnIndex =  this.column.visibleIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "hidden": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the column layout hidden property.",
+                            "```typescript",
+                            "<igx-column-layout [hidden] = \"true\"></igx-column->",
                             "```"
                         ]
                     }
@@ -673,12 +686,12 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxColumnGroupComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "列レイアウトの hidden プロパティを設定します。",
+                            "Sets the column layout hidden property.",
                             "```typescript",
                             "<igx-column-layout [hidden] = \"true\"></igx-column->",
                             "```"
@@ -1151,22 +1164,21 @@
                     }
                 }
             },
-            "visibleIndex": {
+            "columnLayoutChild": {
                 "getter": {
                     "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
                                     "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
+                                    "tagName": "memberof"
                                 }
                             }
                         },
                         "shortText": [
-                            "列の表示インデックスを取得します。",
-                            "列が表示されない場合、`-1` が返されます。",
+                            "Returns a boolean indicating if the column is a child of a `ColumnLayout` for multi-row layout.",
                             "```typescript",
-                            "let visibleColumnIndex =  this.column.visibleIndex;",
+                            "let columnLayoutChild =  this.column.columnLayoutChild;",
                             "```"
                         ]
                     }
