@@ -106,31 +106,6 @@
                     ]
                 }
             },
-            "overlaySettings": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxTimePickerComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "オーバーレイ配置、操作、およびスクロール動作の編集を許可する @Input プロパティ。",
-                        "```typescript",
-                        "const settings: OverlaySettings = {",
-                        "     closeOnOutsideClick: true,",
-                        "     modal: false",
-                        " }",
-                        "```",
-                        "---",
-                        "```html",
-                        "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
             "onValueChanged": {
                 "comment": {
                     "shortText": [
@@ -234,16 +209,30 @@
         "methods": {
             "openDialog": {
                 "comment": {
-                    "shortText": [
-                        "ダイアログを開きます。",
-                        "```html",
-                        "<igx-time-picker #timePicker></igx-time-picker>",
-                        "```",
-                        "```typescript",
-                        "@ViewChild('timePicker', { read: IgxTimePickerComponent }) picker: IgxTimePickerComponent;",
-                        "picker.openDialog();",
-                        "```"
-                    ]
+                    "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": [
+                                    "HTMLElement - the target element to use for positioning the drop down container according to",
+                                    "```html",
+                                    "<igx-time-picker [value]=\"date\" mode=\"dropdown\" #retemplated>",
+                                    "  <ng-template igxTimePickerTemplate let-openDialog=\"openDialog\"",
+                                    "               let-displayTime=\"displayTime\">",
+                                    "    <igx-input-group>",
+                                    "      <input #dropDownTarget igxInput [value]=\"displayTime\" />",
+                                    "      <igx-suffix (click)=\"openDialog(dropDownTarget)\">",
+                                    "        <igx-icon>alarm</igx-icon>",
+                                    "      </igx-suffix>",
+                                    "    </igx-input-group>",
+                                    "  </ng-template>",
+                                    "</igx-time-picker>",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "opens the dialog."
                 }
             },
             "scrollHourIntoView": {
@@ -510,6 +499,50 @@
                             "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
                             "```html",
                             "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "overlaySettings": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
+                            "```typescript",
+                            "const settings: OverlaySettings = {",
+                            "     closeOnOutsideClick: true,",
+                            "     modal: false",
+                            " }",
+                            "```",
+                            "---",
+                            "```html",
+                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
+                            "```typescript",
+                            "const settings: OverlaySettings = {",
+                            "     closeOnOutsideClick: true,",
+                            "     modal: false",
+                            " }",
+                            "```",
+                            "---",
+                            "```html",
+                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
                             "```"
                         ]
                     }
