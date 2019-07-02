@@ -185,51 +185,9 @@
                     ]
                 }
             },
-            "onOpen": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "代わりに `onOpened` を使用してください。",
-                        "timePicker が開いているときに発生します。",
-                        "```html",
-                        "@ViewChild(\"toast\")",
-                        "private toast: IgxToastComponent;",
-                        "public onOpen(timepicker){",
-                        "   this.toast.show();",
-                        "}",
-                        "//...",
-                        "```",
-                        "```html",
-                        "<igx-time-picker [minValue]=\"min\" [maxValue]=\"max\" (onOpen)=\"onOpen($event)\"></igx-time-picker>",
-                        "<igx-toast #toast message=\"The time picker has been opened!\"></igx-toast>",
-                        "```"
-                    ],
-                    "tagName": "非推奨。"
-                }
-            }
-        }
-    }
-},
 "onOpened": {
     "comment": {
         "shortText": "timePicker が開いたときに発生します。"
-                }
-            },
-            "onClose": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "代わりに `onClosed` を使用してください。",
-                                    "timePicker が閉じているときに発生します。"
-                                ],
-                                "tagName": "非推奨。"
-                            }
-                        }
-                    }
                 }
             },
             "onClosed": {
@@ -527,6 +485,58 @@
                             "```"
                         ]
                     }
+                }
+            },
+            "onOpen": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use 'onOpened' instead.",
+                                        "Emitted when a timePicker is being opened.",
+                                        "```html",
+                                        "@ViewChild(\"toast\")",
+                                        "private toast: IgxToastComponent;",
+                                        "public onOpen(timepicker){",
+                                        "   this.toast.show();",
+                                        "}",
+                                        "//...",
+                                        "```",
+                                        "```html",
+                                        "<igx-time-picker [minValue]=\"min\" [maxValue]=\"max\" (onOpen)=\"onOpen($event)\"></igx-time-picker>",
+                                        "<igx-toast #toast message=\"The time picker has been opened!\"></igx-toast>",
+                                        "```"
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            }
+                        }
+                    }
+                },
+                "setter": {
+                    "comment": {}
+                }
+            },
+            "onClose": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use 'onClosed' instead.",
+                                        "Emitted when a timePicker is being closed."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            }
+                        }
+                    }
+                },
+                "setter": {
+                    "comment": {}
                 }
             },
             "displayTime": {
