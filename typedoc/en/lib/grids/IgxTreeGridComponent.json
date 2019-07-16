@@ -1132,6 +1132,14 @@
                     ]
                 }
             },
+            "onGridCopy": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when a copy operation is executed.",
+                        "Fired only if copy behavior is enabled through the [`clipboardOptions`]{@link IgxGridBaseComponent#clipboardOptions}."
+                    ]
+                }
+            },
             "emptyFilteredGridTemplate": {
                 "comment": {
                     "tags": {
@@ -1203,6 +1211,14 @@
                         "    const toolbarExporting = event;",
                         "}",
                         "```"
+                    ]
+                }
+            },
+            "onRangeSelection": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when making a range selection either through",
+                        "drag selection or through keyboard selection."
                     ]
                 }
             }
@@ -1341,6 +1357,17 @@
                         "this.grid.addRow(record, 1); // Adds a new child row to the row with ID=1.",
                         "```"
                     ]
+                }
+            },
+            "getSelectedData": {
+                "comment": {
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             },
             "toggleColumnVisibility": {
@@ -2808,18 +2835,10 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
                         "shortText": [
-                            "Sets the width of the `IgxGridComponent`.",
-                            "```html",
-                            "<igx-grid #grid [data]=\"Data\" [width]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "Returns the width of the `IgxGridComponent`.",
+                            "```typescript",
+                            "let gridWidth = this.grid.width;",
                             "```"
                         ]
                     }
@@ -3357,46 +3376,6 @@
                             "    dir: SortingDirection.Desc,",
                             "    ignoreCase: true",
                             "}];",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "totalItemCount": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns the total number of records in the data source.",
-                            "Works only with remote grid virtualization.",
-                            "```typescript",
-                            "const itemCount = this.grid1.totalItemCount;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Sets the total number of records in the data source.",
-                            "This property is required for virtualization to function when the grid is bound remotely.",
-                            "```typescript",
-                            "this.grid1.totalItemCount = 55;",
                             "```"
                         ]
                     }
