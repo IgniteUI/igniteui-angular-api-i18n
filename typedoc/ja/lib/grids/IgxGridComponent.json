@@ -1017,6 +1017,14 @@
                     ]
                 }
             },
+            "onGridCopy": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when a copy operation is executed.",
+                        "Fired only if copy behavior is enabled through the [`clipboardOptions`]{@link IgxGridBaseComponent#clipboardOptions}."
+                    ]
+                }
+            },
             "emptyFilteredGridTemplate": {
                 "comment": {
                     "tags": {
@@ -1090,9 +1098,28 @@
                         "```"
                     ]
                 }
+            },
+            "onRangeSelection": {
+                "comment": {
+                    "shortText": [
+                        "Emitted when making a range selection either through",
+                        "drag selection or through keyboard selection."
+                    ]
+                }
             }
         },
         "methods": {
+            "getSelectedData": {
+                "comment": {
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
+                }
+            },
             "toggleColumnVisibility": {
                 "comment": {
                     "tags": {
@@ -2140,7 +2167,7 @@
                         "tags": {
                             "memberof": {
                                 "comment": {
-                                    "text": "IgxGridBaseComponent",
+                                    "text": "IgxGridComponent",
                                     "tagName": "次のメンバー:"
                                 }
                             }
@@ -2205,6 +2232,46 @@
                     }
                 }
             },
+            "totalItemCount": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets the total number of records in the data source.",
+                            "This property is required for remote grid virtualization to function when it is bound to remote data.",
+                            "```typescript",
+                            "this.grid1.totalItemCount = 55;",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "memberof"
+                                }
+                }
+            },
+            "shortText": [
+                "Returns the total number of records in the data source.",
+                "Works only with remote grid virtualization.",
+                "```typescript",
+                "const itemCount = this.grid1.totalItemCount;",
+                "```"
+            ]
+        }
+    }
+},
             "groupingExpressions": {
                 "getter": {
                     "comment": {
@@ -2664,18 +2731,10 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
                         "shortText": [
-                            "`IgxGridComponent` の幅を設定します。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"Data\" [width]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "Returns the width of the `IgxGridComponent`.",
+                            "```typescript",
+                            "let gridWidth = this.grid.width;",
                             "```"
                         ]
                     }
@@ -3233,46 +3292,6 @@
                             "    dir: SortingDirection.Desc,",
                             "    ignoreCase: true",
                             "}];",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "totalItemCount": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "データ ソース内のレコードの総数を返します。",
-                            "リモートのグリッド仮想化のみに操作します。",
-                            "```typescript",
-                            "const itemCount = this.grid1.totalItemCount;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridBaseComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "データ ソース内のレコードの総数を設定します。",
-                            "グリッドがリモートでバインドされる場合、仮想化のためにこのプロパティが必須です。",
-                            "```typescript",
-                            "this.grid1.totalItemCount = 55;",
                             "```"
                         ]
                     }

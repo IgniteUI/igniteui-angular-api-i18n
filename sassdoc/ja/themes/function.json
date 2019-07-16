@@ -993,7 +993,7 @@
                     "  $content-text-color: rgba(0, 0, 0, .8)",
                     ");",
                     "// igx-card コンポーネント mixin へテーマを渡します。",
-                    "@include igx-calendar($my-card-theme);"
+                    "@include igx-card($my-card-theme);"
                 ]
             }
         ]
@@ -1973,33 +1973,33 @@
                     ""
                 ]
             },
-            "ghost-header-text-color": {
-                "description": [
-                    "<p>ドラッグされたヘッダーテキストの色。</p>",
-                    ""
-                ]
-            },
-            "ghost-header-icon-color": {
-                "description": [
-                    "<p>ドラッグされたヘッダー アイコンの色。</p>",
-                    ""
-                ]
-            },
-            "ghost-header-background": {
-                "description": [
-                    "<p>ドラッグされたヘッダーの背景色。</p>",
-                    ""
-                ]
-            },
             "content-background": {
                 "description": [
-                    "<p>テーブル ボディの背景色。</p>",
+                    "<p>The table body background color.</p>",
                     ""
                 ]
             },
             "content-text-color": {
                 "description": [
-                    "<p>テーブル ボディ テキストの色。</p>",
+                    "<p>The table body text color.</p>",
+                    ""
+                ]
+            },
+            "ghost-header-text-color": {
+                "description": [
+                    "<p>The dragged header text color.</p>",
+                    ""
+                ]
+            },
+            "ghost-header-icon-color": {
+                "description": [
+                    "<p>The dragged header icon color.</p>",
+                    ""
+                ]
+            },
+            "ghost-header-background": {
+                "description": [
+                    "<p>The dragged header background color.</p>",
                     ""
                 ]
             },
@@ -2057,12 +2057,6 @@
                     ""
                 ]
             },
-            "row-highlight": {
-                "description": [
-                    "<p>グリッド行の強調表示の指示の色。</p>",
-                    ""
-                ]
-            },
             "pinned-border-width": {
                 "description": [
                     "<p>ピン固定境界線の境界線の幅。</p>",
@@ -2099,37 +2093,55 @@
                     ""
                 ]
             },
-            "resize-line-color": {
+            "cell-editing-background": {
                 "description": [
-                    "<p>テーブル ヘッダーのサイズ変更線の色。</p>",
+                    "<p>The background color of the cell being edited.</p>",
                     ""
                 ]
             },
-            "grouparea-background": {
+            "cell-edited-value-color": {
                 "description": [
-                    "<p>グリッド グループ領域の背景色。</p>",
+                    "<p>The text color of a sell that has been edited.</p>",
                     ""
                 ]
             },
-            "group-row-background": {
+            "edit-mode-color": {
                 "description": [
-                    "<p>グリッド グループ行の背景色。</p>",
+                    "<p>The color applied around the row when in editing mode.</p>",
                     ""
                 ]
             },
-            "group-row-selected-background": {
+            "edited-row-indicator": {
                 "description": [
-                    "<p>ドロップ色のドロップ領域の背景。</p>",
+                    "<p>The color applied to the edited row indicator line.</p>",
                     ""
                 ]
             },
             "active-expand-icon-color": {
                 "description": [
-                    "<p>ドロップ色のドロップ領域の背景。</p>",
+                    "<p>The table header resize line color.</p>",
                     ""
                 ]
             },
-            "active-expand-icon-hover-color": {
+            "drop-indicator-color": {
+                "description": [
+                    "<p>The color applied to the line between the columns when dragging a column.</p>",
+                    ""
+                ]
+            },
+            "grouparea-background": {
+                "description": [
+                    "<p>The grid group area background color.</p>",
+                    ""
+                ]
+            },
+            "group-row-background": {
+                "description": [
+                    "<p>The grid group row background color.</p>",
+                    ""
+                ]
+            },
+            "group-row-selected-background": {
                 "description": [
                     "<p>ドロップ色のドロップ領域の背景。</p>",
                     ""
@@ -2177,6 +2189,18 @@
                     ""
                 ]
             },
+            "active-expand-icon-color": {
+                "description": [
+                    "<p>The drop area background on drop color.</p>",
+                    ""
+                ]
+            },
+            "active-expand-icon-hover-color": {
+                "description": [
+                    "<p>The drop area background on drop color.</p>",
+                    ""
+                ]
+            },
             "group-count-background": {
                 "description": [
                     "<p>グリッド行グループ行 cont バッジの背景色。</p>",
@@ -2213,12 +2237,6 @@
                     ""
                 ]
             },
-            "tree-filtered-text-color": {
-                "description": [
-                    "<p>フォーカスされるグループ化行の背景色。</p>",
-                    ""
-                ]
-            },
             "filtering-header-background": {
                 "description": [
                     "<p>フィルター済み列ヘッダーの背景色。</p>",
@@ -2240,6 +2258,12 @@
             "filtering-row-text-color": {
                 "description": [
                     "<p>フィルタリング行のテキスト色の色。</p>",
+                    ""
+                ]
+            },
+            "tree-filtered-text-color": {
+                "description": [
+                    "<p>grouping row background color on focus.</p>",
                     ""
                 ]
             },
@@ -2267,6 +2291,12 @@
                     ""
                 ]
             },
+            "row-highlight": {
+                "description": [
+                    "<p>The grid row highlight indication color.</p>",
+                    ""
+                ]
+            },
             "grid-shadow": {
                 "description": [
                     "<p>グリッドの影。</p>",
@@ -2279,13 +2309,13 @@
                     ""
                 ]
             },
-            "row-drag-color": {
+            "row-ghost-background": {
                 "description": [
-                    "<p>行ドラッグのハンドルの色。</p>",
+                    "<p>The dragged row background color.</p>",
                     ""
                 ]
             },
-            "row-ghost-background": {
+            "row-drag-color": {
                 "description": [
                     "<p>ドラッグされた行の背景色。</p>",
                     ""
@@ -2293,7 +2323,7 @@
             },
             "drop-area-border-radius": {
                 "description": [
-                    "<p>列ドロップ領域に使用される境界半径。</p>",
+                    "<p>The row drag handle color.</p>",
                     ""
                 ]
             }
