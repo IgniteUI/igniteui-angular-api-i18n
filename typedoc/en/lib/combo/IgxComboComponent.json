@@ -426,21 +426,6 @@
                         "```"
                     ]
                 }
-            },
-            "valid": {
-                "comment": {
-                    "text": [
-                        "```typescript",
-                        "// get",
-                        "let valid = this.combo.valid;",
-                        "```",
-                        "```typescript",
-                        "// set",
-                        "this.combo.valid = IgxComboState.INVALID;",
-                        "```"
-                    ],
-                    "shortText": "Gets/Sets if control is valid, when used in a form"
-                }
             }
         },
         "methods": {
@@ -570,25 +555,31 @@
                     "parameters": {
                         "itemID": {
                             "comment": {
-                                "text": "the valueKey of the specified item"
+                                "text": "the itemID of the specific item"
                             }
                         },
                         "select": {
                             "comment": {
                                 "text": [
                                     "If the item should be selected (true) or deselected (false)",
+                                    "Without specified valueKey;",
                                     "```typescript",
-                                    "items: { field: string, region: string}[] = data;",
+                                    "this.combo.valueKey = null;",
+                                    "const items: { field: string, region: string}[] = data;",
+                                    "this.combo.setSelectedItem(items[0], true);",
+                                    "```",
+                                    "With specified valueKey;",
+                                    "```typescript",
+                                    "this.combo.valueKey = 'field';",
+                                    "const items: { field: string, region: string}[] = data;",
                                     "this.combo.setSelectedItem('Connecticut', true);",
-                                    "// combo.valueKey === 'field'",
-                                    "// items[n] === { field: 'Connecticut', state: 'New England'}",
                                     "```"
                                 ]
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Selects/Deselects an item using it's valueKey value"
+                    "shortText": "Selects/Deselects a single item"
                 }
             }
         },
@@ -738,6 +729,30 @@
                             "```"
                         ],
                         "shortText": "The item property by which items should be grouped inside the items list. Not usable if data is not of type Object[]."
+                    }
+                }
+            },
+            "valid": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get",
+                            "let valid = this.combo.valid;",
+                            "```"
+                        ],
+                        "shortText": "Gets if control is valid, when used in a form"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// set",
+                            "this.combo.valid = IgxComboState.INVALID;",
+                            "```"
+                        ],
+                        "shortText": "Sets if control is valid, when used in a form"
                     }
                 }
             },

@@ -3,6 +3,14 @@
         "properties": {
             "data": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
                         "- Save data inside the `igxDrag` directive. This can be set when instancing `igxDrag` on an element.",
                         "```html",
@@ -13,9 +21,17 @@
             },
             "dragTolerance": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "An @Input property that indicates when the drag should start",
-                        "By default the drag starts after the draggable element is moved by 5px",
+                        "An @Input property that indicates when the drag should start.",
+                        "By default the drag starts after the draggable element is moved by 5px.",
                         "```html",
                         "<div igxDrag [dragTolerance]=\"100\">",
                         "        <span>Drag Me!</span>",
@@ -24,12 +40,66 @@
                     ]
                 }
             },
-            "ghostImageClass": {
+            "dragChannel": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "Sets a custom class that will be added to the `dragGhost` element.",
+                        "An @Input property that provide a way for igxDrag and igxDrop to be linked through channels.",
+                        "It accepts single value or an array of values and evaluates then using strict equality.",
                         "```html",
-                        "<div igxDrag [ghostImageClass]=\"'dragGhost'\">",
+                        "<div igxDrag [dragChannel]=\"'odd'\">",
+                        "        <span>95</span>",
+                        "</div>",
+                        "<div igxDrop [dropChannel]=\"['odd', 'irrational']\">",
+                        "        <span>Numbers drop area!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghost": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that specifies if the base element should not be moved and a ghost element should be rendered that represents it.",
+                        "By default it is set to `true`.",
+                        "If it is set to `false` when dragging the base element is moved instead and no ghost elements are rendered.",
+                        "```html",
+                        "<div igxDrag [ghost]=\"false\">",
+                        "     <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostClass": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets a custom class that will be added to the `ghostElement` element.",
+                        "```html",
+                        "<div igxDrag [ghostClass]=\"'ghostElement'\">",
                         "        <span>Drag Me!</span>",
                         "</div>",
                         "```"
@@ -38,39 +108,101 @@
             },
             "hideBaseOnDrag": {
                 "comment": {
-                    "shortText": [
-                        "An @Input property that hides the draggable element.",
-                        "By default it's set to false.",
-                        "```html",
-                        "<div igxDrag [dragTolerance]=\"100\" [hideBaseOnDrag]=\"'true'\">",
-                        "        <span>Drag Me!</span>",
-                        "</div>",
-                        "```"
-                    ]
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Please use custom base styling instead.",
+                                    "An @Input property that hides the draggable element.",
+                                    "By default it's set to false.",
+                                    "```html",
+                                    "<div igxDrag [dragTolerance]=\"100\" [hideBaseOnDrag]=\"'true'\">",
+                                    "        <span>Drag Me!</span>",
+                                    "</div>",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    }
                 }
             },
             "animateOnRelease": {
                 "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Please use provided transition functions in future.",
+                                    "An @Input property that enables/disables the draggable element animation",
+                                    "when the element is released.",
+                                    "By default it's set to false.",
+                                    "```html",
+                                    "<div igxDrag [animateOnRelease]=\"'true'\">",
+                                    "        <span>Drag Me!</span>",
+                                    "</div>",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    }
+                }
+            },
+            "ghostTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "An @Input property that enables/disables the draggable element animation",
-                        "when the element is released.",
-                        "By default it's set to false.",
+                        "An @Input property that specifies a template for the ghost element created when dragging starts and `ghost` is true.",
+                        "By default a clone of the base element the igxDrag is instanced is created.",
                         "```html",
-                        "<div igxDrag [animateOnRelease]=\"'true'\">",
+                        "<div igxDrag [ghostTemplate]=\"customGhost\">",
                         "        <span>Drag Me!</span>",
                         "</div>",
+                        "<ng-template #customGhost>",
+                        "     <div class=\"customGhostStyle\">",
+                        "         <span>I am being dragged!</span>",
+                        "     </div>",
+                        "</ng-template>",
                         "```"
                     ]
                 }
             },
-            "dragGhostHost": {
+            "ghostHost": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
                         "An @Input property that sets the element to which the dragged element will be appended.",
                         "By default it's set to null and the dragged element is appended to the body.",
                         "```html",
                         "<div #hostDiv></div>",
-                        "<div igxDrag [dragGhostHost]=\"hostDiv\">",
+                        "<div igxDrag [ghostHost]=\"hostDiv\">",
                         "        <span>Drag Me!</span>",
                         "</div>",
                         "```"
@@ -79,10 +211,18 @@
             },
             "dragStart": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
                         "Event triggered when the draggable element drag starts.",
                         "```html",
-                        "<div igxDrag [animateOnRelease]=\"'true'\" (dragStart)=\"onDragStart()\">",
+                        "<div igxDrag (dragStart)=\"onDragStart()\">",
                         "        <span>Drag Me!</span>",
                         "</div>",
                         "```",
@@ -94,12 +234,45 @@
                     ]
                 }
             },
+            "dragMove": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Event triggered when the draggable element has been moved.",
+                        "```html",
+                        "<div igxDrag  (dragMove)=\"onDragMove()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragMove(){",
+                        "     alert(\"The element has moved!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
             "dragEnd": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
                         "Event triggered when the draggable element is released.",
                         "```html",
-                        "<div igxDrag [animateOnRelease]=\"'true'\" (dragEnd)=\"onDragEnd()\">",
+                        "<div igxDrag (dragEnd)=\"onDragEnd()\">",
                         "        <span>Drag Me!</span>",
                         "</div>",
                         "```",
@@ -111,12 +284,70 @@
                     ]
                 }
             },
-            "returnMoveEnd": {
+            "ghostCreate": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Event triggered when the drag ghost element is created.",
+                        "```html",
+                        "<div igxDrag (ghostCreate)=\"ghostCreated()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public ghostCreated(){",
+                        "     alert(\"The ghost has been created!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "ghostDestroy": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Event triggered when the drag ghost element is created.",
+                        "```html",
+                        "<div igxDrag (ghostDestroy)=\"ghostDestroyed()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public ghostDestroyed(){",
+                        "     alert(\"The ghost has been destroyed!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "transitioned": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
                         "Event triggered after the draggable element is released and after its animation has finished.",
                         "```html",
-                        "<div igxDrag [animateOnRelease]=\"'true'\" (returnMoveEnd)=\"onMoveEnd()\">",
+                        "<div igxDrag (transitioned)=\"onMoveEnd()\">",
                         "        <span>Drag Me!</span>",
                         "</div>",
                         "```",
@@ -130,53 +361,230 @@
             },
             "dragClicked": {
                 "comment": {
-                    "shortText": [
-                        "Event triggered when the draggable element is clicked.",
-                        "```html",
-                        "<div igxDrag [animateOnRelease]=\"'true'\" (dragClicked)=\"dragClicked()\">",
-                        "        <span>Drag Me!</span>",
-                        "</div>",
-                        "```",
-                        "```typescript",
-                        "public dragClicked(){",
-                        "     alert(\"The elemented has been clicked!\");",
-                        "}",
-                        "```"
-                    ]
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Event triggered when the draggable element is clicked.",
+                                    "```html",
+                                    "<div igxDrag (dragClicked)=\"dragClicked()\">",
+                                    "        <span>Drag Me!</span>",
+                                    "</div>",
+                                    "```",
+                                    "```typescript",
+                                    "public dragClicked(){",
+                                    "     alert(\"The element has been clicked!\");",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    }
                 }
             }
         },
         "methods": {
+            "setLocation": {
+                "comment": {
+                    "parameters": {
+                        "newLocation": {
+                            "comment": {
+                                "text": "New location that should be applied. It is advised to get new location using getBoundingClientRects() + scroll."
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Sets desired location of the base element or ghost element if rended relative to the document."
+                }
+            },
+            "transitionToOrigin": {
+                "comment": {
+                    "parameters": {
+                        "customAnimArgs": {
+                            "comment": {
+                                "text": "Custom transition properties that will be applied when performing the transition."
+                            }
+                        },
+                        "startLocation": {
+                            "comment": {
+                                "text": "Start location from where the transition should start."
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Animates the base or ghost element depending on the `ghost` input to its initial location.",
+                        "If `ghost` is true but there is not ghost rendered, it will be created and animated.",
+                        "If the base element has changed its DOM position its initial location will be changed accordingly."
+                    ]
+                }
+            },
+            "transitionTo": {
+                "comment": {
+                    "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": "Target that the base or ghost will transition to. It can be either location in the page or another HTML element."
+                            }
+                        },
+                        "customAnimArgs": {
+                            "comment": {
+                                "text": "Custom transition properties that will be applied when performing the transition."
+                            }
+                        },
+                        "startLocation": {
+                            "comment": {
+                                "text": "Start location from where the transition should start."
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Animates the base or ghost element to a specific target location or other element using transition.",
+                        "If `ghost` is true but there is not ghost rendered, it will be created and animated.",
+                        "It is recommended to use 'getBoundingClientRects() + pageScroll' when determining desired location."
+                    ]
+                }
+            },
             "dropFinished": {
                 "comment": {
-                    "shortText": [
-                        "Informs the `igxDrag` directive that it has been dropped/released.",
-                        "This should usully be called when `animateOnRelease` is set to `true`.",
-                        "When canceling or defining custom drop logic this tells the igxDrag to update it's positions and",
-                        "animate correctly to the new position.",
-                        "```typescript",
-                        "public onDropElem(event) {",
-                        "    // Function bound to the igxDrop directive event `onDrop`",
-                        "    // This cancels the default drop logic of the `igxDrop`",
-                        "    event.cancel = true;",
-                        "    event.drag.dropFinished();",
-                        "}",
-                        "```"
-                    ]
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "This method will be removed in future major version. Please use `transitionToOrigin` or `transitionTo`.",
+                                    "Informs the `igxDrag` directive that it has been dropped/released.",
+                                    "This should usually be called when `animateOnRelease` is set to `true`.",
+                                    "When canceling or defining custom drop logic this tells the igxDrag to update it's positions and",
+                                    "animate correctly to the new position.",
+                                    "```typescript",
+                                    "public onDropElem(event) {",
+                                    "    // Function bound to the igxDrop directive event `onDrop`",
+                                    "    // This cancels the default drop logic of the `igxDrop`",
+                                    "    event.cancel = true;",
+                                    "    event.drag.dropFinished();",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        }
+                    }
                 }
             }
         },
         "accessors": {
+            "ghostOffsetX": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that specifies the offset of the ghost created relative to the mouse in pixels.",
+                            "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that specifies the offset of the ghost created relative to the mouse in pixels.",
+                            "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "ghostOffsetY": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that specifies the offset of the ghost created relative to the mouse in pixels.",
+                            "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that specifies the offset of the ghost created relative to the mouse in pixels.",
+                            "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "visible": {
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Please use native angular ways of hiding it using custom to the base element styling for future versions.",
+                                        "Sets the visibility of the draggable element.",
+                                        "```typescript",
+                                        "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                                        "public myDrag: IgxDragDirective;",
+                                        "ngAfterViewInit(){",
+                                        "    this.myDrag.visible = false;",
+                                        "}",
+                                        "```"
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "Sets the visibility of the draggable element.",
+                            "Returns the visibility state of the draggable element.",
                             "```typescript",
                             "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
                             "public myDrag: IgxDragDirective;",
                             "ngAfterViewInit(){",
-                            "    this.myDrag.visible = false;",
+                            "    let dragVisibility = this.myDrag.visible;",
                             "}",
                             "```"
                         ]
@@ -190,42 +598,24 @@
                             "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
                             "public myDrag: IgxDragDirective;",
                             "ngAfterViewInit(){",
-                            "    let dragVisibilty = this.myDrag.visible;",
+                            "    let dragVisibility = this.myDrag.visible;",
                             "}",
                             "```"
                         ]
                     }
                 }
             },
-            "pointerEventsEnabled": {
+            "location": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "Returns if the browser supports pointer events.",
-                            "```typescript",
-                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                            "public myDrag: IgxDragDirective;",
-                            "ngAfterViewInit(){",
-                            "    let pointerEvents = this.myDrag.pointerEventsEnabled;",
-                            "}",
-                            "```"
-                        ]
+                        "shortText": "Gets the current location of the element relative to the page."
                     }
                 }
             },
-            "touchEventsEnabled": {
+            "originLocation": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "Returns if the browser supports touch events.",
-                            "```typescript",
-                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                            "public myDrag: IgxDragDirective;",
-                            "ngAfterViewInit(){",
-                            "    let touchEvents = this.myDrag.pointerEventsEnabled;",
-                            "}",
-                            "```"
-                        ]
+                        "shortText": "Gets the original location of the element before dragging started."
                     }
                 }
             }
