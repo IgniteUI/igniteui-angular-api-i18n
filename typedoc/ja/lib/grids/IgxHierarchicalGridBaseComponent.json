@@ -198,6 +198,34 @@
                     ]
                 }
             },
+            "uniqueColumnValuesStrategy": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "text": [
+                        "```typescript",
+                        "public columnValuesStrategy = (column: IgxColumnComponent,",
+                        "                              filteringExpressionsTree: IFilteringExpressionsTree,",
+                        "                              done: (uniqueValues: any[]) => void) => {",
+                        "    this.dataService.getColumnData(column, filteringExpressionsTree, uniqueValues => done(uniqueValues));",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": [
+                        "An @Input property that provides a callback for loading unique column values on demand.",
+                        "If this property is provided, the unique values it generates will be used by the Excel Style Filtering.",
+                        "```html",
+                        "<igx-grid [data]=\"localData\" [filterMode]=\"'excelStyleFilter'\" [uniqueColumnValuesStrategy]=\"columnValuesStrategy\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "onCellClick": {
                 "comment": {
                     "tags": {
@@ -257,7 +285,7 @@
                     "shortText": [
                         " `IgxGridCellComponent` が選択されたときに発生します。",
                         "```html",
-                        "<igx-grid #grid (onRowSelectionChange)=\"onRowClickChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                        "<igx-grid #grid (onRowSelectionChange)=\"onCellClickChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
                         "```",
                         "```typescript",
                         "public onCellClickChange(e){",
@@ -318,8 +346,7 @@
                         "}",
                         "```",
                         "```html",
-                        "<igx-grid #grid3 (onCellEditCancel)=\"editCancel($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
-                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\">",
+                        "<igx-grid #grid3 (onCellEditCancel)=\"editCancel($event)\" [data]=\"remote | async\" [primaryKey]=\"'ProductID'\">",
                         "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
                         "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
                         "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
@@ -360,7 +387,7 @@
                         "```",
                         "```html",
                         "<igx-grid #grid3 (onCellEditEnter)=\"editStart($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
-                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\">",
+                        "         [primaryKey]=\"'ProductID'\">",
                         "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
                         "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
                         "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
@@ -402,7 +429,7 @@
                         "```",
                         "```html",
                         "<igx-grid #grid3 (onCellEdit)=\"editDone($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
-                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\">",
+                        "         [primaryKey]=\"'ProductID'\">",
                         "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
                         "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
                         "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
@@ -435,7 +462,7 @@
                         "次のようにマークアップでのイベントにバインとします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEditEnter)=\"editStart($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
-                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
+                        "         [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                         "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
                         "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
                         "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
@@ -475,7 +502,7 @@
                         "次のようにマークアップでのイベントにバインとします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEdit)=\"editDone($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
-                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
+                        "         [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                         "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
                         "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
                         "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
@@ -517,7 +544,7 @@
                         "次のようにマークアップでのイベントにバインとします。",
                         "```html",
                         "<igx-grid #grid3 (onRowEditCancel)=\"editCancel($event)\" [data]=\"remote | async\" (onSortingDone)=\"process($event)\"",
-                        "         [primaryKey]=\"'ProductID'\" [rowSelectable]=\"true\" [rowEditable]=\"true\">",
+                        "         [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                         "         <igx-column [sortable]=\"true\" [field]=\"'ProductID'\"></igx-column>",
                         "         <igx-column [editable]=\"true\" [field]=\"'ProductName'\"></igx-column>",
                         "         <igx-column [sortable]=\"true\" [field]=\"'UnitsInStock'\" [header]=\"'Units in Stock'\"></igx-column>",
@@ -1054,7 +1081,7 @@
                         }
                     },
                     "shortText": [
-                        "インデックスによって `IgxColumnComponent` を返します。",
+                        "インデックスによって `IgxRowComponent` を返します。",
                         "```typescript",
                         "const myRow = this.grid1.getRowByIndex(1);",
                         "```"
@@ -1716,27 +1743,38 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridBaseComponent",
-                                "tagName": "次のメンバー:"
+                                "tagName": "memberof"
                             }
                         }
                     },
                     "shortText": [
-                        "すべての行を選択します。",
-                        "注: フィルタリング機能が有効にされる場合、selectAllRows() および deselectAllRows() はフィルターされた行のみを選択/選択解除します。",
+                        "Selects all rows",
+                        "Note: By default if filtering is in place, selectAllRows() and deselectAllRows() select/deselect all filtered rows.",
+                        "If you set the parameter onlyFilterData to false that will select all rows in the grid exept deleted rows.",
                         "```typescript",
                         "this.grid.selectAllRows();",
+                        "this.grid.selectAllRows(false);",
                         "```"
                     ]
                 }
             },
             "deselectAllRows": {
                 "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "すべての行を選択解除します。",
+                        "Deselects all rows",
+                        "Note: By default if filtering is in place, selectAllRows() and deselectAllRows() select/deselect all filtered rows.",
+                        "If you set the parameter onlyFilterData to false that will select all rows in the grid exept deleted rows.",
                         "```typescript",
                         "this.grid.deselectAllRows();",
-                        "```",
-                        "注: フィルタリング機能が有効にされる場合、selectAllRows() および deselectAllRows() はフィルターされた行のみを選択/選択解除します。"
+                        "```"
                     ]
                 }
             },
@@ -2078,7 +2116,7 @@
                     }
                 }
             },
-            "rowSelectable": {
+            "hideRowSelectors": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -2089,13 +2127,7 @@
                                 }
                             }
                         },
-                        "shortText": [
-                            "`IgxGridRowComponent` の選択が有効かどうかを設定します。",
-                            "デフォルトの設定は false です。",
-                            "```typescript",
-                            "let rowSelectable = this.grid.rowSelectable;",
-                            "```"
-                        ]
+                        "shortText": "Returns if the row selectors are hidden"
                     }
                 },
                 "setter": {
@@ -2109,10 +2141,8 @@
                             }
                         },
                         "shortText": [
-                            "行を選択できるかどうかを設定します。",
-                            "```html",
-                            "<igx-grid #grid [showToolbar]=\"true\" [rowSelectable]=\"true\" [columnHiding]=\"true\"></igx-grid>",
-                            "```"
+                            "Allows you to change the visibility of the row selectors",
+                            "By default row selectors are shown"
                         ]
                     }
                 }
@@ -2610,23 +2640,6 @@
                             "```"
                         ]
                     }
-                }
-            },
-            "onFocusChange": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": "onGridKeydown イベントを使用してください。",
-                                    "tagName": "非推奨。"
-                                }
-                            }
-                        }
-                    }
-                },
-                "setter": {
-                    "comment": {}
                 }
             },
             "headerGroupsList": {
@@ -3140,6 +3153,68 @@
                             "```html",
                             "<igx-grid [exportCsvText]=\"'My Csv Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportExcel]=\"true\"></igx-grid>",
                             "```"
+                        ]
+                    }
+                }
+            },
+            "cellSelection": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the current cell selection state, which can be none, single or multiple"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Allows you to set cell selection mode",
+                            "By default the cell selection mode is multiple"
+                        ]
+                    }
+                }
+            },
+            "rowSelection": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the current row selection state, which can be none, single or multiple"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Allows you to set row selection mode",
+                            "By default the row selection mode is none"
                         ]
                     }
                 }
