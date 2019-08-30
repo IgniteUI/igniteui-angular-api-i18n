@@ -42,8 +42,53 @@
                         "Chrome と Chromium は、キーボード操作後に有効範囲を無視します。"
                     ]
                 }
+            },
+            "getSelectedRows": {
+                "comment": {
+                    "shortText": "Returns array of the selected row id's."
+                }
+            },
+            "clearRowSelection": {
+                "comment": {
+                    "shortText": "Clears row selection, if filtering is applied clears only selected rows from filtered data."
+                }
+            },
+            "selectAllRows": {
+                "comment": {
+                    "shortText": "Select all rows, if filtering is applied select only from filtered data."
+                }
+            },
+            "selectRowById": {
+                "comment": {
+                    "shortText": "Select the specified row and emit event."
+                }
+            },
+            "deselectRow": {
+                "comment": {
+                    "shortText": "Deselect the specified row and emit event."
+                }
+            },
+            "selectRowsWithNoEvent": {
+                "comment": {
+                    "shortText": "Select specified rows. No event is emitted."
+                }
+            },
+            "deselectRowsWithNoEvent": {
+                "comment": {
+                    "shortText": "Deselect specified rows. No event is emitted."
+                }
+            },
+            "selectMultipleRows": {
+                "comment": {
+                    "shortText": "Select range from last selected row to the current specified row."
             }
-        },
+        },   
+        "clearAllSelectedRows": {
+            "comment": {
+                "shortText": "Clear rowSelection and update checkbox state"
+            }
+        }
+    },     
         "accessors": {
             "ranges": {
                 "getter": {
@@ -51,6 +96,13 @@
                         "shortText": [
                             "キーボード操作とポインター操作の両方からグリッドで現在選択されている範囲を返します。"
                         ]
+                    }
+                }
+            },
+            "allData": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns all data in the grid, with applied filtering and sorting and without deleted rows."
                     }
                 }
             }

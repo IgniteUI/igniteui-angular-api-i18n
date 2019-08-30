@@ -426,22 +426,7 @@
                         "```"
                     ]
                 }
-            },
-            "valid": {
-                "comment": {
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let valid = this.combo.valid;",
-                        "```",
-                        "```typescript",
-                        "// 設定",
-                        "this.combo.valid = IgxComboState.INVALID;",
-                        "```"
-                    ],
-                    "shortText": "フォームで使用時のコントロールが有効化どうかを取得します。"
                 }
-            }
         },
         "methods": {
             "triggerCheck": {
@@ -570,25 +555,31 @@
                 "parameters": {
                     "itemID": {
                         "comment": {
-                            "text": "指定した項目の valueKey。"
+                            "text": "the itemID of the specific item"
                         }
                     },
                     "select": {
                         "comment": {
                             "text": [
-                                "項目が選択されるか (true) または選択解除されるか (false)。",
+                                "If the item should be selected (true) or deselected (false)",
+                                "Without specified valueKey;",
                                 "```typescript",
-                                "items: { field: string, region: string}[] = data;",
+                                "this.combo.valueKey = null;",
+                                "const items: { field: string, region: string}[] = data;",
+                                "this.combo.setSelectedItem(items[0], true);",
+                                "```",
+                                "With specified valueKey;",
+                                "```typescript",
+                                "this.combo.valueKey = 'field';",
+                                "const items: { field: string, region: string}[] = data;",
                                 "this.combo.setSelectedItem('Connecticut', true);",
-                                "// combo.valueKey === 'field'",
-                                "// items[n] === { field: 'Connecticut', state: 'New England'}",
                                 "```"
                             ]
                         }
                     }
                 },
                 "tags": {},
-                "shortText": "valueKey 値を使用して、項目を選択/選択解除します。"
+                "shortText": "Selects/Deselects a single item"
             }
         }
     },
@@ -738,6 +729,30 @@
                             "```"
                         ],
                         "shortText": "項目リストで項目をグループ化する項目プロパティ。データが Object[] 型ではない場合に利用できません。"
+                    }
+                }
+            },
+            "valid": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get",
+                            "let valid = this.combo.valid;",
+                            "```"
+                        ],
+                        "shortText": "Gets if control is valid, when used in a form"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// set",
+                            "this.combo.valid = IgxComboState.INVALID;",
+                            "```"
+                        ],
+                        "shortText": "Sets if control is valid, when used in a form"
                     }
                 }
             },
