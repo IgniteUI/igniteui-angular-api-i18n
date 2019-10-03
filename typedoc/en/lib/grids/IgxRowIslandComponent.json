@@ -1020,6 +1020,26 @@
                     ]
                 }
             },
+            "rowExpandedIndicatorTemplate": {
+                "comment": {
+                    "shortText": "The custom template, if any, that should be used when rendering a row expand indicator."
+                }
+            },
+            "rowCollapsedIndicatorTemplate": {
+                "comment": {
+                    "shortText": "The custom template, if any, that should be used when rendering a row collapse indicator."
+                }
+            },
+            "headerExpandIndicatorTemplate": {
+                "comment": {
+                    "shortText": "The custom template, if any, that should be used when rendering a header expand indicator."
+                }
+            },
+            "headerCollapseIndicatorTemplate": {
+                "comment": {
+                    "shortText": "The custom template, if any, that should be used when rendering a header collapse indicator."
+                }
+            },
             "toolbar": {
                 "comment": {
                     "tags": {
@@ -1899,6 +1919,24 @@
                         "If `commit === true`, passes them from the pending state to the data (or transaction service)"
                     ]
                 }
+            },
+            "openAdvancedFilteringDialog": {
+                "comment": {
+                    "shortText": "Opens the advanced filtering dialog."
+                }
+            },
+            "closeAdvancedFilteringDialog": {
+                "comment": {
+                    "parameters": {
+                        "applyChanges": {
+                            "comment": {
+                                "text": "indicates whether the changes should be applied"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Closes the advanced filtering dialog."
+                }
             }
         },
         "accessors": {
@@ -2047,6 +2085,57 @@
                             "    }",
                             "];",
                             "this.grid.filteringExpressionsTree = (logic);",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "advancedFilteringExpressionsTree": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns the advanced filtering state of `IgxGridComponent`.",
+                            "```typescript",
+                            "let advancedFilteringExpressionsTree = this.grid.advancedFilteringExpressionsTree;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets the advanced filtering state of the `IgxGridComponent`.",
+                            "```typescript",
+                            "const logic = new FilteringExpressionsTree(FilteringLogic.And);",
+                            "logic.filteringOperands = [",
+                            "    {",
+                            "         condition: IgxNumberFilteringOperand.instance().condition('greaterThan'),",
+                            "         fieldName: 'ID',",
+                            "         searchVal: 1",
+                            "    },",
+                            "    {",
+                            "         condition: IgxStringFilteringOperand.instance().condition('contains'),",
+                            "         fieldName: 'CompanyName',",
+                            "         searchVal: 'a'",
+                            "    }",
+                            "];",
+                            "this.grid.advancedFilteringExpressionsTree = logic;",
                             "```"
                         ]
                     }
@@ -2616,7 +2705,46 @@
                             "Sets if the filtering is enabled.",
                             "By default it's disabled.",
                             "```html",
-                            "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "allowAdvancedFiltering": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns a value indicating whether the advanced filtering is enabled.",
+                            "```typescript",
+                            " let filtering = this.grid.allowAdvancedFiltering;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets a value indicating whether the advanced filtering is enabled.",
+                            "By default it's disabled.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"localData\" [allowAdvancedFiltering]=\"true\" [showToolbar]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -2734,6 +2862,28 @@
                             "By default it is rootAndChildLevels which means the summaries are calculated for the root level and each child level.",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" summaryCalculationMode=\"rootLevelOnly\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filterStrategy": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the filtering strategy of the grid.",
+                            "```typescript",
+                            " let filterStrategy = this.grid.filterStrategy",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the filtering strategy of the grid.",
+                            "```html",
+                            " <igx-grid #grid [data]=\"localData\" [filterStrategy]=\"filterStrategy\"></igx-grid>",
                             "```"
                         ]
                     }
