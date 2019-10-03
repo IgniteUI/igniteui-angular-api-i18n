@@ -1197,6 +1197,26 @@
                     ]
                 }
             },
+            "rowExpandedIndicatorTemplate": {
+                "comment": {
+                    "shortText": "行展開インジケーターをレンダリングするときに使用する必要があるカスタムテンプレート (存在する場合)。"
+                }
+            },
+            "rowCollapsedIndicatorTemplate": {
+                "comment": {
+                    "shortText": "行折りたたみインジケーターをレンダリングするときに使用する必要があるカスタムテンプレート (存在する場合)。"
+                }
+            },
+            "headerExpandIndicatorTemplate": {
+                "comment": {
+                    "shortText": "ヘッダー展開インジケーターをレンダリングするときに使用する必要があるカスタムテンプレート (存在する場合)。"
+                }
+            },
+            "headerCollapseIndicatorTemplate": {
+                "comment": {
+                    "shortText": "ヘッダー折りたたみインジケーターをレンダリングするときに使用する必要があるカスタムテンプレート (存在する場合)。"
+                }
+            },
             "toolbar": {
                 "comment": {
                     "tags": {
@@ -2198,8 +2218,26 @@
                         "`commit === true`の場合、未解決状態からデータ (またはトランザクション サービス) へ渡します。"
                     ]
                 }
+            },
+            "openAdvancedFilteringDialog": {
+                "comment": {
+                    "shortText": "高度なフィルタリング ダイアログを開きます。"                
             }
         },
+        "closeAdvancedFilteringDialog": {
+            "comment": {
+                "parameters": {
+                    "applyChanges": {
+                        "comment": {
+                            "text": "変更を適用する必要があるかどうかを示します。"
+                        }
+                    }
+                },
+                "tags": {},
+                "shortText": "高度なフィルタリング ダイアログを閉じます。"
+            }
+        }
+    },
         "accessors": {
             "id": {
                 "getter": {
@@ -2521,6 +2559,57 @@
                             "    }",
                             "];",
                             "this.grid.filteringExpressionsTree = (logic);",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "advancedFilteringExpressionsTree": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` の高度なフィルタリング状態を返します。",
+                            "```typescript",
+                            "let advancedFilteringExpressionsTree = this.grid.advancedFilteringExpressionsTree;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` の高度なフィルタリング状態を設定します。",
+                            "```typescript",
+                            "const logic = new FilteringExpressionsTree(FilteringLogic.And);",
+                            "logic.filteringOperands = [",
+                            "    {",
+                            "         condition: IgxNumberFilteringOperand.instance().condition('greaterThan'),",
+                            "         fieldName: 'ID',",
+                            "         searchVal: 1",
+                            "    },",
+                            "    {",
+                            "         condition: IgxStringFilteringOperand.instance().condition('contains'),",
+                            "         fieldName: 'CompanyName',",
+                            "         searchVal: 'a'",
+                            "    }",
+                            "];",
+                            "this.grid.advancedFilteringExpressionsTree = logic;",
                             "```"
                         ]
                     }
@@ -3098,7 +3187,46 @@
                             "フィルタリングが有効かどうか設定します。",
                             "デフォルトで無効です。",
                             "```html",
-                            "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "allowAdvancedFiltering": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "高度なフィルタリングが有効かどうかを示す値を返します。",
+                            "```typescript",
+                            " let filtering = this.grid.allowAdvancedFiltering;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "拡張フィルタリングが有効かどうかを示す値を設定します。",
+                            "デフォルトで無効です。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"localData\" [allowAdvancedFiltering]=\"true\" [showToolbar]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
                     }
@@ -3216,6 +3344,28 @@
                             "デフォルトは rootAndChildLevels で、集計はルート レベルと各子レベルが計算されます。",
                             "```html",
                             "<igx-grid #grid [data]=\"localData\" summaryCalculationMode=\"rootLevelOnly\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filterStrategy": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "グリッドのフィルタリング ストラテジを取得します。",
+                            "```typescript",
+                            " let filterStrategy = this.grid.filterStrategy",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "グリッドのフィルタリング ストラテジを設定します。",
+                            "```html",
+                            " <igx-grid #grid [data]=\"localData\" [filterStrategy]=\"filterStrategy\"></igx-grid>",
                             "```"
                         ]
                     }
