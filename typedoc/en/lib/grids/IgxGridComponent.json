@@ -66,7 +66,13 @@
                             }
                         }
                     },
-                    "text": [
+                    "shortText": [
+                        "An @Input property that sets the template that will be rendered as a GroupBy drop area.",
+                        "Note: The grid needs to have at least one groupable column in order the GroupBy area to be displayed.",
+                        "```html",
+                        "<igx-grid [dropAreaTemplate]=\"dropAreaRef\">",
+                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
+                        "</igx-grid>",
                         "<ng-template #myDropArea>",
                         "     <span> Custom drop area! </span>",
                         "</ng-template>",
@@ -75,14 +81,6 @@
                         "@ViewChild('myDropArea', { read: TemplateRef })",
                         "public dropAreaRef: TemplateRef<any>;",
                         "```"
-                    ],
-                    "shortText": [
-                        "An @Input property that sets the template that will be rendered as a GroupBy drop area.",
-                        "Note: The grid needs to have at least one groupable column in order the GroupBy area to be displayed.",
-                        "```html",
-                        "<igx-grid [dropAreaTemplate]=\"dropAreaRef\">",
-                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
-                        "</igx-grid>"
                     ]
                 }
             },
@@ -1835,7 +1833,7 @@
                         "Returns how many times the grid contains the string.",
                         "```typescript",
                         "this.grid.findPrev(\"financial\");",
-                        "````"
+                        "```"
                     ]
                 }
             },
@@ -2665,9 +2663,23 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "Sets the current page index.",
-                            "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [page]=\"5\" [autoGenerate]=\"true\"></igx-grid>"
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [page]=\"5\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```",
+                            "Two-way data binding.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
                         ]
                     }
                 }
@@ -3479,12 +3491,20 @@
             "hiddenColumnsText": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "Returns the text to be displayed inside the toggle button",
                             "for the built-in column hiding UI of the`IgxColumnComponent`.",
                             "```typescript",
                             "const hiddenColText = this.grid.hiddenColumnsText;",
-                            "``"
+                            "```"
                         ]
                     }
                 },
