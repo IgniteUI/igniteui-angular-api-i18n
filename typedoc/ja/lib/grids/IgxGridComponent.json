@@ -19,6 +19,102 @@
             ]
         },
         "properties": {
+            "groupsExpanded": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "作成したグループを展開または縮小として描画されるかどうかを決定する @Input プロパティ。",
+                        "デフォルトの描画状態は展開です。",
+                        "```html",
+                        "<igx-grid #grid [data]=\"Data\" [groupsExpanded]=\"false\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "groupsRecords": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "レコードによるグループの階層表現。",
+                        "```typescript",
+                        "let groupRecords = this.grid.groupsRecords;",
+                        "```"
+                    ]
+                }
+            },
+            "dropAreaTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "GroupBy ドロップ領域として描画されるテンプレートを設定する @Input プロパティ。",
+                        "注: GroupBy 領域を表示するためにグリッドでグループ可能な列が 1 列以上必要です。",
+                        "```html",
+                        "<igx-grid [dropAreaTemplate]=\"dropAreaRef\">",
+                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
+                        "</igx-grid>",
+                        "<ng-template #myDropArea>",
+                        "     <span> Custom drop area! </span>",
+                        "</ng-template>",
+                        "```",
+                        "```ts",
+                        "@ViewChild('myDropArea', { read: TemplateRef })",
+                        "public dropAreaRef: TemplateRef<any>;",
+                        "```"
+                    ]
+                }
+            },
+            "onGroupingDone": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Group By API を使用して新しい `IgxColumnComponent` のグループ化/グループ解除、または複数列がグループ化/グループ化解除されたときに発生します。",
+                        "groupBy()` または `clearGrouping()` API メソッドを呼び出して引数として渡すことにより複数列がｚ一度にグループ化された場合に `onGroupingDone` イベントは一度のみ発生します。",
+                        "イベント引数は、`ISortingExpression` とグループ化/グループ解除操作と関連する `IgxColumnComponent` を含む `expressions`、`groupedColumns`、`ungroupedColumns` プロパティを提供します。",
+                        "`groupedColumns` と `ungroupedColumns` は新しく変更 (**最近**のグループ化/グループ解除操作によって影響) された列のみ表示し、現在グループ化/グループ解除されているすべての列ではありません。",
+                        "columns.",
+                        "```typescript",
+                        "groupingDone(event: IGroupingDoneEventArgs){",
+                        "    const expressions = event.expressions;",
+                        "    //新しくグループ化された列",
+                        "    const groupedColumns = event.groupedColumns;",
+                        "    //新しくグループ解除された列",
+                        "    const ungroupedColumns = event.ungroupedColumns;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"localData\" (onGroupingDone)=\"groupingDone($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "dragIndicatorIconTemplate": {
                 "comment": {
                     "text": [
@@ -74,73 +170,6 @@
                         "```html",
                         "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [emptyGridTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
                         "```"
-                    ]
-                }
-            },
-            "groupsExpanded": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "作成したグループを展開または縮小として描画されるかどうかを決定する @Input プロパティ。",
-                        "デフォルトの描画状態は展開です。",
-                        "```html",
-                        "<igx-grid #grid [data]=\"Data\" [groupsExpanded]=\"false\" [autoGenerate]=\"true\"></igx-grid>",
-                        "```"
-                    ]
-                }
-            },
-            "groupsRecords": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "レコードによるグループの階層表現。",
-                        "```typescript",
-                        "let groupRecords = this.grid.groupsRecords;",
-                        "```"
-                    ]
-                }
-            },
-            "dropAreaTemplate": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "text": [
-                        "<ng-template #myDropArea>",
-                        "     <span> Custom drop area! </span>",
-                        "</ng-template>",
-                        "```",
-                        "```ts",
-                        "@ViewChild('myDropArea', { read: TemplateRef })",
-                        "public dropAreaRef: TemplateRef<any>;",
-                        "```"
-                    ],
-                    "shortText": [
-                        "GroupBy ドロップ領域として描画されるテンプレートを設定する @Input プロパティ。",
-                        "注: GroupBy 領域を表示するためにグリッドでグループ可能な列が 1 列以上必要です。",
-                        "```html",
-                        "<igx-grid [dropAreaTemplate]=\"dropAreaRef\">",
-                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
-                        "</igx-grid>"
                     ]
                 }
             },
@@ -765,37 +794,6 @@
                         "```",
                         "```html",
                         "<igx-grid #grid [data]=\"localData\" (onRowDeleted)=\"rowDeleted($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
-                        "```"
-                    ]
-                }
-            },
-            "onGroupingDone": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Group By API を使用して新しい `IgxColumnComponent` のグループ化/グループ解除、または複数列がグループ化/グループ化解除されたときに発生します。",
-                        "groupBy()` または `clearGrouping()` API メソッドを呼び出して引数として渡すことにより複数列がｚ一度にグループ化された場合に `onGroupingDone` イベントは一度のみ発生します。",
-                        "イベント引数は、`ISortingExpression` とグループ化/グループ解除操作と関連する `IgxColumnComponent` を含む `expressions`、`groupedColumns`、`ungroupedColumns` プロパティを提供します。",
-                        "`groupedColumns` と `ungroupedColumns` は新しく変更 (**最近**のグループ化/グループ解除操作によって影響) された列のみ表示し、現在グループ化/グループ解除されているすべての列ではありません。",
-                        "columns.",
-                        "```typescript",
-                        "groupingDone(event: IGroupingDoneEventArgs){",
-                        "    const expressions = event.expressions;",
-                        "    //新しくグループ化された列",
-                        "    const groupedColumns = event.groupedColumns;",
-                        "    //新しくグループ解除された列",
-                        "    const ungroupedColumns = event.ungroupedColumns;",
-                        "}",
-                        "```",
-                        "```html",
-                        "<igx-grid #grid [data]=\"localData\" (onGroupingDone)=\"groupingDone($event)\" [autoGenerate]=\"true\"></igx-grid>",
                         "```"
                     ]
                 }
@@ -1823,7 +1821,7 @@
                         "グリッドに文字列が何回含まれるかを返します。",
                         "```typescript",
                         "this.grid.findPrev(\"financial\");",
-                        "````"
+                        "```"
                     ]
                 }
             },
@@ -2496,9 +2494,23 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "現在のページ インデックスを設定します",
-                            "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [page]=\"5\" [autoGenerate]=\"true\"></igx-grid>"
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [page]=\"5\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```",
+                            "双方向データ バインディング。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
                         ]
                     }
                 }
@@ -3322,7 +3334,7 @@
                             "非表示の `IgxColumnComponent` の数を返します。",
                             "```typescript",
                             "const hiddenCol = this.grid.hiddenColumnsCount;",
-                            "``"
+                            "```"
                         ]
                     }
                 }
@@ -3330,11 +3342,19 @@
             "hiddenColumnsText": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },                       
                         "shortText": [
                             "`IgxColumnComponent` の定義済みの列非表示 UI のトグル ボタンに表示されるテキストを返します。",
                             "```typescript",
                             "const hiddenColText = this.grid.hiddenColumnsText;",
-                            "``"
+                            "```"
                         ]
                     }
                 },

@@ -512,15 +512,13 @@
                             }
                         }
                     },
-                    "text": [
-                        "let column = this.grid.columnList.filter(c => c.field === 'ID')[0];",
-                        "column.autosize();",
-                        "```"
-                    ],
                     "shortText": [
                         "列を現在表示中のセルヘッダーを含むセル値に自動でサイズ変更します。",
                         "```typescript",
-                        "@ViewChild('grid') grid: IgxGridComponent;"
+                        "@ViewChild('grid') grid: IgxGridComponent;",
+                        "let column = this.grid.columnList.filter(c => c.field === 'ID')[0];",
+                        "column.autosize();",
+                        "```"
                     ]
                 }
             }
@@ -1073,16 +1071,10 @@
                                 }
                             }
                         },
-                        "text": [
-                            "class CustomSortingStrategy extends SortingStrategy {",
-                            "...",
-                            "}",
-                            "```"
-                        ],
                         "shortText": [
                             "列 `sortStrategy` を取得します。",
                             "```typescript",
-                            "let sortStrategy = this.column.sortStrategy'",
+                            "let sortStrategy = this.column.sortStrategy",
                             "```"
                         ]
                     }
@@ -1097,16 +1089,12 @@
                                 }
                             }
                         },
-                        "text": [
-                            "class CustomSortingStrategy extends SortingStrategy {",
-                            "...",
-                            "}",
-                            "```"
-                        ],
                         "shortText": [
                             "列 `sortStrategy` を設定します。",
                             "```typescript",
-                            "this.column.sortStrategy = new CustomSortingStrategy()."
+                            "this.column.sortStrategy = new CustomSortingStrategy().",
+                            "class CustomSortingStrategy extends SortingStrategy {...}",
+                            "```"
                         ]
                     }
                 }
