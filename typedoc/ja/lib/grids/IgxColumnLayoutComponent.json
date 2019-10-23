@@ -288,12 +288,39 @@
                         "列セルの条件付きクラス セレクターを設定します。",
                         "キーと値のペアを含むオブジェクト リテラルを受け取ります。キーは CSS クラスの名前です。値はブール値を返すコールバック関数またはブール値です。例:",
                         "```typescript",
-                        "callback = (rowData, columnKey) => { return rowData[columnKey] > 6; }",
+                        "callback = (rowData, columnKey, cellValue, rowIndex) => { return rowData[columnKey] > 6; }",
                         "cellClasses = { 'className' : this.callback };",
                         "```",
                         "```html",
                         "<igx-column [cellClasses] = \"cellClasses\"></igx-column>",
                         "<igx-column [cellClasses] = \"{'class1' : true }\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
+            "cellStyles": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets conditional style properties on the column cells.",
+                        "Similar to `ngStyle` it accepts an object literal where the keys are",
+                        "the style properties and the value is the expression to be evaluated.",
+                        "As with `cellClasses` it accepts a callback function.",
+                        "```typescript",
+                        "styles = {",
+                        " background: 'royalblue',",
+                        " color: (rowData, columnKey, cellValue, rowIndex) => value.startsWith('Important') : 'red': 'inherit'",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-column [cellStyles]=\"styles\"></igx-column>",
                         "```"
                     ]
                 }
