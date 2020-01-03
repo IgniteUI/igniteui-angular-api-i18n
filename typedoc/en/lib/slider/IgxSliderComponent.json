@@ -39,6 +39,62 @@
                     ]
                 }
             },
+            "showTicks": {
+                "comment": {
+                    "shortText": [
+                        "Show/hide slider ticks",
+                        "```html",
+                        "<igx-slier [showTicks]=\"true\" [primaryTicks]=\"5\"></igx-slier>",
+                        "```"
+                    ]
+                }
+            },
+            "primaryTickLabels": {
+                "comment": {
+                    "shortText": [
+                        "show/hide primary tick labels",
+                        "```html",
+                        "<igx-slider [primaryTicks]=\"5\" [primaryTickLabels]=\"false\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
+            "secondaryTickLabels": {
+                "comment": {
+                    "shortText": [
+                        "show/hide secondary tick labels",
+                        "```html",
+                        "<igx-slider [secondaryTicks]=\"5\" [secondaryTickLabels]=\"false\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
+            "ticksOrientation": {
+                "comment": {
+                    "shortText": [
+                        "Changes ticks orientation:",
+                        "bottom - The default orienation, below the slider track.",
+                        "top - Above the slider track",
+                        "mirror - combines top and bottom orientation.",
+                        "```html",
+                        "<igx-slider [primaryTicks]=\"5\" [ticksOrientation]=\"ticksOrientation\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
+            "tickLabelsOrientation": {
+                "comment": {
+                    "shortText": [
+                        "Changes tick labels rotation:",
+                        "horizontal - The default rotation",
+                        "toptobottom - Rotates tick labels vertically to 90deg",
+                        "bottomtotop - Rotate tick labels vertically to -90deg",
+                        "```html",
+                        "<igx-slider [primaryTicks]=\"5\" [secondaryTicks]=\"3\" [tickLabelsOrientation]=\"tickLabelsOrientaiton\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
             "onValueChange": {
                 "comment": {
                     "shortText": [
@@ -111,9 +167,10 @@
                 "getter": {
                     "comment": {
                         "text": [
+                            "```typescript",
                             "return {",
-                            " $implicit: {@link value},",
-                            " labels: {@link labels}",
+                            " $implicit // returns the value of the label,",
+                            " labels // returns the labels collection the user has passed.",
                             "}",
                             "```"
                         ],
@@ -205,33 +262,6 @@
                     }
                 }
             },
-            "maxValue": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns the maximum value for the {@link IgxSliderComponent}.",
-                            "```typescript",
-                            "@ViewChild(\"slider\")",
-                            "public slider: IgxSliderComponent;",
-                            "ngAfterViewInit(){",
-                            "   let sliderMax = this.slider.maxValue;",
-                            "}",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "Sets the maximal value for the `IgxSliderComponent`.",
-                            "The default maximum value is 100.",
-                            "```html",
-                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"256\">",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "minValue": {
                 "getter": {
                     "comment": {
@@ -254,6 +284,33 @@
                             "The default minimal value is 0.",
                             "```html",
                             "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"100\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "maxValue": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the maximum value for the {@link IgxSliderComponent}.",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "   let sliderMax = this.slider.maxValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the maximal value for the `IgxSliderComponent`.",
+                            "The default maximum value is 100.",
+                            "```html",
+                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"256\">",
                             "```"
                         ]
                     }
@@ -345,6 +402,52 @@
                             "```",
                             "```html",
                             "<igx-slider [type]=\"sliderType\" [(ngModel)]=\"rangeValue\" [minValue]=\"56\" [maxValue]=\"256\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "primaryTicks": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the number of the presented primary ticks.",
+                            "```typescript",
+                            "const primaryTicks = this.slider.primaryTicks;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the number of primary ticks. If {@link @labels} is enabled, this property won't function.",
+                            "Insted enable ticks by {@link showTicks} property.",
+                            "```typescript",
+                            "this.slider.primaryTicks = 5;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "secondaryTicks": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the number of the presented secondary ticks.",
+                            "```typescript",
+                            "const secondaryTicks = this.slider.secondaryTicks;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the number of secondary ticks. The property functions even when {@link labels} is enabled,",
+                            "but all secondary ticks won't present any tick labels.",
+                            "```typescript",
+                            "this.slider.secondaryTicks = 5;",
                             "```"
                         ]
                     }

@@ -61,6 +61,34 @@
                     ]
                 }
             },
+            "ariaLabel": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "let carousel = this.carousel.ariaLabel;",
+                        "```"
+                    ],
+                    "shortText": "Returns the `aria-label` of the carousel."
+                }
+            },
+            "cssClass": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Returns the class of the carousel component.",
+                        "```typescript",
+                        "let class =  this.carousel.cssClass;",
+                        "```"
+                    ]
+                }
+            },
             "loop": {
                 "comment": {
                     "tags": {
@@ -114,6 +142,189 @@
                         "Default value is `true`.",
                         "```html",
                         "<igx-carousel [navigation] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "keyboardSupport": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Controls whether the carousel should support keyboard navigation.",
+                        "Default value is `true`.",
+                        "```html",
+                        "<igx-carousel [keyboardSupport] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "gesturesSupport": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Controls whether the carousel should support gestures.",
+                        "Default value is `true`.",
+                        "```html",
+                        "<igx-carousel [gesturesSupport] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "maximumIndicatorsCount": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Controls the maximum indexes that can be shown.",
+                        "Default value is `5`.",
+                        "```html",
+                        "<igx-carousel [maximumIndicatorsCount] = \"10\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "indicatorsOrientation": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxSlideComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Gets/sets the display mode of carousel indicators. It can be top or bottom.",
+                        "Default value is `bottom`.",
+                        "```html",
+                        "<igx-carousel indicatorsOrientation='top'>",
+                        "<igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "animationType": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxSlideComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Gets/sets the animation type of carousel.",
+                        "Default value is `slide`.",
+                        "```html",
+                        "<igx-carousel animationType='none'>",
+                        "<igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "indicatorTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.carousel.indicatorTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-carousel #carousel>",
+                        "     ...",
+                        "     <ng-template igxCarouselIndicator let-slide>",
+                        "        <igx-icon *ngIf=\"slide.active\"  fontSet=\"material\">brightness_7</igx-icon>",
+                        "        <igx-icon *ngIf=\"!slide.active\"  fontSet=\"material\">brightness_5</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-carousel>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering carousel indicators"
+                }
+            },
+            "nextButtonTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.carousel.nextButtonTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-carousel #carousel>",
+                        "     ...",
+                        "     <ng-template igxCarouselNextButton let-disabled>",
+                        "           <button igxButton=\"fab\" igxRipple=\"white\" [disabled]=\"disabled\">",
+                        "               <igx-icon fontSet=\"material\">add</igx-icon>",
+                        "          </button>",
+                        "     </ng-template>",
+                        " </igx-carousel>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering carousel next button"
+                }
+            },
+            "prevButtonTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.carousel.nextButtonTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-carousel #carousel>",
+                        "     ...",
+                        "     <ng-template igxCarouselPrevButton let-disabled>",
+                        "           <button igxButton=\"fab\" igxRipple=\"white\" [disabled]=\"disabled\">",
+                        "               <igx-icon fontSet=\"material\">remove</igx-icon>",
+                        "          </button>",
+                        "     </ng-template>",
+                        " </igx-carousel>",
+                        "```"
+                    ],
+                    "shortText": "The custom template, if any, that should be used when rendering carousel previous button"
+                }
+            },
+            "slides": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "The collection of `slides` currently in the carousel.",
+                        "```typescript",
+                        "let slides: QueryList<IgxSlideComponent> = this.carousel.slides;",
                         "```"
                     ]
                 }
@@ -209,24 +420,6 @@
                         "Provides a reference to the `IgxCarouselComponent` as an event argument.",
                         "```html",
                         "<igx-carousel (onCarouselPlaying)=\"onCarouselPlaying($event)\"></igx-carousel>",
-                        "```"
-                    ]
-                }
-            },
-            "slides": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxCarouselComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "The collection of `slides` currently in the carousel.",
-                        "```typescript",
-                        "let slides: IgxSlideComponent[] = this.carousel.slides;",
                         "```"
                     ]
                 }
@@ -383,6 +576,38 @@
             }
         },
         "accessors": {
+            "tabIndex": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxCarouselComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns the `tabIndex` of the carousel component.",
+                            "```typescript",
+                            "let tabIndex =  this.carousel.tabIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "touchAction": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets the `touch-action` style of the `list item`.",
+                            "```typescript",
+                            "let touchAction = this.listItem.touchAction;",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "interval": {
                 "getter": {
                     "comment": {
@@ -422,23 +647,18 @@
                     }
                 }
             },
-            "tabIndex": {
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An accessor that sets the resource strings.",
+                            "By default it uses EN resources."
+                        ]
+                    }
+                },
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCarouselComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns the `tabIndex` of the carousel component.",
-                            "```typescript",
-                            "let tabIndex =  this.carousel.tabIndex;",
-                            "```"
-                        ]
+                        "shortText": "An accessor that returns the resource strings."
                     }
                 }
             },
