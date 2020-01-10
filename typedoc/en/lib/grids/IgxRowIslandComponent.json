@@ -45,27 +45,6 @@
                     ]
                 }
             },
-            "dragIndicatorIconTemplate": {
-                "comment": {
-                    "text": [
-                        "```typescript",
-                        "// Set in typescript",
-                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
-                        "myComponent.dragIndicatorIconTemplate = myCustomTemplate;",
-                        "```",
-                        "```html",
-                        "<!-- Set in markup -->",
-                        " <igx-grid #grid>",
-                        "     ...",
-                        "     <ng-template igxDragIndicatorIcon>",
-                        "         <igx-icon fontSet=\"material\">info</igx-icon>",
-                        "     </ng-template>",
-                        " </igx-grid>",
-                        "```"
-                    ],
-                    "shortText": "The custom template, if any, that should be used when rendering the row drag indicator icon"
-                }
-            },
             "autoGenerate": {
                 "comment": {
                     "tags": {
@@ -132,7 +111,7 @@
                         }
                     },
                     "shortText": [
-                        "Emitted before filtering is performed.",
+                        "Emitted after filtering is performed.",
                         "Returns the filtering expressions tree of the column for which filtering was performed.",
                         "```typescript",
                         "filteringExprTreeChange(event: IFilteringExpressionsTree){",
@@ -157,7 +136,7 @@
                         }
                     },
                     "shortText": [
-                        "Emitted before advanced filtering is performed.",
+                        "Emitted after advanced filtering is performed.",
                         "Returns the advanced filtering expressions tree.",
                         "```typescript",
                         "advancedFilteringExprTreeChange(event: IFilteringExpressionsTree){",
@@ -2055,21 +2034,6 @@
                     }
                 }
             },
-            "transactions": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "experimental": {
-                                "comment": {
-                                    "text": "@hidden",
-                                    "tagName": "experimental"
-                                }
-                            }
-                        },
-                        "shortText": "Get transactions service for the children grid components."
-                    }
-                }
-            },
             "resourceStrings": {
                 "setter": {
                     "comment": {
@@ -3134,6 +3098,18 @@
                     }
                 }
             },
+            "dragIndicatorIconTemplate": {
+                "getter": {
+                    "comment": {
+                        "shortText": "The custom template, if any, that should be used when rendering the row drag indicator icon"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "The custom template, if any, that should be used when rendering the row drag indicator icon"
+                    }
+                }
+            },
             "sortingExpressions": {
                 "getter": {
                     "comment": {
@@ -3277,6 +3253,13 @@
                             "<igx-grid [pinnedColumnsText]=\"'PinnedCols Text\" [data]=\"data\" [width]=\"'100%'\" [height]=\"'500px'\"></igx-grid>",
                             "```"
                         ]
+                    }
+                }
+            },
+            "transactions": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Get transactions service for the grid."
                     }
                 }
             },
