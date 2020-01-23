@@ -61,6 +61,34 @@
                     ]
                 }
             },
+            "ariaLabel": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "let carousel = this.carousel.ariaLabel;",
+                        "```"
+                    ],
+                    "shortText": "カルーセルの `aria-label` を返します。"
+                }
+            },
+            "cssClass": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "カルーセル コンポーネントのクラスを返します。",
+                        "```typescript",
+                        "let class =  this.carousel.cssClass;",
+                        "```"
+                    ]
+                }
+            },
             "loop": {
                 "comment": {
                     "tags": {
@@ -114,6 +142,189 @@
                         "デフォルト値は `true` です。",
                         "```html",
                         "<igx-carousel [navigation] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "keyboardSupport": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "カルーセルにキーボード ナビゲーショをサポートするかどうかを制御します。",
+                        "デフォルト値は `true` です。",
+                        "```html",
+                        "<igx-carousel [keyboardSupport] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "gesturesSupport": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "カルーセルにジェスチャをサポートするかどうかを制御します。",
+                        "デフォルト値は `true` です。",
+                        "```html",
+                        "<igx-carousel [gesturesSupport] = \"false\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "maximumIndicatorsCount": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "表示できる最大インデックスを制御します。",
+                        "デフォルト値は `5` です。",
+                        "```html",
+                        "<igx-carousel [maximumIndicatorsCount] = \"10\"></igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "indicatorsOrientation": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxSlideComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "カルーセル インジケーターの表示モードを取得または設定します。top または bottom にすることができます。",
+                        "デフォルト値は `bottom` です。",
+                        "```html",
+                        "<igx-carousel indicatorsOrientation='top'>",
+                        "<igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "animationType": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxSlideComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "カルーセルのアニメーション タイプを取得または設定します。",
+                        "デフォルト値は `slide` です。",
+                        "```html",
+                        "<igx-carousel animationType='none'>",
+                        "<igx-carousel>",
+                        "```"
+                    ]
+                }
+            },
+            "indicatorTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.carousel.indicatorTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-carousel #carousel>",
+                        "     ...",
+                        "     <ng-template igxCarouselIndicator let-slide>",
+                        "        <igx-icon *ngIf=\"slide.active\"  fontSet=\"material\">brightness_7</igx-icon>",
+                        "        <igx-icon *ngIf=\"!slide.active\"  fontSet=\"material\">brightness_5</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-carousel>",
+                        "```"
+                    ],
+                    "shortText": "カルーセル インジケーターを描画するときに使用するカスタム テンプレート。"
+                }
+            },
+            "nextButtonTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.carousel.nextButtonTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-carousel #carousel>",
+                        "     ...",
+                        "     <ng-template igxCarouselNextButton let-disabled>",
+                        "           <button igxButton=\"fab\" igxRipple=\"white\" [disabled]=\"disabled\">",
+                        "               <igx-icon fontSet=\"material\">add</igx-icon>",
+                        "          </button>",
+                        "     </ng-template>",
+                        " </igx-carousel>",
+                        "```"
+                    ],
+                    "shortText": "カルーセル「次へ」ボタンを描画するときに使用する必要があるカスタムテンプレート (存在する場合)。"
+                }
+            },
+            "prevButtonTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Set in typescript",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.carousel.nextButtonTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-carousel #carousel>",
+                        "     ...",
+                        "     <ng-template igxCarouselPrevButton let-disabled>",
+                        "           <button igxButton=\"fab\" igxRipple=\"white\" [disabled]=\"disabled\">",
+                        "               <igx-icon fontSet=\"material\">remove</igx-icon>",
+                        "          </button>",
+                        "     </ng-template>",
+                        " </igx-carousel>",
+                        "```"
+                    ],
+                    "shortText": "カルーセル「前へ」ボタンを描画するときに使用する必要があるカスタムテンプレート (存在する場合)。"
+                }
+            },
+            "slides": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxCarouselComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "カルーセルにある `slides` のコレクション。",
+                        "```typescript",
+                        "let slides: QueryList<IgxSlideComponent> = this.carousel.slides;",
                         "```"
                     ]
                 }
@@ -209,24 +420,6 @@
                         "イベント引数として `IgxCarouselComponent` への参照を提供します。",
                         "```html",
                         "<igx-carousel (onCarouselPlaying)=\"onCarouselPlaying($event)\"></igx-carousel>",
-                        "```"
-                    ]
-                }
-            },
-            "slides": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxCarouselComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "カルーセルにある `slides` のコレクション。",
-                        "```typescript",
-                        "let slides: IgxSlideComponent[] = this.carousel.slides;",
                         "```"
                     ]
                 }
@@ -383,6 +576,38 @@
             }
         },
         "accessors": {
+            "tabIndex": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxCarouselComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "カルーセル コンポーネントの `tabIndex` を返します。",
+                            "```typescript",
+                            "let tabIndex =  this.carousel.tabIndex;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "touchAction": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`list item` の `touch-action` スタイルを取得します。",
+                            "```typescript",
+                            "let touchAction = this.listItem.touchAction;",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "interval": {
                 "getter": {
                     "comment": {
@@ -422,23 +647,19 @@
                     }
                 }
             },
-            "tabIndex": {
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "リソース文字列を設定するアクセサー。",
+                            "デフォルトで EN リソースを使用します。"
+                        ]
+                    }
+                },
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxCarouselComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "カルーセル コンポーネントの `tabIndex` を返します。",
-                            "```typescript",
-                            "let tabIndex =  this.carousel.tabIndex;",
-                            "```"
-                        ]
+                        "shortText": "リソース文字列を返すアクセサー。"
+
                     }
                 }
             },
