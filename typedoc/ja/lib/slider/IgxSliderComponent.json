@@ -39,6 +39,62 @@
                     ]
                 }
             },
+            "showTicks": {
+                "comment": {
+                    "shortText": [
+                        "スライダー目盛りを表示/非表示します。",
+                        "```html",
+                        "<igx-slier [showTicks]=\"true\" [primaryTicks]=\"5\"></igx-slier>",
+                        "```"
+                    ]
+                }
+            },
+            "primaryTickLabels": {
+                "comment": {
+                    "shortText": [
+                        "プライマリ目盛りラベルを表示/非表示します。",
+                        "```html",
+                        "<igx-slider [primaryTicks]=\"5\" [primaryTickLabels]=\"false\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
+            "secondaryTickLabels": {
+                "comment": {
+                    "shortText": [
+                        "セカンダリ目盛りラベルを表示/非表示します。",
+                        "```html",
+                        "<igx-slider [secondaryTicks]=\"5\" [secondaryTickLabels]=\"false\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
+            "ticksOrientation": {
+                "comment": {
+                    "shortText": [
+                        "目盛りの方向を変更します。",
+                        "bottom - デフォルトの方向、スライダー トラックの下。",
+                        "top - スライダー トラックの上。",
+                        "mirror - 上下の方向を組み合わせます。",
+                        "```html",
+                        "<igx-slider [primaryTicks]=\"5\" [ticksOrientation]=\"ticksOrientation\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
+            "tickLabelsOrientation": {
+                "comment": {
+                    "shortText": [
+                        "目盛りラベルの回転を変更します。",
+                        "horizontal - デフォルトの回転。",
+                        "toptobottom - 目盛りラベルを垂直に 90 度回転します。",
+                        "bottomtotop - 目盛りラベルを垂直に -90 度回転します。",
+                        "```html",
+                        "<igx-slider [primaryTicks]=\"5\" [secondaryTicks]=\"3\" [tickLabelsOrientation]=\"tickLabelsOrientaiton\"></igx-slider>",
+                        "```"
+                    ]
+                }
+            },
             "onValueChange": {
                 "comment": {
                     "shortText": [
@@ -111,9 +167,10 @@
                 "getter": {
                     "comment": {
                         "text": [
+                            "```typescript",
                             "return {",
-                            " $implicit: {@link value},",
-                            " labels: {@link labels}",
+                            " $implicit // ラベルの値を返します。,",
+                            " labels // ユーザーが渡したラベル コレクションを返します。",
                             "}",
                             "```"
                         ],
@@ -204,16 +261,16 @@
                 }
             }
         },
-        "maxValue": {
+        "minValue": {
             "getter": {
                 "comment": {
                     "shortText": [
-                        "{@link IgxSliderComponent} の最大値を返します。",
+                        "`IgxSliderComponent` の最小値を返します。",
                         "```typescript",
-                        "@ViewChild(\"slider\")",
+                        "@ViewChild(\"slider2\")",
                         "public slider: IgxSliderComponent;",
                         "ngAfterViewInit(){",
-                        "   let sliderMax = this.slider.maxValue;",
+                        "   let sliderMin = this.slider.minValue;",
                         "}",
                         "```"
                     ]
@@ -222,25 +279,25 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "`IgxSliderComponent` の最大値を設定します。",
-                            "デフォルトの最大値は 100 です。",
+                            "`IgxSliderComponent` の最小値を設定します。",
+                            "デフォルトの最小値は 0 です。",
                             "```html",
-                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"256\">",
+                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"100\">",
                             "```"
                         ]
                     }
                 }
             },
-            "minValue": {
+            "maxValue": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "`IgxSliderComponent` の最小値を返します。",
+                            "{@link IgxSliderComponent} の最大値を返します。",
                             "```typescript",
-                            "@ViewChild(\"slider2\")",
+                            "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
                             "ngAfterViewInit(){",
-                            "   let sliderMin = this.slider.minValue;",
+                            "let sliderMax = this.slider.maxValue;",
                             "}",
                             "```"
                         ]
@@ -249,10 +306,10 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "`IgxSliderComponent` の最小値を設定します。",
-                            "デフォルトの最小値は 0 です。",
+                            "IgxSliderComponent `IgxSliderComponent` の最大値を設定します。",
+                            "デフォルトの最大値は 100 です。",
                             "```html",
-                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"100\">",
+                            "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"256\">",
                             "```"
                         ]
                     }
@@ -343,6 +400,51 @@
                             "```",
                             "```html",
                             "<igx-slider [type]=\"sliderType\" [(ngModel)]=\"rangeValue\" [minValue]=\"56\" [maxValue]=\"256\">",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "primaryTicks": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "提示されたプライマリ目盛りの数を返します。",
+                            "```typescript",
+                            "const primaryTicks = this.slider.primaryTicks;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "プライマリ目盛りの数を設定します。{@link @labels} が有効になっている場合、このプロパティは機能しません。",
+                            "{@link showTicks} プロパティで目盛りを有効にします。",
+                            "```typescript",
+                            "this.slider.primaryTicks = 5;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "secondaryTicks": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "提示されたセカンダリ目盛りの数を返します。",
+                            "```typescript",
+                            "const secondaryTicks = this.slider.secondaryTicks;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "セカンダリ目盛りの数を設定します。{@link labels} が有効になっている場合でも、プロパティは機能しますが、すべてのセカンダリ目盛りには目盛りラベルが表示されません。",
+                            "```typescript",
+                            "this.slider.secondaryTicks = 5;",
                             "```"
                         ]
                     }
