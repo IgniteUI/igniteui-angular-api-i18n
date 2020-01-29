@@ -629,6 +629,74 @@
             }
         },
         "accessors": {
+            "collapsible": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "列グループが縮小可能かどうかを設定します。",
+                            "デフォルト値は `false` です。",
+                            "```html",
+                            " <igx-column-group [collapsible] = \"true\"></igx-column-group>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "列グループが縮小可能かどうかを設定します。",
+                            "デフォルト値は `false` です。",
+                            "```html",
+                            " <igx-column-group [collapsible] = \"true\"></igx-column-group>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "expanded": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "グループが最初に展開または縮小されるかどうかを設定します。",
+                            "Collapsible プロパティが true に設定された場合のみ適用します。",
+                            "デフォルト値は `true` です。",
+                            "```html",
+                            " const state = false",
+                            " <igx-column-group [(expand)] = \"state\"></igx-column-group>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "グループが最初に展開または縮小されるかどうかを設定します。",
+                            "Collapsible プロパティが true に設定された場合のみ適用します。",
+                            "デフォルト値は `true` です。",
+                            "```html",
+                            " const state = false",
+                            " <igx-column-group [(expand)] = \"state\"></igx-column-group>",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "summaries": {
                 "getter": {
                     "comment": {
@@ -702,6 +770,26 @@
                             "this.columnGroup.filters = IgxStringFilteringOperand;",
                             "```"
                         ]
+                    }
+                }
+            },
+            "collapsibleIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": "展開/縮小インジケーターのカスタム テンプレートを定義できます。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "展開/縮小インジケーターのカスタム テンプレートを定義できます。"
                     }
                 }
             },
@@ -1299,7 +1387,7 @@
                             }
                         },
                         "shortText": [
-                            "Returns a boolean indicating if the column is a child of a `ColumnLayout` for multi-row layout.",
+                            "列が複数行レイアウト用の `ColumnLayout` の子であるかどうかを示すブール値を返します。",
                             "```typescript",
                             "let columnLayoutChild =  this.column.columnLayoutChild;",
                             "```"
@@ -1323,6 +1411,40 @@
                             "列に `parent` がない場合、`0` を返します。",
                             "```typescript",
                             "let columnLevel =  this.column.level;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "visibleWhenCollapsed": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "親が縮小される場合、列が表示になるかどうかを示します。",
+                            "```html",
+                            "<igx-column-group>",
+                            "  <igx-column [visibleWhenCollapsed]=\"true\"></igx-column>",
+                            "</igx-column-group>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "親が縮小される場合、列が表示になるかどうかを示します。",
+                            "```html",
+                            "<igx-column-group>",
+                            "  <igx-column [visibleWhenCollapsed]=\"true\"></igx-column>",
+                            "</igx-column-group>",
                             "```"
                         ]
                     }
