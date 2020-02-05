@@ -198,36 +198,6 @@
                     ]
                 }
             },
-            "onRowToggle": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxTreeGridComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Emitted when the expanded state of a row gets changed.",
-                        "```typescript",
-                        "rowToggle(event: IRowToggleEventArgs){",
-                        " // the id of the row",
-                        " const rowID = event.rowID;",
-                        " // the new expansion state",
-                        " const newExpandedState = event.expanded;",
-                        " // the original event that triggered onRowToggle",
-                        " const originalEvent = event.event;",
-                        " // whether the event should be cancelled",
-                        " event.cancel = true;",
-                        "}",
-                        "```",
-                        "```html",
-                        "<igx-tree-grid [data]=\"employeeData\" (onRowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-tree-grid>",
-                        "```"
-                    ]
-                }
-            },
             "autoGenerate": {
                 "comment": {
                     "tags": {
@@ -1196,6 +1166,36 @@
                     ]
                 }
             },
+            "onRowToggle": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Emitted when the expanded state of a row gets changed.",
+                        "```typescript",
+                        "rowToggle(event: IRowToggleEventArgs){",
+                        " // the id of the row",
+                        " const rowID = event.rowID;",
+                        " // the new expansion state",
+                        " const newExpandedState = event.expanded;",
+                        " // the original event that triggered onRowToggle",
+                        " const originalEvent = event.event;",
+                        " // whether the event should be cancelled",
+                        " event.cancel = true;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid [data]=\"employeeData\" (onRowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "emptyFilteredGridTemplate": {
                 "comment": {
                     "tags": {
@@ -1323,81 +1323,6 @@
             }
         },
         "methods": {
-            "expandRow": {
-                "comment": {
-                    "parameters": {
-                        "rowID": {
-                            "comment": {
-                                "text": [
-                                    "The identifier of the row to be expanded.",
-                                    "```typescript",
-                                    "this.grid.expandRow(2);",
-                                    "```"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxTreeGridComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": "Expands the `IgxTreeGridRowComponent` with the specified rowID."
-                }
-            },
-            "collapseRow": {
-                "comment": {
-                    "parameters": {
-                        "rowID": {
-                            "comment": {
-                                "text": [
-                                    "The identifier of the row to be collapsed.",
-                                    "```typescript",
-                                    "this.grid.collapseRow(2);",
-                                    "```"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxTreeGridComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": "Collapses the `IgxTreeGridRowComponent` with the specified rowID."
-                }
-            },
-            "toggleRow": {
-                "comment": {
-                    "parameters": {
-                        "rowID": {
-                            "comment": {
-                                "text": [
-                                    "The identifier of the row to be toggled.",
-                                    "```typescript",
-                                    "this.grid.toggleRow(2);",
-                                    "```"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxTreeGridComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": "Toggles the expansion state of the `IgxTreeGridRowComponent` with the specified rowID."
-                }
-            },
             "expandAll": {
                 "comment": {
                     "tags": {
@@ -1486,6 +1411,60 @@
                         "      column: this.grid1.columns[0],",
                         "      newValue: true",
                         "});",
+                        "```"
+                    ]
+                }
+            },
+            "expandRow": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Expands the row by its id. ID is either the primaryKey value or the data record instance.",
+                        "```typescript",
+                        "this.grid.expandRow(rowID);",
+                        "```"
+                    ]
+                }
+            },
+            "collapseRow": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Collapses the row by its id. ID is either the primaryKey value or the data record instance.",
+                        "```typescript",
+                        "this.grid.collapseRow(rowID);",
+                        "```"
+                    ]
+                }
+            },
+            "toggleRow": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Toggles the row by its id. ID is either the primaryKey value or the data record instance.",
+                        "```typescript",
+                        "this.grid.toggleRow(rowID);",
                         "```"
                     ]
                 }
@@ -2451,60 +2430,6 @@
                             "set to `Infinity` which means all levels would be expanded.",
                             "```html",
                             "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"'employees'\" expansionDepth=\"1\" [autoGenerate]=\"true\"></igx-tree-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "expansionStates": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTreeGridComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "text": [
-                            "Two-way data binding.",
-                            "```html",
-                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"'employees'\" [(expansionStates)]=\"model.expansionStates\">",
-                            "</igx-tree-grid>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "Returns a list of key-value pairs [row ID, expansion state]. Includes only states that differ from the default one.",
-                            "```typescript",
-                            "const expansionStates = this.grid.expansionStates;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTreeGridComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "text": [
-                            "Two-way data binding.",
-                            "```html",
-                            "<igx-tree-grid #grid [data]=\"employeeData\" [childDataKey]=\"'employees'\" [(expansionStates)]=\"model.expansionStates\">",
-                            "</igx-tree-grid>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "Sets a list of key-value pairs [row ID, expansion state].",
-                            "```typescript",
-                            "const states = new Map<any, boolean>();",
-                            "states.set(1, true);",
-                            "this.grid.expansionStates = states;",
                             "```"
                         ]
                     }
@@ -4102,6 +4027,72 @@
                         "shortText": [
                             "Allows you to set row selection mode",
                             "By default the row selection mode is none"
+                        ]
+                    }
+                }
+            },
+            "expansionStates": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "text": [
+                            "Two-way data binding.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"data\" [(expansionStates)]=\"model.expansionStates\">",
+                            "<ng-template igxGridDetail let-dataItem>",
+                            "<div *ngIf=\"dataItem.Category\">",
+                            " <header>{{dataItem.Category?.CategoryName}}</header>",
+                            "<span>{{dataItem.Category?.Description}}</span>",
+                            "</div>",
+                            "</ng-template>",
+                            "</igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Returns a list of key-value pairs [row ID, expansion state]. Includes only states that differ from the default one.",
+                            "```typescript",
+                            "const expansionStates = this.grid.expansionStates;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseDirective",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "text": [
+                            "Two-way data binding.",
+                            "```html",
+                            "<igx-grid #grid [data]=\"data\" [(expansionStates)]=\"model.expansionStates\">",
+                            "<ng-template igxGridDetail let-dataItem>",
+                            "<div *ngIf=\"dataItem.Category\">",
+                            " <header>{{dataItem.Category?.CategoryName}}</header>",
+                            "<span>{{dataItem.Category?.Description}}</span>",
+                            "</div>",
+                            "</ng-template>",
+                            "</igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Sets a list of key-value pairs [row ID, expansion state].",
+                            "```typescript",
+                            "const states = new Map<any, boolean>();",
+                            "states.set(1, true);",
+                            "this.grid.expansionStates = states;",
+                            "```"
                         ]
                     }
                 }
