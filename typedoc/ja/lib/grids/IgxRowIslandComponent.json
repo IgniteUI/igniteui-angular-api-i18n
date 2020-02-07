@@ -45,27 +45,6 @@
                     ]
                 }
             },
-            "dragIndicatorIconTemplate": {
-                "comment": {
-                    "text": [
-                        "```typescript",
-                        "// Typescript に設定",
-                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
-                        "myComponent.dragIndicatorIconTemplate = myCustomTemplate;",
-                        "```",
-                        "```html",
-                        "<!-- Set in markup -->",
-                        " <igx-grid #grid>",
-                        "     ...",
-                        "     <ng-template igxDragIndicatorIcon>",
-                        "         <igx-icon fontSet=\"material\">info</igx-icon>",
-                        "     </ng-template>",
-                        " </igx-grid>",
-                        "```"
-                    ],
-                    "shortText": "カスタム テンプレートがある場合は、行ドラッグのインジケーター アイコンを描画するために使用されます。"
-                }
-            },
             "autoGenerate": {
                 "comment": {
                     "tags": {
@@ -132,7 +111,7 @@
                         }
                     },
                     "shortText": [
-                        "フィルタリングが UI で実行された前に発生されます。",
+                        "フィルタリングが UI で実行された後に発生されます。",
                         "フィルターされた列のフィルタリング式ツリーを返します。",
                         "```typescript",
                         "filteringExprTreeChange(event: IFilteringExpressionsTree){",
@@ -157,7 +136,7 @@
                         }
                     },
                     "shortText": [
-                        "高度フィルタリングが UI で実行された前に発生されます。",
+                        "高度フィルタリングが UI で実行された後に発生されます。",
                         "高度フィルタリング式ツリーを返します。",
                         "```typescript",
                         "advancedFilteringExprTreeChange(event: IFilteringExpressionsTree){",
@@ -2041,21 +2020,6 @@
                     }
                 }
             },
-            "transactions": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "experimental": {
-                                "comment": {
-                                    "text": "@hidden",
-                                    "tagName": "試験段階"
-                                }
-                            }
-                        },
-                        "shortText": "子グリッド コンポーネントのためのトランザクション サービスを取得します。"
-                    }
-                }
-            },
             "resourceStrings": {
                 "setter": {
                     "comment": {
@@ -3128,6 +3092,18 @@
                     }
                 }
             },
+            "dragIndicatorIconTemplate": {
+                "getter": {
+                    "comment": {
+                        "shortText": "カスタム テンプレートがある場合、行ドラッグのインジケーター アイコンを描画するために使用されます。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "カスタム テンプレートがある場合、行ドラッグのインジケーター アイコンを描画するために使用されます。"
+                    }
+                }
+            },
             "sortingExpressions": {
                 "getter": {
                     "comment": {
@@ -3267,6 +3243,13 @@
                             "<igx-grid [pinnedColumnsText]=\"'PinnedCols Text\" [data]=\"data\" [width]=\"'100%'\" [height]=\"'500px'\"></igx-grid>",
                             "```"
                         ]
+                    }
+                }
+            },
+            "transactions": {
+                "getter": {
+                    "comment": {
+                        "shortText": "グリッドのためのトランザクション サービスを取得します。"
                     }
                 }
             },

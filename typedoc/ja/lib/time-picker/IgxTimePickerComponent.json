@@ -49,7 +49,7 @@
                 "comment": {
                     "shortText": [
                         "スピン動作を決定する @Input プロパティ。デフォルトで `isSpinLoop` が true に設定されます。",
-                        "時と分のスピンはデフォルトで折り返します。",
+                        "時、分、秒が最小値または最大値に達したときにデフォルトで折り返します。",
                         "```html",
                         "<igx-time-picker [isSpinLoop]=\"false\" id=\"time-picker\"></igx-time-picker>",
                         "```"
@@ -253,6 +253,29 @@
                     ]
                 }
             },
+            "scrollSecondsIntoView": {
+                "comment": {
+                    "parameters": {
+                        "item": {
+                            "comment": {
+                                "text": "ビューにスクロールします。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "秒項目を表示領域にスクロールします。",
+                        "```typescript",
+                        "scrMintoView(picker) {",
+                        "picker.scrollSecondsIntoView('4');",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpen)=\"scrMintoView(picker)\"></igx-time-picker>",
+                        "```"
+                    ]
+                }
+            },
             "scrollAmPmIntoView": {
                 "comment": {
                     "parameters": {
@@ -323,6 +346,20 @@
                         "private picker: IgxTimePickerComponent;",
                         "ngAfterViewInit(){",
                         "   let minInView = this.picker.minutesInView;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "secondsInView": {
+                "comment": {
+                    "shortText": [
+                        "現在表示されている秒の配列を返します。",
+                        "```html",
+                        "@ViewChild(\"MyChild\")",
+                        "private picker: IgxTimePickerComponent;",
+                        "ngAfterViewInit(){",
+                        "   let minInView = this.picker.secondsInView;",
                         "}",
                         "```"
                     ]
@@ -436,6 +473,30 @@
                     }
                 }
             },
+            "itemsDelta": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "ユーザーが上下の矢印キーを押したときに時および分の項目が表示されるデルタを取得または設定する @Input プロパティ。",
+                            "デフォルトで `itemsDelta` は `{hours: 1, minutes: 1, seconds: 1}` に設定されます。",
+                            "```html",
+                            "<igx-time-picker [itemsDelta]=\"{hours:3, minutes:5, seconds:10}\" id=\"time-picker\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "ユーザーが上下の矢印キーを押したときに時および分の項目が表示されるデルタを取得または設定する @Input プロパティ。",
+                            "デフォルトで `itemsDelta` は `{hours: 1, minutes: 1, seconds: 1}` に設定されます。",
+                            "```html",
+                            "<igx-time-picker [itemsDelta]=\"{hours:3, minutes:5, seconds:10}\" id=\"time-picker\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "format": {
                 "getter": {
                     "comment": {
@@ -449,6 +510,8 @@
                             "`HH`: 先行するゼロがある 24 時間形式の時フィールド。 <br>",
                             "`m`: 先行するゼロがない分フィールド。<br>",
                             "`mm`: 先行するゼロがある分フィールド。<br>",
+                            "`s`: 先行するゼロがない秒フィールド。<br>",
+                            "`ss`: 先行するゼロがある秒フィールド。<br>",
                             "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
                             "```html",
                             "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
@@ -468,6 +531,8 @@
                             "`HH`: 先行するゼロがある 24 時間形式の時フィールド。<br>",
                             "`m`: 先行するゼロがない分フィールド。<br>",
                             "`mm`: 先行するゼロがある分フィールド。<br>",
+                            "`s`: 先行するゼロがない秒フィールド。<br>",
+                            "`ss`: 先行するゼロがある秒フィールド。<br>",
                             "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
                             "```html",
                             "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
