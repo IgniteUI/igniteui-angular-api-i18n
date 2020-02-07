@@ -1,23 +1,73 @@
 {
     "IgxCalendarComponent": {
         "comment": {
-            "text": [
-                "The Ignite UI Calendar provides an easy way to display a calendar and allow users to select dates using single, multiple",
-                "or range selection.",
-                "Example:",
-                "```html",
-                "<igx-calendar selection=\"range\"></igx-calendar>",
-                "```"
-            ],
-            "shortText": [
-                "**Ignite UI for Angular Calendar** -",
-                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/calendar.html)"
-            ]
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxCalendarModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-calendar-theme, igx-icon-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "calendar, datepicker, schedule, date",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Scheduling",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "The Ignite UI Calendar provides an easy way to display a calendar and allow users to select dates using single, multiple",
+                            "or range selection."
+                        ],
+                        "tagName": "remarks"
+                    }
+                },
+                "example:": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-calendar selection=\"range\"></igx-calendar>",
+                            "```"
+                        ],
+                        "tagName": "example:"
+                    }
+                }
+            },
+            "shortText": "Calendar provides a way to display date information."
         },
         "properties": {
             "id": {
                 "comment": {
                     "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "If not set, the `id` will have value `\"igx-calendar-0\"`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-calendar id=\"my-first-calendar\"></igx-calendar>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxCalendarComponent",
@@ -25,29 +75,46 @@
                             }
                         }
                     },
+                    "shortText": "Sets/gets the `id` of the calendar."
+                }
+            },
+            "hasHeader": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-calendar [hasHeader]=\"false\"></igx-calendar>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "Sets/gets the `id` of the calendar.",
-                        "If not set, the `id` will have value `\"igx-calendar-0\"`.",
-                        "```html",
-                        "<igx-calendar id = \"my-first-calendar\"></igx-calendar>",
-                        "```",
-                        "```typescript",
-                        "let calendarId =  this.calendar.id;",
-                        "```"
+                        "Sets/gets whether the calendar has header.",
+                        "Default value is `true`."
                     ]
                 }
             },
             "vertical": {
                 "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-calendar [vertical] = \"true\"></igx-calendar>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
                     "shortText": [
                         "Sets/gets whether the calendar header will be in vertical position.",
-                        "Default value is `false`.",
-                        "```html",
-                        "<igx-calendar [vertical] = \"true\"></igx-calendar>",
-                        "```",
-                        "```typescript",
-                        "let isVertical = this.calendar.vertical;",
-                        "```"
+                        "Default value is `false`."
                     ]
                 }
             },
@@ -77,12 +144,19 @@
         "methods": {
             "deselectDate": {
                 "comment": {
-                    "shortText": [
-                        "Deselects date(s) (based on the selection type).",
-                        "```typescript",
-                        "this.calendar.deselectDate(new Date(`2018-06-12`));",
-                        "````"
-                    ]
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.calendar.deselectDate(new Date(`2018-06-12`));",
+                                    "````"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselects date(s) (based on the selection type)."
                 }
             },
             "selectDate": {
@@ -95,15 +169,21 @@
             "monthsViewNumber": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-calendar [monthsViewNumber]=\"2\"></igx-calendar>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": [
                             "Sets/gets the number of month views displayed.",
-                            "Default value is `1`.",
-                            "```html",
-                            "<igx-calendar [vertical] = \"true\" [monthsViewNumber]=\"2\"></igx-calendar>",
-                            "```",
-                            "```typescript",
-                            "let monthViewsDisplayed = this.calendar.monthsViewNumber;",
-                            "```"
+                            "Default value is `1`."
                         ]
                     }
                 },
@@ -111,13 +191,7 @@
                     "comment": {
                         "shortText": [
                             "Sets/gets the number of month views displayed.",
-                            "Default value is `1`.",
-                            "```html",
-                            "<igx-calendar [vertical] = \"true\" [monthsViewNumber]=\"2\"></igx-calendar>",
-                            "```",
-                            "```typescript",
-                            "let monthViewsDisplayed = this.calendar.monthsViewNumber;",
-                            "```"
+                            "Default value is `1`."
                         ]
                     }
                 }
@@ -126,6 +200,16 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let headerTemplate =  this.calendar.headerTeamplate;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
                             "memberof": {
                                 "comment": {
                                     "text": "IgxCalendarComponent",
@@ -133,12 +217,13 @@
                                 }
                             }
                         },
-                        "shortText": [
-                            "Gets the header template.",
-                            "```typescript",
-                            "let headerTemplate =  this.calendar.headerTeamplate;",
+                        "text": [
+                            " @example",
+                            "```html",
+                            "<igx-calendar headerTemplateDirective = \"igxCalendarHeader\"></igx-calendar>",
                             "```"
-                        ]
+                        ],
+                        "shortText": "Gets the header template."
                     }
                 },
                 "setter": {
@@ -151,29 +236,47 @@
                                 }
                             }
                         },
-                        "shortText": [
-                            "Sets the header template.",
+                        "text": [
+                            " @example",
                             "```html",
                             "<igx-calendar headerTemplateDirective = \"igxCalendarHeader\"></igx-calendar>",
                             "```"
-                        ]
+                        ],
+                        "shortText": "Sets the header template."
                     }
                 }
             },
             "subheaderTemplate": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "Gets the subheader template.",
-                            "```typescript",
-                            "let subheaderTemplate = this.calendar.subheaderTemplate;",
-                            "```"
-                        ]
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let subheaderTemplate = this.calendar.subheaderTemplate;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the subheader template."
                     }
                 },
                 "setter": {
                     "comment": {
                         "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-calendar subheaderTemplate = \"igxCalendarSubheader\"></igx-calendar>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
                             "memberof": {
                                 "comment": {
                                     "text": "IgxCalendarComponent",
@@ -181,36 +284,47 @@
                                 }
                             }
                         },
-                        "shortText": [
-                            "Sets the subheader template.",
-                            "```html",
-                            "<igx-calendar subheaderTemplate = \"igxCalendarSubheader\"></igx-calendar>",
-                            "```"
-                        ]
+                        "shortText": "Sets the subheader template."
                     }
                 }
             },
             "headerContext": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "Gets the context for the template marked with the `igxCalendarHeader` directive.",
-                            "```typescript",
-                            "let headerContext =  this.calendar.headerContext;",
-                            "```"
-                        ]
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let headerContext =  this.calendar.headerContext;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the context for the template marked with the `igxCalendarHeader` directive."
                     }
                 }
             },
             "context": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let context =  this.calendar.context;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": [
                             "Gets the context for the template marked with either `igxCalendarSubHeaderMonth`",
-                            "or `igxCalendarSubHeaderYear` directive.",
-                            "```typescript",
-                            "let context =  this.calendar.context;",
-                            "```"
+                            "or `igxCalendarSubHeaderYear` directive."
                         ]
                     }
                 }
