@@ -1008,6 +1008,36 @@
                     ]
                 }
             },
+            "onRowToggle": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "行の展開状態が変更されているときに呼び出されます。",
+                        "```typescript",
+                        "rowToggle(event: IRowToggleEventArgs){",
+                        " //行の ID",
+                        " const rowID = event.rowID;",
+                        " // 新しい展開状態",
+                        " const newExpandedState = event.expanded;",
+                        " // onRowToggle をトリガーした元のイベント",
+                        " const originalEvent = event.event;",
+                        " // イベントをキャンセルするかどうか",
+                        " event.cancel = true;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid [data]=\"employeeData\" (onRowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "emptyFilteredGridTemplate": {
                 "comment": {
                     "tags": {
@@ -1151,6 +1181,96 @@
                         "      column: this.grid1.columns[0],",
                         "      newValue: true",
                         "});",
+                        "```"
+                    ]
+                }
+            },
+            "expandAll": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "すべての行を展開します。",
+                        "```typescript",
+                        "this.grid.expandAll();",
+                        "```"
+                    ]
+                }
+            },
+            "collapseAll": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "すべての行を縮小します。",
+                        "```typescript",
+                        "this.grid.collapseAll();",
+                        "```"
+                    ]
+                }
+            },
+            "expandRow": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ID によって行を展開します。ID は、primaryKey 値またはデータ レコード インスタンスです。",
+                        "```typescript",
+                        "this.grid.expandRow(rowID);",
+                        "```"
+                    ]
+                }
+            },
+            "collapseRow": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ID によって行を縮小します。ID は、primaryKey 値またはデータ レコード インスタンスです。",
+                        "```typescript",
+                        "this.grid.collapseRow(rowID);",
+                        "```"
+                    ]
+                }
+            },
+            "toggleRow": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ID によって行を切り替えます。ID は、primaryKey 値またはデータ レコード インスタンスです。",
+                        "```typescript",
+                        "this.grid.toggleRow(rowID);",
                         "```"
                     ]
                 }
@@ -3577,6 +3697,72 @@
                         "shortText": [
                             "行選択モードを設定できます。",
                             "デフォルトのヘッダーのサイズ設定モードは none です。"
+                        ]
+                    }
+                }
+            },
+            "expansionStates": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "text": [
+                            "双方向データ バインディング。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"data\" [(expansionStates)]=\"model.expansionStates\">",
+                            "<ng-template igxGridDetail let-dataItem>",
+                            "<div *ngIf=\"dataItem.Category\">",
+                            " <header>{{dataItem.Category?.CategoryName}}</header>",
+                            "<span>{{dataItem.Category?.Description}}</span>",
+                            "</div>",
+                            "</ng-template>",
+                            "</igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "キーと値のペア [行 Id、展開状態] のリストを返します。デフォルト状態に異なる状態のみ含まれます。",
+                            "```typescript",
+                            "const expansionStates = this.grid.expansionStates;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridBaseDirective",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "text": [
+                            "双方向データ バインディング。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"data\" [(expansionStates)]=\"model.expansionStates\">",
+                            "<ng-template igxGridDetail let-dataItem>",
+                            "<div *ngIf=\"dataItem.Category\">",
+                            " <header>{{dataItem.Category?.CategoryName}}</header>",
+                            "<span>{{dataItem.Category?.Description}}</span>",
+                            "</div>",
+                            "</ng-template>",
+                            "</igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "キーと値のペア [行 Id、展開状態] のリストを設定します。",
+                            "```typescript",
+                            "const states = new Map<any, boolean>();",
+                            "states.set(1, true);",
+                            "this.grid.expansionStates = states;",
+                            "```"
                         ]
                     }
                 }
