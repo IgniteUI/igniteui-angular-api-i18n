@@ -1,0 +1,130 @@
+{
+    "IgxTransactionService": {
+        "properties": {
+            "onStateUpdate": {
+                "comment": {
+                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                }
+            }
+        },
+        "methods": {
+            "add": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Adds provided  transaction with recordRef if any"
+                }
+            },
+            "getTransactionLog": {
+                "comment": {
+                    "returns": "All transaction in the service or for the specified record\n",
+                    "tags": {},
+                    "shortText": "Returns all recorded transactions in chronological order"
+                }
+            },
+            "getAggregatedChanges": {
+                "comment": {
+                    "returns": "Collection of aggregated transactions for each changed record\n",
+                    "tags": {},
+                    "shortText": "Returns aggregated changes from all transactions"
+                }
+            },
+            "getState": {
+                "comment": {
+                    "returns": "State of the record if any\n",
+                    "tags": {},
+                    "shortText": "Returns the state of the record with provided id"
+                }
+            },
+            "getAggregatedValue": {
+                "comment": {
+                    "returns": "Value with changes or **null**\n",
+                    "tags": {},
+                    "shortText": "Returns value of the required id including all uncommitted changes"
+                }
+            },
+            "endPending": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
+                        "commits pending states as single transaction"
+                    ]
+                }
+            },
+            "commit": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Applies all transactions over the provided data"
+                }
+            },
+            "clear": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Clears all transactions"
+                }
+            },
+            "undo": {
+                "comment": {
+                    "shortText": "Remove the last transaction if any"
+                }
+            },
+            "redo": {
+                "comment": {
+                    "shortText": "Applies the last undone transaction if any"
+                }
+            },
+            "startPending": {
+                "comment": {
+                    "shortText": [
+                        "Starts pending transactions. All transactions passed after call to startPending",
+                        "will not be added to transaction log"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "canUndo": {
+                "getter": {
+                    "comment": {
+                        "returns": "if there are any transactions in the Undo stack\n",
+                        "tags": {
+                            "inheritdoc": {
+                                "comment": {
+                                    "tagName": "inheritdoc"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "canRedo": {
+                "getter": {
+                    "comment": {
+                        "returns": "if there are any transactions in the Redo stack\n",
+                        "tags": {
+                            "inheritdoc": {
+                                "comment": {
+                                    "tagName": "inheritdoc"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "enabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "inheritdoc": {
+                                "comment": {
+                                    "tagName": "inheritdoc"
+                                }
+                            }
+                        },
+                        "shortText": "Returns whether transaction is enabled for this service"
+                    }
+                }
+            }
+        }
+    }
+}
