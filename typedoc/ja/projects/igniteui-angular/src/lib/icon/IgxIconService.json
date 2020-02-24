@@ -1,0 +1,104 @@
+{
+    "IgxIconService": {
+        "comment": {
+            "text": [
+                "The Ignite UI Icon Service makes it easy for developers to include custom SVG images and use them with IgxIconComponent.",
+                "In addition it could be used to associate a custom class to be applied on IgxIconComponent according to given fontSet.",
+                "Example:",
+                "```typescript",
+                "this.iconService.registerFontSetAlias('material', 'material-icons');",
+                "this.iconService.addSvgIcon('aruba', '/assets/svg/country_flags/aruba.svg', 'svg-flags');",
+                "```"
+            ],
+            "shortText": "**Ignite UI for Angular Icon Service** -"
+        },
+        "properties": {},
+        "methods": {
+            "registerFontSetAlias": {
+                "comment": {
+                    "shortText": [
+                        " Registers a custom class to be applied to IgxIconComponent for a given fontSet.",
+                        "```typescript",
+                        "  this.iconService.registerFontSetAlias('material', 'material-icons');",
+                        "```"
+                    ]
+                }
+            },
+            "fontSetClassName": {
+                "comment": {
+                    "shortText": [
+                        " Returns the custom class, if any, associated to a given fontSet.",
+                        "```typescript",
+                        "  const fontSetClass = this.iconService.fontSetClassName('material');",
+                        "```"
+                    ]
+                }
+            },
+            "addSvgIcon": {
+                "comment": {
+                    "shortText": [
+                        " Adds an SVG image to the cache. SVG source is an url.",
+                        "```typescript",
+                        "  this.iconService.addSvgIcon('aruba', '/assets/svg/country_flags/aruba.svg', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            },
+            "addSvgIconFromText": {
+                "comment": {
+                    "shortText": [
+                        " Adds an SVG image to the cache. SVG source is its text.",
+                        "```typescript",
+                        "  this.iconService.addSvgIcon('simple', '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\">",
+                        "  <path d=\"M74 74h54v54H74\" /></svg>', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            },
+            "isSvgIconCached": {
+                "comment": {
+                    "shortText": [
+                        " Returns whether a given SVG image is present in the cache.",
+                        "```typescript",
+                        "  const isSvgCached = this.iconService.isSvgIconCached('aruba', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            },
+            "getSvgIconKey": {
+                "comment": {
+                    "shortText": [
+                        " Returns the key of a cached SVG image.",
+                        "```typescript",
+                        "  const svgIconKey = this.iconService.getSvgIconKey('aruba', 'svg-flags');",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "defaultFontSet": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            " Returns the default font set.",
+                            "```typescript",
+                            "  const defaultFontSet = this.iconService.defaultFontSet;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            " Sets the default font set.",
+                            "```typescript",
+                            "  this.iconService.defaultFontSet = 'svg-flags';",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

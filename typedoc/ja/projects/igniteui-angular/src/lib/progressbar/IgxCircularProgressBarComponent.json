@@ -1,0 +1,217 @@
+{
+    "IgxCircularProgressBarComponent": {
+        "properties": {
+            "onProgressChanged": {
+                "comment": {
+                    "shortText": [
+                        "An event, which is triggered after a progress is changed.",
+                        "```typescript",
+                        "public progressChange(event) {",
+                        "   alert(\"Progress made!\");",
+                        "}",
+                        "//...",
+                        "```",
+                        "```html",
+                        "<igx-circular-bar [value]=\"currentValue\" (onProgressChanged)=\"progressChange($event)\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the value of `id` attribute. If not provided it will be automatically generated.",
+                        "```html",
+                        "<igx-circular-bar [id]=\"'igx-circular-bar-55'\" [value]=\"50\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "indeterminate": {
+                "comment": {
+                    "shortText": [
+                        "An @Input property that sets the value of the `indeterminate` attribute. If not provided it will be automatically set to false.",
+                        "```html",
+                        "<igx-circular-bar [indeterminate]=\"true\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "textVisibility": {
+                "comment": {
+                    "shortText": [
+                        "Sets the text visibility. By default it is set to true.",
+                        "```html",
+                        "<igx-circular-bar [textVisibility]=\"false\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "text": {
+                "comment": {
+                    "shortText": [
+                        "Sets/gets the text to be displayed inside the `igxCircularBar`.",
+                        "```html",
+                        "<igx-circular-bar text=\"Progress\"></igx-circular-bar>",
+                        "```",
+                        "```typescript",
+                        "let text = this.circularBar.text;",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "animate": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Animation on progress `IgxCircularProgressBarComponent`. By default it is set to true.",
+                            "```html",
+                            "<igx-circular-bar [animate]=\"false\" [value]=\"50\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns whether the `IgxCircularProgressBarComponent` has animation true/false.",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public animationStatus(event) {",
+                            "   let animationStatus = this.progressBar.animate;",
+                            "   alert(animationStatus);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "max": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Set maximum value that can be passed. By default it is set to 100.",
+                            "```html",
+                            "<igx-circular-bar [max]=\"200\" [value]=\"0\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the the maximum progress value of the `IgxCircularProgressBarComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public maxValue(event) {",
+                            "   let max = this.progressBar.max;",
+                            "   alert(max);",
+                            "}",
+                            "```",
+                            "```html",
+                            "<igx-circular-bar [max]=\"245\" [animate]=\"false\" [value]=\"currentValue\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "step": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the value which update the progress indicator of the `IgxCircularProgressBarComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public stepValue(event) {",
+                            "   let step = this.progressBar.step;",
+                            "   alert(step);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the value by which progress indicator is updated. By default it is 1% of the maximum value.",
+                            "```html",
+                            "<igx-circular-bar [striped]=\"false\" [max]=\"200\" [value]=\"0\" [step]=\"1\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns value that indicates the current `IgxCircularProgressBarComponent` position.",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public getValue(event) {",
+                            "   let value = this.progressBar.value;",
+                            "   alert(value);",
+                            "}",
+                            "```",
+                            "```html",
+                            "<button igxButton=\"fab\" igxRipple=\"\" (click)=\"getValue()\">Click</button>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Set value that indicates the current `IgxCircularProgressBarComponent` position.",
+                            "```html",
+                            "<igx-circular-bar [value]=\"50\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "valueInPercent": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` value in percentage.",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent; // IgxCircularProgressBarComponent",
+                            "public valuePercent(event){",
+                            "   let percentValue = this.progressBar.valueInPercent;",
+                            "   alert(percentValue);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` value in percentage.",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent; // IgxCircularProgressBarComponent",
+                            "   public setValue(event){",
+                            "   this.progressBar.valueInPercent = 56;",
+                            "}",
+                            "//...",
+                            "```",
+                            "```html",
+                            "<button igxButton=\"fab\" igxRipple=\"\" (click)=\"setValue()\">setValue</button>",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

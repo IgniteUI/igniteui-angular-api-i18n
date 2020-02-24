@@ -1,0 +1,158 @@
+{
+    "IgxHierarchicalRowComponent": {
+        "properties": {
+            "cells": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get the cells of the third selected row",
+                        "let selectedRowCells = this.grid.selectedRows[2].cells;",
+                        "```"
+                    ],
+                    "shortText": "The rendered cells in the row component."
+                }
+            },
+            "index": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// get the index of the second selected row",
+                        "let selectedRowIndex = this.grid.selectedRows[1].index;",
+                        "```"
+                    ],
+                    "shortText": "The index of the row."
+                }
+            }
+        },
+        "methods": {
+            "toggle": {
+                "comment": {
+                    "shortText": [
+                        "Toggles the hierarchical row.",
+                        "```typescript",
+                        "this.grid1.rowList.first.toggle()",
+                        "```"
+                    ]
+                }
+            },
+            "update": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// update the second selected row's value",
+                        "let newValue = \"Apple\";",
+                        "this.grid.selectedRows[1].update(newValue);",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Updates the specified row object and the data source record with the passed value.",
+                        "This method emits `onEditDone` event."
+                    ]
+                }
+            },
+            "delete": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// delete the third selected row from the grid",
+                        "this.grid.selectedRows[2].delete();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Removes the specified row from the grid's data source.",
+                        "This method emits `onRowDeleted` event."
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "expanded": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns whether the row is expanded.",
+                            "```typescript",
+                            "const RowExpanded = this.grid1.rowList.first.expanded;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "rowData": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the row data for the first selected row",
+                            "let selectedRowData = this.grid.selectedRows[0].rowData;",
+                            "```"
+                        ],
+                        "shortText": " The data passed to the row component."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the row data for the first selected row",
+                            "let selectedRowData = this.grid.selectedRows[0].rowData;",
+                            "```"
+                        ],
+                        "shortText": " The data passed to the row component."
+                    }
+                }
+            },
+            "grid": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "handleRowSelection(event) {",
+                            " // the grid on which the onRowSelectionChange event was triggered",
+                            " const grid = event.row.grid;",
+                            "}",
+                            "```",
+                            "```html",
+                            " <igx-grid",
+                            "   [data]=\"data\"",
+                            "   (onRowSelectionChange)=\"handleRowSelection($event)\">",
+                            " </igx-grid>",
+                            "```"
+                        ],
+                        "shortText": "Get a reference to the grid that contains the selected row."
+                    }
+                }
+            },
+            "rowID": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let rowID = this.grid.selectedRows[2].rowID;",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Gets the ID of the row.",
+                            "A row in the grid is identified either by:",
+                            "- primaryKey data value,",
+                            "- the whole rowData, if the primaryKey is omitted."
+                        ]
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the nativeElement of the second selected row",
+                            "let selectedRowNativeElement = this.grid.selectedRows[1].nativeElement;",
+                            "```"
+                        ],
+                        "shortText": "The native DOM element representing the row. Could be null in certain environments."
+                    }
+                }
+            }
+        }
+    }
+}

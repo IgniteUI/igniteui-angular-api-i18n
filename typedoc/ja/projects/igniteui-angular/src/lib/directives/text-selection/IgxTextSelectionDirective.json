@@ -1,0 +1,94 @@
+{
+    "IgxTextSelectionDirective": {
+        "properties": {},
+        "methods": {
+            "trigger": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<input",
+                        "  type=\"text\"",
+                        "  id=\"firstName\"",
+                        "  igxTextSelection>",
+                        "</input>",
+                        "```",
+                        "```typescript",
+                        "@ViewChild('firstName',",
+                        " {read: IgxTextSelectionDirective})",
+                        "public inputElement: IgxTextSelectionDirective;",
+                        "public triggerElementSelection() {",
+                        " this.inputElement.trigger();",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "Triggers the selection of the element if it is marked as selectable."
+                }
+            }
+        },
+        "accessors": {
+            "selected": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get",
+                            "@ViewChild('firstName',",
+                            " {read: IgxTextSelectionDirective})",
+                            "public firstName: IgxTextSelectionDirective;",
+                            "public getFirstNameSelectionStatus() {",
+                            " return this.firstName.selected;",
+                            "}",
+                            "```"
+                        ],
+                        "shortText": "Returns whether the input element is selectable through the directive."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<!--set-->",
+                            "<input",
+                            "  type=\"text\"",
+                            "  id=\"firstName\"",
+                            "  [igxTextSelection]=\"true\">",
+                            "</input>",
+                            "<input",
+                            "  type=\"text\"",
+                            "  id=\"lastName\"",
+                            "  igxTextSelection",
+                            "  [selected]=\"true\">",
+                            "</input>",
+                            "```"
+                        ],
+                        "shortText": " Determines whether the input element could be selected through the directive."
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<input",
+                            "  type=\"text\"",
+                            "   id=\"firstName\"",
+                            "  igxTextSelection>",
+                            "</input>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild('firstName',",
+                            " {read: IgxTextSelectionDirective})",
+                            "public inputElement: IgxTextSelectionDirective;",
+                            "public getNativeElement() {",
+                            " return this.inputElement.nativeElement;",
+                            "}",
+                            "```"
+                        ],
+                        "shortText": "Returns the nativeElement of the element where the directive was applied."
+                    }
+                }
+            }
+        }
+    }
+}

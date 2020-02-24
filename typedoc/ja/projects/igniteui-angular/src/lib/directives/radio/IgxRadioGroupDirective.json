@@ -1,0 +1,282 @@
+{
+    "IgxRadioGroupDirective": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxRadioModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-radio-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "radiogroup, radio, button, input",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Data Entry & Display",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": "The Ignite UI Radio Group allows the user to select a single option from an available set of options that are listed side by side.",
+                        "tagName": "remarks"
+                    }
+                },
+                "example:": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-radio-group name=\"radioGroup\">",
+                            "  <igx-radio *ngFor=\"let item of ['Foo', 'Bar', 'Baz']\" value=\"{{item}}\">",
+                            "     {{item}}",
+                            "  </igx-radio>",
+                            "</igx-radio-group>",
+                            "```"
+                        ],
+                        "tagName": "example:"
+                    }
+                }
+            },
+            "shortText": "Radio group directive renders set of radio buttons."
+        },
+        "properties": {
+            "radioButtons": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "let radioButtons =  this.radioGroup.radioButtons;",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Returns reference to the child radio buttons."
+                }
+            },
+            "change": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Provides references to the selected `IgxRadioComponent` and the `value` property as event arguments.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-radio-group (change)=\"handler($event)\"></igx-radio-group>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "An event that is emitted after the radio group `value` is changed."
+                }
+            }
+        },
+        "methods": {
+            "writeValue": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Checks whether the provided value is consistent to the current radio button.",
+                                    "If it is, the checked attribute will have value `true` and selected property will contain the selected `IgxRadioComponent`."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.radioGroup.writeValue('radioButtonValue');",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Sets the \"checked\" property value on the radio input element."
+                }
+            }
+        },
+        "accessors": {
+            "value": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group [value] = \"'radioButtonValue'\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Sets/gets the `value` attribute."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets/gets the `value` attribute."
+                    }
+                }
+            },
+            "name": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group name = \"Radio1\"></igx-radio-group>",
+                                        " ```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Sets/gets the `name` attribute of the radio group component. All child radio buttons inherits this name."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets/gets the `name` attribute of the radio group component. All child radio buttons inherits this name."
+                    }
+                }
+            },
+            "required": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If not set, `required` will have value `false`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group [required] = \"true\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Sets/gets whether the radio group is required."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets/gets whether the radio group is required."
+                    }
+                }
+            },
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        " ```html",
+                                        "<igx-radio-group [disabled]=\"true\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "An @Input property that allows you to disable the radio group. By default it's false."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "An @Input property that allows you to disable the radio group. By default it's false."
+                    }
+                }
+            },
+            "labelPosition": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If not set, `labelPosition` will have value `\"after\"`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group labelPosition = \"before\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Sets/gets the position of the `label` in the child radio buttons."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets/gets the position of the `label` in the child radio buttons."
+                    }
+                }
+            },
+            "selected": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let selectedButton = this.radioGroup.selected;",
+                                        "this.radioGroup.selected = selectedButton;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Sets/gets the selected child radio button."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets/gets the selected child radio button."
+                    }
+                }
+            }
+        }
+    }
+}
