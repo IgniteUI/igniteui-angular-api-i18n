@@ -1,178 +1,98 @@
 {
     "IgxChipsAreaComponent": {
-        "comment": {
-            "tags": {
-                "igxmodule": {
-                    "comment": {
-                        "text": "IgxChipsModule",
-                        "tagName": "igxmodule"
-                    }
-                },
-                "igxtheme": {
-                    "comment": {
-                        "text": "igx-chip-theme",
-                        "tagName": "igxtheme"
-                    }
-                },
-                "igxkeywords": {
-                    "comment": {
-                        "text": "chip area, chip",
-                        "tagName": "igxkeywords"
-                    }
-                },
-                "igxgroup": {
-                    "comment": {
-                        "text": "display",
-                        "tagName": "igxgroup"
-                    }
-                },
-                "example": {
-                    "comment": {
-                        "text": [
-                            "```html",
-                            "<igx-chips-area>",
-                            "   <igx-chip *ngFor=\"let chip of chipList\" [id]=\"chip.id\">",
-                            "       <span>{{chip.text}}</span>",
-                            "   </igx-chip>",
-                            "</igx-chips-area>",
-                            "```"
-                        ],
-                        "tagName": "example"
-                    }
-                }
-            },
-            "shortText": [
-                "The chip area allows you to perform more complex scenarios with chips that require interaction,",
-                "like dragging, selection, navigation, etc."
-            ]
-        },
         "properties": {
             "width": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"chipsOrderChanged($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "An @Input property that sets the width of the `IgxChipsAreaComponent`."
+                    "shortText": [
+                        "`IgxChipsAreaComponent` の幅を設定する @Input プロパティ。",
+                        "```html",
+                        "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"chipsOrderChanged($event)\"></igx-chips-area>",
+                        "```"
+                    ]
                 }
             },
             "height": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"chipsOrderChanged($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "An @Input property that sets the height of the `IgxChipsAreaComponent`."
+                    "shortText": [
+                        "`IgxChipsAreaComponent` の高さを設定する @Input プロパティ。",
+                        "```html",
+                        "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"chipsOrderChanged($event)\"></igx-chips-area>",
+                        "```"
+                    ]
                 }
             },
             "onReorder": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"changedOrder($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
                     "shortText": [
-                        "Emits an event when `IgxChipComponent`s in the `IgxChipsAreaComponent` should be reordered.",
-                        "Returns an array of `IgxChipComponent`s."
+                        "`IgxChipsAreaComponent` で `IgxChipComponent` の順序が変更されたときにイベントを発生します。",
+						"`IgxChipComponent` の配列を返します。",
+                        "```html",
+                        "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"changedOrder($event)\"></igx-chips-area>",
+                        "```",
+                        "```typescript",
+                        "public changedOrder(event: IChipsAreaReorderEventArgs){",
+                        "     let chips: IgxChipComponent[] = event.chipsArray;",
+                        "}",
+                        "```"
                     ]
                 }
             },
             "onSelection": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onSelection)=\"selection($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
                     "shortText": [
-                        "Emits an event when an `IgxChipComponent` in the `IgxChipsAreaComponent` is selected/deselected.",
-                        "Fired after the chips area is initialized if there are initially selected chips as well.",
-                        "Returns an array of selected `IgxChipComponent`s and the `IgxChipAreaComponent`."
+                        "`IgxChipsAreaComponent` で `IgxChipComponent` が選択されたときにイベントを発生します。",
+                        "初期時に選択されたチップがある場合もチップ領域が初期化された後に発生されます。",
+						"選択済み `IgxChipComponents` の配列および `IgxChipAreaComponent` を返します。",
+                        "```html",
+                        "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onSelection)=\"selection($event)\"></igx-chips-area>",
+                        "```",
+                        "```typescript",
+                        "public selection(event: IChipsAreaSelectEventArgs){",
+                        "     let selectedChips: IgxChipComponent[] = event.newSelection;",
+                        "}"
                     ]
                 }
             },
             "onMoveStart": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onMoveStart)=\"moveStart($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Emits an event when an `IgxChipComponent` in the `IgxChipsAreaComponent` is moved."
+                    "shortText": [
+                        "`IgxChipsAreaComponent` で `IgxChipComponent` が移動されたときにイベントを発生します。",
+                        "```html",
+                        "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onMoveStart)=\"moveStart($event)\"></igx-chips-area>",
+                        "```",
+                        "```typescript",
+                        "moveStart(event: IBaseChipsAreaEventArgs){",
+                        "     let chipArea = event.owner;",
+                        "}",
+                        "```"
+                    ]
                 }
             },
             "onMoveEnd": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onMoveEnd)=\"moveEnd($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Emits an event after an `IgxChipComponent` in the `IgxChipsAreaComponent` is moved."
+                    "shortText": [
+                        "`IgxChipsAreaComponent` で `IgxChipComponent` が移動された後にイベントを発生します。",
+                        "```html",
+                        "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onMoveEnd)=\"moveEnd($event)\"></igx-chips-area>",
+                        "```",
+                        "```typescript",
+                        "moveEnd(event: IBaseChipsAreaEventArgs){",
+                        "     let chipArea = event.owner;",
+                        "}",
+                        "```"
+                    ]
                 }
             },
             "chipsList": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "ngAfterViewInit(){",
-                                    "   let chips = this.chipsArea.chipsList;",
-                                    "}",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Holds the `IgxChipComponent` in the `IgxChipsAreaComponent`."
+                    "shortText": [
+                        "`IgxChipsAreaComponent` で `IgxChipComponent` を含みます。",
+                        "```typescript",
+                        "ngAfterViewInit(){",
+                        "   let chips = this.chipsArea.chipsList;",
+                        "}",
+                        "```"
+                    ]
                 }
             }
         },

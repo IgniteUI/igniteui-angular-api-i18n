@@ -4,7 +4,7 @@
             "id": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that sets the value of the `id` attribute.",
+                        "`id` 属性の値を設定する @Input プロパティ。",
                         "```html",
                         "<igx-time-picker [id]=\"'igx-time-picker-5'\" format=\"h:mm tt\" ></igx-time-picker>",
                         "```"
@@ -14,17 +14,17 @@
             "disabled": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that allows you to disable the `igx-time-picker` component. By default `disabled` is set to false.",
+                        "`igx-time-picker` コンポーネントの無効化を許可する @Input プロパティ。デフォルトで `disabled` が false に設定されます。",
                         "```html",
                         "<igx-time-picker [disabled]=\"'true'\" [vertical]=\"true\" format=\"h:mm tt\" ></igx-time-picker>",
                         "```"
                     ]
                 }
-            },
+            }, 
             "minValue": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that allows you to set the `minValue` to limit the user input.",
+                        "ユーザー入力を制限するために `minValue` の設定を許可する @Input プロパティ。",
                         "```html",
                         "public min: string = \"09:00\";",
                         " //..",
@@ -36,7 +36,7 @@
             "maxValue": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that allows you to set the `maxValue` to limit the user input.",
+                        "ユーザー入力を制限するために `maxValue` の設定を許可する @Input プロパティ。",
                         "```html",
                         "public max: string = \"18:00\";",
                         " //..",
@@ -48,8 +48,8 @@
             "isSpinLoop": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that determines the spin behavior. By default `isSpinLoop` is set to true.",
-                        "The seconds, minutes and hour spinning will wrap around by default.",
+                        "スピン動作を決定する @Input プロパティ。デフォルトで `isSpinLoop` が true に設定されます。",
+                        "時、分、秒が最小値または最大値に達したときにデフォルトで折り返します。",
                         "```html",
                         "<igx-time-picker [isSpinLoop]=\"false\" id=\"time-picker\"></igx-time-picker>",
                         "```"
@@ -59,7 +59,7 @@
             "vertical": {
                 "comment": {
                     "shortText": [
-                        "An @Input property that Gets/Sets the orientation of the `igxTimePicker`. By default `vertical` is set to false.",
+                        "`igxTimePicker` の方向を取得または設定する @Input プロパティ。デフォルトで、`vertical` は false に設定されます。",
                         "```html",
                         "<igx-time-picker [vertical]=\"true\" id=\"time-picker\"></igx-time-picker>",
                         "```"
@@ -72,13 +72,13 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxTimePickerComponent",
-                                "tagName": "memberof"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "Sets the character used to prompt the user for input.",
-                        "Default value is \"'-'\".",
+                        "ユーザーに入力を促す文字を設定します。",
+                        "デフォルト値は \"'-'\" です。",
                         "```html",
                         "<igx-time-picker [promptChar] = \"'_'\">",
                         "```"
@@ -91,14 +91,13 @@
                         "memberof": {
                             "comment": {
                                 "text": "IgxTimePickerComponent",
-                                "tagName": "memberof"
+                                "tagName": "次のメンバー:"
                             }
                         }
                     },
                     "shortText": [
-                        "An @Input property that allows you to switch the interaction mode between",
-                        "a dialog picker or dropdown with editable masked input.",
-                        "Deafult is dialog picker.",
+                        "ダイアログ ピッカーとドロップダウンを編集可能なマスクされた入力のインタラクションの切り替えを許可する @Input プロパティ。",
+                        "デフォルトはダイアログ ピッカーです。",
                         "```html",
                         "public mode = InteractionMode.DROPDOWN;",
                         " //..",
@@ -116,15 +115,15 @@
                         "<igx-time-picker [outlet]=\"outlet\"></igx-time-picker>",
                         "//..",
                         "```",
-                        "Where `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`."
+                        "`Outlet` は `IgxOverlayOutletDirective` または `ElementRef` のインスタンスです。"
                     ],
-                    "shortText": "Determines the container the popup element should be attached to."
+                    "shortText": "Popup 要素を結び付けるコンテナを決定します。"
                 }
             },
             "onValueChanged": {
                 "comment": {
                     "shortText": [
-                        "Emitted when selection is made. The event contains the selected value. Returns {`oldValue`: `Date`, `newValue`: `Date`}.",
+                        "選択が実行されたときに発生します。イベントは選択済みの値を含みます。{`oldValue`: `Date`, `newValue`: `Date`} を返します。",
                         "```typescript",
                         "@ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
@@ -143,7 +142,7 @@
             "onValidationFailed": {
                 "comment": {
                     "shortText": [
-                        "Emitted when an invalid value is being set. Returns {`timePicker`: `any`, `currentValue`: `Date`, `setThroughUI`: `boolean`}",
+                        "無効な値が設定されているときに発生します。{`timePicker`: `any`, `currentValue`: `Date`, `setThroughUI`: `boolean`} を返します。",
                         "```typescript",
                         "public min: string = \"09:00\";",
                         "public max: string = \"18:00\";",
@@ -161,19 +160,21 @@
                     ]
                 }
             },
-            "onOpened": {
-                "comment": {
-                    "shortText": "Emitted when a timePicker is opened."
+"onOpened": {
+    "comment": {
+        "shortText": "timePicker が開いたときに発生します。"
                 }
             },
             "onClosed": {
                 "comment": {
-                    "shortText": "Emitted when a timePicker is closed."
+                    "shortText": "timePicker が閉じたときに発生します。"
                 }
             },
             "onClosing": {
                 "comment": {
-                    "shortText": "Emitted when a timePicker is being closed."
+                    "shortText": [
+                        "timePicker が閉じているときに発生します。"
+                    ]
                 }
             }
         },
@@ -184,7 +185,7 @@
                         "target": {
                             "comment": {
                                 "text": [
-                                    "HTMLElement - the target element to use for positioning the drop down container according to",
+                                    "HTMLElement - 次に従ってドロップダウンコンテナを配置するために使用するターゲット要素。",
                                     "```html",
                                     "<igx-time-picker [value]=\"date\" mode=\"dropdown\" #retemplated>",
                                     "  <ng-template igxTimePickerTemplate let-openDialog=\"openDialog\"",
@@ -203,7 +204,7 @@
                         }
                     },
                     "tags": {},
-                    "shortText": "opens the dialog."
+                    "shortText": "ダイアログを開きます。"
                 }
             },
             "scrollHourIntoView": {
@@ -211,13 +212,13 @@
                     "parameters": {
                         "item": {
                             "comment": {
-                                "text": "to be scrolled in view."
+                                "text": "ビューにスクロールするため。"
                             }
                         }
                     },
                     "tags": {},
                     "shortText": [
-                        "Scrolls a hour item into view.",
+                        "時項目を表示可能領域にスクロールします。",
                         "```typescript",
                         "scrhintoView(picker) {",
                         "picker.scrollHourIntoView('2');",
@@ -234,13 +235,13 @@
                     "parameters": {
                         "item": {
                             "comment": {
-                                "text": "to be scrolled in view."
+                                "text": "ビューにスクロールするため。"
                             }
                         }
                     },
                     "tags": {},
                     "shortText": [
-                        "Scrolls a minute item into view.",
+                        "分項目を表示可能領域にスクロールします。",
                         "```typescript",
                         "scrMintoView(picker) {",
                         "picker.scrollMinuteIntoView('3');",
@@ -257,13 +258,13 @@
                     "parameters": {
                         "item": {
                             "comment": {
-                                "text": "to be scrolled in view."
+                                "text": "ビューにスクロールします。"
                             }
                         }
                     },
                     "tags": {},
                     "shortText": [
-                        "Scrolls a seconds item into view.",
+                        "秒項目を表示領域にスクロールします。",
                         "```typescript",
                         "scrMintoView(picker) {",
                         "picker.scrollSecondsIntoView('4');",
@@ -280,16 +281,16 @@
                     "parameters": {
                         "item": {
                             "comment": {
-                                "text": "to be scrolled in view."
+                                "text": "ビューにスクロールするため。"
                             }
                         }
                     },
                     "tags": {},
                     "shortText": [
-                        "Scrolls an ampm item into view.",
+                        "午前午後の項目を表示可能領域にスクロールします。",
                         "```typescript",
                         "scrAmPmIntoView(picker) {",
-                        "picker.scrollAmPmIntoView('PM');",
+                            "picker.scrollAmPmIntoView('PM');",
                         "}",
                         "```",
                         "```html",
@@ -301,7 +302,7 @@
             "okButtonClick": {
                 "comment": {
                     "shortText": [
-                        "If current value is valid selects it, closes the dialog and returns true, otherwise returns false.",
+                        "現在の値が有効な場合、その値を選択し、ダイアログを閉じて true を返します。それ以外の場合は false を返します。",
                         "```html",
                         "<igx-dialog class=\"igx-time-picker__dialog-popup\" [rightButtonLabel]=\"okButtonLabel\" (onRightButtonSelect)=\"okButtonClick()\">",
                         "//..",
@@ -313,7 +314,7 @@
             "cancelButtonClick": {
                 "comment": {
                     "shortText": [
-                        "Closes the dialog without selecting the current value.",
+                        "現在の値を選択せずにダイアログを閉じます。",
                         "```html",
                         "<igx-dialog class=\"igx-time-picker__dialog-popup\" [leftButtonLabel]=\"cancelButtonLabel\" (onLeftButtonSelect)=\"cancelButtonClick()\">",
                         "//...",
@@ -325,7 +326,7 @@
             "hoursInView": {
                 "comment": {
                     "shortText": [
-                        "Returns an array of the hours currently in view.",
+                        "現在表示されている時間の配列を返します。",
                         "```html",
                         "@ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
@@ -339,7 +340,7 @@
             "minutesInView": {
                 "comment": {
                     "shortText": [
-                        "Returns an array of the minutes currently in view.",
+                        "現在表示されている分の配列を返します。",
                         "```html",
                         "@ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
@@ -353,7 +354,7 @@
             "secondsInView": {
                 "comment": {
                     "shortText": [
-                        "Returns an array of the seconds currently in view.",
+                        "現在表示されている秒の配列を返します。",
                         "```html",
                         "@ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
@@ -367,7 +368,7 @@
             "ampmInView": {
                 "comment": {
                     "shortText": [
-                        "Returns an array of the AM/PM currently in view.",
+                        "現在表示されている AM/PM の配列を返します。",
                         "```html",
                         "@ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
@@ -381,7 +382,7 @@
             "close": {
                 "comment": {
                     "shortText": [
-                        "Closes the dropdown/dialog.",
+                        "ドロップ ダウンを閉じます。",
                         "```html",
                         "<igx-time-picker #timePicker></igx-time-picker>",
                         "```",
@@ -398,7 +399,7 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An accessor that allows you to set a time using the `value` input.",
+                            "`value` 入力を使用して時間の設定を許可するアクセサー。",
                             "```html",
                             "public date: Date = new Date(Date.now());",
                             " //...",
@@ -410,7 +411,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "An accessor that returns the value of `igx-time-picker` component.",
+                            "`igx-time-picker` コンポーネントの値を返すアクセサー。",
                             "```html",
                             "@ViewChild(\"MyPick\")",
                             "public pick: IgxTimePickerComponent;",
@@ -426,14 +427,14 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An accessor that sets the resource strings.",
-                            "By default it uses EN resources."
+                            "リソース文字列を設定するアクセサー。",
+                            "デフォルトで EN リソースを使用します。"
                         ]
                     }
                 },
                 "getter": {
                     "comment": {
-                        "shortText": "An accessor that returns the resource strings."
+                        "shortText": "リソース文字列を返すアクセサー。"                    
                     }
                 }
             },
@@ -441,7 +442,7 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that renders OK button with custom text. By default `okButtonLabel` is set to OK.",
+                            "カスタム テキストを使用して [OK] ボタンを描画する @Input プロパティ。デフォルトで `okButtonLabel` が OK に設定されます。",
                             "```html",
                             "<igx-time-picker okButtonLabel='SET' [value]=\"date\" format=\"h:mm tt\"></igx-time-picker>",
                             "```"
@@ -450,7 +451,7 @@
                 },
                 "getter": {
                     "comment": {
-                        "shortText": "An accessor that returns the label of ok button."
+                        "shortText": "OK ボタンのラベルを返すアクセサー。"
                     }
                 }
             },
@@ -458,8 +459,8 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that renders cancel button with custom text.",
-                            "By default `cancelButtonLabel` is set to Cancel.",
+                            "カスタム テキストを使用して [キャンセル] ボタンを描画する @Input プロパティ。",
+                            "デフォルトで `cancelButtonLabel` が Cancel に設定されます。",
                             "```html",
                             "<igx-time-picker cancelButtonLabel='Exit' [value]=\"date\" format=\"h:mm tt\"></igx-time-picker>",
                             "```"
@@ -468,7 +469,7 @@
                 },
                 "getter": {
                     "comment": {
-                        "shortText": "An accessor that returns the label of cancel button."
+                        "shortText": "キャンセル ボタンのラベルを返すアクセサー。"
                     }
                 }
             },
@@ -476,9 +477,8 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that gets/sets the delta by which hour and minute items would be changed <br>",
-                            "when the user presses the Up/Down keys.",
-                            "By default `itemsDelta` is set to `{hours: 1, minutes: 1, seconds: 1}`",
+                            "ユーザーが上下の矢印キーを押したときに時および分の項目が表示されるデルタを取得または設定する @Input プロパティ。",
+                            "デフォルトで `itemsDelta` は `{hours: 1, minutes: 1, seconds: 1}` に設定されます。",
                             "```html",
                             "<igx-time-picker [itemsDelta]=\"{hours:3, minutes:5, seconds:10}\" id=\"time-picker\"></igx-time-picker>",
                             "```"
@@ -488,9 +488,8 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that gets/sets the delta by which hour and minute items would be changed <br>",
-                            "when the user presses the Up/Down keys.",
-                            "By default `itemsDelta` is set to `{hours: 1, minutes: 1, seconds: 1}`",
+                            "ユーザーが上下の矢印キーを押したときに時および分の項目が表示されるデルタを取得または設定する @Input プロパティ。",
+                            "デフォルトで `itemsDelta` は `{hours: 1, minutes: 1, seconds: 1}` に設定されます。",
                             "```html",
                             "<igx-time-picker [itemsDelta]=\"{hours:3, minutes:5, seconds:10}\" id=\"time-picker\"></igx-time-picker>",
                             "```"
@@ -502,18 +501,18 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
-                            "By default `format` is set to hh:mm tt. <br>",
-                            "List of time-flags: <br>",
-                            "`h` : hours field in 12-hours format without leading zero <br>",
-                            "`hh` : hours field in 12-hours format with leading zero <br>",
-                            "`H` : hours field in 24-hours format without leading zero <br>",
-                            "`HH` : hours field in 24-hours format with leading zero <br>",
-                            "`m` : minutes field without leading zero <br>",
-                            "`mm` : minutes field with leading zero <br>",
-                            "`s` : seconds field without leading zero <br>",
-                            "`ss` : seconds field with leading zero <br>",
-                            "`tt` : 2 character string which represents AM/PM field <br>",
+                            "`igxTimePicker` がフォーカスを持っていないときの時間書式を取得または設定する @Input プロパティ。<br>",
+                            "デフォルトの `format` は hh:mm tt です。<br>",
+                            "時間フラグのリスト。 <br>",
+                            "`h`: 先行するゼロがない 12 時間形式の時フィールド。 <br>",
+                            "`hh`: 先行するゼロがある 12 時間形式の時フィールド。 <br>",
+                            "`H`: 先行するゼロがない 24 時間形式の時フィールド。 <br>",
+                            "`HH`: 先行するゼロがある 24 時間形式の時フィールド。 <br>",
+                            "`m`: 先行するゼロがない分フィールド。<br>",
+                            "`mm`: 先行するゼロがある分フィールド。<br>",
+                            "`s`: 先行するゼロがない秒フィールド。<br>",
+                            "`ss`: 先行するゼロがある秒フィールド。<br>",
+                            "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
                             "```html",
                             "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
                             "```"
@@ -523,18 +522,18 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
-                            "By default `format` is set to hh:mm tt. <br>",
-                            "List of time-flags: <br>",
-                            "`h` : hours field in 12-hours format without leading zero <br>",
-                            "`hh` : hours field in 12-hours format with leading zero <br>",
-                            "`H` : hours field in 24-hours format without leading zero <br>",
-                            "`HH` : hours field in 24-hours format with leading zero <br>",
-                            "`m` : minutes field without leading zero <br>",
-                            "`mm` : minutes field with leading zero <br>",
-                            "`s` : seconds field without leading zero <br>",
-                            "`ss` : seconds field with leading zero <br>",
-                            "`tt` : 2 character string which represents AM/PM field <br>",
+                            "`igxTimePicker` がフォーカスを持っていないときの時間書式を取得または設定する @Input プロパティ。<br>",
+                            "デフォルトの `format` は hh:mm tt です。<br>",
+                            "時間フラグのリスト。<br>",
+                            "`h`: 先行するゼロがない 12 時間形式の時フィールド。<br>",
+                            "`hh`: 先行するゼロがある 12 時間形式の時フィールド。<br>",
+                            "`H`: 先行するゼロがない 24 時間形式の時フィールド。<br>",
+                            "`HH`: 先行するゼロがある 24 時間形式の時フィールド。<br>",
+                            "`m`: 先行するゼロがない分フィールド。<br>",
+                            "`mm`: 先行するゼロがある分フィールド。<br>",
+                            "`s`: 先行するゼロがない秒フィールド。<br>",
+                            "`ss`: 先行するゼロがある秒フィールド。<br>",
+                            "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
                             "```html",
                             "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
                             "```"
@@ -549,12 +548,12 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
                         "shortText": [
-                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
+                            "オーバーレイの位置、インタラクション、およびスクロール動作を変更できる @Input プロパティ。",
                             "```typescript",
                             "const settings: OverlaySettings = {",
                             "     closeOnOutsideClick: true,",
@@ -571,7 +570,7 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
+                            "オーバーレイの位置、インタラクション、およびスクロール動作を変更できる @Input プロパティ。",
                             "```typescript",
                             "const settings: OverlaySettings = {",
                             "     closeOnOutsideClick: true,",
@@ -593,8 +592,8 @@
                             "deprecated": {
                                 "comment": {
                                     "text": [
-                                        "Use 'onOpened' instead.",
-                                        "Emitted when a timePicker is being opened.",
+                                        "代わりに `onOpened` を使用してください。",
+                                        "timePicker が開いているときに発生します。",
                                         "```html",
                                         "@ViewChild(\"toast\")",
                                         "private toast: IgxToastComponent;",
@@ -608,7 +607,7 @@
                                         "<igx-toast #toast message=\"The time picker has been opened!\"></igx-toast>",
                                         "```"
                                     ],
-                                    "tagName": "deprecated"
+                                    "tagName": "非推奨。"
                                 }
                             }
                         }
@@ -625,10 +624,10 @@
                             "deprecated": {
                                 "comment": {
                                     "text": [
-                                        "Use 'onClosed' instead.",
-                                        "Emitted when a timePicker is being closed."
+                                        "代わりに `onClosed` を使用してください。",
+                                        "timePicker が閉じているときに発生します。"
                                     ],
-                                    "tagName": "deprecated"
+                                    "tagName": "非推奨"
                                 }
                             }
                         }
@@ -642,8 +641,8 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "Returns the current time formatted as string using the `format` option.",
-                            "If there is no set time the return is an empty string.",
+                            "`format` オプションを使用して文字列として書式設定される現在の時間を返します。",
+                            "時間が設定されない場合、空の文字列を返します。",
                             "```typescript",
                             "@ViewChild(\"MyChild\")",
                             "private picker: IgxTimePickerComponent;",
@@ -662,12 +661,12 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
                         "shortText": [
-                            "Gets the input group template.",
+                            "入力グループのテンプレートを取得します。",
                             "```typescript",
                             "let template = this.template();",
                             "```"
@@ -682,11 +681,13 @@
                             "memberof": {
                                 "comment": {
                                     "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
+                                    "tagName": "次のメンバー:"
                                 }
                             }
                         },
-                        "shortText": "Gets the context passed to the input group template."
+                        "shortText": [
+                            "入力グループのテンプレートに渡されたコンテキストを取得します。"
+                        ]
                     }
                 }
             }

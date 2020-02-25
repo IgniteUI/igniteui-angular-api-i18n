@@ -3,7 +3,7 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
-                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                    "shortText": "トランザクションの状態が変更されたとき発生されるイベント - トランザクションの追加、すべてのトランザクションをコミットする、元に戻す/やり直し。"
                 }
             }
         },
@@ -11,31 +11,34 @@
             "add": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Adds provided  transaction with recordRef if any"
+                    "shortText": "recordRef を持つ指定されたトランザクションがある場合、追加します。"
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "returns": "All transaction in the service or for the specified record\n",
                     "tags": {},
-                    "shortText": "Returns all recorded transactions in chronological order"
+                    "shortText": "すべての登録されたレコードを時系列順に返します。"
                 }
             },
             "undo": {
                 "comment": {
-                    "shortText": "Remove the last transaction if any"
+                    "shortText": "最後のトランザクションを削除します。"
                 }
             },
             "redo": {
                 "comment": {
-                    "shortText": "Applies the last undone transaction if any"
+                    "shortText": "最後の元に戻されたトランザクションを削除します。"
                 }
             },
             "getAggregatedChanges": {
                 "comment": {
-                    "returns": "Collection of aggregated transactions for each changed record\n",
-                    "tags": {},
-                    "shortText": "Returns aggregated changes from all transactions"
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             },
             "getState": {
@@ -51,28 +54,26 @@
             },
             "getAggregatedValue": {
                 "comment": {
-                    "returns": "Value with changes or **null**\n",
                     "tags": {},
-                    "shortText": "Returns value of the required id including all uncommitted changes"
+                    "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
                 }
             },
             "commit": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Applies all transactions over the provided data"
+                    "shortText": "指定されたデータ中にすべてのトランザクションを適用します。"
                 }
             },
             "clear": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Clears all transactions"
+                    "shortText": "すべてのトランザクションをクリアします。"
                 }
             },
             "startPending": {
                 "comment": {
                     "shortText": [
-                        "Starts pending transactions. All transactions passed after call to startPending",
-                        "will not be added to transaction log"
+                        "保留された変更を開始します。startPending へのコールの後に渡されたすべてのトランザクションはトランザクション ログに追加されません。"
                     ]
                 }
             },
@@ -80,8 +81,7 @@
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
-                        "commits pending states as single transaction"
+                        "すべての保留中のトランザクションと集計された保留中の状態をクリアします。Commit は true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"
                     ]
                 }
             }
@@ -90,7 +90,6 @@
             "canRedo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Redo stack\n",
                         "tags": {
                             "inheritdoc": {
                                 "comment": {
@@ -104,7 +103,6 @@
             "canUndo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Undo stack\n",
                         "tags": {
                             "inheritdoc": {
                                 "comment": {
@@ -125,7 +123,7 @@
                                 }
                             }
                         },
-                        "shortText": "Returns whether transaction is enabled for this service"
+                        "shortText": "このサービスにトランザクションが有効されたかどうか返します。"
                     }
                 }
             }

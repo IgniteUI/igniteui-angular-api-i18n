@@ -2,9 +2,9 @@
     "IgxDropDownComponent": {
         "comment": {
             "text": [
-                "The Ignite UI for Angular Drop Down displays a scrollable list of items which may be visually grouped and",
-                "supports selection of a single item. Clicking or tapping an item selects it and closes the Drop Down",
-                "Example:",
+                "Ignite UI for Angular Drop Down は、単一項目の選択が可能なグループ項目をスクロール付きのリストで表示します。",
+                "項目をクリックまたはタップして選択するとドロップダウンが閉じられます。",
+                "例:",
                 "```html",
                 "<igx-drop-down>",
                 "  <igx-drop-down-item *ngFor=\"let item of items\" disabled={{item.disabled}} isHeader={{item.header}}>",
@@ -15,7 +15,7 @@
             ],
             "shortText": [
                 "**Ignite UI for Angular DropDown** -",
-                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/drop_down.html)"
+                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/drop_down.html)"
             ]
         },
         "properties": {
@@ -26,7 +26,9 @@
                         "<igx-drop-down (onOpening)='handleOpening()'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": "Emitted before the dropdown is opened"
+                    "shortText": [
+                        "ドロップダウンが開かれる前に発生されます。"
+                    ]
                 }
             },
             "onOpened": {
@@ -36,7 +38,9 @@
                         "<igx-drop-down (onOpened)='handleOpened()'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": "Emitted after the dropdown is opened"
+                    "shortText": [
+                        "ドロップダウンが開かれた後に発生されます。"
+                    ]
                 }
             },
             "onClosing": {
@@ -46,7 +50,9 @@
                         "<igx-drop-down (onClosing)='handleClosing()'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": "Emitted before the dropdown is closed"
+                    "shortText": [
+                        "ドロップダウンが閉じられる前に発生されます。"
+                    ]
                 }
             },
             "onClosed": {
@@ -56,16 +62,17 @@
                         "<igx-drop-down (onClosed)='handleClosed()'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": "Emitted after the dropdown is closed"
+                    "shortText": [
+                        "ドロップダウンが閉じられた後に発生されます。"
+                    ]
                 }
             },
             "allowItemsFocus": {
                 "comment": {
                     "text": [
-                        "Note: Keep that focus shift in mind when using the igxDropDownItemNavigation directive",
-                        "and ensure it's placed either on each focusable item or a common ancestor to allow it to handle keyboard events.",
+                        "注: IgxDropDownItemNavigation ディレクティブの使用時はフォーカスの移動に注意してください。キーボード イベントを処理するためにディレクティブを各フォーカス可能な項目に配置または共有の先祖に配置します。",
                         "```typescript",
-                        "// get",
+                        "// 取得",
                         "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
                         "```",
                         "```html",
@@ -74,9 +81,8 @@
                         "```"
                     ],
                     "shortText": [
-                        "Gets/sets whether items take focus. Disabled by default.",
-                        "When enabled, drop down items gain tab index and are focused when active -",
-                        "this includes activating the selected item when opening the drop down and moving with keyboard navigation."
+                        "項目がフォーカスを取得するかどうかを取得または設定します。デフォルトで無効です。",
+                        "有効な場合、ドロップダウン項目にタブ インデックスが指定され、アクティブな場合にフォーカスされます。これには、ドロップダウンを開き、キーボード ナビゲーションを使用して移動すると選択した項目のアクティブ化が含まれます。"
                     ]
                 }
             },
@@ -87,14 +93,14 @@
                         "<igx-drop-down (onSelection)='handleSelection()'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": "Emitted when item selection is changing, before the selection completes"
+                    "shortText": "選択を完了する前にアイテム選択が変更されるときに発生されます。"
                 }
             },
             "width": {
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// get",
+                        "// 取得",
                         "let myDropDownCurrentWidth = this.dropdown.width;",
                         "```",
                         "```html",
@@ -102,14 +108,14 @@
                         "<igx-drop-down [width]='160px'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": " Gets/Sets the width of the drop down"
+                    "shortText": "ドロップダウンの幅を取得または設定します。"
                 }
             },
             "height": {
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// get",
+                        "// 取得",
                         "let myDropDownCurrentHeight = this.dropdown.height;",
                         "```",
                         "```html",
@@ -117,14 +123,14 @@
                         "<igx-drop-down [height]='400px'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": "Gets/Sets the height of the drop down"
+                    "shortText": "ドロップダウンの高さを取得または設定します。"
                 }
             },
             "maxHeight": {
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// get",
+                        "// 取得",
                         "let maxHeight = this.dropdown.maxHeight;",
                         "```",
                         "```html",
@@ -132,7 +138,7 @@
                         "<igx-drop-down [maxHeight]='200px'></igx-drop-down>",
                         "```"
                     ],
-                    "shortText": "Gets/Sets the drop down's container max height."
+                    "shortText": "ドロップ ダウンのコンテナの最大の高さを取得または設定します。"
                 }
             }
         },
@@ -144,7 +150,7 @@
                         "this.dropdown.open();",
                         "```"
                     ],
-                    "shortText": "Opens the dropdown"
+                    "shortText": "ドロップダウンを開きます。"
                 }
             },
             "close": {
@@ -154,7 +160,7 @@
                         "this.dropdown.close();",
                         "```"
                     ],
-                    "shortText": "Closes the dropdown"
+                    "shortText": "ドロップダウンを閉じます。"
                 }
             },
             "toggle": {
@@ -164,7 +170,7 @@
                         "this.dropdown.toggle();",
                         "```"
                     ],
-                    "shortText": "Toggles the dropdown"
+                    "shortText": "ドロップダウンを切り替えます。"
                 }
             },
             "setSelectedItem": {
@@ -172,32 +178,32 @@
                     "parameters": {
                         "index": {
                             "comment": {
-                                "text": "of the item to select; If the drop down uses *igxFor, pass the index in data"
+                                "text": "選択する項目。ドロップダウンで *igxFor* が使用されている場合は、データのインデックスを渡します。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Select an item by index"
+                    "shortText": "項目をインデックスで選択します。"
                 }
             },
             "navigateItem": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Navigates to the item on the specified index",
-                        "If the data in the drop-down is virtualized, pass the index of the item in the virtualized data."
+                        "指定されたインデックスにある項目へ移動。",
+                        "ドロップダウンのデータが仮想化されている場合は、仮想化されたデータ内のアイテムのインデックスを渡します。"
                     ]
                 }
             },
             "onItemActionKey": {
                 "comment": {
-                    "shortText": "Keydown Handler"
+                    "shortText": "Keydown ハンドラー"
                 }
             },
             "clearSelection": {
                 "comment": {
                     "shortText": [
-                        "Clears the selection of the dropdown",
+                        "ドロップダウンの選択をクリアします。",
                         "```typescript",
                         "this.dropdown.clearSelection();",
                         "```"
@@ -209,7 +215,7 @@
             "listId": {
                 "getter": {
                     "comment": {
-                        "shortText": "Id of the internal listbox of the drop down"
+                        "shortText": "ドロップダウンの内部リスト ボックスの Id。"
                     }
                 }
             },
@@ -221,7 +227,7 @@
                             "let currentItem = this.dropdown.selectedItem;",
                             "```"
                         ],
-                        "shortText": "Get currently selected item"
+                        "shortText": "現在選択している項目を取得します。"
                     }
                 }
             },
@@ -233,7 +239,7 @@
                             "let isCollapsed = this.dropdown.collapsed;",
                             "```"
                         ],
-                        "shortText": "Gets if the dropdown is collapsed"
+                        "shortText": "ドロップダウンが閉じたかどうかを取得します。"
                     }
                 }
             },
@@ -245,7 +251,7 @@
                             "let myDropDownItems = this.dropdown.items;",
                             "```"
                         ],
-                        "shortText": "Get all non-header items"
+                        "shortText": "すべてのヘッダー以外の項目を取得します。"
                     }
                 }
             },
@@ -257,7 +263,7 @@
                             "let myDropDownHeaderItems = this.dropdown.headers;",
                             "```"
                         ],
-                        "shortText": "Get all header items"
+                        "shortText": "すべてのヘッダー項目を取得します。"
                     }
                 }
             },
@@ -269,7 +275,7 @@
                             "let myDropDownElement = this.dropdown.element;",
                             "```"
                         ],
-                        "shortText": "Get dropdown html element"
+                        "shortText": "ドロップダウンの HTML 要素を取得します。"
                     }
                 }
             },
@@ -277,9 +283,9 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "Returns the theme of the component.",
-                            "The default theme is `comfortable`.",
-                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "コンポーネントのテーマを返します。",
+                            "デフォルト テーマは `comfortable` です。",
+                            "利用可能なオプションは `comfortable`、`cosy`、および `compact` です。",
                             "```typescript",
                             "let componentTheme = this.component.displayDensity;",
                             "```"
@@ -288,7 +294,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "shortText": "Sets the theme of the component."
+                        "shortText": "コンポーネントのテーマを設定します。"
                     }
                 }
             }
