@@ -1,68 +1,121 @@
 {
     "IgxRadioGroupDirective": {
         "comment": {
-            "text": [
-                "Ignite UI Radio Group を使用すると、隣に表示されるオプションのセットから単一のオプションを選択する機能を提供します。",
-                "例:",
-                "```html",
-                "<igx-radio-group name=\"radioGroup\">",
-                "  <igx-radio *ngFor=\"let item of ['Foo', 'Bar', 'Baz']\" value=\"{{item}}\">",
-                "     {{item}}",
-                "  </igx-radio>",
-                "</igx-radio-group>",
-                "```"
-            ],
-            "shortText": [
-                "**Ignite UI for Angular Radio Group** -",
-                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/radio_button.html)"
-            ]
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxRadioModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-radio-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "radiogroup, radio, button, input",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "データ入力と表示",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": "Ignite UI Radio Group を使用すると、隣に表示されるオプションのセットから単一のオプションを選択する機能を提供します。",
+                        "tagName": "備考"
+                    }
+                },
+                "example:": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-radio-group name=\"radioGroup\">",
+                            "  <igx-radio *ngFor=\"let item of ['Foo', 'Bar', 'Baz']\" value=\"{{item}}\">",
+                            "     {{item}}",
+                            "  </igx-radio>",
+                            "</igx-radio-group>",
+                            "```"
+                        ],
+                        "tagName": "例"
+                    }
+                }
+            },
+            "shortText": "ラジオ グループ ディレクティブは、ラジオ ボタンのセットを描画します。"
         },
         "properties": {
             "radioButtons": {
                 "comment": {
                     "tags": {
-                        "memberof": {
+                        "example": {
                             "comment": {
-                                "text": "IgxRadioGroupDirective",
-                                "tagName": "次のメンバー:"
+                                "text": [
+                                    "```typescript",
+                                    "let radioButtons =  this.radioGroup.radioButtons;",
+                                    "```"
+                                ],
+                                "tagName": "例"
                             }
                         }
                     },
-                    "shortText": [
-                        "子ラジオ ボタンへの参照を返します。",
-                        "```typescript",
-                        "let radioButtons =  this.radioGroup.radioButtons;",
-                        "```"
-                    ]
+                    "shortText": "子ラジオ ボタンへの参照を返します。"
                 }
             },
             "change": {
                 "comment": {
                     "tags": {
-                        "memberof": {
+                        "remarks": {
                             "comment": {
-                                "text": "IgxRadioGroupDirective",
-                                "tagName": "次のメンバー:"
+                                "text": "イベント引数として選択した `IgxRadioComponent` および `value` プロパティへの参照を提供します。",
+                                "tagName": "備考"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-radio-group (change)=\"handler($event)\"></igx-radio-group>",
+                                    "```"
+                                ],
+                                "tagName": "例"
                             }
                         }
                     },
-                    "shortText": [
-                        "ラジオ グループの `value` が変更された後に発生するイベント。",
-                        "イベント引数として選択した `IgxRadioComponent` および `value` プロパティへの参照を提供します。"
-                    ]
+                    "shortText": "ラジオ グループの `value` が変更された後に発生するイベント。"
                 }
             }
         },
         "methods": {
             "writeValue": {
                 "comment": {
-                    "shortText": [
-                        "提供された値が現在のラジオ ボタンと一貫性のあるかどうかを確認します。",
-                        "一貫性がある場合、checked 属性の値は `true` になり、selected プロパティは選択した `IgxRadioComponent` を含みます。",
-                        "```typescript",
-                        "this.radioGroup.writeValue('radioButtonValue');",
-                        "```"
-                    ]
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "指定した値が現在のラジオ ボタンと整合性があるかどうかを確認します。",
+                                    "そうである場合、checked 属性の値は `true`になり、選択したプロパティに選択した `IgxRadioComponent` が含まれます。"
+                                ],
+                                "tagName": "備考"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.radioGroup.writeValue('radioButtonValue');",
+                                    "```"
+                                ],
+                                "tagName": "例"
+                            }
+                        }
+                    },
+                    "shortText": "ラジオ input 要素の \"checked\" property 値を設定します。"
                 }
             }
         },
@@ -71,35 +124,23 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "example": {
                                 "comment": {
-                                    "text": "IgxRadioGroupDirective",
-                                    "tagName": "次のメンバー:"
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group [value] = \"'radioButtonValue'\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
                                 }
                             }
                         },
-                        "shortText": [
-                            "`value` 属性を取得または設定します。",
-                            "```html",
-                            "<igx-radio-group [value] = \"'radioButtonValue'\"></igx-radio-group>",
-                            "```",
-                            "```typescript",
-                            "let value =  this.radioGroup.value;",
-                            "```"
-                        ]
+                        "shortText": "`value` 属性を取得または設定します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "`value` 属性を取得または設定します。",
-                            "```html",
-                            "<igx-radio-group [value] = \"'radioButtonValue'\"></igx-radio-group>",
-                            "```",
-                            "```typescript",
-                            "let value =  this.radioGroup.value;",
-                            "```"
-                        ]
+                        "shortText": "`value` 属性を取得または設定します。"
                     }
                 }
             },
@@ -107,35 +148,23 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "example": {
                                 "comment": {
-                                    "text": "IgxRadioGroupDirective",
-                                    "tagName": "次のメンバー:"
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group name = \"Radio1\"></igx-radio-group>",
+                                        " ```"
+                                    ],
+                                    "tagName": "例"
                                 }
                             }
                         },
-                        "shortText": [
-                            "ラジオ グループ コンポーネントの `name` 属性を取得または設定します。すべての子ラジオ ボタンはこの名前を継承します。",
-                            "```html",
-                            "<igx-radio-group name = \"Radio1\"></igx-radio-group>",
-                            " ```",
-                            "```typescript",
-                            "let name =  this.radioGroup.name;",
-                            "```"
-                        ]
+                        "shortText": "ラジオ グループ コンポーネントの `name` 属性を取得または設定します。 すべての子ラジオ ボタンはこの名前を継承します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "ラジオ グループ コンポーネントの `name` 属性を取得または設定します。すべての子ラジオ ボタンはこの名前を継承します。",
-                            "```html",
-                            "<igx-radio-group name = \"Radio1\"></igx-radio-group>",
-                            " ```",
-                            "```typescript",
-                            "let name =  this.radioGroup.name;",
-                            "```"
-                        ]
+                        "shortText": "ラジオ グループ コンポーネントの `name` 属性を取得または設定します。 すべての子ラジオ ボタンはこの名前を継承します。"
                     }
                 }
             },
@@ -143,37 +172,29 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "remarks": {
                                 "comment": {
-                                    "text": "IgxRadioGroupDirective",
-                                    "tagName": "次のメンバー:"
+                                    "text": "設定されない場合、`required` の値は `false` です。",
+                                    "tagName": "備考"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group [required] = \"true\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
                                 }
                             }
                         },
-                        "shortText": [
-                            "ラジオ グループが必須かどうかを取得または設定します。",
-                            "設定されない場合、`required` の値は `false` です。",
-                            "```html",
-                            "<igx-radio-group [required] = \"true\"></igx-radio-group>",
-                            "```",
-                            "```typescript",
-                            "let isRequired =  this.radioGroup.required;",
-                            "```"
-                        ]
+                        "shortText": "ラジオ グループが必須かどうかを設定または取得します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "ラジオ グループが必須かどうかを取得または設定します。",
-                            "設定されない場合、`required` の値は `false` です。",
-                            "```html",
-                            "<igx-radio-group [required] = \"true\"></igx-radio-group>",
-                            "```",
-                            "```typescript",
-                            "let isRequired =  this.radioGroup.required;",
-                            "```"
-                        ]
+                        "shortText": "ラジオ グループが必須かどうかを設定または取得します。"
                     }
                 }
             },
@@ -181,29 +202,23 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "example": {
                                 "comment": {
-                                    "text": "IgxRadioGroupDirective",
-                                    "tagName": "次のメンバー:"
+                                    "text": [
+                                        " ```html",
+                                        "<igx-radio-group [disabled]=\"true\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
                                 }
                             }
                         },
-                        "shortText": [
-                            "ラジオ グループの無効化を許可する @Input プロパティ。デフォルトで false です。",
-                            "```html",
-                            "<igx-radio-group [disabled]=\"true\"></igx-radio-group>",
-                            "```"
-                        ]
+                        "shortText": "ラジオ グループの無効化を許可する @Input プロパティ。 デフォルトで false です。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "ラジオ グループの無効化を許可する @Input プロパティ。デフォルトで false です。",
-                            "```html",
-                            "<igx-radio-group [disabled]=\"true\"></igx-radio-group>",
-                            "```"
-                        ]
+                        "shortText": "ラジオ グループの無効化を許可する @Input プロパティ。 デフォルトで false です。"
                     }
                 }
             },
@@ -211,37 +226,29 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "remarks": {
                                 "comment": {
-                                    "text": "IgxRadioGroupDirective",
-                                    "tagName": "次のメンバー:"
+                                    "text": "設定されない場合、`labelPosition` の値は `\"after\"` です。",
+                                    "tagName": "備考"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-radio-group labelPosition = \"before\"></igx-radio-group>",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
                                 }
                             }
                         },
-                        "shortText": [
-                            "子ラジオ ボタンの `label` の位置を取得または設定します。",
-                            "設定されない場合、`labelPosition` の値は `\"after\"` です。",
-                            "```html",
-                            "<igx-radio-group labelPosition = \"before\"></igx-radio-group>",
-                            "```",
-                            "```typescript",
-                            "let labelPosition =  this.radioGroup.labelPosition;",
-                            "```"
-                        ]
+                        "shortText": "子ラジオ ボタンの `label` の位置を設定または取得します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "子ラジオ ボタンの `label` の位置を取得または設定します。",
-                            "設定されない場合、`labelPosition` の値は `\"after\"` です。",
-                            "```html",
-                            "<igx-radio-group labelPosition = \"before\"></igx-radio-group>",
-                            "```",
-                            "```typescript",
-                            "let labelPosition =  this.radioGroup.labelPosition;",
-                            "```"
-                        ]
+                        "shortText": "子ラジオ ボタンの `label` の位置を設定または取得します。"
                     }
                 }
             },
@@ -249,31 +256,24 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "example": {
                                 "comment": {
-                                    "text": "IgxRadioGroupDirective",
-                                    "tagName": "次のメンバー:"
+                                    "text": [
+                                        "```typescript",
+                                        "let selectedButton = this.radioGroup.selected;",
+                                        "this.radioGroup.selected = selectedButton;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
                                 }
                             }
                         },
-                        "shortText": [
-                            "選択した子ラジオ ボタンを取得または設定します。",
-                            "```typescript",
-                            "let selectedButton = this.radioGroup.selected;",
-                            "this.radioGroup.selected = selectedButton;",
-                            "```"
-                        ]
+                        "shortText": "選択した子ラジオ ボタンを設定または取得します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "選択した子ラジオ ボタンを取得または設定します。",
-                            "```typescript",
-                            "let selectedButton = this.radioGroup.selected;",
-                            "this.radioGroup.selected = selectedButton;",
-                            "```"
-                        ]
+                        "shortText": "選択した子ラジオ ボタンを設定または取得します。"
                     }
                 }
             }
