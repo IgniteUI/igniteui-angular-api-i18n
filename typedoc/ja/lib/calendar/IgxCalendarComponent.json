@@ -1,22 +1,72 @@
 {
     "IgxCalendarComponent": {
         "comment": {
-            "text": [
-                "Ignite UI Calendar はカレンダーを表示し、ユーザーは単一または複数の範囲を使用して日付を選択できます。",
-                "例:",
-                "```html",
-                "<igx-calendar selection=\"range\"></igx-calendar>",
-                "```"
-            ],
-            "shortText": [
-                "**Ignite UI for Angular Calendar** -",
-                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/calendar.html)"
-            ]
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxCalendarModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-calendar-theme, igx-icon-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "calendar, datepicker, schedule, date",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Scheduling",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "Ignite UI Calendar はカレンダーを表示し、ユーザーは単一または複数の範囲を使用して日付を選択できます。"
+                        ],
+                        "tagName": "備考"
+                    }
+                },
+                "example:": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-calendar selection=\"range\"></igx-calendar>",
+                            "```"
+                        ],
+                        "tagName": "例:"
+                    }
+                }
+            },
+            "shortText": "カレンダーは、日付情報を表示する方法を提供します。"
         },
         "properties": {
             "id": {
                 "comment": {
                     "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "設定しない場合、`id` は `\"igx-calendar-0\"` 値を持ちます。",
+                                "tagName": "備考"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-calendar id=\"my-first-calendar\"></igx-calendar>",
+                                    "```"
+                                ],
+                                "tagName": "例"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxCalendarComponent",
@@ -24,29 +74,46 @@
                             }
                         }
                     },
+                    "shortText": "カレンダーの `id` を取得または設定します。"
+                }
+            },
+            "hasHeader": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-calendar [hasHeader]=\"false\"></igx-calendar>",
+                                    "```"
+                                ],
+                               "tagName": "例"
+                            }
+                        }
+                    },
                     "shortText": [
-                        "カレンダーの `id` を取得または設定します。",
-                        "設定しない場合、`id` は `\"igx-calendar-0\"` 値を持ちます。",
-                        "```html",
-                        "<igx-calendar id = \"my-first-calendar\"></igx-calendar>",
-                        "```",
-                        "```typescript",
-                        "let calendarId =  this.calendar.id;",
-                        "```"
+                        "カレンダーにヘッダーが含まれているかどうかを設定/取得します。",
+                        "デフォルト値は `true` です。"
                     ]
                 }
             },
             "vertical": {
                 "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-calendar [vertical] = \"true\"></igx-calendar>",
+                                    "```"
+                                ],
+                                "tagName": "例"
+                            }
+                        }
+                    },
                     "shortText": [
                         "カレンダー ヘッダーが垂直配置にあるかどうかを取得または設定します。",
-                        "デフォルト値は `false` です。",
-                        "```html",
-                        "<igx-calendar [vertical] = \"true\"></igx-calendar>",
-                        "```",
-                        "```typescript",
-                        "let isVertical = this.calendar.vertical;",
-                        "```"
+                        "デフォルト値は `false` です。"
                     ]
                 }
             },
@@ -76,12 +143,19 @@
         "methods": {
             "deselectDate": {
                 "comment": {
-                    "shortText": [
-                        "日付を選択タイプに基づいて選択解除します。",
-                        "```typescript",
-                        "this.calendar.deselectDate(new Date(`2018-06-12`));",
-                        "````"
-                    ]
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.calendar.deselectDate(new Date(`2018-06-12`));",
+                                    "````"
+                                ],
+                                "tagName": "例"
+                            }
+                        }
+                    },
+                    "shortText": "日付を選択タイプに基づいて選択解除します。"
                 }
             },
             "selectDate": {
@@ -94,15 +168,21 @@
             "monthsViewNumber": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-calendar [monthsViewNumber]=\"2\"></igx-calendar>",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
                         "shortText": [
                             "表示される月ビューの数を設定または取得します。",
-                            "デフォルト値は `1` です。",
-                            "```html",
-                            "<igx-calendar [vertical] = \"true\" [monthsViewNumber]=\"2\"></igx-calendar>",
-                            "```",
-                            "```typescript",
-                            "let monthViewsDisplayed = this.calendar.monthsViewNumber;",
-                            "```"
+                            "デフォルト値は `1` です。"
                         ]
                     }
                 },
@@ -110,13 +190,7 @@
                     "comment": {
                         "shortText": [
                             "表示される月ビューの数を設定または取得します。",
-                            "デフォルト値は `1` です。",
-                            "```html",
-                            "<igx-calendar [vertical] = \"true\" [monthsViewNumber]=\"2\"></igx-calendar>",
-                            "```",
-                            "```typescript",
-                            "let monthViewsDisplayed = this.calendar.monthsViewNumber;",
-                            "```"
+                            "デフォルト値は `1` です。"
                         ]
                     }
                 }
@@ -125,6 +199,16 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let headerTemplate =  this.calendar.headerTeamplate;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            },
                             "memberof": {
                                 "comment": {
                                     "text": "IgxCalendarComponent",
@@ -132,12 +216,13 @@
                                 }
                             }
                         },
-                        "shortText": [
-                            "ヘッダー テンプレートを取得します。",
-                            "```typescript",
-                            "let headerTemplate =  this.calendar.headerTeamplate;",
+                        "text": [
+                            " @example",
+                            "```html",
+                            "<igx-calendar headerTemplateDirective = \"igxCalendarHeader\"></igx-calendar>",
                             "```"
-                        ]
+                        ],
+                        "shortText": "ヘッダー テンプレートを取得します。"
                     }
                 },
                 "setter": {
@@ -150,29 +235,47 @@
                                 }
                             }
                         },
-                        "shortText": [
-                            "ヘッダー テンプレートを設定します。",
+                        "text": [
+                            " @example",
                             "```html",
                             "<igx-calendar headerTemplateDirective = \"igxCalendarHeader\"></igx-calendar>",
                             "```"
-                        ]
+                        ],
+                        "shortText": "ヘッダー テンプレートを設定します。"
                     }
                 }
             },
             "subheaderTemplate": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "サブヘッダー テンプレートを取得します。",
-                            "```typescript",
-                            "let subheaderTemplate = this.calendar.subheaderTemplate;",
-                            "```"
-                        ]
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let subheaderTemplate = this.calendar.subheaderTemplate;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": "サブヘッダー テンプレートを取得します。"
                     }
                 },
                 "setter": {
                     "comment": {
                         "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-calendar subheaderTemplate = \"igxCalendarSubheader\"></igx-calendar>",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            },
                             "memberof": {
                                 "comment": {
                                     "text": "IgxCalendarComponent",
@@ -180,35 +283,46 @@
                                 }
                             }
                         },
-                        "shortText": [
-                            "サブヘッダー テンプレートを設定します。",
-                            "```html",
-                            "<igx-calendar subheaderTemplate = \"igxCalendarSubheader\"></igx-calendar>",
-                            "```"
-                        ]
+                        "shortText": "サブヘッダー テンプレートを設定します。"
                     }
                 }
             },
             "headerContext": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "`igxCalendarHeader` ディレクティブとマークされるテンプレートのコンテキストを取得します。",
-                            "```typescript",
-                            "let headerContext =  this.calendar.headerContext;",
-                            "```"
-                        ]
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let headerContext =  this.calendar.headerContext;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": "`igxCalendarHeader` ディレクティブとマークされるテンプレートのコンテキストを取得します。"
                     }
                 }
             },
             "context": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let context =  this.calendar.context;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "`igxCalendarSubHeaderMonth` または `igxCalendarSubHeaderYear` ディレクティブとマークされるテンプレートのコンテキストを取得します。",
-                            "```typescript",
-                            "let context =  this.calendar.context;",
-                            "```"
+                            "igxCalendarSubHeaderMonth` または `igxCalendarSubHeaderYear` ディレクティブとマークされるテンプレートのコンテキストを取得します。"
                         ]
                     }
                 }
