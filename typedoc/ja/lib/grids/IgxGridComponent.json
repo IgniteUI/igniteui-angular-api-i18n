@@ -19,43 +19,6 @@
             ]
         },
         "properties": {
-            "autoGenerate": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridBaseComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "`IgxGridComponent` 列を自動生成する @Input プロパティ。",
-                        "デフォルト値は False です。",
-                        "```html",
-                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                        "```"
-                    ]
-                }
-            },
-            "emptyGridTemplate": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridBaseComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "`IgxGridComponent` が空の場合にカスタム テンプレートを設定する @Input プロパティ。",
-                        "```html",
-                        "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [emptyGridTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
-                        "```"
-                    ]
-                }
-            },
             "groupsExpanded": {
                 "comment": {
                     "tags": {
@@ -121,7 +84,38 @@
                     ]
                 }
             },
-            "loadingGridTemplate": {
+            "onGroupingDone": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Group By API を使用して新しい `IgxColumnComponent` のグループ化/グループ解除、または複数列がグループ化/グループ化解除されたときに発生します。",
+                        "`groupBy()` または `clearGrouping()` API メソッドを呼び出して引数として渡すことにより複数列が一度にグループ化された場合に `onGroupingDone` イベントは一度のみ発生します。",
+                        "イベント引数は、`ISortingExpression` とグループ化/グループ解除操作と関連する `IgxColumnComponent` を含む `expressions`、`groupedColumns`、`ungroupedColumns` プロパティを提供します。",
+                        "`groupedColumns` と `ungroupedColumns` は新しく変更 (**最近**のグループ化/グループ解除操作によって影響) された列のみ表示し、現在グループ化/グループ解除されているすべての列ではありません。",
+                        "列。",
+                        "```typescript",
+                        "groupingDone(event: IGroupingDoneEventArgs){",
+                        "    const expressions = event.expressions;",
+                        "    //新しくグループ化された列",
+                        "    const groupedColumns = event.groupedColumns;",
+                        "    //新しくグループ解除された列",
+                        "    const ungroupedColumns = event.ungroupedColumns;",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"localData\" (onGroupingDone)=\"groupingDone($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "autoGenerate": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -135,6 +129,40 @@
                                 "tagName": "備考"
                             }
                         },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "`IgxGridComponent` 列を自動生成する @Input プロパティ。",
+                        "デフォルト値は False です。"
+                    ]
+                }
+            },
+            "emptyGridTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridBaseComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "`IgxGridComponent` が空の場合にカスタム テンプレートを設定する @Input プロパティ。",
+                        "```html",
+                        "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [emptyGridTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "loadingGridTemplate": {
+                "comment": {
+                    "tags": {
                         "memberof": {
                             "comment": {
                                 "text": "IgxGridBaseComponent",
@@ -251,8 +279,8 @@
                 "comment": {
                     "shortText": [
                         "グリッドの初期化後に列が自動で再生成されることを許可するプロパティ。",
-                        "これにより、グリッドのリモート データへのバインドと列の自動生成を同時に行うことができます。",
-                        "新しいデータが割り当てらる時に列が再生成されないため、列が生成される後このプロパティは無効にされることに注意してください。",
+                        "これにより、グリッドのリモート データへのバインドと列の自動生成を同ときに行うことができます。",
+                        "新しいデータが割り当てらるときに列が再生成されないため、列が生成される後このプロパティは無効にされることに注意してください。",
                         "```typescript",
                         " this.grid.shouldGenerate = true;",
                         " this.remoteData = this.remoteService.remoteData;",
@@ -541,7 +569,7 @@
                     ]
                 }
             },
-			"onRowEditEnter": {
+            "onRowEditEnter": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -580,7 +608,7 @@
                     ]
                 }
             },
-			"onRowEdit": {
+            "onRowEdit": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -617,12 +645,12 @@
                     ],
                     "shortText": [
                         "[rowEditable]=\"true\" & `endEdit(true)` が呼び出されるときに、イベントを発生する @Output プロパティ。",
-                        "編集モードで編集した行の編集禁止セルを選択し、行の編集時にページング操作をして、列のサイズ変更時、列ピン固定時、rowEditingOverlay 内で `Commit` ボタンを押下また移動時、またはセル編集時に `Enter` キーを押すと発生されます。",
+                        "編集モード中に行を変更した時、編集された行内の編集が無効なセルを選択した時、ページング操作時、列のサイズ変更時、ピン固定時、移動時、rowEditingOverlay 内で `Done` ボタンを押したとき、またはセルの編集中に `Enter` キーを押したときに発生します。",
                         "このイベントはキャンセルできます。"
                     ]
                 }
             },
-			"onRowEditCancel": {
+            "onRowEditCancel": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -659,7 +687,7 @@
                     ],
                     "shortText": [
                         "[rowEditable]=\"true\" & `endEdit(false)` が呼び出されるときにイベントを発生する @Output プロパティ。",
-                        "セル編集のときに `Esc` キーを押して、行編集オーバーレイにキャンセル ボタンを押すと発生されます。",
+                        "セル編集のときに `Esc` キーを押して、行編集オーバーレイに [キャンセル] ボタンを押すと発生されます。",
                         "このイベントはキャンセルできます。"
                     ]
                 }
@@ -678,7 +706,6 @@
                         "グリッド列が初期化されるときに発生します。列オブジェクトを返します。",
                         "```html",
                         "<igx-grid #grid [data]=\"localData\" [onColumnInit]=\"initColumns($event)\" [autoGenerate]=\"true\"></igx-grid>",
-
                         "```",
                         "```typescript",
                         "initColumns(event: IgxColumnComponent) {",
@@ -809,37 +836,6 @@
                     ]
                 }
             },
-            "onGroupingDone": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Group By API を使用して新しい `IgxColumnComponent` のグループ化/グループ解除、または複数列がグループ化/グループ化解除されたときに発生します。",
-                        "groupBy()` または `clearGrouping()` API メソッドを呼び出して引数として渡すことにより複数列がｚ一度にグループ化された場合に `onGroupingDone` イベントは一度のみ発生します。",
-                        "イベント引数は、`ISortingExpression` とグループ化/グループ解除操作と関連する `IgxColumnComponent` を含む `expressions`、`groupedColumns`、`ungroupedColumns` プロパティを提供します。",
-                        "`groupedColumns` と `ungroupedColumns` は新しく変更 (**最近**のグループ化/グループ解除操作によって影響) された列のみ表示し、現在グループ化/グループ解除されているすべての列ではありません。",
-                        "columns.",
-                        "```typescript",
-                        "groupingDone(event: IGroupingDoneEventArgs){",
-                        "    const expressions = event.expressions;",
-                        "    //新しくグループ化された列",
-                        "    const groupedColumns = event.groupedColumns;",
-                        "    //新しくグループ解除された列",
-                        "    const ungroupedColumns = event.ungroupedColumns;",
-                        "}",
-                        "```",
-                        "```html",
-                        "<igx-grid #grid [data]=\"localData\" (onGroupingDone)=\"groupingDone($event)\" [autoGenerate]=\"true\"></igx-grid>",
-                        "```"
-                    ]
-                }
-            },
             "onDataPreLoad": {
                 "comment": {
                     "tags": {
@@ -851,7 +847,7 @@
                         }
                     },
                     "shortText": [
-                        "新しいデータの塊が可視化から読み込まれたときに発生されます。",
+                        "新しいデータ チャンクが仮想化から読み込まれたときに発生されます。",
                         "```typescript",
                         " <igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onDataPreLoad)='handleDataPreloadEvent()'></igx-grid>",
                         "```"
@@ -1061,7 +1057,7 @@
                 "comment": {
                     "shortText": [
                         "コピー操作が実行されたときに発生します。",
-                        "[`clipboardOptions`]{@link IgxGridBaseComponent#clipboardOptions} でコピー動作が有効になっている場合にのみ発生します。"
+                        "[`clipboardOptions`]{@link IgxGridBaseComponent#clipboardOptions} を通じてコピー動作が有効になっている場合にのみ発生します。"
                     ]
                 }
             },
@@ -1168,6 +1164,119 @@
             }
         },
         "methods": {
+            "groupBy": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "新しい `IgxColumnComponent` を提供された式によってグループ化、または既存の式を変更します。",
+                        "`ISortingExpression` の配列が渡されると複数列を一度にグループ化できるようになります。",
+                        "このメソッドが同じ引数で複数回呼びだされた場合、onGroupingDone イベントは 1 度のみ発生します。",
+                        "```typescript",
+                        "this.grid.groupBy({ fieldName: name, dir: SortingDirection.Asc, ignoreCase: false });",
+                        "this.grid.groupBy([",
+                        "{ fieldName: name1, dir: SortingDirection.Asc, ignoreCase: false },",
+                        "{ fieldName: name2, dir: SortingDirection.Desc, ignoreCase: true },",
+                        "{ fieldName: name3, dir: SortingDirection.Desc, ignoreCase: false }",
+                        "]);",
+                        "```"
+                    ]
+                }
+            },
+            "clearGrouping": {
+                "comment": {
+                    "shortText": [
+                        "パラメーターが渡されない場合、グリッドのグループ化をすべてクリアします。",
+                        "パラメーターが提供された場合、特定の列または列の配列のグループ化をクリアします。",
+                        "```typescript",
+                        "this.grid.clearGrouping(); //グループ化をすべてクリアします。",
+                        "this.grid.clearGrouping(\"ID\"); //単一の列のグループ化を解除します。",
+                        "this.grid.clearGrouping([\"ID\", \"Column1\", \"Column2\"]); //複数列のグループ化を解除します。",
+                        "```"
+                    ]
+                }
+            },
+            "isExpandedGroup": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "グループが展開されているかどうかを返します。",
+                        "```typescript",
+                        "public groupRow: IGroupByRecord;",
+                        "const expandedGroup = this.grid.isExpandedGroup(this.groupRow);",
+                        "```"
+                    ]
+                }
+            },
+            "toggleGroup": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "グループの展開状態を切り替えます。",
+                        "```typescript",
+                        "public groupRow: IGroupByRecord;",
+                        "const toggleExpGroup = this.grid.toggleGroup(this.groupRow);",
+                        "```"
+                    ]
+                }
+            },
+            "fullyExpandGroup": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "指定したグループとそのすべての親グループを展開します。",
+                        "```typescript",
+                        "public groupRow: IGroupByRecord;",
+                        "this.grid.fullyExpandGroup(this.groupRow);",
+                        "```"
+                    ]
+                }
+            },
+            "toggleAllGroupRows": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxGridComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "すべてのグループ行の展開状態を再帰的に切り替えます。",
+                        "```typescript",
+                        "this.grid.toggleAllGroupRows;",
+                        "```"
+                    ]
+                }
+            },
             "getSelectedData": {
                 "comment": {
                     "tags": {
@@ -1184,7 +1293,7 @@
                     "tags": {
                         "memberof": {
                             "comment": {
-                                "text": "IgxGridComponent",
+                                "text": "IgxGridBaseComponent",
                                 "tagName": "次のメンバー:"
                             }
                         }
@@ -1527,82 +1636,6 @@
                     ]
                 }
             },
-            "groupBy": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "新しい `IgxColumnComponent` を提供された式によってグループ化、または既存の式を変更します。",
-                        "`ISortingExpression` の配列が渡されると複数列を一度にグループ化できるようになります。",
-                        "このメソッドが同じ引数で複数回呼びだされた場合、onGroupingDone イベントは 1 度のみ発生します。",
-                        "```typescript",
-                        "this.grid.groupBy({ fieldName: name, dir: SortingDirection.Asc, ignoreCase: false });",
-                        "this.grid.groupBy([",
-                        "{ fieldName: name1, dir: SortingDirection.Asc, ignoreCase: false },",
-                        "{ fieldName: name2, dir: SortingDirection.Desc, ignoreCase: true },",
-                        "{ fieldName: name3, dir: SortingDirection.Desc, ignoreCase: false }",
-                        "]);",
-                        "```"
-                    ]
-                }
-            },
-            "clearGrouping": {
-                "comment": {
-                    "shortText": [
-                        "パラメーターが渡されない場合、グリッドのグループ化をすべてクリアします。",
-                        "パラメーターが提供された場合、特定の列のグループ化をクリアします。",
-                        "```typescript",
-                        "this.grid.clearGrouping(); //clears all grouping",
-                        "this.grid.clearGrouping(\"ID\"); //ungroups a single column",
-                        "this.grid.clearGrouping([\"ID\", \"Column1\", \"Column2\"]); //ungroups multiple columns",
-                        "```"
-                    ]
-                }
-            },
-            "isExpandedGroup": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "グループが展開されているかどうかを返します。",
-                        "```typescript",
-                        "public groupRow: IGroupByRecord;",
-                        "const expandedGroup = this.grid.isExpandedGroup(this.groupRow);",
-                        "```"
-                    ]
-                }
-            },
-            "toggleGroup": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "グループの展開状態を切り替えます。",
-                        "```typescript",
-                        "public groupRow: IGroupByRecord;",
-                        "const toggleExpGroup = this.grid.toggleGroup(this.groupRow);",
-                        "```"
-                    ]
-                }
-            },
             "filter": {
                 "comment": {
                     "tags": {
@@ -1760,43 +1793,6 @@
                     ]
                 }
             },
-            "fullyExpandGroup": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "指定したグループとそのすべての親グループを展開します。",
-                        "```typescript",
-                        "public groupRow: IGroupByRecord;",
-                        "this.grid.fullyExpandGroup(this.groupRow);",
-                        "```"
-                    ]
-                }
-            },
-            "toggleAllGroupRows": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "すべてのグループ行の展開状態を再帰的に切り替えます。",
-                        "```typescript",
-                        "this.grid.toggleAllGroupRows;",
-                        "```"
-                    ]
-                }
-            },
             "reflow": {
                 "comment": {
                     "tags": {
@@ -1936,7 +1932,7 @@
                     "tags": {
                         "memberof": {
                             "comment": {
-                                "text": "IgxGridComponent",
+                                "text": "IgxGridBaseComponent",
                                 "tagName": "次のメンバー:"
                             }
                         }
@@ -2110,7 +2106,7 @@
                     ]
                 }
             },
-		    "endEdit": {
+            "endEdit": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -2157,7 +2153,7 @@
                             }
                         },
                         "shortText": [
-                            "`id` 属性の値を設定する @Input プロパティ。提供されていない場合、自動的に生成されます。",
+                            "`id` 属性の値を設定する @Input プロパティ。提供されていない場合は、自動的に生成されます。",
                             "```html",
                             "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
@@ -2167,11 +2163,443 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "`id` 属性の値を設定する @Input プロパティ。提供されていない場合、自動的に生成されます",
+                            "`id` 属性の値を設定する @Input プロパティ。提供されていない場合は、自動的に生成されます。",
                             "```html",
                             "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
                             "```"
                         ]
+                    }
+                }
+            },
+            "data": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。",
+                            "```html",
+                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。",
+                            "```html",
+                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filteredData": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` のフィルター済みデータを含むオブジェクトの配列を返します。",
+                            "```typescript",
+                            "let filteredData = this.grid.filteredData;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` のフィルター済みデータを含むオブジェクトの配列を設定します。",
+                            "```typescript",
+                            "this.grid.filteredData = [{",
+                            "      ID: 1,",
+                            "      Name: \"A\"",
+                            "}];",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "totalItemCount": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "データ ソース内のレコードの総数を設定します。",
+                            "このプロパティは、リモート グリッド仮想化がリモート データにバインドされているときに機能するために必要です。",
+                            "```typescript",
+                            "this.grid1.totalItemCount = 55;",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "データ ソース内のレコードの総数を返します。",
+                            "リモートのグリッド仮想化のみに操作します。",
+                            "```typescript",
+                            "const itemCount = this.grid1.totalItemCount;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "groupingExpressions": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "text": [
+                            "双方向データ バインディング。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpressions)]=\"model.groupingExpressions\"></igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "`IgxGridComponent` のグループ化状態を返します。",
+                            "```typescript",
+                            "let groupByState = this.grid.groupingExpressions;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "text": [
+                            "双方向データ バインディング。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpressions)]=\"model.groupingExpressions\"></igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "`IgxGridComponent` の高度なフィルタリング状態を設定します。",
+                            "```typescript",
+                            "this.grid.groupingExpressions = [{",
+                            "    fieldName: \"ID\",",
+                            "    dir: SortingDirection.Asc,",
+                            "    ignoreCase: false",
+                            "}];",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "groupingExpansionState": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "text": [
+                            "双方向データ バインディング。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpansionState)]=\"model.groupingExpansionState\"></igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "グループ行の展開状態のリストを返します。",
+                            "デフォルト状態と異なる groupsExpanded によって制御されるか、ユーザーが変更された状態のみを含みます。",
+                            "展開状態 (expanded: ブール値) およびグループ行の一意識別子 (Array) を含みます。",
+                            "```typescript",
+                            "const groupExpState = this.grid.groupingExpansionState;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "text": [
+                            "双方向データ バインディング。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpansionState)]=\"model.groupingExpansionState\"></igx-grid>",
+                            "```"
+                        ],
+                        "shortText": [
+                            "グループ行の展開状態のリストを設定します。",
+                            "```typescript",
+                            "     this.grid.groupingExpansionState = [{",
+                            "     expanded: false,",
+                            "     hierarchy: [{ fieldName: 'ID', value: 1 }]",
+                            "  }];",
+                            "// `IgxGridRowComponent` を取得するため DataUtil.getHierarchy(groupRow) を使用できます。",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "hideGroupedColumns": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "グループ化された列が非表示に設定されるかどうかの @Input プロパティ。",
+                            "デフォルト値は \"false\" です。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"localData\" [hideGroupedColumns]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "グループ化された列が非表示に設定されるかどうかの @Input プロパティ。",
+                            "デフォルト値は \"false\" です。",
+                            "```html",
+                            "<igx-grid #grid [data]=\"localData\" [hideGroupedColumns]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "dropAreaMessage": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "列にドラッグできる GroupBy のドロップ領域に表示されるメッセージを設定する @Input プロパティ。",
+                            "注: GroupBy 領域を表示するためにグリッドでグループ可能な列が 1 列以上必要です。",
+                            "```html",
+                            "<igx-grid dropAreaMessage=\"Drop here to group!\">",
+                            "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
+                            "</igx-grid>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "列にドラッグできる GroupBy のドロップ領域に表示されるメッセージを返すアクセサー。"
+                    }
+                }
+            },
+            "groupsRowList": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "すべてのグループ行のリスト。",
+                            "```typescript",
+                            "const groupList = this.grid.groupsRowList;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "groupRowTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` のグループ行のテンプレート参照を返します。",
+                            "```",
+                            "const groupRowTemplate = this.grid.groupRowTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` のグループ `IgxGridRowComponent` のテンプレート参照を設定します。",
+                            "```typescript",
+                            "this.grid.groupRowTemplate = myRowTemplate.",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "groupAreaTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` のグループ領域のテンプレート参照を返します。",
+                            "```typescript",
+                            "const groupAreaTemplate = this.grid.groupAreaTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` のグループ領域のテンプレート参照を設定します。",
+                            "```typescript",
+                            "this.grid.groupAreaTemplate = myAreaTemplate.",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "hasGroupableColumns": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "`IgxGridComponent` にグループ化可能な列があるかどうかを返します。",
+                            "```typescript",
+                            "const groupableGrid = this.grid.hasGroupableColumns;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "dropAreaVisible": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "グリッドのグループ化ドロップ領域が表示されるかどうかを返します。",
+                            "```typescript",
+                            "const dropVisible = this.grid.dropAreaVisible;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "リソース文字列を設定するアクセサー。",
+                            "デフォルトで EN リソースを使用します。"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "リソース文字列を返すアクセサー。"
                     }
                 }
             },
@@ -2320,287 +2748,6 @@
                 "setter": {
                     "comment": {
                         "shortText": "グリッドのロケールを設定します。"
-                    }
-                }
-            },
-            "data": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridComponent` にデータの配列をインポートする @Input プロパティ。",
-                            "```html",
-                            "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "filteredData": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のフィルター済みデータを含むオブジェクトの配列を返します。",
-                            "```typescript",
-                            "let filteredData = this.grid.filteredData;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のフィルター済みデータを含むオブジェクトの配列を設定します。",
-                            "```typescript",
-                            "this.grid.filteredData = [{",
-                            "      ID: 1,",
-                            "      Name: \"A\"",
-                            "}];",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "totalItemCount": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "データ ソース内のレコードの総数を設定します。",
-                            "このプロパティは、リモート グリッド仮想化がリモート データにバインドされているときに機能するために必要です。",
-                            "```typescript",
-                            "this.grid1.totalItemCount = 55;",
-                            "```"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                }
-            },
-            "shortText": [
-                "データ ソース内のレコードの総数を返します。",
-                "リモートのグリッド仮想化のみに操作します。",
-                "```typescript",
-                "const itemCount = this.grid1.totalItemCount;",
-                "```"
-            ]
-        }
-    }
-},
-            "groupingExpressions": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpressions)]=\"model.groupingExpressions\"></igx-grid>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "`IgxGridComponent` のグループ化状態を返します。",
-                            "```typescript",
-                            "let groupByState = this.grid.groupingExpressions;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpressions)]=\"model.groupingExpressions\"></igx-grid>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "`IgxGridComponent` の状態によってグループ化を設定し、適切な引数で `onGroupingDone` イベントを発生します。",
-                            "```typescript",
-                            "this.grid.groupingExpressions = [{",
-                            "    fieldName: \"ID\",",
-                            "    dir: SortingDirection.Asc,",
-                            "    ignoreCase: false",
-                            "}];",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "groupingExpansionState": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpansionState)]=\"model.groupingExpansionState\"></igx-grid>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "グループ行の展開状態のリストを返します。",
-                            "デフォルト状態と異なる groupsExpanded によって制御されるか、ユーザーが変更された状態のみを含みます。",
-                            "展開状態 (expanded: ブール値) およびグループ行の一意識別子 (Array) を含みます。",
-                            "```typescript",
-                            "const groupExpState = this.grid.groupingExpansionState;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpansionState)]=\"model.groupingExpansionState\"></igx-grid>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "グループ行の展開状態のリストを設定します。",
-                            "```typescript",
-                            "     this.grid.groupingExpansionState = [{",
-                            "     expanded: false,",
-                            "     hierarchy: [{ fieldName: 'ID', value: 1 }]",
-                            "  }];",
-                            "// `IgxGridRowComponent` を取得するため DataUtil.getHierarchy(groupRow) を使用できます。",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "hideGroupedColumns": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "グループ化された列が非表示に設定されるかどうかの @Input プロパティ。",
-                            "デフォルト値は \"false\"です。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"localData\" [hideGroupedColumns]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "グループ化された列が非表示に設定されるかどうかの @Input プロパティ。",
-                            "デフォルト値は \"false\"です。",
-                            "```html",
-                            "<igx-grid #grid [data]=\"localData\" [hideGroupedColumns]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "dropAreaMessage": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "列にドラッグできる GroupBy のドロップ領域に表示されるメッセージを設定する @Input プロパティ。",
-                            "注: GroupBy 領域を表示するためにグリッドでグループ可能な列が 1 列以上必要です。",
-                            "```html",
-                            "<igx-grid dropAreaMessage=\"Drop here to group!\">",
-                            "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
-                            "</igx-grid>",
-                            "```"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "shortText": "列にドラッグできる GroupBy のドロップ領域に表示されるメッセージを返すアクセサー。"
                     }
                 }
             },
@@ -3146,7 +3293,7 @@
                     }
                 }
             },
-			"allowFiltering": {
+            "allowFiltering": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -3458,26 +3605,6 @@
                             "現在描画されている `IgxGridRowComponent` のリスト。",
                             "```typescript",
                             "const dataList = this.grid.dataRowList;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "groupsRowList": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "すべてのグループ行のリスト。",
-                            "```typescript",
-                            "const groupList = this.grid.groupsRowList;",
                             "```"
                         ]
                     }
@@ -4012,82 +4139,6 @@
                     }
                 }
             },
-            "groupRowTemplate": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のグループ行のテンプレート参照を返します。",
-                            "```",
-                            "const groupRowTemplate = this.grid.groupRowTemplate;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のグループ `IgxGridRowComponent` のテンプレート参照を設定します。",
-                            "```typescript",
-                            "this.grid.groupRowTemplate = myRowTemplate.",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "groupAreaTemplate": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のグループ領域のテンプレート参照を返します。",
-                            "```typescript",
-                            "const groupAreaTemplate = this.grid.groupAreaTemplate;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` のグループ領域のテンプレート参照を設定します。",
-                            "```typescript",
-                            "this.grid.groupAreaTemplate = myAreaTemplate.",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "defaultRowHeight": {
                 "getter": {
                     "comment": {
@@ -4385,61 +4436,6 @@
                             "`IgxGridComponent` の合計幅を返します。",
                             "```typescript",
                             "const gridWidth = this.grid.totalWidth;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "dropAreaVisible": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "グリッドのグループ化ドロップ領域が表示されるかどうかを返します。",
-                            "```typescript",
-                            "const dropVisible = this.grid.dropAreaVisible;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "resourceStrings": {
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "リソース文字列を設定するアクセサー。",
-                            "デフォルトで EN リソースを使用します。"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "shortText": "リソース文字列を返すアクセサー。"
-                    }
-                }
-            },
-            "hasGroupableColumns": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxGridComponent` にグループ化可能な列があるかどうかを返します。",
-                            "```typescript",
-                            "const groupableGrid = this.grid.hasGroupableColumns;",
                             "```"
                         ]
                     }
