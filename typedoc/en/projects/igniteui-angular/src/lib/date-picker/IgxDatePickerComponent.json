@@ -1,0 +1,874 @@
+{
+    "IgxDatePickerComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxDatePickerModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-calendar-theme, igx-icon-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Scheduling",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "datepicker, calendar, schedule, date",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-date-picker [(ngModel)]=\"selectedDate\"></igx-date-picker>",
+                            "```"
+                        ],
+                        "tagName": "example"
+                    }
+                }
+            },
+            "shortText": "Date Picker displays a popup calendar that lets users select a single date."
+        },
+        "properties": {
+            "label": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "The default label is 'Date'.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [label]=\"Calendar\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the `IgxDatePickerComponent` label."
+                }
+            },
+            "labelVisibility": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "By default the visibility is set to true.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": "<igx-date-picker [labelVisibility]=\"false\"></igx-date-picker>",
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the `IgxDatePickerComponent` label visibility."
+                }
+            },
+            "locale": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default locale is en.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker locale=\"ja-JP\" [value]=\"date\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the locales."
+                }
+            },
+            "weekStart": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [weekStart]=\"WEEKDAYS.FRIDAY\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets on which day the week starts."
+                }
+            },
+            "hideOutsideDays": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Apllies to dates that are out of the current month.",
+                                    "Default value is `false`."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "let hideOutsideDays = this.datePicker.hideOutsideDays;",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets whether the inactive dates will be hidden."
+                }
+            },
+            "monthsViewNumber": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default value is `1`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "let monthViewsDisplayed = this.datePicker.monthsViewNumber;",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the number of month views displayed."
+                }
+            },
+            "mask": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "let mask = this.datePicker.mask;",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the date mask of the `IgxDatePickerComponent` when in editable dropdown mode."
+                }
+            },
+            "id": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "If not provided it will be automatically generated.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [id]=\"'igx-date-picker-3'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the value of `id` attribute."
+                }
+            },
+            "formatter": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [value]=\"date\" [formatter]=\"formatter\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a custom formatter function on the selected or passed date."
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [disabled]=\"'true'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Enables/Disables the `IgxDatePickerComponent`."
+                }
+            },
+            "vertical": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [vertical]=\"'true'\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the orientation of the `IgxDatePickerComponent` header."
+                }
+            },
+            "todayButtonLabel": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker cancelButtonLabel=\"cancel\" todayButtonLabel=\"Tomorrow\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the today button's label."
+                }
+            },
+            "cancelButtonLabel": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker cancelButtonLabel=\"Close\" todayButtonLabel=\"Today\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "*Gets/Sets the cancel button's label."
+                }
+            },
+            "mode": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker mode=\"dropdown\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the interaction mode - dialog or drop down."
+                }
+            },
+            "isSpinLoop": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [isSpinLoop]=\"false\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets whether date should spin continuously or stop when min/max is reached."
+                }
+            },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
+                                    "//..",
+                                    "<igx-date-picker [outlet]=\"outlet\"></igx-date-picker>",
+                                    "//..",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the container used for the popup element."
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "shortText": "Emitted when the `IgxDatePickerComponent` calendar is opened."
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "shortText": "Emitted after the `IgxDatePickerComponent` is closed."
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "shortText": "Emitted when the `IgxDatePickerComponent` is being closed."
+                }
+            },
+            "onSelection": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (onSelection)=\"selection($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when selection is made in the calendar."
+                }
+            },
+            "valueChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (valueChange)=\"valueChanged($event)\" mode=\"dropdown\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when date picker value is changed."
+                }
+            },
+            "onDisabledDate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (onDisabledDate)=\"onDisabledDate($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the user types/spins to a disabled date in the date-picker editor."
+                }
+            },
+            "onValidationFailed": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (onValidationFailed)=\"onValidationFailed($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the user types/spins invalid date in the date-picker editor."
+                }
+            }
+        },
+        "methods": {
+            "writeValue": {
+                "comment": {
+                    "parameters": {
+                        "value": {
+                            "comment": {
+                                "text": "The date you want to select."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.datePicker.writeValue(this.date);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "{@link IgxDatePickerComponent}",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": "Sets the selected date."
+                }
+            },
+            "triggerTodaySelection": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Changes the input field value, @calendar.viewDate and @calendar.value.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.datePicker.triggerTodaySelection();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Selects today's date from calendar."
+                }
+            },
+            "selectDate": {
+                "comment": {
+                    "parameters": {
+                        "date": {
+                            "comment": {
+                                "text": "passed date that has to be set to the calendar."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Calling this method will emit the @calendar.onSelection event,",
+                                    "which will fire @handleSelection method."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.datePicker.selectDate(this.date);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Change the calendar selection."
+                }
+            },
+            "deselectDate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.datePicker.deselectDate();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselects the calendar date."
+                }
+            },
+            "openDialog": {
+                "comment": {
+                    "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": "HTMLElement - the target element to use for positioning the drop down container according to"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.datePicker.openDialog(target);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Opens the date picker drop down or dialog."
+                }
+            }
+        },
+        "accessors": {
+            "formatOptions": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let formatOptions = this.datePicker.formatOptions;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the format options of the `IgxDatePickerComponent`."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "this.datePicker.formatOptions = {  day: \"numeric\",  month: \"long\", weekday: \"long\", year: \"numeric\"};",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Sets the format options of the `IgxDatePickerComponent`."
+                    }
+                }
+            },
+            "format": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let format = this.datePicker.format;",
+                                        "this.datePicker.format = 'yyyy-M-d';",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the date display format of the `IgxDatePickerComponent` in dropdown mode."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the date display format of the `IgxDatePickerComponent` in dropdown mode."
+                    }
+                }
+            },
+            "formatViews": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let formatViews = this.datePicker.formatViews;",
+                                        " this.datePicker.formatViews = {day:false, month: false, year:false};",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the format views of the `IgxDatePickerComponent`."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the format views of the `IgxDatePickerComponent`."
+                    }
+                }
+            },
+            "disabledDates": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let disabledDates = this.datepicker.disabledDates;",
+                                        "this.datePicker.disabledDates = [ {type: DateRangeType.Weekends}, ...];",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the disabled dates descriptors."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the disabled dates descriptors."
+                    }
+                }
+            },
+            "specialDates": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let specialDates = this.datepicker.specialDates;",
+                                        "this.datePicker.specialDates = [ {type: DateRangeType.Weekends}, ... ];",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the special dates descriptors."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the special dates descriptors."
+                    }
+                }
+            },
+            "modalOverlaySettings": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the modal overlay settings."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the modal overlay settings."
+                    }
+                }
+            },
+            "dropDownOverlaySettings": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the drop-down overlay settings."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the drop-down overlay settings."
+                    }
+                }
+            },
+            "displayData": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let selectedDate = this.datePicker.displayData;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the formatted date when `IgxDatePickerComponent` is in dialog mode."
+                    }
+                }
+            },
+            "template": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let template = this.template();",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the input group template."
+                    }
+                }
+            },
+            "context": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Gets the context passed to the input group template."
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [value]=\"date\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the selected date."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Gets/Sets the selected date."
+                    }
+                }
+            },
+            "onOpen": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use 'onOpened' instead.",
+                                        "An event that is emitted when the `IgxDatePickerComponent` calendar is opened."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "public open(event){",
+                                        "   alert(\"The date-picker calendar has been opened!\");",
+                                        "}",
+                                        "```",
+                                        "```html",
+                                        "<igx-date-picker (onOpen)=\"open($event)\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        }
+                    }
+                },
+                "setter": {
+                    "comment": {}
+                }
+            },
+            "onClose": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use 'onClosed' instead.",
+                                        "\"An event that is emitted when the `IgxDatePickerComponent` is closed."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "public close(event){",
+                                        "   alert(\"The date-picker has been closed!\");",
+                                        "}",
+                                        "```",
+                                        "```html",
+                                        "<igx-date-picker (onClose)=\"close($event)\" cancelButtonLabel=\"cancel\" todayButtonLabel=\"today\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        }
+                    }
+                },
+                "setter": {
+                    "comment": {}
+                }
+            }
+        }
+    }
+}

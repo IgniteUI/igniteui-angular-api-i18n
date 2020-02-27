@@ -1,0 +1,180 @@
+{
+    "IgxOverlayService": {
+        "comment": {
+            "shortText": [
+                "[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/overlay_main.html)",
+                "The overlay service allows users to show components on overlay div above all other elements in the page."
+            ]
+        },
+        "properties": {
+            "onOpening": {
+                "comment": {
+                    "shortText": [
+                        "Emitted before the component is opened.",
+                        "```typescript",
+                        "onOpening(event: OverlayCancelableEventArgs){",
+                        "    const onOpening = event;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onAppended": {
+                "comment": {
+                    "shortText": [
+                        "Emitted after the component is appended to the overlay, and before animations are started.",
+                        "```typescript",
+                        "onAppended(event: OverlayEventArgs){",
+                        "    const onAppended = event;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "shortText": [
+                        "Emitted after the component is opened and all animations are finished.",
+                        "```typescript",
+                        "onOpened(event: OverlayEventArgs){",
+                        "    const onOpened = event;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "shortText": [
+                        "Emitted before the component is closed.",
+                        "```typescript",
+                        "onClosing(event: OverlayCancelableEventArgs){",
+                        "    const onClosing = event;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "shortText": [
+                        "Emitted after the component is closed and all animations are finished.",
+                        "```typescript",
+                        "onClosed(event: OverlayEventArgs){",
+                        "    const onClosed = event;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onAnimation": {
+                "comment": {
+                    "shortText": [
+                        "Emitted before animation is started",
+                        "```typescript",
+                        "onAnimation(event: OverlayAnimationEventArgs){",
+                        "    const onAnimation = event;",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "attach": {
+                "comment": {
+                    "returns": "Id of the created overlay. Valid until `onClosed` is emitted.\n",
+                    "parameters": {
+                        "component": {
+                            "comment": {
+                                "text": "Component Type to show in overlay"
+                            }
+                        },
+                        "settings": {
+                            "comment": {
+                                "text": "Display settings for the overlay, such as positioning and scroll/close behavior."
+                            }
+                        },
+                        "moduleRef": {
+                            "comment": {
+                                "text": [
+                                    "Optional reference to an object containing Injector and ComponentFactoryResolver",
+                                    "that can resolve the component's factory"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Generates Id. Provide this Id when call `show(id, settings?)` method"
+                }
+            },
+            "show": {
+                "comment": {
+                    "returns": "Id of the created overlay. Valid until `onClosed` is emitted.\n```typescript\nthis.overlay.show(element, settings);\n```",
+                    "parameters": {
+                        "component": {
+                            "comment": {
+                                "text": "ElementRef or Component Type to show in overlay"
+                            }
+                        },
+                        "settings": {
+                            "comment": {
+                                "text": "Display settings for the overlay, such as positioning and scroll/close behavior."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "Use `attach(component)` to obtain an Id. Then `show(id, settings?)` with provided Id.",
+                                "tagName": "deprecated"
+                            }
+                        }
+                    },
+                    "shortText": "Shows the provided component."
+                }
+            },
+            "hide": {
+                "comment": {
+                    "shortText": [
+                        "Hides the component with the ID provided as a parameter.",
+                        "```typescript",
+                        "this.overlay.hide(id);",
+                        "```"
+                    ]
+                }
+            },
+            "hideAll": {
+                "comment": {
+                    "shortText": [
+                        "Hides all the components and the overlay.",
+                        "```typescript",
+                        "this.overlay.hideAll();",
+                        "```"
+                    ]
+                }
+            },
+            "reposition": {
+                "comment": {
+                    "shortText": [
+                        "Repositions the component with ID provided as a parameter.",
+                        "```typescript",
+                        "this.overlay.reposition(id);",
+                        "```"
+                    ]
+                }
+            },
+            "setOffset": {
+                "comment": {
+                    "shortText": [
+                        "Offsets the content along the corresponding axis by the provided amount",
+                        "```typescript",
+                        "this.overlay.setOffset(id, deltaX, deltaY);",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {}
+    }
+}

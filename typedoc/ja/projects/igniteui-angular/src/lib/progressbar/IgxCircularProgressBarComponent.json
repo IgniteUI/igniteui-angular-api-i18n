@@ -1,0 +1,217 @@
+{
+    "IgxCircularProgressBarComponent": {
+        "properties": {
+            "onProgressChanged": {
+                "comment": {
+                    "shortText": [
+                        "進行状況が変更された後にトリガーするイベント。",
+                        "```typescript",
+                        "public progressChange(event) {",
+                        "   alert(\"Progress made!\");",
+                        "}",
+                        "//...",
+                        "```",
+                        "```html",
+                        "<igx-circular-bar [value]=\"currentValue\" (onProgressChanged)=\"progressChange($event)\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "shortText": [
+                        "`id` 属性の値を設定する @Input プロパティ。提供されていない場合、自動的に生成されます。",
+                        "```html",
+                        "<igx-circular-bar [id]=\"'igx-circular-bar-55'\" [value]=\"50\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "indeterminate": {
+                "comment": {
+                    "shortText": [
+                        "`indeterminate` 属性の値を設定する @Input プロパティ。指定しない場合は、自動的に false に設定されます。",
+                        "```html",
+                        "<igx-circular-bar [indeterminate]=\"true\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "textVisibility": {
+                "comment": {
+                    "shortText": [
+                        "テキストの表示状態を設定します。デフォルトで true に設定されます。",
+                        "```html",
+                        "<igx-circular-bar [textVisibility]=\"false\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "text": {
+                "comment": {
+                    "shortText": [
+                        "`igxCircularBar` に表示するテキストを取得または設定します。",
+                        "```html",
+                        "<igx-circular-bar text=\"Progress\"></igx-circular-bar>",
+                        "```",
+                        "```typescript",
+                        "let text = this.circularBar.text;",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "animate": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxCircularProgressBarComponent` に進行状況でアニメーションを再生します。デフォルトで true に設定されます。",
+                            "```html",
+                            "<igx-circular-bar [animate]=\"false\" [value]=\"50\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxCircularProgressBarComponent` にアニメーションがあるかどうかを true/false として返します。",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public animationStatus(event) {",
+                            "   let animationStatus = this.progressBar.animate;",
+                            "   alert(animationStatus);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "max": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "渡すことができる最大値を設定します。デフォルトで 100 に設定されます。",
+                            "```html",
+                            "<igx-circular-bar [max]=\"200\" [value]=\"0\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxCircularProgressBarComponent` の最大進行状況値を返します。",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public maxValue(event) {",
+                            "   let max = this.progressBar.max;",
+                            "   alert(max);",
+                            "}",
+                            "```",
+                            "```html",
+                            "<igx-circular-bar [max]=\"245\" [animate]=\"false\" [value]=\"currentValue\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "step": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxCircularProgressBarComponent` の進行状況インジケーターを更新する値を返します。",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public stepValue(event) {",
+                            "   let step = this.progressBar.step;",
+                            "   alert(step);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "進行状況インジケーターの更新量の値を設定します。デフォルト値は最大値の 1% です。",
+                            "```html",
+                            "<igx-circular-bar [striped]=\"false\" [max]=\"200\" [value]=\"0\" [step]=\"1\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "現在の `IgxCircularProgressBarComponent` 位置を示す値を返します。",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxCircularProgressBarComponent;",
+                            "public getValue(event) {",
+                            "   let value = this.progressBar.value;",
+                            "   alert(value);",
+                            "}",
+                            "```",
+                            "```html",
+                            "<button igxButton=\"fab\" igxRipple=\"\" (click)=\"getValue()\">Click</button>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "現在の `IgxCircularProgressBarComponent` 位置を示す値を設定します。",
+                            "```html",
+                            "<igx-circular-bar [value]=\"50\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "valueInPercent": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` 値をパーセンテージで返します。",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent; // IgxCircularProgressBarComponent",
+                            "public valuePercent(event){",
+                            "   let percentValue = this.progressBar.valueInPercent;",
+                            "   alert(percentValue);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` 値をパーセンテージで設定します。",
+                            "```typescript",
+                            "@ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent; // IgxCircularProgressBarComponent",
+                            "   public setValue(event){",
+                            "   this.progressBar.valueInPercent = 56;",
+                            "}",
+                            "//...",
+                            "```",
+                            "```html",
+                            "<button igxButton=\"fab\" igxRipple=\"\" (click)=\"setValue()\">setValue</button>",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

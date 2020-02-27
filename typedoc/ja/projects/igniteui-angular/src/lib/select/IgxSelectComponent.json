@@ -1,0 +1,361 @@
+{
+    "IgxSelectComponent": {
+        "comment": {
+            "text": [
+                "`igxSelect` は、単一項目の選択ができるドロップダウン リストの入力を提供します。",
+                "例:",
+                "```html",
+                "<igx-select #select1 [placeholder]=\"'Pick One'\">",
+                "  <label igxLabel>Select Label</label>",
+                "  <igx-select-item *ngFor=\"let item of items\" [value]=\"item.field\">",
+                "    {{ item.field }}",
+                "  </igx-select-item>",
+                "</igx-select>",
+                "```"
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Select** -",
+                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/select.html)"
+            ]
+        },
+        "properties": {
+            "placeholder": {
+                "comment": {
+                    "shortText": "入力 プレースホルダーを設定する @Input プロパティ。"
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "shortText": [
+                        "`IgxSelectComponent` を無効にする @Input プロパティ。",
+                        "```html",
+                        "<igx-select [disabled]=\"'true'\"></igx-select>",
+                        "```"
+                    ]
+                }
+            },
+            "overlaySettings": {
+                "comment": {
+                    "shortText": [
+                        "カスタム OverlaySettings `IgxSelectComponent` を設定する @Input プロパティ。",
+                        "```html",
+                        "<igx-select [overlaySettings] = \"customOverlaySettings\"></igx-select>",
+                        "```"
+                    ]
+                }
+            },
+            "type": {
+                "comment": {
+                    "shortText": [
+                        "選択のスタイル設定するを設定する @Input プロパティ。",
+                        "有効な値は `line`、 `box` および `border`。デフォルトは `line` です。",
+                        "```html",
+                        "<igx-select [type]=\"'box'\"></igx-select>",
+                        "```"
+                    ]
+                }
+            },
+            "toggleIconTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Typescript に設定",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.select.toggleIconTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-select #select>",
+                        "     ...",
+                        "     <ng-template igxSelectToggleIcon let-collapsed>",
+                        "         <igx-icon>{{ collapsed ? 'remove_circle' : 'remove_circle_outline'}}</igx-icon>",
+                        "     </ng-template>",
+                        " </igx-select>",
+                        "```"
+                    ],
+                    "shortText": "カスタム テンプレートがある場合、選択 TOGGLE (開く/閉じる)　ボタンを描画するために使用されるカスタム テンプレート。"
+                }
+            },
+            "headerTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Typescript に設定",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.select.headerTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-select #select>",
+                        "     ...",
+                        "     <ng-template igxSelectHeader>",
+                        "         <div class=\"select__header\">",
+                        "             This is a custom header",
+                        "         </div>",
+                        "     </ng-template>",
+                        " </igx-select>",
+                        "```"
+                    ],
+                    "shortText": "カスタム テンプレートがある場合は、select items リストのための HEADER の描画に使用されます。"
+                }
+            },
+            "footerTemplate": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// Typescript に設定",
+                        "const myCustomTemplate: TemplateRef<any> = myComponent.customTemplate;",
+                        "myComponent.select.footerTemplate = myCustomTemplate;",
+                        "```",
+                        "```html",
+                        "<!-- Set in markup -->",
+                        " <igx-select #select>",
+                        "     ...",
+                        "     <ng-template igxSelectFooter>",
+                        "         <div class=\"select__footer\">",
+                        "             This is a custom footer",
+                        "         </div>",
+                        "     </ng-template>",
+                        " </igx-select>",
+                        "```"
+                    ],
+                    "shortText": "カスタム テンプレートがある場合は、select items リストのための FOOTER の描画に使用されます。"
+                }
+            },
+            "onOpening": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onOpening)='handleOpening()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが開かれる前に発生されます。"
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onOpened)='handleOpened()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが開かれた後に発生されます。"
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onClosing)='handleClosing()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが閉じられる前に発生されます。"
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onClosed)='handleClosed()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが閉じた後に発生されます。"
+                }
+            },
+            "onSelection": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (onSelection)='handleSelection()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "選択を完了する前にアイテム選択が変更されるときに発生されます。"
+                }
+            }
+            
+        },
+        "methods": {
+            "open": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.select.open();",
+                        "```"
+                    ],
+                    "shortText": "選択されたのを開きます。"
+                }
+            },
+            "close": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.close();",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンを閉じます。"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.toggle();",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンを切り替えます。"
+                }
+            },
+            "setSelectedItem": {
+                "comment": {
+                    "parameters": {
+                        "index": {
+                            "comment": {
+                                "text": "選択する項目。ドロップダウンで *igxFor が使用されている場合は、データのインデックスを渡します。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "項目をインデックスで選択します。"
+                }
+            },
+            "navigateItem": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "指定されたインデックスにある項目へ移動。",
+                        "ドロップダウンのデータが仮想化されている場合は、仮想化されたデータ内のアイテムのインデックスを渡します。"
+                    ]
+                }
+            },
+            "onItemActionKey": {
+                "comment": {
+                    "shortText": "Keydown ハンドラー"
+                }
+            },
+            "clearSelection": {
+                "comment": {
+                    "shortText": [
+                        "ドロップダウンの選択をクリアします。",
+                        "```typescript",
+                        "this.dropdown.clearSelection();",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "value": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// 取得",
+                            "let selectValue = this.select.value;",
+                            "```",
+                            "```typescript",
+                            "// 設定",
+                            "this.select.value = 'London';",
+                            "```",
+                            "```html",
+                            "<igx-select [value]=\"value\"></igx-select>",
+                            "```"
+                        ],
+                        "shortText": "コンポーネントの値を取得または設定する @Input プロパティ。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// 取得",
+                            "let selectValue = this.select.value;",
+                            "```",
+                            "```typescript",
+                            "// 設定",
+                            "this.select.value = 'London';",
+                            "```",
+                            "```html",
+                            "<igx-select [value]=\"value\"></igx-select>",
+                            "```"
+                        ],
+                        "shortText": "コンポーネントの値を取得または設定する @Input プロパティ。"
+                    }
+                }
+            },
+            "listId": {
+                "getter": {
+                    "comment": {
+                        "shortText": "ドロップダウンの内部リスト ボックスの Id。"
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let isCollapsed = this.dropdown.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "ドロップダウンが閉じたかどうかを取得します。"
+                    }
+                }
+            },
+            "items": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let myDropDownItems = this.dropdown.items;",
+                            "```"
+                        ],
+                        "shortText": "すべてのヘッダー以外の項目を取得します。"
+                    }
+                }
+            },
+            "headers": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let myDropDownHeaderItems = this.dropdown.headers;",
+                            "```"
+                        ],
+                        "shortText": "すべてのヘッダー項目を取得します。"
+                    }
+                }
+            },
+            "element": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let myDropDownElement = this.dropdown.element;",
+                            "```"
+                        ],
+                        "shortText": "ドロップダウンの HTML 要素を取得します。"
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "コンポーネントのテーマを返します。",
+                            "デフォルト テーマは `comfortable` です。",
+                            "利用可能なオプションは `comfortable`、`cosy`、および `compact` です。",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "コンポーネントのテーマを設定します。"
+                    }
+                }
+            }
+        }
+    }
+}

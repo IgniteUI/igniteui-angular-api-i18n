@@ -1,0 +1,592 @@
+{
+    "IgxDragDirective": {
+        "properties": {
+            "data": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "- データを `igxDrag` ディレクティブに保存します。要素で `igxDrag` のインスタンスを作成するときに設定できます。",
+                        "```html",
+                        "<div [igxDrag]=\"{ source: myElement }\"></div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragTolerance": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグを開始する時を示す @Input プロパティ。",
+                        "デフォルトで、ドラッグ可能な要素が 5 px で移動された後にドラッグが開始します。",
+                        "```html",
+                        "<div igxDrag [dragTolerance]=\"100\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragChannel": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "igxDrag と igxDrop をチャネルでリンクする方法を提供する @Input プロパティ。",
+                        "単一の値または値の配列を受け入れ、完全に一致することで評価します。",
+                        "```html",
+                        "<div igxDrag [dragChannel]=\"'odd'\">",
+                        "        <span>95</span>",
+                        "</div>",
+                        "<div igxDrop [dropChannel]=\"['odd', 'irrational']\">",
+                        "        <span>Numbers drop area!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghost": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ベース要素を移動しないかどうかまたはそれを表すゴースト要素をレンダリングする必要があるかどうかを指定する @Input プロパティ。",
+                        "デフォルトの設定は `true` です。",
+                        "ドラッグするときに `false` に設定されている場合、代わりにベース要素が移動され、ゴースト要素はレンダリングされません。",
+                        "```html",
+                        "<div igxDrag [ghost]=\"false\">",
+                        "     <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostClass": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "`ghostElement` 要素に追加するカスタム クラスを設定します。",
+                        "```html",
+                        "<div igxDrag [ghostClass]=\"'ghostElement'\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "hideBaseOnDrag": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "代わりにカスタムベーススタイルを使用してください。",
+                                    "ドラッグ可能な要素を非表示にする @Input プロパティ。",
+                                    "デフォルトで false に設定されます。",
+                                     "```html",
+                                    "<div igxDrag [dragTolerance]=\"100\" [hideBaseOnDrag]=\"'true'\">",
+                                    "        <span>Drag Me!</span>",
+                                    "</div>",
+                                    "```"
+                                ],
+                                "tagName": "非推奨"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    }
+                }
+            },
+            "animateOnRelease": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "今後提供されたトランジション関数を使用してください。",
+                                    "要素が解放されたときにドラッグ可能な要素のアニメーションを有効/無効にする @Input プロパティ。",
+                                    "デフォルトで false に設定されます。",
+                                    "```html",
+                                    "<div igxDrag [animateOnRelease]=\"'true'\">",
+                                    "        <span>Drag Me!</span>",
+                                    "</div>",
+                                    "```"
+                                ],
+                                "tagName": "非推奨"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    }
+                }
+            },
+            "ghostTemplate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグが開始され、 `ghost` が true のときに作成されるゴースト要素のテンプレートを指定する @Input プロパティ。",
+                        "デフォルトでは、igxDrag がインスタンス化されるベース要素のクローンが作成されます。",
+                        "```html",
+                        "<div igxDrag [ghostTemplate]=\"customGhost\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "<ng-template #customGhost>",
+                        "     <div class=\"customGhostStyle\">",
+                        "         <span>I am being dragged!</span>",
+                        "     </div>",
+                        "</ng-template>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostHost": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグされる要素を追加する要素を設定する @Input プロパティ。",
+                        "デフォルトで、null 値に設定されて、ドラッグされる要素はボディに追加されます。",
+                        "```html",
+                        "<div #hostDiv></div>",
+                        "<div igxDrag [ghostHost]=\"hostDiv\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragStart": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ可能な要素のドラッグが開始するときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (dragStart)=\"onDragStart()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragStart(){",
+                        "     alert(\"The drag has stared!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "dragMove": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ可能な要素が移動されたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag  (dragMove)=\"onDragMove()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragMove(){",
+                        "     alert(\"The element has moved!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "dragEnd": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ可能な要素が解放されたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (dragEnd)=\"onDragEnd()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragEnd(){",
+                        "     alert(\"The drag has ended!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "dragClick": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ可能な要素がクリックされたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (dragClick)=\"onDragClick()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragClick(){",
+                        "     alert(\"The element has been clicked!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "ghostCreate": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ ゴースト要素が作成されたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (ghostCreate)=\"ghostCreated()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public ghostCreated(){",
+                        "     alert(\"The ghost has been created!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "ghostDestroy": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ ゴースト要素が作成されたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (ghostDestroy)=\"ghostDestroyed()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public ghostDestroyed(){",
+                        "     alert(\"The ghost has been destroyed!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "transitioned": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ可能な要素が解放され、アニメーションが完了された後にトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (transitioned)=\"onMoveEnd()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onMoveEnd(){",
+                        "     alert(\"The move has ended!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "setLocation": {
+                "comment": {
+                    "parameters": {
+                        "newLocation": {
+                            "comment": {
+                                "text": "適用する新しい位置。 getBoundingClientRects（）+ Scroll を使用して新しい位置を取得することを推奨します。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "ドキュメントに関連してレンダリングされた場合、ベース要素またはゴースト要素の目的の位置を設定します。"
+                }
+            },
+            "transitionToOrigin": {
+                "comment": {
+                    "parameters": {
+                        "customAnimArgs": {
+                            "comment": {
+                                "text": "トランジションを実行するときに適用されるカスタムトランジション プロパティ。"
+                            }
+                        },
+                        "startLocation": {
+                            "comment": {
+                                "text": "トランジションを開始する開始位置。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "最初の位置への `ghost` 入力に基づき、ベースまたはゴースト要素をアニメーション化します。",
+                        "`Ghost` が true で、ゴーストがレンダリングされていない場合、作成されてアニメートされます。",
+                        "ベース要素の DOM 位置が変更された場合、それに応じて初期の位置が変更されます。"
+                    ]
+                }
+            },
+            "transitionTo": {
+                "comment": {
+                    "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": "ベースまたはゴーストが移行するターゲット。 ページ内の位置または別の HTML 要素のいずれかです。"
+                            }
+                        },
+                        "customAnimArgs": {
+                            "comment": {
+                                "text": "トランジションを実行するときに適用されるカスタムトランジション プロパティ。"
+                            }
+                        },
+                        "startLocation": {
+                            "comment": {
+                                "text": "トランジションを開始する開始位置。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "トランジションを使用して、ベースまたはゴースト要素を特定のターゲット位置または他の要素にアニメーション化します。",
+                        "`Ghost` が true で、ゴーストがレンダリングされていない場合、作成されてアニメートされます。",
+                        "目的の位置を決定するときは、`getBoundingClientRects（）+ pageScroll` を使用することを推奨します。"
+                    ]               
+                }
+            }
+        },
+        "accessors": {
+            "ghostOffsetX": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
+                            "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
+                            "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "ghostOffsetY": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
+                            "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                    ]
+                }
+             },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
+                            "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "visible": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "将来のバージョンでは、ベース要素に合わせたカスタム スタイルを使用し、ネイティブ Angular 方法で非表示にしてください。",
+                                        "ドラッグ可能な要素の表示状態を設定します。",
+                                        "```typescript",
+                                        "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                                        "public myDrag: IgxDragDirective;",
+                                        "ngAfterViewInit(){",
+                                        "    this.myDrag.visible = false;",
+                                        "}",
+                                        "```"
+                                    ],
+                                    "tagName": "非推奨"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "ドラッグ可能な要素の表示状態を返します。",
+                            "```typescript",
+                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                            "public myDrag: IgxDragDirective;",
+                            "ngAfterViewInit(){",
+                            "    let dragVisibility = this.myDrag.visible;",
+                            "}",
+                            "```"
+                        ]
+                    }
+            },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "ドラッグ可能な要素の表示状態を返します。",
+                            "```typescript",
+                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
+                            "public myDrag: IgxDragDirective;",
+                            "ngAfterViewInit(){",
+                            "    let dragVisibility = this.myDrag.visible;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "location": {
+                "getter": {
+                    "comment": {
+                        "shortText": "ページに相対的な要素の現在の位置を取得します。"
+                    }
+                }
+            },
+            "originLocation": {
+                "getter": {
+                    "comment": {
+                        "shortText": "ドラッグが開始する前に要素の元の位置を取得します。"
+                    }
+                }
+            }
+        }
+    }
+}

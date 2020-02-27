@@ -1,0 +1,192 @@
+{
+    "IgxTooltipTargetDirective": {
+        "comment": {
+            "text": [
+                "Ignite UI for Angular Tooltip Target ディレクティブは、ツールチップを持つ要素としてマークアップで HTML 要素をマークするために使用されます。",
+                "ツールチップ ターゲットは、エクスポートしたツールチップをターゲット セレクター プロパティに割り当てて Ignite UI for Angular Tooltip と組み合わせて使用します。",
+                "",
+                "例:",
+                "```html",
+                "<button [igxTooltipTarget]=\"tooltipRef\">Hover me</button>",
+                "<span #tooltipRef=\"tooltip\" igxTooltip>Hello there, I am a tooltip!</span>",
+                "```"
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Tooltip Target** -",
+                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/tooltip.html)"
+            ]
+        },
+        "properties": {
+            "showDelay": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let tooltipShowDelay = this.tooltipTarget.showDelay;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<button [igxTooltipTarget]=\"tooltipRef\" showDelay=\"1500\">Hover me</button>",
+                        "<span #tooltipRef=\"tooltip\" igxTooltip>Hello there, I am a tooltip!</span>",
+                        "```"
+                    ],
+                    "shortText": "ツールチップを表示する迄のミリセカンドを取得または設定します。"
+                }
+            },
+            "hideDelay": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let tooltipHideDelay = this.tooltipTarget.hideDelay;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<button [igxTooltipTarget]=\"tooltipRef\" hideDelay=\"1500\">Hover me</button>",
+                        "<span #tooltipRef=\"tooltip\" igxTooltip>Hello there, I am a tooltip!</span>",
+                        "```"
+                    ],
+                    "shortText": "ツールチップを非表示にする迄のミリセカンドを取得または設定します。"
+                }
+            },
+            "tooltipDisabled": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let tooltipDisabledValue = this.tooltipTarget.tooltipDisabled;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<button [igxTooltipTarget]=\"tooltipRef\" [tooltipDisabled]=\"true\">Hover me</button>",
+                        "<span #tooltipRef=\"tooltip\" igxTooltip>Hello there, I am a tooltip!</span>",
+                        "```"
+                    ],
+                    "shortText": [
+                        "ターゲットをマウスでホバーした時にツールチップを非表示にするかどうかを指定します。(デフォルトは False)",
+                        "このプロパティを 'true' に設定するとツールチップを表示/非表示にするユーザー インタラクションが無効になります。ただし API を介してツールチップを表示/非表示にすることが可能です。",
+                        ""
+                    ]
+                }
+            },
+            "onTooltipShow": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "tooltipShowing(args: ITooltipShowEventArgs) {",
+                        "   alert(\"Tooltip started showing!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<button [igxTooltipTarget]=\"tooltipRef\"",
+                        "        (onTooltipShow)='tooltipShowing($event)'>Hover me</button>",
+                        "<span #tooltipRef=\"tooltip\" igxTooltip>Hello there, I am a tooltip!</span>",
+                        "```"
+                    ],
+                    "shortText": [
+                        "このターゲットと関連するツールチップが表示になるときにイベントを発生します。",
+                        "このイベントは、ツールチップを表示にするためにカウントダウン開始前に発生されます。"
+                    ]
+                }
+            },
+            "onTooltipHide": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "tooltipHiding(args: ITooltipHideEventArgs) {",
+                        "   alert(\"Tooltip started hiding!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<button [igxTooltipTarget]=\"tooltipRef\"",
+                        "        (onTooltipHide)='tooltipHiding($event)'>Hover me</button>",
+                        "<span #tooltipRef=\"tooltip\" igxTooltip>Hello there, I am a tooltip!</span>",
+                        "```"
+                    ],
+                    "shortText": [
+                        "このターゲットと関連するツールチップが非表示になるときにイベントを発生します。",
+                        "このイベントは、ツールチップを非表示にするためにカウントダウン開始前に発生されます。"
+                    ]
+                }
+            },
+            "overlaySettings": {
+                "comment": {
+                    "shortText": [
+                        "トグルのオーバーレイ配置、操作、およびスクロール動作を制御する設定を提供します。",
+                        "```typescript",
+                        "const settings: OverlaySettings = {",
+                        "     closeOnOutsideClick: false,",
+                        "     modal: false",
+                        " }",
+                        "```",
+                        "---",
+                        "```html",
+                        "<!--set-->",
+                        "<div igxToggleAction [overlaySettings]=\"settings\"></div>",
+                        "```"
+                    ]
+                }
+            },
+            "outlet": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<!--set-->",
+                        "<div igxToggleAction [igxToggleOutlet]=\"outlet\"></div>",
+                        "```",
+                        "`outlet` が `IgxOverlayOutletDirective` のインスタンスまたは `ElementRef` です。"
+                    ],
+                    "shortText": "トグル要素オーバーレイにアタッチする場所を決定します。"
+                }
+            }
+        },
+        "methods": {
+            "showTooltip": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.tooltipTarget.showTooltip();",
+                        "```"
+                    ],
+                    "shortText": "'showDelay' プロパティを優先してツールチップを表示します。"
+                }
+            },
+            "hideTooltip": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.tooltipTarget.hideTooltip();",
+                        "```"
+                    ],
+                    "shortText": "'hideDelay' プロパティを優先してツールチップを非表示します。"
+                }
+            }
+        },
+        "accessors": {
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let tooltipTargetElement = this.tooltipTarget.nativeElement;",
+                            "```"
+                        ],
+                        "shortText": "ディレクティブの各ネイティブ要素を取得します。"
+                    }
+                }
+            },
+            "tooltipHidden": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let tooltipHiddenValue = this.tooltipTarget.tooltipHidden;",
+                            "```"
+                        ],
+                        "shortText": "このターゲットに関連付けられたツールチップが現在非表示かどうかを示します。"
+                    }
+                }
+            }
+        }
+    }
+}

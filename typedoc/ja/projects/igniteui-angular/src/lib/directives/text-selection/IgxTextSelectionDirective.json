@@ -1,0 +1,94 @@
+{
+    "IgxTextSelectionDirective": {
+        "properties": {},
+        "methods": {
+            "trigger": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<input",
+                        "  type=\"text\"",
+                        "  id=\"firstName\"",
+                        "  igxTextSelection>",
+                        "</input>",
+                        "```",
+                        "```typescript",
+                        "@ViewChild('firstName',",
+                        " {read: IgxTextSelectionDirective})",
+                        "public inputElement: IgxTextSelectionDirective;",
+                        "public triggerElementSelection() {",
+                        " this.inputElement.trigger();",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "選択可能としてマークされる場合、要素の選択をトリガーします。"
+                }
+            }
+        },
+        "accessors": {
+            "selected": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// 取得",
+                            "@ViewChild('firstName',",
+                            " {read: IgxTextSelectionDirective})",
+                            "public firstName: IgxTextSelectionDirective;",
+                            "public getFirstNameSelectionStatus() {",
+                            " return this.firstName.selected;",
+                            "}",
+                            "```"
+                        ],
+                        "shortText": "入力要素がディレクティブによって選択可能かどうかを返します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<!--set-->",
+                            "<input",
+                            "  type=\"text\"",
+                            "  id=\"firstName\"",
+                            "  [igxTextSelection]=\"true\">",
+                            "</input>",
+                            "<input",
+                            "  type=\"text\"",
+                            "  id=\"lastName\"",
+                            "  igxTextSelection",
+                            "  [selected]=\"true\">",
+                            "</input>",
+                            "```"
+                        ],
+                        "shortText": " 入力要素がディレクティブによって選択可能かどうかを決定します。"
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<input",
+                            "  type=\"text\"",
+                            "   id=\"firstName\"",
+                            "  igxTextSelection>",
+                            "</input>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild('firstName',",
+                            " {read: IgxTextSelectionDirective})",
+                            "public inputElement: IgxTextSelectionDirective;",
+                            "public getNativeElement() {",
+                            " return this.inputElement.nativeElement;",
+                            "}",
+                            "```"
+                        ],
+                        "shortText": "ディレクティブが適用される要素の nativeElement を返します。"
+                    }
+                }
+            }
+        }
+    }
+}

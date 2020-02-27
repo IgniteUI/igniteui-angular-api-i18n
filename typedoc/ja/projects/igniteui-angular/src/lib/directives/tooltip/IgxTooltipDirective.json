@@ -1,0 +1,204 @@
+{
+    "IgxTooltipDirective": {
+        "comment": {
+            "text": [
+                "Ignite UI for Angular Tooltip ディレクティブは、ツールチップとして動作する要素としてマークアップで HTML 要素をマークするために使用されます。",
+                "ツールチップは、エクスポートしたツールチップを個別のターゲット セレクター プロパティに割り当てて Ignite UI for Angular Tooltip Target と組み合わせて使用します。",
+                "",
+                "例:",
+                "```html",
+                "<button [igxTooltipTarget]=\"tooltipRef\">Hover me</button>",
+                "<span #tooltipRef=\"tooltip\" igxTooltip>Hello there, I am a tooltip!</span>",
+                "```"
+            ],
+            "shortText": [
+                "**Ignite UI for Angular Tooltip** -",
+                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/tooltip.html)"
+            ]
+        },
+        "properties": {
+            "context": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let tooltipContext = this.tooltip.context;",
+                        "```",
+                        "```typescript",
+                        "// 設定",
+                        "this.tooltip.context = \"Tooltip's context\";",
+                        "```"
+                    ],
+                    "shortText": [
+                        "ツールチップに関連するデータを取得または設定します。",
+                        "'context' は、ツールチップで作業する際のアクセスに必要な情報の保管に使用されます。"
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "let tooltipId = this.tooltip.id;",
+                        "```"
+                    ],
+                    "shortText": [
+                        "ツールチップの識別子.",
+                        "このプロパティが明示的に設定されていない場合、自動的に生成されます。"
+                    ]
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleOpened(event) {",
+                        "   alert(\"Toggle opened!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpened)='onToggleOpened($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが開いた後にイベントを発生します。"
+                }
+            },
+            "onOpening": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleOpening(event) {",
+                        " alert(\"Toggle opening!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpening)='onToggleOpening($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが開いた前にイベントを発生します。"
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleClosed(event) {",
+                        " alert(\"Toggle closed!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onClosed)='onToggleClosed($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが閉じた後にイベントを発生します。"
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleClosing(event) {",
+                        " alert(\"Toggle closing!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        " igxToggle",
+                        " (onClosing)='onToggleClosing($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが閉じた前にイベントを発生します。"
+                }
+            },
+            "onAppended": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onAppended() {",
+                        " alert(\"Content appended!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onAppended)='onToggleAppended()'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル要素がオーバーレイ コンテナに追加された後にイベントを発生します。"
+                }
+            }
+        },
+        "methods": {
+            "open": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.myToggle.open();",
+                        "```"
+                    ],
+                    "shortText": "トグルを開きます。"
+                }
+            },
+            "close": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.myToggle.close();",
+                        "```"
+                    ],
+                    "shortText": "トグルを閉じます。"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.myToggle.toggle();",
+                        "```"
+                    ],
+                    "shortText": "現在状態によってトグルを開くか、閉じます。"
+                }
+            },
+            "reposition": {
+                "comment": {
+                    "shortText": [
+                        "トグルを移動します。",
+                        "```typescript",
+                        "this.myToggle.reposition();",
+                        "```"
+                    ]
+                }
+            },
+            "setOffset": {
+                "comment": {
+                    "shortText": "対応する軸に沿って指定した量のみコンテンツをオフセットします。"
+                }
+            }
+        },
+        "accessors": {
+            "role": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let tooltipRole = this.tooltip.role;",
+                            "```"
+                        ],
+                        "shortText": "ツールチップの role 属性を取得します。"
+                    }
+                }
+            }
+        }
+    }
+}
