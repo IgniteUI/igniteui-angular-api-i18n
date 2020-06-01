@@ -81,30 +81,92 @@
             "selectLabel": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use 'resourceStrings' instead.",
+                                    "An @Input property, sets number of label of the select.",
+                                    "The default is 'Items per page' localized string.",
+                                    "```html",
+                                    "<igx-paginator label=\"My custom label\"></igx-paginator>",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxPaginatorComponent",
                                 "tagName": "memberof"
                             }
                         }
-                    },
-                    "shortText": [
-                        "An @Input property, sets number of label of the select.",
-                        "The default is 'Items per page' localized string.",
-                        "```html",
-                        "<igx-paginator label=\"My custom label\"></igx-paginator>",
-                        "```"
-                    ]
+                    }
+                }
+            },
+            "prepositionPage": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use 'resourceStrings' instead.",
+                                    "An @Input property, sets a preposition between the current page and total pages.",
+                                    "The default is 'of' localized string."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxPaginatorComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    }
                 }
             },
             "perPageChange": {
                 "comment": {
-                    "shortText": "An event that is emitted when the select in the `IgxPaginatorComponent` changes its value."
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-paginator (perPageChange)=\"onPerPageChange($event)\"></igx-paginator>",
+                                    "```",
+                                    "```typescript",
+                                    "public onPerPageChange(perPage: number) {",
+                                    "  this.perPage = perPage;",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when `perPage` property value of the paginator is changed."
                 }
             },
             "pageChange": {
                 "comment": {
-                    "shortText": "An event that is emitted when the paginating is used."
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-paginator (pageChange)=\"onPageChange($event)\"></igx-paginator>",
+                                    "```",
+                                    "```typescript",
+                                    "public onPageChange(page: number) {",
+                                    "  this.currentPage = page;",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the current page is changed."
                 }
             }
         },
@@ -158,7 +220,7 @@
                     "shortText": [
                         "Goes to the desired page index.",
                         "```typescript",
-                        "this.pagiantor.paginate(1);",
+                        "this.paginator.paginate(1);",
                         "```"
                     ]
                 }
@@ -197,6 +259,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "An @Input property, sets current page of the `IgxPaginatorComponent`.",
                             "The default is 0.",
@@ -229,6 +299,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "An @Input property, sets number of visible items per page in the `IgxPaginatorComponent`.",
                             "The default is 15.",
@@ -260,6 +338,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "An @Input property that sets the total records.",
                             "```typescript",
@@ -290,12 +376,35 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "An @Input property that sets custom options in the select of the paginator",
                             "```typescript",
                             "let options = this.paginator.selectOptions;",
                             "```"
                         ]
+                    }
+                }
+            },
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An accessor that sets the resource strings.",
+                            "By default it uses EN resources."
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "An accessor that returns the resource strings."
                     }
                 }
             },
@@ -320,6 +429,20 @@
                             "const lastPage = this.paginator.isFirstPage;",
                             "```"
                         ]
+                    }
+                }
+            },
+            "isFirstPageDisabled": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns if the first pager buttons should be disabled"
+                    }
+                }
+            },
+            "isLastPageDisabled": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns if the last pager buttons should be disabled"
                     }
                 }
             },

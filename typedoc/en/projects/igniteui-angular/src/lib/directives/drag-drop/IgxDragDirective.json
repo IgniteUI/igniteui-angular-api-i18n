@@ -40,6 +40,30 @@
                     ]
                 }
             },
+            "dragDirection": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that indicates the directions that the element can be dragged.",
+                        "By default it is set to both horizontal and vertical directions.",
+                        "```html",
+                        "<div igxDrag [dragDirection]=\"dragDir\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public dragDir = DragDirection.HORIZONTAL;",
+                        "```"
+                    ]
+                }
+            },
             "dragChannel": {
                 "comment": {
                     "tags": {
@@ -104,61 +128,6 @@
                         "</div>",
                         "```"
                     ]
-                }
-            },
-            "hideBaseOnDrag": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "Please use custom base styling instead.",
-                                    "An @Input property that hides the draggable element.",
-                                    "By default it's set to false.",
-                                    "```html",
-                                    "<div igxDrag [dragTolerance]=\"100\" [hideBaseOnDrag]=\"'true'\">",
-                                    "        <span>Drag Me!</span>",
-                                    "</div>",
-                                    "```"
-                                ],
-                                "tagName": "deprecated"
-                            }
-                        },
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxDragDirective",
-                                "tagName": "memberof"
-                            }
-                        }
-                    }
-                }
-            },
-            "animateOnRelease": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "Please use provided transition functions in future.",
-                                    "An @Input property that enables/disables the draggable element animation",
-                                    "when the element is released.",
-                                    "By default it's set to false.",
-                                    "```html",
-                                    "<div igxDrag [animateOnRelease]=\"'true'\">",
-                                    "        <span>Drag Me!</span>",
-                                    "</div>",
-                                    "```"
-                                ],
-                                "tagName": "deprecated"
-                            }
-                        },
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxDragDirective",
-                                "tagName": "memberof"
-                            }
-                        }
-                    }
                 }
             },
             "ghostTemplate": {
@@ -475,6 +444,14 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "An @Input property that specifies the offset of the dragged element relative to the mouse in pixels.",
                             "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
@@ -513,6 +490,14 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
                             "An @Input property that specifies the offset of the dragged element relative to the mouse in pixels.",
                             "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
@@ -521,54 +506,6 @@
                             "<div igxDrag [ghostOffsetY]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "visible": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "Please use native angular ways of hiding it using custom to the base element styling for future versions.",
-                                        "Sets the visibility of the draggable element.",
-                                        "```typescript",
-                                        "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                                        "public myDrag: IgxDragDirective;",
-                                        "ngAfterViewInit(){",
-                                        "    this.myDrag.visible = false;",
-                                        "}",
-                                        "```"
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "Returns the visibility state of the draggable element.",
-                            "```typescript",
-                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                            "public myDrag: IgxDragDirective;",
-                            "ngAfterViewInit(){",
-                            "    let dragVisibility = this.myDrag.visible;",
-                            "}",
-                            "```"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns the visibility state of the draggable element.",
-                            "```typescript",
-                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                            "public myDrag: IgxDragDirective;",
-                            "ngAfterViewInit(){",
-                            "    let dragVisibility = this.myDrag.visible;",
-                            "}",
                             "```"
                         ]
                     }

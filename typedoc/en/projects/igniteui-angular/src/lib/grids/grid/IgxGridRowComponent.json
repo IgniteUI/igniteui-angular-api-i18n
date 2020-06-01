@@ -11,6 +11,17 @@
                     ],
                     "shortText": "The index of the row."
                 }
+            },
+            "disabled": {
+                "comment": {
+                    "shortText": [
+                        "Sets whether this specific row has disabled functionality for editing and row selection.",
+                        "Default value is `false`.",
+                        "```typescript",
+                        "this.grid.selectedRows[0].pinned = true;",
+                        "```"
+                    ]
+                }
             }
         },
         "methods": {
@@ -42,6 +53,34 @@
                         "This method emits `onRowDeleted` event."
                     ]
                 }
+            },
+            "pin": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// pin the selected row from the grid",
+                        "this.grid.selectedRows[0].pin();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Pins the specified row.",
+                        "This method emits `onRowPinning` event."
+                    ]
+                }
+            },
+            "unpin": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// unpin the selected row from the grid",
+                        "this.grid.selectedRows[0].unpin();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Unpins the specified row.",
+                        "This method emits `onRowPinning` event."
+                    ]
+                }
             }
         },
         "accessors": {
@@ -66,6 +105,53 @@
                             "```"
                         ],
                         "shortText": " The data passed to the row component."
+                    }
+                }
+            },
+            "pinned": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets whether the row is pinned.",
+                            "```typescript",
+                            "let isPinned = row.pinned;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets whether the row is pinned.",
+                            "Default value is `false`.",
+                            "```typescript",
+                            "this.grid.selectedRows[0].pinned = true;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "cells": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the cells of the third selected row",
+                            "let selectedRowCells = this.grid.selectedRows[2].cells;",
+                            "```"
+                        ],
+                        "shortText": "Gets the rendered cells in the row component."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "// get the cells of the third selected row",
+                            "let selectedRowCells = this.grid.selectedRows[2].cells;",
+                            "```"
+                        ],
+                        "shortText": "Gets the rendered cells in the row component."
                     }
                 }
             },

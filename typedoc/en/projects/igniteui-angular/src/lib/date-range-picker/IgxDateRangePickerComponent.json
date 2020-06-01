@@ -1,0 +1,619 @@
+{
+    "IgxDateRangePickerComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxDateRangeModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-input-group-theme, igx-calendar-theme, igx-date-range-picker-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "date, range, date range, date picker",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "scheduling",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "It displays the range selection in a single or two input fields.",
+                            "The default template displays a single *readonly* input field",
+                            "while projecting `igx-date-range-start` and `igx-date-range-end`",
+                            "displays two *editable* input fields."
+                        ],
+                        "tagName": "remarks"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-date-range-picker mode=\"dropdown\"></igx-date-range-picker>",
+                            "```"
+                        ],
+                        "tagName": "example"
+                    }
+                }
+            },
+            "shortText": "Provides the ability to select a range of dates from a calendar UI or editable inputs."
+        },
+        "properties": {
+            "mode": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default mode is `dialog`",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker mode=\"dropdown\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Display calendar in either `dialog` or `dropdown` mode."
+                }
+            },
+            "monthsViewNumber": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default is `2`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker [monthsViewNumber]=\"3\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The number of displayed month views."
+                }
+            },
+            "hideOutsideDays": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default value is `false`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker [hideOutsideDays]=\"true\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets whether dates that are not part of the current month will be displayed."
+                }
+            },
+            "weekStart": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Can be assigned to a numeric value or to `WEEKDAYS` enum value.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker [weekStart]=\"1\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The start day of the week."
+                }
+            },
+            "locale": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default value is `\"en\"`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker locale=\"jp\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The `locale` of the calendar."
+                }
+            },
+            "formatter": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "private dayFormatter = new Intl.DateTimeFormat(\"en\", { weekday: \"long\" });",
+                                    "private monthFormatter = new Intl.DateTimeFormat(\"en\", { month: \"long\" });",
+                                    "public formatter(date: Date): string {",
+                                    " return `${this.dayFormatter.format(date)} - ${this.monthFormatter.format(date)} - ${date.getFullYear()}`;",
+                                    "}",
+                                    "```",
+                                    "```html",
+                                    "<igx-date-range-picker [formatter]=\"formatter\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "A custom formatter function, applied on the selected or passed in date."
+                }
+            },
+            "doneButtonText": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Default value is `Done`.",
+                                    "The button will only show up in `dialog` mode."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The default text of the calendar dialog `done` button."
+                }
+            },
+            "overlaySettings": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker [overlaySettings]=\"customOverlaySettings\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Custom overlay settings that should be used to display the calendar."
+                }
+            },
+            "displayFormat": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Uses Angular's DatePipe.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker displayFormat=\"EE/M/yy\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The format used when editable inputs are not focused."
+                }
+            },
+            "inputFormat": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default is `\"'MM/dd/yyyy'\"`",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker inputFormat=\"dd/MM/yy\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The expected user input format and placeholder."
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker [disabled]=\"'true'\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Enables/Disables the `IgxDateRangePickerComponent`."
+                }
+            },
+            "placeholder": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker [placeholder]=\"'Choose your dates'\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Sets the `placeholder` for single-input `IgxDateRangePickerComponent`."
+                }
+            },
+            "rangeSelected": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker (rangeSelected)=\"handleSelected($event)\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a range is selected."
+                }
+            },
+            "onOpening": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker (onOpening)=\"handleOpening($event)\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar starts opening, cancelable."
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker (onOpened)=\"handleOpened($event)\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the `IgxDateRangeComponent` is opened."
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker (onClosing)=\"handleClosing($event)\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar starts closing, cancelable."
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker (onClosed)=\"handleClosed($event)\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the `IgxDateRangeComponent` is closed."
+                }
+            }
+        },
+        "methods": {
+            "open": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-range-picker #dateRange></igx-date-range-picker>",
+                                    "<button (click)=\"dateRange.open()\">Open Dialog</button",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Opens the date range picker's dropdown or dialog."
+                }
+            },
+            "close": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "html```",
+                                    "<igx-date-range-picker #dateRange></igx-date-range-picker>",
+                                    "<button (click)=\"dateRange.close()\">Close Dialog</button>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Closes the date range picker's dropdown or dialog."
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "html```",
+                                    "<igx-date-range-picker #dateRange></igx-date-range-picker>",
+                                    "<button (click)=\"dateRange.toggle()\">Toggle Dialog</button>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Toggles the date range picker's dropdown or dialog"
+                }
+            },
+            "selectRange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "public selectFiveDayRange() {",
+                                    " const inFiveDays = new Date(new Date().setDate(today.getDate() + 5));",
+                                    " const today = new Date();",
+                                    " this.dateRange.selectRange(today, inFiveDays);",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Selects a range of dates. If no `endDate` is passed, range is 1 day (only `startDate`)"
+                }
+            }
+        },
+        "accessors": {
+            "minValue": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [minValue]=\"minDate\"></igx-date-range-picker>",
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The minimum value in a valid range."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [minValue]=\"minDate\"></igx-date-range-picker>",
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The minimum value in a valid range."
+                    }
+                }
+            },
+            "maxValue": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [maxValue]=\"maxDate\"></igx-date-range-picker>",
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The maximum value in a valid range."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [maxValue]=\"maxDate\"></igx-date-range-picker>",
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The maximum value in a valid range."
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let state = this.dateRange.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "Gets calendar state."
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The current value is of type `DateRange`",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const newValue: DateRange = { start: new Date(\"2/2/2012\"), end: new Date(\"3/3/2013\")};",
+                                        "this.dateRangePicker.value = newValue;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The currently selected value / range from the calendar"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The current value is of type `DateRange`",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const newValue: DateRange = { start: new Date(\"2/2/2012\"), end: new Date(\"3/3/2013\")};",
+                                        "this.dateRangePicker.value = newValue;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The currently selected value / range from the calendar"
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the theme of the component.",
+                            "The default theme is `comfortable`.",
+                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the theme of the component."
+                    }
+                }
+            }
+        }
+    }
+}

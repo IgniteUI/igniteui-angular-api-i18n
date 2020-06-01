@@ -256,6 +256,50 @@
                     "shortText": "Emitted after advanced filtering is performed."
                 }
             },
+            "pageChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid (pageChange)=\"onPageChange($event)\"></igx-grid>",
+                                    "```",
+                                    "```typescript",
+                                    "public onPageChange(page: number) {",
+                                    "  this.currentPage = page;",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the current page is changed."
+                }
+            },
+            "perPageChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (perPageChange)=\"onPerPageChange($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```",
+                                    "```typescript",
+                                    "public onPerPageChange(perPage: number) {",
+                                    "  this.perPage = perPage;",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when `perPage` property value of the grid is changed."
+                }
+            },
             "paginationTemplate": {
                 "comment": {
                     "tags": {
@@ -472,6 +516,23 @@
                         }
                     },
                     "shortText": " Emitted when `IgxGridRowComponent` is selected."
+                }
+            },
+            "onColumnSelectionChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (onColumnSelectionChange)=\"onColumnSelectionChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": " Emitted when `IgxColumnComponent` is selected."
                 }
             },
             "onColumnPinning": {
@@ -1058,6 +1119,23 @@
                     "shortText": "Emitted when the expanded state of a row gets changed."
                 }
             },
+            "onRowPinning": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [data]=\"employeeData\" (onRowPinning)=\"rowPin($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the pinned state of a row is changed."
+                }
+            },
             "emptyFilteredGridTemplate": {
                 "comment": {
                     "tags": {
@@ -1204,9 +1282,9 @@
                                     "```typescript",
                                     "this.grid.groupBy({ fieldName: name, dir: SortingDirection.Asc, ignoreCase: false });",
                                     "this.grid.groupBy([",
-                                    "{ fieldName: name1, dir: SortingDirection.Asc, ignoreCase: false },",
-                                    "{ fieldName: name2, dir: SortingDirection.Desc, ignoreCase: true },",
-                                    "{ fieldName: name3, dir: SortingDirection.Desc, ignoreCase: false }",
+                                    "    { fieldName: name1, dir: SortingDirection.Asc, ignoreCase: false },",
+                                    "    { fieldName: name2, dir: SortingDirection.Desc, ignoreCase: true },",
+                                    "    { fieldName: name3, dir: SortingDirection.Desc, ignoreCase: false }",
                                     "]);",
                                     "```"
                                 ],
@@ -1353,6 +1431,19 @@
                             }
                         }
                     }
+                }
+            },
+            "isRecordPinnedByIndex": {
+                "comment": {
+                    "parameters": {
+                        "rowIndex": {
+                            "comment": {
+                                "text": "Index of the record in the `filteredSortedData` collection."
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns whether the record is pinned or not."
                 }
             },
             "toggleColumnVisibility": {
@@ -2003,6 +2094,71 @@
                     "shortText": "Unpins a column by field name. Returns whether the operation is successful."
                 }
             },
+            "pinRow": {
+                "comment": {
+                    "parameters": {
+                        "rowID": {
+                            "comment": {
+                                "text": "The row id - primaryKey value or the data record instance."
+                            }
+                        },
+                        "index": {
+                            "comment": {
+                                "text": "The index at which to insert the row in the pinned collection."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "ID is either the primaryKey value or the data record instance.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.pinRow(rowID);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Pin the row by its id."
+                }
+            },
+            "unpinRow": {
+                "comment": {
+                    "parameters": {
+                        "rowID": {
+                            "comment": {
+                                "text": "The row id - primaryKey value or the data record instance."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "ID is either the primaryKey value or the data record instance.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.unpinRow(rowID);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Unpin the row by its id."
+                }
+            },
             "reflow": {
                 "comment": {
                     "tags": {
@@ -2263,7 +2419,7 @@
                             "comment": {
                                 "text": [
                                     "By default if filtering is in place, selectAllRows() and deselectAllRows() select/deselect all filtered rows.",
-                                    "If you set the parameter onlyFilterData to false that will select all rows in the grid exept deleted rows."
+                                    "If you set the parameter onlyFilterData to false that will deselect all rows in the grid exept deleted rows."
                                 ],
                                 "tagName": "remarks"
                             }
@@ -2280,6 +2436,115 @@
                         }
                     },
                     "shortText": "Deselects all rows"
+                }
+            },
+            "selectedColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "Returns an array with selected columns",
+                                    "```typescript",
+                                    "const selectedColumns = this.grid.selectedColumns();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Get current selected columns."
+                }
+            },
+            "selectColumns": {
+                "comment": {
+                    "parameters": {
+                        "clearCurrentSelection": {
+                            "comment": {
+                                "text": "if true clears the current selection"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.selectColumns(['ID','Name'], true);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Select specified columns."
+                }
+            },
+            "deselectColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectColumns(['ID','Name']);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselect specified columns by filed."
+                }
+            },
+            "deselectAllColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectAllColumns();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselects all columns"
+                }
+            },
+            "selectAllColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectAllColumns();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Selects all columns"
+                }
+            },
+            "getSelectedColumnsData": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "If `formatters` is enabled, the cell value will be formatted by its respective column formatter (if any).",
+                                    "If `headers` is enabled, it will use the column header (if any) instead of the column field."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Returns an array of the current columns selection in the form of `[{ column.field: cell.value }, ...]`."
                 }
             },
             "navigateTo": {
@@ -2305,7 +2570,7 @@
                             }
                         }
                     },
-                    "shortText": "Navigates to a posution in the grid based on provided `rowindex` and `visibleColumnIndex`."
+                    "shortText": "Navigates to a position in the grid based on provided `rowindex` and `visibleColumnIndex`."
                 }
             },
             "getNextCell": {
@@ -2435,6 +2700,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If not provided it will be automatically generated.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the value of the `id` attribute."
                     }
                 }
@@ -2459,6 +2742,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the array of data that populates the `IgxGridComponent`."
                     }
                 }
@@ -2484,6 +2779,19 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let filteredData = this.grid.filteredData;",
+                                        "this.grid.filteredData = [...];",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets an array of objects containing the filtered data."
                     }
                 }
@@ -2515,6 +2823,25 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "This property is required for remote grid virtualization to function when it is bound to remote data.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const itemCount = this.grid1.totalItemCount;",
+                                        "this.grid1.totalItemCount = 55;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the total number of records in the data source."
                     }
                 }
@@ -2545,6 +2872,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpressions)]=\"model.groupingExpressions\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": "Supports two-way data binding.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the group by state."
                     }
                 }
@@ -2579,6 +2924,28 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Includes only states that differ from the default one (controlled through groupsExpanded and states that the user has changed.",
+                                        "Contains the expansion state (expanded: boolean) and the unique identifier for the group row (Array).",
+                                        "Supports two-way data binding."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(groupingExpansionState)]=\"model.groupingExpansionState\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets a list of expansion states for group rows."
                     }
                 }
@@ -2609,6 +2976,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The default value is \"false\"",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [hideGroupedColumns]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether the grouped columns should be hidden."
                     }
                 }
@@ -2641,6 +3026,26 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The grid needs to have at least one groupable column in order the GroupBy area to be displayed.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid dropAreaMessage=\"Drop here to group!\">",
+                                        "     <igx-column [groupable]=\"true\" field=\"ID\"></igx-column>",
+                                        "</igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the message displayed inside the GroupBy drop area where columns can be dragged on."
                     }
                 }
@@ -2685,6 +3090,19 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```",
+                                        "const groupRowTemplate = this.grid.groupRowTemplate;",
+                                        "this.grid.groupRowTemplate = myRowTemplate;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the template reference for the group row."
                     }
                 }
@@ -2710,6 +3128,19 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const groupAreaTemplate = this.grid.groupAreaTemplate;",
+                                        "this.grid.groupAreaTemplate = myAreaTemplate.",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the template reference of the `IgxGridComponent`'s group area."
                     }
                 }
@@ -2768,6 +3199,14 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it uses EN resources.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the resource strings."
                     }
                 }
@@ -2798,6 +3237,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The default is AND.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\" [filteringLogic]=\"filtering\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the filtering logic of the `IgxGridComponent`."
                     }
                 }
@@ -2828,6 +3285,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(filteringExpressionsTree)]=\"model.filteringExpressions\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": "Supports two-way binding.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the filtering state."
                     }
                 }
@@ -2853,6 +3328,19 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let advancedFilteringExpressionsTree = this.grid.advancedFilteringExpressionsTree;",
+                                        "this.grid.advancedFilteringExpressionsTree = logic;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the advanced filtering state."
                     }
                 }
@@ -2873,6 +3361,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If not set, returns browser's language.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the locale."
                     }
                 }
@@ -2903,6 +3399,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The default state is disabled (false).",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [paging]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether the paging feature is enabled."
                     }
                 }
@@ -2915,7 +3429,7 @@
                                 "comment": {
                                     "text": [
                                         "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
+                                        " <igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
                                         "```"
                                     ],
                                     "tagName": "example"
@@ -2933,6 +3447,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        " <igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": "Supports two-way binding.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the current page index."
                     }
                 }
@@ -2963,6 +3495,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The default is 15.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(perPage)]=\"model.perPage\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the number of visible items per page."
                     }
                 }
@@ -2993,6 +3543,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it is disabled (false). In order for the UI to work, you need to enable the toolbar as shown in the example below.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\" [showToolbar]=\"true\" [columnHiding]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether the column hiding UI is enabled."
                     }
                 }
@@ -3013,6 +3581,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": " By default row selectors are shown",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets if the row selectors are hidden."
                     }
                 }
@@ -3037,6 +3613,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether rows can be moved."
                     }
                 }
@@ -3067,6 +3655,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it is set to false.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [showToolbar]=\"true\" [rowEditable]=\"true\" [primaryKey]=\"'ProductID'\" [columnHiding]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether the rows are editable."
                     }
                 }
@@ -3091,6 +3697,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the height."
                     }
                 }
@@ -3115,6 +3733,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let gridWidth = this.grid.width;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the width of the grid."
                     }
                 }
@@ -3158,6 +3788,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [rowHeight]=\"100\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the row height."
                     }
                 }
@@ -3182,6 +3824,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [columnWidth]=\"100\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the default width of the columns."
                     }
                 }
@@ -3206,6 +3860,18 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [emptyGridMessage]=\"'The grid is empty'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Get/Sets the message displayed when there are no records."
                     }
                 }
@@ -3230,6 +3896,18 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [isLoading]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether the grid is going to show a loading indicator."
                     }
                 }
@@ -3254,7 +3932,73 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [emptyGridMessage]=\"'The grid is empty'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the message displayed when there are no records and the grid is filtered."
+                    }
+                }
+            },
+            "pinning": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Allows to apply pinning the columns to the start or the end.",
+                                        "Note that pinning to both sides at a time is not allowed."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [pinning]=\"pinningConfig\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the initial pinning configuration."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Allows to apply pinning the columns to the start or the end.",
+                                        "Note that pinning to both sides at a time is not allowed."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [pinning]=\"pinningConfig\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the initial pinning configuration."
                     }
                 }
             },
@@ -3278,6 +4022,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [columnPinning]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets if the built-in column pinning UI should be shown in the toolbar."
                     }
                 }
@@ -3302,6 +4058,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets if the filtering is enabled."
                     }
                 }
@@ -3326,6 +4094,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [allowAdvancedFiltering]=\"true\" [showToolbar]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets a value indicating whether the advanced filtering is enabled."
                     }
                 }
@@ -3356,6 +4136,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [filterMode]=\"'quickFilter'\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it's set to FilterMode.quickFilter.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the filter mode."
                     }
                 }
@@ -3386,6 +4184,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" summaryPosition=\"top\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it is bottom.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the summary position."
                     }
                 }
@@ -3416,6 +4232,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" summaryCalculationMode=\"rootLevelOnly\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it is rootAndChildLevels which means the summaries are calculated for the root level and each child level.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the summary calculation mode."
                     }
                 }
@@ -3440,6 +4274,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        " <igx-grid #grid [data]=\"localData\" [filterStrategy]=\"filterStrategy\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the filtering strategy of the grid."
                     }
                 }
@@ -3464,6 +4310,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        " <igx-grid #grid [data]=\"localData\" [sortStrategy]=\"sortStrategy\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the sorting strategy of the grid."
                     }
                 }
@@ -3620,6 +4478,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Supports two-way data binding.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(sortingExpressions)]=\"model.sortingExpressions\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the sorting state."
                     }
                 }
@@ -3669,6 +4545,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Used for the built-in column hiding UI of the`IgxColumnComponent`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" [hiddenColumnsText]=\"'Hidden Columns'\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the text to be displayed inside the toggle button."
                     }
                 }
@@ -3699,6 +4593,24 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Used for the built-in column pinning UI of the`IgxColumnComponent`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [pinnedColumnsText]=\"'PinnedCols Text\" [data]=\"data\" [width]=\"'100%'\" [height]=\"'500px'\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the text to be displayed inside the toggle button."
                     }
                 }
@@ -3730,6 +4642,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" ></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether the toolbar is shown."
                     }
                 }
@@ -3754,6 +4678,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [toolbarTitle]=\"'My Grid'\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the toolbar's title."
                     }
                 }
@@ -3778,6 +4714,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [exportExcel]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets whether exporting to MS Excel is enabled or disabled."
                     }
                 }
@@ -3824,6 +4772,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportCsv]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the textual content for the main export button."
                     }
                 }
@@ -3870,6 +4830,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [exportCsvText]=\"'My Csv Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportExcel]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets the textual content for the CSV export button."
                     }
                 }
@@ -3890,6 +4862,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the cell selection mode is multiple",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets cell selection mode."
                     }
                 }
@@ -3910,7 +4890,43 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the row selection mode is none",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets row selection mode"
+                    }
+                }
+            },
+            "columnSelection": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the row selection mode is none",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets column selection mode"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the row selection mode is none",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets column selection mode"
                     }
                 }
             },
@@ -3944,6 +4960,28 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Includes only states that differ from the default one.",
+                                        "Supports two-way binding."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"data\" [(expansionStates)]=\"model.expansionStates\">",
+                                        "</igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Gets/Sets a list of key-value pairs [row ID, expansion state]."
                     }
                 }
@@ -4077,6 +5115,25 @@
                             }
                         },
                         "shortText": "Gets an array of the pinned `IgxColumnComponent`s."
+                    }
+                }
+            },
+            "pinnedRows": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const pinnedRow = this.grid.pinnedRows;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets an array of the pinned `IgxRowComponent`s."
                     }
                 }
             },
@@ -4371,6 +5428,44 @@
                     }
                 }
             },
+            "pinnedDataView": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "     const pinnedDataView = this.grid.pinnedDataView;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the currently transformed paged/filtered/sorted/grouped pinned row data, displayed in the grid."
+                    }
+                }
+            },
+            "unpinnedDataView": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "     const pinnedDataView = this.grid.pinnedDataView;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns currently transformed paged/filtered/sorted/grouped unpinned row data, displayed in the grid."
+                    }
+                }
+            },
             "dataView": {
                 "getter": {
                     "comment": {
@@ -4386,7 +5481,7 @@
                                 }
                             }
                         },
-                        "shortText": "Returns the currently transformed paged/filtered/sorted/grouped data, displayed in the grid."
+                        "shortText": "Returns the currently transformed paged/filtered/sorted/grouped/pinned/unpinned row data, displayed in the grid."
                     }
                 }
             },
@@ -4410,6 +5505,18 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const filteredSortedData = this.grid1.filteredSortedData;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Returns an array containing the filtered sorted data."
                     }
                 }
