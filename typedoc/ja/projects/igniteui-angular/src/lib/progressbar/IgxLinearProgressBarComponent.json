@@ -49,11 +49,11 @@
                         "```typescript",
                         "public positionCenter: IgxTextAlign;",
                         "public ngOnInit() {",
-                        "   this.positionCenter = IgxTextAlign.CENTER;",
+                        "    this.positionCenter = IgxTextAlign.CENTER;",
                         "}",
-                        "//...",
+                        " //...",
                         "```",
-                        "```html",
+                        " ```html",
                         "<igx-linear-bar type=\"warning\" [text]=\"'Custom text'\" [textAlign]=\"positionCenter\" [striped]=\"true\"></igx-linear-bar>",
                         "```"
                     ]
@@ -64,7 +64,7 @@
                     "shortText": [
                         "テキストを表示するかどうかを設定します。デフォルトで true に設定されます。",
                         "```html",
-                        "<igx-linear-bar type=\"default\" [textVisibility]=\"false\"></igx-linear-bar>",
+                        " <igx-linear-bar type=\"default\" [textVisibility]=\"false\"></igx-linear-bar>",
                         "```"
                     ]
                 }
@@ -74,7 +74,7 @@
                     "shortText": [
                         "テキストをイナズマ線の上に配置するかどうかを定義する位置を設定します。デフォルトで false に設定されます。",
                         "```html",
-                        "<igx-linear-bar type=\"error\" [textTop]=\"true\"></igx-linear-bar>",
+                        " <igx-linear-bar type=\"error\" [textTop]=\"true\"></igx-linear-bar>",
                         "```"
                     ]
                 }
@@ -83,7 +83,7 @@
                 "comment": {
                     "shortText": [
                         "定義された位置に基づいて表示されるカスタム テキストを設定します。",
-                        "```html",
+                        " ```html",
                         "<igx-linear-bar type=\"warning\" [text]=\"'Custom text'\" [textAlign]=\"positionCenter\" [striped]=\"true\"></igx-linear-bar>",
                         "```"
                     ]
@@ -105,12 +105,13 @@
                         "進行状況が変更された後にトリガーするイベント。",
                         "```typescript",
                         "public progressChange(event) {",
-                        "   alert(\"Progress made!\");",
+                        "    alert(\"Progress made!\");",
                         "}",
-                        "//...",
+                        " //...",
                         "```",
                         "```html",
-                        "<igx-linear-bar (onProgressChanged)=\"progressChange($event)\" type=\"success\">",
+                        "<igx-circular-bar [value]=\"currentValue\" (onProgressChanged)=\"progressChange($event)\"></igx-circular-bar>",
+                        "<igx-linear-bar [value]=\"currentValue\" (onProgressChanged)=\"progressChange($event)\"></igx-linear-bar>",
                         "```"
                     ]
                 }
@@ -118,13 +119,69 @@
         },
         "methods": {},
         "accessors": {
+            "value": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns value that indicates the current `IgxLinearProgressBarComponent` position.",
+                            "```typescript",
+                            " @ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent;",
+                            "public getValue(event) {",
+                            "    let value = this.progressBar.value;",
+                            "    alert(value);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Set value that indicates the current `IgxLinearProgressBarComponent` position.",
+                            "```html",
+                            "<igx-linear-bar [striped]=\"false\" [max]=\"200\" [value]=\"50\"></igx-linear-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "step": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the value which update the progress indicator of the `progress bar`.",
+                            "```typescript",
+                            " @ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;",
+                            "public stepValue(event) {",
+                            "    let step = this.progressBar.step;",
+                            "    alert(step);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets the value by which progress indicator is updated. By default it is 1% of the maximum value.",
+                            "```html",
+                            "<igx-linear-bar [max]=\"200\" [value]=\"0\" [step]=\"1\"></igx-linear-bar>",
+                            "<igx-circular-bar [max]=\"200\" [value]=\"0\" [step]=\"1\"></igx-circular-bar>",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "animate": {
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "`IgxLinearProgressBarComponent` に進行状況でアニメーションを再生します。デフォルトで true に設定されます。",
+                            "Animating the progress. By default it is set to true.",
                             "```html",
-                            "<igx-linear-bar [animate]=\"false\" [striped]=\"true\" [max]=\"200\" [value]=\"50\"></igx-linear-bar>",
+                            "<igx-linear-bar [animate]=\"false\" [max]=\"200\" [value]=\"50\"></igx-linear-bar>",
+                            "<igx-circular-bar [animate]=\"false\" [max]=\"200\" [value]=\"50\"></igx-circular-bar>",
                             "```"
                         ]
                     }
@@ -132,13 +189,13 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "`IgxLinearProgressBarComponent` にアニメーションがあるかどうかを true/false として返します。",
+                            "Returns whether the `progress bar` has animation true/false.",
                             "```typescript",
-                            "@ViewChild(\"MyProgressBar\")",
-                            "public progressBar: IgxLinearProgressBarComponent;",
+                            " @ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;",
                             "public animationStatus(event) {",
-                            "   let animationStatus = this.progressBar.animate;",
-                            "   alert(animationStatus);",
+                            "    let animationStatus = this.progressBar.animate;",
+                            "    alert(animationStatus);",
                             "}",
                             "```"
                         ]
@@ -149,9 +206,10 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "渡すことができる最大値を設定します。デフォルトで 100 に設定されます。",
+                            "Set maximum value that can be passed. By default it is set to 100.",
                             "```html",
-                            "<igx-linear-bar [striped]=\"false\" [max]=\"200\" [value]=\"0\"></igx-linear-bar>",
+                            "<igx-linear-bar [max]=\"200\" [value]=\"0\"></igx-linear-bar>",
+                            "<igx-circular-bar [max]=\"200\" [value]=\"0\"></igx-circular-bar>",
                             "```"
                         ]
                     }
@@ -159,103 +217,45 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "`IgxLinearProgressBarComponent` の最大進行状況値を返します。",
+                            "Returns the the maximum progress value of the `progress bar`.",
                             "```typescript",
-                            "@ViewChild(\"MyProgressBar\")",
-                            "public progressBar: IgxLinearProgressBarComponent;",
+                            " @ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;",
                             "public maxValue(event) {",
-                            "   let max = this.progressBar.max;",
-                            "   alert(max);",
+                            "    let max = this.progressBar.max;",
+                            "    alert(max);",
                             "}",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "step": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxLinearProgressBarComponent` の進行状況インジケーターを更新する値を返します。",
-                            "```typescript",
-                            "@ViewChild(\"MyProgressBar\")",
-                            "public progressBar: IgxLinearProgressBarComponent;",
-                            "public stepValue(event) {",
-                            "   let step = this.progressBar.step;",
-                            "   alert(step);",
-                            "}",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "進行状況インジケーターの更新量の値を設定します。デフォルト値は最大値の 1% です。",
-                            "```html",
-                            "<igx-linear-bar [striped]=\"false\" [max]=\"200\" [value]=\"0\" [step]=\"1\"></igx-linear-bar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "value": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "現在の `IgxLinearProgressBarComponent` 位置を示す値を返します。",
-                            "```typescript",
-                            "@ViewChild(\"MyProgressBar\")",
-                            "public progressBar: IgxLinearProgressBarComponent;",
-                            "public getValue(event) {",
-                            "   let value = this.progressBar.value;",
-                            "   alert(value);",
-                            "}",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "現在の `IgxLinearProgressBarComponent` 位置を示す値を設定します。",
-                            "```html",
-                            "<igx-linear-bar [striped]=\"false\" [max]=\"200\" [value]=\"50\"></igx-linear-bar>",
                             "```"
                         ]
                     }
                 }
             },
             "valueInPercent": {
-                "getter": {
+                "setter": {
                     "comment": {
                         "shortText": [
-                            "`IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` 値をパーセンテージで返します。",
+                            "Sets the `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` value in percentage.",
                             "```typescript",
-                            "@ViewChild(\"MyProgressBar\")",
+                            " @ViewChild(\"MyProgressBar\")",
                             "public progressBar: IgxLinearProgressBarComponent; // IgxCircularProgressBarComponent",
-                            "public valuePercent(event){",
-                            "   let percentValue = this.progressBar.valueInPercent;",
-                            "   alert(percentValue);",
+                            "    public setValue(event){",
+                            "    this.progressBar.valueInPercent = 56;",
                             "}",
                             "```"
                         ]
                     }
                 },
-                "setter": {
+                "getter": {
                     "comment": {
                         "shortText": [
-                            "`IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` 値をパーセンテージで設定します。",
+                            "Returns the `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` value in percentage.",
                             "```typescript",
-                            "@ViewChild(\"MyProgressBar\")",
+                            " @ViewChild(\"MyProgressBar\")",
                             "public progressBar: IgxLinearProgressBarComponent; // IgxCircularProgressBarComponent",
-                            "   public setValue(event){",
-                            "   this.progressBar.valueInPercent = 56;",
+                            "public valuePercent(event){",
+                            "    let percentValue = this.progressBar.valueInPercent;",
+                            "    alert(percentValue);",
                             "}",
-                            "//...",
-                            "```",
-                            "```html",
-                            "<button igxButton=\"fab\" igxRipple=\"\" (click)=\"setValue()\">setValue</button>",
                             "```"
                         ]
                     }

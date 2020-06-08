@@ -40,6 +40,30 @@
                     ]
                 }
             },
+            "dragDirection": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that indicates the directions that the element can be dragged.",
+                        "By default it is set to both horizontal and vertical directions.",
+                        "```html",
+                        "<div igxDrag [dragDirection]=\"dragDir\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public dragDir = DragDirection.HORIZONTAL;",
+                        "```"
+                    ]
+                }
+            },
             "dragChannel": {
                 "comment": {
                     "tags": {
@@ -104,60 +128,6 @@
                         "</div>",
                         "```"
                     ]
-                }
-            },
-            "hideBaseOnDrag": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "代わりにカスタムベーススタイルを使用してください。",
-                                    "ドラッグ可能な要素を非表示にする @Input プロパティ。",
-                                    "デフォルトで false に設定されます。",
-                                     "```html",
-                                    "<div igxDrag [dragTolerance]=\"100\" [hideBaseOnDrag]=\"'true'\">",
-                                    "        <span>Drag Me!</span>",
-                                    "</div>",
-                                    "```"
-                                ],
-                                "tagName": "非推奨"
-                            }
-                        },
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxDragDirective",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    }
-                }
-            },
-            "animateOnRelease": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "今後提供されたトランジション関数を使用してください。",
-                                    "要素が解放されたときにドラッグ可能な要素のアニメーションを有効/無効にする @Input プロパティ。",
-                                    "デフォルトで false に設定されます。",
-                                    "```html",
-                                    "<div igxDrag [animateOnRelease]=\"'true'\">",
-                                    "        <span>Drag Me!</span>",
-                                    "</div>",
-                                    "```"
-                                ],
-                                "tagName": "非推奨"
-                            }
-                        },
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxDragDirective",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    }
                 }
             },
             "ghostTemplate": {
@@ -474,6 +444,14 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
                             "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
@@ -512,6 +490,14 @@
              },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
                             "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
@@ -520,54 +506,6 @@
                             "<div igxDrag [ghostOffsetY]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "visible": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "将来のバージョンでは、ベース要素に合わせたカスタム スタイルを使用し、ネイティブ Angular 方法で非表示にしてください。",
-                                        "ドラッグ可能な要素の表示状態を設定します。",
-                                        "```typescript",
-                                        "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                                        "public myDrag: IgxDragDirective;",
-                                        "ngAfterViewInit(){",
-                                        "    this.myDrag.visible = false;",
-                                        "}",
-                                        "```"
-                                    ],
-                                    "tagName": "非推奨"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "ドラッグ可能な要素の表示状態を返します。",
-                            "```typescript",
-                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                            "public myDrag: IgxDragDirective;",
-                            "ngAfterViewInit(){",
-                            "    let dragVisibility = this.myDrag.visible;",
-                            "}",
-                            "```"
-                        ]
-                    }
-            },
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "ドラッグ可能な要素の表示状態を返します。",
-                            "```typescript",
-                            "@ViewChild(\"myDrag\" ,{read: IgxDragDirective})",
-                            "public myDrag: IgxDragDirective;",
-                            "ngAfterViewInit(){",
-                            "    let dragVisibility = this.myDrag.visible;",
-                            "}",
                             "```"
                         ]
                     }

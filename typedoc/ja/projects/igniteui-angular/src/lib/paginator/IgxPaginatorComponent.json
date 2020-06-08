@@ -81,30 +81,92 @@
             "selectLabel": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use 'resourceStrings' instead.",
+                                    "An @Input property, sets number of label of the select.",
+                                    "The default is 'Items per page' localized string.",
+                                    "```html",
+                                    "<igx-paginator label=\"My custom label\"></igx-paginator>",
+                                    "```"
+                                ],
+                                "tagName": "非推奨"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxPaginatorComponent",
                                 "tagName": "次のメンバー:"
                             }
                         }
-                    },
-                    "shortText": [
-                        "選択のラベル番号を設定する@Input プロパティ。",
-                        "デフォルトは `Items per page` ローカライズされた文字列です。",
-                        "```html",
-                        "<igx-paginator label=\"My custom label\"></igx-paginator>",
-                        "```"
-                    ]
+                    }
+                }
+            },
+            "prepositionPage": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use 'resourceStrings' instead.",
+                                    "An @Input property, sets a preposition between the current page and total pages.",
+                                    "The default is 'of' localized string."
+                                ],
+                                "tagName": "非推奨"
+                            }
+                        },
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxPaginatorComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    }
                 }
             },
             "perPageChange": {
                 "comment": {
-                    "shortText": "`IgxPaginatorComponent` の select がその値を変更したときに発生するイベント。"
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-paginator (perPageChange)=\"onPerPageChange($event)\"></igx-paginator>",
+                                    "```",
+                                    "```typescript",
+                                    "public onPerPageChange(perPage: number) {",
+                                    "  this.perPage = perPage;",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when `perPage` property value of the paginator is changed."
                 }
             },
             "pageChange": {
                 "comment": {
-                    "shortText": "改ページが使用されるときに発生されるイベント。"
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-paginator (pageChange)=\"onPageChange($event)\"></igx-paginator>",
+                                    "```",
+                                    "```typescript",
+                                    "public onPageChange(page: number) {",
+                                    "  this.currentPage = page;",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the current page is changed."
                 }
             }
         },
@@ -158,7 +220,7 @@
                     "shortText": [
                         "指定したページ インデックスに移動します。",
                         "```typescript",
-                        "this.pagiantor.paginate(1);",
+                        "this.paginator.paginate(1);",
                         "```"
                     ]
                 }
@@ -196,6 +258,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "@Input プロパティは、`IgxPaginatorComponent` の現在のページを設定します。",
                             "デフォルトは 0 です。",
@@ -228,6 +298,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "@Input プロパティは、 `IgxPaginatorComponent` の 1 ページあたりの表示項目数を設定します。",
                             "デフォルトは 15 です。",
@@ -259,6 +337,14 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "合計のレコードを設定する @Input プロパティ。",
                             "```typescript",
@@ -289,12 +375,35 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxPaginatorComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "改ページの選択にカスタム オプションを設定する @Input プロパティ。",
                             "```typescript",
                             "let options = this.paginator.selectOptions;",
                             "```"
                         ]
+                    }
+                }
+            },
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An accessor that sets the resource strings.",
+                            "By default it uses EN resources."
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "An accessor that returns the resource strings."
                     }
                 }
             },
@@ -319,6 +428,20 @@
                             "const lastPage = this.paginator.isFirstPage;",
                             "```"
                         ]
+                    }
+                }
+            },
+            "isFirstPageDisabled": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns if the first pager buttons should be disabled"
+                    }
+                }
+            },
+            "isLastPageDisabled": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns if the last pager buttons should be disabled"
                     }
                 }
             },

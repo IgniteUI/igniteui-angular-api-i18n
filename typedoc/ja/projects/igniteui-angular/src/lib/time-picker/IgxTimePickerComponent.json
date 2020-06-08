@@ -125,14 +125,14 @@
                     "shortText": [
                         "選択が実行されたときに発生します。イベントは選択済みの値を含みます。{`oldValue`: `Date`, `newValue`: `Date`} を返します。",
                         "```typescript",
-                        "@ViewChild(\"toast\")",
+                        " @ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
                         "public onValueChanged(timepicker){",
-                        "   this.toast.show()",
+                        "    this.toast.show()",
                         "}",
-                        "//...",
-                        "```",
-                        "```html",
+                        " //...",
+                        " ```",
+                        " ```html",
                         "<igx-time-picker (onValueChanged)=\"onValueChanged($event)\"></igx-time-picker>",
                         "<igx-toast #toast message=\"The value has been changed!\"></igx-toast>",
                         "```"
@@ -146,14 +146,14 @@
                         "```typescript",
                         "public min: string = \"09:00\";",
                         "public max: string = \"18:00\";",
-                        "@ViewChild(\"toast\")",
+                        " @ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
                         "public onValidationFailed(timepicker){",
-                        "   this.toast.show();",
+                        "    this.toast.show();",
                         "}",
-                        "//...",
-                        "```",
-                        "```html",
+                        " //...",
+                        " ```",
+                        " ```html",
                         "<igx-time-picker [minValue]=\"min\" [maxValue]=\"max\" (onValidationFailed)=\"onValidationFailed($event)\"></igx-time-picker>",
                         "<igx-toast #toast message=\"Value must be between 09:00 and 18:00!\"></igx-toast>",
                         "```"
@@ -221,9 +221,9 @@
                         "scrhintoView(picker) {",
                         "picker.scrollHourIntoView('2');",
                         "}",
-                        "```",
+                        " ```",
                         "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpen)=\"scrhintoView(picker)\"></igx-time-picker>",
+                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrhintoView(picker)\"></igx-time-picker>",
                         "```"
                     ]
                 }
@@ -244,9 +244,9 @@
                         "scrMintoView(picker) {",
                         "picker.scrollMinuteIntoView('3');",
                         "}",
-                        "```",
+                        " ```",
                         "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpen)=\"scrMintoView(picker)\"></igx-time-picker>",
+                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrMintoView(picker)\"></igx-time-picker>",
                         "```"
                     ]
                 }
@@ -267,9 +267,9 @@
                         "scrMintoView(picker) {",
                         "picker.scrollSecondsIntoView('4');",
                         "}",
-                        "```",
+                        " ```",
                         "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpen)=\"scrMintoView(picker)\"></igx-time-picker>",
+                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrMintoView(picker)\"></igx-time-picker>",
                         "```"
                     ]
                 }
@@ -290,9 +290,9 @@
                         "scrAmPmIntoView(picker) {",
                         "picker.scrollAmPmIntoView('PM');",
                         "}",
-                        "```",
+                        " ```",
                         "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpen)=\"scrAmPmIntoView(picker)\"></igx-time-picker>",
+                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrAmPmIntoView(picker)\"></igx-time-picker>",
                         "```"
                     ]
                 }
@@ -326,10 +326,10 @@
                     "shortText": [
                         "現在表示されている時間の配列を返します。",
                         "```html",
-                        "@ViewChild(\"MyChild\")",
+                        " @ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
                         "ngAfterViewInit(){",
-                        "   let hInView = this.picker.hoursInView;",
+                        "    let hInView = this.picker.hoursInView;",
                         "}",
                         "```"
                     ]
@@ -340,10 +340,10 @@
                     "shortText": [
                         "現在表示されている分の配列を返します。",
                         "```html",
-                        "@ViewChild(\"MyChild\")",
+                        " @ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
                         "ngAfterViewInit(){",
-                        "   let minInView = this.picker.minutesInView;",
+                        "    let minInView = this.picker.minutesInView;",
                         "}",
                         "```"
                     ]
@@ -354,10 +354,10 @@
                     "shortText": [
                         "現在表示されている秒の配列を返します。",
                         "```html",
-                        "@ViewChild(\"MyChild\")",
+                        " @ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
                         "ngAfterViewInit(){",
-                        "   let minInView = this.picker.secondsInView;",
+                        "    let minInView = this.picker.secondsInView;",
                         "}",
                         "```"
                     ]
@@ -368,10 +368,10 @@
                     "shortText": [
                         "現在表示されている AM/PM の配列を返します。",
                         "```html",
-                        "@ViewChild(\"MyChild\")",
+                        " @ViewChild(\"MyChild\")",
                         "private picker: IgxTimePickerComponent;",
                         "ngAfterViewInit(){",
-                        "   let ApInView = this.picker.ampmInView;",
+                        "    let ApInView = this.picker.ampmInView;",
                         "}",
                         "```"
                     ]
@@ -567,6 +567,14 @@
                 },
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "オーバーレイの位置、インタラクション、およびスクロール動作を変更できる @Input プロパティ。",
                             "```typescript",
@@ -581,58 +589,6 @@
                             "```"
                         ]
                     }
-                }
-            },
-            "onOpen": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "代わりに `onOpened` を使用してください。",
-                                        "timePicker が開いているときに発生します。",
-                                        "```html",
-                                        "@ViewChild(\"toast\")",
-                                        "private toast: IgxToastComponent;",
-                                        "public onOpen(timepicker){",
-                                        "   this.toast.show();",
-                                        "}",
-                                        "//...",
-                                        "```",
-                                        "```html",
-                                        "<igx-time-picker [minValue]=\"min\" [maxValue]=\"max\" (onOpen)=\"onOpen($event)\"></igx-time-picker>",
-                                        "<igx-toast #toast message=\"The time picker has been opened!\"></igx-toast>",
-                                        "```"
-                                    ],
-                                    "tagName": "非推奨。"
-                                }
-                            }
-                        }
-                    }
-                },
-                "setter": {
-                    "comment": {}
-                }
-            },
-            "onClose": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "代わりに `onClosed` を使用してください。",
-                                        "timePicker が閉じているときに発生します。"
-                                    ],
-                                    "tagName": "非推奨"
-                                }
-                            }
-                        }
-                    }
-                },
-                "setter": {
-                    "comment": {}
                 }
             },
             "displayTime": {
