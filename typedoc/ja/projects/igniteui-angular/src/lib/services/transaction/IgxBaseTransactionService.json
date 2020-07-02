@@ -10,12 +10,32 @@
         "methods": {
             "add": {
                 "comment": {
+                    "parameters": {
+                        "transaction": {
+                            "comment": {
+                                "text": "追加されるトランザクション。"
+                            }
+                        },
+                        "recordRef": {
+                            "comment": {
+                                "text": "変更された項目に関連するデータ ソースのレコードの値への参照。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "recordRef を持つ指定されたトランザクションがある場合、追加します。"
                 }
             },
             "getTransactionLog": {
                 "comment": {
+                    "returns": "サービスのすべてのトランザクションまたは指定したレコード。\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "トランザクションを取得するオプションのレコード id。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "すべての登録されたレコードを時系列順に返します。"
                 }
@@ -33,6 +53,16 @@
             "getAggregatedChanges": {
                 "comment": {
                     "returns": "変更済みの各レコードの集計トランザクションのコレクション。\n",
+                    "parameters": {
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "true に設定されている場合、各状態の値を関連する recordRef にマージして、",
+                                    "関連するトランザクションに結果の値を登録します。"
+                                ]
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "すべてのトランザクションの集計された変更を返します。"
                 }
@@ -51,18 +81,52 @@
             "getAggregatedValue": {
                 "comment": {
                     "returns": "変更のある値または **null**。\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "レコードの ID のため返す値。"
+                            }
+                        },
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "true に設定されている場合、状態の値を関連する recordRef にマージして、",
+                                    "マージされた値を返します。"
+                                ]
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
                 }
             },
             "commit": {
                 "comment": {
+                    "parameters": {
+                        "data": {
+                            "comment": {
+                                "text": "変更されるデータ ソース。"
+                            }
+                        },
+                        "id": {
+                            "comment": {
+                                "text": "トランザクションをコミットするためのオプションのレコード ID。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "指定されたデータ中にすべてのトランザクションを適用します。"
                 }
             },
             "clear": {
                 "comment": {
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "トランザクションをクリアするためのオプションのレコード ID。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "すべてのトランザクションをクリアします。"
                 }
@@ -76,6 +140,13 @@
             },
             "endPending": {
                 "comment": {
+                    "parameters": {
+                        "commit": {
+                            "comment": {
+                                "text": "保留中状態をコミットします。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": [
                         "すべての保留中のトランザクションと集計された保留中の状態をクリアします。Commit は true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"

@@ -148,7 +148,12 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "Default value is `\"en\"`.",
+                                "text": [
+                                    "Uses Angular's `LOCALE_ID` by default. Affects both input mask and display format if those are not set.",
+                                    "If a `locale` is set, it must be registered via `registerLocaleData`.",
+                                    "Please refer to https://angular.io/guide/i18n#i18n-pipes.",
+                                    "If it is not registered, `Intl` will be used for formatting."
+                                ],
                                 "tagName": "remarks"
                             }
                         },
@@ -163,7 +168,7 @@
                             }
                         }
                     },
-                    "shortText": "The `locale` of the calendar."
+                    "shortText": "Locale settings used for value formatting and calendar."
                 }
             },
             "formatter": {

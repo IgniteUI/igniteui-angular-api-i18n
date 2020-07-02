@@ -60,6 +60,13 @@
             "getTransactionLog": {
                 "comment": {
                     "returns": "サービスのすべてのトランザクションまたは指定したレコード。\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "トランザクションを取得するオプションのレコード id。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "登録されたすべてのレコードを時系列順に返します。"
                 }
@@ -67,6 +74,18 @@
             "getState": {
                 "comment": {
                     "returns": "レコードがある場合のその状態。\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "レコードの ID。"
+                            }
+                        },
+                        "pending": {
+                            "comment": {
+                                "text": "保留中状態を取得します。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "指定された ID のレコードの状態を返します。"
                 }
@@ -74,12 +93,34 @@
             "getAggregatedValue": {
                 "comment": {
                     "returns": "変更のある値または **null**。\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "レコードの ID のため返す値。"
+                            }
+                        },
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "true に設定されている場合、状態の値を関連する recordRef にマージして、",
+                                    "マージされた値を返します。"
+                                ]
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
                 }
             },
             "endPending": {
                 "comment": {
+                    "parameters": {
+                        "commit": {
+                            "comment": {
+                                "text": "保留中状態をコミットします。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": [
                         "すべての保留中のトランザクションと集計された保留中の状態をクリアします。Commit は true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"
@@ -88,6 +129,13 @@
             },
             "clear": {
                 "comment": {
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "トランザクションをクリアするためのオプションのレコード ID。"
+                            }
+                        }
+                    },
                     "tags": {},
                     "shortText": "すべてのトランザクションをクリアします。"
                 }
