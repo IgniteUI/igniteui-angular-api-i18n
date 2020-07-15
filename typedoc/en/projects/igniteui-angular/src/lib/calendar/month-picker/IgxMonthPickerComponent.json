@@ -30,6 +30,36 @@
                         "Provides reference the `selectedDates` property."
                     ]
                 }
+            },
+            "onViewDateChanged": {
+                "comment": {
+                    "shortText": [
+                        "Emits an event when the month in view is changed.",
+                        "```html",
+                        "<igx-calendar (onViewDateChanged)=\"viewDateChanged($event)\"></igx-calendar>",
+                        "```",
+                        "```typescript",
+                        "public viewDateChanged(event: IViewDateChangeEventArgs) {",
+                        " let newDate = event.newViewDate;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onActiveViewChanged": {
+                "comment": {
+                    "shortText": [
+                        "Emits an event when the active view is changed.",
+                        "```html",
+                        "<igx-calendar (onActiveViewChanged)=\"activeViewChanged($event)\"></igx-calendar>",
+                        "```",
+                        "```typescript",
+                        "public activeViewChanged(event: CalendarView) {",
+                        " let activeView = event;",
+                        "}",
+                        "```"
+                    ]
+                }
             }
         },
         "methods": {
@@ -38,7 +68,7 @@
                     "shortText": [
                         "Selects a date.",
                         "```typescript",
-                        " this.monPicker.selectDate(new Date(`2018-06-12`));",
+                        " this.monthPicker.selectDate(new Date(`2018-06-12`));",
                         "```"
                     ]
                 }
@@ -53,12 +83,28 @@
             "activeView": {
                 "getter": {
                     "comment": {
-                        "shortText": "Gets the current active view."
+                        "shortText": [
+                            "Sets the current active view.",
+                            "```html",
+                            "<igx-calendar [activeView]=\"1\" #calendar></igx-calendar>",
+                            "```",
+                            "```typescript",
+                            "calendar.activeView = CalendarView.YEAR;",
+                            "```"
+                        ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": "Sets the current active view."
+                        "shortText": [
+                            "Sets the current active view.",
+                            "```html",
+                            "<igx-calendar [activeView]=\"1\" #calendar></igx-calendar>",
+                            "```",
+                            "```typescript",
+                            "calendar.activeView = CalendarView.YEAR;",
+                            "```"
+                        ]
                     }
                 }
             },

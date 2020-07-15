@@ -30,6 +30,36 @@
                         "`selectedDates` プロパティに参照を提供します。"
                     ]
                 }
+            },
+            "onViewDateChanged": {
+                "comment": {
+                    "shortText": [
+                        "月ビューが変更されるときにイベントを発生します。",
+                        "```html",
+                        "<igx-calendar (onViewDateChanged)=\"viewDateChanged($event)\"></igx-calendar>",
+                        "```",
+                        "```typescript",
+                        "public viewDateChanged(event: IViewDateChangeEventArgs) {",
+                        " let newDate = event.newViewDate;",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "onActiveViewChanged": {
+                "comment": {
+                    "shortText": [
+                        "アクティブ ビューが変更されるときにイベントを発生します。",
+                        "```html",
+                        "<igx-calendar (onActiveViewChanged)=\"activeViewChanged($event)\"></igx-calendar>",
+                        "```",
+                        "```typescript",
+                        "public activeViewChanged(event: CalendarView) {",
+                        " let activeView = event;",
+                        "}",
+                        "```"
+                    ]
+                }
             }
         },
         "methods": {
@@ -38,7 +68,7 @@
                     "shortText": [
                         "日付を選択します。",
                         "```typescript",
-                        " this.monPicker.selectDate(new Date(`2018-06-12`));",
+                        " this.monthPicker.selectDate(new Date(`2018-06-12`));",
                         "```"
                     ]
                 }
@@ -53,12 +83,28 @@
             "activeView": {
                 "getter": {
                     "comment": {
-                        "shortText": "現在のアクティブ ビューを取得します。"
+                        "shortText": [
+                            "現在のビューを設定します。",
+                            "```html",
+                            "<igx-calendar [activeView]=\"1\" #calendar></igx-calendar>",
+                            "```",
+                            "```typescript",
+                            "calendar.activeView = CalendarView.YEAR;",
+                            "```"
+                        ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": "現在のビューを設定します。"
+                        "shortText": [
+                            "現在のビューを設定します。",
+                            "```html",
+                            "<igx-calendar [activeView]=\"1\" #calendar></igx-calendar>",
+                            "```",
+                            "```typescript",
+                            "calendar.activeView = CalendarView.YEAR;",
+                            "```"
+                        ]
                     }
                 }
             },
