@@ -1,0 +1,207 @@
+{
+    "HierarchicalTransactionService": {
+        "properties": {
+            "enabled": {
+                "comment": {
+                    "shortText": "Returns whether transaction is enabled for this service"
+                }
+            },
+            "onStateUpdate": {
+                "comment": {
+                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                }
+            },
+            "canUndo": {
+                "comment": {
+                    "tags": {
+                        "returns": {
+                            "comment": {
+                                "text": "if there are any transactions in the Undo stack",
+                                "tagName": "returns"
+                            }
+                        }
+                    }
+                }
+            },
+            "canRedo": {
+                "comment": {
+                    "tags": {
+                        "returns": {
+                            "comment": {
+                                "text": "if there are any transactions in the Redo stack",
+                                "tagName": "returns"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "methods": {
+            "commit": {
+                "comment": {
+                    "parameters": {
+                        "data": {
+                            "comment": {
+                                "text": "Data source to update"
+                            }
+                        },
+                        "primaryKey": {
+                            "comment": {
+                                "text": "Primary key of the hierarchical data"
+                            }
+                        },
+                        "childDataKey": {
+                            "comment": {
+                                "text": "Key of child data collection"
+                            }
+                        },
+                        "id": {
+                            "comment": {
+                                "text": "Optional record id to commit transactions for"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Applies all transactions over the provided data"
+                }
+            },
+            "add": {
+                "comment": {
+                    "parameters": {
+                        "transaction": {
+                            "comment": {
+                                "text": "Transaction to be added"
+                            }
+                        },
+                        "recordRef": {
+                            "comment": {
+                                "text": "Reference to the value of the record in the data source related to the changed item"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Adds provided  transaction with recordRef if any"
+                }
+            },
+            "getTransactionLog": {
+                "comment": {
+                    "returns": "All transaction in the service or for the specified record\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "Optional record id to get transactions for"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns all recorded transactions in chronological order"
+                }
+            },
+            "undo": {
+                "comment": {
+                    "shortText": "Remove the last transaction if any"
+                }
+            },
+            "redo": {
+                "comment": {
+                    "shortText": "Applies the last undone transaction if any"
+                }
+            },
+            "getAggregatedChanges": {
+                "comment": {
+                    "returns": "Collection of aggregated transactions for each changed record\n",
+                    "parameters": {
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "If set to true will merge each state's value over relate recordRef",
+                                    "and will record resulting value in the related transaction"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns aggregated changes from all transactions"
+                }
+            },
+            "getState": {
+                "comment": {
+                    "returns": "State of the record if any\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "The id of the record"
+                            }
+                        },
+                        "pending": {
+                            "comment": {
+                                "text": "Should get pending state"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns the state of the record with provided id"
+                }
+            },
+            "getAggregatedValue": {
+                "comment": {
+                    "returns": "Value with changes or **null**\n",
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "The id of the record to return value for"
+                            }
+                        },
+                        "mergeChanges": {
+                            "comment": {
+                                "text": [
+                                    "If set to true will merge state's value over relate recordRef",
+                                    "and will return merged value"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns value of the required id including all uncommitted changes"
+                }
+            },
+            "clear": {
+                "comment": {
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "Optional record id to clear transactions for"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Clears all transactions"
+                }
+            },
+            "startPending": {
+                "comment": {
+                    "shortText": [
+                        "Starts pending transactions. All transactions passed after call to startPending",
+                        "will not be added to transaction log"
+                    ]
+                }
+            },
+            "endPending": {
+                "comment": {
+                    "parameters": {
+                        "commit": {
+                            "comment": {
+                                "text": "Should commit the pending states"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
+                        "commits pending states as single transaction"
+                    ]
+                }
+            }
+        }
+    }
+}

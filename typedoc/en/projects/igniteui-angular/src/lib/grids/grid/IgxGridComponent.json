@@ -53,6 +53,23 @@
             "shortText": "Grid provides a way to present and manipulate tabular data."
         },
         "properties": {
+            "onDataPreLoad": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    " <igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onDataPreLoad)='handleDataPreloadEvent()'></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a new chunk of data is loaded from virtualization."
+                }
+            },
             "groupsExpanded": {
                 "comment": {
                     "tags": {
@@ -254,6 +271,24 @@
                         }
                     },
                     "shortText": "Emitted after advanced filtering is performed."
+                }
+            },
+            "onScroll": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"",
+                                    "             (onScroll)=\"onScroll($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when grid is scrolled horizontally/vertically."
                 }
             },
             "pageChange": {
@@ -653,6 +688,24 @@
                     "shortText": "Emitted when cell has been edited."
                 }
             },
+            "cellEditDone": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid3 (cellEditDone)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
+                                    "</igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after cell has been edited and editing has been committed."
+                }
+            },
             "onRowEditEnter": {
                 "comment": {
                     "tags": {
@@ -688,7 +741,7 @@
                                 "text": [
                                     "Emitted when [rowEditable]=\"true\" & `endEdit(true)` is called.",
                                     "Emitted when changing rows during edit mode, selecting an un-editable cell in the edited row,",
-                                    "performing paging operation, column resizing, pinning, moving or hitting  `Done`",
+                                    "performing paging operation, column resizing, pinning, moving or hitting `Done`",
                                     "button inside of the rowEditingOverlay, or hitting the `Enter` key while editing a cell.",
                                     "This event is cancelable."
                                 ],
@@ -708,6 +761,35 @@
                         }
                     },
                     "shortText": "Emitted when exiting edit mode for a row."
+                }
+            },
+            "rowEditDone": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Emitted when [rowEditable]=\"true\" & `endEdit(true)` is called.",
+                                    "Emitted when changing rows during edit mode, selecting an un-editable cell in the edited row,",
+                                    "performing paging operation, column resizing, pinning, moving or hitting `Done`",
+                                    "button inside of the rowEditingOverlay, or hitting the `Enter` key while editing a cell."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid3 (rowEditDone)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
+                                    "</igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after exiting edit mode for a row and editing has been committed."
                 }
             },
             "onRowEditCancel": {
@@ -875,23 +957,6 @@
                         }
                     },
                     "shortText": "Emitted when a row is deleted through API."
-                }
-            },
-            "onDataPreLoad": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    " <igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onDataPreLoad)='handleDataPreloadEvent()'></igx-grid>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Emitted when a new chunk of data is loaded from virtualization."
                 }
             },
             "onColumnResized": {
@@ -1147,6 +1212,23 @@
                         }
                     },
                     "shortText": "Emitted when the pinned state of a row is changed."
+                }
+            },
+            "activeNodeChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "<igx-grid [data]=\"data\" [autoGenerate]=\"true\" (activeNodeChange)=\"activeNodeChange($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emmited when the active node is changed."
                 }
             },
             "emptyFilteredGridTemplate": {
@@ -2337,24 +2419,6 @@
                         }
                     },
                     "shortText": "Gets calculated width of the pinned area."
-                }
-            },
-            "selectedRows": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "Returns an array with selected rows' IDs (primaryKey or rowData)",
-                                    "```typescript",
-                                    "const selectedRows = this.grid.selectedRows();",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Get current selection state."
                 }
             },
             "selectRows": {
@@ -4267,6 +4331,60 @@
                     }
                 }
             },
+            "showSummaryOnCollapse": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [showSummaryOnCollapse]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "By default showSummaryOnCollapse is set to 'false' which means that the summary row is not visible",
+                                        "when the groupBy/parent row is collapsed."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Controls whether the summary row is visible when groupBy/parent row is collapsed."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [showSummaryOnCollapse]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "By default showSummaryOnCollapse is set to 'false' which means that the summary row is not visible",
+                                        "when the groupBy/parent row is collapsed."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Controls whether the summary row is visible when groupBy/parent row is collapsed."
+                    }
+                }
+            },
             "filterStrategy": {
                 "getter": {
                     "comment": {
@@ -4336,6 +4454,54 @@
                             }
                         },
                         "shortText": "Gets/Sets the sorting strategy of the grid."
+                    }
+                }
+            },
+            "selectedRows": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Represents the selected rows' IDs (primary key or rowData)",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" primaryKey=\"ID\" rowSelection=\"multiple\" [selectedRows]=\"[0, 1, 2]\"><igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the current selection state."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Represents the selected rows' IDs (primary key or rowData)",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" primaryKey=\"ID\" rowSelection=\"multiple\" [selectedRows]=\"[0, 1, 2]\"><igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the current selection state."
                     }
                 }
             },

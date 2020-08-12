@@ -1,24 +1,4 @@
 {
-    "gen-color": {
-        "description": [
-            "<p>Generates a color shade from base color and saturation level.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The base color to be used to generate a color shade.</p>",
-                    ""
-                ]
-            },
-            "saturation": {
-                "description": [
-                    "<p>The saturation level used to create the color shade.</p>",
-                    ""
-                ]
-            }
-        }
-    },
     "igx-color": {
         "description": [
             "<p>Retrieves a color from a color palette.</p>",
@@ -57,9 +37,21 @@
             ""
         ],
         "parameters": {
-            "color": {
+            "background": {
                 "description": [
-                    "<p>The color used to return a contrast color for.</p>",
+                    "<p>The background color used to return a contrast/forground color for.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>The foreground color used in case it has enough contrast against the provided background.</p>",
+                    ""
+                ]
+            },
+            "contrast": {
+                "description": [
+                    "<p>The contrast level according to WCAG 2.0 standards.</p>",
                     ""
                 ]
             }
@@ -98,63 +90,7 @@
         },
         "returns": {
             "description": [
-                "<p>[#fff] - Returns white if now palette, color and/or variant matches found.</p>",
-                ""
-            ]
-        }
-    },
-    "generate-palette": {
-        "description": [
-            "<p>Generates a Material-like color palette for a single color.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The base color used to generate the palette.</p>",
-                    ""
-                ]
-            },
-            "saturations": {
-                "description": [
-                    "<p>The saturation list of color variants.",
-                    "Based on the Material color system.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>A map consisting of 14 color variations and 14",
-                "text contrast colors for each variation.</p>",
-                ""
-            ]
-        }
-    },
-    "grayscale-palette": {
-        "description": [
-            "<p>Generates grayscale color palette from a color.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The base color used to generate the palette.</p>",
-                    ""
-                ]
-            },
-            "shades": {
-                "description": [
-                    "<p>A map of variations as keys and opacities as values.",
-                    "Based on the Material color system.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>A map consisting of 10 color variations and 10",
-                "text contrast colors for each variation.</p>",
+                "<p>[#fff] - Returns white if no palette, color and/or variant matches found.</p>",
                 ""
             ]
         }
@@ -210,6 +146,12 @@
             "surface": {
                 "description": [
                     "<p>The color used as a background in components, such as cards, sheets, and menus.</p>",
+                    ""
+                ]
+            },
+            "variant": {
+                "description": [
+                    "<p>The palette variant that gets generated. Possible values are: &#39;material&#39;, &#39;fluent&#39;, &#39;bootstrap&#39;, and &#39;indigo-design&#39;.</p>",
                     ""
                 ]
             }
