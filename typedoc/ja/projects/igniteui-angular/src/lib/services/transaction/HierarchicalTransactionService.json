@@ -3,12 +3,12 @@
         "properties": {
             "enabled": {
                 "comment": {
-                    "shortText": "Returns whether transaction is enabled for this service"
+                    "shortText": "このサービスにトランザクションが有効されたかどうか返します。"
                 }
             },
             "onStateUpdate": {
                 "comment": {
-                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                    "shortText": "トランザクションの状態が変更されたとき発生されるイベント - トランザクションの追加、すべてのトランザクションをコミットする、元に戻す/やり直し。"
                 }
             },
             "canUndo": {
@@ -16,7 +16,7 @@
                     "tags": {
                         "returns": {
                             "comment": {
-                                "text": "if there are any transactions in the Undo stack",
+                                "text": "Undo スタックにトランザクションがあるかどうか。",
                                 "tagName": "returns"
                             }
                         }
@@ -28,7 +28,7 @@
                     "tags": {
                         "returns": {
                             "comment": {
-                                "text": "if there are any transactions in the Redo stack",
+                                "text": "Redo スタックにトランザクションがあるかどうか。",
                                 "tagName": "returns"
                             }
                         }
@@ -42,27 +42,27 @@
                     "parameters": {
                         "data": {
                             "comment": {
-                                "text": "Data source to update"
+                                "text": "変更されるデータ ソース。"
                             }
                         },
                         "primaryKey": {
                             "comment": {
-                                "text": "Primary key of the hierarchical data"
+                                "text": "階層データのプライマリ キー"
                             }
                         },
                         "childDataKey": {
                             "comment": {
-                                "text": "Key of child data collection"
+                                "text": "子データ収集のキー"
                             }
                         },
                         "id": {
                             "comment": {
-                                "text": "Optional record id to commit transactions for"
+                                "text": "トランザクションをコミットするためのオプションのレコード ID。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Applies all transactions over the provided data"
+                    "shortText": "指定されたデータ中にすべてのトランザクションを適用します。"
                 }
             },
             "add": {
@@ -70,99 +70,99 @@
                     "parameters": {
                         "transaction": {
                             "comment": {
-                                "text": "Transaction to be added"
+                                "text": "追加されるトランザクション。"
                             }
                         },
                         "recordRef": {
                             "comment": {
-                                "text": "Reference to the value of the record in the data source related to the changed item"
+                                "text": "変更された項目に関連するデータ ソースのレコードの値への参照。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Adds provided  transaction with recordRef if any"
+                    "shortText": "recordRef を持つ指定されたトランザクションがある場合、追加します。"
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "returns": "All transaction in the service or for the specified record\n",
+                    "returns": "サービスのすべてのトランザクションまたは指定したレコード \n",
                     "parameters": {
                         "id": {
                             "comment": {
-                                "text": "Optional record id to get transactions for"
+                                "text": "トランザクションを取得するオプションのレコード id。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Returns all recorded transactions in chronological order"
+                    "shortText": "登録されたすべてのレコードを時系列順に返します。"
                 }
             },
             "undo": {
                 "comment": {
-                    "shortText": "Remove the last transaction if any"
+                    "shortText": "最後のトランザクションを削除します。"
                 }
             },
             "redo": {
                 "comment": {
-                    "shortText": "Applies the last undone transaction if any"
+                    "shortText": "最後の元に戻されたトランザクションを削除します。"
                 }
             },
             "getAggregatedChanges": {
                 "comment": {
-                    "returns": "Collection of aggregated transactions for each changed record\n",
+                    "returns": "変更済みの各レコードの集計トランザクションのコレクション \n",
                     "parameters": {
                         "mergeChanges": {
                             "comment": {
                                 "text": [
-                                    "If set to true will merge each state's value over relate recordRef",
-                                    "and will record resulting value in the related transaction"
+                                    "True に設定されている場合、各状態の値を関連する recordRef にマージして、",
+                                    "関連するトランザクションに結果の値を登録します。"
                                 ]
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Returns aggregated changes from all transactions"
+                    "shortText": "すべてのトランザクションの集計された変更を返します。"
                 }
             },
             "getState": {
                 "comment": {
-                    "returns": "State of the record if any\n",
+                    "returns": "レコードがある場合のその状態 \n",
                     "parameters": {
                         "id": {
                             "comment": {
-                                "text": "The id of the record"
+                                "text": "レコードの ID。"
                             }
                         },
                         "pending": {
                             "comment": {
-                                "text": "Should get pending state"
+                                "text": "保留中状態を取得します。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Returns the state of the record with provided id"
+                    "shortText": "指定された ID のレコードの状態を返します。"
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "returns": "Value with changes or **null**\n",
+                    "returns": "変更のある値または **null** \n",
                     "parameters": {
                         "id": {
                             "comment": {
-                                "text": "The id of the record to return value for"
+                                "text": "レコードの IDのため返す値。"
                             }
                         },
                         "mergeChanges": {
                             "comment": {
                                 "text": [
-                                    "If set to true will merge state's value over relate recordRef",
-                                    "and will return merged value"
+                                    "True に設定されている場合、状態の値を関連する recordRef にマージして、",
+                                    "マージされた値を返します。"
                                 ]
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Returns value of the required id including all uncommitted changes"
+                    "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
                 }
             },
             "clear": {
@@ -170,19 +170,19 @@
                     "parameters": {
                         "id": {
                             "comment": {
-                                "text": "Optional record id to clear transactions for"
+                                "text": "トランザクションをクリアするためのオプションのレコード ID。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Clears all transactions"
+                    "shortText": "すべてのトランザクションをクリアします。"
                 }
             },
             "startPending": {
                 "comment": {
                     "shortText": [
-                        "Starts pending transactions. All transactions passed after call to startPending",
-                        "will not be added to transaction log"
+                        "保留された変更を開始します。startPending へのコールの後に渡された",
+                        "すべてのトランザクションはトランザクション ログに追加されません。"
                     ]
                 }
             },
@@ -191,14 +191,14 @@
                     "parameters": {
                         "commit": {
                             "comment": {
-                                "text": "Should commit the pending states"
+                                "text": "保留中状態をコミットします。"
                             }
                         }
                     },
                     "tags": {},
                     "shortText": [
-                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
-                        "commits pending states as single transaction"
+                        "すべての保留中のトランザクションと集計された保留中の状態をクリアします。Commit は true に設定された場合、",
+                        "保留中の状態を単一のトランザクションとしてコミットします。"
                     ]
                 }
             }
