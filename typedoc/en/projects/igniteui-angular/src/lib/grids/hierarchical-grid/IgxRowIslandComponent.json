@@ -126,6 +126,23 @@
                     "shortText": "Gets/Sets a custom template when empty."
                 }
             },
+            "addRowEmptyTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [addRowEmptyTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a custom template for adding row UI when grid is empty."
+                }
+            },
             "loadingGridTemplate": {
                 "comment": {
                     "tags": {
@@ -528,34 +545,7 @@
                     "shortText": "Emitted when `IgxColumnComponent` is pinned."
                 }
             },
-            "onCellEditCancel": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": [
-                                    "(e.g. `Esc` key was pressed)",
-                                    "This event is cancelable."
-                                ],
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-grid #grid3 (onCellEditCancel)=\"editCancel($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
-                                    "</igx-grid>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Emitted when editing and **not** submitting the value."
-                }
-            },
-            "onCellEditEnter": {
+            "cellEditEnter": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -568,7 +558,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onCellEditEnter)=\"editStart($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
+                                    "<igx-grid #grid3 (cellEditEnter)=\"editStart($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -579,7 +569,25 @@
                     "shortText": "Emitted when cell enters edit mode."
                 }
             },
-            "onCellEdit": {
+            "cellEditExit": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid3 (cellEditExit)=\"editExit($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
+                                    "</igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when cell exits edit mode."
+                }
+            },
+            "cellEdit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -595,7 +603,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onCellEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
+                                    "<igx-grid #grid3 (cellEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -624,7 +632,7 @@
                     "shortText": "Emitted after cell has been edited and editing has been committed."
                 }
             },
-            "onRowEditEnter": {
+            "rowEditEnter": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -640,7 +648,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onRowEditEnter)=\"editStart($event)\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
+                                    "<igx-grid #grid3 (rowEditEnter)=\"editStart($event)\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -651,7 +659,7 @@
                     "shortText": "Emitted when a row enters edit mode."
                 }
             },
-            "onRowEdit": {
+            "rowEdit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -670,7 +678,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onRowEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
+                                    "<igx-grid #grid3 (rowEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -710,7 +718,7 @@
                     "shortText": "Emitted after exiting edit mode for a row and editing has been committed."
                 }
             },
-            "onRowEditCancel": {
+            "rowEditExit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -718,8 +726,7 @@
                                 "text": [
                                     "Emits when [rowEditable]=\"true\" & `endEdit(false)` is called.",
                                     "Emitted when changing hitting `Esc` key during cell editing and when click on the `Cancel` button",
-                                    "in the row editing overlay.",
-                                    "This event is cancelable."
+                                    "in the row editing overlay."
                                 ],
                                 "tagName": "remarks"
                             }
@@ -728,7 +735,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onRowEditCancel)=\"editCancel($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
+                                    "<igx-grid #grid3 (rowEditExit)=\"editExit($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -1745,6 +1752,36 @@
                         }
                     },
                     "shortText": "Updates the `IgxGridRowComponent`"
+                }
+            },
+            "getRowData": {
+                "comment": {
+                    "parameters": {
+                        "rowSelector": {
+                            "comment": {
+                                "text": "correspond to rowID"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "If the primary key is not specified the row selector match the row data.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "const data = grid.getRowData(94741);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Returns the data that is contained in the row component."
                 }
             },
             "sort": {

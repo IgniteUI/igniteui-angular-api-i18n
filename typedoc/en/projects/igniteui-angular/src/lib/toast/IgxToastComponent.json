@@ -66,7 +66,7 @@
                         "Emits an event when the toast is shown.",
                         "Provides reference to the `IgxToastComponent` as event argument.",
                         "```html",
-                        "<igx-toast (onShown) = \"onShown($event)\"></igx-toast>",
+                        "<igx-toast (onShown)=\"onShown($event)\"></igx-toast>",
                         "```"
                     ]
                 }
@@ -85,7 +85,7 @@
                         "Emits an event prior the toast is hidden.",
                         "Provides reference to the `IgxToastComponent` as event argument.",
                         "```html",
-                        "<igx-toast (onHiding) = \"onHiding($event)\"></igx-toast>",
+                        "<igx-toast (onHiding)=\"onHiding($event)\"></igx-toast>",
                         "```"
                     ]
                 }
@@ -104,7 +104,7 @@
                         " Emits an event when the toast is hidden.",
                         " Provides reference to the `IgxToastComponent` as event argument.",
                         "```html",
-                        "<igx-toast (onHidden) = \"onHidden($event)\"></igx-toast>",
+                        "<igx-toast (onHidden)=\"onHidden($event)\"></igx-toast>",
                         "```"
                     ]
                 }
@@ -176,6 +176,32 @@
                     ]
                 }
             },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
+                                    "//..",
+                                    "<igx-toast [outlet]=\"outlet\"></igx-toast>",
+                                    "//..",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the container used for the toast element."
+                }
+            },
             "position": {
                 "comment": {
                     "tags": {
@@ -190,12 +216,102 @@
                         "Sets/gets the position of the toast.",
                         "If not set, the `position` attribute will have value `IgxToastPosition.Bottom`.",
                         "```html",
-                        "<igx-toast [position] = \"top\"></igx-toast>",
+                        "<igx-toast [position]=\"top\"></igx-toast>",
                         "```",
                         "```typescript",
                         "let toastPosition = this.toast.position;",
                         "```"
                     ]
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleOpened(event) {",
+                        "   alert(\"Toggle opened!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpened)='onToggleOpened($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event after the toggle container is opened."
+                }
+            },
+            "onOpening": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleOpening(event) {",
+                        " alert(\"Toggle opening!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpening)='onToggleOpening($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event before the toggle container is opened."
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleClosed(event) {",
+                        " alert(\"Toggle closed!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onClosed)='onToggleClosed($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event after the toggle container is closed."
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleClosing(event) {",
+                        " alert(\"Toggle closing!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        " igxToggle",
+                        " (onClosing)='onToggleClosing($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event before the toggle container is closed."
+                }
+            },
+            "onAppended": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onAppended() {",
+                        " alert(\"Content appended!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onAppended)='onToggleAppended()'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event after the toggle element is appended to the overlay container."
                 }
             }
         },
@@ -254,6 +370,21 @@
                         "```"
                     ]
                 }
+            },
+            "reposition": {
+                "comment": {
+                    "shortText": [
+                        "Repositions the toggle.",
+                        "```typescript",
+                        "this.myToggle.reposition();",
+                        "```"
+                    ]
+                }
+            },
+            "setOffset": {
+                "comment": {
+                    "shortText": "Offsets the content along the corresponding axis by the provided amount"
+                }
             }
         },
         "accessors": {
@@ -271,14 +402,14 @@
                         "text": [
                             "Two-way data binding.",
                             "```html",
-                            "<igx-toast [(isVisible)] = \"model.isVisible\"></igx-toast>",
+                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
                             "```"
                         ],
                         "shortText": [
                             "Enables/Disables the visibility of the toast.",
                             "If not set, the `isVisible` attribute will have value `false`.",
                             "```html",
-                            "<igx-toast [isVisible] = \"true\"></igx-toast>",
+                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
                             "```",
                             "```typescript",
                             "let isVisible = this.toast.isVisible;",
@@ -299,14 +430,14 @@
                         "text": [
                             "Two-way data binding.",
                             "```html",
-                            "<igx-toast [(isVisible)] = \"model.isVisible\"></igx-toast>",
+                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
                             "```"
                         ],
                         "shortText": [
                             "Enables/Disables the visibility of the toast.",
                             "If not set, the `isVisible` attribute will have value `false`.",
                             "```html",
-                            "<igx-toast [isVisible] = \"true\"></igx-toast>",
+                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
                             "```",
                             "```typescript",
                             "let isVisible = this.toast.isVisible;",
@@ -386,6 +517,18 @@
                             "Gets the nativeElement of the toast.",
                             "```typescript",
                             "let nativeElement = this.toast.element;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "overlayId": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the id of the overlay the content is rendered in.",
+                            "```typescript",
+                            "this.myToggle.overlayId;",
                             "```"
                         ]
                     }

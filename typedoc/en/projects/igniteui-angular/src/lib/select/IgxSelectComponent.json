@@ -44,15 +44,44 @@
                     ]
                 }
             },
-            "type": {
+            "onOpening": {
                 "comment": {
-                    "shortText": [
-                        "An @Input property that sets how the select will be styled.",
-                        "The allowed values are `line`, `box` and `border`. The default is `line`.",
+                    "text": [
                         "```html",
-                        "<igx-select [type]=\"'box'\"></igx-select>",
+                        "<igx-select onOpening='handleOpening($event)'></igx-select>",
                         "```"
-                    ]
+                    ],
+                    "shortText": "Emitted before the dropdown is opened"
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-select (onOpened)='handleOpened()'></igx-select>",
+                        "```"
+                    ],
+                    "shortText": "Emitted after the dropdown is opened"
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-select (onClosing)='handleClosing($event)'></igx-select>",
+                        "```"
+                    ],
+                    "shortText": "Emitted before the dropdown is closed"
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-select (onClosed)='handleClosed()'></igx-select>",
+                        "```"
+                    ],
+                    "shortText": "Emitted after the dropdown is closed"
                 }
             },
             "toggleIconTemplate": {
@@ -120,46 +149,6 @@
                         "```"
                     ],
                     "shortText": "The custom template, if any, that should be used when rendering the FOOTER for the select items list"
-                }
-            },
-            "onOpening": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onOpening)='handleOpening()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "Emitted before the dropdown is opened"
-                }
-            },
-            "onOpened": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onOpened)='handleOpened()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "Emitted after the dropdown is opened"
-                }
-            },
-            "onClosing": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onClosing)='handleClosing()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "Emitted before the dropdown is closed"
-                }
-            },
-            "onClosed": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onClosed)='handleClosed()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "Emitted after the dropdown is closed"
                 }
             },
             "onSelection": {
@@ -278,6 +267,30 @@
                             "```"
                         ],
                         "shortText": "An @Input property that gets/sets the component value."
+                    }
+                }
+            },
+            "type": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that sets how the select will be styled.",
+                            "The allowed values are `line`, `box` and `border`. The input-group default is `line`.",
+                            "```html",
+                            "<igx-select [type]=\"'box'\"></igx-select>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that sets how the select will be styled.",
+                            "The allowed values are `line`, `box` and `border`. The input-group default is `line`.",
+                            "```html",
+                            "<igx-select [type]=\"'box'\"></igx-select>",
+                            "```"
+                        ]
                     }
                 }
             },

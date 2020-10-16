@@ -81,6 +81,49 @@
             }
         },
         "methods": {
+            "createAbsoluteOverlaySettings": {
+                "comment": {
+                    "returns": "Non-modal overlay settings based on Global or Container position strategy and the provided position.\n",
+                    "parameters": {
+                        "position": {
+                            "comment": {
+                                "text": "Preset position settings. Default position is 'center'"
+                            }
+                        },
+                        "outlet": {
+                            "comment": {
+                                "text": "The outlet container to attach the overlay to"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Creates overlay settings with global or container position strategy and preset position settings"
+                }
+            },
+            "createRelativeOverlaySettings": {
+                "comment": {
+                    "returns": "Non-modal overlay settings based on the provided target, strategy and position.\n",
+                    "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": "Attaching target for the component to show"
+                            }
+                        },
+                        "position": {
+                            "comment": {
+                                "text": "Preset position settings. By default the element is positioned below the target, left aligned."
+                            }
+                        },
+                        "strategy": {
+                            "comment": {
+                                "text": "The relative position strategy to be applied to the overlay settings. Default is Auto positioning strategy."
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Creates overlay settings with auto, connected or elastic position strategy and preset position settings"
+                }
+            },
             "attach": {
                 "comment": {
                     "returns": "Id of the created overlay. Valid until `onClosed` is emitted.\n",
