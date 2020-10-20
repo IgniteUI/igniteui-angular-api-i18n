@@ -126,6 +126,23 @@
                     "shortText": "空の場合のカスタムテンプレートを取得または設定します。"
                 }
             },
+            "addRowEmptyTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [addRowEmptyTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "グリッドが空のときに行 UI を追加するためのカスタム テンプレートを得または設定します。"
+                }
+            },
             "loadingGridTemplate": {
                 "comment": {
                     "tags": {
@@ -528,34 +545,7 @@
                     "shortText": "`IgxColumnComponent` がピン固定されたときに発生します。"
                 }
             },
-            "onCellEditCancel": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": [
-                                    "(`Esc` キーが押された時など)",
-                                    "このイベントはキャンセルできます。"
-                                ],
-                                "tagName": "備考:"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-grid #grid3 (onCellEditCancel)=\"editCancel($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
-                                    "</igx-grid>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "送信せずに値を編集するときに生成されます。"
-                }
-            },
-            "onCellEditEnter": {
+            "cellEditEnter": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -568,7 +558,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onCellEditEnter)=\"editStart($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
+                                    "<igx-grid #grid3 (cellEditEnter)=\"editStart($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -579,7 +569,25 @@
                     "shortText": "セルが編集モードに入るときに生成されます。"
                 }
             },
-            "onCellEdit": {
+            "cellEditExit": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid3 (cellEditExit)=\"editExit($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
+                                    "</igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "セルが編集モードを終了すると発行されます。"
+                }
+            },
+            "cellEdit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -595,7 +603,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onCellEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
+                                    "<igx-grid #grid3 (cellEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -624,7 +632,7 @@
                     "shortText": "セルが編集され、編集が確定された後に発生します。"
                 }
             },
-            "onRowEditEnter": {
+            "rowEditEnter": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -640,7 +648,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onRowEditEnter)=\"editStart($event)\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
+                                    "<igx-grid #grid3 (rowEditEnter)=\"editStart($event)\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -651,7 +659,7 @@
                     "shortText": "行が編集モードに入るときに生成されます。"
                 }
             },
-            "onRowEdit": {
+            "rowEdit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -670,7 +678,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onRowEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
+                                    "<igx-grid #grid3 (rowEdit)=\"editDone($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -711,7 +719,7 @@
                     "shortText": "行の編集モードを終了し、編集が確定された後に発生します。"
                 }
             },
-            "onRowEditCancel": {
+            "rowEditExit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -719,8 +727,7 @@
                                 "text": [
                                     "[rowEditable]=\"true\" & `endEdit(false)` が呼び出されるときに発生されます。",
                                     "セル編集のときに `Esc` キーを押して、行編集オーバーレイに",
-                                    "キャンセル ボタンを押すと発生されます。",
-                                    "このイベントはキャンセルできます。"
+                                    "キャンセル ボタンを押すと発生されます。"
                                 ],
                                 "tagName": "備考:"
                             }
@@ -729,7 +736,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid3 (onRowEditCancel)=\"editCancel($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
+                                    "<igx-grid #grid3 (rowEditExit)=\"editExit($event)\" [data]=\"data\" [primaryKey]=\"'ProductID'\" [rowEditable]=\"true\">",
                                     "</igx-grid>",
                                     "```"
                                 ],
@@ -1746,6 +1753,36 @@
                         }
                     },
                     "shortText": "`IgxGridRowComponent` を更新します。"
+                }
+            },
+            "getRowData": {
+                "comment": {
+                    "parameters": {
+                        "rowSelector": {
+                            "comment": {
+                                "text": "rowID.に対応します。"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "プライマリ キーが指定されていない場合、行セレクターは行データと一致します。",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "const data = grid.getRowData(94741);",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "行コンポーネントに含まれているデータを返します。"
                 }
             },
             "sort": {

@@ -47,7 +47,7 @@
                         "Toast が表示される前にイベントを発生します。",
                         "イベント引数として `IgxToastComponent` への参照を提供します。",
                         "```html",
-                        "<igx-toast (onShowing) = \"onShowing($event)\"></igx-toast>",
+                        "<igx-toast (onShown)=\"onShown($event)\"></igx-toast>",
                         "```"
                     ]
                 }
@@ -66,7 +66,7 @@
                         "Toast が表示されたときにイベントを発生します。",
                         "イベント引数として `IgxToastComponent` への参照を提供します。",
                         "```html",
-                        "<igx-toast (onShown) = \"onShown($event)\"></igx-toast>",
+                        "<igx-toast (onHiding)=\"onHiding($event)\"></igx-toast>",
                         "```"
                     ]
                 }
@@ -85,7 +85,7 @@
                         "Toast が非表示される前にイベントを発生します。",
                         "イベント引数として `IgxToastComponent` への参照を提供します。",
                         "```html",
-                        "<igx-toast (onHiding) = \"onHiding($event)\"></igx-toast>",
+                        "<igx-toast (onHidden)=\"onHidden($event)\"></igx-toast>",
                         "```"
                     ]
                 }
@@ -175,6 +175,32 @@
                     ]
                 }
             },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` は、`IgxOverlayOutletDirective` または `ElementRef` のインスタンスです。",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
+                                    "//..",
+                                    "<igx-toast [outlet]=\"outlet\"></igx-toast>",
+                                    "//..",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "トースト要素に使用されるコンテナを取得/設定します。"
+                }
+            },
             "position": {
                 "comment": {
                     "tags": {
@@ -189,15 +215,105 @@
                         "toast の位置を取得または設定します。",
                         "設定されない場合、`position` 属性の値は `IgxToastPosition.Bottom` です。",
                         "```html",
-                        "<igx-toast [position] = \"top\"></igx-toast>",
+                        "<igx-toast [position]=\"top\"></igx-toast>",
                         "```",
                         "```typescript",
                         "let toastPosition = this.toast.position;",
                         "```"
                     ]
                 }
-            }
-        },
+            },
+    "onOpened": {
+        "comment": {
+            "text": [
+                "```typescript",
+                "onToggleOpened(event) {",
+                "   alert(\"Toggle opened!\");",
+                "}",
+                "```",
+                "```html",
+                "<div",
+                "  igxToggle",
+                "  (onOpened)='onToggleOpened($event)'>",
+                "</div>",
+                "```"
+            ],
+            "shortText": "トグル コンテナが開かれた後、イベントを発行します。"
+        }
+    },
+    "onOpening": {
+        "comment": {
+            "text": [
+                "```typescript",
+                "onToggleOpening(event) {",
+                " alert(\"Toggle opening!\");",
+                "}",
+                "```",
+                "```html",
+                "<div",
+                "  igxToggle",
+                "  (onOpening)='onToggleOpening($event)'>",
+                "</div>",
+                "```"
+            ],
+            "shortText": "トグル コンテナが開いた前にイベントを発生します。"
+        }
+    },
+    "onClosed": {
+        "comment": {
+            "text": [
+                "```typescript",
+                "onToggleClosed(event) {",
+                " alert(\"Toggle closed!\");",
+                "}",
+                "```",
+                "```html",
+                "<div",
+                "  igxToggle",
+                "  (onClosed)='onToggleClosed($event)'>",
+                "</div>",
+                "```"
+            ],
+            "shortText": "トグル コンテナが閉じた後にイベントを発生します。"
+        }
+    },
+    "onClosing": {
+        "comment": {
+            "text": [
+                "```typescript",
+                "onToggleClosing(event) {",
+                " alert(\"Toggle closing!\");",
+                "}",
+                "```",
+                "```html",
+                "<div",
+                " igxToggle",
+                " (onClosing)='onToggleClosing($event)'>",
+                "</div>",
+                "```"
+            ],
+            "shortText": "トグル コンテナが閉じた前にイベントを発生します。"
+        }
+    },
+    "onAppended": {
+        "comment": {
+            "text": [
+                "```typescript",
+                "onAppended() {",
+                " alert(\"Content appended!\");",
+                "}",
+                "```",
+                "```html",
+                "<div",
+                "  igxToggle",
+                "  (onAppended)='onToggleAppended()'>",
+                "</div>",
+                "```"
+            ],
+            "shortText": "トグル要素がオーバーレイ コンテナに追加された後にイベントを発生します。"
+        }
+    }
+},
         "methods": {
             "show": {
                 "comment": {
@@ -253,6 +369,21 @@
                         "```"
                     ]
                 }
+            },
+            "reposition": {
+                "comment": {
+                    "shortText": [
+                        "トグルを再配置します。",
+                        "```typescript",
+                        "this.myToggle.reposition();",
+                        "```"
+                    ]
+                }
+            },
+            "setOffset": {
+                "comment": {
+                    "shortText": "対応する軸に沿って指定した量のみコンテンツをオフセットします。"
+                }
             }
         },
         "accessors": {
@@ -270,14 +401,14 @@
                         "text": [
                             "双方向データ バインディング。",
                             "```html",
-                            "<igx-toast [(isVisible)] = \"model.isVisible\"></igx-toast>",
+                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
                             "```"
                         ],
                         "shortText": [
                             "toast の表示状態を有効または無効にします。",
                             "設定されない場合、`isVisible` の値は `false` です。",
                             "```html",
-                            "<igx-toast [isVisible] = \"true\"></igx-toast>",
+                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
                             "```",
                             "```typescript",
                             "let isVisible = this.toast.isVisible;",
@@ -298,14 +429,14 @@
                         "text": [
                             "双方向データ バインディング。",
                             "```html",
-                            "<igx-toast [(isVisible)] = \"model.isVisible\"></igx-toast>",
+                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
                             "```"
                         ],
                         "shortText": [
                             "toast の表示状態を有効または無効にします。",
                             "設定されない場合、`isVisible` の値は `false` です。",
                             "```html",
-                            "<igx-toast [isVisible] = \"true\"></igx-toast>",
+                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
                             "```",
                             "```typescript",
                             "let isVisible = this.toast.isVisible;",
@@ -385,6 +516,18 @@
                             "toast の nativeElement を取得します。",
                             "```typescript",
                             "let nativeElement = this.toast.element;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "overlayId": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "コンテンツが描画されるオーバーレイの ID を返します。",
+                            "```typescript",
+                            "this.myToggle.overlayId;",
                             "```"
                         ]
                     }
