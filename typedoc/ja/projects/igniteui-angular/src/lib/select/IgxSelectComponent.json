@@ -44,15 +44,44 @@
                     ]
                 }
             },
-            "type": {
+            "onOpening": {
                 "comment": {
-                    "shortText": [
-                        "選択のスタイル設定するを設定する @Input プロパティ。",
-                        "有効な値は `line`、`box` および `border`。デフォルトは `line` です。",
+                    "text": [
                         "```html",
-                        "<igx-select [type]=\"'box'\"></igx-select>",
+                        "<igx-select onOpening='handleOpening($event)'></igx-select>",
                         "```"
-                    ]
+                    ],
+                    "shortText": "ドロップダウンが開かれる前に発生されます。"
+                }
+            },
+            "onOpened": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-select (onOpened)='handleOpened()'></igx-select>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが開かれた後に発生されます。"
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-select (onClosing)='handleClosing($event)'></igx-select>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが閉じられる前に発生されます。"
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-select (onClosed)='handleClosed()'></igx-select>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが閉じた後に発生されます。"
                 }
             },
             "toggleIconTemplate": {
@@ -120,46 +149,6 @@
                         "```"
                     ],
                     "shortText": "カスタム テンプレートがある場合は、select items リストのための FOOTER の描画に使用されます。"
-                }
-            },
-            "onOpening": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onOpening)='handleOpening()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが開かれる前に発生されます。"
-                }
-            },
-            "onOpened": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onOpened)='handleOpened()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが開かれた後に発生されます。"
-                }
-            },
-            "onClosing": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onClosing)='handleClosing()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが閉じられる前に発生されます。"
-                }
-            },
-            "onClosed": {
-                "comment": {
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (onClosed)='handleClosed()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが閉じた後に発生されます。"
                 }
             },
             "onSelection": {
@@ -279,6 +268,30 @@
                             "```"
                         ],
                         "shortText": "コンポーネントの値を取得または設定する @Input プロパティ。"
+                    }
+                }
+            },
+            "type": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "選択のスタイル設定するを設定する @Input プロパティ。",
+                            "有効な値は `line`、`box` および `border` です。入力グループのデフォルト設定は `line` です。",
+                            "```html",
+                            "<igx-select [type]=\"'box'\"></igx-select>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "選択のスタイル設定するを設定する @Input プロパティ。",
+                            "効な値は `line`、`box` および `border` です。入力グループのデフォルト設定は `line` です。",
+                            "```html",
+                            "<igx-select [type]=\"'box'\"></igx-select>",
+                            "```"
+                        ]
                     }
                 }
             },
