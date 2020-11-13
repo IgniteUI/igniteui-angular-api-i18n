@@ -1,300 +1,76 @@
 {
     "IgxGridToolbarComponent": {
         "comment": {
-            "shortText": [
-                "クラスはToolbar のロジックをカプセル化して、`IgxGridComponent`、`IgxTreeGridComponent` および `IgxHierarchicalGridComponent` に使用されます。"
-            ]
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxGridToolbarModule",
+                        "tagName": "igxmodule"
+                    }
+                }
+            },
+            "shortText": "グリッド コンポーネントの UI 操作用のコンテキスト対応コンテナー コンポーネントを提供します。"
         },
         "properties": {
-            "columnHidingDropdown": {
+            "showProgress": {
                 "comment": {
-                    "shortText": [
-                        "列非表示 UI の `IgxDropDownComponent` への参照を提供します。",
-                        "```typescript",
-                        "const dropdownHiding = this.grid.toolbar.columnHidingDropdown;",
-                        "```"
-                    ]
-                }
-            },
-            "columnHidingUI": {
-                "comment": {
-                    "shortText": [
-                        "`列を非表示にするための `IgxColumnActionsComponent` への参照を提供します。",
-                        "```typescript",
-                        "const hidingUI = this.grid.toolbar.columnHidingUI;",
-                        "```"
-                    ]
-                }
-            },
-            "columnHidingButton": {
-                "comment": {
-                    "shortText": [
-                        "列非表示ボタンへの参照を提供します。",
-                        "```typescript",
-                        "const hidingButton = this.grid.toolbar.columnHidingButton;",
-                        "```"
-                    ]
-                }
-            },
-            "exportDropdown": {
-                "comment": {
-                    "shortText": [
-                        "[Export] ボタンの `IgxDropDownComponent` への参照を提供します。",
-                        "```typescript",
-                        "const exportDropdown = this.grid.toolbar.exportDropdown;",
-                        "```"
-                    ]
-                }
-            },
-            "exportButton": {
-                "comment": {
-                    "shortText": [
-                        "[Export] ボタンへの参照を提供します。",
-                        "```typescript",
-                        "const exportBtn = this.grid.toolbar.exportButton;",
-                        "```"
-                    ]
-                }
-            },
-            "columnPinningDropdown": {
-                "comment": {
-                    "shortText": [
-                        "列ピン固定 UI の `IgxDropDownComponent` への参照を提供します。",
-                        "```typescript",
-                        "const dropdownPinning = this.grid.toolbar.columnPinningDropdown;",
-                        "```"
-                    ]
-                }
-            },
-            "columnPinningUI": {
-                "comment": {
-                    "shortText": [
-                        "`列を非表示にするための `IgxColumnActionsComponent` への参照を提供します。",
-                        "```typescript",
-                        "const pinningUI = this.grid.toolbar.columnPinningDropdown;",
-                        "```"
-                    ]
-                }
-            },
-            "columnPinningButton": {
-                "comment": {
-                    "shortText": [
-                        "列ピン固定ボタンへの参照を提供します。",
-                        "```typescript",
-                        "const pinningButton = this.grid.toolbar.columnPinningButton;",
-                        "```"
-                    ]
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "デフォルトでは、デフォルトのエクスポーター コンポーネントが存在し、エクスポートが進行中の場合、",
+                                    "これはトグルされます。"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "有効にすると、不確定なプログレスバーが表示されます。"
                 }
             }
         },
-        "methods": {
-            "getTitle": {
-                "comment": {
-                    "shortText": [
-                        "`IgxGridToolbarComponent` のタイトルを返します。",
-                        "```typescript",
-                        "const toolbarTitle = this.igxGrid1.toolbar.getTitle();",
-                        "```"
-                    ]
-                }
-            },
-            "getExportText": {
-                "comment": {
-                    "shortText": [
-                        "`IgxGridToolbarComponent` のエクスポート ボタンのテキストを返します。",
-                        "```typescript",
-                        "const toolbarExportText = this.igxGrid1.toolbar.getTitle();",
-                        "```"
-                    ]
-                }
-            },
-            "getExportExcelText": {
-                "comment": {
-                    "shortText": [
-                        "`IgxGridToolbarComponent` の Excel エクスポート ボタンのテキストを返します。",
-                        "```typescript",
-                        "const toolbarExcelText = this.igxGrid1.toolbar.getExportExcelText();",
-                        "```"
-                    ]
-                }
-            },
-            "getExportCsvText": {
-                "comment": {
-                    "shortText": [
-                        "`IgxGridToolbarComponent` の CSV エクスポート ボタンのテキストを返します。",
-                        "```typescript",
-                        "const toolbarCSVText = this.igxGrid1.toolbar.getExportCsvText();",
-                        "```"
-                    ]
-                }
-            },
-            "exportClicked": {
-                "comment": {
-                    "shortText": [
-                        "エクスポート ボタンのドロップダウン メニューを切り替えます。",
-                        "```typescript",
-                        "this.igxGrid1.toolbar.exportClicked();",
-                        "```"
-                    ]
-                }
-            },
-            "exportToExcelClicked": {
-                "comment": {
-                    "shortText": [
-                        "グリッドを Excel にエクスポートします。",
-                        "```typescript",
-                        "this.igxGrid1.toolbar.exportToExcelClicked();",
-                        "```"
-                    ]
-                }
-            },
-            "exportToCsvClicked": {
-                "comment": {
-                    "shortText": [
-                        "グリッドを CSV にエクスポートします。",
-                        "```typescript",
-                        "this.igxGrid1.toolbar.exportToCsvClicked();",
-                        "```"
-                    ]
-                }
-            },
-            "toggleColumnHidingUI": {
-                "comment": {
-                    "shortText": [
-                        "列非表示 UI を切り替えます。",
-                        "```typescript",
-                        "this.grid1.toolbar.toggleColumnHidingUI();",
-                        "```"
-                    ]
-                }
-            },
-            "toggleColumnPinningUI": {
-                "comment": {
-                    "shortText": [
-                        "列ピン固定 UI を切り替えます。",
-                        "```typescript",
-                        "this.grid1.toolbar.toggleColumnPinningUI();",
-                        "```"
-                    ]
-                }
-            }
-        },
+        "methods": {},
         "accessors": {
-            "filterColumnsPrompt": {
+            "grid": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "フィルター ボックスに表示されるデフォルト テキストを取得します。",
-                            "```typescript",
-                            "const filterPrompt = this.grid.toolbar.filterColumnsPrompt;",
-                            "```"
-                        ]
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "通常、デフォルトのグリッド/ツリー グリッドのコンテキストでこのプロパティを設定しないでください。",
+                                        "これを設定する必要があるグリッドは、階層的な子グリッドのみです。",
+                                        "詳細については、ツールバーのトピックを確認してください。"
+                                    ],
+                                    "tagName": "備考:"
+                                }
+                            }
+                        },
+                        "shortText": "ツールバー コンポーネントのグリッド コンポーネントを取得/設定します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "フィルター ボックスに表示されるデフォルト テキストを設定します。",
-                            "```typescript",
-                            "this.grid.toolbar.filterColumnsPrompt('Filter columns ...');",
-                            "```"
-                        ]
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "通常、デフォルトのグリッド/ツリー グリッドのコンテキストでこのプロパティを設定しないでください。",
+                                        "これを設定する必要があるグリッドは、階層的な子グリッドのみです。",
+                                        "詳細については、ツールバーのトピックを確認してください。"
+                                    ],
+                                    "tagName": "備考:"
+                                }
+                            }
+                        },
+                        "shortText": "ツールバー コンポーネントのグリッド コンポーネントを取得/設定します。"
                     }
                 }
             },
-            "defaultDropDownsMaxHeight": {
+            "nativeElement": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "`IgxGridToolbarComponent` のドロップダウン パネルの高さを取得します。",
-                            "```typescript",
-                            "const dropdownHeight = this.grid.toolbar.defaultDropDownsMaxHeight;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "grid": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridComponent` をホストする IgxGridComponent コンポーネントへの参照を返します。",
-                            "```typescript",
-                            "const grid = this.igxGrid1.toolbar.grid;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "shouldShowExportButton": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridComponent` がエクスポート ボタンを描画するかどうかを返します。",
-                            "```typescript",
-                            "const exportButton = this.igxGrid1.toolbar.shouldShowExportButton;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "shouldShowExportExcelButton": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridComponent` が Excel エクスポート ボタンを描画するかどうかを返します。",
-                            "```typescript",
-                            "const exportExcelButton = this.igxGrid1.toolbar.shouldShowExportExcelButton;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "shouldShowExportCsvButton": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridComponent` が CSV エクスポート ボタンを描画するかどうかを返します。",
-                            "```typescript",
-                            "const exportCSVButton = this.igxGrid1.toolbar.shouldShowExportCsvButton;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "pinnedColumnsCount": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "ピン固定されている列の数を返します。",
-                            "```typescript",
-                            "const pinnedCount = this.igxGrid1.toolbar.pinnedColumnsCount;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "hostClass": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "`IgxGridToolbarComponent` のテーマを返します。",
-                            "```typescript",
-                            "const toolbarTheme = this.grid.toolbar.hostClass;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "context": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "親 IgxGird およびツールバーへ参照を提供して、`toolbar custom container` へ `template context` のバインドを表す `context` オブジェクトを返します。",
-                            "```typescript",
-                            "const context =  this.igxGrid.toolbar.context;",
-                            "```"
-                        ]
+                        "shortText": "ツールバー コンポーネントのネイティブ DOM 要素を返します。"
                     }
                 }
             },

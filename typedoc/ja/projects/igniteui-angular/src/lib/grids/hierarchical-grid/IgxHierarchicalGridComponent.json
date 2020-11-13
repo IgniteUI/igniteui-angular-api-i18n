@@ -1,6 +1,48 @@
 {
     "IgxHierarchicalGridComponent": {
         "properties": {
+            "hasChildrenKey": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-hierarchical-grid #grid [data]=\"localData\" [hasChildrenKey]=\"'hasEmployees'\">",
+                                    "</igx-hierarchical-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "行に子があるかどうかを示すキーを取得または設定します。 行に子がない場合、展開インジケーターを描画しません。"
+                }
+            },
+            "showExpandAll": {
+                "comment": {
+                    "tags": {
+                        "remark": {
+                            "comment": {
+                                "text": "デフォルト値は False です。",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-hierarchical-grid #grid [data]=\"localData\" [showExpandAll]=\"true\">",
+                                    "</igx-hierarchical-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "ヘッダーのすべて展開/縮小ボタンを描画するかどうかを取得または設定します。"
+                }
+            },
             "onDataPreLoad": {
                 "comment": {
                     "tags": {
@@ -327,6 +369,11 @@
             "columnHidingTitle": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "tagName": "非推奨"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -344,6 +391,11 @@
             "columnPinningTitle": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "tagName": "非推奨"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -1156,6 +1208,11 @@
                     "shortText": "ヘッダー折りたたみインジケーターをレンダリングするときに使用する必要があるカスタムテンプレート (存在する場合)。"
                 }
             },
+            "excelStyleHeaderIconTemplate": {
+                "comment": {
+                    "shortText": "行展開インジケーターをレンダリングするときに使用する必要があるカスタムテンプレート (存在する場合)。"
+                }
+            },
             "sortingExpressionsChange": {
                 "comment": {
                     "tags": {
@@ -1177,23 +1234,6 @@
                         }
                     },
                     "shortText": "並べ替えが UI で実行された前に発生されます。"
-                }
-            },
-            "toolbar": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const gridToolbar = this.grid.toolbar;",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "`IgxToolbarComponent` へのアクセスを提供します。"
                 }
             },
             "onToolbarExporting": {
@@ -1226,6 +1266,11 @@
                         }
                     },
                     "shortText": "範囲選択を行ったときに発生します。"
+                }
+            },
+            "rendered": {
+                "comment": {
+                    "shortText": "ngAfterViewInit の後に発生します。この時点で、グリッドは DOM に存在します。"
                 }
             }
         },
@@ -3103,6 +3148,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "デフォルトで無効 (false) に設定されます。UI を操作するには、以下の例のようにツールバーを有効にする必要があります。",
@@ -3126,6 +3176,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "デフォルトで無効 (false) に設定されます。UI を操作するには、以下の例のようにツールバーを有効にする必要があります。",
@@ -3588,6 +3643,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -3605,6 +3665,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4101,25 +4166,6 @@
                                 }
                             }
                         },
-                        "shortText": "現在描画されている `IgxGridRowComponent` のリスト。"
-                    }
-                }
-            },
-            "toolbarCustomContentTemplate": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "let customContentTemplate = this.grid.toolbarCustomContentTemplate;",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
                         "shortText": "カスタム コンテンツを表示するためにツールバーで使用されるテンプレートを返します。"
                     }
                 }
@@ -4203,10 +4249,22 @@
                     }
                 }
             },
+            "pinnedColumnsCount": {
+                "getter": {
+                    "comment": {
+                        "shortText": "ピン固定列の数を取得します。"
+                    }
+                }
+            },
             "hiddenColumnsText": {
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "`IgxColumnComponent` の定義済みの列非表示 UI に使用します。",
@@ -4230,6 +4288,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "`IgxColumnComponent` の定義済みの列非表示 UI に使用します。",
@@ -4255,6 +4318,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "`IgxColumnComponent` の定義済みの列ピン固定 UI に使用します。",
@@ -4278,6 +4346,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "`IgxColumnComponent` の定義済みの列ピン固定 UI に使用します。",
@@ -4310,6 +4383,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4327,6 +4405,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4346,6 +4429,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4363,6 +4451,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4382,6 +4475,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4399,6 +4497,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4417,22 +4520,36 @@
             "exportCsv": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "CSV へのエクスポート オプションが有効かどうかを取得または設定します。",
-                            "```html",
-                            "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [exportCsv]=\"true\"></igx-grid>",
-                            "```"
-                        ]
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [exportCsv]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "非推奨"
+                                }
+                            }
+                        },
+                        "shortText": "CSV へのエクスポート オプションが有効かどうかを取得または設定します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "CSV へのエクスポート オプションが有効かどうかを取得または設定します。",
-                            "```html",
-                            "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [exportCsv]=\"true\"></igx-grid>",
-                            "```"
-                        ]
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [exportCsv]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "非推奨"
+                                }
+                            }
+                        },
+                        "shortText": "CSV へのエクスポート オプションが有効かどうかを取得または設定します。"
                     }
                 }
             },
@@ -4440,6 +4557,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4457,6 +4579,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4475,22 +4602,36 @@
             "exportExcelText": {
                 "getter": {
                     "comment": {
-                        "shortText": [
-                            "MS Excel エクスポート ボタンのテキスト コンテンツを取得または設定します。",
-                            "```html",
-                            "<igx-grid [exportExcelText]=\"'My Excel Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportCsv]=\"true\"></igx-grid>",
-                            "```"
-                        ]
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [exportExcelText]=\"'My Excel Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportCsv]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "非推奨"
+                                }
+                            }
+                        },
+                        "shortText": "MS Excel エクスポート ボタンのテキスト コンテンツを取得または設定します。"
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "MS Excel エクスポート ボタンのテキスト コンテンツを取得または設定します。",
-                            "```html",
-                            "<igx-grid [exportExcelText]=\"'My Excel Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportCsv]=\"true\"></igx-grid>",
-                            "```"
-                        ]
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [exportExcelText]=\"'My Excel Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportCsv]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "非推奨"
+                                }
+                            }
+                        },
+                        "shortText": "MS Excel エクスポート ボタンのテキスト コンテンツを取得または設定します。"
                     }
                 }
             },
@@ -4498,6 +4639,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4515,6 +4661,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
