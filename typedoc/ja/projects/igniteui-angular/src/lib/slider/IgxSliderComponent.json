@@ -199,100 +199,101 @@
             },
             "step": {
                 "setter": {
-                "comment": {
-                    "shortText": [
-                        "つまみドラッグ時の値を増加/減少する段階を設定する @Input プロパティ。",
-                        "デフォルトの段階は 1 です。段階を 0 以下に設定しないでください。",
-                        "```html",
-                        "<igx-slider #slider [(ngModel)]=\"task.percentCompleted\" [step]=\"5\">",
-                        "```"
-                    ]
+                    "comment": {
+                        "shortText": [
+                            "つまみドラッグ時の値を増加/減少する段階を設定する @Input プロパティ。",
+                            "デフォルトの段階は 1 です。段階を 0 以下に設定しないでください。",
+                            "```html",
+                            "<igx-slider #slider [(ngModel)]=\"task.percentCompleted\" [step]=\"5\">",
+                            "```"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "{@link IgxSliderComponent} の増分/減分ドラッグ ステップを返します。",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "    let step = this.slider.step;",
+                            "}",
+                            "```"
+                        ]
+                    }
                 }
             },
-            "getter": {
-                "comment": {
-                    "shortText": [
-                        "{@link IgxSliderComponent} の増分/減分ドラッグ ステップを返します。",
-                        "```typescript",
-                        "@ViewChild(\"slider2\")",
-                        "public slider: IgxSliderComponent;",
-                        "ngAfterViewInit(){",
-                        "    let step = this.slider.step;",
-                        "}",
-                        "```"
-                    ]
-                }
-            }
-        },
-        "disabled": {
-            "getter": {
-                "comment": {
-                    "shortText": [
-                        "{@link IgxSliderComponent} が無効かどうかを返します。",
-                        "```typescript",
-                        "@ViewChild(\"slider2\")",
-                        "public slider: IgxSliderComponent;",
-                        "ngAfterViewInit(){",
-                        "    let isDisabled = this.slider.disabled;",
-                        "}",
-                        "```"
-                    ]
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "{@link IgxSliderComponent} が無効かどうかを返します。",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "    let isDisabled = this.slider.disabled;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "UI 操作を無効または有効にする @Input プロパティ。",
+                            "```html",
+                            "<igx-slider #slider [disabled]=\"'true'\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\" [lowerBound]=\"20\">",
+                            "```"
+                        ]
+                    }
                 }
             },
-            "setter": {
-                "comment": {
-                    "shortText": [
-                        "UI 操作を無効または有効にする @Input プロパティ。",
-                        "```html",
-                        "<igx-slider #slider [disabled]=\"'true'\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\" [lowerBound]=\"20\">",
-                        "```"
-                    ]
-                }
-            }
-        },
-        "continuous": {
-            "getter": {
-                "comment": {
-                    "shortText": [
-                        "{@link IgxSliderComponent} が連続として設定されているかどうかを返します。",
-                        "```typescript",
-                        "@ViewChild(\"slider2\")",
-                        "public slider: IgxSliderComponent;",
-                        "ngAfterViewInit(){",
-                        "    let continuous = this.slider.continuous;",
-                        "}",
-                        "```"
-                    ]
-                }
-            },
-            "setter": {
-                "comment": {
-                    "shortText": [
-                        "{@link IgxSliderComponent} を連続としてて設定する @Input プロパティ。",
-                        "{@link IgxSliderComponent} はデフォルトで不連続です。",
-                        "不連続 {@link IgxSliderComponent} には目盛がなく、値にバブル ラベルを表示しません。",
-                        "```html",
-                        "<igx-slider #slider [continuous]=\"'true'\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\" [lowerBound]=\"20\">",
-                        "```"
-                    ]
-                }
-            }
-        },
-        "minValue": {
-            "getter": {
-                "comment": {
-                    "shortText": [
-                        "`IgxSliderComponent` の最小値を返します。",
-                        "```typescript",
-                        " @ViewChild(\"slider2\")",
-                        "public slider: IgxSliderComponent;",
-                        "ngAfterViewInit(){",
-                        "    let sliderMin = this.slider.minValue;",
-                        "}",
-                        "```"
-                    ]
+            "continuous": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "{@link IgxSliderComponent} が連続として設定されているかどうかを返します。",
+                            "```typescript",
+                            "@ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "    let continuous = this.slider.continuous;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "{@link IgxSliderComponent} を連続としてて設定する @Input プロパティ。",
+                            "{@link IgxSliderComponent} はデフォルトで不連続です。",
+                            "Discrete {@link IgxSliderComponent} slider has step indicators over the track and visible thumb labels during interaction.",
+                            "Continuous {@link IgxSliderComponent} does not have ticks and does not show bubble labels for values.",
+                            "```html",
+                            "<igx-slider #slider [continuous]=\"'true'\" [(ngModel)]=\"task.percentCompleted\" [step]=\"5\" [lowerBound]=\"20\">",
+                            "```"
+                        ]
+                    }
                 }
             },
+            "minValue": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "`IgxSliderComponent` の最小値を返します。",
+                            "```typescript",
+                            " @ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "ngAfterViewInit(){",
+                            "    let sliderMin = this.slider.minValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
                 "setter": {
                     "comment": {
                         "shortText": [
