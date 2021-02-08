@@ -9,21 +9,75 @@
             ]
         },
         "properties": {
-            "title": {
+            "grid": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
-                                    "```html",
-                                    "<igx-column-actions [title]=\"'Pin Columns'\"></igx-column-actions>",
+                                    "```typescript",
+                                    "let grid = this.columnActions.grid;",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "列操作コンポーネントのタイトルを取得または設定します。"
+                    "shortText": "列操作を提供するグリッドを取得または設定します。"
+                }
+            },
+            "indentation": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "<igx-column-actions [indentation]=\"15\"></igx-column-actions>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/sets the indentation of columns in the column list based on their hierarchy level."
+                }
+            },
+            "cssClass": {
+                "comment": {
+                    "shortText": [
+                        "CSS クラス セレクターを取得または設定します。",
+                        "`class` 属性のデフォルト値は `\"igx-column-actions\"` です。",
+                        "```typescript",
+                        "let cssCLass =  this.columnHidingUI.cssClass;",
+                        "```",
+                        "```typescript",
+                        "this.columnHidingUI.cssClass = 'column-chooser';",
+                        "```"
+                    ]
+                }
+            },
+            "columnsAreaMaxHeight": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "デフォルトの最大高さは 100% です。",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-column-actions [columnsAreaMaxHeight]=\"200px\"></igx-column-actions>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "列領域の最大の高さを取得または設定します。"
                 }
             },
             "hideFilter": {
@@ -60,44 +114,21 @@
                     "shortText": "ドロップダウンに現在存在する列項目を表すチェックボックス コンポーネントを取得します。"
                 }
             },
-            "columnsAreaMaxHeight": {
+            "title": {
                 "comment": {
                     "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "デフォルトの最大高さは 100% です。",
-                                "tagName": "備考:"
-                            }
-                        },
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-column-actions [columnsAreaMaxHeight]=\"200px\"></igx-column-actions>",
+                                    "<igx-column-actions [title]=\"'Pin Columns'\"></igx-column-actions>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "列領域の最大の高さを取得または設定します。"
-                }
-            },
-            "indentation": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```",
-                                    "<igx-column-actions [indentation]=\"15\"></igx-column-actions>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "階層レベルに基づいて列リスト内の列のインデントを取得または設定します。"
+                    "shortText": "列操作コンポーネントのタイトルを取得または設定します。"
                 }
             },
             "onColumnToggled": {
@@ -107,20 +138,6 @@
                         "イベント引数として `column` および `checked` プロパティへの参照を提供します。",
                         "```html",
                         " <igx-column-actions (onColumnToggled)=\"onColumnToggled($event)\"></igx-column-actions>",
-                        "```"
-                    ]
-                }
-            },
-            "cssClass": {
-                "comment": {
-                    "shortText": [
-                        "CSS クラス セレクターを取得または設定します。",
-                        "`class` 属性のデフォルト値は `\"igx-column-actions\"` です。",
-                        "```typescript",
-                        "let cssCLass =  this.columnHidingUI.cssClass;",
-                        "```",
-                        "```typescript",
-                        "this.columnHidingUI.cssClass = 'column-chooser';",
                         "```"
                     ]
                 }
@@ -167,6 +184,11 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -184,6 +206,11 @@
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
