@@ -1,10 +1,12 @@
 {
-    "IPinColumnEventArgs": {
+    "IPinColumnCancellableEventArgs": {
         "comment": {
             "shortText": [
-                "The event arguments after a column's pin state is changed.",
-                "`insertAtIndex`specifies at which index in the pinned/unpinned area the column was inserted.",
-                "`isPinned` returns the actual pin state of the column after the operation completed."
+                "The event arguments before a column's pin state is changed.",
+                "`insertAtIndex`specifies at which index in the pinned/unpinned area the column is inserted.",
+                "Can be changed in the `onColumnPinning` event.",
+                "`isPinned` returns the actual pin state of the column. When pinning/unpinning is succesfull,",
+                "the value of `isPinned` will change accordingly when read in the \"-ing\" and \"-ed\" event."
             ]
         },
         "properties": {
@@ -27,6 +29,11 @@
             "owner": {
                 "comment": {
                     "shortText": "Provides reference to the owner component."
+                }
+            },
+            "cancel": {
+                "comment": {
+                    "shortText": "Provides the ability to cancel the event."
                 }
             }
         },

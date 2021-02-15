@@ -217,6 +217,15 @@
             "pageChange": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use `IgxPaginator` corresponding output instead.",
+                                    "Emitted after the current page is changed."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -232,13 +241,21 @@
                                 "tagName": "example"
                             }
                         }
-                    },
-                    "shortText": "Emitted after the current page is changed."
+                    }
                 }
             },
             "perPageChange": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use `IgxPaginator` corresponding output instead.",
+                                    "Emitted when `perPage` property value of the grid is changed."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -254,8 +271,7 @@
                                 "tagName": "example"
                             }
                         }
-                    },
-                    "shortText": "Emitted when `perPage` property value of the grid is changed."
+                    }
                 }
             },
             "paginationTemplate": {
@@ -437,6 +453,33 @@
                     "tags": {
                         "remarks": {
                             "comment": {
+                                "text": "The index at which to insert the column may be changed through the `insertAtIndex` property.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "public columnPinning(event) {",
+                                    "    if (event.column.field === \"Name\") {",
+                                    "      event.insertAtIndex = 0;",
+                                    "    }",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before `IgxColumnComponent` is pinned."
+                }
+            },
+            "columnPinned": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
                                 "text": "The index that the column is inserted at may be changed through the `insertAtIndex` property.",
                                 "tagName": "remarks"
                             }
@@ -456,7 +499,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when `IgxColumnComponent` is pinned."
+                    "shortText": "Emitted after `IgxColumnComponent` is pinned."
                 }
             },
             "cellEditEnter": {
@@ -683,6 +726,29 @@
                     "shortText": "Emitted when a column is initialized."
                 }
             },
+            "sorting": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns an `ISortingEventArgs` object. `sortingExpressions` key holds the sorting expressions.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onSorting)=\"sorting($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before sorting expressions are applied."
+                }
+            },
             "onSortingDone": {
                 "comment": {
                     "tags": {
@@ -703,7 +769,30 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when sorting is performed through the UI."
+                    "shortText": "Emitted after sorting is completed."
+                }
+            },
+            "filtering": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns an `IFilteringEventArgs` object. `filteringExpressions` key holds the filtering expressions for the column.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (filtering)=\"filtering($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before filtering expressions are applied."
                 }
             },
             "onFilteringDone": {
@@ -726,30 +815,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when filtering is performed through the UI."
-                }
-            },
-            "onPagingDone": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "Returns an object consisting of the previous and next pages.",
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (onPagingDone)=\"pagingDone($event)\"></igx-grid>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Emitted when paging is performed."
+                    "shortText": "Emitted after filtering is performed through the UI."
                 }
             },
             "onRowAdded": {
@@ -818,7 +884,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when column is resized."
+                    "shortText": "Emitted after column is resized."
                 }
             },
             "onContextMenu": {
@@ -862,12 +928,35 @@
                     "shortText": "Emitted when a cell is double clicked."
                 }
             },
-            "onColumnVisibilityChanged": {
+            "columnVisibilityChanging": {
                 "comment": {
                     "tags": {
                         "remarks": {
                             "comment": {
                                 "text": "Args: { column: any, newValue: boolean }",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnVisibilityChanging)=\"visibilityChanging($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before column visibility is changed."
+                }
+            },
+            "onColumnVisibilityChanged": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Args: { column: IgxColumnComponent, newValue: boolean }",
                                 "tagName": "remarks"
                             }
                         },
@@ -882,7 +971,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when column visibility is changed."
+                    "shortText": "Emitted after column visibility is changed."
                 }
             },
             "onColumnMovingStart": {
@@ -1231,6 +1320,81 @@
             }
         },
         "methods": {
+            "paginate": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use `IgxPaginator` corresponding method instead.",
+                                    "Goes to the desired page index."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid1.paginate(1);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    }
+                }
+            },
+            "nextPage": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use `IgxPaginator` corresponding method instead.",
+                                    "Goes to the next page, if the grid is not already at the last page."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid1.nextPage();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    }
+                }
+            },
+            "previousPage": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Use `IgxPaginator` corresponding method instead.",
+                                    "Goes to the previous page, if the grid is not already at the first page."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid1.previousPage();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    }
+                }
+            },
             "isRecordPinnedByIndex": {
                 "comment": {
                     "parameters": {
@@ -1497,40 +1661,6 @@
                     "shortText": "Returns an `IgxGridCellComponent` object by the specified primary key and column field."
                 }
             },
-            "nextPage": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.grid1.nextPage();",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Goes to the next page, if the grid is not already at the last page."
-                }
-            },
-            "previousPage": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.grid1.previousPage();",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Goes to the previous page, if the grid is not already at the first page."
-                }
-            },
             "moveColumn": {
                 "comment": {
                     "tags": {
@@ -1546,23 +1676,6 @@
                         }
                     },
                     "shortText": "Places a column before or after the specified target column."
-                }
-            },
-            "paginate": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.grid1.paginate(1);",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Goes to the desired page index."
                 }
             },
             "markForCheck": {
@@ -3008,6 +3121,15 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `IgxPaginator` corresponding method instead.",
+                                        "Gets/Sets the current page index."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -3024,13 +3146,21 @@
                                     "tagName": "remarks"
                                 }
                             }
-                        },
-                        "shortText": "Gets/Sets the current page index."
+                        }
                     }
                 },
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `IgxPaginator` corresponding method instead.",
+                                        "Gets/Sets the current page index."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -3047,8 +3177,7 @@
                                     "tagName": "remarks"
                                 }
                             }
-                        },
-                        "shortText": "Gets/Sets the current page index."
+                        }
                     }
                 }
             },
@@ -3056,6 +3185,15 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `IgxPaginator` corresponding method instead.",
+                                        "Gets/Sets the number of visible items per page."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "The default is 15.",
@@ -3072,13 +3210,21 @@
                                     "tagName": "example"
                                 }
                             }
-                        },
-                        "shortText": "Gets/Sets the number of visible items per page."
+                        }
                     }
                 },
                 "setter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `IgxPaginator` corresponding method instead.",
+                                        "Gets/Sets the number of visible items per page."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "The default is 15.",
@@ -3095,8 +3241,7 @@
                                     "tagName": "example"
                                 }
                             }
-                        },
-                        "shortText": "Gets/Sets the number of visible items per page."
+                        }
                     }
                 }
             },
@@ -5081,6 +5226,15 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `IgxPaginator` corresponding method instead.",
+                                        "Gets the total number of pages."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -5091,8 +5245,7 @@
                                     "tagName": "example"
                                 }
                             }
-                        },
-                        "shortText": "Gets the total number of pages."
+                        }
                     }
                 }
             },
@@ -5100,6 +5253,15 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `IgxPaginator` corresponding method instead.",
+                                        "Gets if the current page is the first page."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -5110,8 +5272,7 @@
                                     "tagName": "example"
                                 }
                             }
-                        },
-                        "shortText": "Gets if the current page is the first page."
+                        }
                     }
                 }
             },
@@ -5167,6 +5328,15 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use `IgxPaginator` corresponding method instead.",
+                                        "Returns if the current page is the last page."
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -5177,8 +5347,7 @@
                                     "tagName": "example"
                                 }
                             }
-                        },
-                        "shortText": "Returns if the current page is the last page."
+                        }
                     }
                 }
             },
