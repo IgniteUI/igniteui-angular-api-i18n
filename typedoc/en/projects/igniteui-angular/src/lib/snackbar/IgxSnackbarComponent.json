@@ -93,13 +93,13 @@
                     ]
                 }
             },
-            "onAction": {
+            "clicked": {
                 "comment": {
                     "shortText": [
-                        "An event that will be emitted when the action is executed.",
+                        "An event that will be emitted when the action button is clicked.",
                         "Provides reference to the `IgxSnackbarComponent` as an argument.",
                         "```html",
-                        "<igx-snackbar (onAction) = \"onAction($event)\"></igx-snackbar>",
+                        "<igx-snackbar (clicked)=\"clickedHandler($event)\"></igx-snackbar>",
                         "```"
                     ]
                 }
@@ -130,20 +130,54 @@
         "methods": {
             "show": {
                 "comment": {
-                    "shortText": [
-                        "Shows the snackbar and hides it after the `displayTime` is over if `autoHide` is set to `true`.",
-                        "```typescript",
-                        "this.snackbar.show();",
-                        "```"
-                    ]
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Shows the snackbar and hides it after the `displayTime` is over if `autoHide` is set to `true`.",
+                                    "```typescript",
+                                    "this.snackbar.show();",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        }
+                    }
                 }
             },
             "hide": {
                 "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "Hides the snackbar.",
+                                    "```typescript",
+                                    "this.snackbar.hide();",
+                                    "```"
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        }
+                    }
+                }
+            },
+            "open": {
+                "comment": {
+                    "shortText": [
+                        "Shows the snackbar and hides it after the `displayTime` is over if `autoHide` is set to `true`.",
+                        "```typescript",
+                        "this.snackbar.open();",
+                        "```"
+                    ]
+                }
+            },
+            "close": {
+                "comment": {
                     "shortText": [
                         "Hides the snackbar.",
                         "```typescript",
-                        "this.snackbar.hide();",
+                        "this.snackbar.close();",
                         "```"
                     ]
                 }

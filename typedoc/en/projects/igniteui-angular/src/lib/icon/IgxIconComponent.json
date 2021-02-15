@@ -30,7 +30,7 @@
                     "comment": {
                         "text": [
                             "The Ignite UI Icon makes it easy for developers to include material design icons directly in their markup. The icons",
-                            "support custom colors and can be marked as active or disabled using the `isActive` property. This will change the appearance",
+                            "support different icon families and can be marked as active or disabled using the `active` property. This will change the appearance",
                             "of the icon."
                         ],
                         "tagName": "remarks"
@@ -40,7 +40,7 @@
                     "comment": {
                         "text": [
                             "```html",
-                            "<igx-icon color=\"#00ff00\" isActive=\"true\">home</igx-icon>",
+                            "<igx-icon family=\"filter-icons\" active=\"true\">home</igx-icon>",
                             "```"
                         ],
                         "tagName": "example"
@@ -72,21 +72,21 @@
                     "shortText": " This allows you to disable the `aria-hidden` attribute. By default it's applied."
                 }
             },
-            "font": {
+            "family": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-icon fontSet=\"material\">settings</igx-icon>",
+                                    "<igx-icon family=\"material\">settings</igx-icon>",
                                     "```"
                                 ],
                                 "tagName": "example"
                             }
                         }
                     },
-                    "shortText": "An @Input property that sets the value of the `fontSet`. By default it's \"material\"."
+                    "shortText": "An @Input property that sets the value of the `family`. By default it's \"material\"."
                 }
             },
             "active": {
@@ -96,7 +96,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-icon [isActive]=\"false\">settings</igx-icon>",
+                                    "<igx-icon [active]=\"false\">settings</igx-icon>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -106,7 +106,7 @@
                     "shortText": "An @Input property that allows you to disable the `active` property. By default it's applied."
                 }
             },
-            "iconColor": {
+            "color": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -120,30 +120,31 @@
                             }
                         }
                     },
-                    "shortText": "An @Input property that allows you to change the `iconColor` of the icon."
+                    "text": "* @deprecated",
+                    "shortText": "An @Input property that allows you to change the `color` of the icon."
                 }
             },
-            "iconName": {
+            "name": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-icon name=\"contains\" fontSet=\"filter-icons\"></igx-icon>",
+                                    "<igx-icon name=\"contains\" family=\"filter-icons\"></igx-icon>",
                                     "```"
                                 ],
                                 "tagName": "example"
                             }
                         }
                     },
-                    "shortText": " An @Input property that allows you to set the `iconName` of the icon."
+                    "shortText": " An @Input property that allows you to set the `name` of the icon."
                 }
             }
         },
         "methods": {},
         "accessors": {
-            "getFontSet": {
+            "getFamily": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -154,7 +155,7 @@
                                         " @ViewChild(\"MyIcon\")",
                                         "public icon: IgxIconComponent;",
                                         "ngAfterViewInit() {",
-                                        "   let iconFont = this.icon.getFontSet;",
+                                        "   let iconFamily = this.icon.getFamily;",
                                         "}",
                                         "```"
                                     ],
@@ -162,7 +163,7 @@
                                 }
                             }
                         },
-                        "shortText": " An accessor that returns the value of the font property."
+                        "shortText": " An accessor that returns the value of the family property."
                     }
                 }
             },
@@ -212,7 +213,7 @@
                     }
                 }
             },
-            "getIconColor": {
+            "getColor": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -223,7 +224,7 @@
                                         "@ViewChild(\"MyIcon\")",
                                         "public icon: IgxIconComponent;",
                                         "ngAfterViewInit() {",
-                                        "   let iconColor = this.icon.getIconColor;",
+                                        "   let color = this.icon.getColor;",
                                         "}",
                                         "```"
                                     ],
@@ -231,11 +232,11 @@
                                 }
                             }
                         },
-                        "shortText": "An accessor that returns the opposite value of the `iconColor` property."
+                        "shortText": "An accessor that returns the opposite value of the `color` property."
                     }
                 }
             },
-            "getIconName": {
+            "getName": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -246,7 +247,7 @@
                                         "@ViewChild(\"MyIcon\")",
                                         "public icon: IgxIconComponent;",
                                         "ngAfterViewInit() {",
-                                        "   let iconName = this.icon.getIconName;",
+                                        "   let name = this.icon.getName;",
                                         "}",
                                         "```"
                                     ],
@@ -279,7 +280,7 @@
                         },
                         "shortText": [
                             " An accessor that returns the key of the SVG image.",
-                            " The key consists of the fontSet and the iconName separated by underscore."
+                            " The key consists of the font-family and the name separated by underscore."
                         ]
                     }
                 }

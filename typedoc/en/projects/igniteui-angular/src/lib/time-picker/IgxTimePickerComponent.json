@@ -129,7 +129,7 @@
                         " @ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
                         "public onValueChanged(timepicker){",
-                        "    this.toast.show()",
+                        "    this.toast.open()",
                         "}",
                         " //...",
                         " ```",
@@ -150,7 +150,7 @@
                         " @ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
                         "public onValidationFailed(timepicker){",
-                        "    this.toast.show();",
+                        "    this.toast.open();",
                         "}",
                         " //...",
                         " ```",
@@ -394,99 +394,55 @@
             }
         },
         "accessors": {
-            "overlaySettings": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
-                            "```typescript",
-                            "const settings: OverlaySettings = {",
-                            "     closeOnOutsideClick: true,",
-                            "     modal: false",
-                            " }",
-                            "```",
-                            "---",
-                            "```html",
-                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
-                            "```"
-                        ]
-                    }
-                },
+            "displayTime": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
                         "shortText": [
-                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
+                            "Returns the current time formatted as string using the `format` option.",
+                            "If there is no set time the return is an empty string.",
                             "```typescript",
-                            "const settings: OverlaySettings = {",
-                            "     closeOnOutsideClick: true,",
-                            "     modal: false",
-                            " }",
-                            "```",
-                            "---",
-                            "```html",
-                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
+                            "@ViewChild(\"MyChild\")",
+                            "private picker: IgxTimePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   let time = this.picker.displayTime;",
+                            "}",
                             "```"
                         ]
                     }
                 }
             },
-            "format": {
+            "template": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
-                            "By default `format` is set to hh:mm tt. <br>",
-                            "List of time-flags: <br>",
-                            "`h` : hours field in 12-hours format without leading zero <br>",
-                            "`hh` : hours field in 12-hours format with leading zero <br>",
-                            "`H` : hours field in 24-hours format without leading zero <br>",
-                            "`HH` : hours field in 24-hours format with leading zero <br>",
-                            "`m` : minutes field without leading zero <br>",
-                            "`mm` : minutes field with leading zero <br>",
-                            "`s` : seconds field without leading zero <br>",
-                            "`ss` : seconds field with leading zero <br>",
-                            "`tt` : 2 character string which represents AM/PM field <br>",
-                            "```html",
-                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
+                            "Gets the input group template.",
+                            "```typescript",
+                            "let template = this.template();",
                             "```"
                         ]
                     }
-                },
-                "setter": {
+                }
+            },
+            "context": {
+                "getter": {
                     "comment": {
-                        "shortText": [
-                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
-                            "By default `format` is set to hh:mm tt. <br>",
-                            "List of time-flags: <br>",
-                            "`h` : hours field in 12-hours format without leading zero <br>",
-                            "`hh` : hours field in 12-hours format with leading zero <br>",
-                            "`H` : hours field in 24-hours format without leading zero <br>",
-                            "`HH` : hours field in 24-hours format with leading zero <br>",
-                            "`m` : minutes field without leading zero <br>",
-                            "`mm` : minutes field with leading zero <br>",
-                            "`s` : seconds field without leading zero <br>",
-                            "`ss` : seconds field with leading zero <br>",
-                            "`tt` : 2 character string which represents AM/PM field <br>",
-                            "```html",
-                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
-                            "```"
-                        ]
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the context passed to the input group template."
                     }
                 }
             },
@@ -594,24 +550,76 @@
                     }
                 }
             },
-            "displayTime": {
+            "format": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "Returns the current time formatted as string using the `format` option.",
-                            "If there is no set time the return is an empty string.",
-                            "```typescript",
-                            "@ViewChild(\"MyChild\")",
-                            "private picker: IgxTimePickerComponent;",
-                            "ngAfterViewInit(){",
-                            "   let time = this.picker.displayTime;",
-                            "}",
+                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
+                            "By default `format` is set to hh:mm tt. <br>",
+                            "List of time-flags: <br>",
+                            "`h` : hours field in 12-hours format without leading zero <br>",
+                            "`hh` : hours field in 12-hours format with leading zero <br>",
+                            "`H` : hours field in 24-hours format without leading zero <br>",
+                            "`HH` : hours field in 24-hours format with leading zero <br>",
+                            "`m` : minutes field without leading zero <br>",
+                            "`mm` : minutes field with leading zero <br>",
+                            "`s` : seconds field without leading zero <br>",
+                            "`ss` : seconds field with leading zero <br>",
+                            "`tt` : 2 character string which represents AM/PM field <br>",
+                            "```html",
+                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
+                            "By default `format` is set to hh:mm tt. <br>",
+                            "List of time-flags: <br>",
+                            "`h` : hours field in 12-hours format without leading zero <br>",
+                            "`hh` : hours field in 12-hours format with leading zero <br>",
+                            "`H` : hours field in 24-hours format without leading zero <br>",
+                            "`HH` : hours field in 24-hours format with leading zero <br>",
+                            "`m` : minutes field without leading zero <br>",
+                            "`mm` : minutes field with leading zero <br>",
+                            "`s` : seconds field without leading zero <br>",
+                            "`ss` : seconds field with leading zero <br>",
+                            "`tt` : 2 character string which represents AM/PM field <br>",
+                            "```html",
+                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
                             "```"
                         ]
                     }
                 }
             },
-            "template": {
+            "overlaySettings": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
+                            "```typescript",
+                            "const settings: OverlaySettings = {",
+                            "     closeOnOutsideClick: true,",
+                            "     modal: false",
+                            " }",
+                            "```",
+                            "---",
+                            "```html",
+                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                },
                 "getter": {
                     "comment": {
                         "tags": {
@@ -623,26 +631,18 @@
                             }
                         },
                         "shortText": [
-                            "Gets the input group template.",
+                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
                             "```typescript",
-                            "let template = this.template();",
+                            "const settings: OverlaySettings = {",
+                            "     closeOnOutsideClick: true,",
+                            "     modal: false",
+                            " }",
+                            "```",
+                            "---",
+                            "```html",
+                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
                             "```"
                         ]
-                    }
-                }
-            },
-            "context": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": "Gets the context passed to the input group template."
                     }
                 }
             }

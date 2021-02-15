@@ -73,39 +73,39 @@
                     ]
                 }
             },
-            "onSelect": {
+            "selected": {
                 "comment": {
                     "shortText": [
                         "An @Ouput property that emits an event when a button is selected.",
                         "```typescript",
                         "@ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
-                        "public onSelect(buttongroup){",
-                        "    this.toast.show()",
+                        "public selectedHandler(buttongroup) {",
+                        "    this.toast.open()",
                         "}",
                         " //...",
                         "```",
                         "```html",
-                        "<igx-buttongroup #MyChild [multiSelection]=\"!multi\" (onSelect)=\"onSelect($event)\"></igx-buttongroup>",
+                        "<igx-buttongroup #MyChild [multiSelection]=\"!multi\" (selected)=\"selectedHandler($event)\"></igx-buttongroup>",
                         "<igx-toast #toast message=\"You have made a selection!\"></igx-toast>",
                         "```"
                     ]
                 }
             },
-            "onUnselect": {
+            "deselected": {
                 "comment": {
                     "shortText": [
                         "An @Ouput property that emits an event when a button is deselected.",
                         "```typescript",
                         " @ViewChild(\"toast\")",
                         " private toast: IgxToastComponent;",
-                        " public onUnselect(buttongroup){",
-                        "    this.toast.show()",
+                        " public deselectedHandler(buttongroup){",
+                        "    this.toast.open()",
                         "}",
                         " //...",
                         "```",
                         "```html",
-                        "<igx-buttongroup> #MyChild [multiSelection]=\"multi\" (onUnselect)=\"onUnselect($event)\"></igx-buttongroup>",
+                        "<igx-buttongroup> #MyChild [multiSelection]=\"multi\" (deselected)=\"deselectedHandler($event)\"></igx-buttongroup>",
                         "<igx-toast #toast message=\"You have deselected a button!\"></igx-toast>",
                         "```"
                     ]
