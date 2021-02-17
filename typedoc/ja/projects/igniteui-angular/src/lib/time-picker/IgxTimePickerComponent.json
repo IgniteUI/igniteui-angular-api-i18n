@@ -128,7 +128,7 @@
                         " @ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
                         "public onValueChanged(timepicker){",
-                        "    this.toast.show()",
+                        "    this.toast.open()",
                         "}",
                         " //...",
                         " ```",
@@ -149,7 +149,7 @@
                         " @ViewChild(\"toast\")",
                         "private toast: IgxToastComponent;",
                         "public onValidationFailed(timepicker){",
-                        "    this.toast.show();",
+                        "    this.toast.open();",
                         "}",
                         " //...",
                         " ```",
@@ -393,99 +393,55 @@
             }
         },
         "accessors": {
-            "overlaySettings": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "オーバーレイの位置、インタラクション、およびスクロール動作を変更できる @Input プロパティ。",
-                            "```typescript",
-                            "const settings: OverlaySettings = {",
-                            "     closeOnOutsideClick: true,",
-                            "     modal: false",
-                            " }",
-                            "```",
-                            "---",
-                            "```html",
-                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
-                            "```"
-                        ]
-                    }
-                },
+            "displayTime": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
                         "shortText": [
-                            "オーバーレイの位置、インタラクション、およびスクロール動作を変更できる @Input プロパティ。",
+                            "Returns the current time formatted as string using the `format` option.",
+                            "If there is no set time the return is an empty string.",
                             "```typescript",
-                            "const settings: OverlaySettings = {",
-                            "     closeOnOutsideClick: true,",
-                            "     modal: false",
-                            " }",
-                            "```",
-                            "---",
-                            "```html",
-                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
+                            "@ViewChild(\"MyChild\")",
+                            "private picker: IgxTimePickerComponent;",
+                            "ngAfterViewInit(){",
+                            "   let time = this.picker.displayTime;",
+                            "}",
                             "```"
                         ]
                     }
                 }
             },
-            "format": {
+            "template": {
                 "getter": {
                     "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
-                            "`igxTimePicker` がフォーカスを持っていないときの時間書式を取得または設定する @Input プロパティ。<br>",
-                            "デフォルトの `format` は hh:mm tt です。<br>",
-                            "時間フラグのリスト: <br>",
-                            "`h`: 先行するゼロがない 12 時間形式の時フィールド。 <br>",
-                            "`hh`: 先行するゼロがある 12 時間形式の時フィールド。 <br>",
-                            "`H`: 先行するゼロがない 24 時間形式の時フィールド。 <br>",
-                            "`HH`: 先行するゼロがある 24 時間形式の時フィールド。 <br>",
-                            "`m`: 先行するゼロがない分フィールド。<br>",
-                            "`mm`: 先行するゼロがある分フィールド。<br>",
-                            "`s`: 先行するゼロがない秒フィールド。<br>",
-                            "`ss`: 先行するゼロがある秒フィールド。<br>",
-                            "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
-                            "```html",
-                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
+                            "Gets the input group template.",
+                            "```typescript",
+                            "let template = this.template();",
                             "```"
                         ]
                     }
-                },
-                "setter": {
+                }
+            },
+            "context": {
+                "getter": {
                     "comment": {
-                        "shortText": [
-                            "`igxTimePicker` がフォーカスを持っていないときの時間書式を取得または設定する @Input プロパティ。<br>",
-                            "デフォルトの `format` は hh:mm tt です。<br>",
-                            "時間フラグのリスト:<br>",
-                            "`h`: 先行するゼロがない 12 時間形式の時フィールド。<br>",
-                            "`hh`: 先行するゼロがある 12 時間形式の時フィールド。<br>",
-                            "`H`: 先行するゼロがない 24 時間形式の時フィールド。<br>",
-                            "`HH`: 先行するゼロがある 24 時間形式の時フィールド。<br>",
-                            "`m`: 先行するゼロがない分フィールド。<br>",
-                            "`mm`: 先行するゼロがある分フィールド。<br>",
-                            "`s`: 先行するゼロがない秒フィールド。<br>",
-                            "`ss`: 先行するゼロがある秒フィールド。<br>",
-                            "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
-                            "```html",
-                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
-                            "```"
-                        ]
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the context passed to the input group template."
                     }
                 }
             },
@@ -591,24 +547,76 @@
                     }
                 }
             },
-            "displayTime": {
+            "format": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "`format` オプションを使用して文字列として書式設定される現在の時間を返します。",
-                            "時間が設定されない場合、空の文字列を返します。",
-                            "```typescript",
-                            "@ViewChild(\"MyChild\")",
-                            "private picker: IgxTimePickerComponent;",
-                            "ngAfterViewInit(){",
-                            "   let time = this.picker.displayTime;",
-                            "}",
+                            "`igxTimePicker` がフォーカスを持っていないときの時間書式を取得または設定する @Input プロパティ。<br>",
+                            "デフォルトの `format` は hh:mm tt です。<br>",
+                            "時間フラグのリスト: <br>",
+                            "`h`: 先行するゼロがない 12 時間形式の時フィールド。 <br>",
+                            "`hh`: 先行するゼロがある 12 時間形式の時フィールド。 <br>",
+                            "`H`: 先行するゼロがない 24 時間形式の時フィールド。 <br>",
+                            "`HH`: 先行するゼロがある 24 時間形式の時フィールド。 <br>",
+                            "`m`: 先行するゼロがない分フィールド。<br>",
+                            "`mm`: 先行するゼロがある分フィールド。<br>",
+                            "`s`: 先行するゼロがない秒フィールド。<br>",
+                            "`ss`: 先行するゼロがある秒フィールド。<br>",
+                            "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
+                            "```html",
+                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "`igxTimePicker` がフォーカスを持っていないときの時間書式を取得または設定する @Input プロパティ。<br>",
+                            "デフォルトの `format` は hh:mm tt です。<br>",
+                            "時間フラグのリスト:<br>",
+                            "`h`: 先行するゼロがない 12 時間形式の時フィールド。<br>",
+                            "`hh`: 先行するゼロがある 12 時間形式の時フィールド。<br>",
+                            "`H`: 先行するゼロがない 24 時間形式の時フィールド。<br>",
+                            "`HH`: 先行するゼロがある 24 時間形式の時フィールド。<br>",
+                            "`m`: 先行するゼロがない分フィールド。<br>",
+                            "`mm`: 先行するゼロがある分フィールド。<br>",
+                            "`s`: 先行するゼロがない秒フィールド。<br>",
+                            "`ss`: 先行するゼロがある秒フィールド。<br>",
+                            "`tt`: AM/PM フィールドを表す 2 文字の文字列。<br>",
+                            "```html",
+                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
                             "```"
                         ]
                     }
                 }
             },
-            "template": {
+            "overlaySettings": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxTimePickerComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
+                            "```typescript",
+                            "const settings: OverlaySettings = {",
+                            "     closeOnOutsideClick: true,",
+                            "     modal: false",
+                            " }",
+                            "```",
+                            "---",
+                            "```html",
+                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
+                            "```"
+                        ]
+                    }
+                },
                 "getter": {
                     "comment": {
                         "tags": {
@@ -620,26 +628,18 @@
                             }
                         },
                         "shortText": [
-                            "入力グループのテンプレートを取得します。",
+                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
                             "```typescript",
-                            "let template = this.template();",
+                            "const settings: OverlaySettings = {",
+                            "     closeOnOutsideClick: true,",
+                            "     modal: false",
+                            " }",
+                            "```",
+                            "---",
+                            "```html",
+                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
                             "```"
                         ]
-                    }
-                }
-            },
-            "context": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": "入力グループのテンプレートに渡されたコンテキストを取得します。"
                     }
                 }
             }

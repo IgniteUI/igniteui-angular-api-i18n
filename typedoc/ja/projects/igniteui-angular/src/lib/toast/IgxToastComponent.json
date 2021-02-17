@@ -33,7 +33,7 @@
                     ]
                 }
             },
-            "onShowing": {
+            "showing": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -47,12 +47,12 @@
                         "Toast が表示される前にイベントを発生します。",
                         "イベント引数として `IgxToastComponent` への参照を提供します。",
                         "```html",
-                        "<igx-toast (onShown)=\"onShown($event)\"></igx-toast>",
+                        "<igx-toast (showing)=\"handleShowing($event)\"></igx-toast>",
                         "```"
                     ]
                 }
             },
-            "onShown": {
+            "shown": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -66,12 +66,12 @@
                         "Toast が表示されたときにイベントを発生します。",
                         "イベント引数として `IgxToastComponent` への参照を提供します。",
                         "```html",
-                        "<igx-toast (onHiding)=\"onHiding($event)\"></igx-toast>",
+                        "<igx-toast (shown)=\"handleShown($event)\"></igx-toast>",
                         "```"
                     ]
                 }
             },
-            "onHiding": {
+            "hiding": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -85,12 +85,12 @@
                         "Toast が非表示される前にイベントを発生します。",
                         "イベント引数として `IgxToastComponent` への参照を提供します。",
                         "```html",
-                        "<igx-toast (onHidden)=\"onHidden($event)\"></igx-toast>",
+                        "<igx-toast (hiding)=\"handleHiding($event)\"></igx-toast>",
                         "```"
                     ]
                 }
             },
-            "onHidden": {
+            "hidden": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -104,7 +104,7 @@
                         " Toast が非表示にされたときにイベントを発生します。",
                         " イベント引数として `IgxToastComponent` への参照を提供します。",
                         "```html",
-                        "<igx-toast (onHidden) = \"onHidden($event)\"></igx-toast>",
+                        "<igx-toast (hidden)=\"handleHidden($event)\"></igx-toast>",
                         "```"
                     ]
                 }
@@ -223,133 +223,166 @@
                     ]
                 }
             },
-    "onOpened": {
-        "comment": {
-            "text": [
-                "```typescript",
-                "onToggleOpened(event) {",
-                "   alert(\"Toggle opened!\");",
-                "}",
-                "```",
-                "```html",
-                "<div",
-                "  igxToggle",
-                "  (onOpened)='onToggleOpened($event)'>",
-                "</div>",
-                "```"
-            ],
-            "shortText": "トグル コンテナーが開かれた後、イベントを発行します。"
-        }
-    },
-    "onOpening": {
-        "comment": {
-            "text": [
-                "```typescript",
-                "onToggleOpening(event) {",
-                " alert(\"Toggle opening!\");",
-                "}",
-                "```",
-                "```html",
-                "<div",
-                "  igxToggle",
-                "  (onOpening)='onToggleOpening($event)'>",
-                "</div>",
-                "```"
-            ],
-            "shortText": "トグル コンテナーが開いた前にイベントを発生します。"
-        }
-    },
-    "onClosed": {
-        "comment": {
-            "text": [
-                "```typescript",
-                "onToggleClosed(event) {",
-                " alert(\"Toggle closed!\");",
-                "}",
-                "```",
-                "```html",
-                "<div",
-                "  igxToggle",
-                "  (onClosed)='onToggleClosed($event)'>",
-                "</div>",
-                "```"
-            ],
-            "shortText": "トグル コンテナーが閉じた後にイベントを発生します。"
-        }
-    },
-    "onClosing": {
-        "comment": {
-            "text": [
-                "```typescript",
-                "onToggleClosing(event) {",
-                " alert(\"Toggle closing!\");",
-                "}",
-                "```",
-                "```html",
-                "<div",
-                " igxToggle",
-                " (onClosing)='onToggleClosing($event)'>",
-                "</div>",
-                "```"
-            ],
-            "shortText": "トグル コンテナーが閉じた前にイベントを発生します。"
-        }
-    },
-    "onAppended": {
-        "comment": {
-            "text": [
-                "```typescript",
-                "onAppended() {",
-                " alert(\"Content appended!\");",
-                "}",
-                "```",
-                "```html",
-                "<div",
-                "  igxToggle",
-                "  (onAppended)='onToggleAppended()'>",
-                "</div>",
-                "```"
-            ],
-            "shortText": "トグル要素がオーバーレイ コンテナーに追加された後にイベントを発生します。"
-        }
-    }
-},
+            "onOpened": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleOpened(event) {",
+                        "   alert(\"Toggle opened!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpened)='onToggleOpened($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが開かれた後、イベントを発行します。"
+                }
+            },
+            "onOpening": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleOpening(event) {",
+                        " alert(\"Toggle opening!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpening)='onToggleOpening($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが開いた前にイベントを発生します。"
+                }
+            },
+            "onClosed": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleClosed(event) {",
+                        " alert(\"Toggle closed!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onClosed)='onToggleClosed($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが閉じた後にイベントを発生します。"
+                }
+            },
+            "onClosing": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onToggleClosing(event) {",
+                        " alert(\"Toggle closing!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        " igxToggle",
+                        " (onClosing)='onToggleClosing($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナが閉じた前にイベントを発生します。"
+                }
+            },
+            "onAppended": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "onAppended() {",
+                        " alert(\"Content appended!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onAppended)='onToggleAppended()'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル要素がオーバーレイ コンテナーに追加された後にイベントを発生します。"
+                }
+            }
+        },
         "methods": {
             "show": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "toast を表示します。",
+                                    "`autoHide` が有効な場合、toast は `displayTime` 終了後に非表示になります。",
+                                    "```typescript",
+                                    "this.toast.show();",
+                                    "```"
+                                ],
+                                "tagName": "非推奨"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxToastComponent",
                                 "tagName": "次のメンバー:"
                             }
                         }
-                    },
-                    "shortText": [
-                        "toast を表示します。",
-                        "`autoHide` が有効な場合、toast は `displayTime` 終了後に非表示になります。",
-                        "```typescript",
-                        "this.toast.show();",
-                        "```"
-                    ]
+                    }
                 }
             },
             "hide": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "toast を非表示にします。",
+                                    "```typescript",
+                                    "this.toast.hide();",
+                                    "```"
+                                ],
+                                "tagName": "非推奨"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxToastComponent",
                                 "tagName": "次のメンバー:"
                             }
                         }
-                    },
-                    "shortText": [
-                        "toast を非表示にします。",
+                    }
+                }
+            },
+            "open": {
+                "comment": {
+                    "text": [
                         "```typescript",
-                        "this.toast.hide();",
+                        "this.toast.open();",
                         "```"
+                    ],
+                    "shortText": [
+                        "toast を表示します。",
+                        "`autoHide` が有効な場合、toast は `displayTime` 終了後に非表示になります。"
                     ]
+                }
+            },
+            "close": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "this.toast.close();",
+                        "```"
+                    ],
+                    "shortText": "toast を非表示にします。"
                 }
             },
             "toggle": {
@@ -455,7 +488,7 @@
                                         "代わりに toast コンテンツにメッセージを配置してください。",
                                         "toast に表示されるメッセージを取得または設定します。",
                                         "```html",
-                                        "<igx-toast [message] = \"Notification\"></igx-toast>",
+                                        "<igx-toast [message]=\"Notification\"></igx-toast>",
                                         "```",
                                         "```typescript",
                                         "let toastMessage = this.toast.message;",
@@ -482,7 +515,7 @@
                                         "代わりに toast コンテンツにメッセージを配置してください。",
                                         "toast に表示されるメッセージを取得または設定します。",
                                         "```html",
-                                        "<igx-toast [message] = \"Notification\"></igx-toast>",
+                                        "<igx-toast [message]=\"Notification\"></igx-toast>",
                                         "```",
                                         "```typescript",
                                         "let toastMessage = this.toast.message;",

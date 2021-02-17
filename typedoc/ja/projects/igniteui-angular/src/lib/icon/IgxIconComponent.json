@@ -29,9 +29,9 @@
                 "remarks": {
                     "comment": {
                         "text": [
-                            "Ignite UI Icon を使用すると、開発者はマテリアル デザイン アイコンをマークアップに直接簡単に含めることができます。アイコンはカスタム カラーをサポートしており、`isActive` プロパティを使用してアクティブまたは無効としてマークできます。",
-                            "これにより、アイコンの",
-                            "外観が変更されます。"
+                            "The Ignite UI Icon makes it easy for developers to include material design icons directly in their markup. The icons",
+                            "support different icon families and can be marked as active or disabled using the `active` property. This will change the appearance",
+                            "of the icon."
                         ],
                         "tagName": "備考:"
                     }
@@ -40,7 +40,7 @@
                     "comment": {
                         "text": [
                             "```html",
-                            "<igx-icon color=\"#00ff00\" isActive=\"true\">home</igx-icon>",
+                            "<igx-icon family=\"filter-icons\" active=\"true\">home</igx-icon>",
                             "```"
                         ],
                         "tagName": "例:"
@@ -72,21 +72,21 @@
                     "shortText": "`aria-hidden` 属性を無効にできます。デフォルトでクラスが適用されます。"
                 }
             },
-            "font": {
+            "family": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-icon fontSet=\"material\">settings</igx-icon>",
+                                    "<igx-icon family=\"material\">settings</igx-icon>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "`fontSet` の値を設定する @Input プロパティ。デフォルトは、\"material\" です。"
+                    "shortText": "`family` の値を設定する @Input プロパティ。デフォルトは、\"material\" です。"
                 }
             },
             "active": {
@@ -96,7 +96,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-icon [isActive]=\"false\">settings</igx-icon>",
+                                    "<igx-icon [active]=\"false\">settings</igx-icon>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -106,7 +106,7 @@
                     "shortText": "`active` プロパティの無効化を許可する @Input プロパティ。デフォルトでクラスが適用されます。"
                 }
             },
-            "iconColor": {
+            "color": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -120,30 +120,31 @@
                             }
                         }
                     },
-                    "shortText": "アイコンの `iconColor` の変更を許可する @Input プロパティ。"
+                    "text": "* @deprecated",
+                    "shortText": "アイコンの `color` の変更を許可する @Input プロパティ。"
                 }
             },
-            "iconName": {
+            "name": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-icon name=\"contains\" fontSet=\"filter-icons\"></igx-icon>",
+                                    "<igx-icon name=\"contains\" family=\"filter-icons\"></igx-icon>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "アイコンの `iconName` の変更を許可する @Input プロパティ。"
+                    "shortText": "アイコンの `name` の変更を許可する @Input プロパティ。"
                 }
             }
         },
         "methods": {},
         "accessors": {
-            "getFontSet": {
+            "getFamily": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -154,7 +155,7 @@
                                         " @ViewChild(\"MyIcon\")",
                                         "public icon: IgxIconComponent;",
                                         "ngAfterViewInit() {",
-                                        "   let iconFont = this.icon.getFontSet;",
+                                        "   let iconFamily = this.icon.getFamily;",
                                         "}",
                                         "```"
                                     ],
@@ -162,7 +163,7 @@
                                 }
                             }
                         },
-                        "shortText": " font プロパティの値を返すアクセサー。"
+                        "shortText": "family プロパティの値を返すアクセサー。"
                     }
                 }
             },
@@ -212,7 +213,7 @@
                     }
                 }
             },
-            "getIconColor": {
+            "getColor": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -223,7 +224,7 @@
                                         "@ViewChild(\"MyIcon\")",
                                         "public icon: IgxIconComponent;",
                                         "ngAfterViewInit() {",
-                                        "   let iconColor = this.icon.getIconColor;",
+                                        "   let color = this.icon.getColor;",
                                         "}",
                                         "```"
                                     ],
@@ -231,11 +232,11 @@
                                 }
                             }
                         },
-                        "shortText": "`iconColor` プロパティの逆値を返すアクセサー。"
+                        "shortText": "`color` プロパティの逆値を返すアクセサー。"
                     }
                 }
             },
-            "getIconName": {
+            "getName": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -246,7 +247,7 @@
                                         "@ViewChild(\"MyIcon\")",
                                         "public icon: IgxIconComponent;",
                                         "ngAfterViewInit() {",
-                                        "   let iconName = this.icon.getIconName;",
+                                        "   let name = this.icon.getName;",
                                         "}",
                                         "```"
                                     ],
@@ -279,7 +280,7 @@
                         },
                         "shortText": [
                             " SVG 画像のキーを返すアクセサー。",
-                            " アンダースコアで区切られた fontSet と iconName で構成されるキー。"
+                            " アンダースコアで区切られた family と name で構成されるキー。"
                         ]
                     }
                 }
