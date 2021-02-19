@@ -1,7 +1,17 @@
 {
-    "IgxGridSelectionService": {
+    "IgxTreeGridSelectionService": {
         "properties": {},
         "methods": {
+            "selectRowsWithNoEvent": {
+                "comment": {
+                    "shortText": "指定した行を選択します。イベントは発行しません。"
+                }
+            },
+            "deselectRowsWithNoEvent": {
+                "comment": {
+                    "shortText": "指定した行を選択解除します。イベントは発行しません。"
+                }
+            },
             "initKeyboardState": {
                 "comment": {
                     "shortText": "キーボードの状態をリセットします。"
@@ -20,8 +30,8 @@
             "add": {
                 "comment": {
                     "shortText": [
-                        "１ ノード追加します。",
-                        "シングル クリック | 通常セル上で Ctrl + シングル クリック "
+                        "１ つのノードを追加します。",
+                        "シングル クリック | Ctrl +セルのシングルクリックが通常のケースです。"
                     ]
                 }
             },
@@ -33,8 +43,9 @@
             "generateRange": {
                 "comment": {
                     "shortText": [
-                        "指定した `node` から新しい選択範囲を生成します。",
-                        "代わりに `state` が渡されると、渡された `node` と `state` の開始ノードに基づいて範囲を生成します。"
+                        "指定された `node` から新しい選択範囲を生成します。",
+                        "代わりに `state` が渡されると、渡された `node` と `state` の開始ノードに基づいて",
+                        "範囲が生成されます。"
                     ]
                 }
             },
@@ -44,13 +55,15 @@
             "_moveSelectionChrome": {
                 "comment": {
                     "shortText": [
-                        "Chrome と Chromium は、キーボード操作後に有効範囲を無視します。"
+                        "(╯°□°）╯︵ ┻━┻",
+                        "Chrome と Chromium は、キーボード操作後に",
+                        "有効範囲を無視します。"
                     ]
                 }
             },
             "getSelectedRows": {
                 "comment": {
-                    "shortText": "選択される行 Id の配列を返します。"
+                    "shortText": "選択される行 id の配列を返します。"
                 }
             },
             "getIndeterminateRows": {
@@ -61,6 +74,31 @@
             "clearRowSelection": {
                 "comment": {
                     "shortText": "行選択をクリアします。フィルタリングが適用される場合、フィルターされたデータから選択された行のみを消去します。"
+                }
+            },
+            "selectAllRows": {
+                "comment": {
+                    "shortText": "すべての行を選択します。フィルタリングが適用される場合は、フィルターされたデータからのみ選択します。"
+                }
+            },
+            "selectRowById": {
+                "comment": {
+                    "shortText": "指定された行を選択し、イベントを発行します。"
+                }
+            },
+            "deselectRow": {
+                "comment": {
+                    "shortText": "指定された行を選択解除し、イベントを発行します。"
+                }
+            },
+            "selectMultipleRows": {
+                "comment": {
+                    "shortText": "最後に選択した行から現在の指定行までの範囲を選択します。"
+                }
+            },
+            "clearAllSelectedRows": {
+                "comment": {
+                    "shortText": "rowSelection をクリアしてチェックボックス状態を更新します。"
                 }
             },
             "getSelectedColumns": {
@@ -95,52 +133,17 @@
             },
             "deselectColumnsWithNoEvent": {
                 "comment": {
-                    "shortText": "指定した列を選択解除します。イベントは発行しません。"
+                    "shortText": "De指定した列を選択します。イベントは発行しません。"
                 }
             },
             "deselectColumns": {
                 "comment": {
-                    "shortText": "指定した列を選択解除します。イベントを発行します。"
+                    "shortText": "指定した列を選択解除し、イベントを発行します。"
                 }
             },
             "clearAllSelectedColumns": {
                 "comment": {
                     "shortText": "columnSelection をクリアします。"
-                }
-            },
-            "selectAllRows": {
-                "comment": {
-                    "shortText": "すべての行を選択します。フィルタリングが適用される場合は、フィルターされたデータからのみ選択します。"
-                }
-            },
-            "selectRowById": {
-                "comment": {
-                    "shortText": "指定された行を選択し、イベントを発行します。"
-                }
-            },
-            "deselectRow": {
-                "comment": {
-                    "shortText": "指定された行を選択解除し、イベントを発行します。"
-                }
-            },
-            "selectRowsWithNoEvent": {
-                "comment": {
-                    "shortText": "指定された行を選択します。イベントは発行しません。"
-                }
-            },
-            "deselectRowsWithNoEvent": {
-                "comment": {
-                    "shortText": "指定された行を選択解除します。イベントは発行しません。"
-                }
-            },
-            "selectMultipleRows": {
-                "comment": {
-                    "shortText": "最後に選択した行から現在の指定行までの範囲を選択します。"
-                }
-            },
-            "clearAllSelectedRows": {
-                "comment": {
-                    "shortText": "rowSelection をクリアしてチェックボックス状態を更新します。"
                 }
             }
         },
@@ -149,7 +152,8 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "キーボード操作とポインター操作の両方からグリッドで現在選択されている範囲を返します。"
+                            "キーボードとポインタの両方の操作からグリッドで",
+                            "現在選択されている範囲を返します。"
                         ]
                     }
                 }
@@ -157,7 +161,7 @@
             "allData": {
                 "getter": {
                     "comment": {
-                        "shortText": "グリッド内のすべてのデータを返します。フィルタリングと並べ替えを適用し、行を削除しません。"
+                        "shortText": "Grid 内のすべてのデータを返します。フィルタリングと並べ替えを適用し、行を削除しません。"
                     }
                 }
             }
