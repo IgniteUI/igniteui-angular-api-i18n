@@ -284,15 +284,6 @@
             "pageChange": {
                 "comment": {
                     "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "`pageChange` is deprecated. Use the `pageChange` output exposed by the `IgxPaginator`.",
-                                    "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                ],
-                                "tagName": "deprecated"
-                            }
-                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -315,15 +306,6 @@
             "perPageChange": {
                 "comment": {
                     "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "`perPageChange` is deprecated. Use the `perPageChange` output exposed by the `IgxPaginator`.",
-                                    "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                ],
-                                "tagName": "deprecated"
-                            }
-                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -887,6 +869,29 @@
                     "shortText": "Emitted after filtering is performed through the UI."
                 }
             },
+            "onPagingDone": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns an object consisting of the previous and next pages.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (onPagingDone)=\"pagingDone($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after paging is performed."
+                }
+            },
             "onRowAdded": {
                 "comment": {
                     "tags": {
@@ -1389,84 +1394,6 @@
             }
         },
         "methods": {
-            "paginate": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "`paginate` is deprecated. Use the `paginate` method exposed by the `IgxPaginator`.",
-                                    "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                ],
-                                "tagName": "deprecated"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.grid1.paginate(1);",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Goes to the desired page index."
-                }
-            },
-            "nextPage": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "`nextPage` is deprecated. Use the `nextPage` method exposed by the `IgxPaginator`.",
-                                    "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                ],
-                                "tagName": "deprecated"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.grid1.nextPage();",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Goes to the next page, if the grid is not already at the last page."
-                }
-            },
-            "previousPage": {
-                "comment": {
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": [
-                                    "`previousPage` is deprecated. Use the `previousPage` method exposed by the `IgxPaginator`.",
-                                    "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                ],
-                                "tagName": "deprecated"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.grid1.previousPage();",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Goes to the previous page, if the grid is not already at the first page."
-                }
-            },
             "isRecordPinnedByIndex": {
                 "comment": {
                     "parameters": {
@@ -1733,6 +1660,40 @@
                     "shortText": "Returns an `IgxGridCellComponent` object by the specified primary key and column field."
                 }
             },
+            "nextPage": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid1.nextPage();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Goes to the next page, if the grid is not already at the last page."
+                }
+            },
+            "previousPage": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid1.previousPage();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Goes to the previous page, if the grid is not already at the first page."
+                }
+            },
             "moveColumn": {
                 "comment": {
                     "tags": {
@@ -1748,6 +1709,23 @@
                         }
                     },
                     "shortText": "Places a column before or after the specified target column."
+                }
+            },
+            "paginate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid1.paginate(1);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Goes to the desired page index."
                 }
             },
             "markForCheck": {
@@ -2974,15 +2952,6 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "`page` is deprecated. Use the `page` input exposed by the `IgxPaginator`.",
-                                        "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -3006,15 +2975,6 @@
                 "setter": {
                     "comment": {
                         "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "`page` is deprecated. Use the `page` input exposed by the `IgxPaginator`.",
-                                        "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -3040,15 +3000,6 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "`perPage` is deprecated. Use the `perPage` input exposed by the `IgxPaginator`.",
-                                        "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
                             "remarks": {
                                 "comment": {
                                     "text": "The default is 15.",
@@ -3072,15 +3023,6 @@
                 "setter": {
                     "comment": {
                         "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "`perPage` is deprecated. Use the `perPage` input exposed by the `IgxPaginator`.",
-                                        "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
                             "remarks": {
                                 "comment": {
                                     "text": "The default is 15.",
@@ -5089,15 +5031,6 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "`totalPages` is deprecated. Use the `totalPages` getter exposed by the `IgxPaginator`.",
-                                        "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -5117,15 +5050,6 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "`isFirstPage` is deprecated. Use the `isFirstPage` getter exposed by the `IgxPaginator`.",
-                                        "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -5193,15 +5117,6 @@
                 "getter": {
                     "comment": {
                         "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "`isLastPage` is deprecated. Use the `isLastPage` output exposed by the `IgxPaginator`.",
-                                        "See [Paging with custom template](https://www.infragistics.com/products/ignite-ui-angular/angular/components/grid/remote-data-operations#remote-paging-with-custom-template) for more info."
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
                             "example": {
                                 "comment": {
                                     "text": [
