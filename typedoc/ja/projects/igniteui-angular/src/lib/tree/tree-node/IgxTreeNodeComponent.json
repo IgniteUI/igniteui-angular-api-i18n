@@ -1,0 +1,354 @@
+{
+    "IgxTreeNodeComponent": {
+        "comment": {
+            "text": [
+                "```html",
+                " <igx-tree>",
+                " ...",
+                "   <igx-tree-node [data]=\"data\" [selected]=\"service.isNodeSelected(data.Key)\" [expanded]=\"service.isNodeExpanded(data.Key)\">",
+                "     {{ data.FirstName }} {{ data.LastName }}",
+                "   </igx-tree-node>",
+                " ...",
+                " </igx-tree>",
+                "```"
+            ],
+            "shortText": [
+                "The tree node component represents a child node of the tree component or another tree node.",
+                "Usage:"
+            ]
+        },
+        "properties": {
+            "data": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Required for searching through nodes.",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    " <igx-tree>",
+                                    " ...",
+                                    "   <igx-tree-node [data]=\"data\">",
+                                    "     {{ data.FirstName }} {{ data.LastName }}",
+                                    "   </igx-tree-node>",
+                                    " ...",
+                                    " </igx-tree>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The data entry that the node is visualizing."
+                }
+            },
+            "loading": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Loading nodes do not render children.",
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "To be used for load-on-demand scenarios in order to specify whether the node is loading data."
+                }
+            },
+            "selectedChange": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree>",
+                        "     <igx-tree-node *ngFor=\"let node of data\" [data]=\"node\" [(selected)]=\"node.selected\">",
+                        "     </igx-tree-node>",
+                        "</igx-tree>",
+                        "```",
+                        "```typescript",
+                        "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                        "node.selectedChange.pipe(takeUntil(this.destroy$)).subscribe((e: boolean) => console.log(\"Node selection changed to \", e))",
+                        "```"
+                    ],
+                    "shortText": "Emitted when the node's `selected` property changes."
+                }
+            },
+            "expandedChange": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree>",
+                        "     <igx-tree-node *ngFor=\"let node of data\" [data]=\"node\" [(expanded)]=\"node.expanded\">",
+                        "     </igx-tree-node>",
+                        "</igx-tree>",
+                        "```",
+                        "```typescript",
+                        "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                        "node.expandedChange.pipe(takeUntil(this.destroy$)).subscribe((e: boolean) => console.log(\"Node expansion state changed to \", e))",
+                        "```"
+                    ],
+                    "shortText": "Emitted when the node's `expanded` property changes."
+                }
+            }
+        },
+        "methods": {
+            "toggle": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree>",
+                        "     <igx-tree-node #node>My Node</igx-tree-node>",
+                        "</igx-tree>",
+                        "<button igxButton (click)=\"node.toggle()\">Toggle Node</button>",
+                        "```",
+                        "```typescript",
+                        "const myNode: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                        "myNode.toggle();",
+                        "```"
+                    ],
+                    "shortText": "Toggles the node expansion state, triggering animation"
+                }
+            },
+            "expand": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree>",
+                        "     <igx-tree-node #node>My Node</igx-tree-node>",
+                        "</igx-tree>",
+                        "<button igxButton (click)=\"node.expand()\">Expand Node</button>",
+                        "```",
+                        "```typescript",
+                        "const myNode: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                        "myNode.expand();",
+                        "```"
+                    ],
+                    "shortText": "Expands the node, triggering animation"
+                }
+            },
+            "collapse": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree>",
+                        "     <igx-tree-node #node>My Node</igx-tree-node>",
+                        "</igx-tree>",
+                        "<button igxButton (click)=\"node.collapse()\">Collapse Node</button>",
+                        "```",
+                        "```typescript",
+                        "const myNode: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                        "myNode.collapse();",
+                        "```"
+                    ],
+                    "shortText": "Collapses the node, triggering animation"
+                }
+            }
+        },
+        "accessors": {
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Uses EN resources by default.",
+                                    "tagName": "備考:"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the resource strings."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Uses EN resources by default.",
+                                    "tagName": "備考:"
+                                }
+                            }
+                        },
+                        "shortText": "An accessor that returns the resource strings."
+                    }
+                }
+            },
+            "active": {
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the active state of the node"
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the active state of the node"
+                    }
+                }
+            },
+            "path": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                            "const path: IgxTreeNode<any>[] = node.path;",
+                            "```"
+                        ],
+                        "shortText": "Retrieves the full path to the node incuding itself"
+                    }
+                }
+            },
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the disabled state of the node"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the disabled state of the node"
+                    }
+                }
+            },
+            "children": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remark": {
+                                "comment": {
+                                    "text": "Returns `null` if node does not have children",
+                                    "tagName": "remark"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                                        "const children: IgxTreeNode<any>[] = node.children;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Return the child nodes of the node (if any)"
+                    }
+                }
+            },
+            "level": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-tree>",
+                            " ...",
+                            " <igx-tree-node #node>",
+                            "     My level is {{ node.level }}",
+                            " </igx-tree-node>",
+                            "</igx-tree>",
+                            "```",
+                            "```typescript",
+                            "const node: IgxTreeNode<any> = this.tree.findNodes(data[12])[0];",
+                            "const level: number = node.level;",
+                            "```"
+                        ],
+                        "shortText": "The depth of the node, relative to the root"
+                    }
+                }
+            },
+            "selected": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-tree>",
+                            " ...",
+                            " <igx-tree-node *ngFor=\"let node of data\" [(selected)]=\"node.selected\">",
+                            "     {{ node.label }}",
+                            " </igx-tree-node>",
+                            "</igx-tree>",
+                            "```",
+                            "```typescript",
+                            "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                            "const selected = node.selected;",
+                            "node.selected = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/set whether the node is selected. Supporst two-way binding."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-tree>",
+                            " ...",
+                            " <igx-tree-node *ngFor=\"let node of data\" [(selected)]=\"node.selected\">",
+                            "     {{ node.label }}",
+                            " </igx-tree-node>",
+                            "</igx-tree>",
+                            "```",
+                            "```typescript",
+                            "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                            "const selected = node.selected;",
+                            "node.selected = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/set whether the node is selected. Supporst two-way binding."
+                    }
+                }
+            },
+            "expanded": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-tree>",
+                            " ...",
+                            " <igx-tree-node *ngFor=\"let node of data\" [expanded]=\"node.name === this.expandedNode\">",
+                            "     {{ node.label }}",
+                            " </igx-tree-node>",
+                            "</igx-tree>",
+                            "```",
+                            "```typescript",
+                            "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                            "const expanded = node.expanded;",
+                            "node.expanded = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/set whether the node is expanded"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-tree>",
+                            " ...",
+                            " <igx-tree-node *ngFor=\"let node of data\" [expanded]=\"node.name === this.expandedNode\">",
+                            "     {{ node.label }}",
+                            " </igx-tree-node>",
+                            "</igx-tree>",
+                            "```",
+                            "```typescript",
+                            "const node: IgxTreeNode<any> = this.tree.findNodes(data[0])[0];",
+                            "const expanded = node.expanded;",
+                            "node.expanded = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/set whether the node is expanded"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,351 @@
+{
+    "PickerBaseDirective": {
+        "properties": {
+            "inputFormat": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Also used as a placeholder when none is provided.",
+                                    "Default is `\"'MM/dd/yyyy'\"`"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker inputFormat=\"dd/MM/yy\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The editor's input mask."
+                }
+            },
+            "displayFormat": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Uses Angular's DatePipe.",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker displayFormat=\"EE/M/yy\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The format used to display the picker's value when it's not being edited."
+                }
+            },
+            "placeholder": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [placeholder]=\"'Choose your date'\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Sets the `placeholder` of the picker's input."
+                }
+            },
+            "mode": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default mode is `dropdown`",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker mode=\"dialog\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Can be `dropdown` with editable input field or `dialog` with readonly input field."
+                }
+            },
+            "overlaySettings": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [overlaySettings]=\"customOverlaySettings\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Overlay settings used to display the pop-up element."
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [disabled]=\"'true'\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Enables or disables the picker."
+                }
+            },
+            "locale": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Uses Angular's `LOCALE_ID` by default. Affects both input mask and display format if those are not set.",
+                                    "If a `locale` is set, it must be registered via `registerLocaleData`.",
+                                    "Please refer to https://angular.io/guide/i18n#i18n-pipes.",
+                                    "If it is not registered, `Intl` will be used for formatting."
+                                ],
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker locale=\"jp\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Locale settings used for value formatting and calendar or time spinner."
+                }
+            },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
+                                    "<!-- ... -->",
+                                    "<igx-date-picker [outlet]=\"outlet\"></igx-date-picker>",
+                                    "<!-- ... -->",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The container used for the pop-up element."
+                }
+            },
+            "tabIndex": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [tabIndex]=\"1\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the default template editor's tabindex."
+                }
+            },
+            "opening": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (opening)=\"handleOpening($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar has started opening, cancelable."
+                }
+            },
+            "opened": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (opened)=\"handleOpened($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the calendar has opened."
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closing)=\"handleClosing($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar has started closing, cancelable."
+                }
+            },
+            "closed": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closed)=\"handleClosed($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the calendar has closed."
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "type": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Default is `box`.",
+                                    "tagName": "備考:"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Determines how the picker's input will be styled."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Default is `box`.",
+                                    "tagName": "備考:"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Determines how the picker's input will be styled."
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const state = this.picker.collapsed;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the picker's pop-up state."
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the theme of the component.",
+                            "The default theme is `comfortable`.",
+                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the theme of the component."
+                    }
+                }
+            }
+        }
+    }
+}
