@@ -66,13 +66,13 @@
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>The igx palette to use to generate css variables for.</p>",
+                    "<p>The igx palette to use to generate CSS variables for.</p>",
                     ""
                 ]
             },
             "contrast": {
                 "description": [
-                    "<p>Specifies if the mixin outputs contrast colors for each color in the palette.</p>",
+                    "<p>Specify if contrast colors should be included.</p>",
                     ""
                 ]
             }
@@ -84,7 +84,83 @@
                     ""
                 ],
                 "code": [
-                    "@include css-vars-from-palette($default-palette);"
+                    "@include igx-palette-vars($default-palette);"
+                ]
+            }
+        ]
+    },
+    "igx-elevation-vars": {
+        "description": [
+            "<p>Generates CSS variables for a given elevations map.</p>",
+            ""
+        ],
+        "parameters": {
+            "elevations": {
+                "description": [
+                    "<p>The igx elevations map to use to generate CSS variables for.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Generate CSS variables for elevations.</p>",
+                    ""
+                ],
+                "code": [
+                    "$elevations: igx-elevations(red, green, blue); // umbra, penumbra, ambient",
+                    "@include igx-elevation-vars($elevations);"
+                ]
+            }
+        ]
+    },
+    "igx-color-classes": {
+        "description": [
+            "<p>Generates CSS class names for all colors from",
+            "for a given property and color palette, with",
+            "optional prefix and suffix attached to the class name.</p>",
+            ""
+        ],
+        "parameters": {
+            "prop": {
+                "description": [
+                    "<p>The CSS property to assign the palette color to.</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>A prefix to be attached to the class name.</p>",
+                    ""
+                ]
+            },
+            "suffix": {
+                "description": [
+                    "<p>A suffix to be attached to the class name.</p>",
+                    ""
+                ]
+            },
+            "palette": {
+                "description": [
+                    "<p>The igx palette to use to generate css class names for.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Generate background classes with colors from the palette.</p>",
+                    ""
+                ],
+                "code": [
+                    "// Will generate class names like",
+                    "// .igx-primary-500-bg { ... };",
+                    "@include igx-color-classes(",
+                    "  $prop: 'background-color',",
+                    "  $suffix: 'bg'",
+                    ");"
                 ]
             }
         ]
@@ -139,6 +215,43 @@
                     "@include if-rtl {",
                     "  margin-left: 8px;",
                     "}"
+                ]
+            }
+        ]
+    },
+    "line-clamp": {
+        "description": [
+            "<p>Truncates text at a specific number of lines</p>",
+            ""
+        ],
+        "parameters": {
+            "lines": {
+                "description": [
+                    "<p>The number of lines to show</p>",
+                    ""
+                ]
+            },
+            "inline": {
+                "description": [
+                    "<p>Sets whether an element displays inline-box or box</p>",
+                    ""
+                ]
+            },
+            "vertical": {
+                "description": [
+                    "<p>Sets whether an element lays out its contents horizontally or vertically</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Truncates text after the fourth line</p>",
+                    ""
+                ],
+                "code": [
+                    "@include line-clamp(4, true, true);"
                 ]
             }
         ]

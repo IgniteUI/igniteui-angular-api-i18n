@@ -142,6 +142,29 @@
                     ]
                 }
             },
+            "autosizeHeader": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets/gets whether the column header is included in autosize logic.",
+                        "Useful when template for a column header is sized based on parent, for example a default `div`.",
+                        "Default value is `false`.",
+                        "```typescript",
+                        "let isResizable = this.column.resizable;",
+                        "```",
+                        "```html",
+                        "<igx-column [resizable] = \"true\"></igx-column>",
+                        "```"
+                    ]
+                }
+            },
             "disableHiding": {
                 "comment": {
                     "tags": {
@@ -331,7 +354,7 @@
                         "In this example, we check to see if the column name is Salary, and then provide a method as the column formatter",
                         "to format the value into a currency string.",
                         "```typescript",
-                        "onColumnInit(column: IgxColumnComponent) {",
+                        "columnInit(column: IgxColumnComponent) {",
                         "  if (column.field == \"Salary\") {",
                         "    column.formatter = (salary => this.format(salary));",
                         "  }",
@@ -345,6 +368,38 @@
                         "When autogenerating columns, the formatter is used to format the display of the column data",
                         "without modifying the underlying bound values."
                     ]
+                }
+            },
+            "summaryFormatter": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "text": [
+                        "In this example, we check to see if the column name is OrderDate, and then provide a method as the summaryFormatter",
+                        "to change the locale for the dates to 'fr-FR'. The summaries with the count key are skipped so they are displayed as numbers.",
+                        "```typescript",
+                        "columnInit(column: IgxColumnComponent) {",
+                        "  if (column.field == \"OrderDate\") {",
+                        "    column.summaryFormatter = this.summaryFormat;",
+                        "  }",
+                        "}",
+                        "summaryFormat(summary: IgxSummaryResult, summaryOperand: IgxSummaryOperand): string {",
+                        "  const result = summary.summaryResult;",
+                        "  if(summaryResult.key !== 'count' && result !== null && result !== undefined) {",
+                        "     const pipe = new DatePipe('fr-FR');",
+                        "     return pipe.transform(result,'mediumDate');",
+                        "  }",
+                        "  return result;",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "The summaryFormatter is used to format the display of the column summaries."
                 }
             },
             "filteringIgnoreCase": {
@@ -648,9 +703,9 @@
             "autosize": {
                 "comment": {
                     "parameters": {
-                        "byHeader": {
+                        "byHeaderOnly": {
                             "comment": {
-                                "text": "Set if column should be autized based only on the header content"
+                                "text": "Set if column should be autosized based only on the header content."
                             }
                         }
                     },

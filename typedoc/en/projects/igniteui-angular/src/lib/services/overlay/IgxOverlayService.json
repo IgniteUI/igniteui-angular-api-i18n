@@ -148,16 +148,43 @@
                         }
                     },
                     "tags": {},
-                    "shortText": "Generates Id. Provide this Id when call `show(id, settings?)` method"
+                    "shortText": "Generates Id. Provide this Id when call `show(id)` method"
+                }
+            },
+            "detach": {
+                "comment": {
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": [
+                                    "Id of the overlay to remove",
+                                    "```typescript",
+                                    "this.overlay.detach(id);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Remove overlay with the provided id."
+                }
+            },
+            "detachAll": {
+                "comment": {
+                    "shortText": [
+                        "Remove all the overlays.",
+                        "```typescript",
+                        "this.overlay.detachAll();",
+                        "```"
+                    ]
                 }
             },
             "show": {
                 "comment": {
-                    "returns": "Id of the created overlay. Valid until `onClosed` is emitted.\n```typescript\nthis.overlay.show(element, settings);\n```",
                     "parameters": {
-                        "component": {
+                        "id": {
                             "comment": {
-                                "text": "ElementRef or Component Type to show in overlay"
+                                "text": "Id to show overlay for"
                             }
                         },
                         "settings": {
@@ -166,15 +193,8 @@
                             }
                         }
                     },
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": "Use `attach(component)` to obtain an Id. Then `show(id, settings?)` with provided Id.",
-                                "tagName": "deprecated"
-                            }
-                        }
-                    },
-                    "shortText": "Shows the provided component."
+                    "tags": {},
+                    "shortText": "Shows the overlay for provided id."
                 }
             },
             "hide": {
@@ -199,22 +219,48 @@
             },
             "reposition": {
                 "comment": {
-                    "shortText": [
-                        "Repositions the component with ID provided as a parameter.",
-                        "```typescript",
-                        "this.overlay.reposition(id);",
-                        "```"
-                    ]
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": [
+                                    "Id to reposition overlay for",
+                                    "```typescript",
+                                    "this.overlay.reposition(id);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Repositions the component with ID provided as a parameter."
                 }
             },
             "setOffset": {
                 "comment": {
-                    "shortText": [
-                        "Offsets the content along the corresponding axis by the provided amount",
-                        "```typescript",
-                        "this.overlay.setOffset(id, deltaX, deltaY);",
-                        "```"
-                    ]
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "Id to offset overlay for"
+                            }
+                        },
+                        "deltaX": {
+                            "comment": {
+                                "text": "Amount of offset in horizontal direction"
+                            }
+                        },
+                        "deltaY": {
+                            "comment": {
+                                "text": [
+                                    "Amount of offset in vertical direction",
+                                    "```typescript",
+                                    "this.overlay.setOffset(id, deltaX, deltaY);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Offsets the content along the corresponding axis by the provided amount"
                 }
             }
         },

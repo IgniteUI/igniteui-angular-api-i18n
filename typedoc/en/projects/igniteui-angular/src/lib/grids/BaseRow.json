@@ -1,0 +1,244 @@
+{
+    "BaseRow": {
+        "properties": {
+            "grid": {
+                "comment": {
+                    "shortText": "The grid that contains the row."
+                }
+            }
+        },
+        "methods": {
+            "pin": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// pin the selected row from the grid",
+                        "this.grid.selectedRows[0].pin();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Pins the specified row.",
+                        "This method emits `onRowPinning` event."
+                    ]
+                }
+            },
+            "unpin": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// unpin the selected row from the grid",
+                        "this.grid.selectedRows[0].unpin();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Unpins the specified row.",
+                        "This method emits `onRowPinning` event."
+                    ]
+                }
+            },
+            "update": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// update the second selected row's value",
+                        "let newValue = \"Apple\";",
+                        "this.grid.selectedRows[1].update(newValue);",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Updates the specified row object and the data source record with the passed value.",
+                        "This method emits `onEditDone` event."
+                    ]
+                }
+            },
+            "delete": {
+                "comment": {
+                    "text": [
+                        "```typescript",
+                        "// delete the third selected row from the grid",
+                        "this.grid.selectedRows[2].delete();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Removes the specified row from the grid's data source.",
+                        "This method emits `onRowDeleted` event."
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "key": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let rowKey = row.key;",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Gets the row key.",
+                            "A row in the grid is identified either by:",
+                            "- primaryKey data value,",
+                            "- the whole rowData, if the primaryKey is omitted."
+                        ]
+                    }
+                }
+            },
+            "data": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let rowData = row.data;",
+                            "```"
+                        ],
+                        "shortText": "The data record that populates the row."
+                    }
+                }
+            },
+            "rowData": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "Use 'data' instead.",
+                                        "The data record that populates the row"
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "rowID": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "Use 'key' instead.",
+                                    "tagName": "deprecated"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "viewIndex": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns the view index calculated per the grid page."
+                    }
+                }
+            },
+            "inEditMode": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns if the row is currently in edit mode."
+                    }
+                }
+            },
+            "pinned": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets whether the row is pinned.",
+                            "Default value is `false`.",
+                            "```typescript",
+                            "const isPinned = row.pinned;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets whether the row is pinned.",
+                            "Default value is `false`.",
+                            "```typescript",
+                            "row.pinned = !row.pinned;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "expanded": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "const isExpanded = row.expanded;",
+                            "```"
+                        ],
+                        "shortText": "Gets the row expanded/collapsed state."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "row.expanded = true;",
+                            "```"
+                        ],
+                        "shortText": "Expands/collapses the row."
+                    }
+                }
+            },
+            "selected": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Gets whether the row is selected.",
+                            "Default value is `false`.",
+                            "```typescript",
+                            "row.selected = true;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "Sets whether the row is selected.",
+                            "Default value is `false`.",
+                            "```typescript",
+                            "row.selected = !row.selected;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "deleted": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns if the row is in delete state."
+                    }
+                }
+            },
+            "children": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns the child rows. Always returns null for IgxGridRow."
+                    }
+                }
+            },
+            "parent": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns the parent row, if any. Always returns null for IgxGridRow."
+                    }
+                }
+            },
+            "hasChildren": {
+                "getter": {
+                    "comment": {
+                        "shortText": "Returns if the row has child rows. Always return false for IgxGridRow."
+                    }
+                }
+            }
+        }
+    }
+}

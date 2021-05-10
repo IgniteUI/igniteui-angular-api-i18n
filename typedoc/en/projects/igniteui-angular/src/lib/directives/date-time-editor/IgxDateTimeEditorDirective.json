@@ -88,14 +88,14 @@
                     "shortText": "Locale settings used for value formatting."
                 }
             },
-            "isSpinLoop": {
+            "spinLoop": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<input igxDateTimeEditor [isSpinLoop]=\"false\">",
+                                    "<input igxDateTimeEditor [spinLoop]=\"false\">",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -122,6 +122,26 @@
                     "shortText": [
                         "Set both pre-defined format options such as `shortDate` and `longDate`,",
                         "as well as constructed format string using characters supported by `DatePipe`, e.g. `EE/MM/yyyy`."
+                    ]
+                }
+            },
+            "spinDelta": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<input igxDateTimeEditor [spinDelta]=\"{date: 5, minute: 30}\">",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Delta values used to increment or decrement each editor date part on spin actions.",
+                        "All values default to `1`."
                     ]
                 }
             },
@@ -233,7 +253,12 @@
                     "parameters": {
                         "datePart": {
                             "comment": {
-                                "text": "The optional DatePart to increment. Defaults to Date or Hours(when Date is absent from the inputFormat - ex:'HH:mm')."
+                                "text": "The optional DatePart to increment. Defaults to Date or Hours (when Date is absent from the inputFormat - ex:'HH:mm')."
+                            }
+                        },
+                        "delta": {
+                            "comment": {
+                                "text": "The optional delta to increment by. Overrides `spinDelta`."
                             }
                         }
                     },
@@ -246,7 +271,12 @@
                     "parameters": {
                         "datePart": {
                             "comment": {
-                                "text": "The optional DatePart to decrement. Defaults to Date or Hours(when Date is absent from the inputFormat - ex:'HH:mm')."
+                                "text": "The optional DatePart to decrement. Defaults to Date or Hours (when Date is absent from the inputFormat - ex:'HH:mm')."
+                            }
+                        },
+                        "delta": {
+                            "comment": {
+                                "text": "The optional delta to decrement by. Overrides `spinDelta`."
                             }
                         }
                     },

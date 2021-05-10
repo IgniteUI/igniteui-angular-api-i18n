@@ -1,0 +1,315 @@
+{
+    "IgxTreeComponent": {
+        "properties": {
+            "singleBranchExpand": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree [singleBranchExpand]=\"true\">",
+                        "...",
+                        "</igx-tree>",
+                        "```",
+                        "```typescript",
+                        "const tree: IgxTree = this.tree;",
+                        "this.tree.singleBranchExpand = false;",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Get/Set how the tree should handle branch expansion.",
+                        "If set to `true`, only a single branch can be expanded at a time, collapsing all others"
+                    ]
+                }
+            },
+            "nodeSelection": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree (nodeSelection)=\"handleNodeSelection($event)\">",
+                        "</igx-tree>",
+                        "```",
+                        "```typescript",
+                        "public handleNodeSelection(event: ITreeNodeSelectionEvent) {",
+                        " const newSelection: IgxTreeNode<any>[] = event.newSelection;",
+                        " const added: IgxTreeNode<any>[] = event.added;",
+                        " console.log(\"New selection will be: \", newSelection);",
+                        " console.log(\"Added nodes: \", event.added);",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "Emitted when the node selection is changed through interaction"
+                }
+            },
+            "nodeExpanding": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree (nodeExpanding)=\"handleNodeExpanding($event)\">",
+                        "</igx-tree>",
+                        "```",
+                        "```typescript",
+                        "public handleNodeExpanding(event: ITreeNodeTogglingEventArgs) {",
+                        " const expandedNode: IgxTreeNode<any> = event.node;",
+                        " if (expandedNode.disabled) {",
+                        "     event.cancel = true;",
+                        " }",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "Emitted when a node is expanding, before it finishes"
+                }
+            },
+            "nodeExpanded": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree (nodeExpanded)=\"handleNodeExpanded($event)\">",
+                        "</igx-tree>",
+                        "```",
+                        "```typescript",
+                        "public handleNodeExpanded(event: ITreeNodeToggledEventArgs) {",
+                        " const expandedNode: IgxTreeNode<any> = event.node;",
+                        " console.log(\"Node is expanded: \", expandedNode.data);",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "Emitted when a node is expanded, after it finishes"
+                }
+            },
+            "nodeCollapsing": {
+                "comment": {
+                    "text": [
+                        "```html",
+                        "<igx-tree (nodeCollapsing)=\"handleNodeCollapsing($event)\">",
+                        "</igx-tree>",
+                        "```",
+                        "```typescript",
+                        "public handleNodeCollapsing(event: ITreeNodeTogglingEventArgs) {",
+                        " const collapsedNode: IgxTreeNode<any> = event.node;",
+                        " if (collapsedNode.alwaysOpen) {",
+                        "     event.cancel = true;",
+                        " }",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "Emitted when a node is collapsing, before it finishes"
+                }
+            },
+            "nodeCollapsed": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-tree (nodeCollapsed)=\"handleNodeCollapsed($event)\">",
+                                    "</igx-tree>",
+                                    "```",
+                                    "```typescript",
+                                    "public handleNodeCollapsed(event: ITreeNodeToggledEventArgs) {",
+                                    " const collapsedNode: IgxTreeNode<any> = event.node;",
+                                    " console.log(\"Node is collapsed: \", collapsedNode.data);",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a node is collapsed, after it finishes"
+                }
+            },
+            "activeNodeChanged": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "<igx-tree (activeNodeChanged)=\"activeNodeChanged($event)\"></igx-tree>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the active node is changed."
+                }
+            },
+            "expandIndicator": {
+                "comment": {
+                    "shortText": [
+                        "A custom template to be used for the expand indicator of nodes",
+                        "```html",
+                        "<igx-tree>",
+                        " <ng-template igxTreeExpandIndicator let-expanded>",
+                        "     <igx-icon>{{ expanded ? \"close_fullscreen\": \"open_in_full\"}}</igx-icon>",
+                        " </ng-template>",
+                        "</igx-tree>",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "expandAll": {
+                "comment": {
+                    "parameters": {
+                        "nodes": {
+                            "comment": {
+                                "text": [
+                                    "nodes to be expanded",
+                                    "```typescript",
+                                    "const targetNodes: IgxTreeNode<any> = this.tree.findNodes(true, (_data: any, node: IgxTreeNode<any>) => node.data.expandable);",
+                                    "tree.expandAll(nodes);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Expands all of the passed nodes.",
+                        "If no nodes are passed, expands ALL nodes"
+                    ]
+                }
+            },
+            "collapseAll": {
+                "comment": {
+                    "parameters": {
+                        "nodes": {
+                            "comment": {
+                                "text": [
+                                    "nodes to be collapsed",
+                                    "```typescript",
+                                    "const targetNodes: IgxTreeNode<any> = this.tree.findNodes(true, (_data: any, node: IgxTreeNode<any>) => node.data.collapsible);",
+                                    "tree.collapseAll(nodes);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Collapses all of the passed nodes.",
+                        "If no nodes are passed, collapses ALL nodes"
+                    ]
+                }
+            },
+            "deselectAll": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    " const arr = [",
+                                    "     this.tree.nodes.toArray()[0],",
+                                    "     this.tree.nodes.toArray()[1]",
+                                    " ];",
+                                    " this.tree.deselectAll(arr);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselect all nodes if the nodes collection is empty. Otherwise, deselect the nodes in the nodes collection."
+                }
+            },
+            "findNodes": {
+                "comment": {
+                    "returns": "Array of nodes that match the search. `null` if no nodes are found.\n\n```html\n<igx-tree>\n    <igx-tree-node *ngFor=\"let node of data\" [data]=\"node\">\n         {{ node.label }}\n    </igx-tree-node>\n</igx-tree>\n```\n\n```typescript\npublic data: DataEntry[] = FETCHED_DATA;\n...\nconst matchedNodes: IgxTreeNode<DataEntry>[] = this.tree.findNodes<DataEntry>(searchTerm: data[5]);\n```\n\nUsing a custom comparer\n```typescript\npublic data: DataEntry[] = FETCHED_DATA;\n...\nconst comparer: IgxTreeSearchResolver = (data: any, node: IgxTreeNode<DataEntry>) {\n     return node.data.index % 2 === 0;\n}\nconst evenIndexNodes: IgxTreeNode<DataEntry>[] = this.tree.findNodes<DataEntry>(null, comparer);\n```\n",
+                    "parameters": {
+                        "searchTerm": {
+                            "comment": {
+                                "text": "The data of the searched node"
+                            }
+                        },
+                        "comparer": {
+                            "comment": {
+                                "text": "A custom comparer function that evaluates the passed `searchTerm` against all nodes."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remark": {
+                            "comment": {
+                                "text": [
+                                    "Default search compares the passed `searchTerm` against the node's `data` Input.",
+                                    "When using `findNodes` w/o a `comparer`, make sure all nodes have `data` passed."
+                                ],
+                                "tagName": "remark"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Returns all of the nodes that match the passed searchTerm.",
+                        "Accepts a custom comparer function for evaluating the search term against the nodes."
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "selection": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the tree selection mode is 'None'",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets tree selection mode"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the tree selection mode is 'None'",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets tree selection mode"
+                    }
+                }
+            },
+            "rootNodes": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "const tree: IgxTree = this.tree;",
+                            "const rootNodes: IgxTreeNodeComponent<any>[] = tree.rootNodes;",
+                            "```"
+                        ],
+                        "shortText": "Returns all **root level** nodes"
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "shortText": [
+                            "Returns the theme of the component.",
+                            "The default theme is `comfortable`.",
+                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "shortText": "Sets the theme of the component."
+                    }
+                }
+            }
+        }
+    }
+}

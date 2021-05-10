@@ -23,7 +23,7 @@
                     ]
                 }
             },
-            "onGridCreated": {
+            "gridCreated": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -37,7 +37,7 @@
                         "Event emmited when a grid is being created based on this row island.",
                         "```html",
                         "<igx-hierarchical-grid [data]=\"Data\" [autoGenerate]=\"true\">",
-                        "     <igx-row-island [key]=\"'childData'\" (onGridCreated)=\"gridCreated($event)\" #rowIsland>",
+                        "     <igx-row-island [key]=\"'childData'\" (gridCreated)=\"gridCreated($event)\" #rowIsland>",
                         "         <!-- ... -->",
                         "     </igx-row-island>",
                         "</igx-hierarchical-grid>",
@@ -45,7 +45,7 @@
                     ]
                 }
             },
-            "onGridInitialized": {
+            "gridInitialized": {
                 "comment": {
                     "tags": {
                         "memberof": {
@@ -60,7 +60,7 @@
                         "The emitting is done in `ngAfterViewInit`.",
                         "```html",
                         "<igx-hierarchical-grid [data]=\"Data\" [autoGenerate]=\"true\">",
-                        "     <igx-row-island [key]=\"'childData'\" (onGridInitialized)=\"gridInitialized($event)\" #rowIsland>",
+                        "     <igx-row-island [key]=\"'childData'\" (gridInitialized)=\"gridInitialized($event)\" #rowIsland>",
                         "         <!-- ... -->",
                         "     </igx-row-island>",
                         "</igx-hierarchical-grid>",
@@ -110,14 +110,14 @@
                     "shortText": "Gets/Sets whether the expand/collapse all button in the header should be rendered."
                 }
             },
-            "onDataPreLoad": {
+            "dataPreLoad": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```typescript",
-                                    " <igx-hierarchical-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\" (onDataPreLoad)=\"handleEvent()\">",
+                                    " <igx-hierarchical-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\" (dataPreLoad)=\"handleEvent()\">",
                                     " </igx-hierarchical-grid>",
                                     "```"
                                 ],
@@ -263,7 +263,7 @@
                     "shortText": "Emitted after advanced filtering is performed."
                 }
             },
-            "onScroll": {
+            "gridScroll": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -271,7 +271,7 @@
                                 "text": [
                                     "```html",
                                     "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"",
-                                    "             (onScroll)=\"onScroll($event)\"></igx-grid>",
+                                    "             (gridScroll)=\"onScroll($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -419,7 +419,7 @@
                     "shortText": "Gets/Sets a unique values strategy used by the Excel Style Filtering"
                 }
             },
-            "onCellClick": {
+            "cellClick": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -432,7 +432,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onCellClick)=\"onCellClick($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (cellClick)=\"cellClick($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -442,7 +442,7 @@
                     "shortText": "Emitted when `IgxGridCellComponent` is clicked."
                 }
             },
-            "onSelection": {
+            "selected": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -455,7 +455,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onSelection)=\"onCellSelect($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (selected)=\"onCellSelect($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -465,14 +465,14 @@
                     "shortText": "Emitted when `IgxGridCellComponent` is selected."
                 }
             },
-            "onRowSelectionChange": {
+            "rowSelected": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onRowSelectionChange)=\"onCellClickChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (rowSelected)=\"onCellClickChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -482,14 +482,14 @@
                     "shortText": " Emitted when `IgxGridRowComponent` is selected."
                 }
             },
-            "onColumnSelectionChange": {
+            "columnSelected": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onColumnSelectionChange)=\"onColumnSelectionChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (columnSelected)=\"columnSelected($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -499,7 +499,7 @@
                     "shortText": " Emitted when `IgxColumnComponent` is selected."
                 }
             },
-            "onColumnPinning": {
+            "columnPin": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -754,7 +754,7 @@
                     "shortText": "Emitted when row editing is canceled."
                 }
             },
-            "onColumnInit": {
+            "columnInit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -767,7 +767,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [onColumnInit]=\"initColumns($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (columnInit)=\"initColumns($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -790,7 +790,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onSorting)=\"sorting($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (sorting)=\"sorting($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -800,7 +800,7 @@
                     "shortText": "Emitted before sorting expressions are applied."
                 }
             },
-            "onSortingDone": {
+            "sortingDone": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -813,7 +813,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onSortingDone)=\"sortingDone($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (sortingDone)=\"sortingDone($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -846,7 +846,7 @@
                     "shortText": "Emitted before filtering expressions are applied."
                 }
             },
-            "onFilteringDone": {
+            "filteringDone": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -859,7 +859,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (onFilteringDone)=\"filteringDone($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (filteringDone)=\"filteringDone($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -869,7 +869,7 @@
                     "shortText": "Emitted after filtering is performed through the UI."
                 }
             },
-            "onPagingDone": {
+            "pagingDone": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -882,7 +882,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (onPagingDone)=\"pagingDone($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (pagingDone)=\"pagingDone($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -892,7 +892,7 @@
                     "shortText": "Emitted after paging is performed."
                 }
             },
-            "onRowAdded": {
+            "rowAdded": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -905,7 +905,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onRowAdded)=\"rowAdded($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (rowAdded)=\"rowAdded($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -915,7 +915,7 @@
                     "shortText": "Emitted when a row added through the API."
                 }
             },
-            "onRowDeleted": {
+            "rowDeleted": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -928,7 +928,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onRowDeleted)=\"rowDeleted($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (rowDeleted)=\"rowDeleted($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -938,7 +938,7 @@
                     "shortText": "Emitted when a row is deleted through API."
                 }
             },
-            "onColumnResized": {
+            "columnResized": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -951,7 +951,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onColumnResized)=\"resizing($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (columnResized)=\"resizing($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -961,7 +961,7 @@
                     "shortText": "Emitted after column is resized."
                 }
             },
-            "onContextMenu": {
+            "contextMenu": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -969,7 +969,7 @@
                                 "text": [
                                     "Returns the `IgxGridCellComponent` object.",
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onContextMenu)=\"contextMenu($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (contextMenu)=\"contextMenu($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "remarks"
@@ -979,7 +979,7 @@
                     "shortText": "Emitted when a cell is right clicked."
                 }
             },
-            "onDoubleClick": {
+            "doubleClick": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -992,7 +992,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onDoubleClick)=\"dblClick($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (doubleClick)=\"dblClick($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1025,7 +1025,7 @@
                     "shortText": "Emitted before column visibility is changed."
                 }
             },
-            "onColumnVisibilityChanged": {
+            "columnVisibilityChanged": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1038,7 +1038,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnVisibilityChanged)=\"visibilityChanged($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnVisibilityChanged)=\"visibilityChanged($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1048,7 +1048,7 @@
                     "shortText": "Emitted after column visibility is changed."
                 }
             },
-            "onColumnMovingStart": {
+            "columnMovingStart": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1061,7 +1061,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnMovingStart)=\"movingStart($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnMovingStart)=\"movingStart($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1071,7 +1071,7 @@
                     "shortText": "Emitted when column moving starts."
                 }
             },
-            "onColumnMoving": {
+            "columnMoving": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1084,7 +1084,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnMoving)=\"moving($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnMoving)=\"moving($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1094,7 +1094,7 @@
                     "shortText": "Emitted during the column moving operation."
                 }
             },
-            "onColumnMovingEnd": {
+            "columnMovingEnd": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1107,7 +1107,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnMovingEnd)=\"movingEnds($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnMovingEnd)=\"movingEnds($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1117,7 +1117,7 @@
                     "shortText": "Emitted when column moving ends."
                 }
             },
-            "onGridKeydown": {
+            "gridKeydown": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1133,7 +1133,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
+                                    " <igx-grid (gridKeydown)=\"customKeydown($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1143,7 +1143,7 @@
                     "shortText": "Emitted when keydown is triggered over element inside grid's body."
                 }
             },
-            "onRowDragStart": {
+            "rowDragStart": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1156,7 +1156,7 @@
                     "shortText": "Emitted when start dragging a row."
                 }
             },
-            "onRowDragEnd": {
+            "rowDragEnd": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1169,7 +1169,7 @@
                     "shortText": "Emitted when dropping a row."
                 }
             },
-            "onGridCopy": {
+            "gridCopy": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1182,14 +1182,14 @@
                     "shortText": "Emitted when a copy operation is executed."
                 }
             },
-            "onRowToggle": {
+            "rowToggle": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [data]=\"employeeData\" (onRowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid [data]=\"employeeData\" (rowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1199,14 +1199,14 @@
                     "shortText": "Emitted when the expanded state of a row gets changed."
                 }
             },
-            "onRowPinning": {
+            "rowPinning": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [data]=\"employeeData\" (onRowPinning)=\"rowPin($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid [data]=\"employeeData\" (rowPinning)=\"rowPin($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -1256,7 +1256,7 @@
                     "shortText": "Emitted before sorting is performed."
                 }
             },
-            "onToolbarExporting": {
+            "toolbarExporting": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -1275,7 +1275,7 @@
                     "shortText": "Emitted when an export process is initiated by the user."
                 }
             },
-            "onRangeSelection": {
+            "rangeSelected": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1571,46 +1571,6 @@
                         }
                     },
                     "shortText": "Returns the `IgxColumnComponent` by field name."
-                }
-            },
-            "getRowByIndex": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const myRow = this.grid1.getRowByIndex(1);",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Returns the `IgxRowDirective` by index."
-                }
-            },
-            "getRowByKey": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "Requires that the `primaryKey` property is set.",
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const myRow = this.grid1.getRowByKey(\"cell5\");",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Returns `IgxGridRowComponent` object by the specified primary key ."
                 }
             },
             "getCellByColumn": {

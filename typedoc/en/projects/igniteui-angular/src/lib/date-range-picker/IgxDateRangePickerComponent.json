@@ -51,30 +51,7 @@
             "shortText": "Provides the ability to select a range of dates from a calendar UI or editable inputs."
         },
         "properties": {
-            "mode": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "Default mode is `dialog`",
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker mode=\"dropdown\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Display calendar in either `dialog` or `dropdown` mode."
-                }
-            },
-            "monthsViewNumber": {
+            "displayMonthsCount": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -87,7 +64,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker [monthsViewNumber]=\"3\"></igx-date-range-picker>",
+                                    "<igx-date-range-picker [displayMonthsCount]=\"3\"></igx-date-range-picker>",
                                     "```"
                                 ],
                                 "tagName": "example"
@@ -195,32 +172,6 @@
                     "shortText": "A custom formatter function, applied on the selected or passed in date."
                 }
             },
-            "doneButtonText": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": [
-                                    "Default value is `Done`.",
-                                    "The button will only show up in `dialog` mode."
-                                ],
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "The default text of the calendar dialog `done` button."
-                }
-            },
             "overlaySettings": {
                 "comment": {
                     "tags": {
@@ -284,23 +235,6 @@
                     "shortText": "The expected user input format and placeholder."
                 }
             },
-            "disabled": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker [disabled]=\"'true'\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Enables/Disables the `IgxDateRangePickerComponent`."
-                }
-            },
             "placeholder": {
                 "comment": {
                     "tags": {
@@ -318,89 +252,172 @@
                     "shortText": "Sets the `placeholder` for single-input `IgxDateRangePickerComponent`."
                 }
             },
-            "rangeSelected": {
+            "outlet": {
                 "comment": {
                     "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`.",
+                                "tagName": "remarks"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (rangeSelected)=\"handleSelected($event)\"></igx-date-range-picker>",
+                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
+                                    "//..",
+                                    "<igx-date-range-picker [outlet]=\"outlet\"></igx-date-range-picker>",
+                                    "//..",
                                     "```"
                                 ],
                                 "tagName": "example"
                             }
                         }
                     },
-                    "shortText": "Emitted when a range is selected."
+                    "shortText": "Gets/Sets the container used for the popup element."
                 }
             },
-            "onOpening": {
+            "valueChange": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onOpening)=\"handleOpening($event)\"></igx-date-range-picker>",
+                                    "<igx-date-range-picker [(value)]=\"date\"></igx-date-range-picker>",
                                     "```"
                                 ],
                                 "tagName": "example"
                             }
                         }
                     },
-                    "shortText": "Emitted when the calendar starts opening, cancelable."
+                    "shortText": "Emitted when the picker's value changes. Used for two-way binding."
                 }
             },
-            "onOpened": {
+            "mode": {
                 "comment": {
                     "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default mode is `dropdown`",
+                                "tagName": "remarks"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onOpened)=\"handleOpened($event)\"></igx-date-range-picker>",
+                                    "<igx-date-picker mode=\"dialog\"></igx-date-picker>",
                                     "```"
                                 ],
                                 "tagName": "example"
                             }
                         }
                     },
-                    "shortText": "Emitted when the `IgxDateRangeComponent` is opened."
+                    "shortText": "Can be `dropdown` with editable input field or `dialog` with readonly input field."
                 }
             },
-            "onClosing": {
+            "disabled": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onClosing)=\"handleClosing($event)\"></igx-date-range-picker>",
+                                    "<igx-date-picker [disabled]=\"'true'\"></igx-date-picker>",
                                     "```"
                                 ],
                                 "tagName": "example"
                             }
                         }
                     },
-                    "shortText": "Emitted when the calendar starts closing, cancelable."
+                    "shortText": "Enables or disables the picker."
                 }
             },
-            "onClosed": {
+            "tabIndex": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onClosed)=\"handleClosed($event)\"></igx-date-range-picker>",
+                                    "<igx-date-picker [tabIndex]=\"1\"></igx-date-picker>",
                                     "```"
                                 ],
                                 "tagName": "example"
                             }
                         }
                     },
-                    "shortText": "Emitted when the `IgxDateRangeComponent` is closed."
+                    "shortText": "Gets/Sets the default template editor's tabindex."
+                }
+            },
+            "opening": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (opening)=\"handleOpening($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar has started opening, cancelable."
+                }
+            },
+            "opened": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (opened)=\"handleOpened($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the calendar has opened."
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closing)=\"handleClosing($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar has started closing, cancelable."
+                }
+            },
+            "closed": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closed)=\"handleClosed($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the calendar has closed."
                 }
             }
         },
@@ -429,7 +446,7 @@
                         "example": {
                             "comment": {
                                 "text": [
-                                    "html```",
+                                    "```html",
                                     "<igx-date-range-picker #dateRange></igx-date-range-picker>",
                                     "<button (click)=\"dateRange.close()\">Close Dialog</button>",
                                     "```"
@@ -447,7 +464,7 @@
                         "example": {
                             "comment": {
                                 "text": [
-                                    "html```",
+                                    "```html",
                                     "<igx-date-range-picker #dateRange></igx-date-range-picker>",
                                     "<button (click)=\"dateRange.toggle()\">Toggle Dialog</button>",
                                     "```"
@@ -459,7 +476,7 @@
                     "shortText": "Toggles the date range picker's dropdown or dialog"
                 }
             },
-            "selectRange": {
+            "select": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -469,7 +486,7 @@
                                     "public selectFiveDayRange() {",
                                     " const today = new Date();",
                                     " const inFiveDays = new Date(new Date().setDate(today.getDate() + 5));",
-                                    " this.dateRange.selectRange(today, inFiveDays);",
+                                    " this.dateRange.select(today, inFiveDays);",
                                     "}",
                                     "```"
                                 ],
@@ -482,6 +499,62 @@
             }
         },
         "accessors": {
+            "doneButtonText": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Default value is `Done`.",
+                                        "An @Input property that renders Done button with custom text. By default `doneButtonText` is set to Done.",
+                                        "The button will only show up in `dialog` mode."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The default text of the calendar dialog `done` button."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Default value is `Done`.",
+                                        "An @Input property that renders Done button with custom text. By default `doneButtonText` is set to Done.",
+                                        "The button will only show up in `dialog` mode."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The default text of the calendar dialog `done` button."
+                    }
+                }
+            },
             "minValue": {
                 "setter": {
                     "comment": {
@@ -535,6 +608,21 @@
                             }
                         },
                         "shortText": "The maximum value in a valid range."
+                    }
+                }
+            },
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "An accessor that sets the resource strings.",
+                            "By default it uses EN resources."
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "An accessor that returns the resource strings."
                     }
                 }
             },
@@ -597,6 +685,54 @@
                             }
                         },
                         "shortText": "The currently selected value / range from the calendar"
+                    }
+                }
+            },
+            "type": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Default is `box`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Determines how the picker's input will be styled."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Default is `box`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Determines how the picker's input will be styled."
                     }
                 }
             },

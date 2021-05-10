@@ -6,376 +6,380 @@
                     "shortText": [
                         "An @Input property that sets the value of the `id` attribute.",
                         "```html",
-                        "<igx-time-picker [id]=\"'igx-time-picker-5'\" format=\"h:mm tt\" ></igx-time-picker>",
+                        "<igx-time-picker [id]=\"'igx-time-picker-5'\" [displayFormat]=\"h:mm tt\" ></igx-time-picker>",
                         "```"
                     ]
                 }
             },
-            "disabled": {
-                "comment": {
-                    "shortText": [
-                        "An @Input property that allows you to disable the `igx-time-picker` component. By default `disabled` is set to false.",
-                        "```html",
-                        "<igx-time-picker [disabled]=\"'true'\" [vertical]=\"true\" format=\"h:mm tt\" ></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "minValue": {
-                "comment": {
-                    "shortText": [
-                        "An @Input property that allows you to set the `minValue` to limit the user input.",
-                        "```html",
-                        "public min: string = \"09:00\";",
-                        " //..",
-                        "<igx-time-picker format=\"HH:mm\" [vertical]=\"true\" [minValue]=\"min\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "maxValue": {
-                "comment": {
-                    "shortText": [
-                        "An @Input property that allows you to set the `maxValue` to limit the user input.",
-                        "```html",
-                        "public max: string = \"18:00\";",
-                        " //..",
-                        "<igx-time-picker format=\"HH:mm\" [vertical]=\"true\" [maxValue]=\"max\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "isSpinLoop": {
-                "comment": {
-                    "shortText": [
-                        "An @Input property that determines the spin behavior. By default `isSpinLoop` is set to true.",
-                        "The seconds, minutes and hour spinning will wrap around by default.",
-                        "```html",
-                        "<igx-time-picker [isSpinLoop]=\"false\" id=\"time-picker\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "vertical": {
-                "comment": {
-                    "shortText": [
-                        "An @Input property that Gets/Sets the orientation of the `igxTimePicker`. By default `vertical` is set to false.",
-                        "```html",
-                        "<igx-time-picker [vertical]=\"true\" id=\"time-picker\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "promptChar": {
+            "displayFormat": {
                 "comment": {
                     "tags": {
-                        "memberof": {
+                        "remarks": {
                             "comment": {
-                                "text": "IgxTimePickerComponent",
-                                "tagName": "memberof"
+                                "text": "Uses Angular's `DatePipe`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-time-picker displayFormat=\"mm:ss\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
                             }
                         }
                     },
-                    "shortText": [
-                        "Sets the character used to prompt the user for input.",
-                        "Default value is \"'-'\".",
-                        "```html",
-                        "<igx-time-picker [promptChar] = \"'_'\">",
-                        "```"
-                    ]
+                    "shortText": "The format used when editable input is not focused. Defaults to the `inputFormat` if not set."
+                }
+            },
+            "inputFormat": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Default is `hh:mm tt`",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-time-picker inputFormat=\"HH:mm\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The expected user input format and placeholder."
                 }
             },
             "mode": {
                 "comment": {
                     "tags": {
-                        "memberof": {
+                        "example": {
                             "comment": {
-                                "text": "IgxTimePickerComponent",
-                                "tagName": "memberof"
+                                "text": [
+                                    "```html",
+                                    "<igx-time-picker mode=\"dialog\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
                             }
                         }
                     },
+                    "shortText": "Gets/Sets the interaction mode - dialog or drop down."
+                }
+            },
+            "spinLoop": {
+                "comment": {
                     "shortText": [
-                        "An @Input property that allows you to switch the interaction mode between",
-                        "a dialog picker or dropdown with editable masked input.",
-                        "Deafult is dialog picker.",
+                        "An @Input property that determines the spin behavior. By default `spinLoop` is set to true.",
+                        "The seconds, minutes and hour spinning will wrap around by default.",
                         "```html",
-                        "public mode = InteractionMode.DROPDOWN;",
-                        " //..",
-                        "<igx-time-picker [mode]=\"mode\"></igx-time-picker>",
+                        "<igx-time-picker [spinLoop]=\"false\"></igx-time-picker>",
                         "```"
                     ]
+                }
+            },
+            "formatter": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-time-picker [value]=\"date\" [formatter]=\"formatter\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a custom formatter function on the selected or passed date."
+                }
+            },
+            "headerOrientation": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Available in dialog mode only. Default value is `horizontal`.",
+                                    "```html",
+                                    "<igx-time-picker [headerOrientation]=\"'vertical'\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Sets the orientation of the picker's header."
+                }
+            },
+            "selected": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-time-picker (selected)=\"onSelection($event)\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after a selection has been done."
+                }
+            },
+            "valueChange": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Used for `two-way` bindings.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-time-picker [(value)]=\"date\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the picker's value changes."
+                }
+            },
+            "validationFailed": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-time-picker (validationFailed)=\"onValidationFailed($event)\"></igx-time-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the user types/spins invalid time in the time-picker editor."
+                }
+            },
+            "placeholder": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [placeholder]=\"'Choose your date'\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Sets the `placeholder` of the picker's input."
+                }
+            },
+            "overlaySettings": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [overlaySettings]=\"customOverlaySettings\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Overlay settings used to display the pop-up element."
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [disabled]=\"'true'\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Enables or disables the picker."
+                }
+            },
+            "locale": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Uses Angular's `LOCALE_ID` by default. Affects both input mask and display format if those are not set.",
+                                    "If a `locale` is set, it must be registered via `registerLocaleData`.",
+                                    "Please refer to https://angular.io/guide/i18n#i18n-pipes.",
+                                    "If it is not registered, `Intl` will be used for formatting."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker locale=\"jp\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Locale settings used for value formatting and calendar or time spinner."
                 }
             },
             "outlet": {
                 "comment": {
-                    "text": [
-                        "```html",
-                        "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
-                        "//..",
-                        "<igx-time-picker [outlet]=\"outlet\"></igx-time-picker>",
-                        "//..",
-                        "```",
-                        "Where `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`."
-                    ],
-                    "shortText": "Determines the container the popup element should be attached to."
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
+                                    "<!-- ... -->",
+                                    "<igx-date-picker [outlet]=\"outlet\"></igx-date-picker>",
+                                    "<!-- ... -->",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "The container used for the pop-up element."
                 }
             },
-            "onValueChanged": {
+            "tabIndex": {
                 "comment": {
-                    "shortText": [
-                        "Emitted when selection is made. The event contains the selected value. Returns {`oldValue`: `Date`, `newValue`: `Date`}.",
-                        "```typescript",
-                        " @ViewChild(\"toast\")",
-                        "private toast: IgxToastComponent;",
-                        "public onValueChanged(timepicker){",
-                        "    this.toast.open()",
-                        "}",
-                        " //...",
-                        " ```",
-                        " ```html",
-                        "<igx-time-picker (onValueChanged)=\"onValueChanged($event)\"></igx-time-picker>",
-                        "<igx-toast #toast message=\"The value has been changed!\"></igx-toast>",
-                        "```"
-                    ]
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker [tabIndex]=\"1\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the default template editor's tabindex."
                 }
             },
-            "onValidationFailed": {
+            "opening": {
                 "comment": {
-                    "shortText": [
-                        "Emitted when an invalid value is being set. Returns {`timePicker`: `any`, `currentValue`: `Date`, `setThroughUI`: `boolean`}",
-                        "```typescript",
-                        "public min: string = \"09:00\";",
-                        "public max: string = \"18:00\";",
-                        " @ViewChild(\"toast\")",
-                        "private toast: IgxToastComponent;",
-                        "public onValidationFailed(timepicker){",
-                        "    this.toast.open();",
-                        "}",
-                        " //...",
-                        " ```",
-                        " ```html",
-                        "<igx-time-picker [minValue]=\"min\" [maxValue]=\"max\" (onValidationFailed)=\"onValidationFailed($event)\"></igx-time-picker>",
-                        "<igx-toast #toast message=\"Value must be between 09:00 and 18:00!\"></igx-toast>",
-                        "```"
-                    ]
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (opening)=\"handleOpening($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar has started opening, cancelable."
                 }
             },
-            "onOpened": {
+            "opened": {
                 "comment": {
-                    "shortText": "Emitted when a timePicker is opened."
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (opened)=\"handleOpened($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the calendar has opened."
                 }
             },
-            "onClosed": {
+            "closing": {
                 "comment": {
-                    "shortText": "Emitted when a timePicker is closed."
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closing)=\"handleClosing($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the calendar has started closing, cancelable."
                 }
             },
-            "onClosing": {
+            "closed": {
                 "comment": {
-                    "shortText": "Emitted when a timePicker is being closed."
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closed)=\"handleClosed($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the calendar has closed."
                 }
             }
         },
         "methods": {
-            "openDialog": {
+            "open": {
                 "comment": {
                     "parameters": {
-                        "target": {
+                        "settings": {
                             "comment": {
                                 "text": [
-                                    "HTMLElement - the target element to use for positioning the drop down container according to",
+                                    "OverlaySettings - the overlay settings to use for positioning the drop down or dialog container according to",
                                     "```html",
-                                    "<igx-time-picker [value]=\"date\" mode=\"dropdown\" #retemplated>",
-                                    "  <ng-template igxTimePickerTemplate let-openDialog=\"openDialog\"",
-                                    "               let-displayTime=\"displayTime\">",
-                                    "    <igx-input-group>",
-                                    "      <input #dropDownTarget igxInput [value]=\"displayTime\" />",
-                                    "      <igx-suffix (click)=\"openDialog(dropDownTarget)\">",
-                                    "        <igx-icon>alarm</igx-icon>",
-                                    "      </igx-suffix>",
-                                    "    </igx-input-group>",
-                                    "  </ng-template>",
-                                    "</igx-time-picker>",
+                                    "<igx-time-picker #picker [value]=\"date\"></igx-time-picker>",
+                                    "<button (click)=\"picker.open()\">Open Dialog</button>",
                                     "```"
                                 ]
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "opens the dialog."
-                }
-            },
-            "scrollHourIntoView": {
-                "comment": {
-                    "parameters": {
-                        "item": {
-                            "comment": {
-                                "text": "to be scrolled in view."
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "Scrolls a hour item into view.",
-                        "```typescript",
-                        "scrhintoView(picker) {",
-                        "picker.scrollHourIntoView('2');",
-                        "}",
-                        " ```",
-                        "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrhintoView(picker)\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "scrollMinuteIntoView": {
-                "comment": {
-                    "parameters": {
-                        "item": {
-                            "comment": {
-                                "text": "to be scrolled in view."
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "Scrolls a minute item into view.",
-                        "```typescript",
-                        "scrMintoView(picker) {",
-                        "picker.scrollMinuteIntoView('3');",
-                        "}",
-                        " ```",
-                        "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrMintoView(picker)\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "scrollSecondsIntoView": {
-                "comment": {
-                    "parameters": {
-                        "item": {
-                            "comment": {
-                                "text": "to be scrolled in view."
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "Scrolls a seconds item into view.",
-                        "```typescript",
-                        "scrMintoView(picker) {",
-                        "picker.scrollSecondsIntoView('4');",
-                        "}",
-                        " ```",
-                        "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrMintoView(picker)\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "scrollAmPmIntoView": {
-                "comment": {
-                    "parameters": {
-                        "item": {
-                            "comment": {
-                                "text": "to be scrolled in view."
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "Scrolls an ampm item into view.",
-                        "```typescript",
-                        "scrAmPmIntoView(picker) {",
-                        "picker.scrollAmPmIntoView('PM');",
-                        "}",
-                        " ```",
-                        "```html",
-                        "<igx-time-picker #picker format=\"h:mm tt\" (onOpened)=\"scrAmPmIntoView(picker)\"></igx-time-picker>",
-                        "```"
-                    ]
-                }
-            },
-            "okButtonClick": {
-                "comment": {
-                    "shortText": [
-                        "If current value is valid selects it, closes the dialog and returns true, otherwise returns false.",
-                        "```html",
-                        "<igx-dialog class=\"igx-time-picker__dialog-popup\" [rightButtonLabel]=\"okButtonLabel\" (onRightButtonSelect)=\"okButtonClick()\">",
-                        "//..",
-                        "</igx-dialog>",
-                        "```"
-                    ]
-                }
-            },
-            "cancelButtonClick": {
-                "comment": {
-                    "shortText": [
-                        "Closes the dialog without selecting the current value.",
-                        "```html",
-                        "<igx-dialog class=\"igx-time-picker__dialog-popup\" [leftButtonLabel]=\"cancelButtonLabel\" (onLeftButtonSelect)=\"cancelButtonClick()\">",
-                        "//...",
-                        "</igx-dialog>",
-                        "```"
-                    ]
-                }
-            },
-            "hoursInView": {
-                "comment": {
-                    "shortText": [
-                        "Returns an array of the hours currently in view.",
-                        "```html",
-                        " @ViewChild(\"MyChild\")",
-                        "private picker: IgxTimePickerComponent;",
-                        "ngAfterViewInit(){",
-                        "    let hInView = this.picker.hoursInView;",
-                        "}",
-                        "```"
-                    ]
-                }
-            },
-            "minutesInView": {
-                "comment": {
-                    "shortText": [
-                        "Returns an array of the minutes currently in view.",
-                        "```html",
-                        " @ViewChild(\"MyChild\")",
-                        "private picker: IgxTimePickerComponent;",
-                        "ngAfterViewInit(){",
-                        "    let minInView = this.picker.minutesInView;",
-                        "}",
-                        "```"
-                    ]
-                }
-            },
-            "secondsInView": {
-                "comment": {
-                    "shortText": [
-                        "Returns an array of the seconds currently in view.",
-                        "```html",
-                        " @ViewChild(\"MyChild\")",
-                        "private picker: IgxTimePickerComponent;",
-                        "ngAfterViewInit(){",
-                        "    let minInView = this.picker.secondsInView;",
-                        "}",
-                        "```"
-                    ]
-                }
-            },
-            "ampmInView": {
-                "comment": {
-                    "shortText": [
-                        "Returns an array of the AM/PM currently in view.",
-                        "```html",
-                        " @ViewChild(\"MyChild\")",
-                        "private picker: IgxTimePickerComponent;",
-                        "ngAfterViewInit(){",
-                        "    let ApInView = this.picker.ampmInView;",
-                        "}",
-                        "```"
-                    ]
+                    "shortText": "Opens the picker's dialog UI."
                 }
             },
             "close": {
@@ -391,84 +395,261 @@
                         "```"
                     ]
                 }
+            },
+            "clear": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.timePicker.clear();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Clears the time picker value if it is a `string` or resets the time to `00:00:00` if the value is a Date object."
+                }
+            },
+            "select": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.timePicker.select(date);",
+                                    "@param date Date object containing the time to be selected."
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Selects time from the igxTimePicker."
+                }
+            },
+            "increment": {
+                "comment": {
+                    "parameters": {
+                        "datePart": {
+                            "comment": {
+                                "text": "The optional DatePart to increment. Defaults to Hour."
+                            }
+                        },
+                        "delta": {
+                            "comment": {
+                                "text": "The optional delta to increment by. Overrides `itemsDelta`."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.timePicker.increment(DatePart.Hours);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Increment a specified `DatePart`."
+                }
+            },
+            "decrement": {
+                "comment": {
+                    "parameters": {
+                        "datePart": {
+                            "comment": {
+                                "text": "The optional DatePart to decrement. Defaults to Hour."
+                            }
+                        },
+                        "delta": {
+                            "comment": {
+                                "text": "The optional delta to decrement by. Overrides `itemsDelta`."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.timePicker.decrement(DatePart.Seconds);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Decrement a specified `DatePart`"
+                }
             }
         },
         "accessors": {
-            "displayTime": {
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "Returns the current time formatted as string using the `format` option.",
-                            "If there is no set time the return is an empty string.",
-                            "```typescript",
-                            "@ViewChild(\"MyChild\")",
-                            "private picker: IgxTimePickerComponent;",
-                            "ngAfterViewInit(){",
-                            "   let time = this.picker.displayTime;",
-                            "}",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "template": {
-                "getter": {
+            "minValue": {
+                "setter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "remarks": {
                                 "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
+                                    "text": "If a `string` value is passed in, it must be in ISO format.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-time-picker [minValue]=\"18:00:00\"></igx-time-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
                                 }
                             }
                         },
-                        "shortText": [
-                            "Gets the input group template.",
-                            "```typescript",
-                            "let template = this.template();",
-                            "```"
-                        ]
+                        "shortText": "The minimum value the picker will accept."
                     }
-                }
-            },
-            "context": {
+                },
                 "getter": {
                     "comment": {
                         "tags": {
-                            "memberof": {
+                            "remarks": {
                                 "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
+                                    "text": "If a `string` value is passed in, it must be in ISO format.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-time-picker [minValue]=\"18:00:00\"></igx-time-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
                                 }
                             }
                         },
-                        "shortText": "Gets the context passed to the input group template."
+                        "shortText": "The minimum value the picker will accept."
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "let isCollapsed = this.timePicker.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "Gets if the dropdown/dialog is collapsed"
+                    }
+                }
+            },
+            "maxValue": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If a `string` value is passed in, it must be in ISO format.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-time-picker [maxValue]=\"20:30:00\"></igx-time-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The maximum value the picker will accept."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If a `string` value is passed in, it must be in ISO format.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-time-picker [maxValue]=\"20:30:00\"></igx-time-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The maximum value the picker will accept."
                     }
                 }
             },
             "value": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The current value is of type `Date`",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const newValue: Date = new Date(2000, 2, 2, 10, 15, 15);",
+                                        "this.timePicker.value = newValue;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "The currently selected value / time from the drop-down/dialog"
+                    }
+                },
                 "setter": {
                     "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The current value is of type `Date`",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const newValue: Date = new Date(2000, 2, 2, 10, 15, 15);",
+                                        "this.timePicker.value = newValue;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": [
                             "An accessor that allows you to set a time using the `value` input.",
                             "```html",
                             "public date: Date = new Date(Date.now());",
                             " //...",
                             "<igx-time-picker [value]=\"date\" format=\"h:mm tt\"></igx-time-picker>",
-                            "```"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "shortText": [
-                            "An accessor that returns the value of `igx-time-picker` component.",
-                            "```html",
-                            "@ViewChild(\"MyPick\")",
-                            "public pick: IgxTimePickerComponent;",
-                            "ngAfterViewInit(){",
-                            "   let pickSelect = this.pick.value;",
-                            "}",
                             "```"
                         ]
                     }
@@ -528,11 +709,11 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that gets/sets the delta by which hour and minute items would be changed <br>",
-                            "when the user presses the Up/Down keys.",
-                            "By default `itemsDelta` is set to `{hours: 1, minutes: 1, seconds: 1}`",
+                            "Delta values used to increment or decrement each editor date part on spin actions and",
+                            "to display time portions in the dropdown/dialog.",
+                            "By default `itemsDelta` is set to `{hour: 1, minute: 1, second: 1}`",
                             "```html",
-                            "<igx-time-picker [itemsDelta]=\"{hours:3, minutes:5, seconds:10}\" id=\"time-picker\"></igx-time-picker>",
+                            "<igx-time-picker [itemsDelta]=\"{hour:3, minute:5, second:10}\" id=\"time-picker\"></igx-time-picker>",
                             "```"
                         ]
                     }
@@ -540,109 +721,80 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that gets/sets the delta by which hour and minute items would be changed <br>",
-                            "when the user presses the Up/Down keys.",
-                            "By default `itemsDelta` is set to `{hours: 1, minutes: 1, seconds: 1}`",
+                            "Delta values used to increment or decrement each editor date part on spin actions and",
+                            "to display time portions in the dropdown/dialog.",
+                            "By default `itemsDelta` is set to `{hour: 1, minute: 1, second: 1}`",
                             "```html",
-                            "<igx-time-picker [itemsDelta]=\"{hours:3, minutes:5, seconds:10}\" id=\"time-picker\"></igx-time-picker>",
+                            "<igx-time-picker [itemsDelta]=\"{hour:3, minute:5, second:10}\" id=\"time-picker\"></igx-time-picker>",
                             "```"
                         ]
                     }
                 }
             },
-            "format": {
+            "type": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Default is `box`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Determines how the picker's input will be styled."
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Default is `box`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Determines how the picker's input will be styled."
+                    }
+                }
+            },
+            "displayDensity": {
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
-                            "By default `format` is set to hh:mm tt. <br>",
-                            "List of time-flags: <br>",
-                            "`h` : hours field in 12-hours format without leading zero <br>",
-                            "`hh` : hours field in 12-hours format with leading zero <br>",
-                            "`H` : hours field in 24-hours format without leading zero <br>",
-                            "`HH` : hours field in 24-hours format with leading zero <br>",
-                            "`m` : minutes field without leading zero <br>",
-                            "`mm` : minutes field with leading zero <br>",
-                            "`s` : seconds field without leading zero <br>",
-                            "`ss` : seconds field with leading zero <br>",
-                            "`tt` : 2 character string which represents AM/PM field <br>",
-                            "```html",
-                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
+                            "Returns the theme of the component.",
+                            "The default theme is `comfortable`.",
+                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
                             "```"
                         ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "shortText": [
-                            "An @Input property that Gets/Sets format of time while `igxTimePicker` does not have focus. <br>",
-                            "By default `format` is set to hh:mm tt. <br>",
-                            "List of time-flags: <br>",
-                            "`h` : hours field in 12-hours format without leading zero <br>",
-                            "`hh` : hours field in 12-hours format with leading zero <br>",
-                            "`H` : hours field in 24-hours format without leading zero <br>",
-                            "`HH` : hours field in 24-hours format with leading zero <br>",
-                            "`m` : minutes field without leading zero <br>",
-                            "`mm` : minutes field with leading zero <br>",
-                            "`s` : seconds field without leading zero <br>",
-                            "`ss` : seconds field with leading zero <br>",
-                            "`tt` : 2 character string which represents AM/PM field <br>",
-                            "```html",
-                            "<igx-time-picker format=\"HH:m\" id=\"time-picker\"></igx-time-picker>",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "overlaySettings": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
-                            "```typescript",
-                            "const settings: OverlaySettings = {",
-                            "     closeOnOutsideClick: true,",
-                            "     modal: false",
-                            " }",
-                            "```",
-                            "---",
-                            "```html",
-                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
-                            "```"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxTimePickerComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "An @Input property that allows you to modify overlay positioning, interaction and scroll behavior.",
-                            "```typescript",
-                            "const settings: OverlaySettings = {",
-                            "     closeOnOutsideClick: true,",
-                            "     modal: false",
-                            " }",
-                            "```",
-                            "---",
-                            "```html",
-                            "<igx-time-picker [overlaySettings]=\"settings\"></igx-time-picker>",
-                            "```"
-                        ]
+                        "shortText": "Sets the theme of the component."
                     }
                 }
             }

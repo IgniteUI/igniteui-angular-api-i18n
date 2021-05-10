@@ -50,7 +50,7 @@
                     ],
                     "shortText": [
                         "Removes the specified row from the grid's data source.",
-                        "This method emits `onRowDeleted` event."
+                        "This method emits `rowDeleted` event."
                     ]
                 }
             },
@@ -64,7 +64,7 @@
                     ],
                     "shortText": [
                         "Pins the specified row.",
-                        "This method emits `onRowPinning` event."
+                        "This method emits `rowPinning` event."
                     ]
                 }
             },
@@ -78,7 +78,7 @@
                     ],
                     "shortText": [
                         "Unpins the specified row.",
-                        "This method emits `onRowPinning` event."
+                        "This method emits `rowPinning` event."
                     ]
                 }
             },
@@ -149,6 +149,33 @@
                     }
                 }
             },
+            "expanded": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "this.grid.selectedRows[2].expanded = true;",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Gets the expanded state of the row.",
+                            "```typescript",
+                            "let isExpanded = row.expanded;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "this.grid.selectedRows[2].expanded = true;",
+                            "```"
+                        ],
+                        "shortText": "Expands/collapses the current row."
+                    }
+                }
+            },
             "cells": {
                 "getter": {
                     "comment": {
@@ -179,14 +206,14 @@
                         "text": [
                             "```typescript",
                             "handleRowSelection(event) {",
-                            " // the grid on which the onRowSelectionChange event was triggered",
+                            " // the grid on which the rowSelected event was triggered",
                             " const grid = event.row.grid;",
                             "}",
                             "```",
                             "```html",
                             " <igx-grid",
                             "   [data]=\"data\"",
-                            "   (onRowSelectionChange)=\"handleRowSelection($event)\">",
+                            "   (rowSelected)=\"handleRowSelection($event)\">",
                             " </igx-grid>",
                             "```"
                         ],
