@@ -96,44 +96,63 @@
         },
         "returns": {
             "description": [
-            "<p>背景色と前景色のコントラストの比率。</p>",
-            ""
-        ]
-    }
+                "<p>背景色と前景色のコントラストの比率。</p>",
+                ""
+            ]
+        }
     },
-        "hexrgba": {
+    "_alpha-map": {
         "description": [
-            "<p>Rgba 色を 16 進法の色に変換します。</p>",
+            "<p>指定したパレット バリアントのアルファ チャネル マップを返します。</p>",
             ""
         ],
         "parameters": {
-            "rgba": {
+            "variant": {
                 "description": [
-                    "<p>変換する rgba 色。</p>",
-                    ""
-                ]
-            },
-            "background": {
-                "description": [
-                    "<p>変換する背景色。</p>",
+                    "<p>パレット バリアント。</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Rgba 値の 16 進法形表現。</p>",
+                "<p>指定したパレットのアルファ チャネル マップ。</p>",
                 ""
             ]
         }
     },
     "to-opaque": {
         "description": [
-            "<p>rgba 色を 16 進法の色に変換します。</p>",
-            "<p>hexrgba のエイリアス。</p>",
+            "<p>2 色を混合して不透明色を生成します。</p>",
             ""
+        ],
+        "parameters": {
+            "color-1": {
+                "description": [
+                    "<p>通常透明な最初の色。</p>",
+                    ""
                 ]
+            },
+            "color-2": {
+                "description": [
+                    "<p>2 番目の色で、通常は不透明です。</p>",
+                    ""
+                ]
+            },
+            "palette": {
+                "description": [
+                    "<p>渡された色が CSS 変数参照の場合、igx-palette を渡します。</p>",
+                    ""
+                ]
+            }
         },
+        "returns": {
+            "description": [
+                "<p>RGBA 値の色表現。</p>",
+                ""
+            ]
+        }
+    },
     "extend": {
         "description": [
             "<p>Map オブジェクトを他の Map オブジェクトのプロパティで継承します。</p>",
@@ -146,14 +165,14 @@
                     ""
                 ]
             }
-         },
-            "returns": {
-                "description": [
-                    "<p>結合済みのマップを返します。</p>",
-                    ""
-                ]
-            }
-        },
+     },
+        "returns": {
+            "description": [
+                "<p>結合済みのマップを返します。</p>",
+                ""
+            ]
+        }
+    },
     "--var": {
         "description": [
             "<p>CSS プロパティ値を返します。テーマ設定によってい css &#39;--var&#39; または文字列の値を返します。</p>",

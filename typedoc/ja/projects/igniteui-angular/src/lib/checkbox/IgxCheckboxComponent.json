@@ -38,7 +38,7 @@
                     "comment": {
                         "text": [
                             "```html",
-                            "<igx-checkbox checked=\"true\">",
+                            "<igx-checkbox [checked]=\"true\">",
                             "  simple checkbox",
                             "</igx-checkbox>",
                             "```"
@@ -253,29 +253,6 @@
                     ]
                 }
             },
-            "required": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-checkbox [required] = \"true\"></igx-checkbox>",
-                                    "```",
-                                    "```typescript",
-                                    "let isRequired =  this.checkbox.required;",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "チェックボックスが必須かどうかを取得または設定します。",
-                        "設定されない場合、`required` の値は `false` です。"
-                    ]
-                }
-            },
             "ariaLabelledBy": {
                 "comment": {
                     "tags": {
@@ -382,52 +359,6 @@
                     ]
                 }
             },
-            "checked": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-checkbox [checked] = \"true\"></igx-checkbox>",
-                                    "```",
-                                    "```typescript",
-                                    "let isChecked =  this.checkbox.checked;",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "チェックボックスがチェックされたかどうかを取得または設定します。",
-                        "デフォルト値は `false` です。"
-                    ]
-                }
-            },
-            "disabled": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-checkbox [disabled] = \"true\"></igx-checkbox>",
-                                    "```",
-                                    "```typescript",
-                                    "let isDisabled = this.checkbox.disabled;",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "チェックボックスが無効かどうかを取得または設定します。",
-                        "デフォルト値は `false` です。"
-                    ]
-                }
-            },
             "readonly": {
                 "comment": {
                     "tags": {
@@ -475,25 +406,152 @@
                 }
             }
         },
-        "methods": {
-            "toggle": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.checkbox.toggle();",
-                                    "```"
-                                ],
-                                "tagName": "例:"
+        "methods": {},
+        "accessors": {
+            "required": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-checkbox required></igx-checkbox>",
+                                        "```",
+                                        "```typescript",
+                                        "let isRequired =  this.checkbox.required;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
                             }
-                        }
-                    },
-                    "shortText": "`disabled` が `false` の場合、`checked` 状態を切り替えます。"
+                        },
+                        "shortText": [
+                            "チェックボックスが必須かどうかを取得または設定します。",
+                            "設定されない場合、`required` の値は `false` です。"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-checkbox required></igx-checkbox>",
+                                        "```",
+                                        "```typescript",
+                                        "let isRequired =  this.checkbox.required;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "チェックボックスが必須かどうかを取得または設定します。",
+                            "設定されない場合、`required` の値は `false` です。"
+                        ]
+                    }
+                }
+            },
+            "checked": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-checkbox [checked] = \"true\"></igx-checkbox>",
+                                        "```",
+                                        "```typescript",
+                                        "let isChecked =  this.checkbox.checked;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "チェックボックスがチェックされたかどうかを取得または設定します。",
+                            "デフォルト値は `false` です。"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-checkbox [checked] = \"true\"></igx-checkbox>",
+                                        "```",
+                                        "```typescript",
+                                        "let isChecked =  this.checkbox.checked;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "チェックボックスがチェックされたかどうかを取得または設定します。",
+                            "デフォルト値は `false` です。"
+                        ]
+                    }
+                }
+            },
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-checkbox disabled></igx-checkbox>",
+                                        "```",
+                                        "```typescript",
+                                        "let isDisabled = this.checkbox.disabled;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "チェックボックスが無効かどうかを取得または設定します。",
+                            "デフォルト値は `false` です。"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-checkbox disabled></igx-checkbox>",
+                                        "```",
+                                        "```typescript",
+                                        "let isDisabled = this.checkbox.disabled;",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "チェックボックスが無効かどうかを取得または設定します。",
+                            "デフォルト値は `false` です。"
+                        ]
+                    }
                 }
             }
-        },
-        "accessors": {}
+        }
     }
 }

@@ -66,13 +66,13 @@
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>CSS 変数を生成するために使用する igx パレット。</p>",
+                    "<p>CSS 変数の生成に使用する igx パレット。</p>",
                     ""
                 ]
             },
             "contrast": {
                 "description": [
-                    "<p>Mixin がパレットの各色のコントラスト色を出力するかどうかを指定します。</p>",
+                    "<p>コントラスト色を含めるかどうかを指定します。</p>",
                     ""
                 ]
             }
@@ -84,7 +84,83 @@
                     ""
                 ],
                 "code": [
-                    "@include css-vars-from-palette($default-palette);"
+                    "@include igx-palette-vars($default-palette);"
+                ]
+            }
+        ]
+    },
+    "igx-elevation-vars": {
+        "description": [
+            "<p>指定したエレベーション マップの CSS 変数を生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "elevations": {
+                "description": [
+                    "<p>CSS 変数を生成するために使用する igx エレベーション マップ。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>エレベーションの CSS 変数を生成します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$elevations: igx-elevations(red, green, blue); // umbra, penumbra, ambient",
+                    "@include igx-elevation-vars($elevations);"
+                ]
+            }
+        ]
+    },
+    "igx-color-classes": {
+        "description": [
+            "<p>指定したプロパティとカラー パレットの",
+            "すべての色の CSS クラス名を生成します。",
+            "オプションでプレフィックスとサフィックスをクラス名に添付します。</p>",
+            ""
+        ],
+        "parameters": {
+            "prop": {
+                "description": [
+                    "<p>色のパレットに割り当てられる CSS プロパティ。</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>クラス名に連結するプレフィックス。</p>",
+                    ""
+                ]
+            },
+            "suffix": {
+                "description": [
+                    "<p>クラス名に連結される接尾辞。</p>",
+                    ""
+                ]
+            },
+            "palette": {
+                "description": [
+                    "<p>CSS クラス名の生成に使用する igx パレット。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>パレットの色でバックグラウンド クラスを生成します。</p>",
+                    ""
+                ],
+                "code": [
+                    "// 次のようなクラス名を生成します。",
+                    "// .igx-primary-500-bg { ... };",
+                    "@include igx-color-classes(",
+                    "  $prop: 'background-color',",
+                    "  $suffix: 'bg'",
+                    ");"
                 ]
             }
         ]
@@ -137,6 +213,43 @@
                     "@include if-rtl {",
                     "  margin-left: 8px;",
                     "}"
+                ]
+            }
+        ]
+    },
+    "line-clamp": {
+        "description": [
+            "<p>特定の行数でテキストを切り捨てます。</p>",
+            ""
+        ],
+        "parameters": {
+            "lines": {
+                "description": [
+                    "<p>表示する行数</p>",
+                    ""
+                ]
+            },
+            "inline": {
+                "description": [
+                    "<p>要素が inline-box または box を表示するかどうかを設定します。</p>",
+                    ""
+                ]
+            },
+            "vertical": {
+                "description": [
+                    "<p>要素がコンテンツを水平または垂直に配置するかどうかを設定します。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>4 行目以降のテキストを切り捨てます。</p>",
+                    ""
+                ],
+                "code": [
+                    "@include line-clamp(4, true, true);"
                 ]
             }
         ]
