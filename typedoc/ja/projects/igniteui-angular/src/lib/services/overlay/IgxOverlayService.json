@@ -148,16 +148,43 @@
                         }
                     },
                     "tags": {},
-                    "shortText": "Id を生成します。`show(id, settings?)` メソッドを呼び出して、id を提供します。"
+                    "shortText": "Id を生成します。`show（id）` メソッドを呼び出すときにこのIDを提供します。"
+                }
+            },
+            "detach": {
+                "comment": {
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": [
+                                    "削除するオーバーレイの ID",
+                                    "```typescript",
+                                    "this.overlay.detach(id);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "指定した ID のオーバーレイを削除します。"
+                }
+            },
+            "detachAll": {
+                "comment": {
+                    "shortText": [
+                        "すべてのオーバーレイを削除します。",
+                        "```typescript",
+                        "this.overlay.detachAll();",
+                        "```"
+                    ]
                 }
             },
             "show": {
                 "comment": {
-                    "returns": "作成したオーバーレイの ID。`onClosed` が発行されるまで有効です。\n```typescript\nthis.overlay.show(element, settings);\n```",
                     "parameters": {
-                        "component": {
+                        "id": {
                             "comment": {
-                                "text": "オーバーレイに ElementRef またはコンポーネントのタイプを表示します。"
+                                "text": "オーバーレイを表示する ID"
                             }
                         },
                         "settings": {
@@ -166,15 +193,8 @@
                             }
                         }
                     },
-                    "tags": {
-                        "deprecated": {
-                            "comment": {
-                                "text": "Id の取得に `attach(component)` を使用します。提供された id で `show(id, settings?)` を使用します。",
-                                "tagName": "非推奨"
-                            }
-                        }
-                    },
-                    "shortText": "提供されたコンポーネントを表示します。"
+                    "tags": {},
+                    "shortText": "指定した ID のオーバーレイを表示します。"
                 }
             },
             "hide": {
@@ -199,22 +219,48 @@
             },
             "reposition": {
                 "comment": {
-                    "shortText": [
-                        "パラメーターとして提供された ID を持つコンポーネントを位置変更します。",
-                        "```typescript",
-                        "this.overlay.reposition(id);",
-                        "```"
-                    ]
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": [
+                                    "オーバーレイを再配置する ID。",
+                                    "```typescript",
+                                    "this.overlay.reposition(id);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "パラメーターとして提供された ID を持つコンポーネントを位置変更します。"
                 }
             },
             "setOffset": {
                 "comment": {
-                    "shortText": [
-                        "対応する軸に沿って指定した量のみコンテンツをオフセットします。",
-                        "```typescript",
-                        "this.overlay.setOffset(id, deltaX, deltaY);",
-                        "```"
-                    ]
+                    "parameters": {
+                        "id": {
+                            "comment": {
+                                "text": "オーバーレイをオフセットする ID。"
+                            }
+                        },
+                        "deltaX": {
+                            "comment": {
+                                "text": "水平方向のオフセット量。"
+                            }
+                        },
+                        "deltaY": {
+                            "comment": {
+                                "text": [
+                                    "垂直方向のオフセット量。",
+                                    "```typescript",
+                                    "this.overlay.setOffset(id, deltaX, deltaY);",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "対応する軸に沿って指定した量のみコンテンツをオフセットします。"
                 }
             }
         },

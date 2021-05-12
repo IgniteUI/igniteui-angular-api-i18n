@@ -51,30 +51,7 @@
             "shortText": "カレンダー UI または編集可能な入力から日付の範囲を選択する機能を提供します。"
         },
         "properties": {
-            "mode": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "デフォルトのモードは `dialog` です。",
-                                "tagName": "備考:"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker mode=\"dropdown\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "`dialog` または `dropdown` モードのいずれかでカレンダーを表示します。"
-                }
-            },
-            "monthsViewNumber": {
+            "displayMonthsCount": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -87,7 +64,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker [monthsViewNumber]=\"3\"></igx-date-range-picker>",
+                                    "<igx-date-range-picker [displayMonthsCount]=\"3\"></igx-date-range-picker>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -195,32 +172,6 @@
                     "shortText": "選択した日付または渡した日付にカスタム書式関数。"
                 }
             },
-            "doneButtonText": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": [
-                                    "デフォルト値は `Done` です。",
-                                    "ボタンは `dialog` モードでのみ表示されます。"
-                                ],
-                                "tagName": "備考:"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker doneButtonText=\"done\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "カレンダー ダイアログの `done` ボタンのデフォルトのテキスト。"
-                }
-            },
             "overlaySettings": {
                 "comment": {
                     "tags": {
@@ -235,7 +186,7 @@
                             }
                         }
                     },
-                    "shortText": "カレンダーの表示に使用する必要なカスタム オーバーレイ設定。"
+                    "shortText": "カレンダーの表示に使用するカスタム オーバーレイ設定。"
                 }
             },
             "displayFormat": {
@@ -244,7 +195,7 @@
                         "remarks": {
                             "comment": {
                                 "text": "Angular の DatePipe を使用します。",
-                                "tagName": "備考:"
+                                "tagName": "備考"
                             }
                         },
                         "example": {
@@ -258,7 +209,7 @@
                             }
                         }
                     },
-                    "shortText": "編集可能な入力がフォーカスされていないときに使用される日付書式。"
+                    "shortText": "編集可能な入力がフォーカスされていない場合に使用される書式。"
                 }
             },
             "inputFormat": {
@@ -267,7 +218,7 @@
                         "remarks": {
                             "comment": {
                                 "text": "デフォルトは `\"'MM/dd/yyyy'\"` です。",
-                                "tagName": "備考:"
+                                "tagName": "備考"
                             }
                         },
                         "example": {
@@ -281,24 +232,7 @@
                             }
                         }
                     },
-                    "shortText": "予期されるユーザー入力形式とプレースホルダー。"
-                }
-            },
-            "disabled": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker [disabled]=\"'true'\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "`IgxDateRangePickerComponent` を有効/無効にします。"
+                    "shortText": "予想されるユーザー入力形式とプレースホルダー。"
                 }
             },
             "placeholder": {
@@ -315,92 +249,175 @@
                             }
                         }
                     },
-                    "shortText": "1 つの入力の `IgxDateRangePickerComponent` の `placeholder` を設定します。"
+                    "shortText": "単一入力の `IgxDateRangePickerComponent` の ` placeholder` を設定します。"
                 }
             },
-            "rangeSelected": {
+            "outlet": {
                 "comment": {
                     "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "`outlet` は、`IgxOverlayOutletDirective` または `ElementRef` のインスタンスです。",
+                                "tagName": "備考"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (rangeSelected)=\"handleSelected($event)\"></igx-date-range-picker>",
+                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
+                                    "//..",
+                                    "<igx-date-range-picker [outlet]=\"outlet\"></igx-date-range-picker>",
+                                    "//..",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "範囲が選択されたときに発生されます。"
+                    "shortText": "ポップアップ要素に使用されるコンテナーを取得または設定します。"
                 }
             },
-            "onOpening": {
+            "valueChange": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onOpening)=\"handleOpening($event)\"></igx-date-range-picker>",
+                                    "<igx-date-range-picker [(value)]=\"date\"></igx-date-range-picker>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "カレンダーが開いたときに発生します。キャンセルできます。"
+                    "shortText": "ピッカーの値が変更されたときに発生されます。双方向バインディングに使用されます。"
                 }
             },
-            "onOpened": {
+            "mode": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "デフォルトのモードは `dropdown` です。",
+                                "tagName": "備考"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker mode=\"dialog\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "編集可能な入力フィールドの `dropdown` または読み取り専用の入力フィールドの `dialog` になります。"
+                }
+            },
+            "disabled": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onOpened)=\"handleOpened($event)\"></igx-date-range-picker>",
+                                    "<igx-date-picker [disabled]=\"'true'\"></igx-date-picker>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "`IgxDateRangeComponent` が開いたときに発生されます。"
+                    "shortText": "ピッカーを有効または無効にします。"
                 }
             },
-            "onClosing": {
+            "tabIndex": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onClosing)=\"handleClosing($event)\"></igx-date-range-picker>",
+                                    "<igx-date-picker [tabIndex]=\"1\"></igx-date-picker>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "カレンダーが閉じ始めるときに発生します。キャンセルできます。"
+                    "shortText": "デフォルトのテンプレート エディターの tabindex を取得または設定します。"
                 }
             },
-            "onClosed": {
+            "opening": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-date-range-picker (onClosed)=\"handleClosed($event)\"></igx-date-range-picker>",
+                                    "<igx-date-picker (opening)=\"handleOpening($event)\"></igx-date-picker>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "`IgxDateRangeComponent` が閉じたときに発生されます。"
+                    "shortText": "キャンセル可能なカレンダーの開始時に発生します。"
+                }
+            },
+            "opened": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (opened)=\"handleOpened($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "カレンダーが開いた後に発生します。"
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closing)=\"handleClosing($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "キャンセル可能なカレンダーの終了時に発生します。"
+                }
+            },
+            "closed": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-date-picker (closed)=\"handleClosed($event)\"></igx-date-picker>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "カレンダーが閉じた後に発生します。"
                 }
             }
         },
@@ -429,7 +446,7 @@
                         "example": {
                             "comment": {
                                 "text": [
-                                    "html```",
+                                    "```html",
                                     "<igx-date-range-picker #dateRange></igx-date-range-picker>",
                                     "<button (click)=\"dateRange.close()\">Close Dialog</button>",
                                     "```"
@@ -447,7 +464,7 @@
                         "example": {
                             "comment": {
                                 "text": [
-                                    "html```",
+                                    "```html",
                                     "<igx-date-range-picker #dateRange></igx-date-range-picker>",
                                     "<button (click)=\"dateRange.toggle()\">Toggle Dialog</button>",
                                     "```"
@@ -459,7 +476,7 @@
                     "shortText": "Date range picker のドロップダウンまたはダイアログを切り替えます。"
                 }
             },
-            "selectRange": {
+            "select": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -469,7 +486,7 @@
                                     "public selectFiveDayRange() {",
                                     " const today = new Date();",
                                     " const inFiveDays = new Date(new Date().setDate(today.getDate() + 5));",
-                                    " this.dateRange.selectRange(today, inFiveDays);",
+                                    " this.dateRange.select(today, inFiveDays);",
                                     "}",
                                     "```"
                                 ],
@@ -482,6 +499,62 @@
             }
         },
         "accessors": {
+            "doneButtonText": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "デフォルト値は `Done`です。",
+                                        "カスタム テキストで [完了] ボタンを描画する @Input プロパティ。デフォルトで `doneButtonText` は Done に設定されます。",
+                                        "ボタンは `dialog` モードでのみ表示されます。"
+                                    ],
+                                    "tagName": "備考"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
+                        "shortText": "カレンダー ダイアログの [完了] ボタンのデフォルト テキスト。"
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "デフォルト値は `Done` です。",
+                                        "カスタム テキストで [完了] ボタンを描画する @Input プロパティ。デフォルトで `doneButtonText` は Done に設定されます。",
+                                        "ボタンは `dialog` モードでのみ表示されます。"
+                                    ],
+                                    "tagName": "備考"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "例"
+                                }
+                            }
+                        },
+                        "shortText": "カレンダー ダイアログの [完了] ボタンのデフォルト テキスト。"
+                    }
+                }
+            },
             "minValue": {
                 "setter": {
                     "comment": {
@@ -535,6 +608,21 @@
                             }
                         },
                         "shortText": "有効範囲内の最大値。"
+                    }
+                }
+            },
+            "resourceStrings": {
+                "setter": {
+                    "comment": {
+                        "shortText": [
+                            "リソース文字列を設定するアクセサー。",
+                            "デフォルトで EN リソースを使用します。"
+                        ]
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "shortText": "リソース文字列を返すアクセサー。"
                     }
                 }
             },
@@ -597,6 +685,54 @@
                             }
                         },
                         "shortText": "カレンダーから現在選択されている値 / 範囲。"
+                    }
+                }
+            },
+            "type": {
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "デフォルトは `box` です。",
+                                    "tagName": "備考"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
+                        "shortText": "ピッカーの入力のスタイル設定を決定します。"
+                    }
+                },
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "デフォルトは `box` です。",
+                                    "tagName": "備考"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
+                        "shortText": "ピッカーの入力のスタイル設定を決定します。"
                     }
                 }
             },

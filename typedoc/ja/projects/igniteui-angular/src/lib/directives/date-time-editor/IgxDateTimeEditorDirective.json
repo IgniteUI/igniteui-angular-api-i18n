@@ -88,17 +88,17 @@
                     "shortText": "値の書式に使用されるロケール設定。"
                 }
             },
-            "isSpinLoop": {
+            "spinLoop": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<input igxDateTimeEditor [isSpinLoop]=\"false\">",
+                                    "<input igxDateTimeEditor [spinLoop]=\"false\">",
                                     "```"
                                 ],
-                                "tagName": "例:"
+                                "tagName": "例"
                             }
                         }
                     },
@@ -122,6 +122,26 @@
                     "shortText": [
                         "`shortDate` や `longDate` など定義済みの書式オプションと、",
                         "`DatePipe` でサポートされている文字を使用して作成された書式文字列の両方を設定します (`EE/MM/yyyy` など)。"
+                    ]
+                }
+            },
+            "spinDelta": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<input igxDateTimeEditor [spinDelta]=\"{date: 5, minute: 30}\">",
+                                    "```"
+                                ],
+                                "tagName": "例"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "スピン アクションで各エディターの日付部分を増分または減分するために使用されるデルタ値。",
+                        "すべての値はデフォルトで `1` です。"
                     ]
                 }
             },
@@ -233,7 +253,12 @@
                     "parameters": {
                         "datePart": {
                             "comment": {
-                                "text": "増分するオプションの DatePart。デフォルトは Date または Hours (Date が inputFormat にない場合) です。"
+                                "text": "増分するオプションの DatePart。デフォルトは Date または Hours です (inputFormat に Date がない場合 - 例：'HH:mm')。" 
+                            }
+                        },
+                        "delta": {
+                            "comment": {
+                                "text": "増分するデルタ (オプション)。`spinDelta` をオーバーライドします。"
                             }
                         }
                     },
@@ -246,7 +271,12 @@
                     "parameters": {
                         "datePart": {
                             "comment": {
-                                "text": "減少するオプションの DatePart。デフォルトは Date または Hours (Date が inputFormat にない場合) です。"
+                                "text": "減少するオプションの DatePart。デフォルトは Date または Hours です (inputFormat に Date がない場合 - 例：'HH:mm')。"
+                            }
+                        },
+                        "delta": {
+                            "comment": {
+                                "text": "デクリメントに使用するオプションのデルタ。`spinDelta` をオーバーライドします。"
                             }
                         }
                     },
