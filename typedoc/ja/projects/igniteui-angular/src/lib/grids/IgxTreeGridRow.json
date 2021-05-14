@@ -6,13 +6,13 @@
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// pin the selected row from the grid",
+                        "// グリッドから選択した行をピン固定します。",
                         "this.grid.selectedRows[0].pin();",
                         "```"
                     ],
                     "shortText": [
-                        "Pins the specified row.",
-                        "This method emits `onRowPinning` event."
+                        "指定された行をピン固定します。",
+                        "このメソッドは `onRowPinning` イベントを発生します。"
                     ]
                 }
             },
@@ -20,13 +20,13 @@
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// unpin the selected row from the grid",
+                        "// グリッドから選択した行をピン固定解除します。",
                         "this.grid.selectedRows[0].unpin();",
                         "```"
                     ],
                     "shortText": [
-                        "Unpins the specified row.",
-                        "This method emits `onRowPinning` event."
+                        "指定された行のピン固定を解除します。",
+                        "このメソッドは `onRowPinning` イベントを発生します。"
                     ]
                 }
             },
@@ -34,14 +34,14 @@
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// update the second selected row's value",
+                        "// 2 番目に選択された行の値を更新します。",
                         "let newValue = \"Apple\";",
                         "this.grid.selectedRows[1].update(newValue);",
                         "```"
                     ],
                     "shortText": [
-                        "Updates the specified row object and the data source record with the passed value.",
-                        "This method emits `onEditDone` event."
+                        "指定した行オブジェクトおよびデータ ソース レコードを渡された値で更新します。",
+                        "このメソッドは `onEditDone` イベントを発生します。"
                     ]
                 }
             },
@@ -49,13 +49,13 @@
                 "comment": {
                     "text": [
                         "```typescript",
-                        "// delete the third selected row from the grid",
+                        "// グリッドで 3 番目に選択された行を削除します。",
                         "this.grid.selectedRows[2].delete();",
                         "```"
                     ],
                     "shortText": [
-                        "Removes the specified row from the grid's data source.",
-                        "This method emits `onRowDeleted` event."
+                        "グリッドのデータソースから指定した行を削除します。",
+                        "このメソッドは `onRowDeleted` イベントを発生します。"
                     ]
                 }
             }
@@ -69,28 +69,28 @@
                             "let selectedRowData = this.grid.selectedRows[0].rowData;",
                             "```"
                         ],
-                        "shortText": " The data passed to the row component."
+                        "shortText": " 行コンポーネントに渡されるデータ。"
                     }
                 }
             },
             "children": {
                 "getter": {
                     "comment": {
-                        "shortText": "Returns the child rows."
+                        "shortText": "子行を返します。"
                     }
                 }
             },
             "parent": {
                 "getter": {
                     "comment": {
-                        "shortText": "Returns the parent row."
+                        "shortText": "親の行を返します。"
                     }
                 }
             },
             "hasChildren": {
                 "getter": {
                     "comment": {
-                        "shortText": "Returns true if child rows exist. Always return false for IgxGridRow."
+                        "shortText": "子行が存在する場合、true を返します。IgxGridRow の場合常に false を返します。"
                     }
                 }
             },
@@ -102,7 +102,7 @@
                             "const rowParent = this.treeGrid.getRowByKey(1).treeRow.parent;",
                             "```"
                         ],
-                        "shortText": "The `ITreeGridRecord` with metadata about the row in the context of the tree grid."
+                        "shortText": "ツリー グリッドのコンテキストの行に関するメタデータを持つ `ITreeGridRecord`。"
                     }
                 }
             },
@@ -114,7 +114,7 @@
                             "let isPinned = row.pinned;",
                             "```"
                         ],
-                        "shortText": "Gets whether the row is pinned."
+                        "shortText": "行がピン固定されるかどうかを取得します。"
                     }
                 },
                 "setter": {
@@ -125,8 +125,8 @@
                             "```"
                         ],
                         "shortText": [
-                            "Sets whether the row is pinned.",
-                            "Default value is `false`.",
+                            "行がピン固定されるかどうかを設定します。",
+                            "デフォルト値は `false` です。",
                             "```typescript",
                             "row.pinned = !row.pinned;",
                             "```"
@@ -142,7 +142,7 @@
                             "let esExpanded = row.expanded;",
                             "```"
                         ],
-                        "shortText": "Gets whether the row is expanded."
+                        "shortText": "行が展開されているかどうかを取得します。"
                     }
                 },
                 "setter": {
@@ -152,7 +152,7 @@
                             "row.expanded = true;",
                             "```"
                         ],
-                        "shortText": "Expands/collapses the row."
+                        "shortText": "行を展開/縮小します。"
                     }
                 }
             },
@@ -165,10 +165,10 @@
                             "```"
                         ],
                         "shortText": [
-                            "Gets the row key.",
-                            "A row in the grid is identified either by:",
-                            "- primaryKey data value,",
-                            "- the whole rowData, if the primaryKey is omitted."
+                            "行キーを取得します。",
+                            "グリッドの行は、次のいずれかの方法で識別されます:",
+                            "- primaryKey の値、",
+                            "- primaryKey が省略された場合、rowData 全体。"
                         ]
                     }
                 }
@@ -180,8 +180,8 @@
                             "deprecated": {
                                 "comment": {
                                     "text": [
-                                        "Use 'data' instead.",
-                                        "The data record that populates the row"
+                                        "代わりに `data` を使用してください。",
+                                        "行を生成するデータ レコード。"
                                     ],
                                     "tagName": "非推奨"
                                 }
@@ -196,7 +196,7 @@
                         "tags": {
                             "deprecated": {
                                 "comment": {
-                                    "text": "Use 'key' instead.",
+                                    "text": "代わりに `key` を使用してください。",
                                     "tagName": "非推奨"
                                 }
                             }
@@ -207,14 +207,14 @@
             "viewIndex": {
                 "getter": {
                     "comment": {
-                        "shortText": "Returns the view index calculated per the grid page."
+                        "shortText": "グリッド ページごとに計算されたビュー インデックスを返します。"
                     }
                 }
             },
             "inEditMode": {
                 "getter": {
                     "comment": {
-                        "shortText": "Returns if the row is currently in edit mode."
+                        "shortText": "行が現在編集モードかどうかを返します。"
                     }
                 }
             },
@@ -222,8 +222,8 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "Gets whether the row is selected.",
-                            "Default value is `false`.",
+                            "行が選択されているかどうかを取得します。",
+                            "デフォルト値は `false` です。",
                             "```typescript",
                             "row.selected = true;",
                             "```"
@@ -233,8 +233,8 @@
                 "setter": {
                     "comment": {
                         "shortText": [
-                            "Sets whether the row is selected.",
-                            "Default value is `false`.",
+                            "行が選択されているかどうかを設定します。",
+                            "デフォルト値は `false` です。",
                             "```typescript",
                             "row.selected = !row.selected;",
                             "```"
@@ -245,7 +245,7 @@
             "deleted": {
                 "getter": {
                     "comment": {
-                        "shortText": "Returns if the row is in delete state."
+                        "shortText": "行が削除状態かどうかを返します。"
                     }
                 }
             }

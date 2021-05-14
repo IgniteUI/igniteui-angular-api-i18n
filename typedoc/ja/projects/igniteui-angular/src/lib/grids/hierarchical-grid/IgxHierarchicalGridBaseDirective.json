@@ -50,7 +50,7 @@
                             "comment": {
                                 "text": [
                                     "```typescript",
-                                    " <igx-hierarchical-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\" (onDataPreLoad)=\"handleEvent()\">",
+                                    " <igx-hierarchical-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\" (dataPreLoad)=\"handleEvent()\">",
                                     " </igx-hierarchical-grid>",
                                     "```"
                                 ],
@@ -79,7 +79,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "デフォルト値は False です。true に設定すると、コードまたはマークアップで宣言されたすべての列をオーバーライドします。",
+                                "text": "デフォルト値は false です。true に設定すると、コードまたはマークアップで宣言されたすべての列をオーバーライドします。",
                                 "tagName": "備考:"
                             }
                         },
@@ -196,7 +196,7 @@
                     "shortText": "高度フィルタリングが UI で実行された後に発生されます。"
                 }
             },
-            "onScroll": {
+            "gridScroll": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -204,7 +204,7 @@
                                 "text": [
                                     "```html",
                                     "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"",
-                                    "             (onScroll)=\"onScroll($event)\"></igx-grid>",
+                                    "             (gridScroll)=\"onScroll($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -333,7 +333,7 @@
                             "comment": {
                                 "text": [
                                     "要求に応じて一意の列値をロードするためのコールバックを提供します。",
-                                    "このプロパティが提供された場合、生成される一意の値は Excel スタイルフィルタリングによって使用されます。"
+                                    "このプロパティが提供された場合、生成される一意の値は Excel スタイル フィルタリングによって使用されます。"
                                 ],
                                 "tagName": "備考:"
                             }
@@ -349,10 +349,10 @@
                             }
                         }
                     },
-                    "shortText": "Excel スタイルフィルタリングによって使用される一意の値戦略を取得または設定します。"
+                    "shortText": "Excel スタイル フィルタリングによって使用される一意の値戦略を取得または設定します。"
                 }
             },
-            "onCellClick": {
+            "cellClick": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -365,7 +365,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onCellClick)=\"onCellClick($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (cellClick)=\"cellClick($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -375,7 +375,7 @@
                     "shortText": "`IgxGridCellComponent` がクリックされたときに発生します。"
                 }
             },
-            "onSelection": {
+            "selected": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -388,7 +388,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onSelection)=\"onCellSelect($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (selected)=\"onCellSelect($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -398,31 +398,31 @@
                     "shortText": "`IgxGridCellComponent` が選択されたときに発生します。"
                 }
             },
-            "onRowSelectionChange": {
+            "rowSelected": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onRowSelectionChange)=\"onCellClickChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (rowSelected)=\"onCellClickChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "`IgxGridCellComponent` が選択されたときに発生します。"
+                    "shortText": "`IgxGridRowComponent` が選択されたときに発生します。"
                 }
             },
-            "onColumnSelectionChange": {
+            "columnSelected": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid (onColumnSelectionChange)=\"onColumnSelectionChange($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid (columnSelected)=\"columnSelected($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -432,7 +432,7 @@
                     "shortText": "`IgxColumnComponent` が選択されたときに発生します。"
                 }
             },
-            "onColumnPinning": {
+            "columnPin": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -687,7 +687,7 @@
                     "shortText": "行編集がキャンセルされるときに発生されます。"
                 }
             },
-            "onColumnInit": {
+            "columnInit": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -700,7 +700,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [onColumnInit]=\"initColumns($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [columnInit]=\"initColumns($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -715,7 +715,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`ISortingEventArgs` オブジェクトを返します。 `sortingExpressions` キーは、並べ替え式を保持します。 ",
+                                "text": "`ISortingEventArgs` オブジェクトを返します。`sortingExpressions` キーは、並べ替え式を保持します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -723,7 +723,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onSorting)=\"sorting($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (sorting)=\"sorting($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -733,7 +733,7 @@
                     "shortText": "並べ替え式が適用される前に発生されます。"
                 }
             },
-            "onSortingDone": {
+            "sortingDone": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -746,7 +746,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (onSortingDone)=\"sortingDone($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (sortingDone)=\"sortingDone($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -761,7 +761,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`IFilteringEventArgs` オブジェクトを返します。 `filteringExpressions` キーは、列のフィルタリング式を保持します。 ",
+                                "text": "`IFilteringEventArgs` オブジェクトを返します。`filteringExpressions` キーは、列のフィルタリング式を保持します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -779,7 +779,7 @@
                     "shortText": "フィルタリング式が適用される前に発生されます。"
                 }
             },
-            "onFilteringDone": {
+            "filteringDone": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -792,7 +792,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (onFilteringDone)=\"filteringDone($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (filteringDone)=\"filteringDone($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -802,7 +802,7 @@
                     "shortText": "フィルタリングが UI で実行された後に発生されます。"
                 }
             },
-            "onPagingDone": {
+            "pagingDone": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -815,7 +815,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (onPagingDone)=\"pagingDone($event)\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (pagingDone)=\"pagingDone($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "次のメンバー:"
@@ -825,7 +825,7 @@
                     "shortText": "ページングが実行された後に発生されます。"
                 }
             },
-            "onRowAdded": {
+            "rowAdded": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -838,7 +838,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onRowAdded)=\"rowAdded($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (rowAdded)=\"rowAdded($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -848,7 +848,7 @@
                     "shortText": "行が API によって追加されたときに発生されます。"
                 }
             },
-            "onRowDeleted": {
+            "rowDeleted": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -861,7 +861,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onRowDeleted)=\"rowDeleted($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (rowDeleted)=\"rowDeleted($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -871,7 +871,7 @@
                     "shortText": "行が API によって削除されたときに発生されます。"
                 }
             },
-            "onColumnResized": {
+            "columnResized": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -884,7 +884,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onColumnResized)=\"resizing($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (columnResized)=\"resizing($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -894,7 +894,7 @@
                     "shortText": "列がサイズ変更されたときに発生されます。"
                 }
             },
-            "onContextMenu": {
+            "contextMenu": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -902,7 +902,7 @@
                                 "text": [
                                     "`IgxGridCellComponent` オブジェクトを返します。",
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onContextMenu)=\"contextMenu($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (contextMenu)=\"contextMenu($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "備考:"
@@ -912,7 +912,7 @@
                     "shortText": "セルが右クリックされたときに発生されます。"
                 }
             },
-            "onDoubleClick": {
+            "doubleClick": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -925,7 +925,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid #grid [data]=\"localData\" (onDoubleClick)=\"dblClick($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid #grid [data]=\"localData\" (doubleClick)=\"dblClick($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -958,7 +958,7 @@
                     "shortText": "列の表示状態を変更する前に発生されます。"
                 }
             },
-            "onColumnVisibilityChanged": {
+            "columnVisibilityChanged": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -971,7 +971,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnVisibilityChanged)=\"visibilityChanged($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnVisibilityChanged)=\"visibilityChanged($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -981,7 +981,7 @@
                     "shortText": "列の表示状態を変更するときに発生されます。"
                 }
             },
-            "onColumnMovingStart": {
+            "columnMovingStart": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -994,7 +994,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnMovingStart)=\"movingStart($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnMovingStart)=\"movingStart($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -1004,7 +1004,7 @@
                     "shortText": "列移動を開始したときに発生されます。"
                 }
             },
-            "onColumnMoving": {
+            "columnMoving": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1017,7 +1017,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnMoving)=\"moving($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnMoving)=\"moving($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -1027,7 +1027,7 @@
                     "shortText": "列移動操作のときに発生されます。"
                 }
             },
-            "onColumnMovingEnd": {
+            "columnMovingEnd": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1040,7 +1040,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (onColumnMovingEnd)=\"movingEnds($event)\"></igx-grid>",
+                                    "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" (columnMovingEnd)=\"movingEnds($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -1050,7 +1050,7 @@
                     "shortText": "列移動が終了したときに発生されます。"
                 }
             },
-            "onGridKeydown": {
+            "gridKeydown": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1066,7 +1066,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    " <igx-grid (onGridKeydown)=\"customKeydown($event)\"></igx-grid>",
+                                    " <igx-grid (gridKeydown)=\"customKeydown($event)\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -1076,7 +1076,7 @@
                     "shortText": "グリッドの内の要素に対してキーダウンがトリガーされたときに発生します。"
                 }
             },
-            "onRowDragStart": {
+            "rowDragStart": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1089,7 +1089,7 @@
                     "shortText": "行をドラッグし始めたときに発生します。"
                 }
             },
-            "onRowDragEnd": {
+            "rowDragEnd": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1102,7 +1102,7 @@
                     "shortText": "行をドロップしたときに発行されます。"
                 }
             },
-            "onGridCopy": {
+            "gridCopy": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1115,14 +1115,14 @@
                     "shortText": "コピー操作が実行されたときに発生します。"
                 }
             },
-            "onRowToggle": {
+            "rowToggle": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [data]=\"employeeData\" (onRowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid [data]=\"employeeData\" (rowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -1132,14 +1132,14 @@
                     "shortText": "行の展開状態が変更されているときに呼び出されます。"
                 }
             },
-            "onRowPinning": {
+            "rowPinning": {
                 "comment": {
                     "tags": {
                         "example": {
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-grid [data]=\"employeeData\" (onRowPinning)=\"rowPin($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "<igx-grid [data]=\"employeeData\" (rowPinning)=\"rowPin($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -1189,7 +1189,7 @@
                     "shortText": "並べ替えが実行された前に発生されます。"
                 }
             },
-            "onToolbarExporting": {
+            "toolbarExporting": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -1208,7 +1208,7 @@
                     "shortText": "ユーザーがエクスポート処理が開始すると発生されます。"
                 }
             },
-            "onRangeSelection": {
+            "rangeSelected": {
                 "comment": {
                     "tags": {
                         "remarks": {
@@ -1504,46 +1504,6 @@
                         }
                     },
                     "shortText": "フィールド名によって `IgxColumnComponent` を返します。"
-                }
-            },
-            "getRowByIndex": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const myRow = this.grid1.getRowByIndex(1);",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "インデックスによって `IgxRowDirective` を返します。"
-                }
-            },
-            "getRowByKey": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "`primaryKey` プロパティの設定が必要です。",
-                                "tagName": "備考:"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const myRow = this.grid1.getRowByKey(\"cell5\");",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "指定されたプライマリキーによって `IgxGridRowComponent` オブジェクトを返します。"
                 }
             },
             "getCellByColumn": {
@@ -5285,7 +5245,7 @@
                                 }
                             }
                         },
-                        "shortText": "行をクリックして選択/選択解除するかどうかを取得/設定します。 "
+                        "shortText": "行をクリックして選択/選択解除するかどうかを取得/設定します。"
                     }
                 },
                 "setter": {

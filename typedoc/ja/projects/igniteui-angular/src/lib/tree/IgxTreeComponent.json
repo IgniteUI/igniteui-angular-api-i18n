@@ -15,8 +15,8 @@
                         "```"
                     ],
                     "shortText": [
-                        "Get/Set how the tree should handle branch expansion.",
-                        "If set to `true`, only a single branch can be expanded at a time, collapsing all others"
+                        "ツリーがブランチ展開を処理する方法を取得または設定します。",
+                        "`true` に設定すると、一度に展開できるブランチは 1 つのみで、その他のブランチはすべて縮小されます。"
                     ]
                 }
             },
@@ -36,7 +36,7 @@
                         "}",
                         "```"
                     ],
-                    "shortText": "Emitted when the node selection is changed through interaction"
+                    "shortText": "ノードの選択が操作によって変更されたときに発生されます。"
                 }
             },
             "nodeExpanding": {
@@ -55,7 +55,7 @@
                         "}",
                         "```"
                     ],
-                    "shortText": "Emitted when a node is expanding, before it finishes"
+                    "shortText": "ノードが展開するときに終了する前に発生します。"
                 }
             },
             "nodeExpanded": {
@@ -72,7 +72,7 @@
                         "}",
                         "```"
                     ],
-                    "shortText": "Emitted when a node is expanded, after it finishes"
+                    "shortText": "ノードが完了した後にノードが展開されたときに発生されます。"
                 }
             },
             "nodeCollapsing": {
@@ -91,7 +91,7 @@
                         "}",
                         "```"
                     ],
-                    "shortText": "Emitted when a node is collapsing, before it finishes"
+                    "shortText": "ノードが縮小するときに終了する前に発生します。"
                 }
             },
             "nodeCollapsed": {
@@ -115,7 +115,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when a node is collapsed, after it finishes"
+                    "shortText": "ノードが完了した後にノードが縮小されたときに発生されます。"
                 }
             },
             "activeNodeChanged": {
@@ -132,13 +132,13 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when the active node is changed."
+                    "shortText": "アクティブなノードが変更されたときに発生します。"
                 }
             },
             "expandIndicator": {
                 "comment": {
                     "shortText": [
-                        "A custom template to be used for the expand indicator of nodes",
+                        "ノードの展開インジケーターに使用されるカスタム テンプレート",
                         "```html",
                         "<igx-tree>",
                         " <ng-template igxTreeExpandIndicator let-expanded>",
@@ -157,7 +157,7 @@
                         "nodes": {
                             "comment": {
                                 "text": [
-                                    "nodes to be expanded",
+                                    "展開するノード",
                                     "```typescript",
                                     "const targetNodes: IgxTreeNode<any> = this.tree.findNodes(true, (_data: any, node: IgxTreeNode<any>) => node.data.expandable);",
                                     "tree.expandAll(nodes);",
@@ -168,8 +168,8 @@
                     },
                     "tags": {},
                     "shortText": [
-                        "Expands all of the passed nodes.",
-                        "If no nodes are passed, expands ALL nodes"
+                        "渡されたすべてのノードを展開します。",
+                        "渡されたノードがない場合、すべてのノードを展開します。"
                     ]
                 }
             },
@@ -179,7 +179,7 @@
                         "nodes": {
                             "comment": {
                                 "text": [
-                                    "nodes to be collapsed",
+                                    "縮小されるノード",
                                     "```typescript",
                                     "const targetNodes: IgxTreeNode<any> = this.tree.findNodes(true, (_data: any, node: IgxTreeNode<any>) => node.data.collapsible);",
                                     "tree.collapseAll(nodes);",
@@ -190,8 +190,8 @@
                     },
                     "tags": {},
                     "shortText": [
-                        "Collapses all of the passed nodes.",
-                        "If no nodes are passed, collapses ALL nodes"
+                        "渡されたすべてのノードを縮小します。",
+                        "渡されたノードがない場合、すべてのノードを縮小します。"
                     ]
                 }
             },
@@ -213,21 +213,21 @@
                             }
                         }
                     },
-                    "shortText": "Deselect all nodes if the nodes collection is empty. Otherwise, deselect the nodes in the nodes collection."
+                    "shortText": "ノード コレクションが空の場合、すべてのノードの選択を解除します。それ以外の場合は、ノード コレクションのノードを選択解除します。"
                 }
             },
             "findNodes": {
                 "comment": {
-                    "returns": "Array of nodes that match the search. `null` if no nodes are found.\n\n```html\n<igx-tree>\n    <igx-tree-node *ngFor=\"let node of data\" [data]=\"node\">\n         {{ node.label }}\n    </igx-tree-node>\n</igx-tree>\n```\n\n```typescript\npublic data: DataEntry[] = FETCHED_DATA;\n...\nconst matchedNodes: IgxTreeNode<DataEntry>[] = this.tree.findNodes<DataEntry>(searchTerm: data[5]);\n```\n\nUsing a custom comparer\n```typescript\npublic data: DataEntry[] = FETCHED_DATA;\n...\nconst comparer: IgxTreeSearchResolver = (data: any, node: IgxTreeNode<DataEntry>) {\n     return node.data.index % 2 === 0;\n}\nconst evenIndexNodes: IgxTreeNode<DataEntry>[] = this.tree.findNodes<DataEntry>(null, comparer);\n```\n",
+                    "returns": "検索に一致するノードの配列。ノードが見つからない場合は `null`。\n\n```html\n<igx-tree>\n    <igx-tree-node *ngFor=\"let node of data\" [data]=\"node\">\n         {{ node.label }}\n    </igx-tree-node>\n</igx-tree>\n```\n\n```typescript\npublic data: DataEntry[] = FETCHED_DATA;\n...\nconst matchedNodes: IgxTreeNode<DataEntry>[] = this.tree.findNodes<DataEntry>(searchTerm: data[5]);\n```\n\nUsing a custom comparer\n```typescript\npublic data: DataEntry[] = FETCHED_DATA;\n...\nconst comparer: IgxTreeSearchResolver = (data: any, node: IgxTreeNode<DataEntry>) {\n     return node.data.index % 2 === 0;\n}\nconst evenIndexNodes: IgxTreeNode<DataEntry>[] = this.tree.findNodes<DataEntry>(null, comparer);\n```\n",
                     "parameters": {
                         "searchTerm": {
                             "comment": {
-                                "text": "The data of the searched node"
+                                "text": "検索されたノードのデータ"
                             }
                         },
                         "comparer": {
                             "comment": {
-                                "text": "A custom comparer function that evaluates the passed `searchTerm` against all nodes."
+                                "text": "渡された `searchTerm` をすべてのノードに対して評価するカスタム比較関数。"
                             }
                         }
                     },
@@ -235,16 +235,16 @@
                         "remark": {
                             "comment": {
                                 "text": [
-                                    "Default search compares the passed `searchTerm` against the node's `data` Input.",
-                                    "When using `findNodes` w/o a `comparer`, make sure all nodes have `data` passed."
+                                    "デフォルトの検索では、渡された `searchTerm` をノードの `data` 入力と比較します。",
+                                    "比較演算子なしで `findNodes` を使用する場合、すべてのノードに `data` が渡されることを確認してください。"
                                 ],
-                                "tagName": "remark"
+                                "tagName": "備考:"
                             }
                         }
                     },
                     "shortText": [
-                        "Returns all of the nodes that match the passed searchTerm.",
-                        "Accepts a custom comparer function for evaluating the search term against the nodes."
+                        "渡された searchTerm に一致するすべてのノードを返します。",
+                        "ノードに対して検索語を評価するためのカスタム比較関数を受け入れます。"
                     ]
                 }
             }
@@ -256,12 +256,12 @@
                         "tags": {
                             "remarks": {
                                 "comment": {
-                                    "text": "By default the tree selection mode is 'None'",
+                                    "text": "デフォルトでは、ツリー選択モードは 'None' です。",
                                     "tagName": "備考:"
                                 }
                             }
                         },
-                        "shortText": "Gets/Sets tree selection mode"
+                        "shortText": "ツリー選択モードを取得または設定します。"
                     }
                 },
                 "setter": {
@@ -269,12 +269,12 @@
                         "tags": {
                             "remarks": {
                                 "comment": {
-                                    "text": "By default the tree selection mode is 'None'",
+                                    "text": "デフォルトでは、ツリー選択モードは 'None' です。",
                                     "tagName": "備考:"
                                 }
                             }
                         },
-                        "shortText": "Gets/Sets tree selection mode"
+                        "shortText": "ツリー選択モードを取得または設定します。"
                     }
                 }
             },
@@ -287,7 +287,7 @@
                             "const rootNodes: IgxTreeNodeComponent<any>[] = tree.rootNodes;",
                             "```"
                         ],
-                        "shortText": "Returns all **root level** nodes"
+                        "shortText": "すべての**ルート レベル** ノードを返します。"
                     }
                 }
             },
@@ -295,9 +295,9 @@
                 "getter": {
                     "comment": {
                         "shortText": [
-                            "Returns the theme of the component.",
-                            "The default theme is `comfortable`.",
-                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "コンポーネントのテーマを返します。",
+                            "デフォルト テーマは `comfortable` です。",
+                            "利用可能なオプションは `comfortable`、`cosy`、および `compact` です。",
                             "```typescript",
                             "let componentTheme = this.component.displayDensity;",
                             "```"
@@ -306,7 +306,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "shortText": "Sets the theme of the component."
+                        "shortText": "コンポーネントのテーマを設定します。"
                     }
                 }
             }

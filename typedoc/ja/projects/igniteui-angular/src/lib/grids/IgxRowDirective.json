@@ -50,7 +50,7 @@
                     ],
                     "shortText": [
                         "グリッドのデータソースから指定した行を削除します。",
-                        "このメソッドは `onRowDeleted` イベントを発生します。"
+                        "このメソッドは `rowDeleted` イベントを発生します。"
                     ]
                 }
             },
@@ -64,7 +64,7 @@
                     ],
                     "shortText": [
                         "指定された行をピン固定します。",
-                        "このメソッドは `onRowPinning` イベントを発生します。"
+                        "このメソッドは `rowPinning` イベントを発生します。"
                     ]
                 }
             },
@@ -78,7 +78,7 @@
                     ],
                     "shortText": [
                         "指定された行のピン固定を解除します。",
-                        "このメソッドは `onRowPinning` イベントを発生します。"
+                        "このメソッドは `rowPinning` イベントを発生します。"
                     ]
                 }
             },
@@ -149,6 +149,33 @@
                     }
                 }
             },
+            "expanded": {
+                "getter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "this.grid.selectedRows[2].expanded = true;",
+                            "```"
+                        ],
+                        "shortText": [
+                            "行の展開状態を取得します。",
+                            "```typescript",
+                            "let isExpanded = row.expanded;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "text": [
+                            "```typescript",
+                            "this.grid.selectedRows[2].expanded = true;",
+                            "```"
+                        ],
+                        "shortText": "現在の行を展開/縮小します。"
+                    }
+                }
+            },
             "cells": {
                 "getter": {
                     "comment": {
@@ -179,14 +206,14 @@
                         "text": [
                             "```typescript",
                             "handleRowSelection(event) {",
-                            " // onRowSelectionChange イベントがトリガーするグリッド。",
+                            " // rowSelected イベントがトリガーするグリッド。",
                             " const grid = event.row.grid;",
                             "}",
                             "```",
                             "```html",
                             " <igx-grid",
                             "   [data]=\"data\"",
-                            "   (onRowSelectionChange)=\"handleRowSelection($event)\">",
+                            "   (rowSelected)=\"handleRowSelection($event)\">",
                             " </igx-grid>",
                             "```"
                         ],
