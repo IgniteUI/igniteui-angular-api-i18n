@@ -3,6 +3,7 @@
         "properties": {
             "id": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "`id` 属性の値を設定する @Input プロパティ。",
                         "```html",
@@ -31,7 +32,7 @@
                             }
                         }
                     },
-                    "shortText": "編集可能な入力がフォーカスされていない場合に使用される形式。 設定されていない場合、デフォルトは `inputFormat` です。"
+                    "shortText": "編集可能な入力がフォーカスされていない場合に使用される形式。設定されていない場合、デフォルトは `inputFormat` です。"
                 }
             },
             "inputFormat": {
@@ -71,13 +72,14 @@
                             }
                         }
                     },
-                    "shortText": "予想されるユーザー入力形式とプレースホルダー。"
+                    "shortText": "操作モード (dialog または drop down) を取得/設定します。"
                 }
             },
             "spinLoop": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
-                        "スピン動作を決定する @Input プロパティ。デフォルトで `SpinLoop` が true に設定されます。",
+                        "スピン動作を決定する @Input プロパティ。 By default `spinLoop` is set to true.",
                         "時、分、秒が最小値または最大値に達したときにデフォルトで折り返します。",
                         "```html",
                         "<igx-time-picker [spinLoop]=\"false\"></igx-time-picker>",
@@ -108,7 +110,7 @@
                         "remarks": {
                             "comment": {
                                 "text": [
-                                    "dialog モードでのみ使用できます。デフォルト値は `horizontal` です。",
+                                    "dialog モードでのみ使用できます。 Default value is `horizontal`.",
                                     "```html",
                                     "<igx-time-picker [headerOrientation]=\"'vertical'\"></igx-time-picker>",
                                     "```"
@@ -384,6 +386,7 @@
             },
             "close": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "ドロップ ダウンを閉じます。",
                         "```html",
@@ -421,7 +424,7 @@
                                 "text": [
                                     "```typescript",
                                     "this.timePicker.select(date);",
-                                    "@param date Date object containing the time to be selected."
+                                    "選択する時間を含む @paramdate  Date オブジェクト。"
                                 ],
                                 "tagName": "例:"
                             }
@@ -491,30 +494,13 @@
         },
         "accessors": {
             "minValue": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "`string` 値が渡される場合、それは ISO 形式である必要があります。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-time-picker [minValue]=\"18:00:00\"></igx-time-picker>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "ピッカーが受け入れる最小値。"
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {
@@ -541,6 +527,7 @@
             "collapsed": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "text": [
                             "```typescript",
                             "let isCollapsed = this.timePicker.collapsed;",
@@ -551,30 +538,13 @@
                 }
             },
             "maxValue": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "`string` 値が渡される場合、それは ISO 形式である必要があります。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-time-picker [maxValue]=\"20:30:00\"></igx-time-picker>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "ピッカーが受け入れる最大値。"
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {
@@ -625,27 +595,9 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "現在の値は `Date` タイプです。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const newValue: Date = new Date(2000, 2, 2, 10, 15, 15);",
-                                        "this.timePicker.value = newValue;",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
-                            "`value` 入力を使用して時間の設定を許可するアクセサー。",
+                            "An accessor that allows you to set a time using the `value` input.",
                             "```html",
                             "public date: Date = new Date(Date.now());",
                             " //...",
@@ -656,40 +608,51 @@
                 }
             },
             "resourceStrings": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "リソース文字列を返すアクセサー。"
+                    }
+                },
                 "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "リソース文字列を設定するアクセサー。",
                             "デフォルトで EN リソースを使用します。"
                         ]
                     }
-                },
-                "getter": {
-                    "comment": {
-                        "shortText": "リソース文字列を返すアクセサー。"
-                    }
                 }
             },
             "okButtonLabel": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "OK ボタンのラベルを返すアクセサー。"
+                    }
+                },
                 "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
-                            "カスタム テキストを使用して [OK] ボタンを描画する @Input プロパティ。デフォルトで `okButtonLabel` が OK に設定されます。",
+                            "カスタム テキストを使用して [OK] ボタンを描画する @Input プロパティ。 By default `okButtonLabel` is set to OK.",
                             "```html",
                             "<igx-time-picker okButtonLabel='SET' [value]=\"date\" format=\"h:mm tt\"></igx-time-picker>",
                             "```"
                         ]
                     }
-                },
-                "getter": {
-                    "comment": {
-                        "shortText": "OK ボタンのラベルを返すアクセサー。"
-                    }
                 }
             },
             "cancelButtonLabel": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "キャンセル ボタンのラベルを返すアクセサー。"
+                    }
+                },
                 "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "カスタム テキストを使用して [キャンセル] ボタンを描画する @Input プロパティ。",
                             "デフォルトで `cancelButtonLabel` が Cancel に設定されます。",
@@ -698,16 +661,12 @@
                             "```"
                         ]
                     }
-                },
-                "getter": {
-                    "comment": {
-                        "shortText": "キャンセル ボタンのラベルを返すアクセサー。"
-                    }
                 }
             },
             "itemsDelta": {
-                "setter": {
+                "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "スピン アクションで各エディターの日付部分を増減し、",
                             "ドロップダウン/ダイアログに時間部分を表示するために使用されるデルタ値。",
@@ -718,8 +677,9 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "スピン アクションで各エディターの日付部分を増減し、",
                             "ドロップダウン/ダイアログに時間部分を表示するために使用されるデルタ値。",
@@ -732,30 +692,13 @@
                 }
             },
             "type": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトは `box` です。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "ピッカーの入力のスタイル設定を決定します。"
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {
@@ -782,6 +725,7 @@
             "displayDensity": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "コンポーネントのテーマを返します。",
                             "デフォルト テーマは `comfortable` です。",
@@ -794,6 +738,7 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "コンポーネントのテーマを設定します。"
                     }
                 }

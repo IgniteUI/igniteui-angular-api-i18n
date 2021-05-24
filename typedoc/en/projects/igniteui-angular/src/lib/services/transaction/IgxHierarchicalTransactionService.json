@@ -13,11 +13,24 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
                 }
             }
         },
         "methods": {
+            "getAggregatedChanges": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Returns aggregated changes from all transactions"
+                }
+            },
+            "commit": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Applies all transactions over the provided data"
+                }
+            },
             "add": {
                 "comment": {
                     "parameters": {
@@ -38,7 +51,6 @@
             },
             "getTransactionLog": {
                 "comment": {
-                    "returns": "All transaction in the service or for the specified record\n",
                     "parameters": {
                         "id": {
                             "comment": {
@@ -52,7 +64,6 @@
             },
             "getState": {
                 "comment": {
-                    "returns": "State of the record if any\n",
                     "parameters": {
                         "id": {
                             "comment": {
@@ -71,7 +82,6 @@
             },
             "getAggregatedValue": {
                 "comment": {
-                    "returns": "Value with changes or **null**\n",
                     "parameters": {
                         "id": {
                             "comment": {
@@ -122,16 +132,19 @@
             },
             "undo": {
                 "comment": {
+                    "tags": {},
                     "shortText": "Remove the last transaction if any"
                 }
             },
             "redo": {
                 "comment": {
+                    "tags": {},
                     "shortText": "Applies the last undone transaction if any"
                 }
             },
             "startPending": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "Starts pending transactions. All transactions passed after call to startPending",
                         "will not be added to transaction log"
@@ -143,41 +156,21 @@
             "canUndo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Undo stack\n",
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 }
             },
             "canRedo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Redo stack\n",
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 }
             },
             "enabled": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "Returns whether transaction is enabled for this service"
                     }
                 }

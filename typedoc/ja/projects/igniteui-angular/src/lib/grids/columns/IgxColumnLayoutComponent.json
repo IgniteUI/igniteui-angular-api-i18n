@@ -1,6 +1,20 @@
 {
     "IgxColumnLayoutComponent": {
         "properties": {
+            "children": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets the children columns.",
+                        "```typescript",
+                        "let columnChildren = this.column.children;",
+                        "```",
+                        "```typescript",
+                        "this.column.children = childrenColumns;",
+                        "```"
+                    ]
+                }
+            },
             "searchable": {
                 "comment": {
                     "tags": {
@@ -570,11 +584,13 @@
             },
             "defaultWidth": {
                 "comment": {
+                    "tags": {},
                     "shortText": "非表示"
                 }
             },
             "widthSetByUser": {
                 "comment": {
+                    "tags": {},
                     "shortText": "非表示"
                 }
             },
@@ -725,18 +741,24 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
-                            "列レイアウトの幅を設定します。",
+                            "Gets the width of the column layout.",
                             "```typescript",
                             "let columnGroupWidth = this.columnGroup.width;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "columnLayout": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns a boolean indicating if the column is a `ColumnLayout` for multi-row layout.",
+                            "```typescript",
+                            "let columnGroup =  this.column.columnGroup;",
                             "```"
                         ]
                     }
@@ -766,18 +788,11 @@
             "hidden": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "列レイアウトの hidden プロパティを設定します。",
                             "```typescript",
-                            "<igx-column-layout [hidden] = \"true\"></igx-column->",
+                            "let isHidden = this.columnGroup.hidden;",
                             "```"
                         ]
                     }
@@ -802,16 +817,9 @@
                 }
             },
             "collapsible": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "列グループが縮小可能かどうかを設定します。",
                             "デフォルト値は `false` です。",
@@ -821,7 +829,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -842,16 +850,9 @@
                 }
             },
             "expanded": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "グループが最初に展開または縮小されるかどうかを設定します。",
                             "Collapsible プロパティが true に設定された場合のみ適用します。",
@@ -863,7 +864,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -982,6 +983,39 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns if the column group is selectable",
+                            "```typescript",
+                            "let columnGroupSelectable = this.columnGroup.selectable;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "bodyTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバ:"                                
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns a reference to the body template.",
+                            "```typescript",
+                            "let bodyTemplate = this.columnGroup.bodyTemplate;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "inlineEditorTemplate": {
+                "getter": {
+                    "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
@@ -991,9 +1025,9 @@
                             }
                         },
                         "shortText": [
-                            "列グループが選択可能かどうかを返します。",
+                            "Returns a reference to the inline editor template.",
                             "```typescript",
-                            "let columnGroupSelectable = this.columnGroup.selectable;",
+                            "let inlineEditorTemplate = this.columnGroup.inlineEditorTemplate;",
                             "```"
                         ]
                     }
@@ -1049,9 +1083,9 @@
                             }
                         },
                         "shortText": [
-                            "列グループの選択を有効/無効にします。",
-                            "```html",
-                            "<igx-column [selected] = \"true\"></igx-column>",
+                            "Select/deselect the column group.",
+                            "```typescript",
+                            "this.columnGroup.selected = true;",
                             "```"
                         ]
                     }
@@ -1069,9 +1103,9 @@
                             }
                         },
                         "shortText": [
-                            "列グループを選択/選択解除します。",
+                            "Returns the children columns collection.",
                             "```typescript",
-                            "this.columnGroup.selected = true;",
+                            "let columns =  this.columnGroup.allChildren;",
                             "```"
                         ]
                     }
@@ -1098,16 +1132,9 @@
                 }
             },
             "field": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "`field` 値を設定または取得します。",
                             "```typescript",
@@ -1119,7 +1146,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -1223,6 +1250,21 @@
                 }
             },
             "minWidth": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "列の最小の `width` を設定または取得します。",
+                            "デフォルト値は `88` です。",
+                            "```typescript",
+                            "let columnMinWidth = this.column.minWidth;",
+                            "```",
+                            "```html",
+                            "<igx-column [minWidth] = \"'100px'\"></igx-column>",
+                            "```"
+                        ]
+                    }
+                },
                 "setter": {
                     "comment": {
                         "tags": {
@@ -1240,29 +1282,7 @@
                             "let columnMinWidth = this.column.minWidth;",
                             "```",
                             "```html",
-                            "<igx-column [minWidth] = \"'15%'\"></igx-column>",
-                            "```"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "列の最小の `width` を設定または取得します。",
-                            "デフォルト値は `88` です。",
-                            "```typescript",
-                            "let columnMinWidth = this.column.minWidth;",
-                            "```",
-                            "```html",
-                            "<igx-column [minWidth] = \"'15%'\"></igx-column>",
+                            "<igx-column [minWidth] = \"'100px'\"></igx-column>",
                             "```"
                         ]
                     }
@@ -1299,12 +1319,6 @@
                                 }
                             }
                         },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-column [(pinned)] = \"model.columns[0].isPinned\"></igx-column>",
-                            "```"
-                        ],
                         "shortText": [
                             "列が `pinned` にされるかどうかを取得します。",
                             "```typescript",
@@ -1592,16 +1606,9 @@
                 }
             },
             "visibleWhenCollapsed": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "親が縮小される場合、列が表示になるかどうかを示します。",
                             "```html",
@@ -1612,7 +1619,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -1634,47 +1641,12 @@
                 }
             },
             "pipeArgs": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": [
-                                        "DatePipe および/または DecimalPipe のオプション パラメーターを渡し、日付列と数値列の表示値を書式設定します。",
-                                        "`format`、`timezone`、`digitsInfo` プロパティのいずれかを持つ `IColumnPipeArgs` オブジェクトを受け取ります。",
-                                        "詳細については、https://angular.io/api/common/DatePipe および https://angular.io/api/common/DecimalPipe を参照してください。"
-                                    ],
-                                    "tagName": "備考"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const pipeArgs: IColumnPipeArgs = {",
-                                        "     format: 'longDate',",
-                                        "     timezone: 'UTC',",
-                                        "     digitsInfo: '1.1-2'",
-                                        "}",
-                                        "```",
-                                        "```html",
-                                        "<igx-column dataType=\"date\" [pipeArgs]=\"pipeArgs\"></igx-column>",
-                                        "<igx-column dataType=\"number\" [pipeArgs]=\"pipeArgs\"></igx-column>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {

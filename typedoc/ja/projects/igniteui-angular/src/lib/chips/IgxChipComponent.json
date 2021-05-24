@@ -28,6 +28,7 @@
                 },
                 "remarks": {
                     "comment": {
+                        "tags": {},
                         "text": [
                             "Ignite UI Chip をテンプレート化、削除、または選択できます。",
                             "複数の Chip を順序変更し、視覚的に接続できます。",
@@ -38,6 +39,7 @@
                 },
                 "example": {
                     "comment": {
+                        "tags": {},
                         "text": [
                             "```html",
                             "<igx-chip class=\"chipStyle\" [id]=\"901\" [draggable]=\"true\" [removable]=\"true\" (remove)=\"chipRemoved($event)\">",
@@ -442,24 +444,13 @@
         "methods": {},
         "accessors": {
             "tabIndex": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-chip [id]=\"'igx-chip-1'\" [tabIndex]=\"1\"></igx-chip>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "`tabindex` 属性の値を設定する @Input プロパティ。指定されていない場合は、要素の tabindex (設定した場合) が使用されます。"
+                        "tags": {},
+                        "shortText": "An @Input property that sets the value of `tabindex` attribute. If not provided it will use the element's tabindex if set."
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "example": {
@@ -478,6 +469,27 @@
                 }
             },
             "selected": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "@ViewChild('myChip')",
+                                        "public chip: IgxChipComponent;",
+                                        "selectedChip(){",
+                                        "    let selectedChip = this.chip.selected;",
+                                        "}",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
+                        "shortText": "`tabindex` 属性の値を設定する @Input プロパティ。指定されていない場合は、要素の tabindex (設定した場合) が使用されます。"
+                    }
+                },
                 "setter": {
                     "comment": {
                         "tags": {
@@ -498,7 +510,9 @@
                         },
                         "shortText": "`IgxChipComponent` の選択状態を設定します。"
                     }
-                },
+                }
+            },
+            "color": {
                 "getter": {
                     "comment": {
                         "tags": {
@@ -508,8 +522,8 @@
                                         "```typescript",
                                         "@ViewChild('myChip')",
                                         "public chip: IgxChipComponent;",
-                                        "selectedChip(){",
-                                        "    let selectedChip = this.chip.selected;",
+                                        "ngAfterViewInit(){",
+                                        "    let chipColor = this.chip.color;",
                                         "}",
                                         "```"
                                     ],
@@ -519,9 +533,7 @@
                         },
                         "shortText": "`IgxChipComponent` が選択されるかどうかを返します。"
                     }
-                }
-            },
-            "color": {
+                },
                 "setter": {
                     "comment": {
                         "tags": {
@@ -541,47 +553,29 @@
                             "`color` プロパティは文字列、rgb、および16 進数をサポートします。"
                         ]
                     }
-                },
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "@ViewChild('myChip')",
-                                        "public chip: IgxChipComponent;",
-                                        "ngAfterViewInit(){",
-                                        "    let chipColor = this.chip.color;",
-                                        "}",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "`IgxChipComponent` の背景色を返します。"
-                    }
                 }
             },
             "resourceStrings": {
-                "setter": {
-                    "comment": {
-                        "shortText": [
-                            "リソース文字列を設定するアクセサー。",
-                            "デフォルトで EN リソースを使用します。"
-                        ]
-                    }
-                },
                 "getter": {
                     "comment": {
-                        "shortText": "リソース文字列を返すアクセサー。"
+                        "tags": {},
+                        "shortText": "An accessor that returns the resource strings."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "An accessor that sets the resource strings.",
+                            "By default it uses EN resources."
+                        ]
                     }
                 }
             },
             "displayDensity": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "コンポーネントのテーマを返します。",
                             "デフォルト テーマは `comfortable` です。",
@@ -594,6 +588,7 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "コンポーネントのテーマを設定します。"
                     }
                 }

@@ -43,7 +43,7 @@
                     "shortText": "ヘッダーのすべて展開/縮小ボタンを描画するかどうかを取得または設定します。"
                 }
             },
-            "onDataPreLoad": {
+            "dataPreLoad": {
                 "comment": {
                     "tags": {
                         "example": {
@@ -146,6 +146,12 @@
                         }
                     },
                     "shortText": "読み込み時のカスタム テンプレートを取得または設定します。"
+                }
+            },
+            "clipboardOptions": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Controls the copy behavior of the grid."
                 }
             },
             "filteringExpressionsTreeChange": {
@@ -1223,6 +1229,7 @@
             },
             "rendered": {
                 "comment": {
+                    "tags": {},
                     "shortText": "ngAfterViewInit の後に発生します。この時点で、グリッドは DOM に存在します。"
                 }
             },
@@ -1262,26 +1269,31 @@
             },
             "rowExpandedIndicatorTemplate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "行展開インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
                 }
             },
             "rowCollapsedIndicatorTemplate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "行折りたたみインジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
                 }
             },
             "headerExpandIndicatorTemplate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "ヘッダー展開インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
                 }
             },
             "headerCollapseIndicatorTemplate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "ヘッダー折りたたみインジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
                 }
             },
             "excelStyleHeaderIconTemplate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "行展開インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
                 }
             },
@@ -1503,6 +1515,7 @@
             },
             "getHeaderGroupWidth": {
                 "comment": {
+                    "tags": {},
                     "shortText": "`IgxGridHeaderGroupComponent` に設定される  `width` を取得します。"
                 }
             },
@@ -1645,14 +1658,35 @@
                             "comment": {
                                 "text": [
                                     "```typescript",
-                                    "this.grid1.markForCheck();",
+                                    "grid.markForCheck();",
                                     "```"
                                 ],
                                 "tagName": "例:"
                             }
                         }
                     },
-                    "shortText": "`IgxGridComponent` を変更検出で手動的にマークします。"
+                    "text": [
+                        "// DOs",
+                        "// call markForCheck after updating a nested property",
+                        "grid.data.forEach(rec => {",
+                        " rec.nestedProp1.nestedProp2 = newValue;",
+                        "});",
+                        "grid.markForCheck();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Triggers change detection for the `IgxGridComponent`.",
+                        "Calling markForCheck also triggers the grid pipes explicitly, resulting in all updates being processed.",
+                        "May degrade performance if used when not needed, or if misused:",
+                        "```typescript",
+                        "// DON'Ts:",
+                        "// don't call markForCheck from inside a loop",
+                        "// don't call markForCheck when a primitive has changed",
+                        "grid.data.forEach(rec => {",
+                        " rec = newValue;",
+                        " grid.markForCheck();",
+                        "});"
+                    ]
                 }
             },
             "addRow": {
@@ -2467,6 +2501,7 @@
             },
             "openAdvancedFilteringDialog": {
                 "comment": {
+                    "tags": {},
                     "shortText": "高度なフィルタリング ダイアログを開きます。"
                 }
             },
@@ -2534,47 +2569,12 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "提供されていない場合は、自動的に生成されます。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-hierarchical-grid [id]=\"'igx-hgrid-1'\" [data]=\"Data\" [autoGenerate]=\"true\"></igx-hierarchical-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "`id` 属性の値を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the value of the `id` attribute."
                     }
                 }
             },
             "data": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxHierarchicalGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxHierarchicalGridComponent` にデータの配列をインポートする @Input プロパティ。",
-                            "```html",
-                            "<igx-hierarchical-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-hierarchical-grid>",
-                            "```"
-                        ]
-                    }
-                },
                 "getter": {
                     "comment": {
                         "tags": {
@@ -2586,15 +2586,13 @@
                             }
                         },
                         "shortText": [
-                            "`IgxHierarchicalGridComponent` に設定されたデータ の配列に設定されたを返します。",
+                            "Returns an array of data set to the `IgxHierarchicalGridComponent`.",
                             "```typescript",
                             "let filteredData = this.grid.filteredData;",
                             "```"
                         ]
                     }
-                }
-            },
-            "filteredData": {
+                },
                 "setter": {
                     "comment": {
                         "tags": {
@@ -2606,7 +2604,45 @@
                             }
                         },
                         "shortText": [
-                            "`IgxHierarchicalGridComponent` のフィルター済みデータを含むオブジェクトの配列を設定します。",
+                            "An @Input property that lets you fill the `IgxHierarchicalGridComponent` with an array of data.",
+                            "```html",
+                            "<igx-hierarchical-grid [data]=\"Data\" [autoGenerate]=\"true\"></igx-hierarchical-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filteredData": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxHierarchicalGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns an array of objects containing the filtered data in the `IgxHierarchicalGridComponent`.",
+                            "```typescript",
+                            "let filteredData = this.grid.filteredData;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxHierarchicalGridComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Sets an array of objects containing the filtered data in the `IgxHierarchicalGridComponent`.",
                             "```typescript",
                             "this.grid.filteredData = [{",
                             "      ID: 1,",
@@ -2615,52 +2651,16 @@
                             "```"
                         ]
                     }
-                },
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxHierarchicalGridComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "`IgxHierarchicalGridComponent` のフィルター済みデータを含むオブジェクトの配列を返します。",
-                            "```typescript",
-                            "let filteredData = this.grid.filteredData;",
-                            "```"
-                        ]
-                    }
                 }
             },
             "totalItemCount": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "このプロパティは、リモート グリッド仮想化がリモート データにバインドされているときに機能するために必要です。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const itemCount = this.grid1.totalItemCount;",
-                                        "this.grid1.totalItemCount = 55;",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "データソース内のレコードの総数を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the total number of records in the data source."
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {
@@ -2686,7 +2686,7 @@
                 }
             },
             "expandChildren": {
-                "setter": {
+                "getter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -2705,7 +2705,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -2716,10 +2716,10 @@
                             }
                         },
                         "shortText": [
-                            "`IgxHierarchicalGridComponent` の直下の子が以前展開または縮小に設定されたかどうかを取得します。",
-                            "以前に設定した行の一部が手動的に展開または縮小された場合、最後に設定された値を返します。",
-                            "```typescript",
-                            "const expanded = this.grid.expandChildren;",
+                            "Sets if all immediate children of the `IgxHierarchicalGridComponent` should be expanded/collapsed.",
+                            "Defult value is false.",
+                            "```html",
+                            "<igx-hierarchical-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [autoGenerate]=\"true\" [expandChildren]=\"true\"></igx-hierarchical-grid>",
                             "```"
                         ]
                     }
@@ -2762,33 +2762,19 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remark": {
-                                "comment": {
-                                    "text": "設定されている場合、グリッドの外側で定義されたアウトレットを返します。それ以外の場合、グリッド内部のアウトレット ディレクティブを返します。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "グリッドのオーバーレイをアタッチするアウトレットを設定します。"
+                        "tags": {},
+                        "shortText": "Sets the outlet used to attach the grid's overlays to."
                     }
                 }
             },
             "resourceStrings": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトで EN リソースを使用します。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "リソース文字列を取得/設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the resource strings."
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {
@@ -2828,25 +2814,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトの設定は AND です。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\" [filteringLogic]=\"filtering\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "`IgxGridComponent` のフィルター ロジックを設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the filtering logic of the `IgxGridComponent`."
                     }
                 }
             },
@@ -2876,25 +2845,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(filteringExpressionsTree)]=\"model.filteringExpressions\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "双方向バインディングをサポートします。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "フィルタリング状態を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the filtering state."
                     }
                 }
             },
@@ -2919,20 +2871,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "let advancedFilteringExpressionsTree = this.grid.advancedFilteringExpressionsTree;",
-                                        "this.grid.advancedFilteringExpressionsTree = logic;",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "高度なフィルタリング状態を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the advanced filtering state."
                     }
                 }
             },
@@ -2952,15 +2892,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "設定されていない場合、ブラウザーの言語設定を返します。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "ロケールを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the locale."
                     }
                 }
             },
@@ -2990,25 +2923,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルト状態は無効 (false) です。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [paging]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "ページング機能が有効かどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets whether the paging feature is enabled."
                     }
                 }
             },
@@ -3038,25 +2954,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        " <igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "双方向バインディングをサポートします。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "現在のページ インデックスを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the current page index."
                     }
                 }
             },
@@ -3086,25 +2985,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルト値は 15 です。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(perPage)]=\"model.perPage\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "ページごとに表示される項目数を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the number of visible items per page."
                     }
                 }
             },
@@ -3139,30 +3021,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトで無効 (false) に設定されます。UI を操作するには、以下の例のようにツールバーを有効にする必要があります。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\" [showToolbar]=\"true\" [columnHiding]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "列非表示 UI が有効かどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets whether the column hiding UI is enabled."
                     }
                 }
             },
@@ -3182,15 +3042,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトでは、行セレクターが表示されます。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "行セレクターが非表示されているかどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets if the row selectors are hidden."
                     }
                 }
             },
@@ -3214,19 +3067,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [rowDraggable]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "行が移動可能かどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets whether rows can be moved."
                     }
                 }
             },
@@ -3256,25 +3098,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトの設定は false です。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [showToolbar]=\"true\" [rowEditable]=\"true\" [primaryKey]=\"'ProductID'\" [columnHiding]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "行が編集可能かどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets whether the rows are editable."
                     }
                 }
             },
@@ -3298,19 +3123,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "高さを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the height."
                     }
                 }
             },
@@ -3334,19 +3148,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "let gridWidth = this.grid.width;",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "グリッドの幅を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the width of the grid."
                     }
                 }
             },
@@ -3389,19 +3192,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [rowHeight]=\"100\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "行の高さを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the row height."
                     }
                 }
             },
@@ -3425,41 +3217,19 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [showToolbar]=\"true\" [columnWidth]=\"100\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "列のデフォルトの幅を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the default width of the columns."
                     }
                 }
             },
             "emptyGridMessage": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [emptyGridMessage]=\"'The grid is empty'\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "レコードがない場合に表示されるメッセージを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Get/Sets the message displayed when there are no records."
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "example": {
@@ -3478,24 +3248,13 @@
                 }
             },
             "isLoading": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [isLoading]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "グリッドは読み込みインジケータを表すかどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets whether the grid is going to show a loading indicator."
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "example": {
@@ -3514,24 +3273,13 @@
                 }
             },
             "emptyFilteredGridMessage": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [emptyGridMessage]=\"'The grid is empty'\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "グリッドがフィルターされ、レコードがない場合に表示されるメッセージを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the message displayed when there are no records and the grid is filtered."
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "example": {
@@ -3574,24 +3322,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [showToolbar]=\"true\" [columnHiding]=\"true\" columnHidingTitle=\"Column Hiding\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "定義済みの列非表示 UI に表示されるタイトルを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the title to be displayed in the built-in column hiding UI."
                     }
                 }
             },
@@ -3624,28 +3356,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": [
-                                        "列のピン固定を開始または終了に適用できます。",
-                                        "一度に両側にピン固定することはできません。"
-                                    ],
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [pinning]=\"pinningConfig\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "初期のピン固定構成を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the initial pinning configuration."
                     }
                 }
             },
@@ -3674,24 +3386,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [columnPinning]=\"'true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "定義済みの列固定 UI をツールバーに表示するかどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets if the built-in column pinning UI should be shown in the toolbar."
                     }
                 }
             },
@@ -3720,24 +3416,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [columnPinning]=\"'true\" [columnPinningTitle]=\"'Column Hiding'\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "列ピン固定 UI に表示されるタイトルを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the title to be displayed in the UI of the column pinning."
                     }
                 }
             },
@@ -3761,19 +3441,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [allowFiltering]=\"true\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "フィルタリングが有効かどうかを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets if the filtering is enabled."
                     }
                 }
             },
@@ -3797,19 +3466,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [allowAdvancedFiltering]=\"true\" [showToolbar]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "高度なフィルタリングが有効かどうかを示す値を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets a value indicating whether the advanced filtering is enabled."
                     }
                 }
             },
@@ -3839,25 +3497,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [filterMode]=\"'quickFilter'\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトで FilterMode.quickFilter に設定されます。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "フィルター モードを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the filter mode."
                     }
                 }
             },
@@ -3887,25 +3528,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" summaryPosition=\"top\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトで bottom です。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "集計位置を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the summary position."
                     }
                 }
             },
@@ -3935,25 +3559,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" summaryCalculationMode=\"rootLevelOnly\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトで rootAndChildLevels で、集計はルート レベルと各子レベルのために計算されます。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "集計計算モードを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the summary calculation mode."
                     }
                 }
             },
@@ -3986,28 +3593,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"localData\" [showSummaryOnCollapse]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": [
-                                        "デフォルトでは、showSummaryOnCollapse は 'false' に設定されています。",
-                                        "これは、groupBy / 親行が縮小されたときに、集計行が表示されないことを意味します。"
-                                    ],
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
-                        "shortText": "groupBy / 親行が縮小されたときに集計行を表示するかどうかを制御します。"
+                        "tags": {},
+                        "shortText": "Controls whether the summary row is visible when groupBy/parent row is collapsed."
                     }
                 }
             },
@@ -4031,19 +3618,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        " <igx-grid #grid [data]=\"localData\" [filterStrategy]=\"filterStrategy\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "グリッドのフィルタリング ストラテジを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the filtering strategy of the grid."
                     }
                 }
             },
@@ -4067,47 +3643,19 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        " <igx-grid #grid [data]=\"localData\" [sortStrategy]=\"sortStrategy\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "グリッドの並べ替えストラテジを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the sorting strategy of the grid."
                     }
                 }
             },
             "selectedRows": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "選択された行の ID (プライマリ キーまたは rowData) を表します。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"localData\" primaryKey=\"ID\" rowSelection=\"multiple\" [selectedRows]=\"[0, 1, 2]\"><igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "現在の選択状態を取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets the current selection state."
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {
@@ -4229,11 +3777,13 @@
             "dragIndicatorIconTemplate": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "カスタム テンプレートがある場合、行ドラッグのインジケーター アイコンを描画するために使用されます。"
                     }
                 },
                 "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "カスタム テンプレートがある場合、行ドラッグのインジケーター アイコンを描画するために使用されます。"
                     }
                 }
@@ -4264,24 +3814,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "双方向データ バインディングをサポートします。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(sortingExpressions)]=\"model.sortingExpressions\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "並べ替えの状態を取得または設定します。"
                     }
                 }
@@ -4308,6 +3841,7 @@
             "pinnedColumnsCount": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "ピン固定列の数を取得します。"
                     }
                 }
@@ -4343,29 +3877,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "`IgxColumnComponent` の定義済みの列非表示 UI に使用します。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [columnHiding]=\"true\" [showToolbar]=\"true\" [hiddenColumnsText]=\"'Hidden Columns'\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "切り替え ボタンに表示されるテキストを取得または設定します。"
                     }
                 }
@@ -4401,29 +3913,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "remarks": {
-                                "comment": {
-                                    "text": "`IgxColumnComponent` の定義済みの列ピン固定 UI に使用します。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [pinnedColumnsText]=\"'PinnedCols Text\" [data]=\"data\" [width]=\"'100%'\" [height]=\"'500px'\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "切り替え ボタンに表示されるテキストを取得または設定します。"
                     }
                 }
@@ -4431,6 +3921,7 @@
             "transactions": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "グリッドのためのトランザクション サービスを取得します。"
                     }
                 }
@@ -4460,23 +3951,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" ></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "ツールバーが表示されるかどうかを取得または設定します。"
                     }
                 }
@@ -4506,23 +3981,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [toolbarTitle]=\"'My Grid'\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "ツールバーのタイトルを取得または設定します。"
                     }
                 }
@@ -4552,23 +4011,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [exportExcel]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "MS Excel へのエクスポート オプションが有効かどうかを取得または設定します。"
                     }
                 }
@@ -4593,18 +4036,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [autoGenerate]=\"true\" [exportCsv]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "非推奨"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "CSV へのエクスポート オプションが有効かどうかを取得または設定します。"
                     }
                 }
@@ -4634,23 +4066,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [data]=\"localData\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportCsv]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "エクスポート ボタンのテキスト コンテンツを取得または設定します。"
                     }
                 }
@@ -4675,18 +4091,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [exportExcelText]=\"'My Excel Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportCsv]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "非推奨"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "MS Excel エクスポート ボタンのテキスト コンテンツを取得または設定します。"
                     }
                 }
@@ -4716,23 +4121,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "tagName": "非推奨"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid [exportCsvText]=\"'My Csv Exporter\" [showToolbar]=\"true\" [exportText]=\"'My Exporter'\" [exportExcel]=\"true\"></igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "CSV エクスポート ボタンのテキスト コンテンツを取得または設定します。"
                     }
                 }
@@ -4753,14 +4142,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトでは、セル選択モードは multiple です。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "セル選択モードを取得または設定します。"
                     }
                 }
@@ -4784,17 +4166,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": [
-                                        "デフォルトでは、行選択モードは 'none' です。",
-                                        "注: IgxGrid および IgxHierarchicalGrid では、'multipleCascade' は 'multiple' のように動作します。"
-                                    ],
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "行選択モードを取得または設定します。"
                     }
                 }
@@ -4815,14 +4187,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトでは、行選択モードは none です。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "列のデフォルトの幅を取得または設定します。"
                     }
                 }
@@ -4843,6 +4208,31 @@
                             }
                         },
                         "shortText": "フィルターされて並べ替え済みのデータを含む配列を返します。"
+                    }
+                }
+            },
+            "virtualizationState": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Includes the start index and how many records are rendered.",
+                                    "tagName": "備考:"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const gridVirtState = this.grid1.virtualizationState;",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the state of the grid virtualization."
                     }
                 }
             },
@@ -4871,34 +4261,13 @@
                                 }
                             }
                         },
-                        "shortText": "キーと値のペア [行 Id、展開状態] のリストを取得または設定します。"
+                        "shortText": "Gets/Sets a list of key-value pairs [row ID, expansion state]."
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": [
-                                        "デフォルト状態に異なる状態のみ含まれます。",
-                                        "双方向バインディングをサポートします。"
-                                    ],
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<igx-grid #grid [data]=\"data\" [(expansionStates)]=\"model.expansionStates\">",
-                                        "</igx-grid>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "キーと値のペア [行 Id、展開状態] のリストを取得または設定します。"
+                        "tags": {},
+                        "shortText": "Gets/Sets a list of key-value pairs [row ID, expansion state]."
                     }
                 }
             },
@@ -5155,25 +4524,8 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "ページングが有効な場合のみ動作します。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const totalRecords = this.grid.totalRecords;",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "合計レコード数を返します。"
+                        "tags": {},
+                        "shortText": "Returns the total number of records."
                     }
                 }
             },
@@ -5440,14 +4792,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "デフォルトで true に設定されます。",
-                                    "tagName": "備考:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "フィルターされて並べ替え済みのデータを含む配列を返します。"
                     }
                 }
@@ -5455,6 +4800,7 @@
             "displayDensity": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "コンポーネントのテーマを返します。",
                             "デフォルト テーマは `comfortable` です。",
@@ -5467,6 +4813,7 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "コンポーネントのテーマを設定します。"
                     }
                 }

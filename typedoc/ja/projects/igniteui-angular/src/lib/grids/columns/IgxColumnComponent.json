@@ -1,6 +1,7 @@
 {
     "IgxColumnComponent": {
         "comment": {
+            "tags": {},
             "text": [
                 "Ignite UI Column は `igx-grid` 要素で列が表示するデータを定義するために使用されます。",
                 "並べ替え、フィルタリング、編集などの機能は列レベルで有効にされます。",
@@ -571,11 +572,13 @@
             },
             "defaultWidth": {
                 "comment": {
+                    "tags": {},
                     "shortText": "非表示"
                 }
             },
             "widthSetByUser": {
                 "comment": {
+                    "tags": {},
                     "shortText": "非表示"
                 }
             },
@@ -726,16 +729,9 @@
         },
         "accessors": {
             "field": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "`field` 値を設定または取得します。",
                             "```typescript",
@@ -747,7 +743,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -900,12 +896,6 @@
                                 }
                             }
                         },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-column [(hidden)] = \"model.isHidden\"></igx-column>",
-                            "```"
-                        ],
                         "shortText": [
                             "列が非表示にされるかどうかを取得します。",
                             "```typescript",
@@ -990,12 +980,6 @@
                                 }
                             }
                         },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-column [(width)]=\"model.columns[0].width\"></igx-column>",
-                            "```"
-                        ],
                         "shortText": [
                             "列の `width` を取得します。",
                             "```typescript",
@@ -1030,6 +1014,21 @@
                 }
             },
             "minWidth": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "列の最小の `width` を設定または取得します。",
+                            "デフォルト値は `88` です。",
+                            "```typescript",
+                            "let columnMinWidth = this.column.minWidth;",
+                            "```",
+                            "```html",
+                            "<igx-column [minWidth] = \"'100px'\"></igx-column>",
+                            "```"
+                        ]
+                    }
+                },
                 "setter": {
                     "comment": {
                         "tags": {
@@ -1047,29 +1046,7 @@
                             "let columnMinWidth = this.column.minWidth;",
                             "```",
                             "```html",
-                            "<igx-column [minWidth] = \"'15%'\"></igx-column>",
-                            "```"
-                        ]
-                    }
-                },
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "列の最小の `width` を設定または取得します。",
-                            "デフォルト値は `88` です。",
-                            "```typescript",
-                            "let columnMinWidth = this.column.minWidth;",
-                            "```",
-                            "```html",
-                            "<igx-column [minWidth] = \"'15%'\"></igx-column>",
+                            "<igx-column [minWidth] = \"'100px'\"></igx-column>",
                             "```"
                         ]
                     }
@@ -1106,12 +1083,6 @@
                                 }
                             }
                         },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-column [(pinned)] = \"model.columns[0].isPinned\"></igx-column>",
-                            "```"
-                        ],
                         "shortText": [
                             "列が `pinned` かどうかを取得します。",
                             "```typescript",
@@ -1669,16 +1640,9 @@
                 }
             },
             "visibleWhenCollapsed": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "親が縮小される場合、列が表示になるかどうかを示します。",
                             "```html",
@@ -1689,7 +1653,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -1711,47 +1675,12 @@
                 }
             },
             "pipeArgs": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": [
-                                        "DatePipe および/または DecimalPipe のオプション パラメーターを渡し、日付列と数値列の表示値を書式設定します。",
-                                        "`format`、`timezone`、`digitsInfo` プロパティのいずれかを持つ `IColumnPipeArgs` オブジェクトを受け取ります。",
-                                        "詳細については、https://angular.io/api/common/DatePipe および https://angular.io/api/common/DecimalPipe を参照してください。"
-                                    ],
-                                    "tagName": "備考"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const pipeArgs: IColumnPipeArgs = {",
-                                        "     format: 'longDate',",
-                                        "     timezone: 'UTC',",
-                                        "     digitsInfo: '1.1-2'",
-                                        "}",
-                                        "```",
-                                        "```html",
-                                        "<igx-column dataType=\"date\" [pipeArgs]=\"pipeArgs\"></igx-column>",
-                                        "<igx-column dataType=\"number\" [pipeArgs]=\"pipeArgs\"></igx-column>",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            },
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {

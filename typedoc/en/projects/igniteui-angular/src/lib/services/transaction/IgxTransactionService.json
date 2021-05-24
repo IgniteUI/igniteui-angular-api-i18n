@@ -3,164 +3,130 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
-                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                    "tags": {}
                 }
             }
         },
         "methods": {
             "add": {
                 "comment": {
-                    "parameters": {
-                        "transaction": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "Transaction to be added"
-                            }
-                        },
-                        "recordRef": {
-                            "comment": {
-                                "text": "Reference to the value of the record in the data source related to the changed item"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Adds provided  transaction with recordRef if any"
+                    }
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "returns": "All transaction in the service or for the specified record\n",
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "Optional record id to get transactions for"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns all recorded transactions in chronological order"
+                    }
                 }
             },
             "getAggregatedChanges": {
                 "comment": {
-                    "returns": "Collection of aggregated transactions for each changed record\n",
-                    "parameters": {
-                        "mergeChanges": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": [
-                                    "If set to true will merge each state's value over relate recordRef",
-                                    "and will record resulting value in the related transaction"
-                                ]
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns aggregated changes from all transactions"
+                    }
                 }
             },
             "getState": {
                 "comment": {
-                    "returns": "State of the record if any\n",
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "The id of the record"
-                            }
-                        },
-                        "pending": {
-                            "comment": {
-                                "text": "Should get pending state"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns the state of the record with provided id"
+                    }
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "returns": "Value with changes or **null**\n",
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "The id of the record to return value for"
-                            }
-                        },
-                        "mergeChanges": {
-                            "comment": {
-                                "text": [
-                                    "If set to true will merge state's value over relate recordRef",
-                                    "and will return merged value"
-                                ]
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns value of the required id including all uncommitted changes"
+                    }
                 }
             },
             "endPending": {
                 "comment": {
-                    "parameters": {
-                        "commit": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "Should commit the pending states"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
-                        "commits pending states as single transaction"
-                    ]
+                    }
                 }
             },
             "commit": {
                 "comment": {
-                    "parameters": {
-                        "data": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "Data source to update"
-                            }
-                        },
-                        "id": {
-                            "comment": {
-                                "text": "Optional record id to commit transactions for"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Applies all transactions over the provided data"
+                    }
                 }
             },
             "clear": {
                 "comment": {
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "Optional record id to clear transactions for"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Clears all transactions"
+                    }
                 }
             },
             "undo": {
                 "comment": {
-                    "shortText": "Remove the last transaction if any"
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             },
             "redo": {
                 "comment": {
-                    "shortText": "Applies the last undone transaction if any"
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             },
             "startPending": {
                 "comment": {
-                    "shortText": [
-                        "Starts pending transactions. All transactions passed after call to startPending",
-                        "will not be added to transaction log"
-                    ]
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -168,7 +134,6 @@
             "canUndo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Undo stack\n",
                         "tags": {
                             "inheritdoc": {
                                 "comment": {
@@ -182,7 +147,6 @@
             "canRedo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Redo stack\n",
                         "tags": {
                             "inheritdoc": {
                                 "comment": {
@@ -202,8 +166,7 @@
                                     "tagName": "inheritdoc"
                                 }
                             }
-                        },
-                        "shortText": "Returns whether transaction is enabled for this service"
+                        }
                     }
                 }
             }

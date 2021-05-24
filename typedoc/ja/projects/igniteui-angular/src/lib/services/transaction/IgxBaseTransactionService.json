@@ -3,6 +3,7 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "トランザクションの状態が変更されたとき発生されるイベント - トランザクションの追加、すべてのトランザクションをコミットする、元に戻す/やり直し。"
                 }
             }
@@ -28,7 +29,6 @@
             },
             "getTransactionLog": {
                 "comment": {
-                    "returns": "サービスのすべてのトランザクションまたは指定したレコード。\n",
                     "parameters": {
                         "_id": {
                             "comment": {
@@ -42,17 +42,18 @@
             },
             "undo": {
                 "comment": {
+                    "tags": {},
                     "shortText": "最後のトランザクションを削除します。"
                 }
             },
             "redo": {
                 "comment": {
+                    "tags": {},
                     "shortText": "最後の元に戻されたトランザクションを削除します。"
                 }
             },
             "getAggregatedChanges": {
                 "comment": {
-                    "returns": "変更済みの各レコードの集計トランザクションのコレクション。\n",
                     "parameters": {
                         "mergeChanges": {
                             "comment": {
@@ -69,18 +70,19 @@
             },
             "getState": {
                 "comment": {
-                    "tags": {
-                        "inheritdoc": {
+                    "parameters": {
+                        "id": {
                             "comment": {
-                                "tagName": "inheritdoc"
+                                "text": "The id of the record"
                             }
                         }
-                    }
+                    },
+                    "tags": {},
+                    "shortText": "Returns the state of the record with provided id"
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "returns": "変更のある値または **null**。\n",
                     "parameters": {
                         "id": {
                             "comment": {
@@ -133,6 +135,7 @@
             },
             "startPending": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "保留された変更を開始します。startPending へのコールの後に渡されたすべてのトランザクションはトランザクション ログに追加されません。"
                     ]
@@ -158,41 +161,21 @@
             "canRedo": {
                 "getter": {
                     "comment": {
-                        "returns": "Redo スタックにトランザクションがあるかどうか。\n",
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 }
             },
             "canUndo": {
                 "getter": {
                     "comment": {
-                        "returns": "Undo スタックにトランザクションがあるかどうか。\n",
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 }
             },
             "enabled": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "このサービスにトランザクションが有効されたかどうか返します。"
                     }
                 }

@@ -3,6 +3,7 @@
         "properties": {
             "id": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "デバイダーの `id` を設定および取得します。",
                         "設定しない場合、`id` は値 `\"igx-divider-0\"` を持ちます。",
@@ -17,6 +18,7 @@
             },
             "role": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "`role` 属性の値を設定する @Input プロパティ。",
                         "使用しない場合、`separator` は使用されます。"
@@ -25,6 +27,7 @@
             },
             "type": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "デバイダーの種類を設定します。デフォルト値は `default` です。デバイダーは `dashed` にも設定されます。",
                         "```html",
@@ -35,6 +38,7 @@
             },
             "middle": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "デバイダーの `middle` 属性を設定する @Input プロパティ。",
                         "`True` に設定されて、`inset` 値が提供されている場合、デバイダーは両端から縮小し始めます。",
@@ -46,6 +50,7 @@
             },
             "vertical": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "デバイダーの vertical 属性のを設定する @Input プロパティ。",
                         "```html",
@@ -58,23 +63,27 @@
         "methods": {},
         "accessors": {
             "inset": {
-                "setter": {
+                "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
-                            "側面からのデバイダーのインセットを設定します。",
-                            "デバイダー属性の `middle`が `true` に設定されている場合は、両側にデバイダーが挿入されます。",
+                            "Gets the current divider inset in terms of",
+                            "margin representation as applied to the divider.",
                             "```typescript",
-                            "this.divider.inset = '32px';",
+                            "const inset = this.divider.inset;",
                             "```"
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
-                            "現在のデバイダーのインセットをデバイダーに適用されるマージン表現で取得します。",
+                            "Sets the inset of the divider from the side(s).",
+                            "If the divider attribute `middle` is set to `true`,",
+                            "it will inset the divider on both sides.",
                             "```typescript",
-                            "const inset = this.divider.inset;",
+                            "this.divider.inset = '32px';",
                             "```"
                         ]
                     }
@@ -83,6 +92,7 @@
             "isSolid": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": [
                             "デバイダーのタイプが  `default` であれば `true` を返すゲッター。",
                             "```typescript",

@@ -110,6 +110,7 @@
             },
             "editMode": {
                 "comment": {
+                    "tags": {},
                     "shortText": "セルが編集モードにあるかどうかを返します。"
                 }
             },
@@ -224,12 +225,13 @@
             },
             "setEditMode": {
                 "comment": {
+                    "tags": {},
                     "text": [
                         "```typescript",
                         "cell.setEditMode(true);",
                         "```"
                     ],
-                    "shortText": "セルの編集モードを開始または終了します。"
+                    "shortText": "このセルの編集モードを開始/終了します。"
                 }
             },
             "update": {
@@ -261,7 +263,7 @@
                         }
                     },
                     "shortText": [
-                        "提供された文字列がセルのテキストと一致する場合、テキストが強調表示になります。",
+                        "提供された文字列がセルのテキストと一致する場合、テキストが強調表示されます。",
                         "```typescript",
                         "this.cell.highlightText('Cell Value', true);",
                         "```"
@@ -289,21 +291,23 @@
         },
         "accessors": {
             "row": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxGridCellComponent",
-                                "tagName": "次のメンバー:"
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridCellComponent",
+                                    "tagName": "次のメンバー:"
+                                }
                             }
-                        }
-                    },
-                    "shortText": [
-                        "セルの行を取得します。",
-                        "```typescript",
-                        "let cellRow = this.cell.row;",
-                        "```"
-                    ]
+                        },
+                        "shortText": [
+                            "セルの行を取得します。",
+                            "```typescript",
+                            "let cellRow = this.cell.row;",
+                            "```"
+                        ]
+                    }
                 }
             },
             "context": {
@@ -467,14 +471,7 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "セルに配置される列の表示 `index` を取得します。",
                             "```typescript",
@@ -594,7 +591,7 @@
                             }
                         },
                         "shortText": [
-                            "セルの列が選択されているかどうかを取得します。",
+                            "セルが選択されているかどうかを取得します。",
                             "```typescript",
                             "let isCellColumnSelected = this.cell.columnSelected;",
                             "```"
@@ -603,25 +600,6 @@
                 }
             },
             "editValue": {
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxGridCellComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "shortText": [
-                            "編集モードのセルの現在の編集値を設定します。",
-                            "セル編集モードのみ。",
-                            "```typescript",
-                            "this.cell.editValue = value;",
-                            "```"
-                        ]
-                    }
-                },
                 "getter": {
                     "comment": {
                         "tags": {
@@ -640,11 +618,31 @@
                             "```"
                         ]
                     }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxGridCellComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "編集モードのセルの現在の編集値を設定します。",
+                            "セル編集モードのみ。",
+                            "```typescript",
+                            "this.cell.editValue = value;",
+                            "```"
+                        ]
+                    }
                 }
             },
             "editable": {
                 "getter": {
                     "comment": {
+                        "tags": {},
                         "shortText": "セルが編集可能かどうかを返します。"
                     }
                 }

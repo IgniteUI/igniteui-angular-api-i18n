@@ -3,6 +3,7 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
+                    "tags": {},
                     "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
                 }
             }
@@ -28,7 +29,6 @@
             },
             "getTransactionLog": {
                 "comment": {
-                    "returns": "All transaction in the service or for the specified record\n",
                     "parameters": {
                         "_id": {
                             "comment": {
@@ -42,17 +42,18 @@
             },
             "undo": {
                 "comment": {
+                    "tags": {},
                     "shortText": "Remove the last transaction if any"
                 }
             },
             "redo": {
                 "comment": {
+                    "tags": {},
                     "shortText": "Applies the last undone transaction if any"
                 }
             },
             "getAggregatedChanges": {
                 "comment": {
-                    "returns": "Collection of aggregated transactions for each changed record\n",
                     "parameters": {
                         "mergeChanges": {
                             "comment": {
@@ -69,18 +70,19 @@
             },
             "getState": {
                 "comment": {
-                    "tags": {
-                        "inheritdoc": {
+                    "parameters": {
+                        "id": {
                             "comment": {
-                                "tagName": "inheritdoc"
+                                "text": "The id of the record"
                             }
                         }
-                    }
+                    },
+                    "tags": {},
+                    "shortText": "Returns the state of the record with provided id"
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "returns": "Value with changes or **null**\n",
                     "parameters": {
                         "id": {
                             "comment": {
@@ -133,6 +135,7 @@
             },
             "startPending": {
                 "comment": {
+                    "tags": {},
                     "shortText": [
                         "Starts pending transactions. All transactions passed after call to startPending",
                         "will not be added to transaction log"
@@ -160,41 +163,21 @@
             "canRedo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Redo stack\n",
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 }
             },
             "canUndo": {
                 "getter": {
                     "comment": {
-                        "returns": "if there are any transactions in the Undo stack\n",
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 }
             },
             "enabled": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "inheritdoc": {
-                                "comment": {
-                                    "tagName": "inheritdoc"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": "Returns whether transaction is enabled for this service"
                     }
                 }

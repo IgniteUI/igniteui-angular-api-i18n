@@ -1,6 +1,20 @@
 {
     "IgxColumnLayoutComponent": {
         "properties": {
+            "children": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets the children columns.",
+                        "```typescript",
+                        "let columnChildren = this.column.children;",
+                        "```",
+                        "```typescript",
+                        "this.column.children = childrenColumns;",
+                        "```"
+                    ]
+                }
+            },
             "searchable": {
                 "comment": {
                     "tags": {
@@ -576,11 +590,13 @@
             },
             "defaultWidth": {
                 "comment": {
+                    "tags": {},
                     "shortText": "hidden"
                 }
             },
             "widthSetByUser": {
                 "comment": {
+                    "tags": {},
                     "shortText": "hidden"
                 }
             },
@@ -731,18 +747,24 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "Gets the width of the column layout.",
                             "```typescript",
                             "let columnGroupWidth = this.columnGroup.width;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "columnLayout": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns a boolean indicating if the column is a `ColumnLayout` for multi-row layout.",
+                            "```typescript",
+                            "let columnGroup =  this.column.columnGroup;",
                             "```"
                         ]
                     }
@@ -772,18 +794,11 @@
             "hidden": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
-                            "Sets the column layout hidden property.",
+                            "Gets whether the column group is hidden.",
                             "```typescript",
-                            "<igx-column-layout [hidden] = \"true\"></igx-column->",
+                            "let isHidden = this.columnGroup.hidden;",
                             "```"
                         ]
                     }
@@ -808,16 +823,9 @@
                 }
             },
             "collapsible": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "Set if the column group is collapsible.",
                             "Default value is `false`",
@@ -827,7 +835,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -848,16 +856,9 @@
                 }
             },
             "expanded": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnGroupComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "Set whether the group is expanded or collapsed initially.",
                             "Applied only if the collapsible property is set to `true`",
@@ -869,7 +870,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -988,6 +989,19 @@
                 },
                 "setter": {
                     "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns if the column group is selectable",
+                            "```typescript",
+                            "let columnGroupSelectable = this.columnGroup.selectable;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "bodyTemplate": {
+                "getter": {
+                    "comment": {
                         "tags": {
                             "memberof": {
                                 "comment": {
@@ -997,9 +1011,29 @@
                             }
                         },
                         "shortText": [
-                            "Returns if the column group is selectable",
+                            "Returns a reference to the body template.",
                             "```typescript",
-                            "let columnGroupSelectable = this.columnGroup.selectable;",
+                            "let bodyTemplate = this.columnGroup.bodyTemplate;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "inlineEditorTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns a reference to the inline editor template.",
+                            "```typescript",
+                            "let inlineEditorTemplate = this.columnGroup.inlineEditorTemplate;",
                             "```"
                         ]
                     }
@@ -1104,16 +1138,9 @@
                 }
             },
             "field": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "Sets/gets the `field` value.",
                             "```typescript",
@@ -1125,7 +1152,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -1229,16 +1256,9 @@
                 }
             },
             "minWidth": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "Sets/gets the minimum `width` of the column.",
                             "Default value is `88`;",
@@ -1251,7 +1271,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -1305,12 +1325,6 @@
                                 }
                             }
                         },
-                        "text": [
-                            "Two-way data binding.",
-                            "```html",
-                            "<igx-column [(pinned)] = \"model.columns[0].isPinned\"></igx-column>",
-                            "```"
-                        ],
                         "shortText": [
                             "Gets whether the column is `pinned`.",
                             "```typescript",
@@ -1598,16 +1612,9 @@
                 }
             },
             "visibleWhenCollapsed": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
+                        "tags": {},
                         "shortText": [
                             "Indicates whether the column will be visible when its parent is collapsed.",
                             "```html",
@@ -1618,7 +1625,7 @@
                         ]
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "memberof": {
@@ -1640,47 +1647,12 @@
                 }
             },
             "pipeArgs": {
-                "setter": {
+                "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": [
-                                        "Pass optional parameters for DatePipe and/or DecimalPipe to format the display value for date and numeric columns.",
-                                        "Accepts an `IColumnPipeArgs` object with any of the `format`, `timezone` and `digitsInfo` properties.",
-                                        "For more details see https://angular.io/api/common/DatePipe and https://angular.io/api/common/DecimalPipe"
-                                    ],
-                                    "tagName": "remarks"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const pipeArgs: IColumnPipeArgs = {",
-                                        "     format: 'longDate',",
-                                        "     timezone: 'UTC',",
-                                        "     digitsInfo: '1.1-2'",
-                                        "}",
-                                        "```",
-                                        "```html",
-                                        "<igx-column dataType=\"date\" [pipeArgs]=\"pipeArgs\"></igx-column>",
-                                        "<igx-column dataType=\"number\" [pipeArgs]=\"pipeArgs\"></igx-column>",
-                                        "```"
-                                    ],
-                                    "tagName": "example"
-                                }
-                            },
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxColumnComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        }
+                        "tags": {}
                     }
                 },
-                "getter": {
+                "setter": {
                     "comment": {
                         "tags": {
                             "remarks": {
