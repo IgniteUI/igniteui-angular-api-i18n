@@ -8,9 +8,8 @@
                 "Example:",
                 "```html",
                 "<button (click)=\"toast.open()\">Show notification</button>",
-                "<igx-toast #toast",
-                "          message=\"Notification displayed\"",
-                "          displayTime=\"1000\">",
+                "<igx-toast #toast displayTime=\"1000\">",
+                "     Notification displayed",
                 "</igx-toast>",
                 "```"
             ],
@@ -57,99 +56,6 @@
                     ]
                 }
             },
-            "ariaLive": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxToastComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Sets/gets the `aria-live` attribute.",
-                        "If not set, `aria-live` will have value `\"polite\"`.",
-                        "```html",
-                        "<igx-toast [ariaLive] = \"'polite'\"></igx-toast>",
-                        "```",
-                        "```typescript",
-                        "let toastAriaLive = this.toast.ariaLive;",
-                        "```"
-                    ]
-                }
-            },
-            "autoHide": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxToastComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Sets/gets whether the toast will be hidden after the `displayTime` is over.",
-                        "Default value is `true`.",
-                        "```html",
-                        "<igx-toast [autoHide] = \"false\"></igx-toast>",
-                        "```",
-                        "```typescript",
-                        "let autoHide = this.toast.autoHide;",
-                        "```"
-                    ]
-                }
-            },
-            "displayTime": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxToastComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Sets/gets the duration of time span(in milliseconds) which the toast will be visible",
-                        "after it is being shown.",
-                        "Default value is `4000`.",
-                        "```html",
-                        "<igx-toast [displayTime] = \"2500\"></igx-toast>",
-                        "```",
-                        "```typescript",
-                        "let displayTime = this.toast.displayTime;",
-                        "```"
-                    ]
-                }
-            },
-            "outlet": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": " `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`.",
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
-                                    "//..",
-                                    "<igx-toast [outlet]=\"outlet\"></igx-toast>",
-                                    "//..",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Gets/Sets the container used for the toast element."
-                }
-            },
             "position": {
                 "comment": {
                     "tags": {
@@ -172,7 +78,48 @@
                     ]
                 }
             },
-            "onOpened": {
+            "ariaLive": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets the `aria-live` attribute.",
+                        "If not set, `aria-live` will have value `\"polite\"`."
+                    ]
+                }
+            },
+            "autoHide": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets whether the element will be hidden after the `displayTime` is over.",
+                        "Default value is `true`."
+                    ]
+                }
+            },
+            "displayTime": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets the duration of time span (in milliseconds) which the element will be visible",
+                        "after it is being shown.",
+                        "Default value is `4000`."
+                    ]
+                }
+            },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`.",
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the container used for the element."
+                }
+            },
+            "opened": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -191,7 +138,7 @@
                     "shortText": "Emits an event after the toggle container is opened."
                 }
             },
-            "onOpening": {
+            "opening": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -210,7 +157,7 @@
                     "shortText": "Emits an event before the toggle container is opened."
                 }
             },
-            "onClosed": {
+            "closed": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -229,7 +176,7 @@
                     "shortText": "Emits an event after the toggle container is closed."
                 }
             },
-            "onClosing": {
+            "closing": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -241,14 +188,14 @@
                         "```html",
                         "<div",
                         " igxToggle",
-                        " (onClosing)='onToggleClosing($event)'>",
+                        " (closing)='onToggleClosing($event)'>",
                         "</div>",
                         "```"
                     ],
                     "shortText": "Emits an event before the toggle container is closed."
                 }
             },
-            "onAppended": {
+            "appended": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -286,12 +233,7 @@
             "close": {
                 "comment": {
                     "tags": {},
-                    "text": [
-                        "```typescript",
-                        "this.toast.close();",
-                        "```"
-                    ],
-                    "shortText": "Hides the toast."
+                    "shortText": "Hides the element."
                 }
             },
             "toggle": {
@@ -324,91 +266,6 @@
             }
         },
         "accessors": {
-            "isVisible": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxToastComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        },
-                        "text": [
-                            "Two-way data binding.",
-                            "```html",
-                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "Enables/Disables the visibility of the toast.",
-                            "If not set, the `isVisible` attribute will have value `false`.",
-                            "```html",
-                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
-                            "```",
-                            "```typescript",
-                            "let isVisible = this.toast.isVisible;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {},
-                        "text": [
-                            "Two-way data binding.",
-                            "```html",
-                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "Enables/Disables the visibility of the toast.",
-                            "If not set, the `isVisible` attribute will have value `false`.",
-                            "```html",
-                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
-                            "```",
-                            "```typescript",
-                            "let isVisible = this.toast.isVisible;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "message": {
-                "getter": {
-                    "comment": {
-                        "tags": {}
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "Place your message in the toast content instead.",
-                                        "Sets/gets the message that will be shown by the toast.",
-                                        "```html",
-                                        "<igx-toast [message]=\"Notification\"></igx-toast>",
-                                        "```",
-                                        "```typescript",
-                                        "let toastMessage = this.toast.message;",
-                                        "```"
-                                    ],
-                                    "tagName": "deprecated"
-                                }
-                            },
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxToastComponent",
-                                    "tagName": "memberof"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "element": {
                 "getter": {
                     "comment": {
@@ -425,6 +282,26 @@
                             "```typescript",
                             "let nativeElement = this.toast.element;",
                             "```"
+                        ]
+                    }
+                }
+            },
+            "isVisible": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Enables/Disables the visibility of the element.",
+                            "If not set, the `isVisible` attribute will have value `false`."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Enables/Disables the visibility of the element.",
+                            "If not set, the `isVisible` attribute will have value `false`."
                         ]
                     }
                 }

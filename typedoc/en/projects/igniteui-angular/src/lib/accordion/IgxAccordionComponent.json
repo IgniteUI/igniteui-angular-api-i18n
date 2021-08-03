@@ -1,0 +1,240 @@
+{
+    "IgxAccordionComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxAccordionModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "accordion",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Layouts",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remark": {
+                    "comment": {
+                        "text": [
+                            "The Ignite UI for Angular Accordion component enables the user to navigate among multiple collapsing panels",
+                            "displayed in a single container.",
+                            "The accordion offers keyboard navigation and API to control the underlying panels' expansion state."
+                        ],
+                        "tagName": "remark"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-accordion>",
+                            "  <igx-expansion-panel *ngFor=\"let panel of panels\">",
+                            "      ...",
+                            "  </igx-expansion-panel>",
+                            "</igx-accordion>",
+                            "```"
+                        ],
+                        "tagName": "example"
+                    }
+                }
+            },
+            "shortText": "IgxAccordion is a container-based component that contains that can house multiple expansion panels."
+        },
+        "properties": {
+            "id": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Get/Set the `id` of the accordion component.",
+                        "Default value is `\"igx-accordion-0\"`;",
+                        "```html",
+                        "<igx-accordion id=\"my-first-accordion\"></igx-accordion>",
+                        "```",
+                        "```typescript",
+                        "const accordionId = this.accordion.id;",
+                        "```"
+                    ]
+                }
+            },
+            "singleBranchExpand": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-accordion [singleBranchExpand]=\"true\">",
+                        "...",
+                        "</igx-accordion>",
+                        "```",
+                        "```typescript",
+                        "this.accordion.singleBranchExpand = false;",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Get/Set how the accordion handles the expansion of the projected expansion panels.",
+                        "If set to `true`, only a single panel can be expanded at a time, collapsing all others"
+                    ]
+                }
+            },
+            "panelExpanding": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "This event is cancelable.",
+                                    "```html",
+                                    "<igx-accordion (panelExpanding)=\"handlePanelExpanding($event)\">",
+                                    "</igx-accordion>",
+                                    "```",
+                                    "```typescript",
+                                    "public handlePanelExpanding(event: IExpansionPanelCancelableEventArgs){",
+                                    " const expandedPanel: IgxExpansionPanelComponent = event.panel;",
+                                    " if (expandedPanel.disabled) {",
+                                    "     event.cancel = true;",
+                                    " }",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before a panel is expanded."
+                }
+            },
+            "panelExpanded": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-accordion (panelExpanded)=\"handlePanelExpanded($event)\">",
+                        "</igx-accordion>",
+                        "```",
+                        "```typescript",
+                        "public handlePanelExpanded(event: IExpansionPanelCancelableEventArgs) {",
+                        " const expandedPanel: IgxExpansionPanelComponent = event.panel;",
+                        " console.log(\"Panel is expanded: \", expandedPanel.id);",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "Emitted after a panel has been expanded."
+                }
+            },
+            "panelCollapsing": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "This event is cancelable.",
+                                    "```html",
+                                    "<igx-accordion (panelCollapsing)=\"handlePanelCollapsing($event)\">",
+                                    "</igx-accordion>",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before a panel is collapsed."
+                }
+            },
+            "panelCollapsed": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-accordion (panelCollapsed)=\"handlePanelCollapsed($event)\">",
+                        "</igx-accordion>",
+                        "```"
+                    ],
+                    "shortText": "Emitted after a panel has been collapsed."
+                }
+            }
+        },
+        "methods": {
+            "expandAll": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "accordion.expandAll();",
+                        "```"
+                    ],
+                    "shortText": "Expands all collapsed expansion panels."
+                }
+            },
+            "collapseAll": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "accordion.collapseAll();",
+                        "```"
+                    ],
+                    "shortText": "Collapses all expanded expansion panels."
+                }
+            }
+        },
+        "accessors": {
+            "animationSettings": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-accordion [animationSettings]=\"customAnimationSettings\"></igx-accordion>",
+                            "```",
+                            "```typescript",
+                            "const customAnimationSettings: ToggleAnimationSettings = {",
+                            "     openAnimation: growVerIn,",
+                            "     closeAnimation: growVerOut",
+                            "};",
+                            "this.accordion.animationSettings = customAnimationSettings;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set the animation settings that panels should use when expanding/collpasing."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-accordion [animationSettings]=\"customAnimationSettings\"></igx-accordion>",
+                            "```",
+                            "```typescript",
+                            "const customAnimationSettings: ToggleAnimationSettings = {",
+                            "     openAnimation: growVerIn,",
+                            "     closeAnimation: growVerOut",
+                            "};",
+                            "this.accordion.animationSettings = customAnimationSettings;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set the animation settings that panels should use when expanding/collpasing."
+                    }
+                }
+            },
+            "panels": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "const panels: IgxExpansionPanelComponent[] = this.accordion.panels;",
+                            "```"
+                        ],
+                        "shortText": "Get all panels."
+                    }
+                }
+            }
+        }
+    }
+}

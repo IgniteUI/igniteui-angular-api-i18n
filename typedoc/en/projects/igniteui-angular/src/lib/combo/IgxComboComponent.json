@@ -1,5 +1,56 @@
 {
     "IgxComboComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxComboModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-combo-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "combobox, combo selection",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Grids & Lists",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "It provides the ability to filter items as well as perform single or multiple seleciton with the provided data.",
+                            "Additionally, it exposes keyboard navigation and custom styling capabilities."
+                        ],
+                        "tagName": "remarks"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-combo [itemsMaxHeight]=\"250\" [data]=\"locationData\"",
+                            " [displayKey]=\"'field'\" [valueKey]=\"'field'\"",
+                            " placeholder=\"Location(s)\" searchPlaceholder=\"Search...\">",
+                            "</igx-combo>",
+                            "```"
+                        ],
+                        "tagName": "example"
+                    }
+                }
+            },
+            "shortText": " Represents a drop-down list that provides editable functionalities, allowing users to choose an option from a predefined list."
+        },
         "properties": {
             "overlaySettings": {
                 "comment": {
@@ -210,89 +261,89 @@
                     "shortText": "The custom template, if any, that should be used when rendering the combo CLEAR button"
                 }
             },
-            "onSelectionChange": {
+            "selectionChanging": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onSelectionChange)='handleSelection()'></igx-combo>",
+                        "<igx-combo (selectionChanging)='handleSelection()'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted when item selection is changing, before the selection completes"
                 }
             },
-            "onOpening": {
+            "opening": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo onOpening='handleOpening($event)'></igx-combo>",
+                        "<igx-combo opening='handleOpening($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted before the dropdown is opened"
                 }
             },
-            "onOpened": {
+            "opened": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onOpened)='handleOpened()'></igx-combo>",
+                        "<igx-combo (opened)='handleOpened($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted after the dropdown is opened"
                 }
             },
-            "onClosing": {
+            "closing": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onClosing)='handleClosing($event)'></igx-combo>",
+                        "<igx-combo (closing)='handleClosing($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted before the dropdown is closed"
                 }
             },
-            "onClosed": {
+            "closed": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onClosed)='handleClosed()'></igx-combo>",
+                        "<igx-combo (closed)='handleClosed($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted after the dropdown is closed"
                 }
             },
-            "onAddition": {
+            "addition": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onAddition)='handleAdditionEvent()'></igx-combo>",
+                        "<igx-combo (addition)='handleAdditionEvent($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted when an item is being added to the data collection"
                 }
             },
-            "onSearchInput": {
+            "searchInputUpdate": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onSearchInput)='handleSearchInputEvent()'></igx-combo>",
+                        "<igx-combo (searchInputUpdate)='handleSearchInputEvent($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted when the value of the search input changes (e.g. typing, pasting, clear, etc.)"
                 }
             },
-            "onDataPreLoad": {
+            "dataPreLoad": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onDataPreLoad)='handleDataPreloadEvent()'></igx-combo>",
+                        "<igx-combo (dataPreLoad)='handleDataPreloadEvent($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "Emitted when new chunk of data is loaded from the virtualization"
@@ -464,7 +515,7 @@
                     "tags": {},
                     "shortText": [
                         "An @Input property that controls whether the combo's search box",
-                        "should be focused after the `onOpened` event is called",
+                        "should be focused after the `opened` event is called",
                         "When `false`, the combo's list item container will be focused instead"
                     ]
                 }
