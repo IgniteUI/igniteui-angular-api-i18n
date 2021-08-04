@@ -28,7 +28,6 @@
                 },
                 "remarks": {
                     "comment": {
-                        "tags": {},
                         "text": [
                             "範囲の選択が 1 つまたは 2 つの入力フィールドに表示されます。",
                             "デフォルトのテンプレートは単一の*読み取り専用*入力フィールドを表示しますが、",
@@ -40,7 +39,6 @@
                 },
                 "example": {
                     "comment": {
-                        "tags": {},
                         "text": [
                             "```html",
                             "<igx-date-range-picker mode=\"dropdown\"></igx-date-range-picker>",
@@ -424,6 +422,30 @@
             }
         },
         "methods": {
+            "__type": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "private dayFormatter = new Intl.DateTimeFormat(\"en\", { weekday: \"long\" });",
+                                    "private monthFormatter = new Intl.DateTimeFormat(\"en\", { month: \"long\" });",
+                                    "public formatter(date: Date): string {",
+                                    " return `${this.dayFormatter.format(date)} - ${this.monthFormatter.format(date)} - ${date.getFullYear()}`;",
+                                    "}",
+                                    "```",
+                                    "```html",
+                                    "<igx-date-range-picker [formatter]=\"formatter\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "選択した日付または渡された日付に適用されるカスタム フォーマッター関数。"
+                }
+            },
             "open": {
                 "comment": {
                     "tags": {

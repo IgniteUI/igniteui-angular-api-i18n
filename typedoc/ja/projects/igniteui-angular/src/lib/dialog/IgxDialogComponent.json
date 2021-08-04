@@ -1,10 +1,11 @@
 {
     "IgxDialogComponent": {
         "comment": {
+            "tags": {},
             "text": [
-                "Ignite UI Dialog Window はダイアログ ウィンドウをユーザーに表示します。簡易なメッセージを表示するか、サインイン フォームなどの複雑なビジュアルを表示できます。",
+                "Ignite UI Dialog Window はダイアログ ウィンドウをユーザーに表示します。",
+                "簡易なメッセージを表示するか、サインイン フォームなどの複雑なビジュアルを表示できます。",
                 "カスタム アクションのために提供される右および左ボタンもあります。",
-                "",
                 "例:",
                 "```html",
                 "<button (click)=\"form.open()\">Show Dialog</button>",
@@ -37,7 +38,7 @@
                         "`id` 属性の値を設定する @Input プロパティ。提供されていない場合、自動的に生成されます。",
                         "```html",
                         "<igx-dialog [id]=\"'igx-dialog-56'\" #alert title=\"Notification\"",
-                        " leftButtonLabel=\"OK\" (onLeftButtonSelect)=\"alert.close()\">",
+                        " leftButtonLabel=\"OK\" (leftButtonSelect)=\"alert.close()\">",
                         "</igx-dialog>",
                         "```"
                     ]
@@ -49,7 +50,7 @@
                     "shortText": [
                         "ダイアログの `title` を制御する @Input プロパティ。",
                         "```html",
-                        "<igx-dialog title=\"Notification\" #alert leftButtonLabel=\"OK\" (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog title=\"Notification\" #alert leftButtonLabel=\"OK\" (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -60,7 +61,7 @@
                     "shortText": [
                         "ダイアログの `message` を制御する @Input プロパティ。",
                         "```html",
-                        "<igx-dialog message=\"Your email was sent!\" #alert leftButtonLabel=\"OK\" (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog message=\"Your email was sent!\" #alert leftButtonLabel=\"OK\" (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -71,7 +72,7 @@
                     "shortText": [
                         "ダイアログの左ボタンの `label` を設定する @Input プロパティ。",
                         "```html",
-                        "<igx-dialog leftButtonLabel=\"OKAY\" #alert title=\"Notification\"  (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog leftButtonLabel=\"OKAY\" #alert title=\"Notification\"  (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -86,7 +87,7 @@
                         "`fab` タイプ ボタンは円形でシャドウあり。 <br>",
                         "デフォルト値は `flat` です。",
                         "```html",
-                        "<igx-dialog leftButtonType=\"raised\" leftButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog leftButtonType=\"raised\" leftButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -97,7 +98,7 @@
                     "shortText": [
                         "左ボタンの色を設定する @Input プロパティ。プロパティをすべての有効な CSS 色プロパティ値に設定できます。",
                         "```html",
-                        "<igx-dialog leftButtonColor=\"yellow\" leftButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog leftButtonColor=\"yellow\" leftButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -108,7 +109,7 @@
                     "shortText": [
                         "左ボタンの `background-color` を設定する @Input プロパティ。プロパティをすべての有効な CSS 色プロパティ値に設定できます。",
                         "```html",
-                        "<igx-dialog leftButtonBackgroundColor=\"black\" leftButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog leftButtonBackgroundColor=\"black\" leftButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -120,7 +121,7 @@
                         "左ボタンの `ripple` を設定する @Input プロパティ。`ripple` はコンポーネントのクリック/タップをフェードするウェーブのシリーズとしてアニメーションを再生します。",
                         "プロパティをすべての有効な CSS 色プロパティ値に設定できます。",
                         "```html",
-                        "<igx-dialog leftButtonRipple=\"green\" leftButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog leftButtonRipple=\"green\" leftButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -131,7 +132,7 @@
                     "shortText": [
                         "ダイアログの右ボタンの `label` を設定する @Input プロパティ。",
                         "```html",
-                        "<igx-dialog rightButtonLabel=\"OKAY\" #alert title=\"Notification\"  (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog rightButtonLabel=\"OKAY\" #alert title=\"Notification\"  (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -146,7 +147,7 @@
                         "`fab` タイプ ボタンは円形でシャドウあり。<br>",
                         "デフォルト値は `flat` です。",
                         "```html",
-                        "<igx-dialog rightButtonType=\"fab\" rightButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog rightButtonType=\"fab\" rightButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -157,7 +158,7 @@
                     "shortText": [
                         "右ボタンの `color` を設定する @Input プロパティ。プロパティをすべての有効な CSS 色プロパティ値に設定できます。",
                         "```html",
-                        "<igx-dialog rightButtonColor=\"yellow\" rightButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog rightButtonColor=\"yellow\" rightButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -168,7 +169,7 @@
                     "shortText": [
                         "右ボタンの `background-color` を設定する @Input プロパティ。プロパティをすべての有効な CSS 色プロパティ値に設定できます。",
                         "```html",
-                        "<igx-dialog rightButtonBackgroundColor=\"black\" rightButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog rightButtonBackgroundColor=\"black\" rightButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
@@ -179,79 +180,79 @@
                     "shortText": [
                         "右ボタンの `ripple` を設定する @Input プロパティ。",
                         "```html",
-                        "<igx-dialog rightButtonRipple=\"green\" rightButtonLabel=\"OKAY\" #alert (onLeftButtonSelect)=\"alert.close()\"></igx-dialog>",
+                        "<igx-dialog rightButtonRipple=\"green\" rightButtonLabel=\"OKAY\" #alert (leftButtonSelect)=\"alert.close()\"></igx-dialog>",
                         "```"
                     ]
                 }
             },
-            "onOpen": {
+            "opening": {
                 "comment": {
                     "tags": {},
                     "shortText": [
                         "ダイアログが開く前に発生されるイベント。",
                         "```html",
-                        "<igx-dialog (onOpen)=\"onDialogOpenHandler($event)\" (onLeftButtonSelect)=\"dialog.close()\" rightButtonLabel=\"OK\">",
+                        "<igx-dialog (opening)=\"onDialogOpenHandler($event)\" (leftButtonSelect)=\"dialog.close()\" rightButtonLabel=\"OK\">",
                         "</igx-dialog>",
                         "```"
                     ]
                 }
             },
-            "onOpened": {
+            "opened": {
                 "comment": {
                     "tags": {},
                     "shortText": [
                         "ダイアログが開いた後に発生されるイベント。",
                         "```html",
-                        "<igx-dialog (onOpened)=\"onDialogOpenedHandler($event)\" (onLeftButtonSelect)=\"dialog.close()\" rightButtonLabel=\"OK\">",
+                        "<igx-dialog (onOpened)=\"onDialogOpenedHandler($event)\" (leftButtonSelect)=\"dialog.close()\" rightButtonLabel=\"OK\">",
                         "</igx-dialog>",
                         "```"
                     ]
                 }
             },
-            "onClose": {
+            "closing": {
                 "comment": {
                     "tags": {},
                     "shortText": [
                         "ダイアログが閉じる前に発生されるイベント。",
                         "```html",
-                        "<igx-dialog (onClose)=\"onDialogCloseHandler($event)\" title=\"Confirmation\" leftButtonLabel=\"Cancel\" rightButtonLabel=\"OK\">",
+                        "<igx-dialog (closing)=\"onDialogCloseHandler($event)\" title=\"Confirmation\" leftButtonLabel=\"Cancel\" rightButtonLabel=\"OK\">",
                         "</igx-dialog>",
                         "```"
                     ]
                 }
             },
-            "onClosed": {
+            "closed": {
                 "comment": {
                     "tags": {},
                     "shortText": [
                         "ダイアログが閉じた後に発生されるイベント。",
                         "```html",
-                        "<igx-dialog (onClosed)=\"onDialogClosedHandler($event)\" title=\"Confirmation\" leftButtonLabel=\"Cancel\" rightButtonLabel=\"OK\">",
+                        "<igx-dialog (closed)=\"onDialogClosedHandler($event)\" title=\"Confirmation\" leftButtonLabel=\"Cancel\" rightButtonLabel=\"OK\">",
                         "</igx-dialog>",
                         "```"
                     ]
                 }
             },
-            "onLeftButtonSelect": {
+            "leftButtonSelect": {
                 "comment": {
                     "tags": {},
                     "shortText": [
                         "左ボタンがクリックしたときに発生されるイベント。",
                         "```html",
-                        "<igx-dialog (onLeftButtonSelect)=\"onDialogOKSelected($event)\" #dialog leftButtonLabel=\"OK\" rightButtonLabel=\"Cancel\">",
+                        "<igx-dialog (leftButtonSelect)=\"onDialogOKSelected($event)\" #dialog leftButtonLabel=\"OK\" rightButtonLabel=\"Cancel\">",
                         "</igx-dialog>",
                         "```"
                     ]
                 }
             },
-            "onRightButtonSelect": {
+            "rightButtonSelect": {
                 "comment": {
                     "tags": {},
                     "shortText": [
                         "右ボタンがクリックしたときに発生されるイベント。",
                         "```html",
-                        "<igx-dialog (onRightButtonSelect)=\"onDialogOKSelected($event)\"",
-                        "#dialog title=\"Confirmation\" (onLeftButtonSelect)=\"dialog.close()\" rightButtonLabel=\"OK\"",
+                        "<igx-dialog (rightButtonSelect)=\"onDialogOKSelected($event)\"",
+                        "#dialog title=\"Confirmation\" (leftButtonSelect)=\"dialog.close()\" rightButtonLabel=\"OK\"",
                         "rightButtonRipple=\"#4CAF50\" closeOnOutsideSelect=\"true\">",
                         "</igx-dialog>",
                         "```"
@@ -374,8 +375,8 @@
                         "shortText": [
                             "「ダイアログ以外のクリックで閉じる」機能を有効にする @Input プロパティ。デフォルトで無効です。",
                             "```html",
-                            "<igx-dialog closeOnOutsideSelect=\"true\" leftButtonLabel=\"Cancel\" (onLeftButtonSelect)=\"dialog.close()\"",
-                            "rightButtonLabel=\"OK\" rightButtonRipple=\"#4CAF50\" (onRightButtonSelect)=\"onDialogOKSelected($event)\">",
+                            "<igx-dialog closeOnOutsideSelect=\"true\" leftButtonLabel=\"Cancel\" (leftButtonSelect)=\"dialog.close()\"",
+                            "rightButtonLabel=\"OK\" rightButtonRipple=\"#4CAF50\" (rightButtonSelect)=\"onDialogOKSelected($event)\">",
                             "</igx-dialog>",
                             "```"
                         ]
@@ -387,8 +388,8 @@
                         "shortText": [
                             "「ダイアログ以外のクリックで閉じる」機能を有効にする @Input プロパティ。デフォルトで無効です。",
                             "```html",
-                            "<igx-dialog closeOnOutsideSelect=\"true\" leftButtonLabel=\"Cancel\" (onLeftButtonSelect)=\"dialog.close()\"",
-                            "rightButtonLabel=\"OK\" rightButtonRipple=\"#4CAF50\" (onRightButtonSelect)=\"onDialogOKSelected($event)\">",
+                            "<igx-dialog closeOnOutsideSelect=\"true\" leftButtonLabel=\"Cancel\" (leftButtonSelect)=\"dialog.close()\"",
+                            "rightButtonLabel=\"OK\" rightButtonRipple=\"#4CAF50\" (rightButtonSelect)=\"onDialogOKSelected($event)\">",
                             "</igx-dialog>",
                             "```"
                         ]

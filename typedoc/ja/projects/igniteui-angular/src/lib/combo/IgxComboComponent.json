@@ -1,5 +1,56 @@
 {
     "IgxComboComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxComboModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-combo-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "combobox, combo selection",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Grids & Lists",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "項目をフィルターする機能、および提供されたデータで単一または複数の選択を実行する機能を提供します。",
+                            "また、キーボード ナビゲーションおよびカスタム スタイル設定機能を公開します。"
+                        ],
+                        "tagName": "備考:"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-combo [itemsMaxHeight]=\"250\" [data]=\"locationData\"",
+                            " [displayKey]=\"'field'\" [valueKey]=\"'field'\"",
+                            " placeholder=\"Location(s)\" searchPlaceholder=\"Search...\">",
+                            "</igx-combo>",
+                            "```"
+                        ],
+                        "tagName": "例:"
+                    }
+                }
+            },
+            "shortText": "編集可能な機能を提供するドロップダウン リストを表します。ユーザーは定義済みのリストからオプションを選択できます。"
+        },
         "properties": {
             "overlaySettings": {
                 "comment": {
@@ -210,89 +261,89 @@
                     "shortText": "カスタム テンプレートがある場合は、コンボ CLEAR (開く/閉じる) ボタンを描画するために使用されます。"
                 }
             },
-            "onSelectionChange": {
+            "selectionChanging": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onSelectionChange)='handleSelection()'></igx-combo>",
+                        "<igx-combo (selectionChanging)='handleSelection()'></igx-combo>",
                         "```"
                     ],
                     "shortText": "選択が完了する前に項目の選択が変更されたときに発生されます。"
                 }
             },
-            "onOpening": {
+            "opening": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo onOpening='handleOpening($event)'></igx-combo>",
+                        "<igx-combo opening='handleOpening($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "ドロップダウンが開く前に発生されます。"
                 }
             },
-            "onOpened": {
+            "opened": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onOpened)='handleOpened()'></igx-combo>",
+                        "<igx-combo (opened)='handleOpened($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "ドロップダウンが開いた後に発生されます。"
                 }
             },
-            "onClosing": {
+            "closing": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onClosing)='handleClosing($event)'></igx-combo>",
+                        "<igx-combo (closing)='handleClosing($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "ドロップダウンが閉じる前に発生されます。"
                 }
             },
-            "onClosed": {
+            "closed": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onClosed)='handleClosed()'></igx-combo>",
+                        "<igx-combo (closed)='handleClosed($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "ドロップダウンが閉じられた後に発生されます。"
                 }
             },
-            "onAddition": {
+            "addition": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onAddition)='handleAdditionEvent()'></igx-combo>",
+                        "<igx-combo (addition)='handleAdditionEvent($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "項目がデータ コレクションに追加されているときに発生されます。"
                 }
             },
-            "onSearchInput": {
+            "searchInputUpdate": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onSearchInput)='handleSearchInputEvent()'></igx-combo>",
+                        "<igx-combo (searchInputUpdate)='handleSearchInputEvent($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "検索入力の値が変更 (入力、貼り付け、クリアなど) するときに発生されます。"
                 }
             },
-            "onDataPreLoad": {
+            "dataPreLoad": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (onDataPreLoad)='handleDataPreloadEvent()'></igx-combo>",
+                        "<igx-combo (dataPreLoad)='handleDataPreloadEvent($event)'></igx-combo>",
                         "```"
                     ],
                     "shortText": "新しいデータの塊が仮想化から読み込まれたときに発生されます。"
@@ -463,7 +514,7 @@
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "`onOpened` イベントが呼び出された後に",
+                        "`opened` イベントが呼び出された後に",
                         "コンボの検索ボックスにフォーカスするかどうかを制御する ",
                         "@Inputプロパティ。"
                     ]
