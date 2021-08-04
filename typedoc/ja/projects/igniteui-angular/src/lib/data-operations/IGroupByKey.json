@@ -4,7 +4,7 @@
             "length": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Gets or sets the length of the array. This is a number one higher than the highest index in the array."
+                    "shortText": "配列の長さを取得または設定します。これは、配列の最上位のインデックス + 1 の数値です。"
                 }
             }
         },
@@ -14,28 +14,28 @@
                     "parameters": {
                         "iterable": {
                             "comment": {
-                                "text": "An iterable object to convert to an array."
+                                "text": "配列に変換する反復可能なオブジェクト。"
                             }
                         },
                         "mapfn": {
                             "comment": {
-                                "text": "A mapping function to call on every element of the array."
+                                "text": "配列のすべての要素で呼び出すマッピング関数。"
                             }
                         },
                         "thisArg": {
                             "comment": {
-                                "text": "Value of 'this' used to invoke the mapfn."
+                                "text": "mapfn を呼び出すために使用される 'this' の値。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Creates an array from an iterable object."
+                    "shortText": "反復可能なオブジェクトから配列を作成します。"
                 }
             },
             "toLocaleString": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Returns a string representation of an array. The elements are converted to string using their toLocaleString methods."
+                    "shortText": "配列の文字列表示を返します。要素が toLocaleString メソッドを使用して文字列に変換されます。"
                 }
             },
             "push": {
@@ -43,12 +43,12 @@
                     "parameters": {
                         "items": {
                             "comment": {
-                                "text": "New elements to add to the array."
+                                "text": "配列に追加する新しい要素。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Appends new elements to the end of an array, and returns the new length of the array."
+                    "shortText": "新しい要素を配列の最後に追加し、配列の新しい長さを返します。"
                 }
             },
             "concat": {
@@ -56,14 +56,14 @@
                     "parameters": {
                         "items": {
                             "comment": {
-                                "text": "Additional arrays and/or items to add to the end of the array."
+                                "text": "配列の最後に追加する追加の配列または項目。"
                             }
                         }
                     },
                     "tags": {},
                     "shortText": [
-                        "Combines two or more arrays.",
-                        "This method returns a new array without modifying any existing arrays."
+                        "2 つ以上の配列を結合します。",
+                        "このメソッドは、既存の配列を変更せずに新しい配列を返します。"
                     ]
                 }
             },
@@ -72,20 +72,20 @@
                     "parameters": {
                         "separator": {
                             "comment": {
-                                "text": "A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma."
+                                "text": "結果の文字列で要素を次の要素と区切る文字列です。使用しない場合、要素はコンマで区切ります。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Adds all the elements of an array into a string, separated by the specified separator string."
+                    "shortText": "指定したセパレーター文字列で区切られた配列のすべての要素を文字列に追加します。"
                 }
             },
             "shift": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Removes the first element from an array and returns it.",
-                        "If the array is empty, undefined is returned and the array is not modified."
+                        "最初の要素を配列から削除して要素を返します。",
+                        "配列が空の場合、undefined が返され、配列は変更されません。"
                     ]
                 }
             },
@@ -95,9 +95,9 @@
                         "compareFn": {
                             "comment": {
                                 "text": [
-                                    "Function used to determine the order of the elements. It is expected to return",
-                                    "a negative value if first argument is less than second argument, zero if they're equal and a positive",
-                                    "value otherwise. If omitted, the elements are sorted in ascending, ASCII character order.",
+                                    "要素の順序を決定する関数。",
+                                    "最初の引数が 2 番目の引数より小さい場合、負の値を返します。等しい場合は 0 を返し、そうでない場合は正の値を返します。",
+                                    "使用しない場合、要素は降順で ASCII 文字の順で並べ替えます。",
                                     "```ts",
                                     "[11,2,22,1].sort((a, b) => a - b)",
                                     "```"
@@ -107,8 +107,8 @@
                     },
                     "tags": {},
                     "shortText": [
-                        "Sorts an array in place.",
-                        "This method mutates the array and returns a reference to the same array."
+                        "配列をその場で並べ替えます。",
+                        "このメソッドは配列を変更し、同じ配列への参照を返します。"
                     ]
                 }
             },
@@ -117,29 +117,29 @@
                     "parameters": {
                         "start": {
                             "comment": {
-                                "text": "The zero-based location in the array from which to start removing elements."
+                                "text": "要素の削除操作を開始する配列内の 0 から始まる場所。"
                             }
                         },
                         "deleteCount": {
                             "comment": {
-                                "text": "The number of elements to remove."
+                                "text": "削除する要素の数。"
                             }
                         },
                         "items": {
                             "comment": {
-                                "text": "Elements to insert into the array in place of the deleted elements."
+                                "text": "配列内の削除された要素の代わりに挿入される要素。"
                             }
                         }
                     },
                     "tags": {
                         "returns": {
                             "comment": {
-                                "text": "An array containing the elements that were deleted.",
+                                "text": "削除された要素を含む配列。",
                                 "tagName": "returns"
                             }
                         }
                     },
-                    "shortText": "Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements."
+                    "shortText": "要素を配列から削除し、オプションに新しい要素を同じ場所に挿入します。削除した要素を返します。"
                 }
             },
             "unshift": {
@@ -147,12 +147,12 @@
                     "parameters": {
                         "items": {
                             "comment": {
-                                "text": "Elements to insert at the start of the array."
+                                "text": "配列の始点に挿入される要素。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Inserts new elements at the start of an array, and returns the new length of the array."
+                    "shortText": "配列の始点に新しい要素を挿入し、配列の新しい長さを返します。"
                 }
             },
             "lastIndexOf": {
@@ -160,17 +160,17 @@
                     "parameters": {
                         "searchElement": {
                             "comment": {
-                                "text": "The value to locate in the array."
+                                "text": "配列内で検索する値。"
                             }
                         },
                         "fromIndex": {
                             "comment": {
-                                "text": "The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array."
+                                "text": "逆方向の検索を開始する配列インデックス。fromIndex を使用しない場合、検索は配列の最後のインデックスから開始します。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Returns the index of the last occurrence of a specified value in an array, or -1 if it is not present."
+                    "shortText": "配列内の指定された値の最後の出現のインデックスを返します。値が存在しない場合は -1 を返します。"
                 }
             },
             "every": {
@@ -179,23 +179,23 @@
                         "predicate": {
                             "comment": {
                                 "text": [
-                                    "A function that accepts up to three arguments. The every method calls",
-                                    "the predicate function for each element in the array until the predicate returns a value",
-                                    "which is coercible to the Boolean value false, or until the end of the array."
+                                    "引数を 3 つまで許容する関数。",
+                                    "各メソッドは、述語がブール値 false に強制可能な値を返すまで、または配列の最後まで、",
+                                    "配列の各要素に対して述語関数を呼び出します。"
                                 ]
                             }
                         },
                         "thisArg": {
                             "comment": {
                                 "text": [
-                                    "An object to which the this keyword can refer in the predicate function.",
-                                    "If thisArg is omitted, undefined is used as the this value."
+                                    "predicate 関数内でキーワードを参照するオブジェクト。",
+                                    "thisArg を使用しない場合、undefined が値として使用されます。"
                                 ]
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Determines whether all the members of an array satisfy the specified test."
+                    "shortText": "配列のすべてのメンバーが指定したテストをパスするかどうかを決定します。"
                 }
             },
             "some": {
@@ -204,23 +204,23 @@
                         "predicate": {
                             "comment": {
                                 "text": [
-                                    "A function that accepts up to three arguments. The some method calls",
-                                    "the predicate function for each element in the array until the predicate returns a value",
-                                    "which is coercible to the Boolean value true, or until the end of the array."
+                                    "A引数を 3 つまで許容する関数。",
+                                    "every メソッドは、predicate がブール値 false に強制可能な値を返すまで、または配列の最後まで、",
+                                    "配列の各要素に対して predicate 関数を呼び出します。"
                                 ]
                             }
                         },
                         "thisArg": {
                             "comment": {
                                 "text": [
-                                    "An object to which the this keyword can refer in the predicate function.",
-                                    "If thisArg is omitted, undefined is used as the this value."
+                                    "predicate 関数内でキーワードを参照するオブジェクト。",
+                                    "thisArg を使用しない場合、undefined が値として使用されます。"
                                 ]
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Determines whether the specified callback function returns true for any element of an array."
+                    "shortText": "指定したコールバック関数が配列の任意の要素のために true を返すかどうかを決定します。"
                 }
             },
             "map": {
@@ -228,17 +228,17 @@
                     "parameters": {
                         "callbackfn": {
                             "comment": {
-                                "text": "A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array."
+                                "text": "引数を 3 つまで許容する関数。map メソッドは配列の各要素に一度 callbackfn 関数を呼び出します。"
                             }
                         },
                         "thisArg": {
                             "comment": {
-                                "text": "An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value."
+                                "text": "callbackfn 関数内でキーワードを参照するオブジェクト。thisArg を使用しない場合、undefined が値として使用されます。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Calls a defined callback function on each element of an array, and returns an array that contains the results."
+                    "shortText": "定義した callback 関数を配列の各要素に呼び出し、結果を含む配列を返します。"
                 }
             },
             "filter": {
@@ -246,17 +246,17 @@
                     "parameters": {
                         "predicate": {
                             "comment": {
-                                "text": "A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array."
+                                "text": "引数を 3 つまで許容する関数。filter メソッドは、配列の各要素に対して predicate 関数を 1 回呼び出します。"
                             }
                         },
                         "thisArg": {
                             "comment": {
-                                "text": "An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value."
+                                "text": "predicate 関数内でキーワードを参照するオブジェクト。 thisArg を使用しない場合、undefined が値として使用されます。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Returns the elements of an array that meet the condition specified in a callback function."
+                    "shortText": "callback 関数に指定した条件に合う配列の要素を返します。"
                 }
             },
             "reduce": {
@@ -264,17 +264,17 @@
                     "parameters": {
                         "callbackfn": {
                             "comment": {
-                                "text": "A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array."
+                                "text": "引数を 4 つまで許容する関数。reduce メソッドは配列の各要素に一度 callbackfn 関数を呼び出します。"
                             }
                         },
                         "initialValue": {
                             "comment": {
-                                "text": "If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value."
+                                "text": "initialValue を指定した場合、累積を開始する最初の値として使用されます。callbackfn への最初の呼び出しは、この値を配列の値の代わりに引数として提供します。"
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function."
+                    "shortText": "指定した callback 関数を配列のすべての要素に呼び出します。callback 関数の戻り値は累積された結果で、callback 関数への次の呼び出しの引数として提供されます。"
                 }
             },
             "find": {
@@ -283,25 +283,25 @@
                         "predicate": {
                             "comment": {
                                 "text": [
-                                    "find calls predicate once for each element of the array, in ascending",
-                                    "order, until it finds one where predicate returns true. If such an element is found, find",
-                                    "immediately returns that element value. Otherwise, find returns undefined."
+                                    "find は、昇順で述語が true を返すまで配列の各要素に述語を呼び出します。",
+                                    "要素が見つかった場合、find はただちに要素の値を返します。",
+                                    "そうでない場合、find は undefine を返します。"
                                 ]
                             }
                         },
                         "thisArg": {
                             "comment": {
                                 "text": [
-                                    "If provided, it will be used as the this value for each invocation of",
-                                    "predicate. If it is not provided, undefined is used instead."
+                                    "指定した場合、述語の各起動にこの値として使用されます。",
+                                    "指定しない場合、undefined が使用されます。"
                                 ]
                             }
                         }
                     },
                     "tags": {},
                     "shortText": [
-                        "Returns the value of the first element in the array where predicate is true, and undefined",
-                        "otherwise."
+                        "配列で最初の述語が true の要素の値を返します。ない場合に undefined ",
+                        "を返します。"
                     ]
                 }
             },
@@ -310,40 +310,40 @@
                     "parameters": {
                         "value": {
                             "comment": {
-                                "text": "value to fill array section with"
+                                "text": "配列の塗りつぶしを開始するインデックスで配列セクションを塗りつぶす値。"
                             }
                         },
                         "start": {
                             "comment": {
                                 "text": [
-                                    "index to start filling the array at. If start is negative, it is treated as",
-                                    "length+start where length is the length of the array."
+                                    "配列の塗りつぶしを開始するインデックスで配列セクションを塗りつぶす値。",
+                                    "start が負数の場合、lenght+start (lenght は配列の長さ) として使用されます。"
                                 ]
                             }
                         },
                         "end": {
                             "comment": {
                                 "text": [
-                                    "index to stop filling the array at. If end is negative, it is treated as",
-                                    "length+end."
+                                    "フィルを停止するインデックス。",
+                                    "end が負数の場合、lenght+end として使用されます。"
                                 ]
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": "Returns the this object after filling the section identified by start and end with value"
+                    "shortText": "開始および終了インデックスの間のセクションを値に設定した後に this オブジェクトを返します。"
                 }
             },
             "entries": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Returns an iterable of key, value pairs for every entry in the array"
+                    "shortText": "配列の各エントリのためにキーと値ペアの列挙子を返します。"
                 }
             },
             "values": {
                 "comment": {
                     "tags": {},
-                    "shortText": "Returns an iterable of values in the array"
+                    "shortText": "配列の値の列挙子を返します。"
                 }
             },
             "[iterator]": {
