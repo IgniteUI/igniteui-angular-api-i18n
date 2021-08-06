@@ -1,0 +1,239 @@
+{
+    "IgxAccordionComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxAccordionModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "accordion",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Layouts",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remark": {
+                    "comment": {
+                        "text": [
+                            "Ignite UI for Angular Accordion コンポーネントを使用すると、単一のコンテナーに表示された複数の縮小パネル間を移動できます。",
+                            "Accordion は、基になるパネルの展開状態を制御するキーボード ナビゲーションと API を提供します。"
+                        ],
+                        "tagName": "備考:"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-accordion>",
+                            "  <igx-expansion-panel *ngFor=\"let panel of panels\">",
+                            "      ...",
+                            "  </igx-expansion-panel>",
+                            "</igx-accordion>",
+                            "```"
+                        ],
+                        "tagName": "例:"
+                    }
+                }
+            },
+            "shortText": "IgxAccordion は、複数の展開パネルを収容できるコンテナー ベースのコンポーネントです。"
+        },
+        "properties": {
+            "id": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "アコーディオン コンポーネントの `id` を取得または設定します。",
+                        "デフォルト値は `.igx-accordion-0.` です。",
+                        "```html",
+                        "<igx-accordion id=\"my-first-accordion\"></igx-accordion>",
+                        "```",
+                        "```typescript",
+                        "const accordionId = this.accordion.id;",
+                        "```"
+                    ]
+                }
+            },
+            "singleBranchExpand": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-accordion [singleBranchExpand]=\"true\">",
+                        "...",
+                        "</igx-accordion>",
+                        "```",
+                        "```typescript",
+                        "this.accordion.singleBranchExpand = false;",
+                        "```"
+                    ],
+                    "shortText": [
+                        "アコーディオンが投影される展開パネルの展開を処理する方法を取得/設定します。",
+                        "`true` に設定すると、一度に展開できるパネルは 1 つのみで、その他のブランチはすべて縮小されます。"
+                    ]
+                }
+            },
+            "panelExpanding": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "このイベントはキャンセルできます。",
+                                    "```html",
+                                    "<igx-accordion (panelExpanding)=\"handlePanelExpanding($event)\">",
+                                    "</igx-accordion>",
+                                    "```",
+                                    "```typescript",
+                                    "public handlePanelExpanding(event: IExpansionPanelCancelableEventArgs){",
+                                    " const expandedPanel: IgxExpansionPanelComponent = event.panel;",
+                                    " if (expandedPanel.disabled) {",
+                                    "     event.cancel = true;",
+                                    " }",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "パネルが展開される前に発生します。"
+                }
+            },
+            "panelExpanded": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-accordion (panelExpanded)=\"handlePanelExpanded($event)\">",
+                        "</igx-accordion>",
+                        "```",
+                        "```typescript",
+                        "public handlePanelExpanded(event: IExpansionPanelCancelableEventArgs) {",
+                        " const expandedPanel: IgxExpansionPanelComponent = event.panel;",
+                        " console.log(\"Panel is expanded: \", expandedPanel.id);",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "パネルが展開された後に発生します。"
+                }
+            },
+            "panelCollapsing": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "このイベントはキャンセルできます。",
+                                    "```html",
+                                    "<igx-accordion (panelCollapsing)=\"handlePanelCollapsing($event)\">",
+                                    "</igx-accordion>",
+                                    "```"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "パネルが縮小される前に発生します。"
+                }
+            },
+            "panelCollapsed": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-accordion (panelCollapsed)=\"handlePanelCollapsed($event)\">",
+                        "</igx-accordion>",
+                        "```"
+                    ],
+                    "shortText": "パネルが縮小された後に発生します。"
+                }
+            }
+        },
+        "methods": {
+            "expandAll": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "accordion.expandAll();",
+                        "```"
+                    ],
+                    "shortText": "縮小されたすべての展開パネルを展開します。"
+                }
+            },
+            "collapseAll": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "accordion.collapseAll();",
+                        "```"
+                    ],
+                    "shortText": "展開されたすべての展開パネルを縮小します。"
+                }
+            }
+        },
+        "accessors": {
+            "animationSettings": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-accordion [animationSettings]=\"customAnimationSettings\"></igx-accordion>",
+                            "```",
+                            "```typescript",
+                            "const customAnimationSettings: ToggleAnimationSettings = {",
+                            "     openAnimation: growVerIn,",
+                            "     closeAnimation: growVerOut",
+                            "};",
+                            "this.accordion.animationSettings = customAnimationSettings;",
+                            "```"
+                        ],
+                        "shortText": "パネルが展開/縮小時に使用するアニメーション設定を取得/設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-accordion [animationSettings]=\"customAnimationSettings\"></igx-accordion>",
+                            "```",
+                            "```typescript",
+                            "const customAnimationSettings: ToggleAnimationSettings = {",
+                            "     openAnimation: growVerIn,",
+                            "     closeAnimation: growVerOut",
+                            "};",
+                            "this.accordion.animationSettings = customAnimationSettings;",
+                            "```"
+                        ],
+                        "shortText": "パネルが展開/縮小時に使用するアニメーション設定を取得/設定します。"
+                    }
+                }
+            },
+            "panels": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "const panels: IgxExpansionPanelComponent[] = this.accordion.panels;",
+                            "```"
+                        ],
+                        "shortText": "すべてのパネルを取得します。"
+                    }
+                }
+            }
+        }
+    }
+}

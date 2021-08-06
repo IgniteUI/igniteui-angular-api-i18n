@@ -9,7 +9,8 @@
                 "```html",
                 "<button (click)=\"snackbar.show()\">Send message</button>",
                 "<div>",
-                "  <igx-snackbar #snackbar message=\"Message sent\">",
+                "  <igx-snackbar #snackbar>",
+                "     Message sent",
                 "  </igx-snackbar>",
                 "</div>",
                 "```"
@@ -42,73 +43,6 @@
                     ]
                 }
             },
-            "ariaLive": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxSnackbarComponent",
-                                "tagName": "memberof"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Sets/gets the `aria-live` attr of the snackbar message container.",
-                        "If not set, the `aria-live` will be `polite`;",
-                        "```html",
-                        "<igx-snackbar [ariaLive]=\"'polite'\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let snackbarAriaLive = this.snackbar.ariaLive;",
-                        "```"
-                    ]
-                }
-            },
-            "isVisible": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "Enables/Disables the visibility of the snackbar.",
-                        "If not set, the `isVisible` attribute will have value `false`.",
-                        "```html",
-                        "<igx-snackbar [isVisible] = \"true\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let isVisible =  this.snackbar.isVisible;",
-                        "```"
-                    ]
-                }
-            },
-            "autoHide": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "Sets/gets if the snackbar will be automatically hidden after the `displayTime` is over.",
-                        "Default value is `true`.",
-                        "```html",
-                        "<igx-snackbar [autoHide] = \"false\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let autoHide =  this.snackbar.autoHide;",
-                        "```"
-                    ]
-                }
-            },
-            "displayTime": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "Sets/gets the duration of time(in milliseconds) in which the snackbar will be visible after it is being shown.",
-                        "Default value is 4000.",
-                        "```html",
-                        "<igx-snackbar [displayTime] = \"2000\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let displayTime = this.snackbar.displayTime;",
-                        "```"
-                    ]
-                }
-            },
             "actionText": {
                 "comment": {
                     "tags": {},
@@ -137,7 +71,7 @@
                     "tags": {},
                     "shortText": [
                         "An event that will be emitted when the snackbar animation starts.",
-                        "Provides reference to the `AnimationEvent` interface as an argument.",
+                        "Provides reference to the `ToggleViewEventArgs` interface as an argument.",
                         "```html",
                         "<igx-snackbar (animationStarted) = \"animationStarted($event)\"></igx-snackbar>",
                         "```"
@@ -149,11 +83,147 @@
                     "tags": {},
                     "shortText": [
                         "An event that will be emitted when the snackbar animation ends.",
-                        "Provides reference to the `AnimationEvent` interface as an argument.",
+                        "Provides reference to the `ToggleViewEventArgs` interface as an argument.",
                         "```html",
                         "<igx-snackbar (animationDone) = \"animationDone($event)\"></igx-snackbar>",
                         "```"
                     ]
+                }
+            },
+            "ariaLive": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets the `aria-live` attribute.",
+                        "If not set, `aria-live` will have value `\"polite\"`."
+                    ]
+                }
+            },
+            "autoHide": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets whether the element will be hidden after the `displayTime` is over.",
+                        "Default value is `true`."
+                    ]
+                }
+            },
+            "displayTime": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/gets the duration of time span (in milliseconds) which the element will be visible",
+                        "after it is being shown.",
+                        "Default value is `4000`."
+                    ]
+                }
+            },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` is an instance of `IgxOverlayOutletDirective` or an `ElementRef`.",
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the container used for the element."
+                }
+            },
+            "opened": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleOpened(event) {",
+                        "   alert(\"Toggle opened!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpened)='onToggleOpened($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event after the toggle container is opened."
+                }
+            },
+            "opening": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleOpening(event) {",
+                        " alert(\"Toggle opening!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpening)='onToggleOpening($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event before the toggle container is opened."
+                }
+            },
+            "closed": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleClosed(event) {",
+                        " alert(\"Toggle closed!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onClosed)='onToggleClosed($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event after the toggle container is closed."
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleClosing(event) {",
+                        " alert(\"Toggle closing!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        " igxToggle",
+                        " (closing)='onToggleClosing($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event before the toggle container is closed."
+                }
+            },
+            "appended": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onAppended() {",
+                        " alert(\"Content appended!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onAppended)='onToggleAppended()'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "Emits an event after the toggle element is appended to the overlay container."
                 }
             }
         },
@@ -172,28 +242,46 @@
             "close": {
                 "comment": {
                     "tags": {},
-                    "shortText": [
-                        "Hides the snackbar.",
+                    "shortText": "Hides the element."
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "tags": {},
+                    "text": [
                         "```typescript",
-                        "this.snackbar.close();",
+                        "this.myToggle.toggle();",
+                        "```"
+                    ],
+                    "shortText": "Opens or closes the toggle, depending on its current state."
+                }
+            },
+            "reposition": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Repositions the toggle.",
+                        "```typescript",
+                        "this.myToggle.reposition();",
                         "```"
                     ]
+                }
+            },
+            "setOffset": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Offsets the content along the corresponding axis by the provided amount"
                 }
             }
         },
         "accessors": {
-            "message": {
+            "isVisible": {
                 "getter": {
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Sets/gets the `message` attribute.",
-                            "```html",
-                            "<igx-snackbar [message] = \"'Snackbar Component'\"></igx-snackbar>",
-                            "```",
-                            "```typescript",
-                            "let message =  this.snackbar.message;",
-                            "```"
+                            "Enables/Disables the visibility of the element.",
+                            "If not set, the `isVisible` attribute will have value `false`."
                         ]
                     }
                 },
@@ -201,12 +289,20 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Sets/gets the `message` attribute.",
-                            "```html",
-                            "<igx-snackbar [message] = \"'Snackbar Component'\"></igx-snackbar>",
-                            "```",
+                            "Enables/Disables the visibility of the element.",
+                            "If not set, the `isVisible` attribute will have value `false`."
+                        ]
+                    }
+                }
+            },
+            "overlayId": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns the id of the overlay the content is rendered in.",
                             "```typescript",
-                            "let message =  this.snackbar.message;",
+                            "this.myToggle.overlayId;",
                             "```"
                         ]
                     }

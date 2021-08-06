@@ -8,79 +8,79 @@
             ]
         },
         "properties": {
-            "onOpening": {
+            "opening": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Emitted before the component is opened.",
+                        "Emitted just before the overlay content starts to open.",
                         "```typescript",
-                        "onOpening(event: OverlayCancelableEventArgs){",
-                        "    const onOpening = event;",
+                        "opening(event: OverlayCancelableEventArgs){",
+                        "    const opening = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onAppended": {
+            "opened": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Emitted after the component is appended to the overlay, and before animations are started.",
+                        "Emitted after the overlay content is opened and all animations are finished.",
                         "```typescript",
-                        "onAppended(event: OverlayEventArgs){",
-                        "    const onAppended = event;",
+                        "opened(event: OverlayEventArgs){",
+                        "    const opened = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onOpened": {
+            "closing": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Emitted after the component is opened and all animations are finished.",
+                        "Emitted just before the overlay content starts to close.",
                         "```typescript",
-                        "onOpened(event: OverlayEventArgs){",
-                        "    const onOpened = event;",
+                        "closing(event: OverlayCancelableEventArgs){",
+                        "    const closing = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onClosing": {
+            "closed": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Emitted before the component is closed.",
+                        "Emitted after the overlay content is closed and all animations are finished.",
                         "```typescript",
-                        "onClosing(event: OverlayCancelableEventArgs){",
-                        "    const onClosing = event;",
+                        "closed(event: OverlayEventArgs){",
+                        "    const closed = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onClosed": {
+            "contentAppended": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Emitted after the component is closed and all animations are finished.",
+                        "Emitted after the content is appended to the overlay, and before animations are started.",
                         "```typescript",
-                        "onClosed(event: OverlayEventArgs){",
-                        "    const onClosed = event;",
+                        "contentAppended(event: OverlayEventArgs){",
+                        "    const contentAppended = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onAnimation": {
+            "animationStarting": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "Emitted before animation is started",
+                        "Emitted just before the overlay animation start.",
                         "```typescript",
-                        "onAnimation(event: OverlayAnimationEventArgs){",
-                        "    const onAnimation = event;",
+                        "animationStarting(event: OverlayAnimationEventArgs){",
+                        "    const animationStarting = event;",
                         "}",
                         "```"
                     ]
@@ -133,7 +133,7 @@
             },
             "attach": {
                 "comment": {
-                    "returns": "Id of the created overlay. Valid until `onClosed` is emitted.\n",
+                    "returns": "Id of the created overlay. Valid until `detach` is called.\n",
                     "parameters": {
                         "component": {
                             "comment": {

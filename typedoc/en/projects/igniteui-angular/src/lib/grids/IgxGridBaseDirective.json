@@ -163,6 +163,12 @@
             "pageChange": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "in version 12.1.0",
+                                "tagName": "deprecated"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -185,6 +191,12 @@
             "perPageChange": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "in version 12.1.0",
+                                "tagName": "deprecated"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -202,23 +214,6 @@
                         }
                     },
                     "shortText": "Emitted when `perPage` property value of the grid is changed."
-                }
-            },
-            "paginationTemplate": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-grid #grid [paging]=\"true\" [myTemplate]=\"myTemplate\" [height]=\"'305px'\"></igx-grid>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Gets/Sets a custom `ng-template` for the pagination UI of the grid."
                 }
             },
             "evenRowCSS": {
@@ -303,7 +298,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "Returns the `IgxGridCellComponent`.",
+                                "text": "Returns the `IgxGridCell`.",
                                 "tagName": "remarks"
                             }
                         },
@@ -318,7 +313,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when `IgxGridCellComponent` is clicked."
+                    "shortText": "Emitted when a cell is clicked."
                 }
             },
             "selected": {
@@ -326,7 +321,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": " Returns the `IgxGridCellComponent`.",
+                                "text": " Returns the `IgxGridCell`.",
                                 "tagName": "remarks"
                             }
                         },
@@ -341,7 +336,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when `IgxGridCellComponent` is selected."
+                    "shortText": "Emitted when a cell is selected."
                 }
             },
             "rowSelected": {
@@ -751,6 +746,12 @@
             "pagingDone": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "in version 12.1.x",
+                                "tagName": "deprecated"
+                            }
+                        },
                         "remarks": {
                             "comment": {
                                 "text": "Returns an object consisting of the previous and next pages.",
@@ -791,7 +792,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when a row added through the API."
+                    "shortText": "Emitted when a row is added."
                 }
             },
             "rowDeleted": {
@@ -814,7 +815,7 @@
                             }
                         }
                     },
-                    "shortText": "Emitted when a row is deleted through API."
+                    "shortText": "Emitted when a row is deleted."
                 }
             },
             "columnResized": {
@@ -846,7 +847,7 @@
                         "remarks": {
                             "comment": {
                                 "text": [
-                                    "Returns the `IgxGridCellComponent` object.",
+                                    "Returns the `IgxGridCell` object.",
                                     "```html",
                                     "<igx-grid #grid [data]=\"localData\" (contextMenu)=\"contextMenu($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
@@ -863,7 +864,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "Returns the `IgxGridCellComponent` object.",
+                                "text": "Returns the `IgxGridCell` object.",
                                 "tagName": "remarks"
                             }
                         },
@@ -1279,6 +1280,32 @@
             }
         },
         "methods": {
+            "__type": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Provides a callback for loading unique column values on demand.",
+                                    "If this property is provided, the unique values it generates will be used by the Excel Style Filtering."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [data]=\"localData\" [filterMode]=\"'excelStyleFilter'\" [uniqueColumnValuesStrategy]=\"columnValuesStrategy\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a unique values strategy used by the Excel Style Filtering"
+                }
+            },
             "isRecordPinnedByIndex": {
                 "comment": {
                     "parameters": {
@@ -1459,56 +1486,15 @@
                     "shortText": "Returns the `IgxColumnComponent` by field name."
                 }
             },
-            "getCellByColumn": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const myCell = this.grid1.getCellByColumn(2,\"UnitPrice\");",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Returns the `IgxGridCellComponent` that matches the conditions."
-                }
-            },
-            "getCellByKey": {
-                "comment": {
-                    "parameters": {
-                        "rowSelector": {
-                            "comment": {
-                                "text": "match any rowID"
-                            }
-                        }
-                    },
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "Requires that the primaryKey property is set.",
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "grid.getCellByKey(1, 'index');",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Returns an `IgxGridCellComponent` object by the specified primary key and column field."
-                }
-            },
             "nextPage": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "in version 12.1.0",
+                                "tagName": "deprecated"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -1526,6 +1512,12 @@
             "previousPage": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "in version 12.1.0",
+                                "tagName": "deprecated"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -2665,6 +2657,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "in version 12.1.x",
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "The default state is disabled (false).",
@@ -2675,7 +2673,9 @@
                                 "comment": {
                                     "text": [
                                         "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [paging]=\"true\"></igx-grid>",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">",
+                                        " <igx-paginator></igx-paginator>",
+                                        "</igx-grid>",
                                         "```"
                                     ],
                                     "tagName": "example"
@@ -2696,11 +2696,19 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "in version 12.1.x",
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
                                         "```html",
-                                        " <igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">",
+                                        " <igx-paginator [(page)]=\"model.page\"></igx-paginator>",
+                                        "</igx-grid>",
                                         "```"
                                     ],
                                     "tagName": "example"
@@ -2727,6 +2735,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "in version 12.1.x",
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "The default is 15.",
@@ -2737,7 +2751,9 @@
                                 "comment": {
                                     "text": [
                                         "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(perPage)]=\"model.perPage\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">",
+                                        " <igx-paginator [(perPage)]=\"model.perPage\"></igx-paginator>",
+                                        "</igx-grid>",
                                         "```"
                                     ],
                                     "tagName": "example"
@@ -3682,6 +3698,40 @@
                     }
                 }
             },
+            "batchEditing": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [batchEditing]=\"true\" [data]=\"someData\">",
+                                        "</igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Gets/Sets whether the grid has batch editing enabled.",
+                            "When batch editing is enabled, changes are not made directly to the underlying data.",
+                            "Instead, they are stored as transactions, which can later be committed w/ the `commit` method."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Gets/Sets whether the grid has batch editing enabled.",
+                            "When batch editing is enabled, changes are not made directly to the underlying data.",
+                            "Instead, they are stored as transactions, which can later be committed w/ the `commit` method."
+                        ]
+                    }
+                }
+            },
             "transactions": {
                 "getter": {
                     "comment": {
@@ -4249,6 +4299,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "in version 12.1.0",
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4268,6 +4324,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "in version 12.1.0",
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4318,6 +4380,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "in version 12.1.0",
+                                    "tagName": "deprecated"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4482,25 +4550,6 @@
                             }
                         },
                         "shortText": "Returns if the `IgxGridComponent` has column layouts for multi-row layout definition."
-                    }
-                }
-            },
-            "selectedCells": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const selectedCells = this.grid.selectedCells;",
-                                        "```"
-                                    ],
-                                    "tagName": "example"
-                                }
-                            }
-                        },
-                        "shortText": "Returns an array of the selected `IgxGridCellComponent`s."
                     }
                 }
             },

@@ -1,0 +1,357 @@
+{
+    "IGroupByKey": {
+        "properties": {
+            "length": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "配列の長さを取得または設定します。これは、配列の最上位のインデックス + 1 の数値です。"
+                }
+            }
+        },
+        "methods": {
+            "from": {
+                "comment": {
+                    "parameters": {
+                        "iterable": {
+                            "comment": {
+                                "text": "配列に変換する反復可能なオブジェクト。"
+                            }
+                        },
+                        "mapfn": {
+                            "comment": {
+                                "text": "配列のすべての要素で呼び出すマッピング関数。"
+                            }
+                        },
+                        "thisArg": {
+                            "comment": {
+                                "text": "mapfn を呼び出すために使用される 'this' の値。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "反復可能なオブジェクトから配列を作成します。"
+                }
+            },
+            "toLocaleString": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "配列の文字列表示を返します。要素が toLocaleString メソッドを使用して文字列に変換されます。"
+                }
+            },
+            "push": {
+                "comment": {
+                    "parameters": {
+                        "items": {
+                            "comment": {
+                                "text": "配列に追加する新しい要素。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "新しい要素を配列の最後に追加し、配列の新しい長さを返します。"
+                }
+            },
+            "concat": {
+                "comment": {
+                    "parameters": {
+                        "items": {
+                            "comment": {
+                                "text": "配列の最後に追加する追加の配列または項目。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "2 つ以上の配列を結合します。",
+                        "このメソッドは、既存の配列を変更せずに新しい配列を返します。"
+                    ]
+                }
+            },
+            "join": {
+                "comment": {
+                    "parameters": {
+                        "separator": {
+                            "comment": {
+                                "text": "結果の文字列で要素を次の要素と区切る文字列です。使用しない場合、要素はコンマで区切ります。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "指定したセパレーター文字列で区切られた配列のすべての要素を文字列に追加します。"
+                }
+            },
+            "shift": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "最初の要素を配列から削除して要素を返します。",
+                        "配列が空の場合、undefined が返され、配列は変更されません。"
+                    ]
+                }
+            },
+            "sort": {
+                "comment": {
+                    "parameters": {
+                        "compareFn": {
+                            "comment": {
+                                "text": [
+                                    "要素の順序を決定する関数。",
+                                    "最初の引数が 2 番目の引数より小さい場合、負の値を返します。等しい場合は 0 を返し、そうでない場合は正の値を返します。",
+                                    "使用しない場合、要素は降順で ASCII 文字の順で並べ替えます。",
+                                    "```ts",
+                                    "[11,2,22,1].sort((a, b) => a - b)",
+                                    "```"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "配列をその場で並べ替えます。",
+                        "このメソッドは配列を変更し、同じ配列への参照を返します。"
+                    ]
+                }
+            },
+            "splice": {
+                "comment": {
+                    "parameters": {
+                        "start": {
+                            "comment": {
+                                "text": "要素の削除操作を開始する配列内の 0 から始まる場所。"
+                            }
+                        },
+                        "deleteCount": {
+                            "comment": {
+                                "text": "削除する要素の数。"
+                            }
+                        },
+                        "items": {
+                            "comment": {
+                                "text": "配列内の削除された要素の代わりに挿入される要素。"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "returns": {
+                            "comment": {
+                                "text": "削除された要素を含む配列。",
+                                "tagName": "returns"
+                            }
+                        }
+                    },
+                    "shortText": "要素を配列から削除し、オプションに新しい要素を同じ場所に挿入します。削除した要素を返します。"
+                }
+            },
+            "unshift": {
+                "comment": {
+                    "parameters": {
+                        "items": {
+                            "comment": {
+                                "text": "配列の始点に挿入される要素。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "配列の始点に新しい要素を挿入し、配列の新しい長さを返します。"
+                }
+            },
+            "lastIndexOf": {
+                "comment": {
+                    "parameters": {
+                        "searchElement": {
+                            "comment": {
+                                "text": "配列内で検索する値。"
+                            }
+                        },
+                        "fromIndex": {
+                            "comment": {
+                                "text": "逆方向の検索を開始する配列インデックス。fromIndex を使用しない場合、検索は配列の最後のインデックスから開始します。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "配列内の指定された値の最後の出現のインデックスを返します。値が存在しない場合は -1 を返します。"
+                }
+            },
+            "every": {
+                "comment": {
+                    "parameters": {
+                        "predicate": {
+                            "comment": {
+                                "text": [
+                                    "引数を 3 つまで許容する関数。",
+                                    "各メソッドは、述語がブール値 false に強制可能な値を返すまで、または配列の最後まで、",
+                                    "配列の各要素に対して述語関数を呼び出します。"
+                                ]
+                            }
+                        },
+                        "thisArg": {
+                            "comment": {
+                                "text": [
+                                    "predicate 関数内でキーワードを参照するオブジェクト。",
+                                    "thisArg を使用しない場合、undefined が値として使用されます。"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "配列のすべてのメンバーが指定したテストをパスするかどうかを決定します。"
+                }
+            },
+            "some": {
+                "comment": {
+                    "parameters": {
+                        "predicate": {
+                            "comment": {
+                                "text": [
+                                    "A引数を 3 つまで許容する関数。",
+                                    "every メソッドは、predicate がブール値 false に強制可能な値を返すまで、または配列の最後まで、",
+                                    "配列の各要素に対して predicate 関数を呼び出します。"
+                                ]
+                            }
+                        },
+                        "thisArg": {
+                            "comment": {
+                                "text": [
+                                    "predicate 関数内でキーワードを参照するオブジェクト。",
+                                    "thisArg を使用しない場合、undefined が値として使用されます。"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "指定したコールバック関数が配列の任意の要素のために true を返すかどうかを決定します。"
+                }
+            },
+            "map": {
+                "comment": {
+                    "parameters": {
+                        "callbackfn": {
+                            "comment": {
+                                "text": "引数を 3 つまで許容する関数。map メソッドは配列の各要素に一度 callbackfn 関数を呼び出します。"
+                            }
+                        },
+                        "thisArg": {
+                            "comment": {
+                                "text": "callbackfn 関数内でキーワードを参照するオブジェクト。thisArg を使用しない場合、undefined が値として使用されます。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "定義した callback 関数を配列の各要素に呼び出し、結果を含む配列を返します。"
+                }
+            },
+            "filter": {
+                "comment": {
+                    "parameters": {
+                        "predicate": {
+                            "comment": {
+                                "text": "引数を 3 つまで許容する関数。filter メソッドは、配列の各要素に対して predicate 関数を 1 回呼び出します。"
+                            }
+                        },
+                        "thisArg": {
+                            "comment": {
+                                "text": "predicate 関数内でキーワードを参照するオブジェクト。thisArg を使用しない場合、undefined が値として使用されます。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "callback 関数に指定した条件に合う配列の要素を返します。"
+                }
+            },
+            "reduce": {
+                "comment": {
+                    "parameters": {
+                        "callbackfn": {
+                            "comment": {
+                                "text": "引数を 4 つまで許容する関数。reduce メソッドは配列の各要素に一度 callbackfn 関数を呼び出します。"
+                            }
+                        },
+                        "initialValue": {
+                            "comment": {
+                                "text": "initialValue を指定した場合、累積を開始する最初の値として使用されます。callbackfn への最初の呼び出しは、この値を配列の値の代わりに引数として提供します。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "指定した callback 関数を配列のすべての要素に呼び出します。callback 関数の戻り値は累積された結果で、callback 関数への次の呼び出しの引数として提供されます。"
+                }
+            },
+            "find": {
+                "comment": {
+                    "parameters": {
+                        "predicate": {
+                            "comment": {
+                                "text": [
+                                    "find は、昇順で述語が true を返すまで配列の各要素に述語を呼び出します。",
+                                    "要素が見つかった場合、find はただちに要素の値を返します。",
+                                    "そうでない場合、find は undefine を返します。"
+                                ]
+                            }
+                        },
+                        "thisArg": {
+                            "comment": {
+                                "text": [
+                                    "指定した場合、述語の各起動にこの値として使用されます。",
+                                    "指定しない場合、undefined が使用されます。"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "配列で最初の述語が true の要素の値を返します。ない場合に undefined ",
+                        "を返します。"
+                    ]
+                }
+            },
+            "fill": {
+                "comment": {
+                    "parameters": {
+                        "value": {
+                            "comment": {
+                                "text": "配列の塗りつぶしを開始するインデックスで配列セクションを塗りつぶす値。"
+                            }
+                        },
+                        "start": {
+                            "comment": {
+                                "text": [
+                                    "配列の塗りつぶしを開始するインデックスで配列セクションを塗りつぶす値。",
+                                    "start が負数の場合、lenght+start (lenght は配列の長さ) として使用されます。"
+                                ]
+                            }
+                        },
+                        "end": {
+                            "comment": {
+                                "text": [
+                                    "フィルを停止するインデックス。",
+                                    "end が負数の場合、lenght+end として使用されます。"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "開始および終了インデックスの間のセクションを値に設定した後に this オブジェクトを返します。"
+                }
+            },
+            "entries": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "配列の各エントリのためにキーと値ペアの列挙子を返します。"
+                }
+            },
+            "values": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "配列の値の列挙子を返します。"
+                }
+            },
+            "[iterator]": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Iterator"
+                }
+            }
+        }
+    }
+}

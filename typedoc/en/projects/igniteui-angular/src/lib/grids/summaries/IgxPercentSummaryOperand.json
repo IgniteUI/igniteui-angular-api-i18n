@@ -20,6 +20,39 @@
                         "```"
                     ]
                 }
+            },
+            "operate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Executes the static `count` method and returns `IgxSummaryResult[]`.",
+                        "```typescript",
+                        "interface IgxSummaryResult {",
+                        "  key: string;",
+                        "  label: string;",
+                        "  summaryResult: any;",
+                        "}",
+                        "```",
+                        "Can be overridden in the inherited classes to provide customization for the `summary`.",
+                        "```typescript",
+                        "class CustomSummary extends IgxSummaryOperand {",
+                        "  constructor() {",
+                        "    super();",
+                        "  }",
+                        "  public operate(data: any[], allData: any[], fieldName: string): IgxSummaryResult[] {",
+                        "    const result = [];",
+                        "    result.push({",
+                        "      key: \"test\",",
+                        "      label: \"Test\",",
+                        "      summaryResult: IgxSummaryOperand.count(data)",
+                        "    });",
+                        "    return result;",
+                        "  }",
+                        "}",
+                        "this.grid.getColumnByName('ColumnName').summaries = CustomSummary;",
+                        "```"
+                    ]
+                }
             }
         },
         "accessors": {}

@@ -28,7 +28,6 @@
                 },
                 "remarks": {
                     "comment": {
-                        "tags": {},
                         "text": [
                             "範囲の選択が 1 つまたは 2 つの入力フィールドに表示されます。",
                             "デフォルトのテンプレートは単一の*読み取り専用*入力フィールドを表示しますが、",
@@ -40,7 +39,6 @@
                 },
                 "example": {
                     "comment": {
-                        "tags": {},
                         "text": [
                             "```html",
                             "<igx-date-range-picker mode=\"dropdown\"></igx-date-range-picker>",
@@ -197,7 +195,7 @@
                         "remarks": {
                             "comment": {
                                 "text": "Angular の DatePipe を使用します。",
-                                "tagName": "備考"
+                                "tagName": "備考:"
                             }
                         },
                         "example": {
@@ -220,7 +218,7 @@
                         "remarks": {
                             "comment": {
                                 "text": "デフォルトは `\"'MM/dd/yyyy'\"` です。",
-                                "tagName": "備考"
+                                "tagName": "備考:"
                             }
                         },
                         "example": {
@@ -260,7 +258,7 @@
                         "remarks": {
                             "comment": {
                                 "text": "`outlet` は、`IgxOverlayOutletDirective` または `ElementRef` のインスタンスです。",
-                                "tagName": "備考"
+                                "tagName": "備考:"
                             }
                         },
                         "example": {
@@ -303,7 +301,7 @@
                         "remarks": {
                             "comment": {
                                 "text": "デフォルトのモードは `dropdown` です。",
-                                "tagName": "備考"
+                                "tagName": "備考:"
                             }
                         },
                         "example": {
@@ -424,6 +422,30 @@
             }
         },
         "methods": {
+            "__type": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "private dayFormatter = new Intl.DateTimeFormat(\"en\", { weekday: \"long\" });",
+                                    "private monthFormatter = new Intl.DateTimeFormat(\"en\", { month: \"long\" });",
+                                    "public formatter(date: Date): string {",
+                                    " return `${this.dayFormatter.format(date)} - ${this.monthFormatter.format(date)} - ${date.getFullYear()}`;",
+                                    "}",
+                                    "```",
+                                    "```html",
+                                    "<igx-date-range-picker [formatter]=\"formatter\"></igx-date-range-picker>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "選択した日付または渡された日付に適用されるカスタム フォーマッター関数。"
+                }
+            },
             "open": {
                 "comment": {
                     "tags": {
@@ -518,7 +540,7 @@
                                         "カスタム テキストで [完了] ボタンを描画する @Input プロパティ。デフォルトで `doneButtonText` は Done に設定されます。",
                                         "ボタンは `dialog` モードでのみ表示されます。"
                                     ],
-                                    "tagName": "備考"
+                                    "tagName": "備考:"
                                 }
                             },
                             "example": {
@@ -653,7 +675,7 @@
                             "remarks": {
                                 "comment": {
                                     "text": "デフォルトは `box` です。",
-                                    "tagName": "備考"
+                                    "tagName": "備考:"
                                 }
                             },
                             "example": {
