@@ -8,7 +8,8 @@
                 "```html",
                 "<button (click)=\"snackbar.show()\">Send message</button>",
                 "<div>",
-                "  <igx-snackbar #snackbar message=\"Message sent\">",
+                "  <igx-snackbar #snackbar>",
+                "     Message sent",
                 "  </igx-snackbar>",
                 "</div>",
                 "```"
@@ -41,73 +42,6 @@
                     ]
                 }
             },
-            "ariaLive": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxSnackbarComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "Snackbar メッセージ コンテナーの `aria-live` 属性を設定または取得します。",
-                        "設定しない場合、`aria-live` は `polite` になります。",
-                        "```html",
-                        "<igx-snackbar [ariaLive]=\"'polite'\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let snackbarAriaLive = this.snackbar.ariaLive;",
-                        "```"
-                    ]
-                }
-            },
-            "isVisible": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "snackbar の表示状態を有効または無効にします。",
-                        "設定されない場合、`isVisible` 属性の値は `false` です。",
-                        "```html",
-                        "<igx-snackbar [isVisible] = \"true\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let isVisible =  this.snackbar.isVisible;",
-                        "```"
-                    ]
-                }
-            },
-            "autoHide": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "snackbar が `displayTime` の終了後に自動的に非表示になるかどうかを取得または設定します。",
-                        "デフォルト値は `true` です。",
-                        "```html",
-                        "<igx-snackbar [autoHide] = \"false\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let autoHide =  this.snackbar.autoHide;",
-                        "```"
-                    ]
-                }
-            },
-            "displayTime": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "表示された後、snackbar が表示される期間 (ミリ行) を取得または設定します。",
-                        "デフォルト値は 4000 です。",
-                        "```html",
-                        "<igx-snackbar [displayTime] = \"2000\"></igx-snackbar>",
-                        "```",
-                        "```typescript",
-                        "let displayTime = this.snackbar.displayTime;",
-                        "```"
-                    ]
-                }
-            },
             "actionText": {
                 "comment": {
                     "tags": {},
@@ -135,8 +69,8 @@
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "snackbar のアニメーションが開始するときに発生されるイベント。",
-                        "引数として `AnimationEvent` インターフェイスへの参照を提供します。",
+                        "スナックバーのアニメーションが開始するときに発生されるイベント。",
+                        "引数として `ToggleViewEventArgs` インターフェイスへの参照を提供します。",
                         "```html",
                         "<igx-snackbar (animationStarted) = \"animationStarted($event)\"></igx-snackbar>",
                         "```"
@@ -147,12 +81,148 @@
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "snackbar のアニメーションが完了するときに発生されるイベント。",
-                        "引数として `AnimationEvent` インターフェイスへの参照を提供します。",
+                        "スナックバーのアニメーションが完了するときに発生されるイベント。",
+                        "引数として `ToggleViewEventArgs` インターフェイスへの参照を提供します。",
                         "```html",
                         "<igx-snackbar (animationDone) = \"animationDone($event)\"></igx-snackbar>",
                         "```"
                     ]
+                }
+            },
+            "ariaLive": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "`aria-live` 属性を設定または取得します。",
+                        "設定されない場合、`aria-live` の値は `\"polite\"` となります。"
+                    ]
+                }
+            },
+            "autoHide": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "要素が `displayTime` の終了後に非表示になるかどうかを取得または設定します。",
+                        "デフォルト値は `true` です。"
+                    ]
+                }
+            },
+            "displayTime": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "表示された後、要素が表示される期間 (ミリ行)",
+                        " を取得または設定します。",
+                        "デフォルト値は `4000` です。"
+                    ]
+                }
+            },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` は、`IgxOverlayOutletDirective` または `ElementRef` のインスタンスです。",
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "要素に使用されるコンテナーを取得または設定します。"
+                }
+            },
+            "opened": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleOpened(event) {",
+                        "   alert(\"Toggle opened!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpened)='onToggleOpened($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナーが開かれた後、イベントを発行します。"
+                }
+            },
+            "opening": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleOpening(event) {",
+                        " alert(\"Toggle opening!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onOpening)='onToggleOpening($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナーが開いた前にイベントを発生します。"
+                }
+            },
+            "closed": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleClosed(event) {",
+                        " alert(\"Toggle closed!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onClosed)='onToggleClosed($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナーが閉じた後にイベントを発生します。"
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onToggleClosing(event) {",
+                        " alert(\"Toggle closing!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        " igxToggle",
+                        " (closing)='onToggleClosing($event)'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル コンテナーが閉じた前にイベントを発生します。"
+                }
+            },
+            "appended": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "onAppended() {",
+                        " alert(\"Content appended!\");",
+                        "}",
+                        "```",
+                        "```html",
+                        "<div",
+                        "  igxToggle",
+                        "  (onAppended)='onToggleAppended()'>",
+                        "</div>",
+                        "```"
+                    ],
+                    "shortText": "トグル要素がオーバーレイ コンテナーに追加された後にイベントを発生します。"
                 }
             }
         },
@@ -161,7 +231,7 @@
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "snackbar を表示し、`autoHide` が `true` に設定される場合に `displayTime` がかかった後に非表示にします。",
+                        "`autoHide` が `true` に設定されている場合、`displayTime` が終了した後にスナックバーを表示して非表示にします。",
                         "```typescript",
                         "this.snackbar.open();",
                         "```"
@@ -171,28 +241,46 @@
             "close": {
                 "comment": {
                     "tags": {},
-                    "shortText": [
-                        "snackbar を非表示にします。",
+                    "shortText": "要素を非表示にします。"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "tags": {},
+                    "text": [
                         "```typescript",
-                        "this.snackbar.close();",
+                        "this.myToggle.toggle();",
+                        "```"
+                    ],
+                    "shortText": "現在状態によってトグルを開くまたは閉じます。"
+                }
+            },
+            "reposition": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "トグルを再配置します。",
+                        "```typescript",
+                        "this.myToggle.reposition();",
                         "```"
                     ]
+                }
+            },
+            "setOffset": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "対応する軸に沿って指定した量のみコンテンツをオフセットします。"
                 }
             }
         },
         "accessors": {
-            "message": {
+            "isVisible": {
                 "getter": {
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`message` 属性を取得または設定します。",
-                            "```html",
-                            "<igx-snackbar [message] = \"'Snackbar Component'\"></igx-snackbar>",
-                            "```",
-                            "```typescript",
-                            "let message =  this.snackbar.message;",
-                            "```"
+                            "要素の表示状態を有効または無効にします。",
+                            "設定されない場合、`isVisible` の値は `false` です。"
                         ]
                     }
                 },
@@ -200,12 +288,20 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`message` 属性を取得または設定します。",
-                            "```html",
-                            "<igx-snackbar [message] = \"'Snackbar Component'\"></igx-snackbar>",
-                            "```",
+                            "要素の表示状態を有効または無効にします。",
+                            "設定されない場合、`isVisible` の値は `false` です。"
+                        ]
+                    }
+                }
+            },
+            "overlayId": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "コンテンツが描画されるオーバーレイの ID を返します。",
                             "```typescript",
-                            "let message =  this.snackbar.message;",
+                            "this.myToggle.overlayId;",
                             "```"
                         ]
                     }

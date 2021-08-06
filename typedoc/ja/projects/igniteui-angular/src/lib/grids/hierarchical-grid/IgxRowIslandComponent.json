@@ -290,6 +290,12 @@
             "pageChange": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "バージョン 12.1.0",
+                                "tagName": "非推奨"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -312,6 +318,12 @@
             "perPageChange": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "バージョン 12.1.0",
+                                "tagName": "非推奨"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -329,23 +341,6 @@
                         }
                     },
                     "shortText": "グリッドの `perPage` プロパティ値が変更されたときに発生します。"
-                }
-            },
-            "paginationTemplate": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-grid #grid [paging]=\"true\" [myTemplate]=\"myTemplate\" [height]=\"'305px'\"></igx-grid>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "グリッド ページング UI のカスタム `ng-template` を取得または設定します。"
                 }
             },
             "evenRowCSS": {
@@ -430,7 +425,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`IgxGridCellComponent` を返します。",
+                                "text": "`IgxGridCell` を返します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -445,7 +440,7 @@
                             }
                         }
                     },
-                    "shortText": "`IgxGridCellComponent` がクリックされたときに発生します。"
+                    "shortText": "セルがクリックされたときに発生します。"
                 }
             },
             "selected": {
@@ -453,7 +448,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`IgxGridCellComponent` を返します。",
+                                "text": "`IgxGridCell` を返します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -468,7 +463,7 @@
                             }
                         }
                     },
-                    "shortText": "`IgxGridCellComponent` が選択されたときに発生します。"
+                    "shortText": "セルが選択されたときに発生します。"
                 }
             },
             "rowSelected": {
@@ -485,7 +480,7 @@
                             }
                         }
                     },
-                    "shortText": "`IgxGridCellComponent` が選択されたときに発生します。"
+                    "shortText": "`IgxGridRowComponent` が選択されたときに発生します。"
                 }
             },
             "columnSelected": {
@@ -879,6 +874,12 @@
             "pagingDone": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "バージョン 12.1.x",
+                                "tagName": "非推奨"
+                            }
+                        },
                         "remarks": {
                             "comment": {
                                 "text": "前のページおよび次のページを含むオブジェクトを返します。",
@@ -974,7 +975,7 @@
                         "remarks": {
                             "comment": {
                                 "text": [
-                                    "`IgxGridCellComponent` オブジェクトを返します。",
+                                    "`IgxGridCell` オブジェクトを返します。",
                                     "```html",
                                     "<igx-grid #grid [data]=\"localData\" (contextMenu)=\"contextMenu($event)\" [autoGenerate]=\"true\"></igx-grid>",
                                     "```"
@@ -991,7 +992,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`IgxGridCellComponent` オブジェクトを返します。",
+                                "text": "`IgxGridCell` オブジェクトを返します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -1407,6 +1408,32 @@
             }
         },
         "methods": {
+            "__type": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "要求に応じて一意の列値をロードするためのコールバックを提供します。",
+                                    "このプロパティが提供された場合、生成される一意の値は Excel スタイル フィルタリングによって使用されます。"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [data]=\"localData\" [filterMode]=\"'excelStyleFilter'\" [uniqueColumnValuesStrategy]=\"columnValuesStrategy\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "Excel スタイル フィルタリングによって使用される一意の値戦略を取得または設定します。"
+                }
+            },
             "isRecordPinnedByIndex": {
                 "comment": {
                     "parameters": {
@@ -1587,37 +1614,13 @@
                     "shortText": "フィールド名によって `IgxColumnComponent` を返します。"
                 }
             },
-            "getCellByColumn": {
+            "nextPage": {
                 "comment": {
                     "tags": {
-                        "example": {
+                        "deprecated": {
                             "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const myCell = this.grid1.getCellByColumn(2,\"UnitPrice\");",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "条件と一致する `IgxGridCellComponent` を返します。"
-                }
-            },
-            "getCellByKey": {
-                "comment": {
-                    "parameters": {
-                        "rowSelector": {
-                            "comment": {
-                                "text": "いずれかの rowID に一致します。"
-                            }
-                        }
-                    },
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "primaryKey プロパティの設定が必要です。",
-                                "tagName": "備考:"
+                                "text": "バージョン 12.1.0",
+                                "tagName": "非推奨"
                             }
                         },
                         "example": {
@@ -1631,29 +1634,18 @@
                             }
                         }
                     },
-                    "shortText": "指定されたプライマリ キーおよび列フィールドによって `IgxGridCellComponent` オブジェクトを返します。"
-                }
-            },
-            "nextPage": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "this.grid1.nextPage();",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "グリッドが最後のページにない場合、次のページに移動します。"
+                    "shortText": "指定されたプライマリ キーおよび列フィールドによって `IgxGridCell` オブジェクトを返します。"
                 }
             },
             "previousPage": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": "バージョン 12.1.0",
+                                "tagName": "非推奨"
+                            }
+                        },
                         "example": {
                             "comment": {
                                 "text": [
@@ -2670,7 +2662,7 @@
                             "```html",
                             "<igx-hierarchical-grid [data]=\"Data\" [autoGenerate]=\"true\">",
                             "     <igx-row-island [key]=\"'childData'\" [expandChildren]=\"true\" #rowIsland>",
-                            "         <!-- ...-->",
+                            "         <!-- ... -->",
                             "     </igx-row-island>",
                             "</igx-hierarchical-grid>",
                             "```"
@@ -2833,6 +2825,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "バージョン 12.1.x",
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "デフォルト状態は無効 (false) です。",
@@ -2843,7 +2841,9 @@
                                 "comment": {
                                     "text": [
                                         "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [paging]=\"true\"></igx-grid>",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">",
+                                        " <igx-paginator></igx-paginator>",
+                                        "</igx-grid>",
                                         "```"
                                     ],
                                     "tagName": "例:"
@@ -2864,11 +2864,19 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "バージョン 12.1.x",
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
                                         "```html",
-                                        " <igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(page)]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">",
+                                        " <igx-paginator [(page)]=\"model.page\"></igx-paginator>",
+                                        "</igx-grid>",
                                         "```"
                                     ],
                                     "tagName": "例:"
@@ -2895,6 +2903,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "バージョン 12.1.x",
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "remarks": {
                                 "comment": {
                                     "text": "デフォルトは 15 です。",
@@ -2905,7 +2919,9 @@
                                 "comment": {
                                     "text": [
                                         "```html",
-                                        "<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [(perPage)]=\"model.perPage\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">",
+                                        " <igx-paginator [(perPage)]=\"model.perPage\"></igx-paginator>",
+                                        "</igx-grid>",
                                         "```"
                                     ],
                                     "tagName": "例:"
@@ -4396,6 +4412,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "バージョン 12.1.0",
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4415,6 +4437,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "バージョン 12.1.0",
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4465,6 +4493,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "バージョン 12.1.0",
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4628,26 +4662,7 @@
                                 }
                             }
                         },
-                        "shortText": "`IgxGridComponent` が複数行レイアウト定義用の列レイアウトを持っているかどうかを返します。"
-                    }
-                }
-            },
-            "selectedCells": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```typescript",
-                                        "const selectedCells = this.grid.selectedCells;",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "`IgxGridCellComponent` 選択されているメモの配列を返します。"
+                        "shortText": "`IgxGridCell` 選択されているメモの配列を返します。"
                     }
                 }
             },

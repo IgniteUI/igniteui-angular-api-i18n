@@ -8,79 +8,79 @@
             ]
         },
         "properties": {
-            "onOpening": {
+            "opening": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "コンポーネントが開かれる前に発生されます。",
+                        "オーバーレイ コンテンツが開き始める直前に発生します。",
                         "```typescript",
-                        "onOpening(event: OverlayCancelableEventArgs){",
-                        "    const onOpening = event;",
+                        "opening(event: OverlayCancelableEventArgs){",
+                        "    const opening = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onAppended": {
+            "opened": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "コンポーネントがオーバーレイに追加された後、アニメーションが開始される前に生成されます。",
+                        "オーバーレイコンテンツが開いて、すべてのアニメーションが完了した後に発生します。",
                         "```typescript",
-                        "onAppended(event: OverlayEventArgs){",
-                        "    const onAppended = event;",
+                        "opened(event: OverlayEventArgs){",
+                        "    const opened = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onOpened": {
+            "closing": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "コンポーネントが開いて、すべてのアニメーションが完了した後に発生します。",
+                        "オーバーレイ コンテンツが閉じ始める直前に発生します。",
                         "```typescript",
-                        "onOpened(event: OverlayEventArgs){",
-                        "    const onOpened = event;",
+                        "closing(event: OverlayCancelableEventArgs){",
+                        "    const closing = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onClosing": {
+            "closed": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "コンポーネントが閉じられる前に発生されます。",
+                        "オーバーレイ コンテンツが閉じて、すべてのアニメーションが完了した後に発生します。",
                         "```typescript",
-                        "onClosing(event: OverlayCancelableEventArgs){",
-                        "    const onClosing = event;",
+                        "closed(event: OverlayEventArgs){",
+                        "    const closed = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onClosed": {
+            "contentAppended": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "コンポーネントが閉じて、すべてのアニメーションが完了した後に発生します。",
+                        "コンテンツがオーバーレイに追加された後、アニメーションが開始される前に生成します。",
                         "```typescript",
-                        "onClosed(event: OverlayEventArgs){",
-                        "    const onClosed = event;",
+                        "contentAppended(event: OverlayEventArgs){",
+                        "    const contentAppended = event;",
                         "}",
                         "```"
                     ]
                 }
             },
-            "onAnimation": {
+            "animationStarting": {
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "アニメーションを開始する前に発生されます。",
+                        "オーバーレイ アニメーションが開始する直前に発生します。",
                         "```typescript",
-                        "onAnimation(event: OverlayAnimationEventArgs){",
-                        "    const onAnimation = event;",
+                        "animationStarting(event: OverlayAnimationEventArgs){",
+                        "    const animationStarting = event;",
                         "}",
                         "```"
                     ]
@@ -133,7 +133,7 @@
             },
             "attach": {
                 "comment": {
-                    "returns": "作成したオーバーレイの ID。`onClosed` が発行されるまで有効です。\n",
+                    "returns": "作成したオーバーレイの ID。`detach` が呼び出されるまで有効です。\n",
                     "parameters": {
                         "component": {
                             "comment": {
@@ -155,7 +155,7 @@
                         }
                     },
                     "tags": {},
-                    "shortText": "Id を生成します。`show（id）` メソッドを呼び出すときにこのIDを提供します。"
+                    "shortText": "Id を生成します。`show(id)` メソッドを呼び出すときにこのIDを提供します。"
                 }
             },
             "detach": {

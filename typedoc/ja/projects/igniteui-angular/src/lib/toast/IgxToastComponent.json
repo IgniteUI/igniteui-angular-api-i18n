@@ -8,9 +8,8 @@
                 "例:",
                 "```html",
                 "<button (click)=\"toast.open()\">Show notification</button>",
-                "<igx-toast #toast",
-                "          message=\"Notification displayed\"",
-                "          displayTime=\"1000\">",
+                "<igx-toast #toast displayTime=\"1000\">",
+                "     Notification displayed",
                 "</igx-toast>",
                 "```"
             ],
@@ -57,98 +56,6 @@
                     ]
                 }
             },
-            "ariaLive": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxToastComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "`aria-live` 属性を設定または取得します。",
-                        "設定されない場合、`aria-live` の値は `\"polite\"` となります。",
-                        "```html",
-                        "<igx-toast [ariaLive] = \"'polite'\"></igx-toast>",
-                        "```",
-                        "```typescript",
-                        "let toastAriaLive = this.toast.ariaLive;",
-                        "```"
-                    ]
-                }
-            },
-            "autoHide": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxToastComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "toast が `displayTime` の終了後に非表示になるかどうかを取得または設定します。",
-                        "デフォルト値は `true` です。",
-                        "```html",
-                        "<igx-toast [autoHide] = \"false\"></igx-toast>",
-                        "```",
-                        "```typescript",
-                        "let autoHide = this.toast.autoHide;",
-                        "```"
-                    ]
-                }
-            },
-            "displayTime": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxToastComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": [
-                        "表示された後、toast が表示される期間 (ミリ行) を取得または設定します。",
-                        "デフォルト値は `4000` です。",
-                        "```html",
-                        "<igx-toast [displayTime] = \"2500\"></igx-toast>",
-                        "```",
-                        "```typescript",
-                        "let displayTime = this.toast.displayTime;",
-                        "```"
-                    ]
-                }
-            },
-            "outlet": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": " `outlet` は、`IgxOverlayOutletDirective` または `ElementRef` のインスタンスです。",
-                                "tagName": "備考:"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<div igxOverlayOutlet #outlet=\"overlay-outlet\"></div>",
-                                    "//..",
-                                    "<igx-toast [outlet]=\"outlet\"></igx-toast>",
-                                    "//..",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "トースト要素に使用されるコンテナを取得/設定します。"
-                }
-            },
             "position": {
                 "comment": {
                     "tags": {
@@ -160,8 +67,8 @@
                         }
                     },
                     "shortText": [
-                        "toast の位置を取得または設定します。",
-                        "設定されない場合、`position` 属性の値は `IgxToastPosition.Bottom` です。",
+                        "トーストの位置を取得または設定します。",
+                        "設定されない場合、`position` の値は `IgxToastPosition.Bottom` です。",
                         "```html",
                         "<igx-toast [position]=\"top\"></igx-toast>",
                         "```",
@@ -171,7 +78,48 @@
                     ]
                 }
             },
-            "onOpened": {
+            "ariaLive": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "`aria-live` 属性を設定または取得します。",
+                        "設定されない場合、`aria-live` の値は `\"polite\"` となります。"
+                    ]
+                }
+            },
+            "autoHide": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "要素が `displayTime` の終了後に非表示になるかどうかを取得または設定します。",
+                        "デフォルト値は `true` です。"
+                    ]
+                }
+            },
+            "displayTime": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "表示された後、要素が表示される期間 (ミリ行)",
+                        " を取得または設定します。",
+                        "デフォルト値は `4000` です。"
+                    ]
+                }
+            },
+            "outlet": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " `outlet` は、`IgxOverlayOutletDirective` または `ElementRef` のインスタンスです。",
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "要素に使用されるコンテナーを取得または設定します。"
+                }
+            },
+            "opened": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -187,10 +135,10 @@
                         "</div>",
                         "```"
                     ],
-                    "shortText": "トグル コンテナが開かれた後、イベントを発行します。"
+                    "shortText": "トグル コンテナーが開かれた後、イベントを発行します。"
                 }
             },
-            "onOpening": {
+            "opening": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -206,10 +154,10 @@
                         "</div>",
                         "```"
                     ],
-                    "shortText": "トグル コンテナが開いた前にイベントを発生します。"
+                    "shortText": "トグル コンテナーが開いた前にイベントを発生します。"
                 }
             },
-            "onClosed": {
+            "closed": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -225,10 +173,10 @@
                         "</div>",
                         "```"
                     ],
-                    "shortText": "トグル コンテナが閉じた後にイベントを発生します。"
+                    "shortText": "トグル コンテナーが閉じた後にイベントを発生します。"
                 }
             },
-            "onClosing": {
+            "closing": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -240,14 +188,14 @@
                         "```html",
                         "<div",
                         " igxToggle",
-                        " (onClosing)='onToggleClosing($event)'>",
+                        " (closing)='onToggleClosing($event)'>",
                         "</div>",
                         "```"
                     ],
-                    "shortText": "トグル コンテナが閉じた前にイベントを発生します。"
+                    "shortText": "トグル コンテナーが閉じた前にイベントを発生します。"
                 }
             },
-            "onAppended": {
+            "appended": {
                 "comment": {
                     "tags": {},
                     "text": [
@@ -263,7 +211,7 @@
                         "</div>",
                         "```"
                     ],
-                    "shortText": "トグル要素がオーバーレイ コンテナに追加された後にイベントを発生します。"
+                    "shortText": "トグル要素がオーバーレイ コンテナーに追加された後にイベントを発生します。"
                 }
             }
         },
@@ -277,20 +225,15 @@
                         "```"
                     ],
                     "shortText": [
-                        "toast を表示します。",
-                        "`autoHide` が有効な場合、toast は `displayTime` 終了後に非表示になります。"
+                        "トーストを表示します。",
+                        "`autoHide` が有効な場合、トーストは `displayTime` 終了後に非表示になります。"
                     ]
                 }
             },
             "close": {
                 "comment": {
                     "tags": {},
-                    "text": [
-                        "```typescript",
-                        "this.toast.close();",
-                        "```"
-                    ],
-                    "shortText": "toast を非表示にします。"
+                    "shortText": "要素を非表示にします。"
                 }
             },
             "toggle": {
@@ -308,7 +251,7 @@
                 "comment": {
                     "tags": {},
                     "shortText": [
-                        "トグルの位置を変更します。",
+                        "トグルを再配置します。",
                         "```typescript",
                         "this.myToggle.reposition();",
                         "```"
@@ -323,91 +266,6 @@
             }
         },
         "accessors": {
-            "isVisible": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxToastComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        },
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "toast の表示状態を有効または無効にします。",
-                            "設定されない場合、`isVisible` の値は `false` です。",
-                            "```html",
-                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
-                            "```",
-                            "```typescript",
-                            "let isVisible = this.toast.isVisible;",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {},
-                        "text": [
-                            "双方向データ バインディング。",
-                            "```html",
-                            "<igx-toast [(isVisible)]=\"model.isVisible\"></igx-toast>",
-                            "```"
-                        ],
-                        "shortText": [
-                            "toast の表示状態を有効または無効にします。",
-                            "設定されない場合、`isVisible` の値は `false` です。",
-                            "```html",
-                            "<igx-toast [isVisible]=\"true\"></igx-toast>",
-                            "```",
-                            "```typescript",
-                            "let isVisible = this.toast.isVisible;",
-                            "```"
-                        ]
-                    }
-                }
-            },
-            "message": {
-                "getter": {
-                    "comment": {
-                        "tags": {}
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "deprecated": {
-                                "comment": {
-                                    "text": [
-                                        "代わりに toast コンテンツにメッセージを配置してください。",
-                                        "toast に表示されるメッセージを取得または設定します。",
-                                        "```html",
-                                        "<igx-toast [message]=\"Notification\"></igx-toast>",
-                                        "```",
-                                        "```typescript",
-                                        "let toastMessage = this.toast.message;",
-                                        "```"
-                                    ],
-                                    "tagName": "非推奨。"
-                                }
-                            },
-                            "memberof": {
-                                "comment": {
-                                    "text": "IgxToastComponent",
-                                    "tagName": "次のメンバー:"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
             "element": {
                 "getter": {
                     "comment": {
@@ -420,10 +278,30 @@
                             }
                         },
                         "shortText": [
-                            "toast の nativeElement を取得します。",
+                            "トーストの nativeElement を取得します。",
                             "```typescript",
                             "let nativeElement = this.toast.element;",
                             "```"
+                        ]
+                    }
+                }
+            },
+            "isVisible": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "要素の表示状態を有効または無効にします。",
+                            "設定されない場合、`isVisible` の値は `false` です。"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "要素の表示状態を有効または無効にします。",
+                            "設定されない場合、`isVisible` の値は `false` です。"
                         ]
                     }
                 }
