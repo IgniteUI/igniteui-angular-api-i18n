@@ -1621,8 +1621,8 @@
                         }
                     },
                     "text": [
-                        "// DOs",
-                        "// call markForCheck after updating a nested property",
+                        "// 注意事項",
+                        "// ネストされたプロパティを更新した後に markForCheck を呼び出してください。",
                         "grid.data.forEach(rec => {",
                         " rec.nestedProp1.nestedProp2 = newValue;",
                         "});",
@@ -1630,13 +1630,13 @@
                         "```"
                     ],
                     "shortText": [
-                        "Triggers change detection for the `IgxGridComponent`.",
-                        "Calling markForCheck also triggers the grid pipes explicitly, resulting in all updates being processed.",
-                        "May degrade performance if used when not needed, or if misused:",
+                        "`IgxGridComponent` の変更検知をトリガーします。",
+                        "markForCheck を呼び出すと、グリッドのパイプも明示的にトリガーされ、すべての更新が処理されます。",
+                        "不要なときに使用したり、誤用したりすると、パフォーマンスが低下する可能性があります。",
                         "```typescript",
-                        "// DON'Ts:",
-                        "// don't call markForCheck from inside a loop",
-                        "// don't call markForCheck when a primitive has changed",
+                        "// 注意事項",
+                        "// ループ内から markForCheck を呼び出さないでください。",
+                        "// プリミティブが変更されたときに markForCheck を呼び出さないでください。",
                         "grid.data.forEach(rec => {",
                         " rec = newValue;",
                         " grid.markForCheck();",
@@ -2524,7 +2524,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`commit === true`の場合、未解決状態からデータ (またはトランザクション サービス) へ渡します。",
+                                "text": "`commit === true` の場合、未解決状態からデータ (またはトランザクション サービス) へ渡します。",
                                 "tagName": "備考:"
                             }
                         },
