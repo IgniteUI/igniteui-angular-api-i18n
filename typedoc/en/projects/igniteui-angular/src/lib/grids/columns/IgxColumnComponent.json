@@ -344,6 +344,29 @@
             "formatter": {
                 "comment": {
                     "tags": {
+                        "remark": {
+                            "comment": {
+                                "text": [
+                                    "Note: As the formatter is used in places like the Excel style filtering dialog, in certain",
+                                    "scenarios (remote filtering for example), the row data argument can be `undefined`.",
+                                    "In this example, we check to see if the column name is Salary, and then provide a method as the column formatter",
+                                    "to format the value into a currency string."
+                                ],
+                                "tagName": "remark"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "const column = this.grid.getColumnByName('Address');",
+                                    "const addressFormatter = (address: string, rowData: any) => data.privacyEnabled ? 'unknown' : address;",
+                                    "column.formatter = addressFormatter;",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxColumnComponent",
@@ -351,24 +374,7 @@
                             }
                         }
                     },
-                    "text": [
-                        "In this example, we check to see if the column name is Salary, and then provide a method as the column formatter",
-                        "to format the value into a currency string.",
-                        "```typescript",
-                        "columnInit(column: IgxColumnComponent) {",
-                        "  if (column.field == \"Salary\") {",
-                        "    column.formatter = (salary => this.format(salary));",
-                        "  }",
-                        "}",
-                        "format(value: number) : string {",
-                        "  return formatCurrency(value, \"en-us\", \"$\");",
-                        "}",
-                        "```"
-                    ],
-                    "shortText": [
-                        "When autogenerating columns, the formatter is used to format the display of the column data",
-                        "without modifying the underlying bound values."
-                    ]
+                    "shortText": "Applies display format to cell values in the column. Does not modify the underlying data."
                 }
             },
             "summaryFormatter": {

@@ -343,6 +343,29 @@
             "formatter": {
                 "comment": {
                     "tags": {
+                        "remark": {
+                            "comment": {
+                                "text": [
+                                    "Note: As the formatter is used in places like the Excel style filtering dialog, in certain",
+                                    "scenarios (remote filtering for example), the row data argument can be `undefined`.",
+                                    "In this example, we check to see if the column name is Salary, and then provide a method as the column formatter",
+                                    "to format the value into a currency string."
+                                ],
+                                "tagName": "備考"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "const column = this.grid.getColumnByName('Address');",
+                                    "const addressFormatter = (address: string, rowData: any) => data.privacyEnabled ? 'unknown' : address;",
+                                    "column.formatter = addressFormatter;",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxColumnComponent",
@@ -350,22 +373,7 @@
                             }
                         }
                     },
-                    "text": [
-                        "この例では、列名が Salary かどうかを確認してから、値を通貨文字列にフォーマットするための列フォーマッタとしてのメソッドを提供します。",
-                        "```typescript",
-                        "columnInit(column: IgxColumnComponent) {",
-                        "  if (column.field == \"Salary\") {",
-                        "    column.formatter = (salary => this.format(salary));",
-                        "  }",
-                        "}",
-                        "format(value: number) : string {",
-                        "  return formatCurrency(value, \"en-us\", \"$\");",
-                        "}",
-                        "```"
-                    ],
-                    "shortText": [
-                        "列を自動生成するときは、基礎となるバインド値を変更せずにフォーマッタを使用して列データの表示をフォーマットします。"
-                    ]
+                    "shortText": "Applies display format to cell values in the column. Does not modify the underlying data."
                 }
             },
             "summaryFormatter": {
