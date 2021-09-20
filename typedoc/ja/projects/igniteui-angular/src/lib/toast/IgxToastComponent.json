@@ -230,21 +230,21 @@
                     ]
                 }
             },
-            "close": {
-                "comment": {
-                    "tags": {},
-                    "shortText": "要素を非表示にします。"
-                }
-            },
             "toggle": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```typescript",
-                        "this.myToggle.toggle();",
+                        "this.toast.toggle();",
                         "```"
                     ],
-                    "shortText": "現在状態によってトグルを開くまたは閉じます。"
+                    "shortText": "現在状態によってトーストを開くまたは閉じます。"
+                }
+            },
+            "close": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "要素を非表示にします。"
                 }
             },
             "reposition": {
@@ -266,6 +266,45 @@
             }
         },
         "accessors": {
+            "positionSettings": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "トーストで使用される位置とアニメーションの設定を取得します。",
+                            "```typescript",
+                            "@ViewChild('toast', { static: true }) public toast: IgxToastComponent;",
+                            "let currentPosition: PositionSettings = this.toast.positionSettings",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "トーストで使用される位置とアニメーションの設定を設定します。",
+                            "```html",
+                            "<igx-toast [positionSettings]=\"newPositionSettings\"></igx-toast>",
+                            "```",
+                            "```typescript",
+                            "import { slideInTop, slideOutBottom } from 'igniteui-angular';",
+                            "...",
+                            "@ViewChild('toast', { static: true }) public toast: IgxToastComponent;",
+                            " public newPositionSettings: PositionSettings = {",
+                            "     openAnimation: useAnimation(slideInTop, { params: { duration: '1000ms', fromPosition: 'translateY(100%)'}}),",
+                            "     closeAnimation: useAnimation(slideOutBottom, { params: { duration: '1000ms', fromPosition: 'translateY(0)'}}),",
+                            "     horizontalDirection: HorizontalAlignment.Left,",
+                            "     verticalDirection: VerticalAlignment.Middle,",
+                            "     horizontalStartPoint: HorizontalAlignment.Left,",
+                            "     verticalStartPoint: VerticalAlignment.Middle",
+                            " };",
+                            "this.toast.positionSettings = this.newPositionSettings;",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "element": {
                 "getter": {
                     "comment": {

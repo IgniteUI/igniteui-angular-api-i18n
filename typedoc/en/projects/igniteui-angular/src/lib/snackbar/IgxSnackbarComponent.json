@@ -239,21 +239,21 @@
                     ]
                 }
             },
-            "close": {
-                "comment": {
-                    "tags": {},
-                    "shortText": "Hides the element."
-                }
-            },
             "toggle": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```typescript",
-                        "this.myToggle.toggle();",
+                        "this.snackbar.toggle();",
                         "```"
                     ],
-                    "shortText": "Opens or closes the toggle, depending on its current state."
+                    "shortText": "Opens or closes the snackbar, depending on its current state."
+                }
+            },
+            "close": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Hides the element."
                 }
             },
             "reposition": {
@@ -275,6 +275,46 @@
             }
         },
         "accessors": {
+            "positionSettings": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Get the position and animation settings used by the snackbar.",
+                            "```typescript",
+                            "@ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;",
+                            "let currentPosition: PositionSettings = this.snackbar.positionSettings",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Set the position and animation settings used by the snackbar.",
+                            "```html",
+                            "<igx-snackbar [positionSettings]=\"newPositionSettings\"></igx-snackbar>",
+                            "```",
+                            "```typescript",
+                            "import { slideInTop, slideOutBottom } from 'igniteui-angular';",
+                            "...",
+                            "@ViewChild('snackbar', { static: true }) public snackbar: IgxSnackbarComponent;",
+                            " public newPositionSettings: PositionSettings = {",
+                            "     openAnimation: useAnimation(slideInTop, { params: { duration: '1000ms', fromPosition: 'translateY(100%)'}}),",
+                            "     closeAnimation: useAnimation(slideOutBottom, { params: { duration: '1000ms', fromPosition: 'translateY(0)'}}),",
+                            "     horizontalDirection: HorizontalAlignment.Left,",
+                            "     verticalDirection: VerticalAlignment.Middle,",
+                            "     horizontalStartPoint: HorizontalAlignment.Left,",
+                            "     verticalStartPoint: VerticalAlignment.Middle,",
+                            "     minSize: { height: 100, width: 100 }",
+                            " };",
+                            "this.snackbar.positionSettings = this.newPositionSettings;",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "isVisible": {
                 "getter": {
                     "comment": {
