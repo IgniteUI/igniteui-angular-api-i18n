@@ -440,6 +440,57 @@
                     "shortText": "Gets/Sets the styling classes applied to all odd `IgxGridRowComponent`s in the grid."
                 }
             },
+            "rowClasses": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets a conditional class selector to the grid's row element.",
+                        "Accepts an object literal, containing key-value pairs,",
+                        "where the key is the name of the CSS class and the value is",
+                        "either a callback function that returns a boolean, or boolean, like so:",
+                        "```typescript",
+                        "callback = (row: RowType) => { return row.selected > 6; }",
+                        "rowClasses = { 'className' : this.callback };",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"Data\" [rowClasses] = \"rowClasses\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "rowStyles": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets conditional style properties on the grid row element.",
+                        "It accepts an object literal where the keys are",
+                        "the style properties and the value is an expression to be evaluated.",
+                        "```typescript",
+                        "styles = {",
+                        " background: 'yellow',",
+                        " color: (row: RowType) => row.selected : 'red': 'white'",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"Data\" [rowStyles]=\"styles\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "primaryKey": {
                 "comment": {
                     "tags": {
@@ -1006,6 +1057,58 @@
                         }
                     },
                     "shortText": "Emitted when a row is deleted."
+                }
+            },
+            "rowDelete": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "This event is cancelable.",
+                                    "Returns an `IGridEditEventArgs` object."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (rowDelete)=\"rowDelete($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emmited when deleting a row."
+                }
+            },
+            "rowAdd": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "This event is cancelable.",
+                                    "Returns an `IGridEditEventArgs` object."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (rowAdd)=\"rowAdd($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emmited just before the newly added row is commited."
                 }
             },
             "columnResized": {

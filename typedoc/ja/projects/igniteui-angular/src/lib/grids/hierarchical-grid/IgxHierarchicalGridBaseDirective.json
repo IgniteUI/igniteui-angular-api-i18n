@@ -310,6 +310,57 @@
                     "shortText": "グリッドですべての奇数の `IgxGridRowComponent` に適用されるスタイル クラスを取得または設定します。"
                 }
             },
+            "rowClasses": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "グリッドの行要素に条件付きクラス セレクターを設定します。",
+                        "キーと値のペアを含むオブジェクト リテラルを受け取ります。",
+                        "キーは CSS クラスの名前です。",
+                        "値はブール値を返すコールバック関数またはブール値です。例:",
+                        "```typescript",
+                        "callback = (row: RowType) => { return row.selected > 6; }",
+                        "rowClasses = { 'className' : this.callback };",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"Data\" [rowClasses] = \"rowClasses\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "rowStyles": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "グリッドの行要素に条件付きスタイル プロパティを設定します。",
+                        "キーがスタイル プロパティであり、",
+                        "値が評価用の式であるオブジェクト リテラルを受け入れます。",
+                        "```typescript",
+                        "styles = {",
+                        " background: 'yellow',",
+                        " color: (row: RowType) => row.selected : 'red': 'white'",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"Data\" [rowStyles]=\"styles\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
             "primaryKey": {
                 "comment": {
                     "tags": {
@@ -876,6 +927,58 @@
                         }
                     },
                     "shortText": "行が削除されたときに発生されます。"
+                }
+            },
+            "rowDelete": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "このイベントはキャンセルできます。",
+                                    "`IGridEditEventArgs` オブジェクトを返します。"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (rowDelete)=\"rowDelete($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "行を削除するときに発行します。"
+                }
+            },
+            "rowAdd": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "このイベントはキャンセルできます。",
+                                    "`IGridEditEventArgs` オブジェクトを返します。"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (rowAdd)=\"rowAdd($event)\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "新しく追加された行がコミットされる直前に発行します。"
                 }
             },
             "columnResized": {
