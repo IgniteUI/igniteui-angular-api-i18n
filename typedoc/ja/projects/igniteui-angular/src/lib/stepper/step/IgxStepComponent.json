@@ -1,0 +1,243 @@
+{
+    "IgxStepComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxStepperModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "step",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            " <igx-stepper>",
+                            " ...",
+                            "   <igx-step [active]=\"true\" [completed]=\"true\">",
+                            "     ...",
+                            "   </igx-step>",
+                            " ...",
+                            " </igx-stepper>",
+                            "```"
+                        ],
+                        "tagName": "例:"
+                    }
+                }
+            },
+            "shortText": [
+                "IgxStepComponent は `igx-stepper` 要素内で使用され、各ステップのコンテンツを保持します。",
+                "カスタム インジケーター、タイトル、およびサブタイトルもサポートします。"
+            ]
+        },
+        "properties": {
+            "id": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "ステップ コンポーネントの `id` を取得/設定します。",
+                        "Default value is `\"igx-step-0\"`;",
+                        "```html",
+                        "<igx-step id=\"my-first-step\"></igx-step>",
+                        "```",
+                        "```typescript",
+                        "const stepId = this.step.id;",
+                        "```"
+                    ]
+                }
+            },
+            "completed": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "`true` に設定されると、以下のセパレーターは `solid` でスタイル設定されます。",
+                                    "```html",
+                                    "<igx-stepper>",
+                                    "...",
+                                    "    <igx-step [completed]=\"true\"></igx-step>",
+                                    "...",
+                                    "</igx-stepper>",
+                                    "```",
+                                    "```typescript",
+                                    "this.stepper.steps[1].completed = true;",
+                                    "```"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "ステップが完了したかどうかを取得または設定します。"
+                }
+            },
+            "optional": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "ステッパーがリニア モードの場合、オプションのステップの有効性はデフォルト動作に影響しません。",
+                                    "オプションのステップが無効な場合、ユーザーは次のステップに移動できます。",
+                                    "```html",
+                                    "<igx-step [optional]=\"true\"></igx-step>",
+                                    "```",
+                                    "```typescript",
+                                    "this.stepper.steps[1].optional = true;",
+                                    "```"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "ステップがオプションかどうかを取得/設定します。"
+                }
+            },
+            "activeChange": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-step [(active)]=\"this.isActive\">",
+                        "</igx-step>",
+                        "```",
+                        "```typescript",
+                        "const step: IgxStepComponent = this.stepper.step[0];",
+                        "step.activeChange.subscribe((e: boolean) => console.log(\"Step active state change to \", e))",
+                        "```"
+                    ],
+                    "shortText": "ステップの `active` プロパティが変更されたときに発生します。 双方向バインディングに使用できます。"
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-stepper>",
+                            "...",
+                            "    <igx-step [disabled]=\"true\"></igx-step>",
+                            "...",
+                            "</igx-stepper>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].disabled = true;",
+                            "```"
+                        ],
+                        "shortText": "ステップが操作可能かどうかを取得/設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-stepper>",
+                            "...",
+                            "    <igx-step [disabled]=\"true\"></igx-step>",
+                            "...",
+                            "</igx-stepper>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].disabled = true;",
+                            "```"
+                        ],
+                        "shortText": "ステップが操作可能かどうかを取得/設定します。"
+                    }
+                }
+            },
+            "isValid": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "ステップが有効かどうかを取得/設定します。",
+                            "```html",
+                            "<igx-step [isValid]=\"form.form.valid\">",
+                            "     ...",
+                            "     <div igxStepContent>",
+                            "         <form #form=\"ngForm\">",
+                            "             ...",
+                            "         </form>",
+                            "     </div>",
+                            "</igx-step>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "ステップが有効かどうかを取得/設定します。",
+                            "```html",
+                            "<igx-step [isValid]=\"form.form.valid\">",
+                            "     ...",
+                            "     <div igxStepContent>",
+                            "         <form #form=\"ngForm\">",
+                            "             ...",
+                            "         </form>",
+                            "     </div>",
+                            "</igx-step>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "active": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-step [active]=\"true\"></igx-step>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].active = true;",
+                            "```"
+                        ],
+                        "shortText": "ステップのアクティブ状態を取得または設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-step [active]=\"true\"></igx-step>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].active = true;",
+                            "```"
+                        ],
+                        "shortText": "ステップのアクティブ状態を取得または設定します。"
+                    }
+                }
+            },
+            "index": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "const step = this.stepper.steps[1];",
+                            "const stepIndex: number = step.index;",
+                            "```"
+                        ],
+                        "shortText": "ステッパー内のステップ インデックスを取得します。"
+                    }
+                }
+            }
+        }
+    }
+}

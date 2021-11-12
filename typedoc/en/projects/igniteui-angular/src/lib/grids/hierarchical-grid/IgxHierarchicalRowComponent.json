@@ -1,0 +1,231 @@
+{
+    "IgxHierarchicalRowComponent": {
+        "properties": {
+            "index": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// get the index of the second selected row",
+                        "let selectedRowIndex = this.grid.selectedRows[1].index;",
+                        "```"
+                    ],
+                    "shortText": "The index of the row."
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets whether this specific row has disabled functionality for editing and row selection.",
+                        "Default value is `false`.",
+                        "```typescript",
+                        "this.grid.selectedRows[0].pinned = true;",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "toggle": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Toggles the hierarchical row.",
+                        "```typescript",
+                        "this.grid1.rowList.first.toggle()",
+                        "```"
+                    ]
+                }
+            },
+            "update": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// update the second selected row's value",
+                        "let newValue = \"Apple\";",
+                        "this.grid.selectedRows[1].update(newValue);",
+                        "```"
+                    ],
+                    "shortText": "Updates the specified row object and the data source record with the passed value."
+                }
+            },
+            "delete": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// delete the third selected row from the grid",
+                        "this.grid.selectedRows[2].delete();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Removes the specified row from the grid's data source.",
+                        "This method emits `rowDeleted` event."
+                    ]
+                }
+            },
+            "pin": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// pin the selected row from the grid",
+                        "this.grid.selectedRows[0].pin();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Pins the specified row.",
+                        "This method emits `rowPinning`\\`rowPinned` event."
+                    ]
+                }
+            },
+            "unpin": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// unpin the selected row from the grid",
+                        "this.grid.selectedRows[0].unpin();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Unpins the specified row.",
+                        "This method emits `rowPinning`\\`rowPinned` event."
+                    ]
+                }
+            },
+            "beginAddRow": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "const row = this.grid1.getRowByIndex(1);",
+                                    "row.beginAddRow();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Spawns the add row UI for the specific row."
+                }
+            }
+        },
+        "accessors": {
+            "expanded": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns whether the row is expanded.",
+                            "```typescript",
+                            "const RowExpanded = this.grid1.rowList.first.expanded;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "rowData": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// get the row data for the first selected row",
+                            "let selectedRowData = this.grid.selectedRows[0].rowData;",
+                            "```"
+                        ],
+                        "shortText": " The data passed to the row component."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// get the row data for the first selected row",
+                            "let selectedRowData = this.grid.selectedRows[0].rowData;",
+                            "```"
+                        ],
+                        "shortText": " The data passed to the row component."
+                    }
+                }
+            },
+            "pinned": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Gets whether the row is pinned.",
+                            "```typescript",
+                            "let isPinned = row.pinned;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets whether the row is pinned.",
+                            "Default value is `false`.",
+                            "```typescript",
+                            "this.grid.selectedRows[0].pinned = true;",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "cells": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// get the cells of the third selected row",
+                            "let selectedRowCells = this.grid.selectedRows[2].cells;",
+                            "```"
+                        ],
+                        "shortText": "Gets the rendered cells in the row component."
+                    }
+                }
+            },
+            "rowID": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let rowID = this.grid.selectedRows[2].rowID;",
+                            "```"
+                        ],
+                        "shortText": [
+                            "Gets the ID of the row.",
+                            "A row in the grid is identified either by:",
+                            "- primaryKey data value,",
+                            "- the whole rowData, if the primaryKey is omitted."
+                        ]
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// get the nativeElement of the second selected row",
+                            "let selectedRowNativeElement = this.grid.selectedRows[1].nativeElement;",
+                            "```"
+                        ],
+                        "shortText": "The native DOM element representing the row. Could be null in certain environments."
+                    }
+                }
+            }
+        }
+    }
+}

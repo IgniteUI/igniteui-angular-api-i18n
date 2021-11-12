@@ -1,0 +1,259 @@
+{
+    "IgxGridFooterComponent": {
+        "properties": {
+            "dragTolerance": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグを開始する時を示す @Input プロパティ。",
+                        "デフォルトで、ドラッグ可能な要素が 5 px で移動された後にドラッグが開始します。",
+                        "```html",
+                        "<div igxDrag [dragTolerance]=\"100\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragChannel": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "igxDrag と igxDrop をチャネルでリンクする方法を提供する @Input プロパティ。",
+                        "単一の値または値の配列を受け入れ、完全に一致することで評価します。",
+                        "```html",
+                        "<div igxDrag [dragChannel]=\"'odd'\">",
+                        "        <span>95</span>",
+                        "</div>",
+                        "<div igxDrop [dropChannel]=\"['odd', 'irrational']\">",
+                        "        <span>Numbers drop area!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostClass": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "`ghostElement` 要素に追加するカスタム クラスを設定します。",
+                        "```html",
+                        "<div igxDrag [ghostClass]=\"'ghostElement'\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostHost": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグされる要素を追加する要素を設定する @Input プロパティ。",
+                        "デフォルトで、null 値に設定されて、ドラッグされる要素はボディに追加されます。",
+                        "```html",
+                        "<div #hostDiv></div>",
+                        "<div igxDrag [ghostHost]=\"hostDiv\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragMove": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ可能な要素が移動されたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag  (dragMove)=\"onDragMove()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragMove(){",
+                        "     alert(\"The element has moved!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "dragClick": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ可能な要素がクリックされたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (dragClick)=\"onDragClick()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragClick(){",
+                        "     alert(\"The element has been clicked!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "ghostDestroy": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "次のメンバー:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "ドラッグ ゴースト要素が作成されたときにトリガーされるイベント。",
+                        "```html",
+                        "<div igxDrag (ghostDestroy)=\"ghostDestroyed()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public ghostDestroyed(){",
+                        "     alert(\"The ghost has been destroyed!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "setLocation": {
+                "comment": {
+                    "parameters": {
+                        "newLocation": {
+                            "comment": {
+                                "text": "適用する新しい位置。 getBoundingClientRects() + スクロール を使用して新しい位置を取得することを推奨します。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "ドキュメントに関連してレンダリングされた場合、ベース要素またはゴースト要素の目的の位置を設定します。"
+                }
+            },
+            "transitionTo": {
+                "comment": {
+                    "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": "ベースまたはゴーストが移行するターゲット。 ページ内の位置または別の HTML 要素のいずれかです。"
+                            }
+                        },
+                        "customAnimArgs": {
+                            "comment": {
+                                "text": "トランジションを実行するときに適用されるカスタムトランジション プロパティ。"
+                            }
+                        },
+                        "startLocation": {
+                            "comment": {
+                                "text": "トランジションを開始する開始位置。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "トランジションを使用して、ベースまたはゴースト要素を特定のターゲット位置または他の要素にアニメーション化します。",
+                        "`ghost` が true で、ゴーストがレンダリングされていない場合、作成されてアニメートされます。",
+                        "It is recommended to use 'getBoundingClientRects() + pageScroll' when determining desired location."
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "location": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "ページに相対的な要素の現在の位置を取得します。"
+                    }
+                }
+            },
+            "ghostOffsetX": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
+                            "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "ドラッグされた要素 (マウスに相対) のオフセットをピクセル単位で指定する @Input プロパティ。",
+                            "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

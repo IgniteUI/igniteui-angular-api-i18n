@@ -1,0 +1,259 @@
+{
+    "IgxGridFooterComponent": {
+        "properties": {
+            "dragTolerance": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that indicates when the drag should start.",
+                        "By default the drag starts after the draggable element is moved by 5px.",
+                        "```html",
+                        "<div igxDrag [dragTolerance]=\"100\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragChannel": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that provide a way for igxDrag and igxDrop to be linked through channels.",
+                        "It accepts single value or an array of values and evaluates then using strict equality.",
+                        "```html",
+                        "<div igxDrag [dragChannel]=\"'odd'\">",
+                        "        <span>95</span>",
+                        "</div>",
+                        "<div igxDrop [dropChannel]=\"['odd', 'irrational']\">",
+                        "        <span>Numbers drop area!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostClass": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets a custom class that will be added to the `ghostElement` element.",
+                        "```html",
+                        "<div igxDrag [ghostClass]=\"'ghostElement'\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "ghostHost": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "An @Input property that sets the element to which the dragged element will be appended.",
+                        "By default it's set to null and the dragged element is appended to the body.",
+                        "```html",
+                        "<div #hostDiv></div>",
+                        "<div igxDrag [ghostHost]=\"hostDiv\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```"
+                    ]
+                }
+            },
+            "dragMove": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Event triggered when the draggable element has been moved.",
+                        "```html",
+                        "<div igxDrag  (dragMove)=\"onDragMove()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragMove(){",
+                        "     alert(\"The element has moved!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "dragClick": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Event triggered when the draggable element is clicked.",
+                        "```html",
+                        "<div igxDrag (dragClick)=\"onDragClick()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public onDragClick(){",
+                        "     alert(\"The element has been clicked!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            },
+            "ghostDestroy": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxDragDirective",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Event triggered when the drag ghost element is created.",
+                        "```html",
+                        "<div igxDrag (ghostDestroy)=\"ghostDestroyed()\">",
+                        "        <span>Drag Me!</span>",
+                        "</div>",
+                        "```",
+                        "```typescript",
+                        "public ghostDestroyed(){",
+                        "     alert(\"The ghost has been destroyed!\");",
+                        "}",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "setLocation": {
+                "comment": {
+                    "parameters": {
+                        "newLocation": {
+                            "comment": {
+                                "text": "New location that should be applied. It is advised to get new location using getBoundingClientRects() + scroll."
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Sets desired location of the base element or ghost element if rended relative to the document."
+                }
+            },
+            "transitionTo": {
+                "comment": {
+                    "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": "Target that the base or ghost will transition to. It can be either location in the page or another HTML element."
+                            }
+                        },
+                        "customAnimArgs": {
+                            "comment": {
+                                "text": "Custom transition properties that will be applied when performing the transition."
+                            }
+                        },
+                        "startLocation": {
+                            "comment": {
+                                "text": "Start location from where the transition should start."
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Animates the base or ghost element to a specific target location or other element using transition.",
+                        "If `ghost` is true but there is not ghost rendered, it will be created and animated.",
+                        "It is recommended to use 'getBoundingClientRects() + pageScroll' when determining desired location."
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "location": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets the current location of the element relative to the page."
+                    }
+                }
+            },
+            "ghostOffsetX": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "An @Input property that specifies the offset of the dragged element relative to the mouse in pixels.",
+                            "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxDragDirective",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "An @Input property that specifies the offset of the dragged element relative to the mouse in pixels.",
+                            "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
+                            "```html",
+                            "<div #hostDiv></div>",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "        <span>Drag Me!</span>",
+                            "</div>",
+                            "```"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

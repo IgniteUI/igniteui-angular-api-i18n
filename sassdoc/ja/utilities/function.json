@@ -101,26 +101,6 @@
             ]
         }
     },
-    "_alpha-map": {
-        "description": [
-            "<p>指定したパレット バリアントのアルファ チャネル マップを返します。</p>",
-            ""
-        ],
-        "parameters": {
-            "variant": {
-                "description": [
-                    "<p>パレット バリアント。</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>指定したパレットのアルファ チャネル マップ。</p>",
-                ""
-            ]
-        }
-    },
     "to-opaque": {
         "description": [
             "<p>2 色を混合して不透明色を生成します。</p>",
@@ -173,7 +153,7 @@
             ]
         }
     },
-    "--var": {
+    "var-get": {
         "description": [
             "<p>CSS プロパティ値を返します。テーマ設定によってい css &#39;--var&#39; または文字列の値を返します。</p>",
             ""
@@ -205,14 +185,10 @@
                     ""
                 ],
                 "code": [
-                    "%igx-avatar-icon {",
-                    "  color: --var($avatar-theme, 'icon-color');",
-                    "}",
-                    "// legacy-support がオフの場合、次のを生成します。",
-                    "// %igx-avatar-icon {",
-                    "//   color: var(--igx-avatar-icon-color);",
-                    "// }",
-                    "// そうでない場合、'$avatar-theme’の 'icon-color’ キーの値を返します。;"
+                    "  %igx-avatar-icon {",
+                    "    color: var-get($avatar-theme, 'icon-color');",
+                    "  }",
+                    "'$avatar-theme' のキー 'icon-color' の値を返します。;"
                 ]
             }
         ]

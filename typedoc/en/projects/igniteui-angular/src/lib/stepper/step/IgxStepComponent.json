@@ -1,0 +1,243 @@
+{
+    "IgxStepComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxStepperModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "step",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            " <igx-stepper>",
+                            " ...",
+                            "   <igx-step [active]=\"true\" [completed]=\"true\">",
+                            "     ...",
+                            "   </igx-step>",
+                            " ...",
+                            " </igx-stepper>",
+                            "```"
+                        ],
+                        "tagName": "example"
+                    }
+                }
+            },
+            "shortText": [
+                "The IgxStepComponent is used within the `igx-stepper` element and it holds the content of each step.",
+                "It also supports custom indicators, title and subtitle."
+            ]
+        },
+        "properties": {
+            "id": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Get/Set the `id` of the step component.",
+                        "Default value is `\"igx-step-0\"`;",
+                        "```html",
+                        "<igx-step id=\"my-first-step\"></igx-step>",
+                        "```",
+                        "```typescript",
+                        "const stepId = this.step.id;",
+                        "```"
+                    ]
+                }
+            },
+            "completed": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "When set to `true` the following separator is styled `solid`.",
+                                    "```html",
+                                    "<igx-stepper>",
+                                    "...",
+                                    "    <igx-step [completed]=\"true\"></igx-step>",
+                                    "...",
+                                    "</igx-stepper>",
+                                    "```",
+                                    "```typescript",
+                                    "this.stepper.steps[1].completed = true;",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Get/Set whether the step is completed."
+                }
+            },
+            "optional": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Optional steps validity does not affect the default behavior when the stepper is in linear mode i.e.",
+                                    "if optional step is invalid the user could still move to the next step.",
+                                    "```html",
+                                    "<igx-step [optional]=\"true\"></igx-step>",
+                                    "```",
+                                    "```typescript",
+                                    "this.stepper.steps[1].optional = true;",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Get/Set whether the step is optional."
+                }
+            },
+            "activeChange": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-step [(active)]=\"this.isActive\">",
+                        "</igx-step>",
+                        "```",
+                        "```typescript",
+                        "const step: IgxStepComponent = this.stepper.step[0];",
+                        "step.activeChange.subscribe((e: boolean) => console.log(\"Step active state change to \", e))",
+                        "```"
+                    ],
+                    "shortText": "Emitted when the step's `active` property changes. Can be used for two-way binding."
+                }
+            }
+        },
+        "methods": {},
+        "accessors": {
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-stepper>",
+                            "...",
+                            "    <igx-step [disabled]=\"true\"></igx-step>",
+                            "...",
+                            "</igx-stepper>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].disabled = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set whether the step is interactable."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-stepper>",
+                            "...",
+                            "    <igx-step [disabled]=\"true\"></igx-step>",
+                            "...",
+                            "</igx-stepper>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].disabled = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set whether the step is interactable."
+                    }
+                }
+            },
+            "isValid": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Get/Set whether the step is valid.",
+                            "```html",
+                            "<igx-step [isValid]=\"form.form.valid\">",
+                            "     ...",
+                            "     <div igxStepContent>",
+                            "         <form #form=\"ngForm\">",
+                            "             ...",
+                            "         </form>",
+                            "     </div>",
+                            "</igx-step>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Get/Set whether the step is valid.",
+                            "```html",
+                            "<igx-step [isValid]=\"form.form.valid\">",
+                            "     ...",
+                            "     <div igxStepContent>",
+                            "         <form #form=\"ngForm\">",
+                            "             ...",
+                            "         </form>",
+                            "     </div>",
+                            "</igx-step>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "active": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-step [active]=\"true\"></igx-step>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].active = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set the active state of the step"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```html",
+                            "<igx-step [active]=\"true\"></igx-step>",
+                            "```",
+                            "```typescript",
+                            "this.stepper.steps[1].active = true;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set the active state of the step"
+                    }
+                }
+            },
+            "index": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "const step = this.stepper.steps[1];",
+                            "const stepIndex: number = step.index;",
+                            "```"
+                        ],
+                        "shortText": "Get the step index inside of the stepper."
+                    }
+                }
+            }
+        }
+    }
+}

@@ -101,26 +101,6 @@
             ]
         }
     },
-    "_alpha-map": {
-        "description": [
-            "<p>Returns an alpha channel map for a given palette variant.</p>",
-            ""
-        ],
-        "parameters": {
-            "variant": {
-                "description": [
-                    "<p>The palette variant.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>The alpha channel map for the specified palette.</p>",
-                ""
-            ]
-        }
-    },
     "to-opaque": {
         "description": [
             "<p>Mixes two colors to produce an opaque color.</p>",
@@ -173,7 +153,7 @@
             ]
         }
     },
-    "--var": {
+    "var-get": {
         "description": [
             "<p>Returns a CSS property value. It could return either css &#39;--var&#39; or",
             "a plain string value based on theme configuration.</p>",
@@ -206,14 +186,10 @@
                     ""
                 ],
                 "code": [
-                    "%igx-avatar-icon {",
-                    "  color: --var($avatar-theme, 'icon-color');",
-                    "}",
-                    "// If legacy-support is off, it will produce the following:",
-                    "// %igx-avatar-icon {",
-                    "//   color: var(--igx-avatar-icon-color);",
-                    "// }",
-                    "// otherwise, it will return the value for key 'icon-color' in the '$avatar-theme';"
+                    "  %igx-avatar-icon {",
+                    "    color: var-get($avatar-theme, 'icon-color');",
+                    "  }",
+                    "Returns the value for key 'icon-color' in the '$avatar-theme';"
                 ]
             }
         ]

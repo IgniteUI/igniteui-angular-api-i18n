@@ -1,0 +1,349 @@
+{
+    "IgxStepperComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxStepperModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "stepper",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Layouts",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "Ignite UI for Angular Stepper コンポーネントを使用すると、複数のステップ間を移動できます。",
+                            "水平方向と垂直方向、およびキーボード ナビゲーションをサポートし、アクティブなステップを制御する API メソッドを提供します。",
+                            "このコンポーネントは、アクティブなステップを制御するキーボード ナビゲーションと API を提供します。"
+                        ],
+                        "tagName": "備考:"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-stepper>",
+                            " <igx-step [active]=\"true\">",
+                            "     <igx-icon igxStepIndicator>home</igx-icon>",
+                            "     <p igxStepTitle>Home</p>",
+                            "     <div igxStepContent>",
+                            "        ...",
+                            "     </div>",
+                            " </igx-step>",
+                            " <igx-step [optional]=\"true\">",
+                            "     <div igxStepContent>",
+                            "         ...",
+                            "     </div>",
+                            " </igx-step>",
+                            " <igx-step>",
+                            "     <div igxStepContent>",
+                            "         ...",
+                            "     </div>",
+                            " </igx-step>",
+                            "</igx-stepper>",
+                            "```"
+                        ],
+                        "tagName": "例:"
+                    }
+                }
+            },
+            "shortText": "IgxStepper は、コンテンツを論理ステップに分割することにより、ウィザードのようなワークフローを提供します。"
+        },
+        "properties": {
+            "stepType": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.stepType = IgxStepType.Indicator;",
+                        "```"
+                    ],
+                    "shortText": "ステップが操作可能かどうかを取得/設定します。"
+                }
+            },
+            "contentTop": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "デフォルト値は `false` で、コンテンツはステップの下にあります。",
+                                    "```typescript",
+                                    "this.stepper.contentTop = true;",
+                                    "```"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "コンテンツがステップの上に表示されるかどうかを取得または設定します。"
+                }
+            },
+            "titlePosition": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "ステッパーが水平方向のデフォルト値は `bottom` です。",
+                                    "垂直レイアウトでは、デフォルトのタイトル位置は `end` です。",
+                                    "```typescript",
+                                    "this.stepper.titlePosition = IgxStepperTitlePosition.Top;",
+                                    "```"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "ステップのタイトルの位置を取得または設定します。"
+                }
+            },
+            "activeStepChanging": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-stepper (activeStepChanging)=\"handleActiveStepChanging($event)\">",
+                        "</igx-stepper>",
+                        "```",
+                        "```typescript",
+                        "public handleActiveStepChanging(event: IStepChangingEventArgs) {",
+                        " if (event.newIndex < event.oldIndex) {",
+                        "     event.cancel = true;",
+                        " }",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "ステッパーのアクティブなステップが変更しているときに発生します。"
+                }
+            },
+            "activeStepChanged": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "<igx-stepper (activeStepChanged)=\"handleActiveStepChanged($event)\"></igx-stepper>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "アクティブなステップが変更されたときに発生します。"
+                }
+            }
+        },
+        "methods": {
+            "navigateTo": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.navigateTo(1);",
+                        "```"
+                    ],
+                    "shortText": "指定したインデックスにあるステップをアクティブ化します。"
+                }
+            },
+            "next": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.next();",
+                        "```"
+                    ],
+                    "shortText": "次の有効なステップをアクティブ化します。"
+                }
+            },
+            "prev": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.prev();",
+                        "```"
+                    ],
+                    "shortText": "前の有効なステップをアクティブ化します。"
+                }
+            },
+            "reset": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "ステップのコンテンツは自動的にリセットされません。",
+                                    "```typescript",
+                                    "this.stepper.reset();",
+                                    "```"
+                                ],
+                                "tagName": "備考:"
+                            }
+                        }
+                    },
+                    "shortText": "ステッパーを初期状態にリセットします。つまり、最初のステップをアクティブ化します。"
+                }
+            }
+        },
+        "accessors": {
+            "verticalAnimationType": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "デフォルト値は `grow` です。その他の可能な値は `fade` と `none` です。",
+                                        "```html",
+                                        "<igx-stepper verticalAnimationType=\"none\">",
+                                        "<igx-stepper>",
+                                        "```"
+                                    ],
+                                    "tagName": "備考:"
+                                }
+                            }
+                        },
+                        "shortText": "方向が垂直の場合のステッパーのアニメーション タイプを取得/設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "方向が垂直の場合のステッパーのアニメーション タイプを取得/設定します。"
+                    }
+                }
+            },
+            "horizontalAnimationType": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "デフォルト値は `grow` です。その他の可能な値は `fade` と `none` です。",
+                                        "```html",
+                                        "<igx-stepper animationType=\"none\">",
+                                        "<igx-stepper>",
+                                        "```"
+                                    ],
+                                    "tagName": "備考:"
+                                }
+                            }
+                        },
+                        "shortText": "方向が水平の場合のステッパーのアニメーション タイプを取得/設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "方向が水平の場合のステッパーのアニメーション タイプを取得/設定します。"
+                    }
+                }
+            },
+            "animationDuration": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "アニメーション期間を取得または設定します。",
+                            "```html",
+                            "<igx-stepper [animationDuration]=\"500\">",
+                            "<igx-stepper>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "アニメーション期間を取得または設定します。",
+                            "```html",
+                            "<igx-stepper [animationDuration]=\"500\">",
+                            "<igx-stepper>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "linear": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "ステッパーがリニア モードで、アクティブなステップのみが有効な場合、ユーザーは次のステップに進むことができます。",
+                                        "```html",
+                                        "<igx-stepper [linear]=\"true\"></igx-stepper>",
+                                        "```"
+                                    ],
+                                    "tagName": "備考:"
+                                }
+                            }
+                        },
+                        "shortText": "ステッパーがリニアかどうかを取得/設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "ステッパーがリニアかどうかを取得/設定します。"
+                    }
+                }
+            },
+            "orientation": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "this.stepper.orientation = IgxStepperOrientation.Vertical;",
+                            "```"
+                        ],
+                        "shortText": "ステッパーの向きを取得/設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "this.stepper.orientation = IgxStepperOrientation.Vertical;",
+                            "```"
+                        ],
+                        "shortText": "ステッパーの向きを取得/設定します。"
+                    }
+                }
+            },
+            "steps": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "const steps: IgxStepComponent[] = this.stepper.steps;",
+                            "```"
+                        ],
+                        "shortText": "すべてのステップを実行します。"
+                    }
+                }
+            }
+        }
+    }
+}

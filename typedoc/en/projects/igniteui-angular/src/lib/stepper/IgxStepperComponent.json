@@ -1,0 +1,349 @@
+{
+    "IgxStepperComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxStepperModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "stepper",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Layouts",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "The Ignite UI for Angular Stepper component allows the user to navigate between multiple steps.",
+                            "It supports horizontal and vertical orientation as well as keyboard navigation and provides API methods to control the active step.",
+                            "The component offers keyboard navigation and API to control the active step."
+                        ],
+                        "tagName": "remarks"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-stepper>",
+                            " <igx-step [active]=\"true\">",
+                            "     <igx-icon igxStepIndicator>home</igx-icon>",
+                            "     <p igxStepTitle>Home</p>",
+                            "     <div igxStepContent>",
+                            "        ...",
+                            "     </div>",
+                            " </igx-step>",
+                            " <igx-step [optional]=\"true\">",
+                            "     <div igxStepContent>",
+                            "         ...",
+                            "     </div>",
+                            " </igx-step>",
+                            " <igx-step>",
+                            "     <div igxStepContent>",
+                            "         ...",
+                            "     </div>",
+                            " </igx-step>",
+                            "</igx-stepper>",
+                            "```"
+                        ],
+                        "tagName": "example"
+                    }
+                }
+            },
+            "shortText": "IgxStepper provides a wizard-like workflow by dividing content into logical steps."
+        },
+        "properties": {
+            "stepType": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.stepType = IgxStepType.Indicator;",
+                        "```"
+                    ],
+                    "shortText": "Get/Set the type of the steps."
+                }
+            },
+            "contentTop": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Default value is `false` and the content is below the steps.",
+                                    "```typescript",
+                                    "this.stepper.contentTop = true;",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Get/Set whether the content is displayed above the steps."
+                }
+            },
+            "titlePosition": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "The default value when the stepper is horizontally orientated is `bottom`.",
+                                    "In vertical layout the default title position is `end`.",
+                                    "```typescript",
+                                    "this.stepper.titlePosition = IgxStepperTitlePosition.Top;",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Get/Set the position of the steps title."
+                }
+            },
+            "activeStepChanging": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-stepper (activeStepChanging)=\"handleActiveStepChanging($event)\">",
+                        "</igx-stepper>",
+                        "```",
+                        "```typescript",
+                        "public handleActiveStepChanging(event: IStepChangingEventArgs) {",
+                        " if (event.newIndex < event.oldIndex) {",
+                        "     event.cancel = true;",
+                        " }",
+                        "}",
+                        "```"
+                    ],
+                    "shortText": "Emitted when the stepper's active step is changing."
+                }
+            },
+            "activeStepChanged": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "<igx-stepper (activeStepChanged)=\"handleActiveStepChanged($event)\"></igx-stepper>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the active step is changed."
+                }
+            }
+        },
+        "methods": {
+            "navigateTo": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.navigateTo(1);",
+                        "```"
+                    ],
+                    "shortText": "Activates the step at a given index."
+                }
+            },
+            "next": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.next();",
+                        "```"
+                    ],
+                    "shortText": "Activates the next enabled step."
+                }
+            },
+            "prev": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.stepper.prev();",
+                        "```"
+                    ],
+                    "shortText": "Activates the previous enabled step."
+                }
+            },
+            "reset": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "The steps' content will not be automatically reset.",
+                                    "```typescript",
+                                    "this.stepper.reset();",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Resets the stepper to its initial state i.e. activates the first step."
+                }
+            }
+        },
+        "accessors": {
+            "verticalAnimationType": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Default value is `grow`. Other possible values are `fade` and `none`.",
+                                        "```html",
+                                        "<igx-stepper verticalAnimationType=\"none\">",
+                                        "<igx-stepper>",
+                                        "```"
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Get/Set the animation type of the stepper when the orientation direction is vertical."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Get/Set the animation type of the stepper when the orientation direction is vertical."
+                    }
+                }
+            },
+            "horizontalAnimationType": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Default value is `grow`. Other possible values are `fade` and `none`.",
+                                        "```html",
+                                        "<igx-stepper animationType=\"none\">",
+                                        "<igx-stepper>",
+                                        "```"
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Get/Set the animation type of the stepper when the orientation direction is horizontal."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Get/Set the animation type of the stepper when the orientation direction is horizontal."
+                    }
+                }
+            },
+            "animationDuration": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Get/Set the animation duration.",
+                            "```html",
+                            "<igx-stepper [animationDuration]=\"500\">",
+                            "<igx-stepper>",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Get/Set the animation duration.",
+                            "```html",
+                            "<igx-stepper [animationDuration]=\"500\">",
+                            "<igx-stepper>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "linear": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "If the stepper is in linear mode and if the active step is valid only then the user is able to move forward.",
+                                        "```html",
+                                        "<igx-stepper [linear]=\"true\"></igx-stepper>",
+                                        "```"
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Get/Set whether the stepper is linear."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Get/Set whether the stepper is linear."
+                    }
+                }
+            },
+            "orientation": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "this.stepper.orientation = IgxStepperOrientation.Vertical;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set the stepper orientation."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "this.stepper.orientation = IgxStepperOrientation.Vertical;",
+                            "```"
+                        ],
+                        "shortText": "Get/Set the stepper orientation."
+                    }
+                }
+            },
+            "steps": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "const steps: IgxStepComponent[] = this.stepper.steps;",
+                            "```"
+                        ],
+                        "shortText": "Get all steps."
+                    }
+                }
+            }
+        }
+    }
+}
