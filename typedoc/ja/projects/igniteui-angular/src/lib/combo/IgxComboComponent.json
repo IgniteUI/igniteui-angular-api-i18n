@@ -52,6 +52,70 @@
             "shortText": "編集可能な機能を提供するドロップダウン リストを表します。ユーザーは定義済みのリストからオプションを選択できます。"
         },
         "properties": {
+            "autoFocusSearch": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "`opened` イベントが呼び出された後にコンボの検索ボックスにフォーカスするかどうかを制御する",
+                        "@Inputプロパティ。",
+                        "`false` の場合、代わりにコンボのリスト項目コンテナーがフォーカスされます。"
+                    ]
+                }
+            },
+            "filterable": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "リストでフィルタリングを有効/無効にする @Input プロパティ。デフォルトは `true` です。",
+                        "```html",
+                        "<igx-combo [filterable]=\"false\">",
+                        "```"
+                    ]
+                }
+            },
+            "searchPlaceholder": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let myComboSearchPlaceholder = this.combo.searchPlaceholder;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [searchPlaceholder]='newPlaceHolder'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "コンボ ドロップダウンの検索フィールドのプレースホルダー値を定義します。"
+                }
+            },
+            "selectionChanging": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo (selectionChanging)='handleSelection()'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "選択を完了する前にアイテム選択が変更されるときに発生します。"
+                }
+            },
+            "showSearchCaseIcon": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let myComboShowSearchCaseIcon = this.combo.showSearchCaseIcon;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [showSearchCaseIcon]='true'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "caseSensitive アイコンを検索入力に表示するかどうかを定義します。"
+                }
+            },
             "overlaySettings": {
                 "comment": {
                     "tags": {},
@@ -67,11 +131,206 @@
                     ],
                     "shortText": [
                         "コンボの項目リストの表示方法を制御するカスタム オーバーレイ設定を設定します。",
-                        "設定:",
+                        "Set:",
                         "```html",
                         "<igx-combo [overlaySettings] = \"customOverlaySettings\"></igx-combo>",
                         "```"
                     ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let id = this.combo.id;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [id]='combo1'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "コンボの id を取得または設定します。"
+                }
+            },
+            "width": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let myComboWidth = this.combo.width;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [width]='250px'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "要素のスタイルの幅を設定します。"
+                }
+            },
+            "allowCustomValues": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let comboAllowsCustomValues = this.combo.allowCustomValues;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [allowCustomValues]='true'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "カスタム値をコレクションに追加できるかどうかを制御します。"
+                }
+            },
+            "itemsWidth": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let myComboItemsWidth = this.combo.itemsWidth;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [itemsWidth] = '\"180px\"'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウン リストの幅を構成します。"
+                }
+            },
+            "placeholder": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let myComboPlaceholder = this.combo.placeholder;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [placeholder]='newPlaceHolder'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "コンボの値フィールドのプレースホルダー値を定義します。"
+                }
+            },
+            "valueKey": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let myComboValueKey = this.combo.valueKey;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-combo [valueKey]='myKey'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "値を決定するためにデータ ソースのどの列を使用するかを決定します。"
+                }
+            },
+            "ariaLabelledBy": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "aria-labelledby 属性を設定する @Input プロパティ。",
+                        "```html",
+                        "<igx-combo [ariaLabelledBy]=\"'label1'\">",
+                        "```"
+                    ]
+                }
+            },
+            "disabled": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "コンボを有効/無効にする @Input プロパティ。デフォルトは `false` です。",
+                        "```html",
+                        "<igx-combo [disabled]=\"'true'\">",
+                        "```"
+                    ]
+                }
+            },
+            "opening": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo opening='handleOpening($event)'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが開く前に発生します。"
+                }
+            },
+            "opened": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo (opened)='handleOpened($event)'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが開いた後に発生します。"
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo (closing)='handleClosing($event)'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが閉じる前に発生します。"
+                }
+            },
+            "closed": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo (closed)='handleClosed($event)'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが閉じられた後に発生します。"
+                }
+            },
+            "addition": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo (addition)='handleAdditionEvent($event)'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "項目がデータ コレクションに追加されているときに発生します。"
+                }
+            },
+            "searchInputUpdate": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo (searchInputUpdate)='handleSearchInputEvent($event)'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "検索入力の値が変更 (入力、貼り付け、クリアなど) するときに発生します。"
+                }
+            },
+            "dataPreLoad": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-combo (dataPreLoad)='handleDataPreloadEvent($event)'></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "新しいデータの塊が仮想化から読み込まれたときに発生します。"
                 }
             },
             "itemTemplate": {
@@ -84,7 +343,7 @@
                         "myComponent.combo.itemTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboItem>",
@@ -109,7 +368,7 @@
                         "myComponent.combo.headerTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboHeader>",
@@ -133,7 +392,7 @@
                         "myComponent.combo.footerTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboFooter>",
@@ -144,7 +403,7 @@
                         " </igx-combo>",
                         "```"
                     ],
-                    "shortText": "カスタム テンプレートがある場合は、コンボ項目リストのための FOOTER の描画に使用されます。"
+                    "shortText": "カスタム テンプレートがある場合は、コンボ項目リストのための FOOTER の描画に使用されます"
                 }
             },
             "headerItemTemplate": {
@@ -157,7 +416,7 @@
                         "myComponent.combo.headerItemTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboHeaderItem let-item let-key=\"groupKey\">",
@@ -179,7 +438,7 @@
                         "myComponent.combo.addItemTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboAddItem>",
@@ -203,12 +462,12 @@
                         "myComponent.combo.emptyTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboEmpty>",
                         "         <div class=\"combo--empty\">",
-                        "             There are no items to display",
+                        "             表示する項目はありません",
                         "         </div>",
                         "     </ng-template>",
                         " </igx-combo>",
@@ -227,7 +486,7 @@
                         "myComponent.combo.toggleIconTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboToggleIcon let-collapsed>",
@@ -249,7 +508,7 @@
                         "myComponent.combo.clearIconTemplate = myCustomTemplate;",
                         "```",
                         "```html",
-                        "<!-- マークアップに設定 -->",
+                        "<!-- Markup に設定 -->",
                         " <igx-combo #combo>",
                         "     ...",
                         "     <ng-template igxComboClearIcon>",
@@ -258,320 +517,12 @@
                         " </igx-combo>",
                         "```"
                     ],
-                    "shortText": "カスタム テンプレートがある場合は、コンボ CLEAR (開く/閉じる) ボタンを描画するために使用されます。"
-                }
-            },
-            "selectionChanging": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo (selectionChanging)='handleSelection()'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "選択が完了する前に項目の選択が変更されたときに発生されます。"
-                }
-            },
-            "opening": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo opening='handleOpening($event)'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが開く前に発生されます。"
-                }
-            },
-            "opened": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo (opened)='handleOpened($event)'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが開いた後に発生されます。"
-                }
-            },
-            "closing": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo (closing)='handleClosing($event)'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが閉じる前に発生されます。"
-                }
-            },
-            "closed": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo (closed)='handleClosed($event)'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが閉じられた後に発生されます。"
-                }
-            },
-            "addition": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo (addition)='handleAdditionEvent($event)'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "項目がデータ コレクションに追加されているときに発生されます。"
-                }
-            },
-            "searchInputUpdate": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo (searchInputUpdate)='handleSearchInputEvent($event)'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "検索入力の値が変更 (入力、貼り付け、クリアなど) するときに発生されます。"
-                }
-            },
-            "dataPreLoad": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-combo (dataPreLoad)='handleDataPreloadEvent($event)'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "新しいデータの塊が仮想化から読み込まれたときに発生されます。"
-                }
-            },
-            "id": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let id = this.combo.id;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [id]='combo1'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボの id を取得または設定します。"
-                }
-            },
-            "width": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myComboWidth = this.combo.width;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [width]='250px'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "要素のスタイルの幅を設定します。"
-                }
-            },
-            "allowCustomValues": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let comboAllowsCustomValues = this.combo.allowCustomValues;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [allowCustomValues]='true'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "カスタム値をコレクションに追加できるかどうかを制御します。"
-                }
-            },
-            "itemsWidth": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myComboItemsWidth = this.combo.itemsWidth;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [itemsWidth] = '\"180px\"'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウン リストの幅を構成します。"
-                }
-            },
-            "placeholder": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myComboPlaceholder = this.combo.placeholder;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [placeholder]='newPlaceHolder'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボの値フィールドのプレースホルダー値を定義します。"
-                }
-            },
-            "searchPlaceholder": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myComboSearchPlaceholder = this.combo.searchPlaceholder;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [searchPlaceholder]='newPlaceHolder'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボ ドロップダウンの検索フィールドのプレースホルダー値を定義します。"
-                }
-            },
-            "showSearchCaseIcon": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myComboShowSearchCaseIcon = this.combo.showSearchCaseIcon;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [showSearchCaseIcon]='true'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "caseSensitive アイコンを検索入力に表示するかどうかを定義します。"
-                }
-            },
-            "valueKey": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myComboValueKey = this.combo.valueKey;",
-                        "```",
-                        "```html",
-                        "<!--set-->",
-                        "<igx-combo [valueKey]='myKey'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボ値データソース プロパティ。"
-                }
-            },
-            "filterable": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "リストでフィルタリングを有効/無効にする @Input プロパティ。デフォルトは `true` です。",
-                        "```html",
-                        "<igx-combo [filterable]=\"false\">",
-                        "```"
-                    ]
-                }
-            },
-            "ariaLabelledBy": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "aria-labelledby 属性を設定する @Input プロパティ。",
-                        "```html",
-                        "<igx-combo [ariaLabelledBy]=\"'label1'\">",
-                        "```"
-                    ]
-                }
-            },
-            "disabled": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "コンボを有効/無効にする @Input プロパティ。デフォルトは `false`。",
-                        "```html",
-                        "<igx-combo [disabled]=\"'true'\">",
-                        "```"
-                    ]
-                }
-            },
-            "autoFocusSearch": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "`opened` イベントが呼び出された後に",
-                        "コンボの検索ボックスにフォーカスするかどうかを制御する ",
-                        "@Inputプロパティ。"
-                    ]
+                    "shortText": "カスタム テンプレートがある場合は、コンボ CLEAR (開く/閉じる)　ボタンを描画するために使用されます。"
                 }
             }
         },
         "methods": {
-            "triggerCheck": {
-                "comment": {
-                    "tags": {},
-                    "shortText": "コンボ ビューに変更検出をトリガーします。"
-                }
-            },
-            "toggle": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<button (click)=\"combo.toggle()\">Toggle Combo</button>",
-                        "<igx-combo #combo></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボを開く/閉じるメソッド。"
-                }
-            },
-            "open": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<button (click)=\"combo.open()\">Open Combo</button>",
-                        "<igx-combo #combo></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボを開くメソッド。"
-                }
-            },
-            "close": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<button (click)=\"combo.close()\">Close Combo</button>",
-                        "<igx-combo #combo></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボを閉じるメソッド。"
-                }
-            },
-            "selectedItems": {
-                "comment": {
-                    "returns": "選択された項目の配列\n```typescript\nlet selectedItems = this.combo.selectedItems();\n```\n",
-                    "tags": {},
-                    "shortText": "現在の選択状態を取得します。"
-                }
-            },
-            "selectItems": {
+            "select": {
                 "comment": {
                     "parameters": {
                         "newItems": {
@@ -584,7 +535,7 @@
                                 "text": [
                                     "True の場合、前回選択した項目がクリアされます。",
                                     "```typescript",
-                                    "this.combo.selectItems([\"New York\", \"New Jersey\"]);",
+                                    "this.combo.select([\"New York\", \"New Jersey\"]);",
                                     "```"
                                 ]
                             }
@@ -594,7 +545,7 @@
                     "shortText": "定義済みの項目を選択します。"
                 }
             },
-            "deselectItems": {
+            "deselect": {
                 "comment": {
                     "parameters": {
                         "items": {
@@ -602,7 +553,7 @@
                                 "text": [
                                     "選択解除される項目。",
                                     "```typescript",
-                                    "this.combo.deselectItems([\"New York\", \"New Jersey\"]);",
+                                    "this.combo.deselect([\"New York\", \"New Jersey\"]);",
                                     "```"
                                 ]
                             }
@@ -679,6 +630,48 @@
                     "tags": {},
                     "shortText": "1 つの項目を選択/選択解除します。"
                 }
+            },
+            "toggle": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<button (click)=\"combo.toggle()\">Toggle Combo</button>",
+                        "<igx-combo #combo></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "コンボを開く/閉じるメソッド。"
+                }
+            },
+            "open": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<button (click)=\"combo.open()\">Open Combo</button>",
+                        "<igx-combo #combo></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "コンボを開くメソッド。"
+                }
+            },
+            "close": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<button (click)=\"combo.close()\">Close Combo</button>",
+                        "<igx-combo #combo></igx-combo>",
+                        "```"
+                    ],
+                    "shortText": "コンボを閉じるメソッド。"
+                }
+            },
+            "triggerCheck": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "コンボ ビューに変更検出をトリガーします。"
+                }
             }
         },
         "accessors": {
@@ -692,7 +685,7 @@
                             "let myComboItemsMaxHeight = this.combo.itemsMaxHeight;",
                             "```",
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [itemsMaxHeight]='320'></igx-combo>",
                             "```"
                         ],
@@ -708,7 +701,7 @@
                             "let myComboItemsMaxHeight = this.combo.itemsMaxHeight;",
                             "```",
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [itemsMaxHeight]='320'></igx-combo>",
                             "```"
                         ],
@@ -726,7 +719,7 @@
                             "let myComboItemHeight = this.combo.itemHeight;",
                             "```",
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [itemHeight]='32'></igx-combo>",
                             "```"
                         ],
@@ -742,7 +735,7 @@
                             "let myComboItemHeight = this.combo.itemHeight;",
                             "```",
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [itemHeight]='32'></igx-combo>",
                             "```"
                         ],
@@ -756,7 +749,7 @@
                         "tags": {},
                         "text": [
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [data]='items'></igx-combo>",
                             "```"
                         ],
@@ -768,7 +761,7 @@
                         "tags": {},
                         "text": [
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [data]='items'></igx-combo>",
                             "```"
                         ],
@@ -788,11 +781,11 @@
                             "this.combo.displayKey = 'val';",
                             "```",
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [displayKey]='myDisplayKey'></igx-combo>",
                             "```"
                         ],
-                        "shortText": "コンボ テキスト データ ソース プロパティ。"
+                        "shortText": "表示値を決定するためにデータ ソースのどの列を使用するかを決定します。"
                     }
                 }
             },
@@ -814,7 +807,7 @@
                         "tags": {},
                         "text": [
                             "```html",
-                            "<!--set-->",
+                           "<!--設定-->",
                             "<igx-combo [groupKey]='newGroupKey'></igx-combo>",
                             "```"
                         ],
@@ -902,6 +895,20 @@
                     }
                 }
             },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// 取得",
+                            "let comboValue = this.combo.value;",
+                            "```"
+                        ],
+                        "shortText": "コンボ入力に表示するテキスト。"
+                    }
+                }
+            },
             "virtualizationState": {
                 "getter": {
                     "comment": {
@@ -928,6 +935,19 @@
                     }
                 }
             },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let state = this.combo.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "ドロップダウン状態を取得します。"
+                    }
+                }
+            },
             "totalItemCount": {
                 "getter": {
                     "comment": {
@@ -946,38 +966,20 @@
                         "tags": {},
                         "text": [
                             "```typescript",
-                            "// 設定",
+                            "// 設定",
                             "this.combo.totalItemCount(remoteService.count);",
                             "```"
                         ],
-                        "shortText": "リモート サービスを使用する場合、仮想データ項目の合計数を設定します。"
+                        "shortText": "Sets total count of the virtual data items, when using remote service."
                     }
                 }
             },
-            "value": {
+            "selection": {
                 "getter": {
                     "comment": {
+                        "returns": "Array of selected items\n```typescript\nlet selectedItems = this.combo.selectedItems();\n```\n",
                         "tags": {},
-                        "text": [
-                            "```typescript",
-                            "// 取得",
-                            "let comboValue = this.combo.value;",
-                            "```"
-                        ],
-                        "shortText": "コンボ入力に表示するテキスト。"
-                    }
-                }
-            },
-            "collapsed": {
-                "getter": {
-                    "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let state = this.combo.collapsed;",
-                            "```"
-                        ],
-                        "shortText": "ドロップダウン状態を取得します。"
+                        "shortText": "現在の選択状態を取得します。"
                     }
                 }
             },

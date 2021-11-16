@@ -100,19 +100,18 @@
             },
             "height": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"chipsOrderChanged($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "`IgxChipsAreaComponent` の高さを設定する @Input プロパティ。"
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// 取得",
+                        "let myDropDownCurrentHeight = this.dropdown.height;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-drop-down [height]='400px'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンの高さを取得または設定します。"
                 }
             },
             "reorder": {
@@ -208,9 +207,239 @@
                     },
                     "shortText": "`IgxChipsAreaComponent` に `IgxChipComponent` を保持します。"
                 }
+            },
+            "value": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// IgxDropDownItemComponent の使用",
+                        "// 取得",
+                        "let mySelectedItemValue = this.dropdown.selectedItem.value;",
+                        "// 設定",
+                        "let mySelectedItem = this.dropdown.selectedItem;",
+                        "mySelectedItem.value = { id: 123, name: 'Example Name' }",
+                        "// IgxComboItemComponent の使用",
+                        "// 取得",
+                        "let myComboItemValue = this.combo.items[0].value;",
+                        "```"
+                    ],
+                    "shortText": "項目がデータにバインドされる場合、項目の値を取得または設定します。"
+                }
+            },
+            "opening": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (opening)='handleOpening($event)'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが開かれる前に発生されます。"
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (closing)='handleClosing($event)'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンが閉じられる前に発生されます。"
+                }
+            },
+            "allowItemsFocus": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "igxDropDownItemNavigation ディレクティブを使用する場合は、フォーカスの移動に注意してください。",
+                        "キーボード イベントを処理するためにディレクティブを各フォーカス可能な項目に配置または共有の先祖に配置します。",
+                        "```typescript",
+                        "// 取得",
+                        "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
+                        "```",
+                        "```html",
+                       "<!--設定-->",
+                        "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": [
+                        "項目がフォーカスを取得するかどうかを取得または設定します。デフォルトで無効です。",
+                        "有効な場合、ドロップダウン項目にタブ インデックスが指定され、アクティブな場合にフォーカスされます。",
+                        "これには、ドロップダウンを開き、キーボード ナビゲーションを使用して移動すると選択した項目のアクティブ化が含まれます。"
+                    ]
+                }
+            },
+            "selectionChanging": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (selectionChanging)='handleSelection()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "選択を完了する前にアイテム選択が変更されるときに発生されます。"
+                }
             }
         },
-        "methods": {},
-        "accessors": {}
+        "methods": {
+            "open": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.open();",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンを開きます。"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.toggle();",
+                        "```"
+                    ],
+                    "shortText": "ドロップダウンを切り替えます。"
+                }
+            },
+            "navigateItem": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "指定されたインデックスにある項目へ移動します。",
+                        "ドロップダウンのデータが仮想化されている場合は、仮想化されたデータ内のアイテムのインデックスを渡します。"
+                    ]
+                }
+            },
+            "clearSelection": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "ドロップダウンの選択をクリアします。",
+                        "```typescript",
+                        "this.dropdown.clearSelection();",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            " // 取得",
+                            " let mySelectedItem = this.dropdown.selectedItem;",
+                            " let myItemIsDisabled = mySelectedItem.disabled;",
+                            "```",
+                            "```html",
+                            " <igx-drop-down-item *ngFor=\"let item of items\" disabled={{!item.disabled}}>",
+                            "     <div>",
+                            "         {{item.field}}",
+                            "     </div>",
+                            " </igx-drop-down-item>",
+                            "```",
+                            "**注:** 無効された `IgxDropDownGroup` のドロップダウン項目は無効として使用されます。"
+                        ],
+                        "shortText": "指定した項目が無効かどうかを取得または設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            " // 取得",
+                            " let mySelectedItem = this.dropdown.selectedItem;",
+                            " let myItemIsDisabled = mySelectedItem.disabled;",
+                            "```",
+                            "```html",
+                            " <igx-drop-down-item *ngFor=\"let item of items\" disabled={{!item.disabled}}>",
+                            "     <div>",
+                            "         {{item.field}}",
+                            "     </div>",
+                            " </igx-drop-down-item>",
+                            "```",
+                            "**注:** 無効された `IgxDropDownGroup` のドロップダウン項目は無効として使用されます。"
+                        ],
+                        "shortText": "指定した項目が無効かどうかを取得または設定します。"
+                    }
+                }
+            },
+            "items": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let myDropDownItems = this.dropdown.items;",
+                            "```"
+                        ],
+                        "shortText": "すべてのヘッダー以外の項目を取得します。"
+                    }
+                }
+            },
+            "listId": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "ドロップダウンの内部リスト ボックスの Id。"
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let isCollapsed = this.dropdown.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "ドロップダウンが閉じたかどうかを取得します。"
+                    }
+                }
+            },
+            "element": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let myDropDownElement = this.dropdown.element;",
+                            "```"
+                        ],
+                        "shortText": "ドロップダウンの html 要素を取得します。"
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "コンポーネントのテーマを返します。",
+                            "デフォルト テーマは `comfortable` です。",
+                            "利用可能なオプションは `comfortable`、`cosy`、および `compact` です。",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "コンポーネントのテーマを設定します。"
+                    }
+                }
+            }
+        }
     }
 }

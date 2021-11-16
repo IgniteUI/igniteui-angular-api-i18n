@@ -100,19 +100,18 @@
             },
             "height": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-chips-area #chipsArea [width]=\"'300'\" [height]=\"'10'\" (onReorder)=\"chipsOrderChanged($event)\"></igx-chips-area>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "An @Input property that sets the height of the `IgxChipsAreaComponent`."
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// get",
+                        "let myDropDownCurrentHeight = this.dropdown.height;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-drop-down [height]='400px'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Gets/Sets the height of the drop down"
                 }
             },
             "reorder": {
@@ -208,9 +207,239 @@
                     },
                     "shortText": "Holds the `IgxChipComponent` in the `IgxChipsAreaComponent`."
                 }
+            },
+            "value": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "// usage in IgxDropDownItemComponent",
+                        "// get",
+                        "let mySelectedItemValue = this.dropdown.selectedItem.value;",
+                        "// set",
+                        "let mySelectedItem = this.dropdown.selectedItem;",
+                        "mySelectedItem.value = { id: 123, name: 'Example Name' }",
+                        "// usage in IgxComboItemComponent",
+                        "// get",
+                        "let myComboItemValue = this.combo.items[0].value;",
+                        "```"
+                    ],
+                    "shortText": "Gets/sets the value of the item if the item is databound"
+                }
+            },
+            "opening": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (opening)='handleOpening($event)'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted before the dropdown is opened"
+                }
+            },
+            "closing": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (closing)='handleClosing($event)'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted before the dropdown is closed"
+                }
+            },
+            "allowItemsFocus": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "Note: Keep that focus shift in mind when using the igxDropDownItemNavigation directive",
+                        "and ensure it's placed either on each focusable item or a common ancestor to allow it to handle keyboard events.",
+                        "```typescript",
+                        "// get",
+                        "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
+                        "```",
+                        "```html",
+                        "<!--set-->",
+                        "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Gets/sets whether items take focus. Disabled by default.",
+                        "When enabled, drop down items gain tab index and are focused when active -",
+                        "this includes activating the selected item when opening the drop down and moving with keyboard navigation."
+                    ]
+                }
+            },
+            "selectionChanging": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```html",
+                        "<igx-drop-down (selectionChanging)='handleSelection()'></igx-drop-down>",
+                        "```"
+                    ],
+                    "shortText": "Emitted when item selection is changing, before the selection completes"
+                }
             }
         },
-        "methods": {},
-        "accessors": {}
+        "methods": {
+            "open": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.open();",
+                        "```"
+                    ],
+                    "shortText": "Opens the dropdown"
+                }
+            },
+            "toggle": {
+                "comment": {
+                    "tags": {},
+                    "text": [
+                        "```typescript",
+                        "this.dropdown.toggle();",
+                        "```"
+                    ],
+                    "shortText": "Toggles the dropdown"
+                }
+            },
+            "navigateItem": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Navigates to the item on the specified index",
+                        "If the data in the drop-down is virtualized, pass the index of the item in the virtualized data."
+                    ]
+                }
+            },
+            "clearSelection": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Clears the selection of the dropdown",
+                        "```typescript",
+                        "this.dropdown.clearSelection();",
+                        "```"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "disabled": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            " // get",
+                            " let mySelectedItem = this.dropdown.selectedItem;",
+                            " let myItemIsDisabled = mySelectedItem.disabled;",
+                            "```",
+                            "```html",
+                            " <igx-drop-down-item *ngFor=\"let item of items\" disabled={{!item.disabled}}>",
+                            "     <div>",
+                            "         {{item.field}}",
+                            "     </div>",
+                            " </igx-drop-down-item>",
+                            "```",
+                            "**NOTE:** Drop-down items inside of a disabled `IgxDropDownGroup` will always count as disabled"
+                        ],
+                        "shortText": "Sets/gets if the given item is disabled"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            " // get",
+                            " let mySelectedItem = this.dropdown.selectedItem;",
+                            " let myItemIsDisabled = mySelectedItem.disabled;",
+                            "```",
+                            "```html",
+                            " <igx-drop-down-item *ngFor=\"let item of items\" disabled={{!item.disabled}}>",
+                            "     <div>",
+                            "         {{item.field}}",
+                            "     </div>",
+                            " </igx-drop-down-item>",
+                            "```",
+                            "**NOTE:** Drop-down items inside of a disabled `IgxDropDownGroup` will always count as disabled"
+                        ],
+                        "shortText": "Sets/gets if the given item is disabled"
+                    }
+                }
+            },
+            "items": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let myDropDownItems = this.dropdown.items;",
+                            "```"
+                        ],
+                        "shortText": "Get all non-header items"
+                    }
+                }
+            },
+            "listId": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Id of the internal listbox of the drop down"
+                    }
+                }
+            },
+            "collapsed": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let isCollapsed = this.dropdown.collapsed;",
+                            "```"
+                        ],
+                        "shortText": "Gets if the dropdown is collapsed"
+                    }
+                }
+            },
+            "element": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "let myDropDownElement = this.dropdown.element;",
+                            "```"
+                        ],
+                        "shortText": "Get dropdown html element"
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns the theme of the component.",
+                            "The default theme is `comfortable`.",
+                            "Available options are `comfortable`, `cosy`, `compact`.",
+                            "```typescript",
+                            "let componentTheme = this.component.displayDensity;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Sets the theme of the component."
+                    }
+                }
+            }
+        }
     }
 }
