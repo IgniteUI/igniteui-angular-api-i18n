@@ -1,10 +1,10 @@
 {
-    "IgxComboComponent": {
+    "IgxSimpleComboComponent": {
         "comment": {
             "tags": {
                 "igxmodule": {
                     "comment": {
-                        "text": "IgxComboModule",
+                        "text": "IgxSimpleComboModule",
                         "tagName": "igxmodule"
                     }
                 },
@@ -16,7 +16,7 @@
                 },
                 "igxkeywords": {
                     "comment": {
-                        "text": "combobox, combo selection",
+                        "text": "combobox, single combo selection",
                         "tagName": "igxkeywords"
                     }
                 },
@@ -29,7 +29,7 @@
                 "remarks": {
                     "comment": {
                         "text": [
-                            "項目をフィルターする機能、および提供されたデータで単一または複数の選択を実行する機能を提供します。",
+                            "項目をフィルターする機能、および提供されたデータで単一選択を実行する機能を提供します。",
                             "また、キーボード ナビゲーションおよびカスタム スタイル設定機能を公開します。"
                         ],
                         "tagName": "備考:"
@@ -39,62 +39,25 @@
                     "comment": {
                         "text": [
                             "```html",
-                            "<igx-combo [itemsMaxHeight]=\"250\" [data]=\"locationData\"",
+                            "<igx-simple-combo [itemsMaxHeight]=\"250\" [data]=\"locationData\"",
                             " [displayKey]=\"'field'\" [valueKey]=\"'field'\"",
-                            " placeholder=\"Location(s)\" searchPlaceholder=\"Search...\">",
-                            "</igx-combo>",
+                            " placeholder=\"Location\" searchPlaceholder=\"Search...\">",
+                            "</igx-simple-combo>",
                             "```"
                         ],
                         "tagName": "例:"
                     }
                 }
             },
-            "shortText": "編集可能な機能を提供するドロップダウン リストを表します。ユーザーは定義済みのリストからオプションを選択できます。"
+            "shortText": "ユーザーが定義済みのリストから単一のオプションを選択できるフィルタリング機能を提供するドロップダウンリストを表します。"
         },
         "properties": {
-            "autoFocusSearch": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "`opened` イベントが呼び出された後にコンボの検索ボックスにフォーカスするかどうかを制御する",
-                        "@Inputプロパティ。",
-                        "`false` の場合、代わりにコンボのリスト項目コンテナーがフォーカスされます。"
-                    ]
-                }
-            },
-            "filterable": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "リストでフィルタリングを有効/無効にする @Input プロパティ。デフォルトは `true` です。",
-                        "```html",
-                        "<igx-combo [filterable]=\"false\">",
-                        "```"
-                    ]
-                }
-            },
-            "searchPlaceholder": {
-                "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myComboSearchPlaceholder = this.combo.searchPlaceholder;",
-                        "```",
-                        "```html",
-                       "<!--設定-->",
-                        "<igx-combo [searchPlaceholder]='newPlaceHolder'></igx-combo>",
-                        "```"
-                    ],
-                    "shortText": "コンボ ドロップダウンの検索フィールドのプレースホルダー値を定義します。"
-                }
-            },
             "selectionChanging": {
                 "comment": {
                     "tags": {},
                     "text": [
                         "```html",
-                        "<igx-combo (selectionChanging)='handleSelection()'></igx-combo>",
+                        "<igx-simple-combo (selectionChanging)='handleSelection()'></igx-simple-combo>",
                         "```"
                     ],
                     "shortText": "選択を完了する前にアイテム選択が変更されるときに発生します。"
@@ -234,6 +197,17 @@
                     "shortText": "値を決定するためにデータ ソースのどの列を使用するかを決定します。"
                 }
             },
+            "filterable": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "リストでフィルタリングを有効/無効にする @Input プロパティ。デフォルトは `true` です。",
+                        "```html",
+                        "<igx-combo [filterable]=\"false\">",
+                        "```"
+                    ]
+                }
+            },
             "ariaLabelledBy": {
                 "comment": {
                     "tags": {},
@@ -264,7 +238,7 @@
                         "<igx-combo opening='handleOpening($event)'></igx-combo>",
                         "```"
                     ],
-                    "shortText": "ドロップダウンが開く前に発生します。"
+                    "shortText": "ドロップダウンが開かれる前に発生します。"
                 }
             },
             "opened": {
@@ -275,7 +249,7 @@
                         "<igx-combo (opened)='handleOpened($event)'></igx-combo>",
                         "```"
                     ],
-                    "shortText": "ドロップダウンが開いた後に発生します。"
+                    "shortText": "ドロップダウンが開かれた後に発生します。"
                 }
             },
             "closing": {
@@ -286,7 +260,7 @@
                         "<igx-combo (closing)='handleClosing($event)'></igx-combo>",
                         "```"
                     ],
-                    "shortText": "ドロップダウンが閉じる前に発生します。"
+                    "shortText": "ドロップダウンが閉じられる前に発生します。"
                 }
             },
             "closed": {
@@ -308,7 +282,7 @@
                         "<igx-combo (addition)='handleAdditionEvent($event)'></igx-combo>",
                         "```"
                     ],
-                    "shortText": "項目がデータ コレクションに追加されているときに発生します。"
+                    "shortText": "項目がデータ コレクションに追加されているときに発生されます。"
                 }
             },
             "searchInputUpdate": {
@@ -319,7 +293,7 @@
                         "<igx-combo (searchInputUpdate)='handleSearchInputEvent($event)'></igx-combo>",
                         "```"
                     ],
-                    "shortText": "検索入力の値が変更 (入力、貼り付け、クリアなど) するときに発生します。"
+                    "shortText": "検索入力の値が変更 (入力、貼り付け、クリアなど) するときに発生されます。"
                 }
             },
             "dataPreLoad": {
@@ -330,7 +304,7 @@
                         "<igx-combo (dataPreLoad)='handleDataPreloadEvent($event)'></igx-combo>",
                         "```"
                     ],
-                    "shortText": "新しいデータの塊が仮想化から読み込まれたときに発生します。"
+                    "shortText": "新しいデータの塊が仮想化から読み込まれたときに発生されます。"
                 }
             },
             "itemTemplate": {
@@ -525,17 +499,12 @@
             "select": {
                 "comment": {
                     "parameters": {
-                        "newItems": {
-                            "comment": {
-                                "text": "選択される新しい項目。"
-                            }
-                        },
-                        "clearCurrentSelection": {
+                        "item": {
                             "comment": {
                                 "text": [
-                                    "True の場合、前回選択した項目がクリアされます。",
+                                    "選択される項目。",
                                     "```typescript",
-                                    "this.combo.select([\"New York\", \"New Jersey\"]);",
+                                    "this.combo.select(\"New York\");",
                                     "```"
                                 ]
                             }
@@ -547,88 +516,8 @@
             },
             "deselect": {
                 "comment": {
-                    "parameters": {
-                        "items": {
-                            "comment": {
-                                "text": [
-                                    "選択解除される項目。",
-                                    "```typescript",
-                                    "this.combo.deselect([\"New York\", \"New Jersey\"]);",
-                                    "```"
-                                ]
-                            }
-                        }
-                    },
                     "tags": {},
-                    "shortText": "定義済みの項目の選択を解除します。"
-                }
-            },
-            "selectAllItems": {
-                "comment": {
-                    "parameters": {
-                        "ignoreFilter": {
-                            "comment": {
-                                "text": [
-                                    "True に設定されている場合、すべての項目を設定します。そうでない場合、フィルターのみの項目を選択します。",
-                                    "```typescript",
-                                    "this.combo.selectAllItems();",
-                                    "```"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": "すべての項目 (フィルター済み) を選択します。"
-                }
-            },
-            "deselectAllItems": {
-                "comment": {
-                    "parameters": {
-                        "ignoreFilter": {
-                            "comment": {
-                                "text": [
-                                    "True に設定されている場合、すべての項目の選択を解除します。そうでない場合、フィルターのみの項目を選択解除します。",
-                                    "```typescript",
-                                    "this.combo.deselectAllItems();",
-                                    "```"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": "フィルター済みのすべての項目の選択を解除します。"
-                }
-            },
-            "setSelectedItem": {
-                "comment": {
-                    "parameters": {
-                        "itemID": {
-                            "comment": {
-                                "text": "指定される項目の itemID。"
-                            }
-                        },
-                        "select": {
-                            "comment": {
-                                "text": [
-                                    "項目が選択されるか (true) または選択解除されるか (false)。",
-                                    "指定された valueKey なし;",
-                                    "```typescript",
-                                    "this.combo.valueKey = null;",
-                                    "const items: { field: string, region: string}[] = data;",
-                                    "this.combo.setSelectedItem(items[0], true);",
-                                    "```",
-                                    "指定された valueKey を使用;",
-                                    "```typescript",
-                                    "this.combo.valueKey = 'field';",
-                                    "const items: { field: string, region: string}[] = data;",
-                                    "this.combo.setSelectedItem('Connecticut', true);",
-                                    "```"
-                                ]
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": "1 つの項目を選択/選択解除します。"
+                    "shortText": "現在選択されている項目の選択を解除します。"
                 }
             },
             "toggle": {
@@ -681,7 +570,7 @@
                         "tags": {},
                         "text": [
                             "```typescript",
-                            "// 取得",
+                            "// 取得",
                             "let myComboItemsMaxHeight = this.combo.itemsMaxHeight;",
                             "```",
                             "```html",
@@ -697,7 +586,7 @@
                         "tags": {},
                         "text": [
                             "```typescript",
-                            "// 取得",
+                            "// 取得",
                             "let myComboItemsMaxHeight = this.combo.itemsMaxHeight;",
                             "```",
                             "```html",
@@ -715,7 +604,7 @@
                         "tags": {},
                         "text": [
                             "```typescript",
-                            "// 取得",
+                            "// 取得",
                             "let myComboItemHeight = this.combo.itemHeight;",
                             "```",
                             "```html",
@@ -731,7 +620,7 @@
                         "tags": {},
                         "text": [
                             "```typescript",
-                            "// 取得",
+                            "// 取得",
                             "let myComboItemHeight = this.combo.itemHeight;",
                             "```",
                             "```html",
@@ -899,7 +788,7 @@
                         "tags": {},
                         "text": [
                             "```typescript",
-                            "// 設定",
+                            "// 設定",
                             "this.combo.virtualizationState(state);",
                             "```"
                         ],
