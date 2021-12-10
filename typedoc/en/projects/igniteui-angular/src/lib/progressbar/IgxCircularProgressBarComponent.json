@@ -12,17 +12,6 @@
                     ]
                 }
             },
-            "indeterminate": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "An @Input property that sets the value of the `indeterminate` attribute. If not provided it will be automatically set to false.",
-                        "```html",
-                        "<igx-circular-bar [indeterminate]=\"true\"></igx-circular-bar>",
-                        "```"
-                    ]
-                }
-            },
             "textVisibility": {
                 "comment": {
                     "tags": {},
@@ -65,42 +54,33 @@
                         "```"
                     ]
                 }
+            },
+            "indeterminate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/Gets progressbar in indeterminate. By default it is set to false.",
+                        "```html",
+                        "<igx-linear-bar [indeterminate]=\"true\"></igx-linear-bar>",
+                        "<igx-circular-bar [indeterminate]=\"true\"></igx-circular-bar>",
+                        "```"
+                    ]
+                }
+            },
+            "animationDuration": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Sets/Gets progressbar animation duration. By default it is 2000ms.",
+                        "```html",
+                        "<igx-linear-bar [indeterminate]=\"true\"></igx-linear-bar>",
+                        "```"
+                    ]
+                }
             }
         },
         "methods": {},
         "accessors": {
-            "value": {
-                "getter": {
-                    "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "Returns value that indicates the current `IgxCircularProgressBarComponent` position.",
-                            "```typescript",
-                            " @ViewChild(\"MyProgressBar\")",
-                            "public progressBar: IgxCircularProgressBarComponent;",
-                            "public getValue(event) {",
-                            "    let value = this.progressBar.value;",
-                            "    alert(value);",
-                            "}",
-                            "```",
-                            "```html",
-                            "<button igxButton=\"fab\" igxRipple=\"\" (click)=\"getValue()\">Click</button>",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "Set value that indicates the current `IgxCircularProgressBarComponent` position.",
-                            "```html",
-                            "<igx-circular-bar [value]=\"50\"></igx-circular-bar>",
-                            "```"
-                        ]
-                    }
-                }
-            },
             "step": {
                 "getter": {
                     "comment": {
@@ -122,7 +102,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Sets the value by which progress indicator is updated. By default it is 1% of the maximum value.",
+                            "Sets the value by which progress indicator is updated. By default it is 1.",
                             "```html",
                             "<igx-linear-bar [max]=\"200\" [value]=\"0\" [step]=\"1\"></igx-linear-bar>",
                             "<igx-circular-bar [max]=\"200\" [value]=\"0\" [step]=\"1\"></igx-circular-bar>",
@@ -219,6 +199,35 @@
                             "    public setValue(event){",
                             "    this.progressBar.valueInPercent = 56;",
                             "}",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "value": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns value that indicates the current `IgxLinearProgressBarComponent` position.",
+                            "```typescript",
+                            " @ViewChild(\"MyProgressBar\")",
+                            "public progressBar: IgxLinearProgressBarComponent;",
+                            "public getValue(event) {",
+                            "    let value = this.progressBar.value;",
+                            "    alert(value);",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Set value that indicates the current `IgxLinearProgressBarComponent` position.",
+                            "```html",
+                            "<igx-linear-bar [striped]=\"false\" [max]=\"200\" [value]=\"50\"></igx-linear-bar>",
                             "```"
                         ]
                     }
