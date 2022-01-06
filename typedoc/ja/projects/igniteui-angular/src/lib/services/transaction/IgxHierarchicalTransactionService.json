@@ -5,7 +5,7 @@
                 "experimental": {
                     "comment": {
                         "text": "@hidden",
-                        "tagName": "試験"
+                        "tagName": "experimental"
                     }
                 }
             }
@@ -13,140 +13,114 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "トランザクションの状態が変更されたとき発生されるイベント - トランザクションの追加、すべてのトランザクションをコミットする、元に戻す/やり直し。"
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             }
         },
         "methods": {
-            "getAggregatedChanges": {
-                "comment": {
-                    "tags": {},
-                    "shortText": "すべてのトランザクションの集計された変更を返します。"
-                }
-            },
-            "commit": {
-                "comment": {
-                    "tags": {},
-                    "shortText": "指定されたデータ中にすべてのトランザクションを適用します。"
-                }
-            },
             "add": {
                 "comment": {
-                    "parameters": {
-                        "transaction": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "追加されるトランザクション。"
-                            }
-                        },
-                        "recordRef": {
-                            "comment": {
-                                "text": "変更された項目に関連するデータ ソースのレコードの値への参照。"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "recordRef を持つ指定されたトランザクションがある場合、追加します。"
+                    }
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "トランザクションを取得するオプションのレコード id。"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "登録されたすべてのレコードを時系列順に返します。"
+                    }
                 }
             },
             "getState": {
                 "comment": {
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "レコードの ID。"
-                            }
-                        },
-                        "pending": {
-                            "comment": {
-                                "text": "保留中状態を取得します。"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "指定された ID のレコードの状態を返します。"
+                    }
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "レコードの ID のため返す値。"
-                            }
-                        },
-                        "mergeChanges": {
-                            "comment": {
-                                "text": [
-                                    "true に設定されている場合、状態の値を関連する recordRef にマージして、",
-                                    "マージされた値を返します。"
-                                ]
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "すべてのコミットされていない変更を含む必要となった ID を返します。"
+                    }
                 }
             },
             "endPending": {
                 "comment": {
-                    "parameters": {
-                        "commit": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "保留中状態をコミットします。"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "すべての保留中のトランザクションと集計された保留中の状態をクリアします。Commit は true に設定された場合、保留中の状態を単一のトランザクションとしてコミットします。"
-                    ]
+                    }
                 }
             },
             "clear": {
                 "comment": {
-                    "parameters": {
-                        "id": {
+                    "tags": {
+                        "inheritdoc": {
                             "comment": {
-                                "text": "トランザクションをクリアするためのオプションのレコード ID。"
+                                "tagName": "inheritdoc"
                             }
                         }
-                    },
-                    "tags": {},
-                    "shortText": "すべてのトランザクションをクリアします。"
+                    }
                 }
             },
             "undo": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "最後のトランザクションを削除します。"
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             },
             "redo": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "最後の元に戻されたトランザクションを削除します。"
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             },
             "startPending": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "保留された変更を開始します。startPending へのコールの後に渡されたトランザクションはトランザクション ログに追加されません。"
-                    ]
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
                 }
             }
         },
@@ -154,22 +128,39 @@
             "canUndo": {
                 "getter": {
                     "comment": {
-                        "tags": {}
+                        "tags": {
+                            "inheritdoc": {
+                                "comment": {
+                                    "tagName": "inheritdoc"
+                                }
+                            }
+                        }
                     }
                 }
             },
             "canRedo": {
                 "getter": {
                     "comment": {
-                        "tags": {}
+                        "tags": {
+                            "inheritdoc": {
+                                "comment": {
+                                    "tagName": "inheritdoc"
+                                }
+                            }
+                        }
                     }
                 }
             },
             "enabled": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "このサービスにトランザクションが有効されたかどうか返します。"
+                        "tags": {
+                            "inheritdoc": {
+                                "comment": {
+                                    "tagName": "inheritdoc"
+                                }
+                            }
+                        }
                     }
                 }
             }
