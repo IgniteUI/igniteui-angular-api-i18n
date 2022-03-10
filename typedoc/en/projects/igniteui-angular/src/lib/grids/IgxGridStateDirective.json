@@ -2,6 +2,12 @@
     "IgxGridStateDirective": {
         "properties": {},
         "methods": {
+            "__type": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Traverses the hierarchy up to the root grid to return the ID of the expanded row."
+                }
+            },
             "getState": {
                 "comment": {
                     "returns": "Returns the serialized to JSON string IGridState object, or the non-serialized IGridState object.\n```html\n<igx-grid [igxGridState]=\"options\"></igx-grid>\n```\n```typescript\n@ViewChild(IgxGridStateDirective, { static: true }) public state;\nlet state = this.state.getState(); // returns string\nlet state = this.state(false) // returns `IGridState` object\n```\n",
@@ -14,6 +20,36 @@
                     "returns": "\n```html\n<igx-grid [igxGridState]=\"options\"></igx-grid>\n```\n```typescript\n@ViewChild(IgxGridStateDirective, { static: true }) public state;\nthis.state.setState(gridState);\n```\n",
                     "tags": {},
                     "shortText": "Restores grid features' state based on the IGridState object passed as an argument."
+                }
+            },
+            "buildState": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Builds an IGridState object."
+                }
+            },
+            "restoreGridState": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The method that calls corresponding methods to restore features from the passed IGridState object."
+                }
+            },
+            "applyFeatures": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Returns a collection of all grid features."
+                }
+            },
+            "createExpressionsTreeFromObject": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "This method builds a FilteringExpressionsTree from a provided object."
+                }
+            },
+            "generateFilteringCondition": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Returns the filtering logic function for a given dataType and condition (contains, greaterThan, etc.)"
                 }
             }
         },

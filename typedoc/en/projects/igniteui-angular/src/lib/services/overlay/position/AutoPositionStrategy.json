@@ -21,6 +21,117 @@
             }
         },
         "methods": {
+            "fitInViewport": {
+                "comment": {
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
+                }
+            },
+            "canFlipHorizontal": {
+                "comment": {
+                    "returns": "true if element can be flipped and stain in viewport\n",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "connectedFit object containing all necessary parameters"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Checks if element can be flipped without get off the viewport"
+                }
+            },
+            "canFlipVertical": {
+                "comment": {
+                    "returns": "true if element can be flipped and stain in viewport\n",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "connectedFit object containing all necessary parameters"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Checks if element can be flipped without get off the viewport"
+                }
+            },
+            "flipHorizontal": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Flips direction and start point of the position settings"
+                }
+            },
+            "flipVertical": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Flips direction and start point of the position settings"
+                }
+            },
+            "horizontalPush": {
+                "comment": {
+                    "returns": "amount of necessary translation which will push the element into viewport\n",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "connectedFit object containing all necessary parameters"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Calculates necessary horizontal push according to provided connectedFit"
+                }
+            },
+            "verticalPush": {
+                "comment": {
+                    "returns": "amount of necessary translation which will push the element into viewport\n",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "connectedFit object containing all necessary parameters"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Calculates necessary vertical push according to provided connectedFit"
+                }
+            },
+            "flipAnimation": {
+                "comment": {
+                    "parameters": {
+                        "flipDirection": {
+                            "comment": {
+                                "text": "direction for which to change the animations"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Changes open and close animation with reverse animation if one exists"
+                }
+            },
+            "updateAnimation": {
+                "comment": {
+                    "returns": "reverse animation in given direction if one exists\n",
+                    "parameters": {
+                        "animation": {
+                            "comment": {
+                                "text": "animation to update"
+                            }
+                        },
+                        "direction": {
+                            "comment": {
+                                "text": "required animation direction"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Tries to find the reverse animation according to provided direction"
+                }
+            },
             "position": {
                 "comment": {
                     "tags": {
@@ -30,6 +141,97 @@
                             }
                         }
                     }
+                }
+            },
+            "updateViewPortFit": {
+                "comment": {
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "connectedFit to update"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Checks if element can fit in viewport and updates provided connectedFit",
+                        "with the result"
+                    ]
+                }
+            },
+            "calculateLeft": {
+                "comment": {
+                    "parameters": {
+                        "targetRect": {
+                            "comment": {
+                                "text": "Rectangle of the target where element is attached"
+                            }
+                        },
+                        "elementRect": {
+                            "comment": {
+                                "text": "Rectangle of the element"
+                            }
+                        },
+                        "startPoint": {
+                            "comment": {
+                                "text": "Start point of the target"
+                            }
+                        },
+                        "direction": {
+                            "comment": {
+                                "text": "Direction in which to show the element"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Calculates the position of the left border of the element if it gets positioned",
+                        "with provided start point and direction"
+                    ]
+                }
+            },
+            "calculateTop": {
+                "comment": {
+                    "parameters": {
+                        "targetRect": {
+                            "comment": {
+                                "text": "Rectangle of the target where element is attached"
+                            }
+                        },
+                        "elementRect": {
+                            "comment": {
+                                "text": "Rectangle of the element"
+                            }
+                        },
+                        "startPoint": {
+                            "comment": {
+                                "text": "Start point of the target"
+                            }
+                        },
+                        "direction": {
+                            "comment": {
+                                "text": "Direction in which to show the element"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Calculates the position of the top border of the element if it gets positioned",
+                        "with provided position settings related to the target"
+                    ]
+                }
+            },
+            "shouldFitInViewPort": {
+                "comment": {
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "connectedFit object containing all necessary parameters"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Returns whether the element should fit in viewport"
                 }
             },
             "clone": {
@@ -43,6 +245,39 @@
                             }
                         }
                     }
+                }
+            },
+            "calculateElementRectangles": {
+                "comment": {
+                    "returns": "target and element DomRect objects\n",
+                    "tags": {},
+                    "shortText": "Obtains the DomRect objects for the required elements - target and element to position"
+                }
+            },
+            "setStyle": {
+                "comment": {
+                    "parameters": {
+                        "element": {
+                            "comment": {
+                                "text": "Element to position"
+                            }
+                        },
+                        "targetRect": {
+                            "comment": {
+                                "text": "Bounding rectangle of strategy target"
+                            }
+                        },
+                        "elementRect": {
+                            "comment": {
+                                "text": "Bounding rectangle of the element"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "Sets element's style which effectively positions provided element according",
+                        "to provided position settings"
+                    ]
                 }
             }
         },

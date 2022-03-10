@@ -405,7 +405,7 @@
                             "comment": {
                                 "text": [
                                     "```html",
-                                    "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (onDragEnter)=\"chipEnter($event)\">",
+                                    "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (dragEnter)=\"chipEnter($event)\">",
                                     "```"
                                 ],
                                 "tagName": "例:"
@@ -415,6 +415,69 @@
                     "shortText": [
                         "`IgxChipComponent` が `IgxChipsAreaComponent` に入ったときにイベントを発生します。",
                         "ターゲットの   IgxChipComponent`、ドラッグしている IgxChipComponent、および元のドロップ イベント引数を返します。"
+                    ]
+                }
+            },
+            "dragLeave": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (dragLeave)=\"chipLeave($event)\">",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "`IgxChipComponent` が `IgxChipsAreaComponent` を離れたときにイベントを発生します。",
+                        "ターゲットの `IgxChipComponent`、ドラッグしている `IgxChipComponent`、",
+                        "および元のドロップ イベント引数を返します。"
+                    ]
+                }
+            },
+            "dragOver": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (dragOver)=\"chipOver($event)\">",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "`IgxChipComponent` が `IgxChipsAreaComponent` の上にあるときにイベントを発生します。",
+                        "ターゲットの `IgxChipComponent`、ドラッグしている `IgxChipComponent`、",
+                        "および元のドロップ イベント引数を返します。"
+                    ]
+                }
+            },
+            "dragDrop": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-chip #myChip [id]=\"'igx-chip-1'\" [draggable]=\"true\" (dragDrop)=\"chipLeave($event)\">",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "`IgxChipComponent` が `IgxChipsAreaComponent` にドロップされたときにイベントを発生します。",
+                        "ターゲットの `IgxChipComponent`、ドラッグしている `IgxChipComponent`、",
+                        "および元のドロップ イベント引数を返します。"
                     ]
                 }
             },
@@ -441,7 +504,17 @@
                 }
             }
         },
-        "methods": {},
+        "methods": {
+            "getComponentDensityClass": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "コンポーネント/要素のスタイル クラスは、現在の表示密度に基づいて",
+                        "変更されたバージョンを返します。"
+                    ]
+                }
+            }
+        },
         "accessors": {
             "tabIndex": {
                 "getter": {
@@ -499,7 +572,7 @@
                                         "```html",
                                         "<igx-chip #myChip [id]=\"'igx-chip-1'\" [selectable]=\"true\" [selected]=\"true\">",
                                         "```",
-                                        "Two-way data binding:",
+                                        "双方向データ バインディング。",
                                         "```html",
                                         "<igx-chip #myChip [id]=\"'igx-chip-1'\" [selectable]=\"true\" [(selected)]=\"model.isSelected\">",
                                         "```"

@@ -58,7 +58,7 @@
             ""
         ]
     },
-    "igx-palette-vars": {
+    "palette-vars": {
         "description": [
             "<p>指定されたパレットのため CSS 変数を生成します。</p>",
             ""
@@ -66,13 +66,19 @@
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>CSS 変数の生成に使用する igx パレット。</p>",
+                    "<p>CSS 変数の生成に使用するパレット。</p>",
                     ""
                 ]
             },
             "contrast": {
                 "description": [
                     "<p>コントラスト色を含めるかどうかを指定します。</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>CSS 変数に付加されるプレフィックス。</p>",
                     ""
                 ]
             }
@@ -84,12 +90,38 @@
                     ""
                 ],
                 "code": [
-                    "@include igx-palette-vars($default-palette);"
+                    "@include palette-vars($default-palette);"
                 ]
             }
         ]
     },
-    "igx-elevation-vars": {
+    "palette-to-wc": {
+        "description": [
+            "<p>Ignite UI for Angular パレット CSS 変数を Ignite UI for Web Components",
+            "互換の変数に変換します。</p>",
+            ""
+        ],
+        "parameters": {
+            "palette": {
+                "description": [
+                    "<p>CSS 変数の生成に使用するパレット。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>igx-接頭辞付き変数を <code>$default-palette</code> から igc-接頭辞付き変数に変換します。</p>",
+                    ""
+                ],
+                "code": [
+                    "@include palette-to-wc($default-palette);"
+                ]
+            }
+        ]
+    },
+    "elevation-vars": {
         "description": [
             "<p>指定したエレベーション マップの CSS 変数を生成します。</p>",
             ""
@@ -97,7 +129,13 @@
         "parameters": {
             "elevations": {
                 "description": [
-                    "<p>CSS 変数を生成するために使用する igx エレベーション マップ。</p>",
+                    "<p>CSS 変数を生成するために使用するエレベーション マップ。</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>CSS 変数に付加されるプレフィックス。</p>",
                     ""
                 ]
             }
@@ -109,13 +147,40 @@
                     ""
                 ],
                 "code": [
-                    "$elevations: igx-elevations(red, green, blue); // umbra, penumbra, ambient",
-                    "@include igx-elevation-vars($elevations);"
+                    "$elevations: elevations(red, green, blue); // umbra, penumbra, ambient",
+                    "@include elevation-vars($elevations);"
                 ]
             }
         ]
     },
-    "igx-color-classes": {
+    "elevations-to-wc": {
+        "description": [
+            "<p>Ignite UI for Angular CSS エレベーションの変数を Web Components ",
+            "互換の変数に変換します。</p>",
+            ""
+        ],
+        "parameters": {
+            "elevations": {
+                "description": [
+                    "<p>CSS 変数を生成するために使用するエレベーション マップ。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>エレベーションの igx-プレフィックス変数を igc-プレフィックス変数に変換します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$elevations: elevations(red, green, blue);",
+                    "@include elevations-to-wc($elevations);"
+                ]
+            }
+        ]
+    },
+    "color-classes": {
         "description": [
             "<p>指定したプロパティとカラー パレットの",
             "すべての色の CSS クラス名を生成します。",
@@ -157,7 +222,7 @@
                 "code": [
                     "// 次のようなクラス名を生成します。",
                     "// .igx-primary-500-bg { ... };",
-                    "@include igx-color-classes(",
+                    "@include color-classes(",
                     "  $prop: 'background-color',",
                     "  $suffix: 'bg'",
                     ");"
@@ -165,7 +230,7 @@
             }
         ]
     },
-    "igx-css-vars": {
+    "css-vars": {
         "description": [
             "<p>範囲にテーマの色を追加します。</p>",
             ""

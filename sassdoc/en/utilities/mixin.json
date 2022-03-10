@@ -58,7 +58,7 @@
             ""
         ]
     },
-    "igx-palette-vars": {
+    "palette-vars": {
         "description": [
             "<p>Generates CSS variables for a given palette.</p>",
             ""
@@ -66,13 +66,19 @@
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>The igx palette to use to generate CSS variables for.</p>",
+                    "<p>The palette to use to generate CSS variables for.</p>",
                     ""
                 ]
             },
             "contrast": {
                 "description": [
                     "<p>Specify if contrast colors should be included.</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>The prefix attached to the CSS variables.</p>",
                     ""
                 ]
             }
@@ -84,12 +90,38 @@
                     ""
                 ],
                 "code": [
-                    "@include igx-palette-vars($default-palette);"
+                    "@include palette-vars($default-palette);"
                 ]
             }
         ]
     },
-    "igx-elevation-vars": {
+    "palette-to-wc": {
+        "description": [
+            "<p>Translates Ignite UI for Angular palette CSS variables",
+            "into Ignite UI for Web Components compatible ones</p>",
+            ""
+        ],
+        "parameters": {
+            "palette": {
+                "description": [
+                    "<p>The palette to use to generate CSS variables for.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Translates igx- prefixed variables from <code>$default-palette</code> to igc- prefixed ones.</p>",
+                    ""
+                ],
+                "code": [
+                    "@include palette-to-wc($default-palette);"
+                ]
+            }
+        ]
+    },
+    "elevation-vars": {
         "description": [
             "<p>Generates CSS variables for a given elevations map.</p>",
             ""
@@ -97,7 +129,13 @@
         "parameters": {
             "elevations": {
                 "description": [
-                    "<p>The igx elevations map to use to generate CSS variables for.</p>",
+                    "<p>The elevations map to use to generate CSS variables for.</p>",
+                    ""
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "<p>The prefix attached to the CSS variables.</p>",
                     ""
                 ]
             }
@@ -109,13 +147,40 @@
                     ""
                 ],
                 "code": [
-                    "$elevations: igx-elevations(red, green, blue); // umbra, penumbra, ambient",
-                    "@include igx-elevation-vars($elevations);"
+                    "$elevations: elevations(red, green, blue); // umbra, penumbra, ambient",
+                    "@include elevation-vars($elevations);"
                 ]
             }
         ]
     },
-    "igx-color-classes": {
+    "elevations-to-wc": {
+        "description": [
+            "<p>Translates Ignite UI for Angular CSS variables for elevations",
+            "into Ignite UI for Web Components compatible ones</p>",
+            ""
+        ],
+        "parameters": {
+            "elevations": {
+                "description": [
+                    "<p>The elevations map to use to generate CSS variables for.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Translates igx- prefixed variables for elevations to igc- prefixed ones.</p>",
+                    ""
+                ],
+                "code": [
+                    "$elevations: elevations(red, green, blue);",
+                    "@include elevations-to-wc($elevations);"
+                ]
+            }
+        ]
+    },
+    "color-classes": {
         "description": [
             "<p>Generates CSS class names for all colors from",
             "for a given property and color palette, with",
@@ -157,7 +222,7 @@
                 "code": [
                     "// Will generate class names like",
                     "// .igx-primary-500-bg { ... };",
-                    "@include igx-color-classes(",
+                    "@include color-classes(",
                     "  $prop: 'background-color',",
                     "  $suffix: 'bg'",
                     ");"
@@ -165,7 +230,7 @@
             }
         ]
     },
-    "igx-css-vars": {
+    "css-vars": {
         "description": [
             "<p>Add theme colors to a scope.</p>",
             ""

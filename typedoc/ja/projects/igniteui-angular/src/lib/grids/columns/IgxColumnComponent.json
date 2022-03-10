@@ -4,7 +4,7 @@
             "tags": {},
             "text": [
                 "Ignite UI Column は `igx-grid` 要素で列が表示するデータを定義するために使用されます。",
-                "並べ替え、フィルタリング、編集などの機能は列レベルで有効にされます。",
+                "ソート、フィルタリング、編集などの機能は列レベルで有効にされます。",
                 "`ng-template` を使用して列のすべてのセルに使用されるカスタム コンテンツを含むテンプレートを設定できます。"
             ],
             "shortText": [
@@ -66,7 +66,7 @@
                         }
                     },
                     "shortText": [
-                        "列の並べ替えが可能かどうかを設定または取得します。",
+                        "列のソートが可能かどうかを設定または取得します。",
                         "デフォルトは `false` です。",
                         "```typescript",
                         "let isSortable = this.column.sortable;",
@@ -205,23 +205,29 @@
             "movable": {
                 "comment": {
                     "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "バージョン 13.1.0。代わりに `IgxGridComponent.moving` を使用してください。",
+                                    "列が移動可能かどうかを設定または取得します。",
+                                    "デフォルトは `false` です。",
+                                    "```typescript",
+                                    "let isMovable = this.column.movable;",
+                                    "```",
+                                    "```html",
+                                    "<igx-column [movable] = \"true\"></igx-column>",
+                                    "```"
+                                ],
+                                "tagName": "非推奨"
+                            }
+                        },
                         "memberof": {
                             "comment": {
                                 "text": "IgxColumnComponent",
                                 "tagName": "次のメンバー:"
                             }
                         }
-                    },
-                    "shortText": [
-                        "列が移動可能かどうかを設定または取得します。",
-                        "デフォルトは `false` です。",
-                        "```typescript",
-                        "let isMovable = this.column.movable;",
-                        "```",
-                        "```html",
-                        "<igx-column [movable] = \"true\"></igx-column>",
-                        "```"
-                    ]
+                    }
                 }
             },
             "maxWidth": {
@@ -493,7 +499,7 @@
                         }
                     },
                     "shortText": [
-                        "列並べ替えが大文字と小文字を区別するかどうかを設定または取得します。",
+                        "列ソートが大文字と小文字を区別するかどうかを設定または取得します。",
                         "デフォルト値は `true` です。",
                         "```typescript",
                         "let sortingIgnoreCase = this.column.sortingIgnoreCase;",
@@ -1363,7 +1369,7 @@
                         },
                         "shortText": [
                             "グループ化される値を比較するためにカスタム関数を設定します。",
-                            "並べ替え済みのデータ内の次の値のために 0 が返されられた場合、この値はグループ化されたという意味です。",
+                            "ソート済みのデータ内の次の値のために 0 が返されられた場合、この値はグループ化されたという意味です。",
                             "```typescript",
                             "this.column.groupingComparer = (a: any, b: any) => { return a === b ? 0 : -1; }",
                             "```"

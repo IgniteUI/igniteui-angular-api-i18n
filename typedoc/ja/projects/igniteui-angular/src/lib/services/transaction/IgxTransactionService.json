@@ -124,6 +124,69 @@
                     }
                 }
             },
+            "verifyAddedTransaction": {
+                "comment": {
+                    "parameters": {
+                        "transaction": {
+                            "comment": {
+                                "text": "検証されるトランザクション。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "渡されたトランザクションが正しいかどうかを確認します。そうでない場合、例外を発生します。"
+                }
+            },
+            "updateState": {
+                "comment": {
+                    "parameters": {
+                        "states": {
+                            "comment": {
+                                "text": "更新を適用する状態コレクション。"
+                            }
+                        },
+                        "transaction": {
+                            "comment": {
+                                "text": "現在の状態に適用するトランザクション。"
+                            }
+                        },
+                        "recordRef": {
+                            "comment": {
+                                "text": "トランザクションが適用されるデータ ソース内のレコード値への参照 (存在する場合)。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "渡されたトランザクションおよび recordRef に基づいて、提供された状態コレクションを更新します。"
+                }
+            },
+            "cleanState": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "状態を recordRef と比較し、重複する値をすべてクリアします。空のオブジェクトとして状態が終了した場合、",
+                        "状態から削除します。"
+                    ]
+                }
+            },
+            "updateRecord": {
+                "comment": {
+                    "parameters": {
+                        "data": {
+                            "comment": {
+                                "text": "変更されるデータ ソース。"
+                            }
+                        },
+                        "state": {
+                            "comment": {
+                                "text": "データを更新する状態。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Updates state related record in the provided data"
+                }
+            },
             "startPending": {
                 "comment": {
                     "tags": {
@@ -133,6 +196,41 @@
                             }
                         }
                     }
+                }
+            },
+            "updateValue": {
+                "comment": {
+                    "returns": "提供された状態のすべての変更を含む更新された値 \n",
+                    "parameters": {
+                        "state": {
+                            "comment": {
+                                "text": "値を更新する状態。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "状態のすべての変更で提供された状態の recordRef を更新します。プリミティブおよびオブジェクト値タイプを受け入れます。"
+                }
+            },
+            "mergeValues": {
+                "comment": {
+                    "parameters": {
+                        "first": {
+                            "comment": {
+                                "text": "結合する値。"
+                            }
+                        },
+                        "second": {
+                            "comment": {
+                                "text": "結合する値。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "2 番目の値を最初の値に結合し、結果を空のオブジェクトに結合します。値がプリミティブ型の場合、",
+                        "2 番目の値 (存在する場合) または最初の値を返します。"
+                    ]
                 }
             }
         },

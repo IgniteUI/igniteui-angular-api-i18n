@@ -2,6 +2,12 @@
     "IgxGridStateDirective": {
         "properties": {},
         "methods": {
+            "__type": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "展開された行の ID を返すために階層をルート グリッドまでトラバースします。"
+                }
+            },
             "getState": {
                 "comment": {
                     "returns": "JSON 文字列にシリアル化されたの IGridState オブジェクト、またはシリアル化されていない IGridState オブジェクトを返します。\n```html\n<igx-grid [igxGridState]=\"options\"></igx-grid>\n```\n```typescript\n@ViewChild(IgxGridStateDirective, { static: true }) public state;\nlet state =  this.state.getState();\n```\n",
@@ -14,6 +20,36 @@
                     "returns": "\n```html\n<igx-grid [igxGridState]=\"options\"></igx-grid>\n```\n```typescript\n@ViewChild(IgxGridStateDirective, { static: true }) public state;\nthis.state.setState(gridState);\n```\n",
                     "tags": {},
                     "shortText": "引数として渡された IGridState オブジェクトに基づいてグリッド機能の状態を復元します。"
+                }
+            },
+            "buildState": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "IGridState オブジェクトを作成します。"
+                }
+            },
+            "restoreGridState": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "対応するメソッドを呼び出して、渡された IGridState オブジェクトから機能を復元するメソッド。"
+                }
+            },
+            "applyFeatures": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "すべてのグリッド機能のコレクションを返します。"
+                }
+            },
+            "createExpressionsTreeFromObject": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "このメソッドは、提供されたオブジェクトから FilteringExpressionsTree を作成します。"
+                }
+            },
+            "generateFilteringCondition": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "指定した dataType と条件 (contains、greaterThan など) のフィルタリング ロジック関数を返します。"
                 }
             }
         },

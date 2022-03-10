@@ -4,7 +4,7 @@
             "tags": {},
             "text": [
                 "Ignite UI Tree Grid は統一性のあるテーブルとして書式設定されたスキーマで階層型データを表示および操作し、",
-                "並べ替え、フィルタリング、エディティング、列ピン固定、ページング、列移動、非表示など高度な機能を提供します。",
+                "ソート、フィルタリング、エディティング、列ピン固定、ページング、列移動、非表示など高度な機能を提供します。",
                 "例:",
                 "```html",
                 "<igx-tree-grid [data]=\"employeeData\" primaryKey=\"employeeID\" foreignKey=\"PID\" [autoGenerate]=\"false\">",
@@ -190,7 +190,7 @@
                         }
                     },
                     "shortText": [
-                        "処理済み (フィルターと並べ替え済み) のルート `ITreeGridRecord` の配列を返します。",
+                        "処理済み (フィルターとソート済み) のルート `ITreeGridRecord` の配列を返します。",
                         "```typescript",
                         "// index=2 の処理済みルート レコールドを取得します。",
                         "const states = this.grid.processedRootRecords[2];",
@@ -209,7 +209,7 @@
                         }
                     },
                     "shortText": [
-                        "処理済み (フィルターと並べ替え済み) のルート`ITreeGridRecord` の配列のマップを返します。",
+                        "処理済み (フィルターとソート済み) のルート`ITreeGridRecord` の配列のマップを返します。",
                         "```typescript",
                         "// primaryKey=2 の処理済みレコードを取得します。",
                         "const states = this.grid.processedRecords.get(2);",
@@ -251,6 +251,12 @@
                         }
                     },
                     "shortText": "列を自動生成するかどうかを取得または設定します。"
+                }
+            },
+            "moving": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "列移動がグリッドで有効かどうかを制御します。"
                 }
             },
             "emptyGridTemplate": {
@@ -943,7 +949,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`ISortingEventArgs` オブジェクトを返します。`sortingExpressions` キーは、並べ替え式を保持します。",
+                                "text": "`ISortingEventArgs` オブジェクトを返します。`sortingExpressions` キーは、ソート式を保持します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -958,7 +964,7 @@
                             }
                         }
                     },
-                    "shortText": "並べ替え式が適用される前に発生されます。"
+                    "shortText": "ソート式が適用される前に発生されます。"
                 }
             },
             "sortingDone": {
@@ -966,7 +972,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "並べ替え式を返します。",
+                                "text": "ソート式を返します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -981,7 +987,7 @@
                             }
                         }
                     },
-                    "shortText": "並べ替えが完了した後に発生されます。"
+                    "shortText": "ソートが完了した後に発生されます。"
                 }
             },
             "filtering": {
@@ -1476,7 +1482,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "並べ替え式を返します。",
+                                "text": "ソート式を返します。",
                                 "tagName": "備考:"
                             }
                         },
@@ -1491,7 +1497,7 @@
                             }
                         }
                     },
-                    "shortText": "並べ替えが実行された前に発生されます。"
+                    "shortText": "ソートが実行された前に発生されます。"
                 }
             },
             "toolbarExporting": {
@@ -2346,7 +2352,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "`IgxGridComponent` の `IgxColumnComponent` を提供した並べ替え式の配列に基づいて並べ替えます。",
+                                "text": "`IgxGridComponent` の `IgxColumnComponent` を提供したソート式の配列に基づいてソートします。",
                                 "tagName": "備考:"
                             }
                         },
@@ -2361,7 +2367,7 @@
                             }
                         }
                     },
-                    "shortText": "単一の `IgxColumnComponent` を並べ替えます。"
+                    "shortText": "単一の `IgxColumnComponent` をソートします。"
                 }
             },
             "filter": {
@@ -2474,7 +2480,7 @@
                     "tags": {
                         "remarks": {
                             "comment": {
-                                "text": "それ以外の場合、すべての `IgxColumnComponent` の並べ替え状態をクリアします。",
+                                "text": "それ以外の場合、すべての `IgxColumnComponent` のソート状態をクリアします。",
                                 "tagName": "備考:"
                             }
                         },
@@ -2489,7 +2495,7 @@
                             }
                         }
                     },
-                    "shortText": "名前が提供された場合、対応する `IgxColumnComponent` の並べ替え状態をクリアします。"
+                    "shortText": "名前が提供された場合、対応する `IgxColumnComponent` のソート状態をクリアします。"
                 }
             },
             "pinColumn": {
@@ -3063,6 +3069,24 @@
                         }
                     },
                     "shortText": "rowID で指定された行の下に UI を生成し、追加モードに入ります。"
+                }
+            },
+            "evaluateLoadingState": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "shouldOverlayLoading の現在値に基づいてオーバーレイを非表示/表示できるように、",
+                        "データおよび/または isLoading 入力が変更されたときに呼び出されます。"
+                    ]
+                }
+            },
+            "getComponentDensityClass": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "コンポーネント/要素のスタイル クラスは、現在の表示密度に基づいて",
+                        "変更されたバージョンを返します。"
+                    ]
                 }
             }
         },
@@ -4081,13 +4105,13 @@
                                 }
                             }
                         },
-                        "shortText": "グリッドの並べ替えストラテジを取得または設定します。"
+                        "shortText": "グリッドのソート ストラテジを取得または設定します。"
                     }
                 },
                 "setter": {
                     "comment": {
                         "tags": {},
-                        "shortText": "グリッドの並べ替えストラテジを取得または設定します。"
+                        "shortText": "グリッドのソート ストラテジを取得または設定します。"
                     }
                 }
             },
@@ -4252,13 +4276,13 @@
                                 }
                             }
                         },
-                        "shortText": "並べ替えの状態を取得または設定します。"
+                        "shortText": "ソートの状態を取得または設定します。"
                     }
                 },
                 "setter": {
                     "comment": {
                         "tags": {},
-                        "shortText": "並べ替えの状態を取得または設定します。"
+                        "shortText": "ソートの状態を取得または設定します。"
                     }
                 }
             },
@@ -4404,7 +4428,7 @@
                                 }
                             }
                         },
-                        "shortText": "フィルターされて並べ替え済みのデータを含む配列を返します。"
+                        "shortText": "フィルターされてソート済みのデータを含む配列を返します。"
                     }
                 }
             },
@@ -4824,7 +4848,7 @@
                                 }
                             }
                         },
-                        "shortText": "`IgxGridComponent` に並べ替え可能な列があるかどうかを返します。"
+                        "shortText": "`IgxGridComponent` にソート可能な列があるかどうかを返します。"
                     }
                 }
             },
@@ -4889,6 +4913,12 @@
                 "getter": {
                     "comment": {
                         "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": "代わりに `IgxGridComponent.moving` を使用してください。",
+                                    "tagName": "非推奨"
+                                }
+                            },
                             "example": {
                                 "comment": {
                                     "text": [
@@ -4957,7 +4987,7 @@
                                 }
                             }
                         },
-                        "shortText": "グリッドに現在表示されている、ページング/フィルター/並べ替え/グループ化/ピン固定が適用された行データを返します。"
+                        "shortText": "グリッドに現在表示されている、ページング/フィルター/ソート/グループ化/ピン固定が適用された行データを返します。"
                     }
                 }
             },
@@ -4976,7 +5006,7 @@
                                 }
                             }
                         },
-                        "shortText": "グリッドに現在表示されている、ページング/フィルター/並べ替え/グループ化/固定解除が適用された行データを返します。"
+                        "shortText": "グリッドに現在表示されている、ページング/フィルター/ソート/グループ化/固定解除が適用された行データを返します。"
                     }
                 }
             },
@@ -4995,7 +5025,7 @@
                                 }
                             }
                         },
-                        "shortText": "グリッドに現在表示されている、ページング/フィルター/並べ替え/グループ化/ピン固定/固定解除が適用された行データを返します。"
+                        "shortText": "グリッドに現在表示されている、ページング/フィルター/ソート/グループ化/ピン固定/固定解除が適用された行データを返します。"
                     }
                 }
             },

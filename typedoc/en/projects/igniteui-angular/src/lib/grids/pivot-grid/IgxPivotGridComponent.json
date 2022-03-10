@@ -1,0 +1,2877 @@
+{
+    "IgxPivotGridComponent": {
+        "comment": {
+            "tags": {
+                "igxmodule": {
+                    "comment": {
+                        "text": "IgxPivotGridModule",
+                        "tagName": "igxmodule"
+                    }
+                },
+                "igxgroup": {
+                    "comment": {
+                        "text": "Grids & Lists",
+                        "tagName": "igxgroup"
+                    }
+                },
+                "igxkeywords": {
+                    "comment": {
+                        "text": "pivot, grid, table",
+                        "tagName": "igxkeywords"
+                    }
+                },
+                "igxtheme": {
+                    "comment": {
+                        "text": "igx-grid-theme",
+                        "tagName": "igxtheme"
+                    }
+                },
+                "remarks": {
+                    "comment": {
+                        "text": [
+                            "The Ignite UI Pivot Grid is used for grouping and aggregating simple flat data into a pivot table.  Once data",
+                            "has been bound and the dimensions and values configured it can be manipulated via sorting and filtering."
+                        ],
+                        "tagName": "remarks"
+                    }
+                },
+                "example": {
+                    "comment": {
+                        "text": [
+                            "```html",
+                            "<igx-pivot-grid [data]=\"data\" [pivotConfiguration]=\"configuration\">",
+                            "</igx-pivot-grid>",
+                            "```"
+                        ],
+                        "tagName": "example"
+                    }
+                }
+            },
+            "shortText": "Pivot Grid provides a way to present and manipulate data in a pivot table view."
+        },
+        "properties": {
+            "dimensionsChange": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the new dimension collection and its type:",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-pivot-grid #grid [data]=\"localData\" [height]=\"'305px'\"",
+                                    "             (dimensionsChange)=\"dimensionsChange($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the dimension collection is changed via the grid chip area."
+                }
+            },
+            "dimensionsSortingExpressionsChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-pivot-grid #grid [data]=\"localData\" [height]=\"'305px'\"",
+                                    "             (dimensionsSortingExpressionsChange)=\"dimensionsSortingExpressionsChange($event)\"></igx-pivot-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a dimension is sorted."
+                }
+            },
+            "valuesChange": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the new dimension",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-pivot-grid #grid [data]=\"localData\" [height]=\"'305px'\"",
+                                    "             (valuesChange)=\"valuesChange($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the values collection is changed via the grid chip area."
+                }
+            },
+            "emptyPivotGridTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-pivot-grid [emptyPivotGridTemplate]=\"myTemplate\"><igx-pivot-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a custom template when pivot grid is empty."
+                }
+            },
+            "emptyGridTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [emptyGridTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a custom template when empty."
+                }
+            },
+            "loadingGridTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [id]=\"'igx-grid-1'\" [data]=\"Data\" [loadingGridTemplate]=\"myTemplate\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a custom template when loading."
+                }
+            },
+            "clipboardOptions": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Controls the copy behavior of the grid."
+                }
+            },
+            "filteringExpressionsTreeChange": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the filtering expressions tree of the column for which filtering was performed.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"",
+                                    "             (filteringExpressionsTreeChange)=\"filteringExprTreeChange($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after filtering is performed."
+                }
+            },
+            "advancedFilteringExpressionsTreeChange": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the advanced filtering expressions tree.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"",
+                                    "          (advancedFilteringExpressionsTreeChange)=\"advancedFilteringExprTreeChange($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after advanced filtering is performed."
+                }
+            },
+            "gridScroll": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"",
+                                    "             (gridScroll)=\"onScroll($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when grid is scrolled horizontally/vertically."
+                }
+            },
+            "evenRowCSS": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "in version 12.2.0. We suggest using `rowClasses` property instead",
+                                    "Gets/Sets the styling classes applied to all even `IgxGridRowComponent`s in the grid."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"Data\" [evenRowCSS]=\"'igx-grid--my-even-class'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    }
+                }
+            },
+            "oddRowCSS": {
+                "comment": {
+                    "tags": {
+                        "deprecated": {
+                            "comment": {
+                                "text": [
+                                    "in version 12.2.0. We suggest using `rowClasses` property instead",
+                                    "Gets/Sets the styling classes applied to all odd `IgxGridRowComponent`s in the grid."
+                                ],
+                                "tagName": "deprecated"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"Data\" [evenRowCSS]=\"'igx-grid--my-odd-class'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    }
+                }
+            },
+            "rowClasses": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets a conditional class selector to the grid's row element.",
+                        "Accepts an object literal, containing key-value pairs,",
+                        "where the key is the name of the CSS class and the value is",
+                        "either a callback function that returns a boolean, or boolean, like so:",
+                        "```typescript",
+                        "callback = (row: RowType) => { return row.selected > 6; }",
+                        "rowClasses = { 'className' : this.callback };",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"Data\" [rowClasses] = \"rowClasses\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "rowStyles": {
+                "comment": {
+                    "tags": {
+                        "memberof": {
+                            "comment": {
+                                "text": "IgxColumnComponent",
+                                "tagName": "memberof"
+                            }
+                        }
+                    },
+                    "shortText": [
+                        "Sets conditional style properties on the grid row element.",
+                        "It accepts an object literal where the keys are",
+                        "the style properties and the value is an expression to be evaluated.",
+                        "```typescript",
+                        "styles = {",
+                        " background: 'yellow',",
+                        " color: (row: RowType) => row.selected : 'red': 'white'",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-grid #grid [data]=\"Data\" [rowStyles]=\"styles\" [autoGenerate]=\"true\"></igx-grid>",
+                        "```"
+                    ]
+                }
+            },
+            "primaryKey": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [primaryKey]=\"'ProductID'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the primary key."
+                }
+            },
+            "uniqueColumnValuesStrategy": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Provides a callback for loading unique column values on demand.",
+                                    "If this property is provided, the unique values it generates will be used by the Excel Style Filtering."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [data]=\"localData\" [filterMode]=\"'excelStyleFilter'\" [uniqueColumnValuesStrategy]=\"columnValuesStrategy\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a unique values strategy used by the Excel Style Filtering"
+                }
+            },
+            "cellClick": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the `IgxGridCell`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (cellClick)=\"cellClick($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a cell is clicked."
+                }
+            },
+            "selected": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": " Returns the `IgxGridCell`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (selected)=\"onCellSelect($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a cell is selected."
+                }
+            },
+            "rowSelectionChanging": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (rowSelectionChanging)=\"rowSelectionChanging($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": " Emitted when `IgxGridRowComponent` is selected."
+                }
+            },
+            "columnSelectionChanging": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (columnSelectionChanging)=\"columnSelectionChanging($event)\" [data]=\"localData\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": " Emitted when `IgxColumnComponent` is selected."
+                }
+            },
+            "columnInit": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the column object.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (columnInit)=\"initColumns($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a column is initialized."
+                }
+            },
+            "sorting": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns an `ISortingEventArgs` object. `sortingExpressions` key holds the sorting expressions.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (sorting)=\"sorting($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before sorting expressions are applied."
+                }
+            },
+            "sortingDone": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the sorting expression.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (sortingDone)=\"sortingDone($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after sorting is completed."
+                }
+            },
+            "filtering": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns an `IFilteringEventArgs` object. `filteringExpressions` key holds the filtering expressions for the column.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (filtering)=\"filtering($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before filtering expressions are applied."
+                }
+            },
+            "filteringDone": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the filtering expressions tree of the column for which filtering was performed.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\" (filteringDone)=\"filteringDone($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after filtering is performed through the UI."
+                }
+            },
+            "columnResized": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the `IgxColumnComponent` object's old and new width.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (columnResized)=\"resizing($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after column is resized."
+                }
+            },
+            "contextMenu": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Returns the `IgxGridCell` object.",
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (contextMenu)=\"contextMenu($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a cell is right clicked."
+                }
+            },
+            "doubleClick": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the `IgxGridCell` object.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" (doubleClick)=\"dblClick($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a cell is double clicked."
+                }
+            },
+            "columnVisibilityChanging": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Args: { column: any, newValue: boolean }",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid (columnVisibilityChanging)=\"visibilityChanging($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before column visibility is changed."
+                }
+            },
+            "columnVisibilityChanged": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Args: { column: IgxColumnComponent, newValue: boolean }",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid (columnVisibilityChanged)=\"visibilityChanged($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after column visibility is changed."
+                }
+            },
+            "gridKeydown": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "This event is fired only if the key combination is supported in the grid.",
+                                    "Return the target type, target object and the original event. This event is cancelable."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    " <igx-grid (gridKeydown)=\"customKeydown($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when keydown is triggered over element inside grid's body."
+                }
+            },
+            "gridCopy": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Fired only if copy behavior is enabled through the [`clipboardOptions`]{@link IgxGridBaseDirective#clipboardOptions}.",
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when a copy operation is executed."
+                }
+            },
+            "rowToggle": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [data]=\"employeeData\" (rowToggle)=\"rowToggle($event)\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when the expanded state of a row gets changed."
+                }
+            },
+            "activeNodeChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "<igx-grid [data]=\"data\" [autoGenerate]=\"true\" (activeNodeChange)=\"activeNodeChange($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emmited when the active node is changed."
+                }
+            },
+            "sortingExpressionsChange": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Returns the sorting expressions.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (sortingExpressionsChange)=\"sortingExprChange($event)\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before sorting is performed."
+                }
+            },
+            "rangeSelected": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Range selection can be made either through drag selection or through keyboard selection.",
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted when making a range selection."
+                }
+            },
+            "rendered": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Emitted after the ngAfterViewInit hook. At this point the grid exists in the DOM"
+                }
+            },
+            "dataChanging": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    " <igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (dataChanging)='handleDataChangingEvent()'></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted before the grid's data view is changed because of a data operation, rebinding, etc."
+                }
+            },
+            "dataChanged": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    " <igx-grid #grid [data]=\"localData\" [autoGenerate]=\"true\" (dataChanged)='handleDataChangedEvent()'></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Emitted after the grid's data view is changed because of a data operation, rebinding, etc."
+                }
+            },
+            "emptyFilteredGridTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "const emptyTempalte = this.grid.emptyGridTemplate;",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "A template reference for the template when the filtered grid is empty."
+                }
+            },
+            "emptyGridDefaultTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```",
+                                    "const emptyTempalte = this.grid.emptyGridTemplate;",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "A template reference for the template when the grid is empty."
+                }
+            },
+            "rowExpandedIndicatorTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a row expand indicator."
+                }
+            },
+            "rowCollapsedIndicatorTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a row collapse indicator."
+                }
+            },
+            "headerExpandIndicatorTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a header expand indicator."
+                }
+            },
+            "headerCollapseIndicatorTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a header collapse indicator."
+                }
+            },
+            "excelStyleHeaderIconTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a row expand indicator."
+                }
+            },
+            "sortAscendingHeaderIconTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a header sorting indicator when columns are sorted in asc order."
+                }
+            },
+            "sortDescendingHeaderIconTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a header sorting indicator when columns are sorted in desc order."
+                }
+            },
+            "sortHeaderIconTemplate": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "The custom template, if any, that should be used when rendering a header sorting indicator when columns are not sorted."
+                }
+            }
+        },
+        "methods": {
+            "notifyDimensionChange": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Notifies for dimension change."
+                }
+            },
+            "autoSizeRowDimension": {
+                "comment": {
+                    "parameters": {
+                        "dimension": {
+                            "comment": {
+                                "text": "The row dimension to size."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Only sizes based on the dimension cells in view.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.autoSizeRowDimension(dimension);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Auto-sizes row dimension cells."
+                }
+            },
+            "insertDimensionAt": {
+                "comment": {
+                    "parameters": {
+                        "dimension": {
+                            "comment": {
+                                "text": "The dimension that will be added."
+                            }
+                        },
+                        "targetCollectionType": {
+                            "comment": {
+                                "text": "The target collection type to add to. Can be Row, Column or Filter."
+                            }
+                        },
+                        "index": {
+                            "comment": {
+                                "text": [
+                                    "The index in the collection at which to add.",
+                                    "This parameter is optional. If not set it will add it to the end of the collection."
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.insertDimensionAt(dimension, PivotDimensionType.Row, 1);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Inserts dimension in target collection by type at specified index or at the collection's end."
+                }
+            },
+            "moveDimension": {
+                "comment": {
+                    "parameters": {
+                        "dimension": {
+                            "comment": {
+                                "text": "The dimension that will be moved."
+                            }
+                        },
+                        "targetCollectionType": {
+                            "comment": {
+                                "text": "The target collection type to move it to. Can be Row, Column or Filter."
+                            }
+                        },
+                        "index": {
+                            "comment": {
+                                "text": [
+                                    "The index in the collection at which to add.",
+                                    "This parameter is optional. If not set it will add it to the end of the collection."
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.moveDimension(dimension, PivotDimensionType.Row, 1);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Move dimension from its currently collection to the specified target collection by type at specified index or at the collection's end."
+                }
+            },
+            "removeDimension": {
+                "comment": {
+                    "parameters": {
+                        "dimension": {
+                            "comment": {
+                                "text": "The dimension to be removed."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "This is different than toggleDimension that enabled/disables the dimension.",
+                                    "This completely removes the specified dimension from the collection."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.removeDimension(dimension);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Removes dimension from its currently collection."
+                }
+            },
+            "toggleDimension": {
+                "comment": {
+                    "parameters": {
+                        "dimension": {
+                            "comment": {
+                                "text": "The dimension to be toggled."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "The dimension remains in its current collection. This just changes its enabled state.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.toggleDimension(dimension);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Toggles the dimension's enabled state on or off."
+                }
+            },
+            "insertValueAt": {
+                "comment": {
+                    "parameters": {
+                        "value": {
+                            "comment": {
+                                "text": "The value definition that will be added."
+                            }
+                        },
+                        "index": {
+                            "comment": {
+                                "text": [
+                                    "The index in the collection at which to add.",
+                                    "This parameter is optional. If not set it will add it to the end of the collection."
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.insertValueAt(value, 1);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Inserts value at specified index or at the end."
+                }
+            },
+            "moveValue": {
+                "comment": {
+                    "parameters": {
+                        "value": {
+                            "comment": {
+                                "text": "The value that will be moved."
+                            }
+                        },
+                        "index": {
+                            "comment": {
+                                "text": [
+                                    "The index in the collection at which to add.",
+                                    "This parameter is optional. If not set it will add it to the end of the collection."
+                                ]
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.moveValue(value, 1);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Move value from its currently at specified index or at the end."
+                }
+            },
+            "removeValue": {
+                "comment": {
+                    "parameters": {
+                        "value": {
+                            "comment": {
+                                "text": "The value to be removed."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "This is different than toggleValue that enabled/disables the value.",
+                                    "This completely removes the specified value from the collection."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.removeValue(dimension);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Removes value from collection."
+                }
+            },
+            "toggleValue": {
+                "comment": {
+                    "parameters": {
+                        "value": {
+                            "comment": {
+                                "text": "The value to be toggled."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "The value remains in its current collection. This just changes its enabled state.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.toggleValue(value);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Toggles the value's enabled state on or off."
+                }
+            },
+            "sortDimension": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.sortDimension(dimension, SortingDirection.Asc);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Sort the dimension and its children in the provided direction."
+                }
+            },
+            "__type": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Provides a callback for loading unique column values on demand.",
+                                    "If this property is provided, the unique values it generates will be used by the Excel Style Filtering."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid [data]=\"localData\" [filterMode]=\"'excelStyleFilter'\" [uniqueColumnValuesStrategy]=\"columnValuesStrategy\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets a unique values strategy used by the Excel Style Filtering"
+                }
+            },
+            "toggleRow": {
+                "comment": {
+                    "parameters": {
+                        "rowID": {
+                            "comment": {
+                                "text": "The row id - primaryKey value or the data record instance."
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "ID is either the primaryKey value or the data record instance.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.toggleRow(rowID);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Toggles the row by its id."
+                }
+            },
+            "getHeaderGroupWidth": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "Gets the `width` to be set on `IgxGridHeaderGroupComponent`."
+                }
+            },
+            "getColumnByName": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "const myCol = this.grid1.getColumnByName(\"ID\");",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Returns the `IgxColumnComponent` by field name."
+                }
+            },
+            "markForCheck": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "grid.markForCheck();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "text": [
+                        "// DOs",
+                        "// call markForCheck after updating a nested property",
+                        "grid.data.forEach(rec => {",
+                        " rec.nestedProp1.nestedProp2 = newValue;",
+                        "});",
+                        "grid.markForCheck();",
+                        "```"
+                    ],
+                    "shortText": [
+                        "Triggers change detection for the `IgxGridComponent`.",
+                        "Calling markForCheck also triggers the grid pipes explicitly, resulting in all updates being processed.",
+                        "May degrade performance if used when not needed, or if misused:",
+                        "```typescript",
+                        "// DON'Ts:",
+                        "// don't call markForCheck from inside a loop",
+                        "// don't call markForCheck when a primitive has changed",
+                        "grid.data.forEach(rec => {",
+                        " rec = newValue;",
+                        " grid.markForCheck();",
+                        "});"
+                    ]
+                }
+            },
+            "getRowData": {
+                "comment": {
+                    "parameters": {
+                        "rowSelector": {
+                            "comment": {
+                                "text": "correspond to rowID"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "If the primary key is not specified the row selector match the row data.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "const data = grid.getRowData(94741);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Returns the data that is contained in the row component."
+                }
+            },
+            "sort": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Sort the `IgxGridComponent`'s `IgxColumnComponent` based on the provided array of sorting expressions.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.sort({ fieldName: name, dir: SortingDirection.Asc, ignoreCase: false });",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Sort a single `IgxColumnComponent`."
+                }
+            },
+            "filter": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "public filter(term) {",
+                                    "     this.grid.filter(\"ProductName\", term, IgxStringFilteringOperand.instance().condition(\"contains\"));",
+                                    "}",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Filters a single `IgxColumnComponent`."
+                }
+            },
+            "filterGlobal": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "grid.filterGlobal('some', IgxStringFilteringOperand.instance().condition('contains'));",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Filters all the `IgxColumnComponent` in the `IgxGridComponent` with the same condition."
+                }
+            },
+            "clearFilter": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Otherwise clears the filtering state of all `IgxColumnComponent`s.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.clearFilter();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "If name is provided, clears the filtering state of the corresponding `IgxColumnComponent`."
+                }
+            },
+            "clearSort": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "otherwise clears the sorting state of all `IgxColumnComponent`.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.clearSort();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "If name is provided, clears the sorting state of the corresponding `IgxColumnComponent`."
+                }
+            },
+            "reflow": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "Should be run when changing DOM elements dimentions manually that affect the grid's size.",
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.reflow();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Recalculates grid width/height dimensions."
+                }
+            },
+            "selectRows": {
+                "comment": {
+                    "parameters": {
+                        "clearCurrentSelection": {
+                            "comment": {
+                                "text": "if true clears the current selection"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.selectRows([1,2,5], true);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Select specified rows by ID."
+                }
+            },
+            "deselectRows": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectRows([1,2,5]);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselect specified rows by ID."
+                }
+            },
+            "selectAllRows": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "By default if filtering is in place, selectAllRows() and deselectAllRows() select/deselect all filtered rows.",
+                                    "If you set the parameter onlyFilterData to false that will select all rows in the grid exept deleted rows."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.selectAllRows();",
+                                    "this.grid.selectAllRows(false);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Selects all rows"
+                }
+            },
+            "deselectAllRows": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "By default if filtering is in place, selectAllRows() and deselectAllRows() select/deselect all filtered rows.",
+                                    "If you set the parameter onlyFilterData to false that will deselect all rows in the grid exept deleted rows."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectAllRows();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselects all rows"
+                }
+            },
+            "getSelectedData": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "If `formatters` is enabled, the cell value will be formatted by its respective column formatter (if any).",
+                                    "If `headers` is enabled, it will use the column header (if any) instead of the column field."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Returns an array of the current cell selection in the form of `[{ column.field: cell.value }, ...]`."
+                }
+            },
+            "selectedColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "Returns an array with selected columns",
+                                    "```typescript",
+                                    "const selectedColumns = this.grid.selectedColumns();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Get current selected columns."
+                }
+            },
+            "selectColumns": {
+                "comment": {
+                    "parameters": {
+                        "clearCurrentSelection": {
+                            "comment": {
+                                "text": "if true clears the current selection"
+                            }
+                        }
+                    },
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.selectColumns(['ID','Name'], true);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Select specified columns."
+                }
+            },
+            "deselectColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectColumns(['ID','Name']);",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselect specified columns by field."
+                }
+            },
+            "deselectAllColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectAllColumns();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Deselects all columns"
+                }
+            },
+            "selectAllColumns": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    "this.grid.deselectAllColumns();",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Selects all columns"
+                }
+            },
+            "getSelectedColumnsData": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "If `formatters` is enabled, the cell value will be formatted by its respective column formatter (if any).",
+                                    "If `headers` is enabled, it will use the column header (if any) instead of the column field."
+                                ],
+                                "tagName": "remarks"
+                            }
+                        }
+                    },
+                    "shortText": "Returns an array of the current columns selection in the form of `[{ column.field: cell.value }, ...]`."
+                }
+            },
+            "navigateTo": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": [
+                                    "Also can execute a custom logic over the target element,",
+                                    "through a callback function that accepts { targetType: GridKeydownTargetType, target: Object }"
+                                ],
+                                "tagName": "remarks"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```typescript",
+                                    " this.grid.navigateTo(10, 3, (args) => { args.target.nativeElement.focus(); });",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Navigates to a position in the grid based on provided `rowindex` and `visibleColumnIndex`."
+                }
+            },
+            "evaluateLoadingState": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "Should be called when data and/or isLoading input changes so that the overlay can be",
+                        "hidden/shown based on the current value of shouldOverlayLoading"
+                    ]
+                }
+            }
+        },
+        "accessors": {
+            "superCompactMode": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Overrides the displayDensity option if one is set.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-pivot-grid [superCompactMode]=\"true\"></igx-pivot-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Enables a super compact theme for the component."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Enables a super compact theme for the component."
+                    }
+                }
+            },
+            "displayDensity": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "If set while superCompactMode is enabled will have no affect.",
+                                        "```typescript",
+                                        "let componentTheme = this.component.displayDensity;",
+                                        "```"
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns the theme of the component.",
+                            "The default theme is `comfortable`.",
+                            "Available options are `comfortable`, `cosy`, `compact`."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Sets the theme of the component."
+                    }
+                }
+            },
+            "defaultExpandState": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the default expand state for all rows."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the default expand state for all rows."
+                    }
+                }
+            },
+            "defaultRowHeight": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const rowHeigh = this.grid.defaultRowHeight;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the default row height."
+                    }
+                }
+            },
+            "allDimensions": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const dimensions = this.grid.allDimensions;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the full list of dimensions."
+                    }
+                }
+            },
+            "id": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If not provided it will be automatically generated.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-pivot-grid [id]=\"'igx-pivot-1'\" [data]=\"Data\"></igx-pivot-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the value of the `id` attribute."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the value of the `id` attribute."
+                    }
+                }
+            },
+            "data": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns an array of data set to the component.",
+                            "```typescript",
+                            "let data = this.grid.data;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "An @Input property that lets you fill the `IgxPivotGridComponent` with an array of data.",
+                            "```html",
+                            "<igx-pivot-grid [data]=\"Data\"></igx-pivot-grid>",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "filteredData": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxHierarchicalGridComponent",
+                                    "tagName": "memberof"
+                                }
+                            }
+                        },
+                        "shortText": [
+                            "Returns an array of objects containing the filtered data.",
+                            "```typescript",
+                            "let filteredData = this.grid.filteredData;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets an array of objects containing the filtered data.",
+                            "```typescript",
+                            "this.grid.filteredData = [{",
+                            "      ID: 1,",
+                            "      Name: \"A\"",
+                            "}];",
+                            "```"
+                        ]
+                    }
+                }
+            },
+            "dataCloneStrategy": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        " <igx-grid #grid [data]=\"localData\" [dataCloneStrategy]=\"customCloneStrategy\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the data clone strategy of the grid when in edit mode."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the data clone strategy of the grid when in edit mode."
+                    }
+                }
+            },
+            "resourceStrings": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the resource strings."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it uses EN resources.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the resource strings."
+                    }
+                }
+            },
+            "filteringLogic": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The default is AND.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid [data]=\"Data\" [autoGenerate]=\"true\" [filteringLogic]=\"filtering\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the filtering logic of the `IgxGridComponent`."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the filtering logic of the `IgxGridComponent`."
+                    }
+                }
+            },
+            "filteringExpressionsTree": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(filteringExpressionsTree)]=\"model.filteringExpressions\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            },
+                            "remarks": {
+                                "comment": {
+                                    "text": "Supports two-way binding.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the filtering state."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the filtering state."
+                    }
+                }
+            },
+            "advancedFilteringExpressionsTree": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let advancedFilteringExpressionsTree = this.grid.advancedFilteringExpressionsTree;",
+                                        "this.grid.advancedFilteringExpressionsTree = logic;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the advanced filtering state."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the advanced filtering state."
+                    }
+                }
+            },
+            "locale": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "If not set, returns browser's language.",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the locale."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the locale."
+                    }
+                }
+            },
+            "height": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the height."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the height."
+                    }
+                }
+            },
+            "width": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "let gridWidth = this.grid.width;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the width of the grid."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the width of the grid."
+                    }
+                }
+            },
+            "headerWidth": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "let gridHeaderWidth = this.grid.headerWidth;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the width of the header."
+                    }
+                }
+            },
+            "rowHeight": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [rowHeight]=\"100\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the row height."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the row height."
+                    }
+                }
+            },
+            "columnWidth": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"localData\" [columnWidth]=\"100\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the default width of the columns."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the default width of the columns."
+                    }
+                }
+            },
+            "emptyGridMessage": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Get/Sets the message displayed when there are no records."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [emptyGridMessage]=\"'The grid is empty'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Get/Sets the message displayed when there are no records."
+                    }
+                }
+            },
+            "isLoading": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets whether the grid is going to show a loading indicator."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [isLoading]=\"true\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets whether the grid is going to show a loading indicator."
+                    }
+                }
+            },
+            "emptyFilteredGridMessage": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the message displayed when there are no records and the grid is filtered."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [emptyGridMessage]=\"'The grid is empty'\" [autoGenerate]=\"true\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the message displayed when there are no records and the grid is filtered."
+                    }
+                }
+            },
+            "filterStrategy": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        " <igx-grid #grid [data]=\"localData\" [filterStrategy]=\"filterStrategy\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the filtering strategy of the grid."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the filtering strategy of the grid."
+                    }
+                }
+            },
+            "sortStrategy": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        " <igx-grid #grid [data]=\"localData\" [sortStrategy]=\"sortStrategy\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the sorting strategy of the grid."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the sorting strategy of the grid."
+                    }
+                }
+            },
+            "headerGroupsList": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const headerGroupsList = this.grid.headerGroupsList;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "A list of all `IgxGridHeaderGroupComponent`."
+                    }
+                }
+            },
+            "headerCellList": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const headers = this.grid.headerCellList;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "A list of all `IgxGridHeaderComponent`."
+                    }
+                }
+            },
+            "filterCellList": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const filterCells = this.grid.filterCellList;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "A list of all `IgxGridFilteringCellComponent`."
+                    }
+                }
+            },
+            "rowList": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const rowList = this.grid.rowList;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "A list of `IgxGridRowComponent`."
+                    }
+                }
+            },
+            "dataRowList": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const dataList = this.grid.dataRowList;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "A list of currently rendered `IgxGridRowComponent`'s."
+                    }
+                }
+            },
+            "sortingExpressions": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Supports two-way data binding.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\" [(sortingExpressions)]=\"model.sortingExpressions\"></igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the sorting state."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the sorting state."
+                    }
+                }
+            },
+            "cellSelection": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the cell selection mode is multiple",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets cell selection mode."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets cell selection mode."
+                    }
+                }
+            },
+            "rowSelection": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "By default the row selection mode is 'none'",
+                                        "Note that in IgxGrid and IgxHierarchicalGrid 'multipleCascade' behaves like 'multiple'"
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets row selection mode"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets row selection mode"
+                    }
+                }
+            },
+            "columnSelection": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default the row selection mode is none",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets column selection mode"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets column selection mode"
+                    }
+                }
+            },
+            "filteredSortedData": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const filteredSortedData = this.grid1.filteredSortedData;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns an array containing the filtered sorted data."
+                    }
+                }
+            },
+            "virtualizationState": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Includes the start index and how many records are rendered.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const gridVirtState = this.grid1.virtualizationState;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the state of the grid virtualization."
+                    }
+                }
+            },
+            "expansionStates": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Includes only states that differ from the default one.",
+                                        "Supports two-way binding."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-grid #grid [data]=\"data\" [(expansionStates)]=\"model.expansionStates\">",
+                                        "</igx-grid>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets a list of key-value pairs [row ID, expansion state]."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets a list of key-value pairs [row ID, expansion state]."
+                    }
+                }
+            },
+            "nativeElement": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const nativeEl = this.grid.nativeElement.",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets the native element."
+                    }
+                }
+            },
+            "outlet": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remark": {
+                                "comment": {
+                                    "text": "If set, returns the outlet defined outside the grid. Otherwise returns the grid's internal outlet directive.",
+                                    "tagName": "remark"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets the outlet used to attach the grid's overlays to."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets the outlet used to attach the grid's overlays to."
+                    }
+                }
+            },
+            "defaultHeaderGroupMinWidth": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Used internally for restricting header group component width.",
+                                        "The values below depend on the header cell default right/left padding values."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the `IgxGridHeaderGroupComponent`'s minimum allowed width."
+                    }
+                }
+            },
+            "columns": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const colums = this.grid.columns.",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Gets an array of `IgxColumnComponent`s."
+                    }
+                }
+            },
+            "visibleColumns": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const visibleColumns = this.grid.visibleColumns.",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns an array of visible `IgxColumnComponent`s."
+                    }
+                }
+            },
+            "totalWidth": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const gridWidth = this.grid.totalWidth;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the total width of the `IgxGridComponent`."
+                    }
+                }
+            },
+            "hasSortableColumns": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const sortableGrid = this.grid.hasSortableColumns;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns if the `IgxGridComponent` has sortable columns."
+                    }
+                }
+            },
+            "hasFilterableColumns": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const filterableGrid = this.grid.hasFilterableColumns;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns if the `IgxGridComponent` has filterable columns."
+                    }
+                }
+            },
+            "hasColumnGroups": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const groupGrid = this.grid.hasColumnGroups;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns if the `IgxGridComponent` has column groups."
+                    }
+                }
+            },
+            "hasColumnLayouts": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const layoutGrid = this.grid.hasColumnLayouts;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns if the `IgxGridComponent` has column layouts for multi-row layout definition."
+                    }
+                }
+            },
+            "dataView": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "     const dataView = this.grid.dataView;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
+                        "shortText": "Returns the currently transformed paged/filtered/sorted/grouped/pinned/unpinned row data, displayed in the grid."
+                    }
+                }
+            },
+            "selectRowOnClick": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "By default it is set to true",
+                                    "tagName": "remarks"
+                                }
+                            }
+                        },
+                        "shortText": "Gets/Sets whether clicking over a row should select/deselect it"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": "Gets/Sets whether clicking over a row should select/deselect it"
+                    }
+                }
+            }
+        }
+    }
+}

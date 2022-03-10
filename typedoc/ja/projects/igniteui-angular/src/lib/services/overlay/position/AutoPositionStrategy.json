@@ -20,6 +20,117 @@
             }
         },
         "methods": {
+            "fitInViewport": {
+                "comment": {
+                    "tags": {
+                        "inheritdoc": {
+                            "comment": {
+                                "tagName": "inheritdoc"
+                            }
+                        }
+                    }
+                }
+            },
+            "canFlipHorizontal": {
+                "comment": {
+                    "returns": "要素を反転してビューポートで残る場合は true \n",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "必要なすべてのパラメーターを含む connectedFit オブジェクト。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "ビュー ポートから移動せずに要素を反転できるかどうかを確認します。"
+                }
+            },
+            "canFlipVertical": {
+                "comment": {
+                    "returns": "要素を反転してビューポートで残る場合は true \n",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "必要なすべてのパラメーターを含む connectedFit オブジェクト。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "ビュー ポートから移動せずに要素を反転できるかどうかを確認します。"
+                }
+            },
+            "flipHorizontal": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "位置設定の方向と開始点を反転します。"
+                }
+            },
+            "flipVertical": {
+                "comment": {
+                    "tags": {},
+                    "shortText": "位置設定の方向と開始点を反転します。"
+                }
+            },
+            "horizontalPush": {
+                "comment": {
+                    "returns": "要素をビュー ポートにプッシュするのに必要な変換の量 \n。",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "必要なすべてのパラメーターを含む connectedFit オブジェクト。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "提供された connectedFit に従って必要な水平プッシュを計算します。"
+                }
+            },
+            "verticalPush": {
+                "comment": {
+                    "returns": "要素をビュー ポートにプッシュするのに必要な変換の量 \n。",
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "必要なすべてのパラメーターを含む connectedFit オブジェクト。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "提供された connectedFit に従って必要な垂直プッシュを計算します。"
+                }
+            },
+            "flipAnimation": {
+                "comment": {
+                    "parameters": {
+                        "flipDirection": {
+                            "comment": {
+                                "text": "アニメーションを変更する方向"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "Open および Close アニメーションを反転アニメーションで変更します (存在する場合) 。"
+                }
+            },
+            "updateAnimation": {
+                "comment": {
+                    "returns": "アニメーションがある方向に反転します (存在する場合) \n",
+                    "parameters": {
+                        "animation": {
+                            "comment": {
+                                "text": "更新するアニメーション"
+                            }
+                        },
+                        "direction": {
+                            "comment": {
+                                "text": "必要なアニメーションの方向"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "提供された方向に従って反転アニメーションを見つけようとします。"
+                }
+            },
             "position": {
                 "comment": {
                     "tags": {
@@ -29,6 +140,97 @@
                             }
                         }
                     }
+                }
+            },
+            "updateViewPortFit": {
+                "comment": {
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "更新する connectedFit"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "要素がビュー ポートに収まるかどうかを確認し、",
+                        "connectedFit の結果を更新します。"
+                    ]
+                }
+            },
+            "calculateLeft": {
+                "comment": {
+                    "parameters": {
+                        "targetRect": {
+                            "comment": {
+                                "text": "要素がアタッチされているターゲットの矩形。"
+                            }
+                        },
+                        "elementRect": {
+                            "comment": {
+                                "text": "要素の矩形"
+                            }
+                        },
+                        "startPoint": {
+                            "comment": {
+                                "text": "ターゲットの開始点"
+                            }
+                        },
+                        "direction": {
+                            "comment": {
+                                "text": "要素を表示する方向"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "要素が指定された開始点と方向で配置された場合に、",
+                        "要素の左境界線の位置を計算します。"
+                    ]
+                }
+            },
+            "calculateTop": {
+                "comment": {
+                    "parameters": {
+                        "targetRect": {
+                            "comment": {
+                                "text": "要素がアタッチされているターゲットの矩形。"
+                            }
+                        },
+                        "elementRect": {
+                            "comment": {
+                                "text": "要素の矩形"
+                            }
+                        },
+                        "startPoint": {
+                            "comment": {
+                                "text": "ターゲットの開始点"
+                            }
+                        },
+                        "direction": {
+                            "comment": {
+                                "text": "要素を表示する方向"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "ターゲットに関連する提供された位置設定で要素が配置された場合に、",
+                        "要素の上境界線の位置を計算します。"
+                    ]
+                }
+            },
+            "shouldFitInViewPort": {
+                "comment": {
+                    "parameters": {
+                        "connectedFit": {
+                            "comment": {
+                                "text": "必要なすべてのパラメーターを含む connectedFit オブジェクト。"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": "要素がビューポートに収まるかどうかを返します。"
                 }
             },
             "clone": {
@@ -42,6 +244,39 @@
                             }
                         }
                     }
+                }
+            },
+            "calculateElementRectangles": {
+                "comment": {
+                    "returns": "ターゲットおよび要素の DomRect オブジェクト \n",
+                    "tags": {},
+                    "shortText": "必要な要素 (ターゲットおよび配置する要素) の DomRect オブジェクトを取得します。"
+                }
+            },
+            "setStyle": {
+                "comment": {
+                    "parameters": {
+                        "element": {
+                            "comment": {
+                                "text": "配置する要素。"
+                            }
+                        },
+                        "targetRect": {
+                            "comment": {
+                                "text": "ストラテジ ターゲットの境界矩形。"
+                            }
+                        },
+                        "elementRect": {
+                            "comment": {
+                                "text": "Bounding rectangle of the element"
+                            }
+                        }
+                    },
+                    "tags": {},
+                    "shortText": [
+                        "提供された位置設定に基づいて提供された要素を効果的に配置する",
+                        "要素のスタイルを設定します。"
+                    ]
                 }
             }
         },
