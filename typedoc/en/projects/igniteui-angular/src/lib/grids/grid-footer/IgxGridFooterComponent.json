@@ -165,27 +165,9 @@
             }
         },
         "methods": {
-            "setLocation": {
+            "transitionToOrigin": {
                 "comment": {
                     "parameters": {
-                        "newLocation": {
-                            "comment": {
-                                "text": "New location that should be applied. It is advised to get new location using getBoundingClientRects() + scroll."
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": "Sets desired location of the base element or ghost element if rended relative to the document."
-                }
-            },
-            "transitionTo": {
-                "comment": {
-                    "parameters": {
-                        "target": {
-                            "comment": {
-                                "text": "Target that the base or ghost will transition to. It can be either location in the page or another HTML element."
-                            }
-                        },
                         "customAnimArgs": {
                             "comment": {
                                 "text": "Custom transition properties that will be applied when performing the transition."
@@ -199,9 +181,9 @@
                     },
                     "tags": {},
                     "shortText": [
-                        "Animates the base or ghost element to a specific target location or other element using transition.",
+                        "Animates the base or ghost element depending on the `ghost` input to its initial location.",
                         "If `ghost` is true but there is not ghost rendered, it will be created and animated.",
-                        "It is recommended to use 'getBoundingClientRects() + pageScroll' when determining desired location."
+                        "If the base element has changed its DOM position its initial location will be changed accordingly."
                     ]
                 }
             }
@@ -215,7 +197,7 @@
                     }
                 }
             },
-            "ghostOffsetX": {
+            "ghostOffsetY": {
                 "getter": {
                     "comment": {
                         "tags": {},
@@ -224,7 +206,7 @@
                             "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
                             "```html",
                             "<div #hostDiv></div>",
-                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
                             "```"
@@ -246,7 +228,7 @@
                             "By default it's taking the relative position to the mouse when the drag started and keeps it the same.",
                             "```html",
                             "<div #hostDiv></div>",
-                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
                             "```"

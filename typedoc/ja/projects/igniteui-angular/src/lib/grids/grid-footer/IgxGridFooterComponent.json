@@ -165,27 +165,9 @@
             }
         },
         "methods": {
-            "setLocation": {
+            "transitionToOrigin": {
                 "comment": {
                     "parameters": {
-                        "newLocation": {
-                            "comment": {
-                                "text": "適用する新しい位置。getBoundingClientRects() + スクロール を使用して新しい位置を取得することを推奨します。"
-                            }
-                        }
-                    },
-                    "tags": {},
-                    "shortText": "ドキュメントに関連してレンダリングされた場合、ベース要素またはゴースト要素の目的の位置を設定します。"
-                }
-            },
-            "transitionTo": {
-                "comment": {
-                    "parameters": {
-                        "target": {
-                            "comment": {
-                                "text": "ベースまたはゴーストが移行するターゲット。ページ内の位置または別の HTML 要素のいずれかです。"
-                            }
-                        },
                         "customAnimArgs": {
                             "comment": {
                                 "text": "トランジションを実行するときに適用されるカスタムトランジション プロパティ。"
@@ -199,9 +181,9 @@
                     },
                     "tags": {},
                     "shortText": [
-                        "トランジションを使用して、ベースまたはゴースト要素を特定のターゲット位置または他の要素にアニメーション化します。",
+                        "Animates the base or ghost element depending on the `ghost` input to its initial location.",
                         "`ghost` が true で、ゴーストがレンダリングされていない場合、作成されてアニメートされます。",
-                        "目的の位置を決定するときは、`getBoundingClientRects() + pageScroll` を使用することを推奨します。"
+                        "If the base element has changed its DOM position its initial location will be changed accordingly."
                     ]
                 }
             }
@@ -215,7 +197,7 @@
                     }
                 }
             },
-            "ghostOffsetX": {
+            "ghostOffsetY": {
                 "getter": {
                     "comment": {
                         "tags": {},
@@ -224,7 +206,7 @@
                             "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
                             "```html",
                             "<div #hostDiv></div>",
-                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
                             "```"
@@ -246,7 +228,7 @@
                             "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
                             "```html",
                             "<div #hostDiv></div>",
-                            "<div igxDrag [ghostOffsetX]=\"0\">",
+                            "<div igxDrag [ghostOffsetY]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
                             "```"

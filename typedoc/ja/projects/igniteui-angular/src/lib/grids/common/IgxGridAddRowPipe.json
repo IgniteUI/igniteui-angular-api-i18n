@@ -165,25 +165,27 @@
             }
         },
         "methods": {
-            "move": {
+            "setLocation": {
                 "comment": {
                     "parameters": {
-                        "event": {
+                        "newLocation": {
                             "comment": {
-                                "text": "SHIFT キーが押されたかどうかについての情報を含むキーボード イベント"
+                                "text": "New location that should be applied. It is advised to get new location using getBoundingClientRects() + scroll."
                             }
                         }
                     },
                     "tags": {},
-                    "shortText": [
-                        "編集可能な行の最初/最後の編集可能なセルにフォーカスを移動し、セルを編集モードにします。",
-                        "セルがビューの外にある場合、最初にセルまでスクロールします。"
-                    ]
+                    "shortText": "Sets desired location of the base element or ghost element if rended relative to the document."
                 }
             },
-            "transitionToOrigin": {
+            "transitionTo": {
                 "comment": {
                     "parameters": {
+                        "target": {
+                            "comment": {
+                                "text": "Target that the base or ghost will transition to. It can be either location in the page or another HTML element."
+                            }
+                        },
                         "customAnimArgs": {
                             "comment": {
                                 "text": "トランジションを実行するときに適用されるカスタムトランジション プロパティ。"
@@ -197,16 +199,10 @@
                     },
                     "tags": {},
                     "shortText": [
-                        "最初の位置への `ghost` 入力に基づき、ベースまたはゴースト要素をアニメーション化します。",
+                        "トランジションを使用して、ベースまたはゴースト要素を特定のターゲット位置または他の要素にアニメーション化します。",
                         "`ghost` が true で、ゴーストがレンダリングされていない場合、作成されてアニメートされます。",
-                        "ベース要素の DOM 位置が変更された場合、それに応じて初期の位置が変更されます。"
+                        "目的の位置を決定するときは、'getBoundingClientRects() + pageScroll' を使用することを推奨します。"
                     ]
-                }
-            },
-            "setTransformXY": {
-                "comment": {
-                    "tags": {},
-                    "shortText": "基本のドラッグ可能な要素に変換を設定するメソッド。"
                 }
             }
         },
@@ -219,7 +215,7 @@
                     }
                 }
             },
-            "ghostOffsetY": {
+            "ghostOffsetX": {
                 "getter": {
                     "comment": {
                         "tags": {},
@@ -228,7 +224,7 @@
                             "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
                             "```html",
                             "<div #hostDiv></div>",
-                            "<div igxDrag [ghostOffsetY]=\"0\">",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
                             "```"
@@ -250,7 +246,7 @@
                             "デフォルトでは、ドラッグが開始されたときにマウスとの相対的な位置を取得し、同じ位置に保ちます。",
                             "```html",
                             "<div #hostDiv></div>",
-                            "<div igxDrag [ghostOffsetY]=\"0\">",
+                            "<div igxDrag [ghostOffsetX]=\"0\">",
                             "        <span>Drag Me!</span>",
                             "</div>",
                             "```"
