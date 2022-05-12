@@ -103,7 +103,7 @@
                         }
                     },
                     "shortText": [
-                        "列の並べ替えが可能かどうかを設定または取得します。",
+                        "列のソートが可能かどうかを設定または取得します。",
                         "デフォルトは `false` です。",
                         "```typescript",
                         "let isSortable = this.column.sortable;",
@@ -429,74 +429,6 @@
                     ]
                 }
             },
-            "formatter": {
-                "comment": {
-                    "tags": {
-                        "remark": {
-                            "comment": {
-                                "text": [
-                                    "注: フォーマッタは Excel スタイルのフィルタリング ダイアログなどの場所で使用されるため、",
-                                    "特定のシナリオ (リモート フィルタリングなど) では、行データ引数が `undefined` になる場合があります。",
-                                    "この例では、列名が Salary かどうかを確認してから、",
-                                    "値を通貨文字列にフォーマットするための列フォーマッタとしてのメソッドを提供します。"
-                                ],
-                                "tagName": "備考"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const column = this.grid.getColumnByName('Address');",
-                                    "const addressFormatter = (address: string, rowData: any) => data.privacyEnabled ? 'unknown' : address;",
-                                    "column.formatter = addressFormatter;",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        },
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxColumnComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "shortText": "列のセル値に表示形式を適用します。基になるデータを変更しません。"
-                }
-            },
-            "summaryFormatter": {
-                "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxColumnComponent",
-                                "tagName": "次のメンバー:"
-                            }
-                        }
-                    },
-                    "text": [
-                        "この例では、列名が OrderDate であるかどうかを確認してから、summaryFormatter として、",
-                        "日付のロケールを 「fr-FR」 に変更するメソッドを提供します。カウント キーの集計はスキップされるため、数値として表示されます。",
-                        "```typescript",
-                        "columnInit(column: IgxColumnComponent) {",
-                        "  if (column.field == \"OrderDate\") {",
-                        "    column.summaryFormatter = this.summaryFormat;",
-                        "  }",
-                        "}",
-                        "summaryFormat(summary: IgxSummaryResult, summaryOperand: IgxSummaryOperand): string {",
-                        "  const result = summary.summaryResult;",
-                        "  if(summaryResult.key !== 'count' && result !== null && result !== undefined) {",
-                        "     const pipe = new DatePipe('fr-FR');",
-                        "     return pipe.transform(result,'mediumDate');",
-                        "  }",
-                        "  return result;",
-                        "}",
-                        "```"
-                    ],
-                    "shortText": "summaryFormatter は、列集計の表示を書式設定するために使用されます。"
-                }
-            },
             "filteringIgnoreCase": {
                 "comment": {
                     "tags": {
@@ -530,7 +462,7 @@
                         }
                     },
                     "shortText": [
-                        "列並べ替えが大文字と小文字を区別するかどうかを設定または取得します。",
+                        "列ソートが大文字と小文字を区別するかどうかを設定または取得します。",
                         "デフォルト値は `true` です。",
                         "```typescript",
                         "let sortingIgnoreCase = this.column.sortingIgnoreCase;",
@@ -799,7 +731,7 @@
                     "parameters": {
                         "byHeaderOnly": {
                             "comment": {
-                                "text": "ヘッダーのコンテンツのみに基づいて列を自動サイズ変更するかどうかを設定します。"
+                                "shortText": "ヘッダーのコンテンツのみに基づいて列を自動サイズ変更するかどうかを設定します。"
                             }
                         }
                     },
@@ -826,7 +758,14 @@
             "collapsible": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "列グループが縮小可能かどうかを設定します。",
                             "デフォルト値は `false` です。",
@@ -859,7 +798,14 @@
             "expanded": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "グループが最初に展開または縮小されるかどうかを設定します。",
                             "Collapsible プロパティが true に設定された場合のみ適用します。",
@@ -990,7 +936,14 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "列グループが選択可能かどうかを返します。",
                             "```typescript",
@@ -1223,7 +1176,14 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnGroupComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "列グループの幅を取得します。",
                             "```typescript",
@@ -1236,7 +1196,14 @@
             "field": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "`field` 値を設定または取得します。",
                             "```typescript",
@@ -1354,7 +1321,14 @@
             "minWidth": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "列の最小の `width` を設定または取得します。",
                             "デフォルト値は `88` です。",
@@ -1525,7 +1499,7 @@
                         },
                         "shortText": [
                             "グループ化される値を比較するためにカスタム関数を設定します。",
-                            "並べ替え済みのデータ内の次の値のために 0 が返されられた場合、この値はグループ化されたという意味です。",
+                            "ソート済みのデータ内の次の値のために 0 が返されられた場合、この値はグループ化されたという意味です。",
                             "```typescript",
                             "this.column.groupingComparer = (a: any, b: any) => { return a === b ? 0 : -1; }",
                             "```"
@@ -1731,7 +1705,14 @@
             "visibleWhenCollapsed": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        },
                         "shortText": [
                             "親が縮小される場合、列が表示になるかどうかを示します。",
                             "```html",
@@ -1766,7 +1747,42 @@
             "pipeArgs": {
                 "getter": {
                     "comment": {
-                        "tags": {}
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "DatePipe および/または DecimalPipe のオプション パラメーターを渡し、日付列と数値列の表示値を書式設定します。",
+                                        "`format`、`timezone`、`digitsInfo` プロパティのいずれかを持つ `IColumnPipeArgs` オブジェクトを受け取ります。",
+                                        "詳細については、https://angular.io/api/common/DatePipe および https://angular.io/api/common/DecimalPipe を参照してください。"
+                                    ],
+                                    "tagName": "備考:"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const pipeArgs: IColumnPipeArgs = {",
+                                        "     format: 'longDate',",
+                                        "     timezone: 'UTC',",
+                                        "     digitsInfo: '1.1-2'",
+                                        "}",
+                                        "```",
+                                        "```html",
+                                        "<igx-column dataType=\"date\" [pipeArgs]=\"pipeArgs\"></igx-column>",
+                                        "<igx-column dataType=\"number\" [pipeArgs]=\"pipeArgs\"></igx-column>",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            },
+                            "memberof": {
+                                "comment": {
+                                    "text": "IgxColumnComponent",
+                                    "tagName": "次のメンバー:"
+                                }
+                            }
+                        }
                     }
                 },
                 "setter": {

@@ -148,30 +148,6 @@
                     "shortText": "値の書式とカレンダーに使用されるロケール設定。"
                 }
             },
-            "formatter": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "private dayFormatter = new Intl.DateTimeFormat(\"en\", { weekday: \"long\" });",
-                                    "private monthFormatter = new Intl.DateTimeFormat(\"en\", { month: \"long\" });",
-                                    "public formatter(date: Date): string {",
-                                    " return `${this.dayFormatter.format(date)} - ${this.monthFormatter.format(date)} - ${date.getFullYear()}`;",
-                                    "}",
-                                    "```",
-                                    "```html",
-                                    "<igx-date-range-picker [formatter]=\"formatter\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
-                        }
-                    },
-                    "shortText": "選択した日付または渡した日付にカスタム書式関数。"
-                }
-            },
             "overlaySettings": {
                 "comment": {
                     "tags": {
@@ -526,7 +502,28 @@
             "doneButtonText": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "デフォルト値は `Done` です。",
+                                        "カスタム テキストで [完了] ボタンを描画する @Input プロパティ。デフォルトで `doneButtonText` は Done に設定されます。",
+                                        "ボタンは `dialog` モードでのみ表示されます。"
+                                    ],
+                                    "tagName": "備考:"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
                         "shortText": "カレンダー ダイアログの [完了] ボタンのデフォルト テキスト。"
                     }
                 },
@@ -561,7 +558,14 @@
             "minValue": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [minValue]=\"minDate\"></igx-date-range-picker>",
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
                         "shortText": "有効な範囲の最小値。"
                     }
                 },
@@ -582,7 +586,14 @@
             "maxValue": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [maxValue]=\"maxDate\"></igx-date-range-picker>",
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
                         "shortText": "有効範囲内の最小値。"
                     }
                 },
@@ -657,7 +668,25 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "現在の値は `DateRange` タイプです。",
+                                    "tagName": "備考:"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const newValue: DateRange = { start: new Date(\"2/2/2012\"), end: new Date(\"3/3/2013\")};",
+                                        "this.dateRangePicker.value = newValue;",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
                         "shortText": "カレンダーから現在選択されている値/範囲"
                     }
                 }
@@ -665,7 +694,24 @@
             "type": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "デフォルトは `box` です。",
+                                    "tagName": "備考:"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "例:"
+                                }
+                            }
+                        },
                         "shortText": "ピッカーの入力のスタイル設定を決定します。"
                     }
                 },

@@ -148,30 +148,6 @@
                     "shortText": "Locale settings used for value formatting and calendar."
                 }
             },
-            "formatter": {
-                "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "private dayFormatter = new Intl.DateTimeFormat(\"en\", { weekday: \"long\" });",
-                                    "private monthFormatter = new Intl.DateTimeFormat(\"en\", { month: \"long\" });",
-                                    "public formatter(date: Date): string {",
-                                    " return `${this.dayFormatter.format(date)} - ${this.monthFormatter.format(date)} - ${date.getFullYear()}`;",
-                                    "}",
-                                    "```",
-                                    "```html",
-                                    "<igx-date-range-picker [formatter]=\"formatter\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "A custom formatter function, applied on the selected or passed in date."
-                }
-            },
             "overlaySettings": {
                 "comment": {
                     "tags": {
@@ -526,7 +502,28 @@
             "doneButtonText": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": [
+                                        "Default value is `Done`.",
+                                        "An @Input property that renders Done button with custom text. By default `doneButtonText` is set to Done.",
+                                        "The button will only show up in `dialog` mode."
+                                    ],
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-range-picker doneButtonText=\"完了\"></igx-date-range-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "The default text of the calendar dialog `done` button."
                     }
                 },
@@ -561,7 +558,14 @@
             "minValue": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [minValue]=\"minDate\"></igx-date-range-picker>",
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "The minimum value in a valid range."
                     }
                 },
@@ -582,7 +586,14 @@
             "maxValue": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "example": {
+                                "comment": {
+                                    "text": "<igx-date-range-picker [maxValue]=\"maxDate\"></igx-date-range-picker>",
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "The maximum value in a valid range."
                     }
                 },
@@ -657,7 +668,25 @@
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "The current value is of type `DateRange`",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```typescript",
+                                        "const newValue: DateRange = { start: new Date(\"2/2/2012\"), end: new Date(\"3/3/2013\")};",
+                                        "this.dateRangePicker.value = newValue;",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "The currently selected value / range from the calendar"
                     }
                 }
@@ -665,7 +694,24 @@
             "type": {
                 "getter": {
                     "comment": {
-                        "tags": {},
+                        "tags": {
+                            "remarks": {
+                                "comment": {
+                                    "text": "Default is `box`.",
+                                    "tagName": "remarks"
+                                }
+                            },
+                            "example": {
+                                "comment": {
+                                    "text": [
+                                        "```html",
+                                        "<igx-date-picker [type]=\"'line'\"></igx-date-picker>",
+                                        "```"
+                                    ],
+                                    "tagName": "example"
+                                }
+                            }
+                        },
                         "shortText": "Determines how the picker's input will be styled."
                     }
                 },
