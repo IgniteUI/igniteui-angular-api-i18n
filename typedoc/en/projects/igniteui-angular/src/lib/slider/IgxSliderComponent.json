@@ -119,6 +119,38 @@
                     ]
                 }
             },
+            "lowerValueChange": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "This event is emitted every time the lower value of a range slider is changed.",
+                        "```typescript",
+                        "public change(value){",
+                        "   alert(`The lower value has been changed to ${value}`);",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-slider [(lowerValue)]=\"model.lowervalue\" (lowerValueChange)=\"change($event)\" [step]=\"5\">",
+                        "```"
+                    ]
+                }
+            },
+            "upperValueChange": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "This event is emitted every time the upper value of a range slider is changed.",
+                        "```typescript",
+                        "public change(value){",
+                        "   alert(`The upper value has been changed to ${value}`);",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-slider [(upperValue)]=\"model.uppervalue\" (upperValueChange)=\"change($event)\" [step]=\"5\">",
+                        "```"
+                    ]
+                }
+            },
             "dragFinished": {
                 "comment": {
                     "tags": {},
@@ -306,7 +338,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Returns the minimal value of the `IgxSliderComponent`.",
+                            "Returns the minimal displayed track value of the `IgxSliderComponent`.",
                             "```typescript",
                             " @ViewChild(\"slider2\")",
                             "public slider: IgxSliderComponent;",
@@ -321,7 +353,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Sets the minimal value for the `IgxSliderComponent`.",
+                            "Sets the minimal displayed track value for the `IgxSliderComponent`.",
                             "The default minimal value is 0.",
                             "```html",
                             "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"100\">",
@@ -335,7 +367,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Returns the maximum value for the {@link IgxSliderComponent}.",
+                            "Returns the maximum displayed track value for the {@link IgxSliderComponent}.",
                             "```typescript",
                             "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
@@ -350,7 +382,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Sets the maximal value for the `IgxSliderComponent`.",
+                            "Sets the maximal displayed track value for the `IgxSliderComponent`.",
                             "The default maximum value is 100.",
                             "```html",
                             "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"256\">",
@@ -364,7 +396,8 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Returns the lower boundary of the `IgxSliderComponent`.",
+                            "Returns the lower boundary of settable values of the `IgxSliderComponent`.",
+                            "If not set, will return `minValue`.",
                             "```typescript",
                             "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
@@ -379,7 +412,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Sets the lower boundary of the `IgxSliderComponent`.",
+                            "Sets the lower boundary of settable values of the `IgxSliderComponent`.",
                             "If not set is the same as min value.",
                             "```html",
                             "<igx-slider [step]=\"5\" [lowerBound]=\"20\">",
@@ -393,7 +426,8 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Returns the upper boundary of the `IgxSliderComponent`.",
+                            "Returns the upper boundary of settable values of the `IgxSliderComponent`.",
+                            "If not set, will return `maxValue`",
                             "```typescript",
                             "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
@@ -530,12 +564,27 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Returns the lower value of the `IgxSliderComponent`.",
+                            "Returns the lower value of a RANGE `IgxSliderComponent`.",
                             "```typescript",
                             "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
                             "public lowValue(event){",
                             "   let sliderLowValue = this.slider.lowerValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets the lower value of a RANGE `IgxSliderComponent`.",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "public lowValue(event){",
+                            "   this.slider.lowerValue = value;",
                             "}",
                             "```"
                         ]
@@ -547,12 +596,28 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "Returns the upper value of the `IgxSliderComponent`.",
+                            "Returns the upper value of a RANGE `IgxSliderComponent`.",
+                            "Returns `value` of a SLIDER `IgxSliderComponent`",
                             "```typescript",
                             " @ViewChild(\"slider2\")",
                             "public slider: IgxSliderComponent;",
                             "public upperValue(event){",
                             "    let upperValue = this.slider.upperValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets the upper value of a RANGE `IgxSliderComponent`.",
+                            "```typescript",
+                            " @ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "public upperValue(event){",
+                            "    this.slider.upperValue = value;",
                             "}",
                             "```"
                         ]

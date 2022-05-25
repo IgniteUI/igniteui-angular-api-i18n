@@ -119,6 +119,38 @@
                     ]
                 }
             },
+            "lowerValueChange": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "このイベントは、範囲スライダーの低い値が変更されるたびに発生します。",
+                        "```typescript",
+                        "public change(value){",
+                        "   alert(`The lower value has been changed to ${value}`);",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-slider [(lowerValue)]=\"model.lowervalue\" (lowerValueChange)=\"change($event)\" [step]=\"5\">",
+                        "```"
+                    ]
+                }
+            },
+            "upperValueChange": {
+                "comment": {
+                    "tags": {},
+                    "shortText": [
+                        "このイベントは、範囲スライダーの高い値が変更されるたびに発生します。",
+                        "```typescript",
+                        "public change(value){",
+                        "   alert(`The upper value has been changed to ${value}`);",
+                        "}",
+                        "```",
+                        "```html",
+                        "<igx-slider [(upperValue)]=\"model.uppervalue\" (upperValueChange)=\"change($event)\" [step]=\"5\">",
+                        "```"
+                    ]
+                }
+            },
             "dragFinished": {
                 "comment": {
                     "tags": {},
@@ -305,7 +337,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`IgxSliderComponent` の最小値を返します。",
+                            "`IgxSliderComponent` に表示される最小トラック値を返します。",
                             "```typescript",
                             " @ViewChild(\"slider2\")",
                             "public slider: IgxSliderComponent;",
@@ -320,7 +352,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`IgxSliderComponent` の最小値を設定します。",
+                            "`IgxSliderComponent` に表示される最小トラック値を設定します。",
                             "デフォルトの最小値は 0 です。",
                             "```html",
                             "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"100\">",
@@ -334,7 +366,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "{@link IgxSliderComponent} の最大値を返します。",
+                            "{@link IgxSliderComponent} に表示される最大トラック値を返します。",
                             "```typescript",
                             "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
@@ -349,7 +381,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "IgxSliderComponent `IgxSliderComponent` の最大値を設定します。",
+                            "`IgxSliderComponent` に表示される最大トラック値を設定します。",
                             "デフォルトの最大値は 100 です。",
                             "```html",
                             "<igx-slider [type]=\"sliderType\" [minValue]=\"56\" [maxValue]=\"256\">",
@@ -363,7 +395,8 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`IgxSliderComponent` の下限を返します。",
+                            "`IgxSliderComponent` の設定可能な値の下限を返します。",
+                            "設定されていない場合、`minValue` を返します。",
                             "```typescript",
                             "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
@@ -378,7 +411,7 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`IgxSliderComponent` の下限を設定します。",
+                            "`IgxSliderComponent` の設定可能な値の下限を設定します。",
                             "設定しない場合は、最小値と同じです。",
                             "```html",
                             "<igx-slider [step]=\"5\" [lowerBound]=\"20\">",
@@ -407,7 +440,8 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`IgxSliderComponent` の上限を設定します。",
+                            "`IgxSliderComponent` の設定可能な値の上限を返します。",
+                            "設定されていない場合、`maxValue` を返します。",
                             "設定しない場合は、最大値と同じです。",
                             "```html",
                             "<igx-slider [step]=\"5\" [upperBound]=\"20\">",
@@ -525,12 +559,27 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`IgxSliderComponent` の下値を返します。",
+                            "RANGE `IgxSliderComponent` の下値を返します。",
                             "```typescript",
                             "@ViewChild(\"slider\")",
                             "public slider: IgxSliderComponent;",
                             "public lowValue(event){",
                             "   let sliderLowValue = this.slider.lowerValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "RANGE `IgxSliderComponent` の低い値を設定します。",
+                            "```typescript",
+                            "@ViewChild(\"slider\")",
+                            "public slider: IgxSliderComponent;",
+                            "public lowValue(event){",
+                            "   this.slider.lowerValue = value;",
                             "}",
                             "```"
                         ]
@@ -542,12 +591,28 @@
                     "comment": {
                         "tags": {},
                         "shortText": [
-                            "`IgxSliderComponent` の上値を返します。",
+                            "RANGE `IgxSliderComponent` の高い値を返します。",
+                            "SLIDER `IgxSliderComponent` の `value` を返します。",
                             "```typescript",
                             " @ViewChild(\"slider2\")",
                             "public slider: IgxSliderComponent;",
                             "public upperValue(event){",
                             "    let upperValue = this.slider.upperValue;",
+                            "}",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "RANGE `IgxSliderComponent` の高い値を設定します。",
+                            "```typescript",
+                            " @ViewChild(\"slider2\")",
+                            "public slider: IgxSliderComponent;",
+                            "public upperValue(event){",
+                            "    this.slider.upperValue = value;",
                             "}",
                             "```"
                         ]
