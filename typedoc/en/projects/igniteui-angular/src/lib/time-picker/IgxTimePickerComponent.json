@@ -213,34 +213,6 @@
                     "shortText": "Enables or disables the picker."
                 }
             },
-            "locale": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": [
-                                    "Uses Angular's `LOCALE_ID` by default. Affects both input mask and display format if those are not set.",
-                                    "If a `locale` is set, it must be registered via `registerLocaleData`.",
-                                    "Please refer to https://angular.io/guide/i18n#i18n-pipes.",
-                                    "If it is not registered, `Intl` will be used for formatting."
-                                ],
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-picker locale=\"jp\"></igx-date-picker>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Locale settings used for value formatting and calendar or time spinner."
-                }
-            },
             "outlet": {
                 "comment": {
                     "tags": {
@@ -739,6 +711,47 @@
                             "```html",
                             "<igx-time-picker [itemsDelta]=\"{hour:3, minute:5, second:10}\" id=\"time-picker\"></igx-time-picker>",
                             "```"
+                        ]
+                    }
+                }
+            },
+            "locale": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Gets the `locale` of the date-picker.",
+                            "If not set, defaults to applciation's locale.."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets the `locale` of the date-picker.",
+                            "Expects a valid BCP 47 language tag."
+                        ]
+                    }
+                }
+            },
+            "weekStart": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Gets the start day of the week.",
+                            "Can return a numeric or an enum representation of the week day.",
+                            "If not set, defaults to the first day of the week for the application locale."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets the start day of the week.",
+                            "Can be assigned to a numeric value or to `WEEKDAYS` enum value."
                         ]
                     }
                 }

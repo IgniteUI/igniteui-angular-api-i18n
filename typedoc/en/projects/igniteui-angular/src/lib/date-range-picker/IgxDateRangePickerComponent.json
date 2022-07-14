@@ -97,57 +97,6 @@
                     "shortText": "Gets/Sets whether dates that are not part of the current month will be displayed."
                 }
             },
-            "weekStart": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": "Can be assigned to a numeric value or to `WEEKDAYS` enum value.",
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker [weekStart]=\"1\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "The start day of the week."
-                }
-            },
-            "locale": {
-                "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": [
-                                    "Uses Angular's `LOCALE_ID` by default. Affects both input mask and display format if those are not set.",
-                                    "If a `locale` is set, it must be registered via `registerLocaleData`.",
-                                    "Please refer to https://angular.io/guide/i18n#i18n-pipes.",
-                                    "If it is not registered, `Intl` will be used for formatting."
-                                ],
-                                "tagName": "remarks"
-                            }
-                        },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<igx-date-range-picker locale=\"jp\"></igx-date-range-picker>",
-                                    "```"
-                                ],
-                                "tagName": "example"
-                            }
-                        }
-                    },
-                    "shortText": "Locale settings used for value formatting and calendar."
-                }
-            },
             "overlaySettings": {
                 "comment": {
                     "tags": {
@@ -688,6 +637,47 @@
                             }
                         },
                         "shortText": "The currently selected value / range from the calendar"
+                    }
+                }
+            },
+            "locale": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Gets the `locale` of the date-picker.",
+                            "If not set, defaults to applciation's locale.."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets the `locale` of the date-picker.",
+                            "Expects a valid BCP 47 language tag."
+                        ]
+                    }
+                }
+            },
+            "weekStart": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Gets the start day of the week.",
+                            "Can return a numeric or an enum representation of the week day.",
+                            "If not set, defaults to the first day of the week for the application locale."
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets the start day of the week.",
+                            "Can be assigned to a numeric value or to `WEEKDAYS` enum value."
+                        ]
                     }
                 }
             },

@@ -62,17 +62,6 @@
                     ]
                 }
             },
-            "filterable": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "An @Input property that enabled/disables filtering in the list. The default is `true`.",
-                        "```html",
-                        "<igx-combo [filterable]=\"false\">",
-                        "```"
-                    ]
-                }
-            },
             "searchPlaceholder": {
                 "comment": {
                     "tags": {},
@@ -631,6 +620,23 @@
                     "shortText": "Selects/Deselects a single item"
                 }
             },
+            "__type": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    " <igx-comb #combo [data]=\"localData\" [filterFunction]=\"filterFunction\"></igx-combo>",
+                                    "```"
+                                ],
+                                "tagName": "example"
+                            }
+                        }
+                    },
+                    "shortText": "Gets/Sets the custom filtering function of the combo."
+                }
+            },
             "toggle": {
                 "comment": {
                     "tags": {},
@@ -675,6 +681,44 @@
             }
         },
         "accessors": {
+            "filterable": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "in version 14.0.0. Use the IComboFilteringOptions.filterable",
+                                        "An @Input property that enabled/disables filtering in the list. The default is `true`.",
+                                        "```html",
+                                        "<igx-combo [filterable]=\"false\">",
+                                        "```"
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            }
+                        }
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "in version 14.0.0. Use the IComboFilteringOptions.filterable",
+                                        "An @Input property that enabled/disables filtering in the list. The default is `true`.",
+                                        "```html",
+                                        "<igx-combo [filterable]=\"false\">",
+                                        "```"
+                                    ],
+                                    "tagName": "deprecated"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "itemsMaxHeight": {
                 "getter": {
                     "comment": {
@@ -985,6 +1029,40 @@
                             "```"
                         ],
                         "shortText": "Sets total count of the virtual data items, when using remote service."
+                    }
+                }
+            },
+            "filteringOptions": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// get",
+                            "let myFilteringOptions = this.combo.filteringOptions;",
+                            "```",
+                            "```html",
+                            "<!--set-->",
+                            "<igx-combo [filteringOptions]='myFilteringOptions'></igx-combo>",
+                            "```"
+                        ],
+                        "shortText": "Configures the way combo items will be filtered."
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// get",
+                            "let myFilteringOptions = this.combo.filteringOptions;",
+                            "```",
+                            "```html",
+                            "<!--set-->",
+                            "<igx-combo [filteringOptions]='myFilteringOptions'></igx-combo>",
+                            "```"
+                        ],
+                        "shortText": "Configures the way combo items will be filtered."
                     }
                 }
             },

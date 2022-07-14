@@ -62,17 +62,6 @@
                     ]
                 }
             },
-            "filterable": {
-                "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "リストでフィルタリングを有効/無効にする @Input プロパティ。デフォルトは `true` です。",
-                        "```html",
-                        "<igx-combo [filterable]=\"false\">",
-                        "```"
-                    ]
-                }
-            },
             "searchPlaceholder": {
                 "comment": {
                     "tags": {},
@@ -631,6 +620,23 @@
                     "shortText": "1 つの項目を選択/選択解除します。"
                 }
             },
+            "__type": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    " <igx-comb #combo [data]=\"localData\" [filterFunction]=\"filterFunction\"></igx-combo>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "コンボのカスタム フィルタリング機能を取得または設定します。"
+                }
+            },
             "toggle": {
                 "comment": {
                     "tags": {},
@@ -675,6 +681,44 @@
             }
         },
         "accessors": {
+            "filterable": {
+                "getter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "バージョン 14.0.0。IComboFilteringOptions.filterable を使用してください。",
+                                        "リストでフィルタリングを有効/無効にする @Input プロパティ。デフォルトは `true` です。",
+                                        "```html",
+                                        "<igx-combo [filterable]=\"false\">",
+                                        "```"
+                                    ],
+                                    "tagName": "非推奨"
+                                }
+                            }
+                        }
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {
+                            "deprecated": {
+                                "comment": {
+                                    "text": [
+                                        "バージョン 14.0.0。IComboFilteringOptions.filterable を使用してください。",
+                                        "リストでフィルタリングを有効/無効にする @Input プロパティ。デフォルトは `true` です。",
+                                        "```html",
+                                        "<igx-combo [filterable]=\"false\">",
+                                        "```"
+                                    ],
+                                    "tagName": "非推奨"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "itemsMaxHeight": {
                 "getter": {
                     "comment": {
@@ -985,6 +1029,40 @@
                             "```"
                         ],
                         "shortText": "リモート サービスを使用する場合、仮想データ項目の合計数を設定します。"
+                    }
+                }
+            },
+            "filteringOptions": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// 取得",
+                            "let myFilteringOptions = this.combo.filteringOptions;",
+                            "```",
+                            "```html",
+                            "<!--設定-->",
+                            "<igx-combo [filteringOptions]='myFilteringOptions'></igx-combo>",
+                            "```"
+                        ],
+                        "shortText": "コンボ項目をフィルタリングする方法を設定します。"
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "text": [
+                            "```typescript",
+                            "// 取得",
+                            "let myFilteringOptions = this.combo.filteringOptions;",
+                            "```",
+                            "```html",
+                            "<!--設定-->",
+                            "<igx-combo [filteringOptions]='myFilteringOptions'></igx-combo>",
+                            "```"
+                        ],
+                        "shortText": "コンボ項目をフィルタリングする方法を設定します。"
                     }
                 }
             },
