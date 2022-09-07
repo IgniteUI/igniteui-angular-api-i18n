@@ -1531,6 +1531,39 @@
                     }
                 }
             },
+            "errorTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Returns a reference to the validation error template.",
+                            "```typescript",
+                            "let errorTemplate = this.column.errorTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "Sets the error template.",
+                            "```html",
+                            "<ng-template igxCellValidationError let-cell=\"cell\" #errorTemplate >",
+                            "    <div *ngIf=\"cell.errors?.['forbiddenName']\">",
+                            "     This name is forbidden.",
+                            "    </div>",
+                            "</ng-template>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild(\"'errorTemplate'\", {read: TemplateRef })",
+                            "public errorTemplate: TemplateRef<any>;",
+                            "this.column.errorTemplate = this.errorTemplate;",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "filterCellTemplate": {
                 "getter": {
                     "comment": {
