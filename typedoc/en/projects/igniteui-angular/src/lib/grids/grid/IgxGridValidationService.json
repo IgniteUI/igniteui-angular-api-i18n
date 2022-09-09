@@ -4,7 +4,6 @@
         "methods": {
             "getInvalid": {
                 "comment": {
-                    "returns": "Array of IRecordValidationState.\n",
                     "tags": {},
                     "shortText": "Returns all invalid record states."
                 }
@@ -12,6 +11,11 @@
             "markAsTouched": {
                 "comment": {
                     "parameters": {
+                        "key": {
+                            "comment": {
+                                "shortText": "The id of the record that will be marked as touched."
+                            }
+                        },
                         "field": {
                             "comment": {
                                 "shortText": "Optional. The field from the record that will be marked as touched. If not provided all fields will be touched."
@@ -24,9 +28,15 @@
             },
             "clear": {
                 "comment": {
-                    "returns": "Array of IRecordValidationState.\n",
+                    "parameters": {
+                        "key": {
+                            "comment": {
+                                "shortText": "Optional. The key of the record for which to clear state."
+                            }
+                        }
+                    },
                     "tags": {},
-                    "shortText": "Clears validity state by id or clears all states if no id is passed."
+                    "shortText": "Clears validation state by key or all states if none is provided."
                 }
             }
         },
