@@ -1601,6 +1601,39 @@
                     }
                 }
             },
+            "errorTemplate": {
+                "getter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "検証エラー テンプレートへの参照を返します。",
+                            "```typescript",
+                            "let errorTemplate = this.column.errorTemplate;",
+                            "```"
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "tags": {},
+                        "shortText": [
+                            "エラー テンプレートを設定します。",
+                            "```html",
+                            "<ng-template igxCellValidationError let-cell=\"cell\" #errorTemplate >",
+                            "    <div *ngIf=\"cell.validation.errors?.['forbiddenName']\">",
+                            "     This name is forbidden.",
+                            "    </div>",
+                            "</ng-template>",
+                            "```",
+                            "```typescript",
+                            "@ViewChild(\"'errorTemplate'\", {read: TemplateRef })",
+                            "public errorTemplate: TemplateRef<any>;",
+                            "this.column.errorTemplate = this.errorTemplate;",
+                            "```"
+                        ]
+                    }
+                }
+            },
             "filterCellTemplate": {
                 "getter": {
                     "comment": {

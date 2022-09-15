@@ -74,6 +74,54 @@
                     "shortText": "グリッド チップ領域によってディメンション コレクションが変更されたときに発生します。"
                 }
             },
+            "dimensionInit": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "ディメンションが初期化される前に発生します。",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-pivot-grid #grid [data]=\"localData\" [height]=\"'305px'\"",
+                                    "             (dimensionInit)=\"dimensionInit($event)\"></igx-pivot-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "ディメンションが初期化された後に発生します。"
+                }
+            },
+            "valueInit": {
+                "comment": {
+                    "tags": {
+                        "remarks": {
+                            "comment": {
+                                "text": "値が初期化される前に発生します。",
+                                "tagName": "備考:"
+                            }
+                        },
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-pivot-grid #grid [data]=\"localData\" [height]=\"'305px'\"",
+                                    "             (valueInit)=\"valueInit($event)\"></igx-pivot-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "値が初期化された後に発生します。"
+                }
+            },
             "dimensionsSortingExpressionsChange": {
                 "comment": {
                     "tags": {
@@ -114,6 +162,23 @@
                         }
                     },
                     "shortText": "値コレクションがグリッド チップ領域によって変更されたときに発生します。"
+                }
+            },
+            "valueChipTemplate": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-pivot-grid [valueChipTemplate]=\"myTemplate\"><igx-pivot-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "valueChip のカスタム テンプレートを取得または設定します。"
                 }
             },
             "emptyPivotGridTemplate": {
@@ -402,6 +467,40 @@
                         }
                     },
                     "shortText": "セルがクリックされたときに発生します。"
+                }
+            },
+            "formGroupCreated": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (formGroupCreated)=\"formGroupCreated($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "行/セルの編集で formGroup が作成されたときに発生します。"
+                }
+            },
+            "validationStatusChange": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid (validationStatusChange)=\"validationStatusChange($event)\" [data]=\"localData\" [height]=\"'305px'\" [autoGenerate]=\"true\"></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "グリッドの検証状態が変更されたときに発生します。"
                 }
             },
             "selected": {
@@ -915,6 +1014,23 @@
                 "comment": {
                     "tags": {},
                     "shortText": "列がソートされていないと場合にヘッダー ソート インジケーターを描画するときに使用するカスタムテンプレート (存在する場合)。"
+                }
+            },
+            "validationTrigger": {
+                "comment": {
+                    "tags": {
+                        "example": {
+                            "comment": {
+                                "text": [
+                                    "```html",
+                                    "<igx-grid #grid validationTrigger='blur'></igx-grid>",
+                                    "```"
+                                ],
+                                "tagName": "例:"
+                            }
+                        }
+                    },
+                    "shortText": "グリッドの編集時に使用される検証のトリガーを取得または設定します。"
                 }
             }
         },
