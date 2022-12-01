@@ -1,147 +1,115 @@
 {
-    "em": {
+    "pad": {
         "description": [
-            "<p>Converts pixels to relative values (em).</p>",
+            "<p>Used to add spacing.</p>",
             ""
         ],
         "parameters": {
-            "pixels": {
+            "sm": {
                 "description": [
-                    "<p>The pixel value to be converted.</p>",
+                    "<p>The preferred value when the component&#39;s size is small.</p>",
                     ""
                 ]
             },
-            "context": {
+            "md": {
                 "description": [
-                    "<p>The base context to convert against.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "rem": {
-        "description": [
-            "<p>Pixels to root relative values (rem).</p>",
-            ""
-        ],
-        "parameters": {
-            "pixels": {
-                "description": [
-                    "<p>The pixel value to be converted.</p>",
+                    "<p>The preferred value when the component&#39;s size is medium.</p>",
                     ""
                 ]
             },
-            "context": {
+            "lg": {
                 "description": [
-                    "<p>The base context to convert against.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "px": {
-        "description": [
-            "<p>Relative value(em/rem) to pixel.</p>",
-            ""
-        ],
-        "parameters": {
-            "num": {
-                "description": [
-                    "<p>The relative value to be converted.</p>",
+                    "<p>The preferred value when the component&#39;s size is large.</p>",
                     ""
                 ]
             },
-            "context": {
+            "dir": {
                 "description": [
-                    "<p>The base context to convert against.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "luminance": {
-        "description": [
-            "<p>Calculates the luminance for a given color.",
-            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a>.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The color to calculate luminance for.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "contrast": {
-        "description": [
-            "<p>Calculates the contrast ratio between two colors.",
-            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a></p>",
-            ""
-        ],
-        "parameters": {
-            "background": {
-                "description": [
-                    "<p>The background color.</p>",
-                    ""
-                ]
-            },
-            "foreground": {
-                "description": [
-                    "<p>The foreground color.</p>",
+                    "<p>The preferred direction - inline or block.</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The contrast ratio between the background and foreground colors.</p>",
+                "<p>The evaluated value.</p>",
                 ""
             ]
         }
     },
-    "to-opaque": {
+    "pad-inline": {
         "description": [
-            "<p>Mixes two colors to produce an opaque color.</p>",
+            "<p>Used to add inline spacing.</p>",
             ""
         ],
         "parameters": {
-            "color-1": {
+            "sm": {
                 "description": [
-                    "<p>The first color, usually transparent.</p>",
+                    "<p>The preferred value when the component&#39;s size is small.</p>",
                     ""
                 ]
             },
-            "color-2": {
+            "md": {
                 "description": [
-                    "<p>The second color, usually opaque.</p>",
+                    "<p>The preferred value when the component&#39;s size is medium.</p>",
                     ""
                 ]
             },
-            "palette": {
+            "lg": {
                 "description": [
-                    "<p>Pass an palette if the passed colors are CSS variable references.</p>",
+                    "<p>The preferred value when the component&#39;s size is large.</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The color representation of the rgba value.</p>",
+                "<p>The evaluated value.</p>",
+                ""
+            ]
+        }
+    },
+    "pad-block": {
+        "description": [
+            "<p>Used to add block spacing.</p>",
+            ""
+        ],
+        "parameters": {
+            "sm": {
+                "description": [
+                    "<p>The preferred value when the component&#39;s size is small.</p>",
+                    ""
+                ]
+            },
+            "md": {
+                "description": [
+                    "<p>The preferred value when the component&#39;s size is medium.</p>",
+                    ""
+                ]
+            },
+            "lg": {
+                "description": [
+                    "<p>The preferred value when the component&#39;s size is large.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>The evaluated value.</p>",
                 ""
             ]
         }
     },
     "extend": {
         "description": [
-            "<p>Extends a Map object with the properties of another Map object.</p>",
+            "<p>Extends a Map with the values of another Map, disregarding null values in the process.</p>",
             ""
         ],
         "parameters": {
             "maps": {
                 "description": [
-                    "<p>The source map to get extended.</p>",
+                    "<p>The maps to get extended.</p>",
                     ""
                 ]
             }
@@ -153,45 +121,76 @@
             ]
         }
     },
-    "var-get": {
+    "to-fixed": {
         "description": [
-            "<p>Returns a CSS property value. It could return either css &#39;--var&#39; or",
-            "a plain string value based on theme configuration.</p>",
+            "<p>Rounds a number to a certain precision</p>",
             ""
         ],
         "parameters": {
-            "map": {
+            "number": {
                 "description": [
-                    "<p>The source theme to be used to read values from.</p>",
+                    "<p>The number to be rounded</p>",
                     ""
                 ]
             },
-            "key": {
+            "precision": {
                 "description": [
-                    "<p>A key from the theme map to assign as value to the property.</p>",
+                    "<p>Specifies the number of the digits after the decimal separator</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The value of the key in the passed map, or the name of key concatenated with the key name.</p>",
+                "<p>The rounded number</p>",
                 ""
             ]
-        },
-        "example": [
-            {
+        }
+    },
+    "split": {
+        "description": [
+            "<p>Splits a string into a list by a given separator.</p>",
+            ""
+        ],
+        "parameters": {
+            "string": {
                 "description": [
-                    "<p>Assign the color property in a rule-set to a value from the default avatar theme.</p>",
+                    "<p>The string to split.</p>",
                     ""
-                ],
-                "code": [
-                    "  %igx-avatar-icon {",
-                    "    color: var-get($avatar-theme, 'icon-color');",
-                    "  }",
-                    "Returns the value for key 'icon-color' in the '$avatar-theme';"
+                ]
+            },
+            "separator": {
+                "description": [
+                    "<p>The string separator to split the string by.</p>",
+                    ""
                 ]
             }
-        ]
+        }
+    },
+    "replace": {
+        "description": [
+            "<p>Returns a new string with one, some, or all matches of a string replaced by a replacement.</p>",
+            ""
+        ],
+        "parameters": {
+            "string": {
+                "description": [
+                    "<p>The target string.</p>",
+                    ""
+                ]
+            },
+            "search": {
+                "description": [
+                    "<p>The term to search form.</p>",
+                    ""
+                ]
+            },
+            "replace": {
+                "description": [
+                    "<p>The string to replace the search term with.</p>",
+                    ""
+                ]
+            }
+        }
     }
 }

@@ -421,7 +421,20 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Set a custom expander color</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-splitter-theme: splitter-theme($expander-color: red);",
+                    "// Pass the theme to the css-vars() mixin",
+                    "@include css-vars($my-splitter-them);"
+                ]
+            }
+        ]
     },
     "stepper": {
         "parameters": {
@@ -513,262 +526,30 @@
             }
         }
     },
-    "theme": {
+    "css-vars": {
         "description": [
-            "<p>Generates an Ignite UI for Angular global theme.</p>",
+            "<p>Add theme colors as CSS variables to a given scope.</p>",
             ""
         ],
         "parameters": {
-            "palette": {
+            "theme": {
                 "description": [
-                    "<p>An palette to be used by the global theme.</p>",
+                    "<p>The component theme to be used.</p>",
                     ""
                 ]
             },
-            "schema": {
+            "scope": {
                 "description": [
-                    "<p>The schema used as basis for styling the components.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "roundness": {
-                "description": [
-                    "<p>Sets the global roundness factor (the value can be any decimal fraction between 0 and 1) for all components.</p>",
-                    ""
-                ]
-            },
-            "elevation": {
-                "description": [
-                    "<p>Turns on/off elevations for all components in the theme.</p>",
-                    ""
-                ]
-            },
-            "elevations": {
-                "description": [
-                    "<p>The elevation map to be used by all component themes.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
+                    "<p>The CSS variables scope to be used. (optional)</p>",
                     ""
                 ]
             }
         }
     },
-    "light-theme": {
+    "sizable": {
         "description": [
-            "<p>Creates a global material theme that can be used with light backgrounds.</p>",
+            "<p>Adds the required CSS properties so that the scope can react to size changes.</p>",
             ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "dark-theme": {
-        "description": [
-            "<p>Creates a global material theme that can be used with dark backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "fluent-light-theme": {
-        "description": [
-            "<p>Creates a global fluent theme that can be used with light backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "fluent-dark-theme": {
-        "description": [
-            "<p>Creates a global fluent theme that can be used with dark backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "bootstrap-light-theme": {
-        "description": [
-            "<p>Creates a global bootstrap-like theme that can be used with light backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "bootstrap-dark-theme": {
-        "description": [
-            "<p>Creates a global bootstrap-like theme that can be used with dark backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "indigo-light-theme": {
-        "description": [
-            "<p>Creates a global indigo theme that can be used with light backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "indigo-dark-theme": {
-        "description": [
-            "<p>Creates a global indigo theme that can be used with dark backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Enable theming support for Ignite UI for Web Components</p>",
-                    ""
-                ]
-            }
-        }
+        ]
     }
 }

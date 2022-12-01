@@ -183,7 +183,7 @@
             }
         }
     },
-    "igc-dock-manager": {
+    "dock-manager": {
         "parameters": {
             "theme": {
                 "description": [
@@ -421,7 +421,20 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>カスタム エキスパンダーの色を設定します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-splitter-theme: splitter-theme($expander-color: red);",
+                    "// css-vars() mixin へテーマを渡します。",
+                    "@include css-vars($my-splitter-them);"
+                ]
+            }
+        ]
     },
     "stepper": {
         "parameters": {
@@ -507,268 +520,36 @@
             },
             "enhanced-accesibility": {
                 "description": [
-                    "<p>レイアウトの方向を設定します。&#39;ltr&#39; または &#39;rtl&#39 にすることができます。</p>",
+                    "<p>コンポーネントの色およびその他のプロパティをアクセスしやすい値に切り替えます。</p>",
                     ""
                 ]
             }
         }
     },
-    "theme": {
+    "css-vars": {
         "description": [
-            "<p>Ignite UI for Angular のグローバル テーマを生成します。</p>",
+            "<p>テーマの色を CSS 変数として特定のスコープに追加します。</p>",
             ""
         ],
         "parameters": {
-            "palette": {
+            "theme": {
                 "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
+                    "<p>使用するコンポーネントのテーマ。</p>",
                     ""
                 ]
             },
-            "schema": {
+            "scope": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に基づいて使用されるスキーマ。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "roundness": {
-                "description": [
-                    "<p>すべてのコンポーネントのグローバルな丸み係数 (値は0〜1の任意の小数にすることができます) を設定します。</p>",
-                    ""
-                ]
-            },
-            "elevation": {
-                "description": [
-                    "<p>テーマのすべてのコンポーネントのエレベーションのオン/オフを切り替えます。</p>",
-                    ""
-                ]
-            },
-            "elevations": {
-                "description": [
-                    "<p>すべてのコンポーネント テーマで使用されるエレベーション マップ。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
+                    "<p>使用する CSS 変数のスコープ。(オプション)</p>",
                     ""
                 ]
             }
         }
     },
-    "light-theme": {
+    "sizable": {
         "description": [
-            "<p>ライト背景で使用できるグローバルなマテリアル テーマを作成します。</p>",
+            "<p>スコープがサイズの変更に対応できるように、必要な CSS プロパティを追加します。</p>",
             ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "dark-theme": {
-        "description": [
-            "<p>ダーク背景で使用できるグローバルなマテリアル テーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "fluent-light-theme": {
-        "description": [
-            "<p>ライト背景で使用されるグローバル fluent テーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "fluent-dark-theme": {
-        "description": [
-            "<p>ダーク背景で使用されるグローバル fluent テーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "bootstrap-light-theme": {
-        "description": [
-            "<p>ライト背景で使用されるグローバル bootstrap のようなテーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "bootstrap-dark-theme": {
-        "description": [
-            "<p>ダーク背景で使用されるグローバル bootstrap のようなテーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "indigo-light-theme": {
-        "description": [
-            "<p>ライト背景で使用できるグローバルなインディゴ テーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "indigo-dark-theme": {
-        "description": [
-            "<p>ダーク背景で使用できるグローバル インディゴ テーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "wc": {
-                "description": [
-                    "<p>Ignite UI for Web Components のテーマ サポートを有効にします。</p>",
-                    ""
-                ]
-            }
-        }
+        ]
     }
 }

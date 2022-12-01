@@ -7,63 +7,100 @@
         "parameters": {
             "primary": {
                 "description": [
-                    "<p>The primary color used to generate the primary color palette.</p>",
+                    "<p>The primary color used to generate the primary color palette (required).</p>",
                     ""
                 ]
             },
             "secondary": {
                 "description": [
-                    "<p>The secondary color used to generate the secondary color palette.</p>",
-                    ""
-                ]
-            },
-            "info": {
-                "description": [
-                    "<p>The information color used throughout the application.</p>",
-                    ""
-                ]
-            },
-            "success": {
-                "description": [
-                    "<p>The success color used throughout the application.</p>",
-                    ""
-                ]
-            },
-            "warn": {
-                "description": [
-                    "<p>The warning color used throughout the application.</p>",
-                    ""
-                ]
-            },
-            "error": {
-                "description": [
-                    "<p>The error color used throughout the application.</p>",
-                    ""
-                ]
-            },
-            "grays": {
-                "description": [
-                    "<p>The color used for generating the grays palette.</p>",
+                    "<p>The secondary color used to generate the secondary color palette (required).</p>",
                     ""
                 ]
             },
             "surface": {
                 "description": [
-                    "<p>The color used as a background in components, such as cards, sheets, and menus.</p>",
+                    "<p>The color used as a background in components, such as cards, sheets, and menus (required).</p>",
+                    ""
+                ]
+            },
+            "gray": {
+                "description": [
+                    "<p>The color used for generating the grayscale palette (optional).</p>",
+                    ""
+                ]
+            },
+            "info": {
+                "description": [
+                    "<p>The information color used throughout the application (optional).</p>",
+                    ""
+                ]
+            },
+            "success": {
+                "description": [
+                    "<p>The success color used throughout the application (optional).</p>",
+                    ""
+                ]
+            },
+            "warn": {
+                "description": [
+                    "<p>The warning color used throughout the application (optional).</p>",
+                    ""
+                ]
+            },
+            "error": {
+                "description": [
+                    "<p>The error color used throughout the application (optional).</p>",
                     ""
                 ]
             },
             "variant": {
                 "description": [
-                    "<p>The palette variant that gets generated. Possible values are: &#39;material&#39;, &#39;fluent&#39;, &#39;bootstrap&#39;, and &#39;indigo-design&#39;.</p>",
+                    "<p>Used internally (optional).</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>A map consisting of 74 color variations, including the <code>primary</code>, <code>secondary</code>, <code>grays</code>,",
-                "<code>info</code>, <code>success</code>, <code>warn</code>, and <code>error</code> colors.</p>",
+                "<p>A map consisting of color shades for the passed base colors (primary, secondary, gray, etc).</p>",
+                ""
+            ]
+        }
+    },
+    "shades": {
+        "description": [
+            "<p>Generates a Material-like color palette from a base color.</p>",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "<p>The name of the color.</p>",
+                    ""
+                ]
+            },
+            "color": {
+                "description": [
+                    "<p>The base color used to generate the palette.</p>",
+                    ""
+                ]
+            },
+            "shades": {
+                "description": [
+                    "<p>The list of shades.</p>",
+                    ""
+                ]
+            },
+            "surface": {
+                "description": [
+                    "<p>The surface color. Usefull when generating shades of gray (optional).</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>A map consisting of hsla color shades and thier respective contrast colors.</p>",
                 ""
             ]
         }
@@ -76,7 +113,7 @@
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>The source palette map.</p>",
+                    "<p>The source palette map (optional).</p>",
                     ""
                 ]
             },
@@ -91,11 +128,17 @@
                     "<p>The target color shade from the color palette.</p>",
                     ""
                 ]
+            },
+            "opacity": {
+                "description": [
+                    "<p>Optional opacity to apply to the color shade.</p>",
+                    ""
+                ]
             }
         },
         "returns": {
             "description": [
-                "<p>White if no palette, color, and variant matches found.</p>",
+                "<p>The raw color shade or CSS variable reference from the palette.</p>",
                 ""
             ]
         }
@@ -108,7 +151,7 @@
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>The source palette map.</p>",
+                    "<p>The source palette map (optional).</p>",
                     ""
                 ]
             },
@@ -127,39 +170,19 @@
         },
         "returns": {
             "description": [
-                "<p>[#fff] - Returns white if no palette, color and/or variant matches found.</p>",
+                "<p>The raw contrast color shade or CSS variable from the palette.</p>",
                 ""
             ]
         }
     },
-    "text-contrast": {
+    "chart-brushes": {
         "description": [
-            "<p>Returns a contrast color for a passed color.</p>",
+            "<p>Returns a list of colors to be used as chart brushes.</p>",
             ""
         ],
-        "parameters": {
-            "background": {
-                "description": [
-                    "<p>The background color used to return a contrast/forground color for.</p>",
-                    ""
-                ]
-            },
-            "foreground": {
-                "description": [
-                    "<p>The foreground color used in case it has enough contrast against the provided background.</p>",
-                    ""
-                ]
-            },
-            "contrast": {
-                "description": [
-                    "<p>The contrast level according to WCAG 2.0 standards.</p>",
-                    ""
-                ]
-            }
-        },
         "returns": {
             "description": [
-                "<p>Returns either white or black depending on the luminance of the input color.</p>",
+                "<p>A list of colors to be used as chart brushes.</p>",
                 ""
             ]
         }

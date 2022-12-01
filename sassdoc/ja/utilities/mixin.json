@@ -1,196 +1,15 @@
 ﻿{
-    "hide-default": {
-        "description": [
-            "<p>DOM から要素を非表示にします。</p>",
-            ""
-        ],
-        "example": [
-            {
-                "description": [
-                    "<p>例</p>",
-                    ""
-                ],
-                "code": [
-                    "input[type=\"checkbox\"] {",
-                    "  @include hide-default();",
-                    "}"
-                ]
-            }
-        ]
-    },
-    "linear-gradient": {
-        "description": [
-            "<p>線状グラデーションを生成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "direction": {
-                "description": [
-                    "<p>グラデーションの方向</p>",
-                    ""
-                ]
-            },
-            "color-stops": {
-                "description": [
-                    "<p>グラデーションに使用される色の境界リスト。</p>",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>例</p>",
-                    ""
-                ],
-                "code": [
-                    ".bozo {",
-                    "  background: @include linear-gradient(\"to right\", red, orange);",
-                    "}"
-                ]
-            }
-        ]
-    },
-    "ellipsis": {
-        "description": [
-            "<p>テキスト要素に text-overflow 省略記号を適用します。",
-            "Display flex 要素では動作しません。</p>",
-            ""
-        ]
-    },
-    "palette-vars": {
-        "description": [
-            "<p>指定されたパレットのため CSS 変数を生成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>CSS 変数の生成に使用するパレット。</p>",
-                    ""
-                ]
-            },
-            "contrast": {
-                "description": [
-                    "<p>コントラスト色を含めるかどうかを指定します。</p>",
-                    ""
-                ]
-            },
-            "prefix": {
-                "description": [
-                    "<p>CSS 変数に付加されるプレフィックス。</p>",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p><code>$default-palette</code> のため生成された css 変数。</p>",
-                    ""
-                ],
-                "code": [
-                    "@include palette-vars($default-palette);"
-                ]
-            }
-        ]
-    },
-    "palette-to-wc": {
-        "description": [
-            "<p>Ignite UI for Angular パレット CSS 変数を Ignite UI for Web Components",
-            "互換の変数に変換します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>CSS 変数の生成に使用するパレット。</p>",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>igx-接頭辞付き変数を <code>$default-palette</code> から igc-接頭辞付き変数に変換します。</p>",
-                    ""
-                ],
-                "code": [
-                    "@include palette-to-wc($default-palette);"
-                ]
-            }
-        ]
-    },
-    "elevation-vars": {
-        "description": [
-            "<p>指定したエレベーション マップの CSS 変数を生成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "elevations": {
-                "description": [
-                    "<p>CSS 変数を生成するために使用するエレベーション マップ。</p>",
-                    ""
-                ]
-            },
-            "prefix": {
-                "description": [
-                    "<p>CSS 変数に付加されるプレフィックス。</p>",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>エレベーションの CSS 変数を生成します。</p>",
-                    ""
-                ],
-                "code": [
-                    "$elevations: elevations(red, green, blue); // umbra, penumbra, ambient",
-                    "@include elevation-vars($elevations);"
-                ]
-            }
-        ]
-    },
-    "elevations-to-wc": {
-        "description": [
-            "<p>Ignite UI for Angular CSS エレベーションの変数を Web Components ",
-            "互換の変数に変換します。</p>",
-            ""
-        ],
-        "parameters": {
-            "elevations": {
-                "description": [
-                    "<p>CSS 変数を生成するために使用するエレベーション マップ。</p>",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>エレベーションの igx-プレフィックス変数を igc-プレフィックス変数に変換します。</p>",
-                    ""
-                ],
-                "code": [
-                    "$elevations: elevations(red, green, blue);",
-                    "@include elevations-to-wc($elevations);"
-                ]
-            }
-        ]
-    },
     "color-classes": {
         "description": [
-            "<p>指定したプロパティとカラー パレットの",
-            "すべての色の CSS クラス名を生成します。",
+            "<p>指定したプロパティとカラー パレットのすべての色",
+            "の CSS クラス名を生成します。",
             "オプションでプレフィックスとサフィックスをクラス名に添付します。</p>",
             ""
         ],
         "parameters": {
             "prop": {
                 "description": [
-                    "<p>色のパレットに割り当てられる CSS プロパティ。</p>",
+                    "<p>パレット カラーに割り当てられる CSS プロパティ。</p>",
                     ""
                 ]
             },
@@ -202,7 +21,7 @@
             },
             "suffix": {
                 "description": [
-                    "<p>クラス名に連結される接尾辞。</p>",
+                    "<p>クラス名に連結されるサフィックス。</p>",
                     ""
                 ]
             },
@@ -229,20 +48,6 @@
                 ]
             }
         ]
-    },
-    "css-vars": {
-        "description": [
-            "<p>範囲にテーマの色を追加します。</p>",
-            ""
-        ],
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>使用されるコンポーネントのテーマ。</p>",
-                    ""
-                ]
-            }
-        }
     },
     "line-clamp": {
         "description": [
@@ -277,6 +82,32 @@
                 ],
                 "code": [
                     "@include line-clamp(4, true, true);"
+                ]
+            }
+        ]
+    },
+    "ellipsis": {
+        "description": [
+            "<p>E テキスト要素に text-overflow 省略記号を適用します。",
+            "Display flex 要素では動作しません。</p>",
+            ""
+        ]
+    },
+    "hide-default": {
+        "description": [
+            "<p>DOM から要素を非表示にします。</p>",
+            ""
+        ],
+        "example": [
+            {
+                "description": [
+                    "<p>例</p>",
+                    ""
+                ],
+                "code": [
+                    "input[type=\"checkbox\"] {",
+                    "  @include hide-default();",
+                    "}"
                 ]
             }
         ]

@@ -7,95 +7,138 @@
         "parameters": {
             "primary": {
                 "description": [
-                    "<p>基本パレットの生成に使用する基本色。</p>",
+                    "<p>基本パレットの生成に使用する primary カラー。(必須)</p>",
                     ""
                 ]
             },
             "secondary": {
                 "description": [
-                    "<p>二次色パレットの生成に使用する二次色。</p>",
-                    ""
-                ]
-            },
-            "info": {
-                "description": [
-                    "<p>アプリケーション内で使用する情報色。</p>",
-                    ""
-                ]
-            },
-            "success": {
-                "description": [
-                    "<p>アプリケーション内で使用する成功色。</p>",
-                    ""
-                ]
-            },
-            "warn": {
-                "description": [
-                    "<p>アプリケーション内で使用する警告色。</p>",
-                    ""
-                ]
-            },
-            "error": {
-                "description": [
-                    "<p>アプリケーション内で使用するエラー色。</p>",
-                    ""
-                ]
-            },
-            "grays": {
-                "description": [
-                    "<p>グレー パレットの生成に使用される色。</p>",
+                    "<p>二次色パレットの生成に使用する secondary カラー。(必須)</p>",
                     ""
                 ]
             },
             "surface": {
                 "description": [
-                    "<p>カード、シート、およびメニューのようなコンポーネントに使用される色。</p>",
+                    "<p>カード、シート、およびメニューのようなコンポーネントに使用される色。(必須)</p>",
+                    ""
+                ]
+            },
+            "gray": {
+                "description": [
+                    "<p>グレースケール パレットの生成に使用する色。(オプション)</p>",
+                    ""
+                ]
+            },
+            "info": {
+                "description": [
+                    "<p>アプリケーション内で使用する information カラー。(オプション)</p>",
+                    ""
+                ]
+            },
+            "success": {
+                "description": [
+                    "<p>アプリケーション内で使用する success カラー。(オプション)</p>",
+                    ""
+                ]
+            },
+            "warn": {
+                "description": [
+                    "<p>アプリケーション内で使用する warning カラー。(オプション)</p>",
+                    ""
+                ]
+            },
+            "error": {
+                "description": [
+                    "<p>アプリケーション内で使用する error カラー。(オプション)</p>",
                     ""
                 ]
             },
             "variant": {
                 "description": [
-                    "<p>生成されるパレット バリアント。可能な値は &#39;material&#39;、&#39;fluent&#39;、&#39;bootstrap&#39;、および &#39;indigo-design&#39; です。</p>",
+                    "<p>内部で使用されます (オプション)。</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p><code>primary</code>、<code>secondary</code>、<code>grays</code>、",
-                "<code>info</code>、<code>success</code>、<code>warn</code>、および <code>error</code> を含む 74 の色のバリエーションで構成されたマップ。</p>",
+                "<p>渡された基本色 (primary、secondary、gray など) の色合いで構成されるマップ。</p>",
+                ""
+            ]
+        }
+    },
+    "shades": {
+        "description": [
+            "<p>基本色からマテリアルのようなカラー パレットを生成します。</p>",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "<p>カラーの名前。</p>",
+                    ""
+                ]
+            },
+            "color": {
+                "description": [
+                    "<p>パレットの生成に使用する基本色。</p>",
+                    ""
+                ]
+            },
+            "shades": {
+                "description": [
+                    "<p>色合いのリスト。</p>",
+                    ""
+                ]
+            },
+            "surface": {
+                "description": [
+                    "<p>surface のカラー。gray の色合いを生成するときに便利です (オプション)。</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>hsla 色合いとそれぞれのコントラスト カラーで構成されるマップ。</p>",
                 ""
             ]
         }
     },
     "color": {
         "description": [
-            "<p>カラー パレットから色を取得します。</p>",
+            "<p>カラーパレットから色を取得します。</p>",
             ""
         ],
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>ソースのパレット マップ。</p>",
+                    "<p>ソースのパレット マップ。(オプション)</p>",
                     ""
                 ]
             },
             "color": {
                 "description": [
-                    "<p>カラー パレットからのターゲット色。</p>",
+                    "<p>カラー パレットからターゲット色を取得します。</p>",
                     ""
                 ]
             },
             "variant": {
                 "description": [
-                    "<p>カラー パレットからのターゲット色の影。</p>",
+                    "<p>カラー パレットからのターゲット色の影</p>",
+                    ""
+                ]
+            },
+            "opacity": {
+                "description": [
+                    "<p>色合いに適用するオプションの不透明度。</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>パレット、色、またはバリアントが一致しない場合、白になります。</p>",
+                "<p>パレットからの生の色合いまたは CSS 変数参照。</p>",
                 ""
             ]
         }
@@ -108,13 +151,13 @@
         "parameters": {
             "palette": {
                 "description": [
-                    "<p>ソースのパレット マップ。</p>",
+                    "<p>ソースのパレット マップ。(オプション)</p>",
                     ""
                 ]
             },
             "color": {
                 "description": [
-                    "<p>カラー パレットからのターゲット色。</p>",
+                    "<p>カラー パレットからターゲット色を取得します。</p>",
                     ""
                 ]
             },
@@ -127,39 +170,19 @@
         },
         "returns": {
             "description": [
-                "<p>[#fff] - 一致するパレット、色、バリアントが存在しない場合、白を返します。</p>",
+                "<p>パレットからの生のコントラスト色合いまたは CSS 変数。</p>",
                 ""
             ]
         }
     },
-    "text-contrast": {
+    "chart-brushes": {
         "description": [
-            "<p>渡された色のコントラスト色を返します。</p>",
+            "<p>チャート ブラシとして使用される色のリストを返します。</p>",
             ""
         ],
-        "parameters": {
-            "background": {
-                "description": [
-                    "<p>コントラスト色/前景色を返すために使用される背景色。</p>",
-                    ""
-                ]
-            },
-            "foreground": {
-                "description": [
-                    "<p>提供された背景に対して十分なコントラストがある場合に使用する前景色。</p>",
-                    ""
-                ]
-            },
-            "contrast": {
-                "description": [
-                    "<p>WCAG 2.0 規格に準拠したコントラスト レベル。</p>",
-                    ""
-                ]
-            }
-        },
         "returns": {
             "description": [
-                "<p>入力色の輝度によって白または黒を返します。</p>",
+                "<p>チャート ブラシとして使用される カラーのリスト。</p>",
                 ""
             ]
         }

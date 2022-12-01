@@ -1,0 +1,115 @@
+{
+    "text-contrast": {
+        "description": [
+            "<p>Returns a contrast color for a passed color.</p>",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "<p>The background color used to return a contrast/forground color for.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>A list of foreground colors",
+                    "that can be used with the provided background.</p>",
+                    ""
+                ]
+            },
+            "contrast": {
+                "description": [
+                    "<p>The contrast level according to WCAG 2.0 standards.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>Returns either white, black, or the provided foreground",
+                "color if it meets the required contrast level.</p>",
+                ""
+            ]
+        }
+    },
+    "to-hsl": {
+        "description": [
+            "<p>Retruns a comma separated list of hue, saturation, and lightness values for a given color.</p>",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "<p>The color to be converted to an HSL list of values.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>This list of HSL values.</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Turn #000 into an HSL list of values</p>",
+                    ""
+                ],
+                "code": [
+                    "$hsl-list: to-hsl(#000); // (0deg, 0%, 0%);"
+                ]
+            }
+        ]
+    },
+    "contrast": {
+        "description": [
+            "<p>Calculates the contrast ratio between two colors.",
+            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a></p>",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "<p>The background color.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>The foreground color.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>The contrast ratio between the background and foreground colors.</p>",
+                ""
+            ]
+        }
+    },
+    "luminance": {
+        "description": [
+            "<p>Calculates the luminance for a given color.",
+            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a>.</p>",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "<p>The color to calculate luminance for.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>The calculated luminance of a given color</p>",
+                ""
+            ]
+        }
+    }
+}
