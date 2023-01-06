@@ -4,59 +4,89 @@
         "methods": {
             "pin": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// グリッドから選択した行をピン固定します。",
-                        "this.grid.selectedRows[0].pin();",
-                        "```"
-                    ],
-                    "shortText": [
-                        "指定された行をピン固定します。",
-                        "このメソッドは `onRowPinning` イベントを発生します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Pins the specified row.\nThis method emits "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`onRowPinning`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " event.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// pin the selected row from the grid\nthis.grid.selectedRows[0].pin();\n```"
+                        }
                     ]
                 }
             },
             "unpin": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// グリッドから選択した行をピン固定解除します。",
-                        "this.grid.selectedRows[0].unpin();",
-                        "```"
-                    ],
-                    "shortText": [
-                        "指定された行のピン固定を解除します。",
-                        "このメソッドは `onRowPinning` イベントを発生します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Unpins the specified row.\nThis method emits "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`onRowPinning`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " event.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// unpin the selected row from the grid\nthis.grid.selectedRows[0].unpin();\n```"
+                        }
                     ]
                 }
             },
             "update": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 2 番目に選択された行の値を更新します。",
-                        "let newValue = \"Apple\";",
-                        "this.grid.selectedRows[1].update(newValue);",
-                        "```"
-                    ],
-                    "shortText": "指定した行オブジェクトおよびデータ ソース レコードを渡された値で更新します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Updates the specified row object and the data source record with the passed value.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// update the second selected row's value\nlet newValue = \"Apple\";\nthis.grid.selectedRows[1].update(newValue);\n```"
+                        }
+                    ]
                 }
             },
             "delete": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// グリッドで 3 番目に選択された行を削除します。",
-                        "this.grid.selectedRows[2].delete();",
-                        "```"
-                    ],
-                    "shortText": [
-                        "グリッドのデータソースから指定した行を削除します。",
-                        "このメソッドは `onRowDeleted` イベントを発生します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Removes the specified row from the grid's data source.\nThis method emits "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`onRowDeleted`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " event.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// delete the third selected row from the grid\nthis.grid.selectedRows[2].delete();\n```"
+                        }
                     ]
                 }
             }
@@ -65,33 +95,45 @@
             "viewIndex": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "グリッド ページごとに計算されたビュー インデックスを返します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns the view index calculated per the grid page."
+                            }
+                        ]
                     }
                 }
             },
             "parent": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "グリッドがグループ化されている場合、親行を返します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns the parent row, if grid is grouped."
+                            }
+                        ]
                     }
                 }
             },
             "key": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let rowKey = row.key;",
-                            "```"
-                        ],
-                        "shortText": [
-                            "行キーを取得します。",
-                            "グリッドの行は、次のいずれかの方法で識別されます:",
-                            "- primaryKey の値、",
-                            "- primaryKey が省略された場合、data 全体。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the row key.\nA row in the grid is identified either by:\n- primaryKey data value,\n- the whole rowData, if the primaryKey is omitted.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet rowKey = row.key;\n```"
+                            }
                         ]
                     }
                 }
@@ -99,26 +141,35 @@
             "addRowUI": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let isAddRow = row.addRowUI;",
-                            "```"
-                        ],
-                        "shortText": "行追加 UI を表すかどうかを取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets if this represents add row UI\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet isAddRow = row.addRowUI;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "validation": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "検証状態とエラーを取得します (存在する場合)。",
-                            "```typescript",
-                            "let validation = row.validation;",
-                            "let errors = validation.errors;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the validation status and errors, if any.\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet validation = row.validation;\nlet errors = validation.errors;\n```"
+                            }
                         ]
                     }
                 }
@@ -126,46 +177,81 @@
             "data": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let rowData = row.data;",
-                            "```"
-                        ],
-                        "shortText": "行を生成するデータ レコード。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "The data record that populates the row.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet rowData = row.data;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "inEditMode": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "行が現在編集モードかどうかを返します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns if the row is currently in edit mode."
+                            }
+                        ]
                     }
                 }
             },
             "pinned": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "行がピン固定されるかどうかを取得します。",
-                            "デフォルト値は `false` です。",
-                            "```typescript",
-                            "const isPinned = row.pinned;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets whether the row is pinned.\nデフォルト値は "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`false`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nconst isPinned = row.pinned;\n```"
+                            }
                         ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "行がピン固定されるかどうかを設定します。",
-                            "デフォルト値は `false` です。",
-                            "```typescript",
-                            "row.pinned = !row.pinned;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets whether the row is pinned.\nデフォルト値は "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`false`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nrow.pinned = !row.pinned;\n```"
+                            }
                         ]
                     }
                 }
@@ -173,49 +259,83 @@
             "expanded": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "const isExpanded = row.expanded;",
-                            "```"
-                        ],
-                        "shortText": "行の展開/縮小状態を取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the row expanded/collapsed state.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nconst isExpanded = row.expanded;\n```"
+                            }
+                        ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "row.expanded = true;",
-                            "```"
-                        ],
-                        "shortText": "行を展開/縮小します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Expands/collapses the row.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nrow.expanded = true;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "selected": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "行が選択されているかどうかを取得します。",
-                            "デフォルト値は `false` です。",
-                            "```typescript",
-                            "row.selected = true;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets whether the row is selected.\nデフォルト値は "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`false`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nrow.selected = true;\n```"
+                            }
                         ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "行が選択されているかどうかを設定します。",
-                            "デフォルト値は `false` です。",
-                            "```typescript",
-                            "row.selected = !row.selected;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets whether the row is selected.\nデフォルト値は "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`false`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nrow.selected = !row.selected;\n```"
+                            }
                         ]
                     }
                 }
@@ -223,24 +343,42 @@
             "deleted": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "行が削除状態かどうかを返します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns if the row is in delete state."
+                            }
+                        ]
                     }
                 }
             },
             "hasChildren": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "行に子行があるかどうかを返します。IgxGridRow の場合常に false を返します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns if the row has child rows. Always return false for IgxGridRow."
+                            }
+                        ]
                     }
                 }
             },
             "cells": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "行コンポーネントで描画されるセルを取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the rendered cells in the row component."
+                            }
+                        ]
                     }
                 }
             }

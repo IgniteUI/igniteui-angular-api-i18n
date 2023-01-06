@@ -3,25 +3,41 @@
         "properties": {
             "index": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 2 番目に選択された項目のインデックスを取得します。",
-                        "let selectedRowIndex = this.grid.selectedRows[1].index;",
-                        "```"
-                    ],
-                    "shortText": "行のインデックス。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The index of the row.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// get the index of the second selected row\nlet selectedRowIndex = this.grid.selectedRows[1].index;\n```"
+                        }
+                    ]
                 }
             },
             "disabled": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "この特定の行が編集および行選択の機能を無効にしたかどうかを設定します。",
-                        "デフォルト値は `false` です。",
-                        "```typescript",
-                        "this.grid.selectedRows[0].pinned = true;",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Sets whether this specific row has disabled functionality for editing and row selection.\nデフォルト値は "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`false`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "。\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\nthis.grid.selectedRows[0].pinned = true;\n```"
+                        }
                     ]
                 }
             }
@@ -29,96 +45,134 @@
         "methods": {
             "beginAddChild": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;",
-                                    "row.beginAddChild();",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```typescript\nconst row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;\nrow.beginAddChild();\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": "特定の行の子行の追加 UI を生成します。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Spawns the add child row UI for the specific row."
+                        }
+                    ]
                 }
             },
             "update": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 2 番目に選択された行の値を更新します。",
-                        "let newValue = \"Apple\";",
-                        "this.grid.selectedRows[1].update(newValue);",
-                        "```"
-                    ],
-                    "shortText": "指定した行オブジェクトおよびデータ ソース レコードを渡された値で更新します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Updates the specified row object and the data source record with the passed value.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// update the second selected row's value\nlet newValue = \"Apple\";\nthis.grid.selectedRows[1].update(newValue);\n```"
+                        }
+                    ]
                 }
             },
             "delete": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// グリッドで 3 番目に選択された行を削除します。",
-                        "this.grid.selectedRows[2].delete();",
-                        "```"
-                    ],
-                    "shortText": [
-                        "グリッドのデータソースから指定した行を削除します。",
-                        "このメソッドは `rowDeleted` イベントを発生します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Removes the specified row from the grid's data source.\nThis method emits "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`rowDeleted`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " event.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// delete the third selected row from the grid\nthis.grid.selectedRows[2].delete();\n```"
+                        }
                     ]
                 }
             },
             "pin": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// グリッドから選択した行をピン固定します。",
-                        "this.grid.selectedRows[0].pin();",
-                        "```"
-                    ],
-                    "shortText": [
-                        "指定された行をピン固定します。",
-                        "このメソッドは `rowPinning`\\`rowPinned` イベントを発生します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Pins the specified row.\nThis method emits "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`rowPinning`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "`rowPinned` event.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// pin the selected row from the grid\nthis.grid.selectedRows[0].pin();\n```"
+                        }
                     ]
                 }
             },
             "unpin": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// グリッドから選択した行をピン固定解除します。",
-                        "this.grid.selectedRows[0].unpin();",
-                        "```"
-                    ],
-                    "shortText": [
-                        "指定された行のピン固定を解除します。",
-                        "このメソッドは `rowPinning`\\`rowPinned` イベントを発生します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Unpins the specified row.\nThis method emits "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`rowPinning`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "`rowPinned` event.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// unpin the selected row from the grid\nthis.grid.selectedRows[0].unpin();\n```"
+                        }
                     ]
                 }
             },
             "beginAddRow": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```typescript",
-                                    "const row = this.grid1.getRowByIndex(1);",
-                                    "row.beginAddRow();",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```typescript\nconst row = this.grid1.getRowByIndex(1);\nrow.beginAddRow();\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": "特定の行の行追加 UI を生成します。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Spawns the add row UI for the specific row."
+                        }
+                    ]
                 }
             }
         },
@@ -126,50 +180,67 @@
             "treeRow": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "const row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;",
-                            "const treeRow = row.treeRow;",
-                            "```"
-                        ],
-                        "shortText": "行コンポーネントに渡される `ITreeGridRecord`。"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "const row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;",
-                            "const treeRow = row.treeRow;",
-                            "```"
-                        ],
-                        "shortText": "行コンポーネントに渡される `ITreeGridRecord`。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "The "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`ITreeGridRecord`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": " passed to the row component.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nconst row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;\nconst treeRow = row.treeRow;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "pinned": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "行がピン固定されるかどうかを取得します。",
-                            "```typescript",
-                            "let isPinned = row.pinned;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets whether the row is pinned.\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet isPinned = row.pinned;\n```"
+                            }
                         ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "行がピン固定されるかどうかを設定します。",
-                            "デフォルト値は `false` です。",
-                            "```typescript",
-                            "this.grid.selectedRows[0].pinned = true;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets whether the row is pinned.\nデフォルト値は "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`false`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nthis.grid.selectedRows[0].pinned = true;\n```"
+                            }
                         ]
                     }
                 }
@@ -177,83 +248,87 @@
             "expanded": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "const row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;",
-                            "const expanded = row.expanded;",
-                            "```"
-                        ],
-                        "shortText": "行が展開されるかどうかを指定する値を返します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns a value indicating whether the row component is expanded.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nconst row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;\nconst expanded = row.expanded;\n```"
+                            }
+                        ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "const row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;",
-                            "row.expanded = true;",
-                            "```"
-                        ],
-                        "shortText": "行コンポーネントが展開されたどうかを示す値を設定します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets a value indicating whether the row component is expanded.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nconst row = this.grid.getRowByKey(1) as IgxTreeGridRowComponent;\nrow.expanded = true;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "data": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "// 1 番目に選択された行のデータを取得します。",
-                            "let selectedRowData = this.grid.selectedRows[0].data;",
-                            "```"
-                        ],
-                        "shortText": " 行コンポーネントに渡されるデータ。"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "// 1 番目に選択された行のデータを取得します。",
-                            "let selectedRowData = this.grid.selectedRows[0].data;",
-                            "```"
-                        ],
-                        "shortText": " 行コンポーネントに渡されるデータ。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "The data passed to the row component.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n// get the row data for the first selected row\nlet selectedRowData = this.grid.selectedRows[0].data;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "cells": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "// 3 番目に選択された行のセルを取得します。",
-                            "let selectedRowCells = this.grid.selectedRows[2].cells;",
-                            "```"
-                        ],
-                        "shortText": "行コンポーネントで描画されるセルを取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the rendered cells in the row component.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n// get the cells of the third selected row\nlet selectedRowCells = this.grid.selectedRows[2].cells;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "key": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let rowID = this.grid.selectedRows[2].key;",
-                            "```"
-                        ],
-                        "shortText": [
-                            "行の ID を取得します。",
-                            "グリッドの行は、次のいずれかの方法で識別されます::",
-                            "- primaryKey の値,",
-                            "- primaryKey が省略された場合、data 全体。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the ID of the row.\nA row in the grid is identified either by:\n- primaryKey data value,\n- the whole data, if the primaryKey is omitted.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet rowID = this.grid.selectedRows[2].key;\n```"
+                            }
                         ]
                     }
                 }
@@ -261,14 +336,18 @@
             "nativeElement": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "// 選択された 2 番目の nativeElement を取得します。",
-                            "let selectedRowNativeElement = this.grid.selectedRows[1].nativeElement;",
-                            "```"
-                        ],
-                        "shortText": "行を表すネイティブ DOM 要素。特定の環境で null 値か可能です。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "The native DOM element representing the row. Could be null in certain environments.\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n// get the nativeElement of the second selected row\nlet selectedRowNativeElement = this.grid.selectedRows[1].nativeElement;\n```"
+                            }
+                        ]
                     }
                 }
             }

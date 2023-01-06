@@ -1,230 +1,321 @@
 {
     "IgxDropDownComponent": {
         "comment": {
-            "tags": {},
-            "text": [
-                "Ignite UI for Angular Drop Down は、単一項目の選択が可能なグループ項目をスクロール付きのリストで表示します。",
-                "項目をクリックまたはタップして選択するとドロップダウンが閉じられます。",
-                "例:",
-                "```html",
-                "<igx-drop-down>",
-                "  <igx-drop-down-item *ngFor=\"let item of items\" disabled={{item.disabled}} isHeader={{item.header}}>",
-                "    {{ item.value }}",
-                "  </igx-drop-down-item>",
-                "</igx-drop-down>",
-                "```"
-            ],
-            "shortText": [
-                "**Ignite UI for Angular DropDown** -",
-                "[ヘルプ](https://jp.infragistics.com/products/ignite-ui-angular/angular/components/drop-down)"
+            "blockTags": [],
+            "modifierTags": {},
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "**Ignite UI for Angular DropDown** -\n[Documentation](https://www.infragistics.com/products/ignite-ui-angular/angular/components/drop-down)\n\nThe Ignite UI for Angular Drop Down displays a scrollable list of items which may be visually grouped and\nsupports selection of a single item. Clicking or tapping an item selects it and closes the Drop Down\n\nExample:\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "```html\n<igx-drop-down>\n  <igx-drop-down-item *ngFor=\"let item of items\" disabled={{item.disabled}} isHeader={{item.header}}>\n    {{ item.value }}\n  </igx-drop-down-item>\n</igx-drop-down>\n```"
+                }
             ]
         },
         "properties": {
             "opening": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (opening)='handleOpening($event)'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが開かれる前に発生されます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted before the dropdown is opened\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-drop-down (opening)='handleOpening($event)'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             },
             "opened": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (opened)='handleOpened($event)'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが開かれた後に発生されます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted after the dropdown is opened\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-drop-down (opened)='handleOpened($event)'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             },
             "closing": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (closing)='handleClosing($event)'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが閉じられる前に発生されます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted before the dropdown is closed\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-drop-down (closing)='handleClosing($event)'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             },
             "closed": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (closed)='handleClosed($event)'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンが閉じられた後に発生されます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted after the dropdown is closed\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-drop-down (closed)='handleClosed($event)'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             },
             "allowItemsFocus": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "注: IgxDropDownItemNavigation ディレクティブの使用時はフォーカスの移動に注意してください。キーボード イベントを処理するためにディレクティブを各フォーカス可能な項目に配置または共有の先祖に配置します。",
-                        "```typescript",
-                        "// 取得",
-                        "let dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;",
-                        "```",
-                        "```html",
-                       "<!--設定-->",
-                        "<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": [
-                        "項目がフォーカスを取得するかどうかを取得または設定します。デフォルトで無効です。",
-                        "有効な場合、ドロップダウン項目にタブ インデックスが指定され、アクティブな場合にフォーカスされます。これには、ドロップダウンを開き、キーボード ナビゲーションを使用して移動すると選択した項目のアクティブ化が含まれます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/sets whether items take focus. Disabled by default.\nWhen enabled, drop down items gain tab index and are focused when active -\nthis includes activating the selected item when opening the drop down and moving with keyboard navigation.\n\nNote: Keep that focus shift in mind when using the igxDropDownItemNavigation directive\nand ensure it's placed either on each focusable item or a common ancestor to allow it to handle keyboard events.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// get\nlet dropDownAllowsItemFocus = this.dropdown.allowItemsFocus;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<!--set-->\n<igx-drop-down [allowItemsFocus]='true'></igx-drop-down>\n```"
+                        }
                     ]
                 }
             },
             "labelledBy": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "aria-labelledby 属性を設定する @Input プロパティ。",
-                        "```html",
-                        "<igx-drop-down [labelledby]=\"labelId\"></igx-drop-down>",
-                        "```"
+                    "blockTags": [
+                        {
+                            "tag": "@Input",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "property that set aria-labelledby attribute\n"
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<igx-drop-down [labelledby]=\"labelId\"></igx-drop-down>\n```"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "\n"
+                        }
                     ]
                 }
             },
             "selectionChanging": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```html",
-                        "<igx-drop-down (selectionChanging)='handleSelection()'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "選択を完了する前にアイテム選択が変更されるときに発生されます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted when item selection is changing, before the selection completes\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-drop-down (selectionChanging)='handleSelection()'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             },
             "width": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myDropDownCurrentWidth = this.dropdown.width;",
-                        "```",
-                        "```html",
-                       "<!--設定-->",
-                        "<igx-drop-down [width]='160px'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンの幅を取得または設定します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/Sets the width of the drop down\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// get\nlet myDropDownCurrentWidth = this.dropdown.width;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<!--set-->\n<igx-drop-down [width]='160px'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             },
             "height": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let myDropDownCurrentHeight = this.dropdown.height;",
-                        "```",
-                        "```html",
-                       "<!--設定-->",
-                        "<igx-drop-down [height]='400px'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンの高さを取得または設定します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/Sets the height of the drop down\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// get\nlet myDropDownCurrentHeight = this.dropdown.height;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<!--set-->\n<igx-drop-down [height]='400px'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             },
             "maxHeight": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "// 取得",
-                        "let maxHeight = this.dropdown.maxHeight;",
-                        "```",
-                        "```html",
-                       "<!--設定-->",
-                        "<igx-drop-down [maxHeight]='200px'></igx-drop-down>",
-                        "```"
-                    ],
-                    "shortText": "ドロップ ダウンのコンテナーの最大の高さを取得または設定します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/Sets the drop down's container max height.\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n// get\nlet maxHeight = this.dropdown.maxHeight;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<!--set-->\n<igx-drop-down [maxHeight]='200px'></igx-drop-down>\n```"
+                        }
+                    ]
                 }
             }
         },
         "methods": {
             "open": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "this.dropdown.open();",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンを開きます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Opens the dropdown\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\nthis.dropdown.open();\n```"
+                        }
+                    ]
                 }
             },
             "close": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "this.dropdown.close();",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンを閉じます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Closes the dropdown\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\nthis.dropdown.close();\n```"
+                        }
+                    ]
                 }
             },
             "toggle": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "```typescript",
-                        "this.dropdown.toggle();",
-                        "```"
-                    ],
-                    "shortText": "ドロップダウンを切り替えます。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Toggles the dropdown\n\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\nthis.dropdown.toggle();\n```"
+                        }
+                    ]
                 }
             },
             "setSelectedItem": {
                 "comment": {
-                    "parameters": {
-                        "index": {
-                            "comment": {
-                                "shortText": "選択する項目。ドロップダウンで *igxFor* が使用されている場合は、データのインデックスを渡します。"
-                            }
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Select an item by index"
                         }
-                    },
-                    "tags": {},
-                    "shortText": "項目をインデックスで選択します。"
+                    ]
                 }
             },
             "navigateItem": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "指定されたインデックスにある項目へ移動。",
-                        "ドロップダウンのデータが仮想化されている場合は、仮想化されたデータ内のアイテムのインデックスを渡します。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Navigates to the item on the specified index\nIf the data in the drop-down is virtualized, pass the index of the item in the virtualized data."
+                        }
                     ]
                 }
             },
             "onItemActionKey": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "Keydown ハンドラー"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Keydown Handler"
+                        }
+                    ]
                 }
             },
             "clearSelection": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "ドロップダウンの選択をクリアします。",
-                        "```typescript",
-                        "this.dropdown.clearSelection();",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Clears the selection of the dropdown\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\nthis.dropdown.clearSelection();\n```"
+                        }
                     ]
                 }
             }
@@ -233,94 +324,166 @@
             "listId": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText":"ドロップダウンの内部リスト ボックスの Id。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Id of the internal listbox of the drop down"
+                            }
+                        ]
                     }
                 }
             },
             "selectedItem": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let currentItem = this.dropdown.selectedItem;",
-                            "```"
-                        ],
-                        "shortText": "現在選択している項目を取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Get currently selected item\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet currentItem = this.dropdown.selectedItem;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "collapsed": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let isCollapsed = this.dropdown.collapsed;",
-                            "```"
-                        ],
-                        "shortText": "ドロップダウンが閉じたかどうかを取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets if the dropdown is collapsed\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet isCollapsed = this.dropdown.collapsed;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "items": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let myDropDownItems = this.dropdown.items;",
-                            "```"
-                        ],
-                        "shortText": "すべてのヘッダー以外の項目を取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Get all non-header items\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet myDropDownItems = this.dropdown.items;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "headers": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let myDropDownHeaderItems = this.dropdown.headers;",
-                            "```"
-                        ],
-                        "shortText": "すべてのヘッダー項目を取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Get all header items\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet myDropDownHeaderItems = this.dropdown.headers;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "element": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "text": [
-                            "```typescript",
-                            "let myDropDownElement = this.dropdown.element;",
-                            "```"
-                        ],
-                        "shortText": "ドロップダウンの HTML 要素を取得します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Get dropdown html element\n\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet myDropDownElement = this.dropdown.element;\n```"
+                            }
+                        ]
                     }
                 }
             },
             "displayDensity": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText":[
-                            "コンポーネントのテーマを返します。",
-                            "デフォルト テーマは `comfortable` です。",
-                            "利用可能なオプションは `comfortable`、`cosy`、および `compact` です。",
-                            "```typescript",
-                            "let componentTheme = this.component.displayDensity;",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "コンポーネントのテーマを返します。\nデフォルト テーマは "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`comfortable`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "。\n利用可能なオプションは "
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`comfortable`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "、"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`cosy`"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "、"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "`compact` です"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\nlet componentTheme = this.component.displayDensity;\n```"
+                            }
                         ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
-                        "shortText":"コンポーネントのテーマを設定します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "コンポーネントのテーマを設定します。"
+                            }
+                        ]
                     }
                 }
             }

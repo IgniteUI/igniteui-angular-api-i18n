@@ -4,60 +4,85 @@
         "methods": {
             "count": {
                 "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxSummaryOperand",
-                                "tagName": "次のメンバー:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@次のメンバー",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "IgxSummaryOperand"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": [
-                        "データ ソース内のレコードをカウントします。",
-                        "フィルタリングが適用される場合、フィルター済みのレコードのみをカウントします。",
-                        "```typescript",
-                        "IgxSummaryOperand.count(dataSource);",
-                        "```"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Counts all the records in the data source.\nIf filtering is applied, counts only the filtered records.\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\nIgxSummaryOperand.count(dataSource);\n```"
+                        }
                     ]
                 }
             },
             "operate": {
                 "comment": {
-                    "tags": {
-                        "memberof": {
-                            "comment": {
-                                "text": "IgxSummaryOperand",
-                                "tagName": "次のメンバー:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@次のメンバー",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "IgxSummaryOperand"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": [
-                        "静的 `count` メソッドを実行して `IgxSummaryResult[]` を返します。",
-                        "```typescript",
-                        "interface IgxSummaryResult {",
-                        "  key: string;",
-                        "  label: string;",
-                        "  summaryResult: any;",
-                        "}",
-                        "```",
-                        "`summary` をカスタマイズするために継承クラスでオーバーライドできます。",
-                        "```typescript",
-                        "class CustomSummary extends IgxSummaryOperand {",
-                        "  constructor() {",
-                        "    super();",
-                        "  }",
-                        "  public operate(data: any[], allData: any[], fieldName: string): IgxSummaryResult[] {",
-                        "    const result = [];",
-                        "    result.push({",
-                        "      key: \"test\",",
-                        "      label: \"Test\",",
-                        "      summaryResult: IgxSummaryOperand.count(data)",
-                        "    });",
-                        "    return result;",
-                        "  }",
-                        "}",
-                        "this.grid.getColumnByName('ColumnName').summaries = CustomSummary;",
-                        "```"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Executes the static "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`count`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " method and returns "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`IgxSummaryResult[]`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "。\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\ninterface IgxSummaryResult {\n  key: string;\n  label: string;\n  summaryResult: any;\n}\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nCan be overridden in the inherited classes to provide customization for the "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`summary`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "。\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\nclass CustomSummary extends IgxSummaryOperand {\n  constructor() {\n    super();\n  }\n  public operate(data: any[], allData: any[], fieldName: string): IgxSummaryResult[] {\n    const result = [];\n    result.push({\n      key: \"test\",\n      label: \"Test\",\n      summaryResult: IgxSummaryOperand.count(data)\n    });\n    return result;\n  }\n}\nthis.grid.getColumnByName('ColumnName').summaries = CustomSummary;\n```"
+                        }
                     ]
                 }
             }

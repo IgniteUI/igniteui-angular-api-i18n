@@ -23,7 +23,16 @@
                 "<p>Returns the pixels value converted to em.</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: em(10px) em(5px);",
+                    "}"
+                ]
+            }
+        ]
     },
     "rem": {
         "description": [
@@ -49,7 +58,16 @@
                 "<p>Returns the pixels value converted to rem.</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: rem(10px) rem(5px);",
+                    "}"
+                ]
+            }
+        ]
     },
     "px": {
         "description": [
@@ -75,7 +93,16 @@
                 "<p>Returns the relative value converted to pixels.</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: px(3.23rem);",
+                    "}"
+                ]
+            }
+        ]
     },
     "type-style": {
         "description": [
@@ -143,7 +170,25 @@
                 "<p>A map of all defined type style properties.</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "$main_navigation: type-style(",
+                    "   $font-size: rem(14px),",
+                    "   $font-weight: 600,",
+                    "   $letter-spacing: rem(.1px),",
+                    "   $line-height: rem(14px),",
+                    "   $text-transform: none,",
+                    ");",
+                    "",
+                    "// Use the type-style() mixin to consume the new type style produced from the type-style() function.",
+                    ".main-nav {",
+                    "  @include type-style($main_navigation);",
+                    "}"
+                ]
+            }
+        ]
     },
     "type-scale": {
         "description": [
@@ -241,7 +286,24 @@
                 "<p>A map of all defined type scales.</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "// First define type styles to use",
+                    "$my-body-1: type-style(",
+                    "   $font-size: rem(14px),",
+                    ");",
+                    "",
+                    "// Use the type style map to override one of the existing maps",
+                    "$type-scale: type-scale(",
+                    "  ...",
+                    "  $body-1: $my-body-1,",
+                    "  ...",
+                    ");"
+                ]
+            }
+        ]
     },
     "type-scale-category": {
         "description": [

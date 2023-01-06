@@ -1,238 +1,394 @@
 {
     "IgxDateTimeEditorDirective": {
         "comment": {
-            "tags": {
-                "igxmodule": {
-                    "comment": {
-                        "text": "IgxDateTimeEditorModule",
-                        "tagName": "igxmodule"
-                    }
+            "blockTags": [
+                {
+                    "tag": "@igxModule",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "IgxDateTimeEditorModule"
+                        }
+                    ]
                 },
-                "igxparent": {
-                    "comment": {
-                        "text": "IgxInputGroup",
-                        "tagName": "igxparent"
-                    }
+                {
+                    "tag": "@igxParent",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "IgxInputGroup"
+                        }
+                    ]
                 },
-                "igxtheme": {
-                    "comment": {
-                        "text": "igx-input-theme",
-                        "tagName": "igxtheme"
-                    }
+                {
+                    "tag": "@igxTheme",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "igx-input-theme"
+                        }
+                    ]
                 },
-                "igxkeywords": {
-                    "comment": {
-                        "text": "date, time, editor",
-                        "tagName": "igxkeywords"
-                    }
+                {
+                    "tag": "@igxKeywords",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "date, time, editor"
+                        }
+                    ]
                 },
-                "igxgroup": {
-                    "comment": {
-                        "text": "Scheduling",
-                        "tagName": "igxgroup"
-                    }
+                {
+                    "tag": "@igxGroup",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "Scheduling"
+                        }
+                    ]
                 },
-                "remarks": {
-                    "comment": {
-                        "text": [
-                            "Ignite UI Date Time Editor ディレクティブにより、開発者は日付/時刻のユーザー入力を簡単に操作できます。",
-                            "プレースホルダーとして input 要素に表示される、指定またはデフォルトの入力形式での入力が必要です。",
-                            "必要に応じて、日付のみ (例: 'dd/MM/yyyy')、時刻のみ (例: 'HH:mm tt')、または両方を同時に入力できます。",
-                            "入力形式と異なる表示形式をサポートします。",
-                            "特定または対象の `DatePart` を増分および減分するメソッドを提供します。"
-                        ],
-                        "tagName": "備考:"
-                    }
+                {
+                    "tag": "@備考",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "The Ignite UI Date Time Editor Directive makes it easy for developers to manipulate date/time user input.\nIt requires input in a specified or default input format which is visible in the input element as a placeholder.\nIt allows the input of only date (ex: 'dd/MM/yyyy'), only time (ex:'HH:mm tt') or both at once, if needed.\nSupports display format that may differ from the input format.\nProvides methods to increment and decrement any specific/targeted "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`DatePart`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "。"
+                        }
+                    ]
                 },
-                "example": {
-                    "comment": {
-                        "text": [
-                            "```html",
-                            "<igx-input-group>",
-                            "  <input type=\"text\" igxInput [igxDateTimeEditor]=\"'dd/MM/yyyy'\" [displayFormat]=\"'shortDate'\" [(ngModel)]=\"date\"/>",
-                            "</igx-input-group>",
-                            "```"
-                        ],
-                        "tagName": "例:"
-                    }
+                {
+                    "tag": "@例",
+                    "content": [
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-input-group>\n  <input type=\"text\" igxInput [igxDateTimeEditor]=\"'dd/MM/yyyy'\" [displayFormat]=\"'shortDate'\" [(ngModel)]=\"date\"/>\n</igx-input-group>\n```"
+                        }
+                    ]
                 }
-            },
-            "shortText": "Date Time Editor は、日付と時刻を入力、編集、および書式設定する機能を提供します。"
+            ],
+            "modifierTags": {},
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "Date Time Editor provides a functionality to input, edit and format date and time."
+                }
+            ]
         },
         "properties": {
             "locale": {
                 "comment": {
-                    "tags": {
-                        "remarks": {
-                            "comment": {
-                                "text": [
-                                    "デフォルトでは、Angular の `LOCALE_ID` を使用します。入力マスクと表示形式が設定されていない場合、両方に影響します。",
-                                    "`locale` が設定されている場合は、`registerLocaleData` を介して登録する必要があります。",
-                                    "https://angular.io/guide/i18n#i18n-pipes を参照してください。",
-                                    "登録されていない場合、フォーマットには `Intl` が使用されます。"
-                                ],
-                                "tagName": "備考:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@備考",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "Uses Angular's "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`LOCALE_ID`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " by default. Affects both input mask and display format if those are not set.\nIf a "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`locale`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " is set, it must be registered via "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`registerLocaleData`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": ".\nPlease refer to https://angular.io/guide/i18n#i18n-pipes.\nIf it is not registered, "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`Intl`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " will be used for formatting."
+                                }
+                            ]
                         },
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<input igxDateTimeEditor [locale]=\"'en'\">",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<input igxDateTimeEditor [locale]=\"'en'\">\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": "値の書式に使用されるロケール設定。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Locale settings used for value formatting."
+                        }
+                    ]
                 }
             },
             "spinLoop": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<input igxDateTimeEditor [spinLoop]=\"false\">",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<input igxDateTimeEditor [spinLoop]=\"false\">\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": "現在スピンされている日付セグメントをループするかどうかを指定します。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Specify if the currently spun date segment should loop over."
+                        }
+                    ]
                 }
             },
             "displayFormat": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<input igxDateTimeEditor [displayFormat]=\"'shortDate'\">",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<input igxDateTimeEditor [displayFormat]=\"'shortDate'\">\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": [
-                        "`shortDate` や `longDate` など定義済みの書式オプションと、",
-                        "`DatePipe` でサポートされている文字を使用して作成された書式文字列の両方を設定します (`EE/MM/yyyy` など)。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Set both pre-defined format options such as "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`shortDate`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " and "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`longDate`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ",\nas well as constructed format string using characters supported by "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`DatePipe`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", e.g. "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`EE/MM/yyyy`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "。"
+                        }
                     ]
                 }
             },
             "spinDelta": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<input igxDateTimeEditor [spinDelta]=\"{date: 5, minute: 30}\">",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<input igxDateTimeEditor [spinDelta]=\"{date: 5, minute: 30}\">\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": [
-                        "スピン アクションで各エディターの日付部分を増分または減分するために使用されるデルタ値。",
-                        "すべての値はデフォルトで `1` です。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Delta values used to increment or decrement each editor date part on spin actions.\nAll values default to "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`1`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "。"
+                        }
                     ]
                 }
             },
             "valueChange": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<input igxDateTimeEditor (valueChange)=\"valueChange($event)\"/>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<input igxDateTimeEditor (valueChange)=\"valueChange($event)\"/>\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": "エディターの値が変更されたときに発生します。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted when the editor's value has changed."
+                        }
+                    ]
                 }
             },
             "validationFailed": {
                 "comment": {
-                    "tags": {
-                        "example": {
-                            "comment": {
-                                "text": [
-                                    "```html",
-                                    "<input igxDateTimeEditor [minValue]=\"minDate\" [maxValue]=\"maxDate\" (validationFailed)=\"onValidationFailed($event)\"/>",
-                                    "```"
-                                ],
-                                "tagName": "例:"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<input igxDateTimeEditor [minValue]=\"minDate\" [maxValue]=\"maxDate\" (validationFailed)=\"onValidationFailed($event)\"/>\n```"
+                                }
+                            ]
                         }
-                    },
-                    "shortText": "エディターが指定された範囲内にない場合、またはエディターの値が無効な状態の場合に生成されます。"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted when the editor is not within a specified range or when the editor's value is in an invalid state."
+                        }
+                    ]
                 }
             },
             "promptChar": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "入力マスクで入力可能な文字を表すキャラクターを設定します。",
-                        "デフォルト値は \"'_'\" です。",
-                        "```html",
-                        "<input [promptChar] = \"'/'\">",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Sets the character representing a fillable spot in the input mask.\nDefault value is \"'_'\".\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<input [promptChar] = \"'/'\">\n```"
+                        }
                     ]
                 }
             },
             "includeLiterals": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "バインドされた値が書式設定記号を含むかどうかを指定します。",
-                        "```html",
-                        "<input [includeLiterals] = \"true\">",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Specifies if the bound value includes the formatting symbols.\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<input [includeLiterals] = \"true\">\n```"
+                        }
                     ]
                 }
             },
             "displayValuePipe": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "ぼかしに使用される pipe を指定します。",
-                        "```html",
-                        "<input [displayValuePipe] = \"displayFormatPipe\">",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Specifies a pipe to be used on blur.\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<input [displayValuePipe] = \"displayFormatPipe\">\n```"
+                        }
                     ]
                 }
             },
             "focusedValuePipe": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "フォーカスに使用される pipe を指定します。",
-                        "```html",
-                        "<input [focusedValuePipe] = \"inputFormatPipe\">",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Specifies a pipe to be used on focus.\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<input [focusedValuePipe] = \"inputFormatPipe\">\n```"
+                        }
                     ]
                 }
             },
             "valueChanged": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "値が変更されたときにイベントを発生します。",
-                        "イベント引数として `rawValue: string` および `formattedValue: string` を提供します。",
-                        "```html",
-                        "<input (valueChanged) = \"valueChanged(rawValue: string, formattedValue: string)\">",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emits an event each time the value changes.\nProvides "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`rawValue: string`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " and "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`formattedValue: string`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " as event arguments.\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<input (valueChanged) = \"valueChanged(rawValue: string, formattedValue: string)\">\n```"
+                        }
                     ]
                 }
             }
@@ -240,44 +396,38 @@
         "methods": {
             "clear": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "Input 要素の値をクリアします。"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Clear the input element value."
+                        }
+                    ]
                 }
             },
             "increment": {
                 "comment": {
-                    "parameters": {
-                        "datePart": {
-                            "comment": {
-                                "shortText": "増分するオプションの DatePart。デフォルトは Date または Hours です (inputFormat に Date がない場合 - 例：'HH:mm')。" 
-                            }
-                        },
-                        "delta": {
-                            "comment": {
-                                "shortText": "増分するデルタ (オプション)。`spinDelta` をオーバーライドします。"
-                            }
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Increment specified DatePart."
                         }
-                    },
-                    "tags": {},
-                    "shortText": "指定された DatePart を増分します。"
+                    ]
                 }
             },
             "decrement": {
                 "comment": {
-                    "parameters": {
-                        "datePart": {
-                            "comment": {
-                                "shortText": "減少するオプションの DatePart。デフォルトは Date または Hours です (inputFormat に Date がない場合 - 例：'HH:mm')。"
-                            }
-                        },
-                        "delta": {
-                            "comment": {
-                                "shortText": "デクリメントに使用するオプションのデルタ。`spinDelta` をオーバーライドします。"
-                            }
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Decrement specified DatePart."
                         }
-                    },
-                    "tags": {},
-                    "shortText": "指定された DatePart を減少します。"
+                    ]
                 }
             }
         },
@@ -285,191 +435,147 @@
             "minValue": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "`string` 値が渡される場合、それは定義された入力形式である必要があります。",
-                                    "tagName": "備考:"
-                                }
+                        "blockTags": [
+                            {
+                                "tag": "@備考",
+                                "content": [
+                                    {
+                                        "kind": "text",
+                                        "text": "If a "
+                                    },
+                                    {
+                                        "kind": "code",
+                                        "text": "`string`"
+                                    },
+                                    {
+                                        "kind": "text",
+                                        "text": " value is passed, it must be in the defined input format."
+                                    }
+                                ]
                             },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input igxDateTimeEditor [minValue]=\"minDate\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
+                            {
+                                "tag": "@例",
+                                "content": [
+                                    {
+                                        "kind": "code",
+                                        "text": "```html\n<input igxDateTimeEditor [minValue]=\"minDate\">\n```"
+                                    }
+                                ]
                             }
-                        },
-                        "shortText": "エディターが有効であるために必要な最小値。"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "`string` 値が渡される場合、それは定義された入力形式である必要があります。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input igxDateTimeEditor [minValue]=\"minDate\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
+                        ],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Minimum value required for the editor to remain valid."
                             }
-                        },
-                        "shortText": "エディターが有効であるために必要な最小値。"
+                        ]
                     }
                 }
             },
             "maxValue": {
                 "getter": {
                     "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "`string` 値が渡される場合、それは定義された入力形式である必要があります。",
-                                    "tagName": "備考:"
-                                }
+                        "blockTags": [
+                            {
+                                "tag": "@備考",
+                                "content": [
+                                    {
+                                        "kind": "text",
+                                        "text": "If a "
+                                    },
+                                    {
+                                        "kind": "code",
+                                        "text": "`string`"
+                                    },
+                                    {
+                                        "kind": "text",
+                                        "text": " value is passed in, it must be in the defined input format."
+                                    }
+                                ]
                             },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input igxDateTimeEditor [maxValue]=\"maxDate\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
+                            {
+                                "tag": "@例",
+                                "content": [
+                                    {
+                                        "kind": "code",
+                                        "text": "```html\n<input igxDateTimeEditor [maxValue]=\"maxDate\">\n```"
+                                    }
+                                ]
                             }
-                        },
-                        "shortText": "エディターが有効であるために必要な最大値。"
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {
-                            "remarks": {
-                                "comment": {
-                                    "text": "`string` 値が渡される場合、それは定義された入力形式である必要があります。",
-                                    "tagName": "備考:"
-                                }
-                            },
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input igxDateTimeEditor [maxValue]=\"maxDate\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
+                        ],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Maximum value required for the editor to remain valid."
                             }
-                        },
-                        "shortText": "エディターが有効であるために必要な最大値。"
+                        ]
                     }
                 }
             },
             "inputFormat": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input [igxDateTimeEditor]=\"'dd/MM/yyyy'\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "予期されるユーザー入力形式 (およびプレースホルダー)。"
-                    }
-                },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input [igxDateTimeEditor]=\"'dd/MM/yyyy'\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
+                        "blockTags": [
+                            {
+                                "tag": "@例",
+                                "content": [
+                                    {
+                                        "kind": "code",
+                                        "text": "```html\n<input [igxDateTimeEditor]=\"'dd/MM/yyyy'\">\n```"
+                                    }
+                                ]
                             }
-                        },
-                        "shortText": "予期されるユーザー入力形式 (およびプレースホルダー)。"
+                        ],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Expected user input format (and placeholder)."
+                            }
+                        ]
                     }
                 }
             },
             "value": {
-                "getter": {
-                    "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input igxDateTimeEditor [value]=\"date\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
-                            }
-                        },
-                        "shortText": "エディターの値。"
-                    }
-                },
                 "setter": {
                     "comment": {
-                        "tags": {
-                            "example": {
-                                "comment": {
-                                    "text": [
-                                        "```html",
-                                        "<input igxDateTimeEditor [value]=\"date\">",
-                                        "```"
-                                    ],
-                                    "tagName": "例:"
-                                }
+                        "blockTags": [
+                            {
+                                "tag": "@例",
+                                "content": [
+                                    {
+                                        "kind": "code",
+                                        "text": "```html\n<input igxDateTimeEditor [value]=\"date\">\n```"
+                                    }
+                                ]
                             }
-                        },
-                        "shortText": "エディターの値。"
+                        ],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Editor value."
+                            }
+                        ]
                     }
                 }
             },
             "mask": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "入力マスクを設定します。",
-                            "```html",
-                            "<input [igxMask] = \"'00/00/0000'\">",
-                            "```"
-                        ]
-                    }
-                },
-                "setter": {
-                    "comment": {
-                        "tags": {},
-                        "shortText": [
-                            "入力マスクを設定します。",
-                            "```html",
-                            "<input [igxMask] = \"'00/00/0000'\">",
-                            "```"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets the input mask.\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<input [igxMask] = \"'00/00/0000'\">\n```"
+                            }
                         ]
                     }
                 }

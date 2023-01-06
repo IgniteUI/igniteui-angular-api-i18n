@@ -1,18 +1,4 @@
 ﻿{
-    "bem-block": {
-        "description": [
-            "<p>Class-selector になります。この mixin の目的は BEM ブロックの開始を表すことです。</p>",
-            ""
-        ],
-        "parameters": {
-            "block": {
-                "description": [
-                    "<p>ブロックの名前。</p>",
-                    ""
-                ]
-            }
-        }
-    },
     "bem-elem": {
         "description": [
             "<p>コンテキストに基づいて BEM 要素セレクターになります。",
@@ -40,7 +26,20 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-elem(element) {",
+                    "     background: blue;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block__element { background: blue; }"
+                ]
+            }
+        ]
     },
     "bem-mod": {
         "description": [
@@ -56,7 +55,20 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-mod(modifier) {",
+                    "     background: red;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block--modifier { background: red; }"
+                ]
+            }
+        ]
     },
     "bem-mods": {
         "description": [
@@ -71,6 +83,22 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-mods(error, warn) {",
+                    "     position: absolute;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block--error,",
+                    ".block--warn {",
+                    "    position: absolute;",
+                    " }"
+                ]
+            }
+        ]
     }
 }

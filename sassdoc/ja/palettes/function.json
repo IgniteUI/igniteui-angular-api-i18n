@@ -65,7 +65,15 @@
                 "<p>渡された基本色 (primary、secondary、gray など) の色合いで構成されるマップ。</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "// $primary, $secondary, $surface are required parameters.",
+                    "$my-palette: palette($primary: #09f,$secondary #222, $surface: #fff);"
+                ]
+            }
+        ]
     },
     "shades": {
         "description": [
@@ -103,7 +111,14 @@
                 "<p>hsla 色合いとそれぞれのコントラスト カラーで構成されるマップ。</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "$special-color-shades: shades('accent', #09f, (50,100,200,300,400,500,600,700,800,900))"
+                ]
+            }
+        ]
     },
     "color": {
         "description": [
@@ -141,11 +156,25 @@
                 "<p>パレットからの生の色合いまたは CSS 変数参照。</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "// No palette",
+                    ".my-component-1 {",
+                    "   background: color($color: 'primary', $variant: 200);",
+                    " }",
+                    " // Using certain palette and adding .5% opacity to the color variant",
+                    ".my-component-2 {",
+                    "   background: color($my-palette, 'primary', 200, .5);",
+                    " }"
+                ]
+            }
+        ]
     },
     "contrast-color": {
         "description": [
-            "<p>カラー レットから指定の色のためコントラスト テキスト色を取得します。</p>",
+            "<p>カラー レットから指定のカラー バリアントのためコントラスト テキスト色を取得します。</p>",
             ""
         ],
         "parameters": {
@@ -173,7 +202,21 @@
                 "<p>パレットからの生のコントラスト色合いまたは CSS 変数。</p>",
                 ""
             ]
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>without passing a palette</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component {",
+                    "   background: color($color: 'primary', $variant: 200);",
+                    "   color: contrast-color($color: 'primary', $variant: 200);",
+                    " }"
+                ]
+            }
+        ]
     },
     "chart-brushes": {
         "description": [

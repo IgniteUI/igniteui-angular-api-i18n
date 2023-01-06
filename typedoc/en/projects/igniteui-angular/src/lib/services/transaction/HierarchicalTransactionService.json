@@ -3,213 +3,245 @@
         "properties": {
             "enabled": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "Returns whether transaction is enabled for this service"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns whether transaction is enabled for this service"
+                        }
+                    ]
                 }
             },
             "cloneStrategy": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "Gets/Sets the data clone strategy used to clone data"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/Sets the data clone strategy used to clone data"
+                        }
+                    ]
                 }
             },
             "onStateUpdate": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                        }
+                    ]
                 }
             },
             "canUndo": {
                 "comment": {
-                    "tags": {
-                        "returns": {
-                            "comment": {
-                                "text": "if there are any transactions in the Undo stack",
-                                "tagName": "returns"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "if there are any transactions in the Undo stack"
+                                }
+                            ]
                         }
-                    }
+                    ],
+                    "modifierTags": {},
+                    "summary": []
                 }
             },
             "canRedo": {
                 "comment": {
-                    "tags": {
-                        "returns": {
-                            "comment": {
-                                "text": "if there are any transactions in the Redo stack",
-                                "tagName": "returns"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "if there are any transactions in the Redo stack"
+                                }
+                            ]
                         }
-                    }
+                    ],
+                    "modifierTags": {},
+                    "summary": []
                 }
             }
         },
         "methods": {
             "commit": {
                 "comment": {
-                    "parameters": {
-                        "data": {
-                            "comment": {
-                                "shortText": "Data source to update"
-                            }
-                        },
-                        "primaryKey": {
-                            "comment": {
-                                "shortText": "Primary key of the hierarchical data"
-                            }
-                        },
-                        "childDataKey": {
-                            "comment": {
-                                "shortText": "Key of child data collection"
-                            }
-                        },
-                        "id": {
-                            "comment": {
-                                "shortText": "Optional record id to commit transactions for"
-                            }
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Applies all transactions over the provided data"
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Applies all transactions over the provided data"
+                    ]
                 }
             },
             "add": {
                 "comment": {
-                    "parameters": {
-                        "transaction": {
-                            "comment": {
-                                "shortText": "Transaction to be added"
-                            }
-                        },
-                        "recordRef": {
-                            "comment": {
-                                "shortText": "Reference to the value of the record in the data source related to the changed item"
-                            }
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Adds provided  transaction with recordRef if any"
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Adds provided  transaction with recordRef if any"
+                    ]
                 }
             },
             "getTransactionLog": {
                 "comment": {
-                    "returns": "All transaction in the service or for the specified record\n",
-                    "parameters": {
-                        "id": {
-                            "comment": {
-                                "shortText": "Optional record id to get transactions for"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "All transaction in the service or for the specified record"
+                                }
+                            ]
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns all recorded transactions in chronological order"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns all recorded transactions in chronological order"
+                        }
+                    ]
                 }
             },
             "undo": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "Remove the last transaction if any"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Remove the last transaction if any"
+                        }
+                    ]
                 }
             },
             "redo": {
                 "comment": {
-                    "tags": {},
-                    "shortText": "Applies the last undone transaction if any"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Applies the last undone transaction if any"
+                        }
+                    ]
                 }
             },
             "getAggregatedChanges": {
                 "comment": {
-                    "returns": "Collection of aggregated transactions for each changed record\n",
-                    "parameters": {
-                        "mergeChanges": {
-                            "comment": {
-                                "shortText": [
-                                    "If set to true will merge each state's value over relate recordRef",
-                                    "and will record resulting value in the related transaction"
-                                ]
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "Collection of aggregated transactions for each changed record"
+                                }
+                            ]
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns aggregated changes from all transactions"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns aggregated changes from all transactions"
+                        }
+                    ]
                 }
             },
             "getState": {
                 "comment": {
-                    "returns": "State of the record if any\n",
-                    "parameters": {
-                        "id": {
-                            "comment": {
-                                "shortText": "The id of the record"
-                            }
-                        },
-                        "pending": {
-                            "comment": {
-                                "shortText": "Should get pending state"
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "State of the record if any"
+                                }
+                            ]
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns the state of the record with provided id"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns the state of the record with provided id"
+                        }
+                    ]
                 }
             },
             "getAggregatedValue": {
                 "comment": {
-                    "returns": "Value with changes or **null**\n",
-                    "parameters": {
-                        "id": {
-                            "comment": {
-                                "shortText": "The id of the record to return value for"
-                            }
-                        },
-                        "mergeChanges": {
-                            "comment": {
-                                "shortText": [
-                                    "If set to true will merge state's value over relate recordRef",
-                                    "and will return merged value"
-                                ]
-                            }
+                    "blockTags": [
+                        {
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "Value with changes or **null**"
+                                }
+                            ]
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Returns value of the required id including all uncommitted changes"
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns value of the required id including all uncommitted changes"
+                        }
+                    ]
                 }
             },
             "clear": {
                 "comment": {
-                    "parameters": {
-                        "id": {
-                            "comment": {
-                                "shortText": "Optional record id to clear transactions for"
-                            }
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Clears all transactions"
                         }
-                    },
-                    "tags": {},
-                    "shortText": "Clears all transactions"
+                    ]
                 }
             },
             "startPending": {
                 "comment": {
-                    "tags": {},
-                    "shortText": [
-                        "Starts pending transactions. All transactions passed after call to startPending",
-                        "will not be added to transaction log"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Starts pending transactions. All transactions passed after call to startPending\nwill not be added to transaction log"
+                        }
                     ]
                 }
             },
             "endPending": {
                 "comment": {
-                    "parameters": {
-                        "commit": {
-                            "comment": {
-                                "shortText": "Should commit the pending states"
-                            }
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Clears all pending transactions and aggregated pending state. If commit is set to true\ncommits pending states as single transaction"
                         }
-                    },
-                    "tags": {},
-                    "shortText": [
-                        "Clears all pending transactions and aggregated pending state. If commit is set to true",
-                        "commits pending states as single transaction"
                     ]
                 }
             }

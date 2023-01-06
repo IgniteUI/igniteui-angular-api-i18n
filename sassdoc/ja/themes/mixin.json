@@ -544,12 +544,42 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Convert grid theme colors to css variables</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-grid-theme grid-theme(",
+                    "  $header-background: red,",
+                    "  $content-background: #222",
+                    ");",
+                    ".my-grid {",
+                    "  @include css-vars($my-grid-theme);",
+                    "}"
+                ]
+            }
+        ]
     },
     "sizable": {
         "description": [
             "<p>スコープがサイズの変更に対応できるように、必要な CSS プロパティを追加します。</p>",
             ""
+        ],
+        "example": [
+            {
+                "description": [
+                    "<p>Sample usage</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include sizable();",
+                    "}"
+                ]
+            }
         ]
     }
 }

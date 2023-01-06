@@ -1,142 +1,196 @@
 {
     "IgxPivotDataSelectorComponent": {
         "comment": {
-            "tags": {
-                "igxmodule": {
-                    "comment": {
-                        "text": "IgxPivotGridModule",
-                        "tagName": "igxmodule"
-                    }
+            "blockTags": [
+                {
+                    "tag": "@igxModule",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "IgxPivotGridModule"
+                        }
+                    ]
                 },
-                "igxgroup": {
-                    "comment": {
-                        "text": "グリッド & リスト",
-                        "tagName": "igxgroup"
-                    }
+                {
+                    "tag": "@igxGroup",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "Grids & Lists"
+                        }
+                    ]
                 },
-                "igxkeywords": {
-                    "comment": {
-                        "text": "data selector, pivot, grid",
-                        "tagName": "igxkeywords"
-                    }
+                {
+                    "tag": "@igxKeywords",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "data selector, pivot, grid"
+                        }
+                    ]
                 },
-                "igxtheme": {
-                    "comment": {
-                        "text": "pivot-data-selector-theme",
-                        "tagName": "igxtheme"
-                    }
+                {
+                    "tag": "@igxTheme",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "pivot-data-selector-theme"
+                        }
+                    ]
                 },
-                "remarks": {
-                    "comment": {
-                        "text": [
-                            "Ignite UI Data Selector には、グリッド データ列を含む検索可能なリストがあります。",
-                            "フィルター、行、列、および値のための 4 つの展開可能な領域もあり、",
-                            "シンプルなフラット データをグループ化してピボット テーブルに集計するために使用されます。"
-                        ],
-                        "tagName": "備考:"
-                    }
+                {
+                    "tag": "@備考",
+                    "content": [
+                        {
+                            "kind": "text",
+                            "text": "The Ignite UI Data Selector has a searchable list with the grid data columns,\nthere are also four expandable areas underneath for filters, rows, columns, and values\nis used for grouping and aggregating simple flat data into a pivot table."
+                        }
+                    ]
                 },
-                "example": {
-                    "comment": {
-                        "text": [
-                            "```html",
-                            "<igx-pivot-grid #grid1 [data]=\"data\" [pivotConfiguration]=\"configuration\">",
-                            "</igx-pivot-grid>",
-                            "<igx-pivot-data-selector [grid]=\"grid1\"></igx-pivot-data-selector>",
-                            "```"
-                        ],
-                        "tagName": "例:"
-                    }
+                {
+                    "tag": "@例",
+                    "content": [
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-grid #grid1 [data]=\"data\" [pivotConfiguration]=\"configuration\">\n</igx-pivot-grid>\n<igx-pivot-data-selector [grid]=\"grid1\"></igx-pivot-data-selector>\n```"
+                        }
+                    ]
                 }
-            },
-            "shortText": "Pivot Data Selector は、垂直パネル UI を介して Pivot Grid のピボット状態を構成する手段を提供します。"
+            ],
+            "modifierTags": {},
+            "summary": [
+                {
+                    "kind": "text",
+                    "text": "Pivot Data Selector provides means to configure the pivot state of the Pivot Grid via a vertical panel UI"
+                }
+            ]
         },
         "properties": {
             "columnsExpanded": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "双方向データ バインディング。",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [(columnsExpanded)]=\"columnsPanelState\"></igx-pivot-data-selector>",
-                        "```"
-                    ],
-                    "shortText": [
-                        "列パネルが展開されているかどうかを取得または設定します。",
-                        "次を取得:",
-                        "```typescript",
-                        " const columnsPanelState: boolean = this.dataSelector.columnsExpanded;",
-                        "```",
-                        "次を設定:",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [columnsExpanded]=\"columnsPanelState\"></igx-pivot-data-selector>",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/sets whether the columns panel is expanded\nGet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n const columnsPanelState: boolean = this.dataSelector.columnsExpanded;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nSet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [columnsExpanded]=\"columnsPanelState\"></igx-pivot-data-selector>\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n\nTwo-way data binding:\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [(columnsExpanded)]=\"columnsPanelState\"></igx-pivot-data-selector>\n```"
+                        }
                     ]
                 }
             },
             "rowsExpanded": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "双方向データ バインディング。",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [(rowsExpanded)]=\"rowsPanelState\"></igx-pivot-data-selector>",
-                        "```"
-                    ],
-                    "shortText": [
-                        "行パネルが展開されているかどうかを取得または設定します。",
-                        "次を取得:",
-                        "```typescript",
-                        " const rowsPanelState: boolean = this.dataSelector.rowsExpanded;",
-                        "```",
-                        "次を設定:",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [rowsExpanded]=\"rowsPanelState\"></igx-pivot-data-selector>",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/sets whether the rows panel is expanded\nGet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n const rowsPanelState: boolean = this.dataSelector.rowsExpanded;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nSet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [rowsExpanded]=\"rowsPanelState\"></igx-pivot-data-selector>\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n\nTwo-way data binding:\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [(rowsExpanded)]=\"rowsPanelState\"></igx-pivot-data-selector>\n```"
+                        }
                     ]
                 }
             },
             "filtersExpanded": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "双方向データ バインディング。",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [(filtersExpanded)]=\"filtersPanelState\"></igx-pivot-data-selector>",
-                        "```"
-                    ],
-                    "shortText": [
-                        "フィルター パネルが展開されるかどうかを取得または設定します。",
-                        "次を取得:",
-                        "```typescript",
-                        " const filtersPanelState: boolean = this.dataSelector.filtersExpanded;",
-                        "```",
-                        "次を設定:",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [filtersExpanded]=\"filtersPanelState\"></igx-pivot-data-selector>",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/sets whether the filters panel is expanded\nGet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n const filtersPanelState: boolean = this.dataSelector.filtersExpanded;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nSet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [filtersExpanded]=\"filtersPanelState\"></igx-pivot-data-selector>\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n\nTwo-way data binding:\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [(filtersExpanded)]=\"filtersPanelState\"></igx-pivot-data-selector>\n```"
+                        }
                     ]
                 }
             },
             "valuesExpanded": {
                 "comment": {
-                    "tags": {},
-                    "text": [
-                        "双方向データ バインディング。",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [(valuesExpanded)]=\"valuesPanelState\"></igx-pivot-data-selector>",
-                        "```"
-                    ],
-                    "shortText": [
-                        "値パネルが展開されているかどうかを取得または設定します。",
-                        "次を取得:",
-                        "```typescript",
-                        " const valuesPanelState: boolean = this.dataSelector.valuesExpanded;",
-                        "```",
-                        "次を設定:",
-                        "```html",
-                        "<igx-pivot-data-selector [grid]=\"grid1\" [valuesExpanded]=\"valuesPanelState\"></igx-pivot-data-selector>",
-                        "```"
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/sets whether the values panel is expanded\nGet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```typescript\n const valuesPanelState: boolean = this.dataSelector.valuesExpanded;\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\nSet\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [valuesExpanded]=\"valuesPanelState\"></igx-pivot-data-selector>\n```"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "\n\nTwo-way data binding:\n"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "```html\n<igx-pivot-data-selector [grid]=\"grid1\" [(valuesExpanded)]=\"valuesPanelState\"></igx-pivot-data-selector>\n```"
+                        }
                     ]
                 }
             }
@@ -146,14 +200,36 @@
             "grid": {
                 "getter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "グリッドを返します。"
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns the grid."
+                            }
+                        ]
                     }
                 },
                 "setter": {
                     "comment": {
-                        "tags": {},
-                        "shortText": "グリッドを設定する @Input プロパティ。"
+                        "blockTags": [
+                            {
+                                "tag": "@Input",
+                                "content": [
+                                    {
+                                        "kind": "text",
+                                        "text": "property that sets the grid."
+                                    }
+                                ]
+                            }
+                        ],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            }
+                        ]
                     }
                 }
             }

@@ -1,19 +1,4 @@
 {
-    "bem-block": {
-        "description": [
-            "<p>Simply unrolls into a class-selector. The main purpose of using this mixin",
-            "is to clearly denote the start of a BEM block.</p>",
-            ""
-        ],
-        "parameters": {
-            "block": {
-                "description": [
-                    "<p>The block name.</p>",
-                    ""
-                ]
-            }
-        }
-    },
     "bem-elem": {
         "description": [
             "<p>Unrolls into a proper BEM element selector, depending on the context.",
@@ -42,7 +27,20 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-elem(element) {",
+                    "     background: blue;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block__element { background: blue; }"
+                ]
+            }
+        ]
     },
     "bem-mod": {
         "description": [
@@ -59,7 +57,20 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-mod(modifier) {",
+                    "     background: red;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block--modifier { background: red; }"
+                ]
+            }
+        ]
     },
     "bem-mods": {
         "description": [
@@ -75,6 +86,22 @@
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-mods(error, warn) {",
+                    "     position: absolute;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block--error,",
+                    ".block--warn {",
+                    "    position: absolute;",
+                    " }"
+                ]
+            }
+        ]
     }
 }
