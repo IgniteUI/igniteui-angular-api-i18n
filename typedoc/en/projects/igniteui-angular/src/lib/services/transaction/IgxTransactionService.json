@@ -3,148 +3,188 @@
         "properties": {
             "onStateUpdate": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Event fired when transaction state has changed - add transaction, commit all transactions, undo and redo"
+                        }
+                    ]
                 }
             }
         },
         "methods": {
             "add": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Adds provided  transaction with recordRef if any"
+                        }
+                    ]
                 }
             },
             "getTransactionLog": {
                 "comment": {
                     "blockTags": [
                         {
-                            "tag": "@inheritDoc",
-                            "content": []
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "All transaction in the service or for the specified record"
+                                }
+                            ]
                         }
                     ],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns all recorded transactions in chronological order"
+                        }
+                    ]
                 }
             },
             "getAggregatedChanges": {
                 "comment": {
                     "blockTags": [
                         {
-                            "tag": "@inheritDoc",
-                            "content": []
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "Collection of aggregated transactions for each changed record"
+                                }
+                            ]
                         }
                     ],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns aggregated changes from all transactions"
+                        }
+                    ]
                 }
             },
             "getState": {
                 "comment": {
                     "blockTags": [
                         {
-                            "tag": "@inheritDoc",
-                            "content": []
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "State of the record if any"
+                                }
+                            ]
                         }
                     ],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns the state of the record with provided id"
+                        }
+                    ]
                 }
             },
             "getAggregatedValue": {
                 "comment": {
                     "blockTags": [
                         {
-                            "tag": "@inheritDoc",
-                            "content": []
+                            "tag": "@returns",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "Value with changes or **null**"
+                                }
+                            ]
                         }
                     ],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns value of the required id including all uncommitted changes"
+                        }
+                    ]
                 }
             },
             "endPending": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Clears all pending transactions and aggregated pending state. If commit is set to true\ncommits pending states as single transaction"
+                        }
+                    ]
                 }
             },
             "commit": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Applies all transactions over the provided data"
+                        }
+                    ]
                 }
             },
             "clear": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Clears all transactions"
+                        }
+                    ]
                 }
             },
             "undo": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Remove the last transaction if any"
+                        }
+                    ]
                 }
             },
             "redo": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Applies the last undone transaction if any"
+                        }
+                    ]
                 }
             },
             "startPending": {
                 "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@inheritDoc",
-                            "content": []
-                        }
-                    ],
+                    "blockTags": [],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Starts pending transactions. All transactions passed after call to startPending\nwill not be added to transaction log"
+                        }
+                    ]
                 }
             }
         },
@@ -154,8 +194,13 @@
                     "comment": {
                         "blockTags": [
                             {
-                                "tag": "@inheritDoc",
-                                "content": []
+                                "tag": "@returns",
+                                "content": [
+                                    {
+                                        "kind": "text",
+                                        "text": "if there are any transactions in the Undo stack"
+                                    }
+                                ]
                             }
                         ],
                         "modifierTags": {},
@@ -168,8 +213,13 @@
                     "comment": {
                         "blockTags": [
                             {
-                                "tag": "@inheritDoc",
-                                "content": []
+                                "tag": "@returns",
+                                "content": [
+                                    {
+                                        "kind": "text",
+                                        "text": "if there are any transactions in the Redo stack"
+                                    }
+                                ]
                             }
                         ],
                         "modifierTags": {},
@@ -180,28 +230,28 @@
             "enabled": {
                 "getter": {
                     "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@inheritDoc",
-                                "content": []
-                            }
-                        ],
+                        "blockTags": [],
                         "modifierTags": {},
-                        "summary": []
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Returns whether transaction is enabled for this service"
+                            }
+                        ]
                     }
                 }
             },
             "cloneStrategy": {
                 "getter": {
                     "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@inheritDoc",
-                                "content": []
-                            }
-                        ],
+                        "blockTags": [],
                         "modifierTags": {},
-                        "summary": []
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets/Sets the data clone strategy used to clone data"
+                            }
+                        ]
                     }
                 }
             }

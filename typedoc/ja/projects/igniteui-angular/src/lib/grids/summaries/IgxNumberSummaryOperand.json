@@ -177,7 +177,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "```typescript\nclass CustomNumberSummary extends IgxNumberSummaryOperand {\n  constructor() {\n    super();\n  }\n  public operate(data: any[], allData: any[], fieldName: string): IgxSummaryResult[] {\n    const result = super.operate(data, allData, fieldName);\n    result.push({\n      key: \"avg\",\n      label: \"Avg\",\n      summaryResult: IgxNumberSummaryOperand.average(data)\n    });\n    result.push({\n      key: 'mdn',\n      label: 'Median',\n      summaryResult: this.findMedian(data)\n    });\n    return result;\n  }\n}\nthis.grid.getColumnByName('ColumnName').summaries = CustomNumberSummary;\n```"
+                            "text": "```typescript\nclass CustomNumberSummary extends IgxNumberSummaryOperand {\n  constructor() {\n    super();\n  }\n  public operate(data: any[], allData: any[], fieldName: string, groupRecord: IGroupByRecord): IgxSummaryResult[] {\n    const result = super.operate(data, allData, fieldName, groupRecord);\n    result.push({\n      key: \"avg\",\n      label: \"Avg\",\n      summaryResult: IgxNumberSummaryOperand.average(data)\n    });\n    result.push({\n      key: 'mdn',\n      label: 'Median',\n      summaryResult: this.findMedian(data)\n    });\n    return result;\n  }\n}\nthis.grid.getColumnByName('ColumnName').summaries = CustomNumberSummary;\n```"
                         }
                     ]
                 }

@@ -403,6 +403,45 @@
                     ]
                 }
             },
+            "autoGenerateExclude": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@remarks",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "The collection is only used during initialization and changing it will not cause any changes in the generated columns at runtime\nunless the grid is destroyed and recreated. To modify the columns visible in the UI at runtime, please use their\n[hidden](https://www.infragistics.com/products/ignite-ui-angular/docs/typescript/latest/classes/IgxColumnComponent.html#hidden) property."
+                                }
+                            ]
+                        },
+                        {
+                            "tag": "@example",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<igx-grid data=[Data] [autoGenerate]=\"true\" [autoGenerateExclude]=\"['ProductName', 'Count']\"></igx-grid>\n```"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "```typescript\nconst Data = [{ 'Id': '1', 'ProductName': 'name1', 'Description': 'description1', 'Count': 5 }]\n```"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Gets/Sets a list of property keys to be excluded from the generated column collection"
+                        }
+                    ]
+                }
+            },
             "moving": {
                 "comment": {
                     "blockTags": [],
@@ -2870,12 +2909,46 @@
                 "comment": {
                     "blockTags": [
                         {
-                            "tag": "@inheritDoc",
-                            "content": []
+                            "tag": "@remarks",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "If "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`formatters`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " is enabled, the cell value will be formatted by its respective column formatter (if any).\nIf "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`headers`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " is enabled, it will use the column header (if any) instead of the column field."
+                                }
+                            ]
                         }
                     ],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Returns an array of the current cell selection in the form of "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`[{ column.field: cell.value }, ...]`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "."
+                        }
+                    ]
                 }
             },
             "getRowByIndex": {
@@ -3230,7 +3303,15 @@
                             "content": [
                                 {
                                     "kind": "text",
-                                    "text": "in version 12.1.0. Use the corresponding method exposed by the "
+                                    "text": "in version 12.1.0. Use the corresponding method "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`nextPage()`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " exposed by the "
                                 },
                                 {
                                     "kind": "code",
@@ -3238,7 +3319,7 @@
                                 },
                                 {
                                     "kind": "text",
-                                    "text": "\n\nGoes to the next page, if the grid is not already at the last page."
+                                    "text": " instance.\n\nGoes to the next page, if the grid is not already at the last page."
                                 }
                             ]
                         },
@@ -3264,7 +3345,15 @@
                             "content": [
                                 {
                                     "kind": "text",
-                                    "text": "in version 12.1.0. Use the corresponding method exposed by the "
+                                    "text": "in version 12.1.0. Use the corresponding method "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`nextPage()`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " exposed by the "
                                 },
                                 {
                                     "kind": "code",
@@ -3272,7 +3361,7 @@
                                 },
                                 {
                                     "kind": "text",
-                                    "text": "\n\nGoes to the previous page, if the grid is not already at the first page."
+                                    "text": " instance.\n\nGoes to the previous page, if the grid is not already at the first page."
                                 }
                             ]
                         },
@@ -3320,7 +3409,15 @@
                             "content": [
                                 {
                                     "kind": "text",
-                                    "text": "in version 12.1.0. Use the corresponding method exposed by the "
+                                    "text": "in version 12.1.0. Use the corresponding method "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`paginate()`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " exposed by the "
                                 },
                                 {
                                     "kind": "code",
@@ -3328,7 +3425,7 @@
                                 },
                                 {
                                     "kind": "text",
-                                    "text": "\n\nGoes to the desired page index."
+                                    "text": " instance.\n\nGoes to the desired page index."
                                 }
                             ]
                         },
@@ -3337,7 +3434,7 @@
                             "content": [
                                 {
                                     "kind": "code",
-                                    "text": "```typescript\nthis.grid1.paginate(1);\n```"
+                                    "text": "```typescript\n// old\nthis.grid1.paginate(1);\n// new\nthis.paginator1.paginate(1);\n```"
                                 }
                             ]
                         }
@@ -4164,6 +4261,30 @@
                         {
                             "kind": "text",
                             "text": "Deselects all rows"
+                        }
+                    ]
+                }
+            },
+            "selectRange": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Select range(s) of cells between certain rows and columns of the grid."
+                        }
+                    ]
+                }
+            },
+            "getSelectedRanges": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Get the currently selected ranges in the grid."
                         }
                     ]
                 }
@@ -5331,7 +5452,7 @@
                                 "content": [
                                     {
                                         "kind": "text",
-                                        "text": "in version 12.1.0. Use the corresponding method exposed by the "
+                                        "text": "in version 12.1.0. Define "
                                     },
                                     {
                                         "kind": "code",
@@ -5339,7 +5460,7 @@
                                     },
                                     {
                                         "kind": "text",
-                                        "text": "\n\nGets/Sets whether the paging feature is enabled."
+                                        "text": " as a grid child component and paging will be enabled, otherwise disabled.\n\nGets/Sets whether the paging feature is enabled."
                                     }
                                 ]
                             },
@@ -5357,7 +5478,7 @@
                                 "content": [
                                     {
                                         "kind": "code",
-                                        "text": "```html\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n <igx-paginator></igx-paginator>\n</igx-grid>\n```"
+                                        "text": "```html\n<!-- old -->\n<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [autoGenerate]=\"true\"></igx-grid>\n\n<!-- new -->\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n  <igx-paginator></igx-paginator>\n</igx-grid>\n```"
                                     }
                                 ]
                             }
@@ -5384,15 +5505,15 @@
                                     },
                                     {
                                         "kind": "text",
-                                        "text": " property form "
+                                        "text": " property from "
                                     },
                                     {
                                         "kind": "code",
-                                        "text": "`paginator`"
+                                        "text": "`igx-paginator`"
                                     },
                                     {
                                         "kind": "text",
-                                        "text": " component instead\n\nGets/Sets the current page index."
+                                        "text": " component instance instead.\n\nGets/Sets the current page index."
                                     }
                                 ]
                             },
@@ -5401,7 +5522,7 @@
                                 "content": [
                                     {
                                         "kind": "code",
-                                        "text": "```html\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n <igx-paginator [(page)]=\"model.page\"></igx-paginator>\n</igx-grid>\n```"
+                                        "text": "```html\n<!-- old -->\n<igx-grid #grid [data]=\"Data\" [page]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>\n\n<!-- new -->\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n  <igx-paginator [(page)]=\"model.page\"></igx-paginator>\n</igx-grid>\n```"
                                     }
                                 ]
                             },
@@ -5441,11 +5562,11 @@
                                     },
                                     {
                                         "kind": "code",
-                                        "text": "`paginator`"
+                                        "text": "`igx-paginator`"
                                     },
                                     {
                                         "kind": "text",
-                                        "text": " component instead\n\nGets/Sets the number of visible items per page."
+                                        "text": " component instance instead\n\nGets/Sets the number of visible items per page."
                                     }
                                 ]
                             },
@@ -5463,7 +5584,7 @@
                                 "content": [
                                     {
                                         "kind": "code",
-                                        "text": "```html\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n <igx-paginator [(perPage)]=\"model.perPage\"></igx-paginator>\n</igx-grid>\n```"
+                                        "text": "```html\n<!-- old -->\n<igx-grid #grid [data]=\"Data\" [perPage]=\"model.perPage\" [autoGenerate]=\"true\"></igx-grid>\n\n<!-- new -->\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n  <igx-paginator [(perPage)]=\"model.perPage\"></igx-paginator>\n</igx-grid>\n```"
                                     }
                                 ]
                             }

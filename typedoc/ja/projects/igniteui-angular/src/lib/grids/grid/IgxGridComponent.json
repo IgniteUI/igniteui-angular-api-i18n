@@ -88,7 +88,7 @@
                     ]
                 }
             },
-            "onGroupingDone": {
+            "groupingDone": {
                 "comment": {
                     "blockTags": [
                         {
@@ -116,7 +116,7 @@
                                 },
                                 {
                                     "kind": "code",
-                                    "text": "`onGroupingDone`"
+                                    "text": "`groupingDone`"
                                 },
                                 {
                                     "kind": "text",
@@ -185,7 +185,7 @@
                             "content": [
                                 {
                                     "kind": "code",
-                                    "text": "```html\n<igx-grid #grid [data]=\"localData\" (onGroupingDone)=\"groupingDone($event)\" [autoGenerate]=\"true\"></igx-grid>\n```"
+                                    "text": "```html\n<igx-grid #grid [data]=\"localData\" (groupingDone)=\"groupingDone($event)\" [autoGenerate]=\"true\"></igx-grid>\n```"
                                 }
                             ]
                         }
@@ -371,6 +371,45 @@
                         {
                             "kind": "text",
                             "text": "列を自動生成するかどうかを取得または設定します。"
+                        }
+                    ]
+                }
+            },
+            "autoGenerateExclude": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@備考",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "コレクションは初期化中にのみ使用され、それを変更しても、グリッドが破棄されて再作成されない限り、\n実行時に生成された列に変更は発生しません。実行時に UI に表示される列を変更するには、\n[hidden](https://jp.infragistics.com/products/ignite-ui-angular/docs/typescript/latest/classes/IgxColumnComponent.html#hidden) プロパティを使用してください。"
+                                }
+                            ]
+                        },
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<igx-grid data=[Data] [autoGenerate]=\"true\" [autoGenerateExclude]=\"['ProductName', 'Count']\"></igx-grid>\n```"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "```typescript\nconst Data = [{ 'Id': '1', 'ProductName': 'name1', 'Description': 'description1', 'Count': 5 }]\n```"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "生成された列コレクションから除外されるプロパティ キーのリストを取得または設定します。"
                         }
                     ]
                 }
@@ -2706,7 +2745,15 @@
                                 },
                                 {
                                     "kind": "text",
-                                    "text": "の配列が渡されると複数列を一度にグループ化できるようになります。\nこのメソッドが同じ引数で複数回呼びだされた場合、onGroupingDone イベントは 1 度のみ発生します。"
+                                    "text": "の配列が渡されると複数列を一度にグループ化できるようになります。\nこのメソッドが同じ引数で複数回呼びだされた場合、"
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`groupingDone`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " イベントは 1 度のみ発生します。"
                                 }
                             ]
                         },
@@ -2904,12 +2951,46 @@
                 "comment": {
                     "blockTags": [
                         {
-                            "tag": "@inheritDoc",
-                            "content": []
+                            "tag": "@備考",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "\n"
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`formatters`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " が有効な場合、セル値はそれぞれの列フォーマッタ (もしあれば) によってフォーマットされます。\n"
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`headers`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " が有効な場合、列フィールドの代わりに列ヘッダーがある場合はそれを使います。"
+                                }
+                            ]
                         }
                     ],
                     "modifierTags": {},
-                    "summary": []
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "現在のセル選択の配列を "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`[{ column.field: cell.value }, ...]`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " の形式で返します。"
+                        }
+                    ]
                 }
             },
             "getRowByIndex": {
@@ -3364,7 +3445,15 @@
                                 },
                                 {
                                     "kind": "text",
-                                    "text": " によって公開される対応するメソッドを使用してください。\n\nグリッドが最後のページにない場合、次のページに移動します。"
+                                    "text": " ンスタンスによって公開される対応するメソッド "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`nextPage()`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " を使用してください。\n\nグリッドが最後のページにない場合、次のページに移動します。"
                                 }
                             ]
                         },
@@ -3398,7 +3487,15 @@
                                 },
                                 {
                                     "kind": "text",
-                                    "text": " によって公開される対応するメソッドを使用してください。\n\nグリッドが最初のページにない場合、前のページに移動します。"
+                                    "text": " ンスタンスによって公開される対応するメソッド "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`nextPage()`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " を使用してください。\n\nグリッドが最初のページにない場合、前のページに移動します。"
                                 }
                             ]
                         },
@@ -3454,7 +3551,15 @@
                                 },
                                 {
                                     "kind": "text",
-                                    "text": " によって公開される対応するメソッドを使用してください。\n\n指定したページ インデックスに移動します。"
+                                    "text": " ンスタンスによって公開される対応するメソッド "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`paginate()`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " を使用してください。\n\n指定したページ インデックスに移動します。"
                                 }
                             ]
                         },
@@ -3463,7 +3568,7 @@
                             "content": [
                                 {
                                     "kind": "code",
-                                    "text": "```typescript\nthis.grid1.paginate(1);\n```"
+                                    "text": "```typescript\n// old\nthis.grid1.paginate(1);\n// new\nthis.paginator1.paginate(1);\n```"
                                 }
                             ]
                         }
@@ -4320,6 +4425,30 @@
                         {
                             "kind": "text",
                             "text": "すべての行を選択解除します。"
+                        }
+                    ]
+                }
+            },
+            "selectRange": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドの特定の行と列の間のセル範囲を選択します。"
+                        }
+                    ]
+                }
+            },
+            "getSelectedRanges": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドで現在選択されている範囲を取得します。"
                         }
                     ]
                 }
@@ -5829,7 +5958,7 @@
                                 "content": [
                                     {
                                         "kind": "text",
-                                        "text": "バージョン 12.1.0。代わりに "
+                                        "text": "バージョン 12.1.0。"
                                     },
                                     {
                                         "kind": "code",
@@ -5837,7 +5966,7 @@
                                     },
                                     {
                                         "kind": "text",
-                                        "text": " によって公開される対応するメソッドを使用してください。\n\nページング機能が有効かどうかを取得または設定します。"
+                                        "text": " をグリッドの子コンポーネントとして定義すると、ページングが有効になります。それ以外の場合は無効になります。\n\nページング機能が有効かどうかを取得または設定します。"
                                     }
                                 ]
                             },
@@ -5855,7 +5984,7 @@
                                 "content": [
                                     {
                                         "kind": "code",
-                                        "text": "```html\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n <igx-paginator></igx-paginator>\n</igx-grid>\n```"
+                                        "text": "```html\n<!-- old -->\n<igx-grid #grid [data]=\"Data\" [paging]=\"true\" [autoGenerate]=\"true\"></igx-grid>\n\n<!-- new -->\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n  <igx-paginator></igx-paginator>\n</igx-grid>\n```"
                                     }
                                 ]
                             }
@@ -5874,15 +6003,15 @@
                                 "content": [
                                     {
                                         "kind": "text",
-                                        "text": "バージョン 12.1.0。代わりに "
+                                        "text": "バージョン 12.1.0。代わりに、"
                                     },
                                     {
                                         "kind": "code",
-                                        "text": "`paginator`"
+                                        "text": "`igx-paginator`"
                                     },
                                     {
                                         "kind": "text",
-                                        "text": " コンポーネントの "
+                                        "text": " コンポーネント インスタンスの "
                                     },
                                     {
                                         "kind": "code",
@@ -5899,7 +6028,7 @@
                                 "content": [
                                     {
                                         "kind": "code",
-                                        "text": "```html\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n <igx-paginator [(page)]=\"model.page\"></igx-paginator>\n</igx-grid>\n```"
+                                        "text": "```html\n<!-- old -->\n<igx-grid #grid [data]=\"Data\" [page]=\"model.page\" [autoGenerate]=\"true\"></igx-grid>\n\n<!-- new -->\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n  <igx-paginator [(page)]=\"model.page\"></igx-paginator>\n</igx-grid>\n```"
                                     }
                                 ]
                             },
@@ -5927,15 +6056,15 @@
                                 "content": [
                                     {
                                         "kind": "text",
-                                        "text": "バージョン 12.1.0。代わりに "
+                                        "text": "バージョン 12.1.0。代わりに、"
                                     },
                                     {
                                         "kind": "code",
-                                        "text": "`paginator`"
+                                        "text": "`igx-paginator`"
                                     },
                                     {
                                         "kind": "text",
-                                        "text": " コンポーネントの "
+                                        "text": " コンポーネント インスタンスの "
                                     },
                                     {
                                         "kind": "code",
@@ -5961,7 +6090,7 @@
                                 "content": [
                                     {
                                         "kind": "code",
-                                        "text": "```html\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n <igx-paginator [(perPage)]=\"model.perPage\"></igx-paginator>\n</igx-grid>\n```"
+                                        "text": "```html\n<!-- old -->\n<igx-grid #grid [data]=\"Data\" [perPage]=\"model.perPage\" [autoGenerate]=\"true\"></igx-grid>\n\n<!-- new -->\n<igx-grid #grid [data]=\"Data\" [autoGenerate]=\"true\">\n  <igx-paginator [(perPage)]=\"model.perPage\"></igx-paginator>\n</igx-grid>\n```"
                                     }
                                 ]
                             }

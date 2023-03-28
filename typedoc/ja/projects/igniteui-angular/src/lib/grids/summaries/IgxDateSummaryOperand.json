@@ -125,7 +125,7 @@
                         },
                         {
                             "kind": "code",
-                            "text": "```typescript\nclass CustomDateSummary extends IgxDateSummaryOperand {\n  constructor() {\n    super();\n  }\n  public operate(data: any[], allData: any[], fieldName: string): IgxSummaryResult[] {\n    const result = super.operate(data, allData, fieldName);\n    result.push({\n      key: \"deadline\",\n      label: \"Deadline Date\",\n      summaryResult: this.calculateDeadline(data);\n    });\n    return result;\n  }\n}\nthis.grid.getColumnByName('ColumnName').summaries = CustomDateSummary;\n```"
+                            "text": "```typescript\nclass CustomDateSummary extends IgxDateSummaryOperand {\n  constructor() {\n    super();\n  }\n  public operate(data: any[], allData: any[], fieldName: string, groupRecord: IGroupByRecord): IgxSummaryResult[] {\n    const result = super.operate(data, allData, fieldName, groupRecord);\n    result.push({\n      key: \"deadline\",\n      label: \"Deadline Date\",\n      summaryResult: this.calculateDeadline(data);\n    });\n    return result;\n  }\n}\nthis.grid.getColumnByName('ColumnName').summaries = CustomDateSummary;\n```"
                         }
                     ]
                 }
