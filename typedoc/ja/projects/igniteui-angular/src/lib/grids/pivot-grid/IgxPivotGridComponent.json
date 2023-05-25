@@ -97,6 +97,28 @@
                     ]
                 }
             },
+            "pivotConfigurationChange": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<igx-pivot-grid #grid [data]=\"localData\" [height]=\"'305px'\"\n             (pivotConfigurationChanged)=\"configurationChanged($event)\"></igx-grid>\n```"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "pivotConfiguration プロパティのいずれかがグリッド チップ領域を介して変更されたときに発生します。"
+                        }
+                    ]
+                }
+            },
             "dimensionInit": {
                 "comment": {
                     "blockTags": [
@@ -450,90 +472,6 @@
                             "text": "グリッドが水平/垂直にスクロールされるときに発生します。"
                         }
                     ]
-                }
-            },
-            "evenRowCSS": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@非推奨",
-                            "content": [
-                                {
-                                    "kind": "text",
-                                    "text": "バージョン 12.2.0。代わりに "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`rowClasses`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": " プロパティを使用することをお勧めします。\n\nグリッドですべての偶数の "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`IgxGridRowComponent`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": " に適用されるスタイル クラスを取得または設定します。"
-                                }
-                            ]
-                        },
-                        {
-                            "tag": "@例",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```html\n<igx-grid #grid [data]=\"Data\" [evenRowCSS]=\"'igx-grid--my-even-class'\" [autoGenerate]=\"true\"></igx-grid>\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": []
-                }
-            },
-            "oddRowCSS": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@非推奨",
-                            "content": [
-                                {
-                                    "kind": "text",
-                                    "text": "バージョン 12.2.0。代わりに "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`rowClasses`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": " プロパティを使用することをお勧めします。\n\nグリッドですべての奇数の "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`IgxGridRowComponent`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": " に適用されるスタイル クラスを取得または設定します。"
-                                }
-                            ]
-                        },
-                        {
-                            "tag": "@例",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```html\n<igx-grid #grid [data]=\"Data\" [evenRowCSS]=\"'igx-grid--my-odd-class'\" [autoGenerate]=\"true\"></igx-grid>\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": []
                 }
             },
             "rowClasses": {
@@ -1388,110 +1326,6 @@
                         {
                             "kind": "text",
                             "text": "データ操作や再バインドなどにより、グリッドのデータ ビューが変更される後に発生されます。"
-                        }
-                    ]
-                }
-            },
-            "emptyFilteredGridTemplate": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@例",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```\nconst emptyTempalte = this.grid.emptyGridTemplate;\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "フィルターされたグリッドが空の場合に表示されるテンプレートのテンプレート参照。"
-                        }
-                    ]
-                }
-            },
-            "emptyGridDefaultTemplate": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@例",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```\nconst emptyTempalte = this.grid.emptyGridTemplate;\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "グリッドが空の場合に表示されるテンプレートのテンプレート参照。"
-                        }
-                    ]
-                }
-            },
-            "rowExpandedIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "行展開インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
-                        }
-                    ]
-                }
-            },
-            "rowCollapsedIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "行縮小インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
-                        }
-                    ]
-                }
-            },
-            "headerExpandIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "ヘッダー展開インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
-                        }
-                    ]
-                }
-            },
-            "headerCollapseIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "ヘッダー縮小インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
-                        }
-                    ]
-                }
-            },
-            "excelStyleHeaderIconDirectiveTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "行展開インジケーターをレンダリングするときに使用する必要があるカスタム テンプレート (存在する場合)。"
                         }
                     ]
                 }
@@ -2396,6 +2230,28 @@
                     ]
                 }
             },
+            "clearCellSelection": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@例",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```typescript\nthis.grid.clearCellSelection();\n```"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "選択したセルの選択を解除します。"
+                        }
+                    ]
+                }
+            },
             "selectRange": {
                 "comment": {
                     "blockTags": [],
@@ -3135,6 +2991,158 @@
                     }
                 }
             },
+            "rowExpandedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "行展開インジケーターのテンプレートを取得します。"
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "行展開インジケーターのテンプレートを設定します。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxRowExpandedIndicator>\n <igx-icon role=\"button\">remove</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.rowExpandedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
+            "rowCollapsedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "行縮小インジケーターのテンプレートを取得します。"
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "行縮小インジケーターのテンプレートを設定します。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxRowCollapsedIndicator>\n <igx-icon role=\"button\">add</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.rowCollapsedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
+            "headerExpandedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "ヘッダー展開インジケーター テンプレートを取得します。"
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "ヘッダー展開インジケーター テンプレートを設定します。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxHeaderExpandedIndicator>\n <igx-icon role=\"button\">remove</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.headerExpandedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
+            "headerCollapsedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "行縮小インジケーターのテンプレートを取得します。"
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "行縮小インジケーターのテンプレートを設定します。\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxHeaderCollapsedIndicator>\n <igx-icon role=\"button\">add</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.headerCollapsedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
             "excelStyleHeaderIconTemplate": {
                 "getter": {
                     "comment": {
@@ -3451,7 +3459,7 @@
                         "summary": [
                             {
                                 "kind": "text",
-                                "text": "G高さを取得または設定します。"
+                                "text": "高さを取得または設定します。"
                             }
                         ]
                     }
@@ -3476,30 +3484,6 @@
                             {
                                 "kind": "text",
                                 "text": "グリッドの幅を取得または設定します。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "headerWidth": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```html\nlet gridHeaderWidth = this.grid.headerWidth;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "ヘッダーの幅を取得または設定します。"
                             }
                         ]
                     }
@@ -3712,102 +3696,6 @@
                             {
                                 "kind": "text",
                                 "text": " オブジェクトを受け入れます。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "headerGroupsList": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst headerGroupsList = this.grid.headerGroupsList;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "すべての "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridHeaderGroupComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " のリスト。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "headerCellList": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst headers = this.grid.headerCellList;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "すべての "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridHeaderComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " のリスト。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "filterCellList": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst filterCells = this.grid.filterCellList;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "すべての "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridFilteringCellComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " のリスト。"
                             }
                         ]
                     }
@@ -4311,166 +4199,6 @@
                             {
                                 "kind": "text",
                                 "text": " の配列を返します。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "totalWidth": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst gridWidth = this.grid.totalWidth;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "\n"
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " の合計幅を返します。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasSortableColumns": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst sortableGrid = this.grid.hasSortableColumns;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "\n"
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " にソート可能な列があるかどうかを返します。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasFilterableColumns": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst filterableGrid = this.grid.hasFilterableColumns;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "\n"
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " にフィルター可能な列があるかどうかを返します。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasColumnGroups": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst groupGrid = this.grid.hasColumnGroups;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "\n"
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " に列グループがあるかどうかを返します。"
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasColumnLayouts": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@例",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst layoutGrid = this.grid.hasColumnLayouts;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "\n"
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " が複数行レイアウト定義用の列レイアウトを持っているかどうかを返します。"
                             }
                         ]
                     }

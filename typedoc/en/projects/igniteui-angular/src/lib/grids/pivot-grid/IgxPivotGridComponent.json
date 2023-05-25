@@ -97,6 +97,28 @@
                     ]
                 }
             },
+            "pivotConfigurationChange": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@example",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```html\n<igx-pivot-grid #grid [data]=\"localData\" [height]=\"'305px'\"\n             (pivotConfigurationChanged)=\"configurationChanged($event)\"></igx-grid>\n```"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Emitted when any of the pivotConfiguration properties is changed via the grid chip area."
+                        }
+                    ]
+                }
+            },
             "dimensionInit": {
                 "comment": {
                     "blockTags": [
@@ -450,90 +472,6 @@
                             "text": "Emitted when grid is scrolled horizontally/vertically."
                         }
                     ]
-                }
-            },
-            "evenRowCSS": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@deprecated",
-                            "content": [
-                                {
-                                    "kind": "text",
-                                    "text": "in version 12.2.0. We suggest using "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`rowClasses`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": " property instead\n\nGets/Sets the styling classes applied to all even "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`IgxGridRowComponent`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": "s in the grid."
-                                }
-                            ]
-                        },
-                        {
-                            "tag": "@example",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```html\n<igx-grid #grid [data]=\"Data\" [evenRowCSS]=\"'igx-grid--my-even-class'\" [autoGenerate]=\"true\"></igx-grid>\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": []
-                }
-            },
-            "oddRowCSS": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@deprecated",
-                            "content": [
-                                {
-                                    "kind": "text",
-                                    "text": "in version 12.2.0. We suggest using "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`rowClasses`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": " property instead\n\nGets/Sets the styling classes applied to all odd "
-                                },
-                                {
-                                    "kind": "code",
-                                    "text": "`IgxGridRowComponent`"
-                                },
-                                {
-                                    "kind": "text",
-                                    "text": "s in the grid."
-                                }
-                            ]
-                        },
-                        {
-                            "tag": "@example",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```html\n<igx-grid #grid [data]=\"Data\" [evenRowCSS]=\"'igx-grid--my-odd-class'\" [autoGenerate]=\"true\"></igx-grid>\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": []
                 }
             },
             "rowClasses": {
@@ -1388,110 +1326,6 @@
                         {
                             "kind": "text",
                             "text": "Emitted after the grid's data view is changed because of a data operation, rebinding, etc."
-                        }
-                    ]
-                }
-            },
-            "emptyFilteredGridTemplate": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@example",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```\nconst emptyTempalte = this.grid.emptyGridTemplate;\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "A template reference for the template when the filtered grid is empty."
-                        }
-                    ]
-                }
-            },
-            "emptyGridDefaultTemplate": {
-                "comment": {
-                    "blockTags": [
-                        {
-                            "tag": "@example",
-                            "content": [
-                                {
-                                    "kind": "code",
-                                    "text": "```\nconst emptyTempalte = this.grid.emptyGridTemplate;\n```"
-                                }
-                            ]
-                        }
-                    ],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "A template reference for the template when the grid is empty."
-                        }
-                    ]
-                }
-            },
-            "rowExpandedIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "The custom template, if any, that should be used when rendering a row expand indicator."
-                        }
-                    ]
-                }
-            },
-            "rowCollapsedIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "The custom template, if any, that should be used when rendering a row collapse indicator."
-                        }
-                    ]
-                }
-            },
-            "headerExpandIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "The custom template, if any, that should be used when rendering a header expand indicator."
-                        }
-                    ]
-                }
-            },
-            "headerCollapseIndicatorTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "The custom template, if any, that should be used when rendering a header collapse indicator."
-                        }
-                    ]
-                }
-            },
-            "excelStyleHeaderIconDirectiveTemplate": {
-                "comment": {
-                    "blockTags": [],
-                    "modifierTags": {},
-                    "summary": [
-                        {
-                            "kind": "text",
-                            "text": "The custom template, if any, that should be used when rendering a row expand indicator."
                         }
                     ]
                 }
@@ -2396,6 +2230,28 @@
                     ]
                 }
             },
+            "clearCellSelection": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@example",
+                            "content": [
+                                {
+                                    "kind": "code",
+                                    "text": "```typescript\nthis.grid.clearCellSelection();\n```"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Deselect selected cells."
+                        }
+                    ]
+                }
+            },
             "selectRange": {
                 "comment": {
                     "blockTags": [],
@@ -3135,6 +2991,158 @@
                     }
                 }
             },
+            "rowExpandedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the row expand indicator template."
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets the row expand indicator template.\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxRowExpandedIndicator>\n <igx-icon role=\"button\">remove</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.rowExpandedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
+            "rowCollapsedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the row collapse indicator template."
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets the row collapse indicator template.\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxRowCollapsedIndicator>\n <igx-icon role=\"button\">add</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.rowCollapsedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
+            "headerExpandedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the header expand indicator template."
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets the header expand indicator template.\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxHeaderExpandedIndicator>\n <igx-icon role=\"button\">remove</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.headerExpandedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
+            "headerCollapsedIndicatorTemplate": {
+                "getter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Gets the row collapse indicator template."
+                            }
+                        ]
+                    }
+                },
+                "setter": {
+                    "comment": {
+                        "blockTags": [],
+                        "modifierTags": {},
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Sets the row collapse indicator template.\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```html\n<ng-template igxHeaderCollapsedIndicator>\n <igx-icon role=\"button\">add</igx-icon>\n</ng-template>\n```"
+                            },
+                            {
+                                "kind": "text",
+                                "text": "\n"
+                            },
+                            {
+                                "kind": "code",
+                                "text": "```typescript\n@ViewChild('template', {read: TemplateRef })\npublic template: TemplateRef<any>;\nthis.grid.headerCollapsedIndicatorTemplate = this.template;\n```"
+                            }
+                        ]
+                    }
+                }
+            },
             "excelStyleHeaderIconTemplate": {
                 "getter": {
                     "comment": {
@@ -3481,30 +3489,6 @@
                     }
                 }
             },
-            "headerWidth": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```html\nlet gridHeaderWidth = this.grid.headerWidth;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "Gets the width of the header."
-                            }
-                        ]
-                    }
-                }
-            },
             "rowHeight": {
                 "getter": {
                     "comment": {
@@ -3712,102 +3696,6 @@
                             {
                                 "kind": "text",
                                 "text": " properties."
-                            }
-                        ]
-                    }
-                }
-            },
-            "headerGroupsList": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst headerGroupsList = this.grid.headerGroupsList;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "A list of all "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridHeaderGroupComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": "."
-                            }
-                        ]
-                    }
-                }
-            },
-            "headerCellList": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst headers = this.grid.headerCellList;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "A list of all "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridHeaderComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": "."
-                            }
-                        ]
-                    }
-                }
-            },
-            "filterCellList": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst filterCells = this.grid.filterCellList;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "A list of all "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridFilteringCellComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": "."
                             }
                         ]
                     }
@@ -4311,166 +4199,6 @@
                             {
                                 "kind": "text",
                                 "text": "s."
-                            }
-                        ]
-                    }
-                }
-            },
-            "totalWidth": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst gridWidth = this.grid.totalWidth;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "Returns the total width of the "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": "."
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasSortableColumns": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst sortableGrid = this.grid.hasSortableColumns;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "Returns if the "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " has sortable columns."
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasFilterableColumns": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst filterableGrid = this.grid.hasFilterableColumns;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "Returns if the "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " has filterable columns."
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasColumnGroups": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst groupGrid = this.grid.hasColumnGroups;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "Returns if the "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " has column groups."
-                            }
-                        ]
-                    }
-                }
-            },
-            "hasColumnLayouts": {
-                "getter": {
-                    "comment": {
-                        "blockTags": [
-                            {
-                                "tag": "@example",
-                                "content": [
-                                    {
-                                        "kind": "code",
-                                        "text": "```typescript\nconst layoutGrid = this.grid.hasColumnLayouts;\n```"
-                                    }
-                                ]
-                            }
-                        ],
-                        "modifierTags": {},
-                        "summary": [
-                            {
-                                "kind": "text",
-                                "text": "Returns if the "
-                            },
-                            {
-                                "kind": "code",
-                                "text": "`IgxGridComponent`"
-                            },
-                            {
-                                "kind": "text",
-                                "text": " has column layouts for multi-row layout definition."
                             }
                         ]
                     }
