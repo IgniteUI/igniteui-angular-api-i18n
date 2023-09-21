@@ -6,11 +6,922 @@
             "summary": [
                 {
                     "kind": "text",
-                    "text": "Hierarchical Grid タイプを記述するインターフェイス"
+                    "text": "Hierarchical Grid 型を記述するインターフェイスです。これは本質的にグリッドの種類の設計図です。\nグリッドの種類に関連するプロパティとメソッドの定義が含まれます。\n"
+                },
+                {
+                    "kind": "code",
+                    "text": "`GridType` から拡張されます。"
                 }
             ]
         },
-        "properties": {},
-        "methods": {}
+        "properties": {
+            "displayDensity": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@非推奨",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "バージョン 16.1.x 以降。"
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`--ig-size`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " CSS カスタム プロパティを使用してください。"
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": []
+                }
+            },
+            "locale": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドのロケールを表します: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`USD`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "、"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`EUR`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "、"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`GBP`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "、"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`CNY`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": "、"
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`JPY`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " など。"
+                        }
+                    ]
+                }
+            },
+            "nativeElement": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ネイティブ HTML 要素自体を表します。"
+                        }
+                    ]
+                }
+            },
+            "rowEditable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内の行が編集可能かどうかを示します。値が true の場合、行を編集できます。"
+                        }
+                    ]
+                }
+            },
+            "allowFiltering": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内のフィルタリングが有効かどうかを示します。値が true の場合、グリッドをフィルタリングできます。"
+                        }
+                    ]
+                }
+            },
+            "rowDraggable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内の行をドラッグできるかどうかを示します。値が true の場合、行をドラッグできます。"
+                        }
+                    ]
+                }
+            },
+            "primaryKey": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内の行を識別するために使用される一意の主キーを表します。"
+                        }
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドの一意の識別子を表します。"
+                        }
+                    ]
+                }
+            },
+            "renderedRowHeight": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内に表示される行の高さです。"
+                        }
+                    ]
+                }
+            },
+            "moving": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドが現在移動状態にあるかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "dataCloneStrategy": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "提供されたデータのクローンを作成するために使用されるストラテジです。この型には、任意のデータ型を受け取るメソッドが 1 つあります。"
+                        }
+                    ]
+                }
+            },
+            "gridAPI": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドに API メソッドを提供するグリッド サービス タイプを表します。"
+                        }
+                    ]
+                }
+            },
+            "filterMode": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドのフィルター モード。Excel スタイル フィルターのクイック フィルターにすることができます。"
+                        }
+                    ]
+                }
+            },
+            "virtualizationState": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドの仮想化の状態を表します。所有者、開始インデックス、部分サイズがあります。"
+                        }
+                    ]
+                }
+            },
+            "selectionService": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内の選択を処理するサービスです。要素の選択、選択解除"
+                        }
+                    ]
+                }
+            },
+            "isRowSelectable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドの行を選択できるかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "showRowSelectors": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "行のセレクターが表示されるかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "isPinningToStart": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドの要素がグリッドの先頭にピン固定されているかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "columnInDrag": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドの列がドラッグ モードかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "pinnedWidth": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ピン固定された要素の幅です。"
+                        }
+                    ]
+                }
+            },
+            "unpinnedWidth": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ピン固定されていない要素の幅です。"
+                        }
+                    ]
+                }
+            },
+            "summariesMargin": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "集計の CSS マージンです。"
+                        }
+                    ]
+                }
+            },
+            "hasVisibleColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドに表示される列があるかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "hasExpandableChildren": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "オプション。\nグリッドに展開可能な子 (階層グリッドおよびツリー グリッド) があるかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "showExpandAll": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "オプション。\n縮小されたグリッド要素を展開するかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "hiddenColumnsCount": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "非表示 (表示されない) の列のみの数を表します。"
+                        }
+                    ]
+                }
+            },
+            "pinnedColumnsCount": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ピン固定された列のみの数を表します。"
+                        }
+                    ]
+                }
+            },
+            "iconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "オプション。\nグリッド アイコンのテンプレートです。\nこれは、埋め込みビューのインスタンス化に使用される埋め込みテンプレートを表す TemplateRef 型です。"
+                        }
+                    ]
+                }
+            },
+            "groupRowTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "オプション。\nグループ化行のテンプレートです。\nこれは、埋め込みビューのインスタンス化に使用される埋め込みテンプレートを表す TemplateRef 型です。"
+                        }
+                    ]
+                }
+            },
+            "groupByRowSelectorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "オプション。\nグループ行セレクターのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "rowLoadingIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "オプション。\n行読み込みインジケーターのテンプレートです。\nこれは、埋め込みビューのインスタンス化に使用される埋め込みテンプレートを表す TemplateRef 型です。"
+                        }
+                    ]
+                }
+            },
+            "headSelectorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ヘッダー セレクターのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "rowSelectorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "行セレクターのテンプレートです。\nこれは、埋め込みビューのインスタンス化に使用される埋め込みテンプレートを表す TemplateRef 型です。"
+                        }
+                    ]
+                }
+            },
+            "sortHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ソート ヘッダー アイコンのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "sortAscendingHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "昇順ソート ヘッダー アイコンのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "sortDescendingHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "降順ソート ヘッダー アイコンのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "headerCollapsedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ヘッダーの縮小インジケーターのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "headerExpandedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ヘッダーの展開インジケーターのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "dragIndicatorIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ドラッグ インジケーター アイコンのテンプレートです。任意のタイプを使用できます。"
+                        }
+                    ]
+                }
+            },
+            "dragIndicatorIconBase": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "基本ドラッグ インジケーター アイコンです。任意のタイプを使用できます。"
+                        }
+                    ]
+                }
+            },
+            "disableTransitions": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドのトランジションが無効になっているかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "currencyPositionLeft": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "通貨記号を値の左側に配置するかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "columnWidthSetByUser": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "列の幅がユーザーによって設定されるか、自動的に構成されるかを示します。"
+                        }
+                    ]
+                }
+            },
+            "calcHeight": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "要素に対して計算された CSS スタイル: calcHeight、calcWidth、outerWidth"
+                        }
+                    ]
+                }
+            },
+            "rowHeight": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内の各行の高さです。一定の高さを設定すると、スクロール時にすべての要素が表示されない問題を解決できます。"
+                        }
+                    ]
+                }
+            },
+            "defaultHeaderGroupMinWidth": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ヘッダーの最小幅です。"
+                        }
+                    ]
+                }
+            },
+            "_baseFontSize": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "要素ごとに計算されたデフォルトのフォント サイズです。"
+                        }
+                    ]
+                }
+            },
+            "validationTrigger": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド検証のトリガーです。その値は "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`change`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " はたは "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`blur`"
+                        }
+                    ]
+                }
+            },
+            "pinning": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内の列と行のピン固定の構成です。\n型は IPinningConfig で、列 (start、end) と行 (top、bottom) の値を持つことができます。"
+                        }
+                    ]
+                }
+            },
+            "columnList": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドのすべての列を含む、変更不可能なリストです。"
+                        }
+                    ]
+                }
+            },
+            "visibleColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "列の配列ですが、ビューに表示されている (非表示ではない) 列のみをカウントします。"
+                        }
+                    ]
+                }
+            },
+            "unpinnedColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "列の配列ですが、ピン固定されていない列のみをカウントします。"
+                        }
+                    ]
+                }
+            },
+            "pinnedColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "列の配列ですが、ピン固定されている列のみがカウントされます。"
+                        }
+                    ]
+                }
+            },
+            "isCellSelectable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内でセルが選択可能かどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "isMultiRowSelectionEnabled": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内で複数の行を選択できるかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "transactions": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドのトランザクション サービスを表します。"
+                        }
+                    ]
+                }
+            },
+            "validation": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドの検証サービスを表します。この型には、レコードを検証するためのプロパティとメソッド (ロジック) が含まれます。"
+                        }
+                    ]
+                }
+            },
+            "pagingMode": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッドのページングを表します。'Local' または 'Remote' のいずれかにすることができます。\n- Local: デフォルト値。グリッドはページに基づいてデータ ソースをページ分割します。"
+                        }
+                    ]
+                }
+            },
+            "lastSearchInfo": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "グリッド内の最後の検索を表します。\nこれには、検索テキスト (ユーザーが入力)、一致、および検索のいくつかの設定が含まれます。"
+                        }
+                    ]
+                }
+            },
+            "rowDragging": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "行が現在ドラッグされているかどうかを示します。"
+                        }
+                    ]
+                }
+            },
+            "cdr": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "変更検出機能を提供します。\n変更検出ツリーは、変更がチェックされるすべてのビューを収集します。\nプロパティは変更できません (読み取り専用)。"
+                        }
+                    ]
+                }
+            },
+            "rowExpandedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "展開された行インジケーターのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "rowCollapsedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "縮小された行インジケーターのテンプレートです。\nこれは、埋め込みテンプレートを表す TemplateRef 型で、埋め込みビューのインスタンス化に使用されます。"
+                        }
+                    ]
+                }
+            },
+            "excelStyleHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "ヘッダー アイコンのテンプレートです。\nこれは TemplateRef 型で、埋め込みビューのインスタンス化に使用される埋め込みテンプレートを表します。"
+                        }
+                    ]
+                }
+            },
+            "cellSelection": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "セルの選択モードを表します: 'none'、'single'、'multiple'、'multipleCascade'"
+                        }
+                    ]
+                }
+            },
+            "rowSelection": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "行の選択モードを表します: 'none'、'single'、'multiple'、'multipleCascade'"
+                        }
+                    ]
+                }
+            },
+            "columnSelection": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "列の選択モードを表します: 'none'、'single'、'multiple'、'multipleCascade'"
+                        }
+                    ]
+                }
+            },
+            "summaryCalculationMode": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "集計の計算モードを表します: 'rootLevelOnly'、'childLevelsOnly'、'rootAndChildLevels'"
+                        }
+                    ]
+                }
+            },
+            "summaryPosition": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "集計の位置を表します: 'top'、'bottom'"
+                        }
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "__type": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "自動サイズ変更用のヘッダー セルの内側の幅を取得するプロパティです。"
+                        }
+                    ]
+                }
+            }
+        }
     }
 }

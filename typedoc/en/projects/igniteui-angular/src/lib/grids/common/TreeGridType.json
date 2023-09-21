@@ -6,11 +6,922 @@
             "summary": [
                 {
                     "kind": "text",
-                    "text": "An interface describing a Tree Grid type"
+                    "text": "An interface describing a Tree Grid type. It is essentially the blueprint to a grid kind\nContains definitions of properties and methods, relevant to a grid kind\nExtends from "
+                },
+                {
+                    "kind": "code",
+                    "text": "`GridType`"
                 }
             ]
         },
-        "properties": {},
-        "methods": {}
+        "properties": {
+            "displayDensity": {
+                "comment": {
+                    "blockTags": [
+                        {
+                            "tag": "@deprecated",
+                            "content": [
+                                {
+                                    "kind": "text",
+                                    "text": "since version 16.1.x. Please use the "
+                                },
+                                {
+                                    "kind": "code",
+                                    "text": "`--ig-size`"
+                                },
+                                {
+                                    "kind": "text",
+                                    "text": " CSS custom property."
+                                }
+                            ]
+                        }
+                    ],
+                    "modifierTags": {},
+                    "summary": []
+                }
+            },
+            "locale": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the locale of the drig: "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`USD`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`EUR`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`GBP`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`CNY`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`JPY`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": ", etc."
+                        }
+                    ]
+                }
+            },
+            "nativeElement": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the native HTML element itself"
+                        }
+                    ]
+                }
+            },
+            "rowEditable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether rows in the grid are editable. If te value is true, the rows can be edited"
+                        }
+                    ]
+                }
+            },
+            "allowFiltering": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether filtering in the grid is enabled. If te value is true, the grid can be filtered"
+                        }
+                    ]
+                }
+            },
+            "rowDraggable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether rows in the grid can be dragged. If te value is true, the rows can be dragged"
+                        }
+                    ]
+                }
+            },
+            "primaryKey": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the unique primary key used for identifying rows in the grid"
+                        }
+                    ]
+                }
+            },
+            "id": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the unique identifier of the grid."
+                        }
+                    ]
+                }
+            },
+            "renderedRowHeight": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The height of the visible rows in the grid."
+                        }
+                    ]
+                }
+            },
+            "moving": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether the grid is currently in a moving state."
+                        }
+                    ]
+                }
+            },
+            "dataCloneStrategy": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Strategy, used for cloning the provided data. The type has one method, that takes any type of data"
+                        }
+                    ]
+                }
+            },
+            "gridAPI": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the grid service type providing API methods for the grid"
+                        }
+                    ]
+                }
+            },
+            "filterMode": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The filter mode for the grid. It can be quick filter of excel-style filter"
+                        }
+                    ]
+                }
+            },
+            "virtualizationState": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the state of virtualization for the grid. It has an owner, start index and chunk size"
+                        }
+                    ]
+                }
+            },
+            "selectionService": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The service handling selection in the grid. Selecting, deselecting elements"
+                        }
+                    ]
+                }
+            },
+            "isRowSelectable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether the grid's rows can be selected"
+                        }
+                    ]
+                }
+            },
+            "showRowSelectors": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether the selectors of the rows are visible"
+                        }
+                    ]
+                }
+            },
+            "isPinningToStart": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether the grid's element is pinned to the start of the grid"
+                        }
+                    ]
+                }
+            },
+            "columnInDrag": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Idicates if the column of the grid is in drag mode"
+                        }
+                    ]
+                }
+            },
+            "pinnedWidth": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The width of pinned element"
+                        }
+                    ]
+                }
+            },
+            "unpinnedWidth": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The width of unpinned element"
+                        }
+                    ]
+                }
+            },
+            "summariesMargin": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The CSS margin of the summaries"
+                        }
+                    ]
+                }
+            },
+            "hasVisibleColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether the grid has columns that are shown"
+                        }
+                    ]
+                }
+            },
+            "hasExpandableChildren": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Optional\nIndicates whether the grid has expandable children (hierarchical and tree grid)"
+                        }
+                    ]
+                }
+            },
+            "showExpandAll": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Optional\nIndicates whether collapsed grid elements should be expanded"
+                        }
+                    ]
+                }
+            },
+            "hiddenColumnsCount": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the count of only the hidden (not visible) columns"
+                        }
+                    ]
+                }
+            },
+            "pinnedColumnsCount": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the count of only the pinned columns"
+                        }
+                    ]
+                }
+            },
+            "iconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Optional\nThe template for grid icons.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "groupRowTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Optional\nThe template for group-by rows.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "groupByRowSelectorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Optional\nThe template for the group row selector.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "rowLoadingIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Optional\nThe template for row loading indicators.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "headSelectorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for the header selector.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "rowSelectorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for row selectors.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "sortHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for sort header icons.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "sortAscendingHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for ascending sort header icons.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "sortDescendingHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for descending sort header icons.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "headerCollapsedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for header collapsed indicators.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "headerExpandedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for header expanded indicators.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "dragIndicatorIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for drag indicator icons. Could be of any type"
+                        }
+                    ]
+                }
+            },
+            "dragIndicatorIconBase": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The base drag indicator icon. Could be of any type"
+                        }
+                    ]
+                }
+            },
+            "disableTransitions": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether transitions are disabled for the grid."
+                        }
+                    ]
+                }
+            },
+            "currencyPositionLeft": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether the currency symbol is positioned to the left of values."
+                        }
+                    ]
+                }
+            },
+            "columnWidthSetByUser": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether the width of the column is set by the user, or is configured automatically."
+                        }
+                    ]
+                }
+            },
+            "calcHeight": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "CSS styling calculated for an element: calcHeight, calcWidth, outerWidth"
+                        }
+                    ]
+                }
+            },
+            "rowHeight": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The height of each row in the grid. Setting a constant height can solve problems with not showing all alements when scrolling"
+                        }
+                    ]
+                }
+            },
+            "defaultHeaderGroupMinWidth": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Minimal width for headers"
+                        }
+                    ]
+                }
+            },
+            "_baseFontSize": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The default font size, calculated for each element"
+                        }
+                    ]
+                }
+            },
+            "validationTrigger": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The trigger for grid validation. It's value can eighter be "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`change`"
+                        },
+                        {
+                            "kind": "text",
+                            "text": " or "
+                        },
+                        {
+                            "kind": "code",
+                            "text": "`blur`"
+                        }
+                    ]
+                }
+            },
+            "pinning": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The configuration for columns and rows pinning in the grid\nIt's of type IPinningConfig, which can have value for columns (start, end) and for rows (top, bottom)"
+                        }
+                    ]
+                }
+            },
+            "columnList": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "An unmodifiable list, containing all the columns of the grid."
+                        }
+                    ]
+                }
+            },
+            "visibleColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "An array of columns, but it counts only the ones visible (not hidden) in the view"
+                        }
+                    ]
+                }
+            },
+            "unpinnedColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "An array of columns, but it counts only the ones that are not pinned"
+                        }
+                    ]
+                }
+            },
+            "pinnedColumns": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "An array of columns, but it counts only the ones that are pinned"
+                        }
+                    ]
+                }
+            },
+            "isCellSelectable": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether cells are selectable in the grid"
+                        }
+                    ]
+                }
+            },
+            "isMultiRowSelectionEnabled": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether it is allowed to select more than one row in the grid"
+                        }
+                    ]
+                }
+            },
+            "transactions": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the transaction service for the grid."
+                        }
+                    ]
+                }
+            },
+            "validation": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the validation service for the grid. The type contains properties and methods (logic) for validating records"
+                        }
+                    ]
+                }
+            },
+            "pagingMode": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the paging of the grid. It can be eighter 'Local' or 'Remote'\n- Local: Default value; The grid will paginate the data source based on the page"
+                        }
+                    ]
+                }
+            },
+            "lastSearchInfo": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the last search in the grid\nIt contains the search text (the user has entered), the match and some settings for the search"
+                        }
+                    ]
+                }
+            },
+            "rowDragging": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Indicates whether a row is currently being dragged"
+                        }
+                    ]
+                }
+            },
+            "cdr": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Provides change detection functionality.\nA change-detection tree collects all views that are to be checked for changes.\nThe property cannot be changed (readonly)"
+                        }
+                    ]
+                }
+            },
+            "rowExpandedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for expanded row indicators.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "rowCollapsedIndicatorTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for collapsed row indicators.\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "excelStyleHeaderIconTemplate": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "The template for header icon\nIt is of type TemplateRef, which represents an embedded template, used to instanciate embedded views"
+                        }
+                    ]
+                }
+            },
+            "cellSelection": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the selection mode for cells: 'none','single', 'multiple', 'multipleCascade'"
+                        }
+                    ]
+                }
+            },
+            "rowSelection": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the selection mode for rows: 'none','single', 'multiple', 'multipleCascade'"
+                        }
+                    ]
+                }
+            },
+            "columnSelection": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the selection mode for columns: 'none','single', 'multiple', 'multipleCascade'"
+                        }
+                    ]
+                }
+            },
+            "summaryCalculationMode": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the calculation mode for summaries: 'rootLevelOnly', 'childLevelsOnly', 'rootAndChildLevels'"
+                        }
+                    ]
+                }
+            },
+            "summaryPosition": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Represents the position of summaries: 'top', 'bottom'"
+                        }
+                    ]
+                }
+            }
+        },
+        "methods": {
+            "__type": {
+                "comment": {
+                    "blockTags": [],
+                    "modifierTags": {},
+                    "summary": [
+                        {
+                            "kind": "text",
+                            "text": "Property, that gets the header cell inner width for auto-sizing."
+                        }
+                    ]
+                }
+            }
+        }
     }
 }
