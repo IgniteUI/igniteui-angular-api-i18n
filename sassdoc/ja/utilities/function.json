@@ -149,6 +149,47 @@
             ]
         }
     },
+    "diff": {
+        "description": [
+            "<p>2 つ以上のマップ間の差異を抽出して最初のマップと残りのマップ比較します。</p>",
+            ""
+        ],
+        "parameters": {
+            "maps": {
+                "description": [
+                    "<p>差分されるマップのリスト。</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>固有のプロパティのマップを返します。</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>最初のマップと比較したときの、2 番目のマップの固有のプロパティを引き出します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$map-1: (",
+                    "  color: orange,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$map-2: (",
+                    "  color: red,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$diffed: diff($map-1, $map-2); // returns (color: red);"
+                ]
+            }
+        ]
+    },
     "to-fixed": {
         "description": [
             "<p>数値を特定の精度に丸めます</p>",

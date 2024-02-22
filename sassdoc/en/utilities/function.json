@@ -149,6 +149,47 @@
             ]
         }
     },
+    "diff": {
+        "description": [
+            "<p>Extracts the differences between two or more maps, comparing the first map against the rest.</p>",
+            ""
+        ],
+        "parameters": {
+            "maps": {
+                "description": [
+                    "<p>A list of maps that will be diffed.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>Returns a map of the unique properties.</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Pull out the unique properties of the second map when compared to the first.</p>",
+                    ""
+                ],
+                "code": [
+                    "$map-1: (",
+                    "  color: orange,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$map-2: (",
+                    "  color: red,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$diffed: diff($map-1, $map-2); // returns (color: red);"
+                ]
+            }
+        ]
+    },
     "to-fixed": {
         "description": [
             "<p>Rounds a number to a certain precision</p>",
