@@ -150,12 +150,6 @@
                     ""
                 ]
             },
-            "border-width": {
-                "description": [
-                    "<p>Badge コンポーネントの境界線の幅。</p>",
-                    ""
-                ]
-            },
             "background-color": {
                 "description": [
                     "<p>使用される背景の色。</p>",
@@ -1222,6 +1216,24 @@
             "date-selected-current-focus-outline": {
                 "description": [
                     "<p>現在選択されている日付の :focus アウトライン。</p>",
+                    ""
+                ]
+            },
+            "date-selected-special-border-color:": {
+                "description": [
+                    "<p>選択された特別な日付の境界線の色。</p>",
+                    ""
+                ]
+            },
+            "date-selected-special-hover-border-color:": {
+                "description": [
+                    "<p>選択された特別な日付の :hover 境界線の色。</p>",
+                    ""
+                ]
+            },
+            "date-selected-special-focus-border-color:": {
+                "description": [
+                    "<p>選択された特別な日付の :focus 境界線の色。</p>",
                     ""
                 ]
             },
@@ -2963,6 +2975,13 @@
                     "<p>ツールバー ドロップダウン項目フォーカス テキストの色。</p>",
                     ""
                 ]
+            },
+
+            "border-color": {
+                "description": [
+                    "<p>ツールバーの下の境界線の色。</p>",
+                    ""
+                ]
             }
         },
         "example": [
@@ -4582,6 +4601,12 @@
                     ""
                 ]
             },
+            "header-border": {
+                "description": [
+                    "<p>クエリ ビルダーの、ヘッダーの境界線の色。</p>",
+                    ""
+                ]
+            },
             "background-and": {
                 "description": [
                     "<p>高度なフィルタリングの &quot;AND&quot; 条件の背景色。</p>",
@@ -4858,21 +4883,87 @@
                     ""
                 ]
             },
-            "thumb-background": {
+            "sb-size": {
                 "description": [
-                    "<p>つまみに使用される背景色。</p>",
+                    "<p>スクロールバーのサイズ。</p>",
                     ""
                 ]
             },
-            "track-background": {
+            "sb-thumb-min-height": {
                 "description": [
-                    "<p>トラックに使用される背景色。</p>",
+                    "<p>つまみの最小の高さ。</p>",
                     ""
                 ]
             },
-            "scrollbar-size": {
+            "sb-thumb-bg-color": {
                 "description": [
-                    "<p>トラックのサイズ。</p>",
+                    "<p>つまみの背景色。</p>",
+                    ""
+                ]
+            },
+            "sb-thumb-bg-color-hover": {
+                "description": [
+                    "<p>つまみの :hover 背景色。</p>",
+                    ""
+                ]
+            },
+            "sb-thumb-border-color": {
+                "description": [
+                    "<p>つまみの境界線の色。</p>",
+                    ""
+                ]
+            },
+            "sb-thumb-border-size": {
+                "description": [
+                    "<p>つまみの境界線のサイズ。</p>",
+                    ""
+                ]
+            },
+            "sb-thumb-border-radius": {
+                "description": [
+                    "<p>つまみの境界線の半径。</p>",
+                    ""
+                ]
+            },
+            "sb-track-bg-color": {
+                "description": [
+                    "<p>トラックの背景色。</p>",
+                    ""
+                ]
+            },
+            "sb-track-bg-color-hover": {
+                "description": [
+                    "<p>トラックの :hover 背景色。</p>",
+                    ""
+                ]
+            },
+            "sb-track-border-color": {
+                "description": [
+                    "<p>トラックの境界線の色。</p>",
+                    ""
+                ]
+            },
+            "sb-track-border-size": {
+                "description": [
+                    "<p>トラックの境界線のサイズ。</p>",
+                    ""
+                ]
+            },
+            "sb-corner-bg": {
+                "description": [
+                    "<p>角の背景色。</p>",
+                    ""
+                ]
+            },
+            "sb-corner-border-color": {
+                "description": [
+                    "<p>角の境界線の色。</p>",
+                    ""
+                ]
+            },
+            "sb-corner-border-size": {
+                "description": [
+                    "<p>角の境界線のサイズ。</p>",
                     ""
                 ]
             }
@@ -4884,7 +4975,7 @@
                     ""
                 ],
                 "code": [
-                    "$my-scrollbar-theme: scrollbar-theme($thumb-background: black, $track-background: gray);",
+                    "$my-scrollbar-theme: scrollbar-theme($sb-thumb-bg-color: black, $sb-track-bg-color: gray);",
                     "// css-vars() mixin へテーマを渡します。",
                     "@include css-vars($my-scrollbar-theme);"
                 ]
@@ -5101,7 +5192,8 @@
     },
     "snackbar-theme": {
         "description": [
-            "<p>背景色を設定して、テキストまたはボタンに色を設定しない場合、ボタンとテキストの色はコントラスト色に設定します。</p>",
+            "<p>背景色を設定して、テキストまたはボタンに色を設定しない場合、",
+            "ボタンとテキストの色はコントラスト色に設定します。</p>",
             ""
         ],
         "parameters": {
@@ -5709,6 +5801,12 @@
                     ""
                 ]
             },
+            "focus-fill-hover-color": {
+                "description": [
+                    "<p>ホバー時のフォーカス塗りつぶし色。</p>",
+                    ""
+                ]
+            },
             "label-invalid-color": {
                 "description": [
                     "<p>無効状態のスイッチ ラベルの色。</p>",
@@ -5756,7 +5854,8 @@
     },
     "tabs-theme": {
         "description": [
-            "<p>背景色のみ指定する場合、アイドル項目の色が自動的にコントラスト色に割り当てられます。</p>",
+            "<p>背景色のみ指定する場合、アイドル項目の色は",
+            "自動的にコントラスト色に割り当てられます。</p>",
             ""
         ],
         "parameters": {
@@ -5917,7 +6016,8 @@
     },
     "time-picker-theme": {
         "description": [
-            "<p>背景色のみ指定した場合、テキスト/アイコンの色は自動的にコントラスト色に割り当てられます。",
+            "<p>背景色のみ指定した場合、テキスト/アイコンの色は",
+            "自動的にコントラスト色に割り当てられます。",
             "無効にされた状態の色には<strong><em>適用しません</em></strong>。</p>",
             ""
         ],
@@ -6062,7 +6162,8 @@
     },
     "toast-theme": {
         "description": [
-            "<p>背景色のみ指定した場合、テキスト色は自動的にコントラスト色に割り当てられます。</p>",
+            "<p>背景色のみ指定した場合、テキスト色は",
+            "自動的にコントラスト色に割り当てられます。</p>",
             ""
         ],
         "parameters": {
@@ -6757,6 +6858,114 @@
             "subtitle-horizontal-alignment": {
                 "description": [
                     "<p>サブタイトルに使用する水平方向。有効なオプションは、&#39;left&#39;、&#39;center&#39; および &#39;right&#39;; です。</p>",
+                    ""
+                ]
+            },
+            "axis-label-margin": {
+                "description": [
+                    "<p>両方の軸のラベルのマージン (top、right、bottom および left) を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-label-text-color": {
+                "description": [
+                    "<p>両方の軸のラベルの色を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-label-text-style": {
+                "description": [
+                    "<p>両方の軸のラベルに CSS フォント プロパティを設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-label-vertical-alignment": {
+                "description": [
+                    "<p>X 軸ラベルの垂直方向の配置を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-major-stroke": {
+                "description": [
+                    "<p>両方の軸の主グリッド線に適用する色を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-major-stroke-thickness": {
+                "description": [
+                    "<p>両方の軸の主グリッド線に適用する太さを設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-minor-stroke": {
+                "description": [
+                    "<p>両方の軸の副グリッド線に適用する色を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-minor-stroke-thickness": {
+                "description": [
+                    "<p>両方の軸の副グリッド線に適用する太さを設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-strip": {
+                "description": [
+                    "<p>両方の軸の背景の縞模様に適用する色を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-stroke": {
+                "description": [
+                    "<p>両方の軸に適用する色を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-stroke-thickness": {
+                "description": [
+                    "<p>両方の軸に適用する太さを設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-tick-length": {
+                "description": [
+                    "<p>両方の軸の目盛りの長さを設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-tick-stroke": {
+                "description": [
+                    "<p>両方の軸の目盛りに適用する色を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-tick-stroke-thickness": {
+                "description": [
+                    "<p>両方の軸の目盛りに適用する太さを設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-title-alignment": {
+                "description": [
+                    "<p>両方の軸の水平方向の配置を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-title-margin": {
+                "description": [
+                    "<p>両方の軸のタイトルのマージン (top、right、bottom および left) を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-title-text-color": {
+                "description": [
+                    "<p>X 軸のタイトルの色を設定します。</p>",
+                    ""
+                ]
+            },
+            "axis-title-text-style": {
+                "description": [
+                    "<p>両方の軸のタイトルに CSS フォント プロパティを設定します。</p>",
                     ""
                 ]
             }
