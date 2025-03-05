@@ -21,5 +21,61 @@
                 ]
             }
         ]
+    },
+    "adaptive-contrast": {
+        "description": [
+            "<p>Sets up CSS custom properties for WCAG contrast calculations.",
+            "These properties are used to determine the appropriate text color contrast",
+            "based on WCAG accessibility guidelines.</p>",
+            ""
+        ],
+        "parameters": {
+            "level": {
+                "description": [
+                    "<p>WCAG contrast level (&#39;a&#39;, &#39;aa&#39;, or &#39;aaa&#39;)</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Using the mixin with default AA level</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast();",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Using the mixin with AAA level</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast('aaa');",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Generated CSS custom properties</p>",
+                    ""
+                ],
+                "code": [
+                    ":root {",
+                    "  --ig-wcag-a: 0.31;    // Level A threshold",
+                    "  --ig-wcag-aa: 0.185;   // Level AA threshold",
+                    "  --ig-wcag-aaa: 0.178;  // Level AAA threshold",
+                    "  --ig-contrast-level: var(--ig-wcag-aa);",
+                    "  --y: clamp(0, (y / var(--ig-contrast-level) - 1) * -infinity, 1);",
+                    "  --y-contrast: xyz-d65 var(--y) var(--y) var(--y);",
+                    "}"
+                ]
+            }
+        ]
     }
 }

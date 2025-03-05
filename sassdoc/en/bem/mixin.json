@@ -44,16 +44,25 @@
     },
     "bem-mod": {
         "description": [
-            "<p>Unrolls into a BEM block-modifier selector.",
-            "This mixin does not generate element-modifiers, the bem-elem mixin instead.",
-            "Nesting bem-mod inside a pseudo-selector is not supported, because what",
-            "that should mean isn&#39;t clear.</p>",
+            "<p>Generates selectors for multiple block modifiers with optional exclusions</p>",
             ""
         ],
         "parameters": {
-            "mod": {
+            "mods": {
                 "description": [
-                    "<p>The modifier name.</p>",
+                    "<p>List of modifier names</p>",
+                    ""
+                ]
+            },
+            "options": {
+                "description": [
+                    "<p>Optional configuration map</p>",
+                    ""
+                ]
+            },
+            "options.not": {
+                "description": [
+                    "<p>Modifier(s) to exclude with :not()</p>",
                     ""
                 ]
             }
@@ -61,13 +70,12 @@
         "example": [
             {
                 "code": [
-                    "@include bem-block(block) {",
-                    "   @include bem-mod(modifier) {",
-                    "     background: red;",
-                    "   }",
-                    "}",
-                    "// Return",
-                    ".block--modifier { background: red; }"
+                    "@include bem-block(card) {",
+                    "  @include bem-mods(large, primary, (not: outline)) {",
+                    "    // Applies to .card--large, .card--primary",
+                    "    // but not when .card--outline is present",
+                    "  }",
+                    "}"
                 ]
             }
         ]

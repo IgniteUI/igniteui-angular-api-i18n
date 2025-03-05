@@ -21,5 +21,61 @@
                 ]
             }
         ]
+    },
+    "adaptive-contrast": {
+        "description": [
+            "<p>WCAG コントラスト計算用の CSS カスタム プロパティを設定します。",
+            "これらのプロパティは、WCAG アクセシビリティ ガイドラインに基づいて",
+            "適切なテキストの色のコントラストを決定するために使用されます。</p>",
+            ""
+        ],
+        "parameters": {
+            "level": {
+                "description": [
+                    "<p>WCAG コントラスト レベル (&#39;a&#39;、&#39;aa&#39;、または &#39;aaa&#39;)</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>デフォルトの AA レベルでミックスインを使用します。</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast();",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "<p>AAA レベルでミックスインを使用します。</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast('aaa');",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "<p>生成された CSS カスタムプロパティ</p>",
+                    ""
+                ],
+                "code": [
+                    ":root {",
+                    "  --ig-wcag-a: 0.31;    // Level A threshold",
+                    "  --ig-wcag-aa: 0.185;   // Level AA threshold",
+                    "  --ig-wcag-aaa: 0.178;  // Level AAA threshold",
+                    "  --ig-contrast-level: var(--ig-wcag-aa);",
+                    "  --y: clamp(0, (y / var(--ig-contrast-level) - 1) * -infinity, 1);",
+                    "  --y-contrast: xyz-d65 var(--y) var(--y) var(--y);",
+                    "}"
+                ]
+            }
+        ]
     }
 }

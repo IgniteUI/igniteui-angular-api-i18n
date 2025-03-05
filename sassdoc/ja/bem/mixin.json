@@ -43,15 +43,25 @@
     },
     "bem-mod": {
         "description": [
-            "<p>BEM ブロック修飾になります。",
-            "この mixin は 要素修飾を生成しません。代わりに bem-elem mixin を使用してください。",
-            "操作の意味が不明なため、疑似セレクター内に bem-mod のネストはサポートしません。</p>",
+            "<p>オプションの除外を含む複数のブロック修飾子のセレクターを生成します。</p>",
             ""
         ],
         "parameters": {
-            "mod": {
+            "mods": {
                 "description": [
-                    "<p>修飾の名前。</p>",
+                    "<p>修飾子名のリスト。</p>",
+                    ""
+                ]
+            },
+            "options": {
+                "description": [
+                    "<p>オプションの構成マップ。</p>",
+                    ""
+                ]
+            },
+            "options.not": {
+                "description": [
+                    "<p>:not() で除外する修飾子。</p>",
                     ""
                 ]
             }
@@ -59,13 +69,12 @@
         "example": [
             {
                 "code": [
-                    "@include bem-block(block) {",
-                    "   @include bem-mod(modifier) {",
-                    "     background: red;",
-                    "   }",
-                    "}",
-                    "// Return",
-                    ".block--modifier { background: red; }"
+                    "@include bem-block(card) {",
+                    "  @include bem-mods(large, primary, (not: outline)) {",
+                    "    // Applies to .card--large, .card--primary",
+                    "    // but not when .card--outline is present",
+                    "  }",
+                    "}"
                 ]
             }
         ]
