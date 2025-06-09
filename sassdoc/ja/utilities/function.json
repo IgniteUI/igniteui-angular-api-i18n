@@ -129,6 +129,26 @@
             }
         ]
     },
+    "clean": {
+        "description": [
+            "<p>マップからすべての null キーと値のペアを削除します。</p>",
+            ""
+        ],
+        "parameters": {
+            "map": {
+                "description": [
+                    "<p>クリーンアップするターゲット マップ。</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>null キーと値のペアが削除されたマップを返します。</p>",
+                ""
+            ]
+        }
+    },
     "extend": {
         "description": [
             "<p>プロセスで null 値を無視して、別の Map の値で Map を拡張します。</p>",
@@ -215,6 +235,90 @@
                 ""
             ]
         }
+    },
+    "to-string": {
+        "description": [
+            "<p>数値を文字列に変換します。</p>",
+            ""
+        ],
+        "parameters": {
+            "num": {
+                "description": [
+                    "<p>変換する数字。</p>",
+                    ""
+                ]
+            },
+            "radix": {
+                "description": [
+                    "<p>この変換に使用される base radix。</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>結果の文字列。</p>",
+                ""
+            ]
+        }
+    },
+    "is-root": {
+        "description": [
+            "<p>呼ばれた範囲がドキュメントのルートの場合、true を返します。</p>",
+            ""
+        ],
+        "returns": {
+            "description": [
+                "<p>呼び出されたスコープに応じてブール値を返します。</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>現在の範囲がルートであるかどうかをチェックします。</p>",
+                    ""
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $scope: if(is-root(), ':root', '&');",
+                    "",
+                    "  #{$scope} {",
+                    "    /* style rules here */",
+                    "  }",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "is-host": {
+        "description": [
+            "<p>呼び出し元のスコープが :host の場合に true を返します。</p>",
+            ""
+        ],
+        "returns": {
+            "description": [
+                "<p>呼び出されたスコープに応じてブール値を返します。</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>現在の範囲が :root であるかどうかをチェックします。</p>",
+                    ""
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $host: is-host();",
+                    "",
+                    "  @if is-host() {",
+                    "    /* style rules here */",
+                    "  }",
+                    "}"
+                ]
+            }
+        ]
     },
     "split": {
         "description": [

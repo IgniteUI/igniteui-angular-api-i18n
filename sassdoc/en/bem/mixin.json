@@ -1,4 +1,31 @@
 {
+    "bem-block": {
+        "description": [
+            "<p>Simply unrolls into a class-selector. The main purpose of using this mixin",
+            "is to clearly denote the start of a BEM block.</p>",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "<p>The block name.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   background: green;",
+                    "}",
+                    "",
+                    "// Output",
+                    ".block { background: green; }"
+                ]
+            }
+        ]
+    },
     "bem-elem": {
         "description": [
             "<p>Unrolls into a proper BEM element selector, depending on the context.",
@@ -110,6 +137,185 @@
                     " }"
                 ]
             }
+        ]
+    },
+    "bem": {
+        "description": [
+            "<p>Generates a full BEM rule.</p>",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "<p>A string block name. Required.</p>",
+                    ""
+                ]
+            },
+            "elem": {
+                "description": [
+                    "<p>A sub-element name. If <code>$mod</code> is not present, it is",
+                    "joined with $block. If $mod is present, it is nested under <code>$block--$mod</code>.</p>",
+                    ""
+                ]
+            },
+            "mod": {
+                "description": [
+                    "<p>A block modifier.</p>",
+                    ""
+                ]
+            },
+            "mods": {
+                "description": [
+                    "<p>A list of block modifiers.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Include a block</p>",
+                    ""
+                ],
+                "code": [
+                    "@include bem(block) {",
+                    "  background: blue;",
+                    "};",
+                    "",
+                    "// Output",
+                    ".block {",
+                    "  background: blue;",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include a block and an element</p>",
+                    ""
+                ],
+                "code": [
+                    " @include bem(block, $elem: elem) {",
+                    "   background: blue;",
+                    " }",
+                    "",
+                    "// Output",
+                    " .block__elem {",
+                    "   background: blue;",
+                    " }"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block, element, and element modifier</p>",
+                    ""
+                ],
+                "code": [
+                    "@include bem(block, $elem: (elem, mod)) {",
+                    "  background: blue;",
+                    "}",
+                    "",
+                    "// Output",
+                    ".block__elem--mod {",
+                    "  background: blue;",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block and block modifier</p>",
+                    ""
+                ],
+                "code": [
+                    "@include bem(block, $mod: mod) {",
+                    "  background: blue;",
+                    "}",
+                    "",
+                    "// Output",
+                    ".block--mod {",
+                    "  background: blue;",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block with multiple modifiers</p>",
+                    ""
+                ],
+                "code": [
+                    "@include bem(block, $mods: (mod-1, mod-2)) {",
+                    "   background: blue;",
+                    " }",
+                    "",
+                    " // Output",
+                    " .block--mod-1.block--mod-2 {",
+                    "   background: blue;",
+                    " }"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block modifier followed by block sub-element</p>",
+                    ""
+                ],
+                "code": [
+                    "@include bem(block, $m:mod, $e:elem) {",
+                    "  background: blue;",
+                    "}",
+                    "",
+                    "// Output",
+                    ".block--mod .block__elem {",
+                    "  background: blue;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "block": {
+        "description": [
+            "<p>The same as bem-block.</p>",
+            ""
+        ]
+    },
+    "elem": {
+        "description": [
+            "<p>The same as bem-elem.</p>",
+            ""
+        ]
+    },
+    "mod": {
+        "description": [
+            "<p>The same as bem-mod.</p>",
+            ""
+        ]
+    },
+    "mods": {
+        "description": [
+            "<p>The same as bem-mods.</p>",
+            ""
+        ]
+    },
+    "b": {
+        "description": [
+            "<p>The same as bem-block.</p>",
+            ""
+        ]
+    },
+    "e": {
+        "description": [
+            "<p>The same as bem-elem.</p>",
+            ""
+        ]
+    },
+    "m": {
+        "description": [
+            "<p>The same as bem-mod.</p>",
+            ""
+        ]
+    },
+    "mx": {
+        "description": [
+            "<p>The same as bem-mods.</p>",
+            ""
         ]
     }
 }

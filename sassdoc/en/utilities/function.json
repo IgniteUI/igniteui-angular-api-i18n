@@ -129,6 +129,26 @@
             }
         ]
     },
+    "clean": {
+        "description": [
+            "<p>Removes all null key-value pairs from a map</p>",
+            ""
+        ],
+        "parameters": {
+            "map": {
+                "description": [
+                    "<p>The target map to be cleaned.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>Returns a map with null key-value pairs removed.</p>",
+                ""
+            ]
+        }
+    },
     "extend": {
         "description": [
             "<p>Extends a Map with the values of another Map, disregarding null values in the process.</p>",
@@ -215,6 +235,90 @@
                 ""
             ]
         }
+    },
+    "to-string": {
+        "description": [
+            "<p>Converts a number to a string.</p>",
+            ""
+        ],
+        "parameters": {
+            "num": {
+                "description": [
+                    "<p>The number to convert.</p>",
+                    ""
+                ]
+            },
+            "radix": {
+                "description": [
+                    "<p>The base radix to use for the conversion.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>The resulting string.</p>",
+                ""
+            ]
+        }
+    },
+    "is-root": {
+        "description": [
+            "<p>Returns true if the scope where it&#39;s called is the root of the document.</p>",
+            ""
+        ],
+        "returns": {
+            "description": [
+                "<p>Returns a boolean depending on the scope where it&#39;s called</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Check if the current scope is root</p>",
+                    ""
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $scope: if(is-root(), ':root', '&');",
+                    "",
+                    "  #{$scope} {",
+                    "    /* style rules here */",
+                    "  }",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "is-host": {
+        "description": [
+            "<p>Returns true if the scope where it&#39;s called is :host.</p>",
+            ""
+        ],
+        "returns": {
+            "description": [
+                "<p>Returns a boolean depending on the scope where it&#39;s called</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Check if the current scope is :root</p>",
+                    ""
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $host: is-host();",
+                    "",
+                    "  @if is-host() {",
+                    "    /* style rules here */",
+                    "  }",
+                    "}"
+                ]
+            }
+        ]
     },
     "split": {
         "description": [

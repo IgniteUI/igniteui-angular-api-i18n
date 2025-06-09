@@ -14,7 +14,7 @@
         },
         "returns": {
             "description": [
-                "<p>Returns a relative syntax OKLCH color where the lightness is adjusted",
+                "<p>Returns a relative HSL color where the lightness is adjusted",
                 "based on the specified contrast level, resulting in either black or white.</p>",
                 ""
             ]
@@ -25,7 +25,7 @@
                     ".my-component {",
                     "   --bg: #09f;",
                     "   background: var(--bg);",
-                    "   color: adaptive-contrast(var(--bg));",
+                    "   color: adaptive-contrast(var(--bg)); // hsl(from color(from var(--bg) var(--y-contrast)) h 0 l)",
                     " }"
                 ]
             }
@@ -68,8 +68,8 @@
             {
                 "code": [
                     ".my-component {",
-                    "   background: #09f",
-                    "   color: text-contrast(#09f)",
+                    "   background: #09f;",
+                    "   color: text-contrast(#09f);",
                     " }"
                 ]
             }
@@ -108,8 +108,7 @@
     },
     "contrast": {
         "description": [
-            "<p>Calculates the contrast ratio between two colors.",
-            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a></p>",
+            "<p>Calculates the contrast ratio between two colors.</p>",
             ""
         ],
         "parameters": {
@@ -135,15 +134,14 @@
         "example": [
             {
                 "code": [
-                    "contrast(#09f, #000);"
+                    "$conrast: contrast(#09f, #000); // 7"
                 ]
             }
         ]
     },
     "luminance": {
         "description": [
-            "<p>Calculates the luminance for a given color.",
-            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a>.</p>",
+            "<p>Calculates the luminance for a given color.</p>",
             ""
         ],
         "parameters": {
@@ -163,7 +161,9 @@
         "example": [
             {
                 "code": [
-                    "luminance(#09f);"
+                    "$white: luminance(#fff); // 1",
+                    "$blue: luminance(#09f); // 0.3",
+                    "$black: luminance(#000); // 0"
                 ]
             }
         ]

@@ -69,15 +69,22 @@
         "example": [
             {
                 "code": [
-                    "// $primary、$secondary、$surface は必須パラメーターです。",
-                    "$my-palette: palette($primary: #09f,$secondary #222, $surface: #fff);"
+                    "// 必要な色を渡します。",
+                    "$my-palette: palette(",
+                    "  $primary: rebeccapurple,",
+                    "  $secondary: orange,",
+                    "  $surface: white,",
+                    ");",
+                    "",
+                    "// 生成されたパレットの色を CSS 変数として含めます。",
+                    "@include palette($my-palette);"
                 ]
             }
         ]
     },
     "shades": {
         "description": [
-            "<p>基本色からマテリアルのようなカラー パレットを生成します。</p>",
+            "<p>指定された色の色合いを生成します。</p>",
             ""
         ],
         "parameters": {
@@ -89,33 +96,40 @@
             },
             "color": {
                 "description": [
-                    "<p>パレットの生成に使用する基本色。</p>",
+                    "<p>色合いの生成に使用する基本色。</p>",
                     ""
                 ]
             },
             "shades": {
                 "description": [
-                    "<p>色合いのリスト。</p>",
+                    "<p>色合いバリアントのリスト。</p>",
                     ""
                 ]
             },
             "surface": {
                 "description": [
-                    "<p>surface のカラー。gray の色合いを生成するときに便利です (オプション)。</p>",
+                    "<p>surface のカラー。gray の色合いを生成する場合に便利です (オプション)。</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>hsla 色合いとそれぞれのコントラスト カラーで構成されるマップ。</p>",
+                "<p>色合いとそれぞれのコントラスト カラーで構成されるマップ。</p>",
                 ""
             ]
         },
         "example": [
             {
                 "code": [
-                    "$special-color-shades: shades('accent', #09f, (50,100,200,300,400,500,600,700,800,900))"
+                    "$color-name: 'accent';",
+                    "",
+                    "// 生成されたパレットの色を CSS 変数として含みます。",
+                    "@include palette(",
+                    "  (",
+                    "    #{$color-name}: shades($color-name, #a57865, $IColorShades),",
+                    "  )",
+                    ");"
                 ]
             }
         ]
@@ -159,14 +173,35 @@
         },
         "example": [
             {
+                "description": [
+                    "<p>パレットから色を取得する方法</p>",
+                    ""
+                ],
                 "code": [
-                    "// No palette",
+                    "// パレットを指定せずに取得する場合",
                     ".my-component-1 {",
-                    "   background: color($color: 'primary', $variant: 200);",
+                    "   background: color($color: primary, $variant: 200); // var(--ig-primary-200)",
                     " }",
-                    " // Using certain palette and adding .5% opacity to the color variant",
+                    "",
+                    " // 特定のパレットを使用して取得する場合",
                     ".my-component-2 {",
-                    "   background: color($my-palette, 'primary', 200, .5);",
+                    "   background: color($my-palette, primary, 200); // #88c0e5",
+                    " }"
+                ]
+            },
+            {
+                "description": [
+                    "<p>不透明度を指定して色を取得する方法</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component-1 {",
+                    "   background: color($color: primary, $variant: 200, $opacity: 0.5); // hsl(from var(--ig-primary-200) h s l/0.5)",
+                    " }",
+                    "",
+                    " // 特定のパレットを使用して取得する場合",
+                    ".my-component-2 {",
+                    "   background: color($my-palette, primary, 200, $opacity: 0.5); // rgba(136, 192, 229, 0.5)",
                     " }"
                 ]
             }
@@ -174,7 +209,7 @@
     },
     "contrast-color": {
         "description": [
-            "<p>カラー レットから指定のカラー バリアントのためコントラスト テキストの色を取得します。</p>",
+            "<p>カラー レットから指定のカラー バリアントのためコントラストの色を取得します。color 関数と同様に動作します。</p>",
             ""
         ],
         "parameters": {
@@ -198,7 +233,7 @@
             },
             "opacity": {
                 "description": [
-                    "<p>Optional opacity to apply to the color shade.</p>",
+                    "<p>色合いに適用するオプションの不透明度。</p>",
                     ""
                 ]
             }
@@ -226,7 +261,7 @@
     },
     "chart-brushes": {
         "description": [
-            "<p>チャート ブラシとして使用される色のリストを返します。</p>",
+            "<p>チャート ブラシとして使用される色のリストを返します。戻り値は、enhanced-accessibility の値によって異なります。</p>",
             ""
         ],
         "returns": {

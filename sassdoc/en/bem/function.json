@@ -1,4 +1,99 @@
 {
+    "bem-selector": {
+        "description": [
+            "<p>Generates a full BEM selector.</p>",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "<p>A string block name. Required.</p>",
+                    ""
+                ]
+            },
+            "elem": {
+                "description": [
+                    "<p>A sub-element name. If <code>$mod</code> is not present, it is",
+                    "joined with $block. If $mod is present, it is nested under <code>$block--$mod</code>.</p>",
+                    ""
+                ]
+            },
+            "mod": {
+                "description": [
+                    "<p>A block modifier.</p>",
+                    ""
+                ]
+            },
+            "mods": {
+                "description": [
+                    "<p>A list of block modifiers.</p>",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "<p>The generated BEM selector string</p>",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Include a block</p>",
+                    ""
+                ],
+                "code": [
+                    "$selector: bem-selector(block); // returns .block"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include a block and an element</p>",
+                    ""
+                ],
+                "code": [
+                    "$selector: bem-selector(block, $elem: elem); // returns .block__elem"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block, element, and element modifier</p>",
+                    ""
+                ],
+                "code": [
+                    "$selector: bem-selector(block, $elem: (elem, mod); // returns .block__elem--mod"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block and block modifier</p>",
+                    ""
+                ],
+                "code": [
+                    "$selector: bem-selector(block, $mod: mod) // returns .block--mod"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block and multiple block modifiers</p>",
+                    ""
+                ],
+                "code": [
+                    "$selector: bem-selector(block, $mods: (mod-1, mod-2)) // returns .block--mod-1.block--mod-2"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Include block modifier followed by block sub-element</p>",
+                    ""
+                ],
+                "code": [
+                    "$selector: bem-selector(block, $m: mod, $e: elem); // returns .block--mod .block__elem"
+                ]
+            }
+        ]
+    },
     "elem": {
         "description": [
             "<p>Returns a BEM element selector string. If a modifier is provided, it will be appended to the element selector.</p>",
@@ -19,7 +114,7 @@
             },
             "mod": {
                 "description": [
-                    "<p>Optional. The modifier name.</p>",
+                    "<p>The modifier name. Optional.</p>",
                     ""
                 ]
             }
@@ -33,8 +128,8 @@
         "example": [
             {
                 "code": [
-                    "elem('button', 'icon')        // returns '.button__icon'",
-                    "elem('button', 'icon', 'big') // returns '.button__icon--big'"
+                    "$selector: elem('button', 'icon') // returns '.button__icon'",
+                    "$selector: elem('button', 'icon', 'big') // returns '.button__icon--big'"
                 ]
             }
         ]
@@ -67,8 +162,8 @@
         "example": [
             {
                 "code": [
-                    "mod('button', 'primary') // returns '.button--primary'",
-                    "mod('card', 'outlined') // returns '.card--outlined'"
+                    "$selector: mod('button', 'primary') // returns '.button--primary'",
+                    "$selector: mod('card', 'outlined') // returns '.card--outlined'"
                 ]
             }
         ]

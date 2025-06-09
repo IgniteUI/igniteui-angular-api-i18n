@@ -1,8 +1,68 @@
 {
-    "_bem-mod-cache": {
-        "description": [
-            "<p>修飾文字列変換のキャッシュ。</p>",
-            ""
+    "bem--sep-elem": {
+        "example": [
+            {
+                "description": [
+                    "<p>要素セパレーターを &#39;__&#39; から &#39;-&#39; に変更します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$bem--sep-elem: '-';",
+                    "",
+                    "@include b(block) {",
+                    "   @include e(element) {",
+                    "     background: blue;",
+                    "   }",
+                    "}",
+                    "",
+                    "// 生成された CSS",
+                    ".block-element { background: blue; }"
+                ]
+            }
+        ]
+    },
+    "bem--sep-mod": {
+        "example": [
+            {
+                "description": [
+                    "<p>修飾子セパレーター を &#39;--&#39; から &#39;---&#39; に変更します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$bem--sep-mod: '---';",
+                    "",
+                    "@include b(block) {",
+                    "   @include m(modifier) {",
+                    "     background: red;",
+                    "   }",
+                    "}",
+                    "",
+                    "// 生成された CSS",
+                    ".block---modifier { background: red; }"
+                ]
+            }
+        ]
+    },
+    "bem--sep-mod-val": {
+        "example": [
+            {
+                "description": [
+                    "<p>修飾子値セパレーターを &#39;-&#39; から &#39;_&#39; に変更します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$bem--sep-mod-val: '_';",
+                    "",
+                    "@include b(block) {",
+                    "   @include m(modifier, value) {",
+                    "     background: red;",
+                    "   }",
+                    "}",
+                    "",
+                    "// 生成された CSS",
+                    ".block--modifier_value { background: red; }"
+                ]
+            }
         ]
     }
 }

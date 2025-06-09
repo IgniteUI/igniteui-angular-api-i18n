@@ -69,15 +69,22 @@
         "example": [
             {
                 "code": [
-                    "// $primary, $secondary, $surface are required parameters.",
-                    "$my-palette: palette($primary: #09f,$secondary #222, $surface: #fff);"
+                    "// Pass the required colors",
+                    "$my-palette: palette(",
+                    "  $primary: rebeccapurple,",
+                    "  $secondary: orange,",
+                    "  $surface: white,",
+                    ");",
+                    "",
+                    "// Include the generated palette colors as CSS variables.",
+                    "@include palette($my-palette);"
                 ]
             }
         ]
     },
     "shades": {
         "description": [
-            "<p>Generates a Material-like color palette from a base color.</p>",
+            "<p>Generates color shades for a given color.</p>",
             ""
         ],
         "parameters": {
@@ -89,33 +96,40 @@
             },
             "color": {
                 "description": [
-                    "<p>The base color used to generate the palette.</p>",
+                    "<p>The base color used to generate the shades.</p>",
                     ""
                 ]
             },
             "shades": {
                 "description": [
-                    "<p>The list of shades.</p>",
+                    "<p>The list of shade variants.</p>",
                     ""
                 ]
             },
             "surface": {
                 "description": [
-                    "<p>The surface color. Useful when generating shades of gray (optional).</p>",
+                    "<p>The surface color. Useful if generating shades of gray (optional).</p>",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>A map consisting of hsla color shades and their respective contrast colors.</p>",
+                "<p>A map consisting of color shades and their respective contrast colors.</p>",
                 ""
             ]
         },
         "example": [
             {
                 "code": [
-                    "$special-color-shades: shades('accent', #09f, (50,100,200,300,400,500,600,700,800,900))"
+                    "$color-name: 'accent';",
+                    "",
+                    "// Include the generated palette colors as CSS variables.",
+                    "@include palette(",
+                    "  (",
+                    "    #{$color-name}: shades($color-name, #a57865, $IColorShades),",
+                    "  )",
+                    ");"
                 ]
             }
         ]
@@ -159,14 +173,35 @@
         },
         "example": [
             {
+                "description": [
+                    "<p>Getting a color from the palette</p>",
+                    ""
+                ],
                 "code": [
-                    "// No palette",
+                    "// Without providing a palette",
                     ".my-component-1 {",
-                    "   background: color($color: 'primary', $variant: 200);",
+                    "   background: color($color: primary, $variant: 200); // var(--ig-primary-200)",
                     " }",
-                    " // Using certain palette and adding .5% opacity to the color variant",
+                    "",
+                    " // With a specific palette",
                     ".my-component-2 {",
-                    "   background: color($my-palette, 'primary', 200, .5);",
+                    "   background: color($my-palette, primary, 200); // #88c0e5",
+                    " }"
+                ]
+            },
+            {
+                "description": [
+                    "<p>Getting a color with opacity</p>",
+                    ""
+                ],
+                "code": [
+                    ".my-component-1 {",
+                    "   background: color($color: primary, $variant: 200, $opacity: 0.5); // hsl(from var(--ig-primary-200) h s l/0.5)",
+                    " }",
+                    "",
+                    " // With a specific palette",
+                    ".my-component-2 {",
+                    "   background: color($my-palette, primary, 200, $opacity: 0.5); // rgba(136, 192, 229, 0.5)",
                     " }"
                 ]
             }
@@ -174,7 +209,7 @@
     },
     "contrast-color": {
         "description": [
-            "<p>Retrieves a contrast text color for a given color variant from a color palette.</p>",
+            "<p>Retrieves a contrast color for a given color variant from a color palette. Works similarly to the color function.</p>",
             ""
         ],
         "parameters": {
@@ -226,7 +261,7 @@
     },
     "chart-brushes": {
         "description": [
-            "<p>Returns a list of colors to be used as chart brushes.</p>",
+            "<p>Returns a list of colors to be used as chart brushes. The return value depends on the value of enhanced-accessibility.</p>",
             ""
         ],
         "returns": {
