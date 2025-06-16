@@ -158,7 +158,7 @@
             },
             "border-radius": {
                 "description": [
-                    "<p>使用されるエレベーション（影）マップ。</p>",
+                    "<p>使用されるエレベーション (影) マップ。</p>",
                     ""
                 ]
             }
@@ -708,7 +708,7 @@
             },
             "active-shadow": {
                 "description": [
-                    "<p>フォーカス状態のボタンの影。</p>",
+                    "<p>アクティブ状態のボタンの影。</p>",
                     ""
                 ]
             },
@@ -747,6 +747,828 @@
                     "$my-button-theme: button-theme(",
                     "  $foreground: white,",
                     "  $background: black",
+                    ");",
+                    "// css-vars() mixin へテーマを渡します。",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "contained-button-theme": {
+        "description": [
+            "<p>背景色のみ指定した場合、",
+            "テキスト/アイコンの色は自動的に比色に割り当てられます。",
+            "無効な状態の色には<strong><em>適用しません</em></strong>。</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>コンポーネントのスタイル設定に基づいて使用されるスキーマ。</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>ボタンの背景色。</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>ボタンのテキストの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>ボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>ホバー時のボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>ボタンのホバー背景色。</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>ボタンのホバー テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>ボタンのフォーカス背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態のテキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>ボタンのフォーカス表示の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス表示テキストの色。</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>ボタンのアクティブな背景。</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>ボタンのアクティブなテキストの色。</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>ボタンの境界線の半径。</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>ボタンの境界線の色。</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>ボタンのホバー境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス表示境界線の色。</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>ボタンのアクティブ表示の境界線の色。</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>ボタンの影の色。</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>アイドル状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>ホバー状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>ボタンの無効な背景色。</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>ボタンの無効なテキストの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>無効になっているボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>ボタンの無効な境界線の色。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>contained ボタンのテキストと背景の色を変更します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: contained-button-theme(",
+                    "  $foreground: white,",
+                    "  $background: black",
+                    ");",
+                    "// css-vars() mixin へテーマを渡します。",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "fab-button-theme": {
+        "description": [
+            "<p>背景色のみ指定した場合、",
+            "テキスト/アイコンの色は自動的に比色に割り当てられます。",
+            "無効な状態の色には<strong><em>適用しません</em></strong>。</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>コンポーネントのスタイル設定に基づいて使用されるスキーマ。</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>ボタンの背景色。</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>ボタンのテキストの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>ボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>ホバー時のボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>ボタンのホバー背景色。</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>ボタンのホバー テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>ボタンのフォーカス背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態のテキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>ボタンのフォーカス表示の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス表示テキストの色。</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>ボタンのアクティブな背景。</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>ボタンのアクティブなテキストの色。</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>ボタンの境界線の半径。</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>ボタンの境界線の色。</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>ボタンのホバー境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス表示境界線の色。</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>ボタンのアクティブ表示の境界線の色。</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>ボタンの影の色。</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>アイドル状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>ホバー状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>ボタンの無効な背景色。</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>ボタンの無効なテキストの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>無効になっているボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>ボタンの無効な境界線の色。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>fab ボタンのテキストと背景の色を変更します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: fab-button-theme(",
+                    "  $foreground: white,",
+                    "  $background: black",
+                    ");",
+                    "// css-vars() mixin へテーマを渡します。",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "flat-button-theme": {
+        "description": [
+            "<p>背景色のみ指定した場合、",
+            "テキスト/アイコンの色は自動的に比色に割り当てられます。",
+            "無効な状態の色には<strong><em>適用しません</em></strong>。</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>コンポーネントのスタイル設定に基づいて使用されるスキーマ。</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>ボタンの背景色。</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>ボタンのテキストの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>ボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>ホバー時のボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>ボタンのホバー背景色。</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>ボタンのホバー テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>ボタンのフォーカス背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態のテキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>ボタンのフォーカス表示の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス表示テキストの色。</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>ボタンのアクティブな背景。</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>ボタンのアクティブなテキストの色。</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>ボタンの境界線の半径。</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>ボタンの境界線の色。</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>ボタンのホバー境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス表示境界線の色。</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>ボタンのアクティブ表示の境界線の色。</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>ボタンの影の色。</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>アイドル状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>ホバー状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>ボタンの無効な背景色。</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>ボタンの無効なテキストの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>無効になっているボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>ボタンの無効な境界線の色。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>flat ボタンのテキストと背景の色を変更します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: flat-button-theme(",
+                    "  $foreground: black,",
+                    ");",
+                    "// css-vars() mixin へテーマを渡します。",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "outlined-button-theme": {
+        "description": [
+            "<p>背景色のみ指定した場合、",
+            "テキスト/アイコンの色は自動的に比色に割り当てられます。",
+            "無効な状態の色には<strong><em>適用しません</em></strong>。</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>コンポーネントのスタイル設定に基づいて使用されるスキーマ。</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>ボタンの背景色。</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>ボタンのテキストの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>ボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>ホバー時のボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>ボタンのホバー背景色。</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>ボタンのホバー テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>ボタンのフォーカス背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス テキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス時のホバー状態のテキストの色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>ボタンのフォーカス表示の背景色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>ボタンのフォーカス表示テキストの色。</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>ボタンのアクティブな背景。</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>ボタンのアクティブなテキストの色。</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>ボタンの境界線の半径。</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>ボタンの境界線の色。</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>ボタンのホバー境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>ボタンのフォーカス表示境界線の色。</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>ボタンのアクティブ表示の境界線の色。</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>ボタンの影の色。</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>アイドル状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>ホバー状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>フォーカス状態のボタンの影。</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>ボタンの無効な背景色。</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>ボタンの無効なテキストの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>無効になっているボタンのアイコンの色。</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>ボタンの無効な境界線の色。</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>outlined ボタンのテキストと背景の色を変更します。</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: outlined-button-theme(",
+                    "  $foreground: black,",
                     ");",
                     "// css-vars() mixin へテーマを渡します。",
                     "@include css-vars($my-button-theme);"
@@ -1598,9 +2420,27 @@
                     ""
                 ]
             },
+            "button-focus-border-color": {
+                "description": [
+                    "<p>フォーカス時のナビゲーション ボタンの境界線の色。</p>",
+                    ""
+                ]
+            },
             "button-disabled-border-color": {
                 "description": [
                     "<p>前へ/次へボタンの無効な境界線の色。</p>",
+                    ""
+                ]
+            },
+            "indicator-background": {
+                "description": [
+                    "<p>インジケーター コンテナーの背景色。</p>",
+                    ""
+                ]
+            },
+            "label-indicator-background": {
+                "description": [
+                    "<p>ラベル インジケーター コンテナーの背景色。</p>",
                     ""
                 ]
             },
@@ -1613,6 +2453,12 @@
             "indicator-hover-dot-color": {
                 "description": [
                     "<p>ホバー インジケーターの点の色。</p>",
+                    ""
+                ]
+            },
+            "indicator-focus-color": {
+                "description": [
+                    "<p>フォーカス時のインジケーターの境界線と点の色。</p>",
                     ""
                 ]
             },
@@ -1778,6 +2624,18 @@
                     ""
                 ]
             },
+            "focus-outline-color-focused": {
+                "description": [
+                    "<p>フォーカス状態のフォーカス アウトラインの色。</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>フォーカス境界線の色。</p>",
+                    ""
+                ]
+            },
             "error-color": {
                 "description": [
                     "<p>無効な状態の境界線と塗りつぶしの色。</p>",
@@ -1786,7 +2644,13 @@
             },
             "error-color-hover": {
                 "description": [
-                    "<p>ホバー時に無効な状態の境界線と塗りつぶしの色。",
+                    "<p>ホバー時に無効な状態の境界線と塗りつぶしの色。</p>",
+                    ""
+                ]
+            },
+            "focus-outline-color-error": {
+                "description": [
+                    "<p>フォーカス アウトライン エラーの色。",
                     "周りの領域が暗い場合は light に設定します。</p>",
                     ""
                 ]
@@ -3684,12 +4548,6 @@
                     ""
                 ]
             },
-            "interim-bottom-line-color": {
-                "description": [
-                    "<p>フォーカス状態のトランジション中の下線と境界線の色。</p>",
-                    ""
-                ]
-            },
             "disabled-bottom-line-color": {
                 "description": [
                     "<p>無効な状態の下線と境界線の色。</p>",
@@ -4607,6 +5465,12 @@
             "fill-hover-border-color": {
                 "description": [
                     "<p>ホバー時のチェックされた境界線の色。</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>フォーカス境界線の色。</p>",
                     ""
                 ]
             },
@@ -5980,7 +6844,7 @@
             },
             "active-item-border-radius": {
                 "description": [
-                    "<p>現在アクティブな項目のアウトラインに使用される境界半径（時、分、午後 / 午前）。</p>",
+                    "<p>現在アクティブな項目のアウトラインに使用される境界半径 (時、分、午後 / 午前)。</p>",
                     ""
                 ]
             }

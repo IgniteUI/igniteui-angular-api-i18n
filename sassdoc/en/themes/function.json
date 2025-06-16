@@ -708,7 +708,7 @@
             },
             "active-shadow": {
                 "description": [
-                    "<p>The shadow of the button in its focus state.</p>",
+                    "<p>The shadow of the button in its active state.</p>",
                     ""
                 ]
             },
@@ -747,6 +747,828 @@
                     "$my-button-theme: button-theme(",
                     "  $foreground: white,",
                     "  $background: black",
+                    ");",
+                    "// Pass the theme to the css-vars() mixin",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "contained-button-theme": {
+        "description": [
+            "<p>If only background color is specified, text/icon color",
+            "will be assigned automatically to a contrasting color.",
+            "Does <strong><em>not</em></strong> apply for disabled state colors.</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>The schema used as basis for styling the component.</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>The background color of the button.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>The text color of the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>The icon color in the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>The icon color in the button on hover.</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>The hover background color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>The hover text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>The focus background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>The focus text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>The background color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>The text color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>The focus-visible background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>The focus-visible text color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>The active background of the button.</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>The active text color of the button.</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>The border radius of the button.</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>The border color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>The hover border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>The focus border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>The focus-visible border color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>The active border color of the button.</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>The shadow color of the button.</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its idle state.</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its hover state.</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>The disabled background color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>The disabled text color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>The disabled icon color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>The disabled border color of the button.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Change the background and text colors in contained buttons</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: contained-button-theme(",
+                    "  $foreground: white,",
+                    "  $background: black",
+                    ");",
+                    "// Pass the theme to the css-vars() mixin",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "fab-button-theme": {
+        "description": [
+            "<p>If only background color is specified, text/icon color",
+            "will be assigned automatically to a contrasting color.",
+            "Does <strong><em>not</em></strong> apply for disabled state colors.</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>The schema used as basis for styling the component.</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>The background color of the button.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>The text color of the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>The icon color in the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>The icon color in the button on hover.</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>The hover background color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>The hover text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>The focus background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>The focus text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>The background color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>The text color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>The focus-visible background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>The focus-visible text color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>The active background of the button.</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>The active text color of the button.</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>The border radius of the button.</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>The border color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>The hover border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>The focus border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>The focus-visible border color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>The active border color of the button.</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>The shadow color of the button.</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its idle state.</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its hover state.</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>The disabled background color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>The disabled text color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>The disabled icon color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>The disabled border color of the button.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Change the background and text colors in fab buttons</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: fab-button-theme(",
+                    "  $foreground: white,",
+                    "  $background: black",
+                    ");",
+                    "// Pass the theme to the css-vars() mixin",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "flat-button-theme": {
+        "description": [
+            "<p>If only background color is specified, text/icon color",
+            "will be assigned automatically to a contrasting color.",
+            "Does <strong><em>not</em></strong> apply for disabled state colors.</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>The schema used as basis for styling the component.</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>The background color of the button.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>The text color of the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>The icon color in the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>The icon color in the button on hover.</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>The hover background color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>The hover text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>The focus background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>The focus text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>The background color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>The text color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>The focus-visible background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>The focus-visible text color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>The active background of the button.</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>The active text color of the button.</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>The border radius of the button.</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>The border color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>The hover border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>The focus border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>The focus-visible border color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>The active border color of the button.</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>The shadow color of the button.</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its idle state.</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its hover state.</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>The disabled background color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>The disabled text color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>The disabled icon color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>The disabled border color of the button.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Change the text colors in flat buttons</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: flat-button-theme(",
+                    "  $foreground: black,",
+                    ");",
+                    "// Pass the theme to the css-vars() mixin",
+                    "@include css-vars($my-button-theme);"
+                ]
+            }
+        ]
+    },
+    "outlined-button-theme": {
+        "description": [
+            "<p>If only background color is specified, text/icon color",
+            "will be assigned automatically to a contrasting color.",
+            "Does <strong><em>not</em></strong> apply for disabled state colors.</p>",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "<p>The schema used as basis for styling the component.</p>",
+                    ""
+                ]
+            },
+            "background": {
+                "description": [
+                    "<p>The background color of the button.</p>",
+                    ""
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "<p>The text color of the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "<p>The icon color in the button.</p>",
+                    ""
+                ]
+            },
+            "icon-color-hover": {
+                "description": [
+                    "<p>The icon color in the button on hover.</p>",
+                    ""
+                ]
+            },
+            "hover-background": {
+                "description": [
+                    "<p>The hover background color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-foreground": {
+                "description": [
+                    "<p>The hover text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-background": {
+                "description": [
+                    "<p>The focus background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-foreground": {
+                "description": [
+                    "<p>The focus text color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-background": {
+                "description": [
+                    "<p>The background color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-hover-foreground": {
+                "description": [
+                    "<p>The text color on focus hovered state of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-background": {
+                "description": [
+                    "<p>The focus-visible background color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-foreground": {
+                "description": [
+                    "<p>The focus-visible text color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-background": {
+                "description": [
+                    "<p>The active background of the button.</p>",
+                    ""
+                ]
+            },
+            "active-foreground": {
+                "description": [
+                    "<p>The active text color of the button.</p>",
+                    ""
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "<p>The border radius of the button.</p>",
+                    ""
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "<p>The border color of the button.</p>",
+                    ""
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "<p>The hover border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>The focus border color of the button.</p>",
+                    ""
+                ]
+            },
+            "focus-visible-border-color": {
+                "description": [
+                    "<p>The focus-visible border color of the button.</p>",
+                    ""
+                ]
+            },
+            "active-border-color": {
+                "description": [
+                    "<p>The active border color of the button.</p>",
+                    ""
+                ]
+            },
+            "shadow-color": {
+                "description": [
+                    "<p>The shadow color of the button.</p>",
+                    ""
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its idle state.</p>",
+                    ""
+                ]
+            },
+            "hover-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its hover state.</p>",
+                    ""
+                ]
+            },
+            "focus-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "active-shadow": {
+                "description": [
+                    "<p>The shadow of the button in its focus state.</p>",
+                    ""
+                ]
+            },
+            "disabled-background": {
+                "description": [
+                    "<p>The disabled background color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-foreground": {
+                "description": [
+                    "<p>The disabled text color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-icon-color": {
+                "description": [
+                    "<p>The disabled icon color of the button.</p>",
+                    ""
+                ]
+            },
+            "disabled-border-color": {
+                "description": [
+                    "<p>The disabled border color of the button.</p>",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "<p>Change the text colors in outlined buttons</p>",
+                    ""
+                ],
+                "code": [
+                    "$my-button-theme: outlined-button-theme(",
+                    "  $foreground: black,",
                     ");",
                     "// Pass the theme to the css-vars() mixin",
                     "@include css-vars($my-button-theme);"
@@ -1598,9 +2420,27 @@
                     ""
                 ]
             },
+            "button-focus-border-color": {
+                "description": [
+                    "<p>The navigation buttons border color on focus.</p>",
+                    ""
+                ]
+            },
             "button-disabled-border-color": {
                 "description": [
                     "<p>The previous/next buttons disabled border color.</p>",
+                    ""
+                ]
+            },
+            "indicator-background": {
+                "description": [
+                    "<p>The indicators container background color.</p>",
+                    ""
+                ]
+            },
+            "label-indicator-background": {
+                "description": [
+                    "<p>The label indicator container background color.</p>",
                     ""
                 ]
             },
@@ -1613,6 +2453,12 @@
             "indicator-hover-dot-color": {
                 "description": [
                     "<p>The hover indicator dot color.</p>",
+                    ""
+                ]
+            },
+            "indicator-focus-color": {
+                "description": [
+                    "<p>The indicators border and dot color on focus.</p>",
                     ""
                 ]
             },
@@ -1778,6 +2624,18 @@
                     ""
                 ]
             },
+            "focus-outline-color-focused": {
+                "description": [
+                    "<p>The focus outlined color for focused state.</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>The focus border color.</p>",
+                    ""
+                ]
+            },
             "error-color": {
                 "description": [
                     "<p>The border and fill colors in invalid state.</p>",
@@ -1786,7 +2644,13 @@
             },
             "error-color-hover": {
                 "description": [
-                    "<p>The border and fill colors in invalid state on hover.",
+                    "<p>The border and fill colors in invalid state on hover.</p>",
+                    ""
+                ]
+            },
+            "focus-outline-color-error": {
+                "description": [
+                    "<p>The focus outline error color.",
                     "Set to light when the surrounding area is dark.</p>",
                     ""
                 ]
@@ -3684,12 +4548,6 @@
                     ""
                 ]
             },
-            "interim-bottom-line-color": {
-                "description": [
-                    "<p>The bottom line and border colors during the to-focused transition.</p>",
-                    ""
-                ]
-            },
             "disabled-bottom-line-color": {
                 "description": [
                     "<p>The bottom line and border colors in the disabled state.</p>",
@@ -4607,6 +5465,12 @@
             "fill-hover-border-color": {
                 "description": [
                     "<p>The checked border color on hover.</p>",
+                    ""
+                ]
+            },
+            "focus-border-color": {
+                "description": [
+                    "<p>The focus border color.</p>",
                     ""
                 ]
             },
