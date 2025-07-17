@@ -3,10 +3,75 @@
         "parameters": {
             "theme": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "コンポーネントのスタイル設定に使用されるテーマ。"
                 ]
             }
         }
+    },
+    "css-vars-from-theme": {
+        "description": [
+            "コンポーネント テーマのキー値のペアのマップを CSS 変数に解析します。",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "CSS 変数の生成に使用されるコンポーネント テーマ。"
+                ]
+            },
+            "name": {
+                "description": [
+                    "CSS 変数名。"
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "CSS 変数の生成時に除外される無視キーワードのリスト。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "テーマの色を CSS 変数に変換します。"
+                ],
+                "code": [
+                    "$theme: digest-schema((background: color(primary, 500), foreground: contrast-color(color, 500));",
+                    ":root {",
+                    "  @include css-vars-from-theme($theme);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "border-radius": {
+        "description": [
+            "指定された上限値と下限値の間で border-radius を設定するスタイルを追加します。",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "優先される値。"
+                ]
+            },
+            "min": {
+                "description": [
+                    "最小値。"
+                ]
+            },
+            "max": {
+                "description": [
+                    "最大許容値。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include border-radius(4px);"
+                ]
+            }
+        ]
     }
 }

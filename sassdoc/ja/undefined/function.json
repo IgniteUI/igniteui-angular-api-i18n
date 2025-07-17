@@ -1,57 +1,91 @@
 {
+    "list-diff": {
+        "description": [
+            "2 つのリストの差を取得します。",
+            ""
+        ],
+        "parameters": {
+            "list1": {
+                "description": [
+                    "ソースのリスト。"
+                ]
+            },
+            "list2": {
+                "description": [
+                    "ソースリストと比較するリスト。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "差分項目を含むリスト。"
+            ]
+        }
+    },
+    "is-component": {
+        "description": [
+            "既知のコンポーネント リストにコンポーネントまたはコンポーネントのリストはあるかどうかテストします。",
+            ""
+        ],
+        "parameters": {
+            "items": {
+                "description": [
+                    "チェックされるコンポーネント リスト。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "渡された項目のリスト。"
+            ]
+        }
+    },
     "progress-circular-theme": {
         "parameters": {
             "schema": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に基づいて使用されるスキーマ。</p>",
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。",
                     ""
                 ]
             },
             "base-circle-color": {
                 "description": [
-                    "<p>基本円の塗りつぶし色。</p>",
-                    ""
+                    "基本円の塗りつぶし色。"
                 ]
             },
             "fill-color-default": {
                 "description": [
-                    "<p>プログレス円の塗りつぶし色。</p>",
-                    ""
+                    "プログレス円の塗りつぶし色。"
                 ]
             },
             "fill-color-danger": {
                 "description": [
-                    "<p>トラックの danger の塗りつぶし色。</p>",
-                    ""
+                    "トラックの danger (危険) の塗りつぶし色。"
                 ]
             },
             "fill-color-warning": {
                 "description": [
-                    "<p>トラックの warning の塗りつぶし色。</p>",
-                    ""
+                    "トラックの warning (警告) の塗りつぶし色。"
                 ]
             },
             "fill-color-info": {
                 "description": [
-                    "<p>トラックの info の塗りつぶし色。</p>",
-                    ""
+                    "トラックのinfo (情報) の塗りつぶし色。"
                 ]
             },
             "fill-color-success": {
                 "description": [
-                    "<p>トラックの success の塗りつぶし色。</p>",
-                    ""
+                    "トラックの success (成功) の塗りつぶし色。"
                 ]
             },
             "text-color": {
                 "description": [
-                    "<p>値テキストの色。</p>",
-                    ""
+                    "値テキストの色。"
                 ]
             },
             "diameter": {
                 "description": [
-                    "<p>プログレス円の直径。</p>",
+                    "プログレス円の直径。",
                     ""
                 ]
             }
@@ -59,17 +93,148 @@
         "example": [
             {
                 "description": [
-                    "<p>プログレス円の色を変更します。</p>",
-                    ""
+                    "プログレス円の色を変更します。"
                 ],
                 "code": [
                     "$my-progress-circular-theme: progress-circular-theme(",
                     "  $fill-color-default: purple",
                     ");",
-                    "// igx-progress-circular コンポーネント mixin へテーマを渡します。",
+                    "// igx-progress-circular コンポーネント ミックスインへテーマを渡します。",
                     "@include igx-progress-circular($my-progress-circle-theme);"
                 ]
             }
         ]
+    },
+    "digest-schema": {
+        "description": [
+            "テーマ スキーマを解析し、解決済みのテーマ マップを返します。",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "テーマ スキーマ。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "解決済みの値を含むテーマ マップ。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "スキーマに対する解決済みテーマを取得します。"
+                ],
+                "code": [
+                    "$custom-schema: (",
+                    "  foreground: (",
+                    "     color: ('primary', 800, .5)",
+                    "  ),",
+                    "  border-radius: (rem(5px), rem(0), rem(8px)) // デフォルト、最小、最大半径",
+                    ");",
+                    "$theme: digest-schema($custom-schema);"
+                ]
+            }
+        ]
+    },
+    "resolve-value": {
+        "description": [
+            "スキーマの値を解決します。",
+            "指定された値マップのキーが呼び出す関数名であり、",
+            "そのキーに対応する値が関数へ渡す引数となります。",
+            ""
+        ],
+        "parameters": {
+            "instructions": {
+                "description": [
+                    "命令セットとして使用するマップ。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "解決された値。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "プライマリ 500 の色を解決します。"
+                ],
+                "code": [
+                    "$value: resolve-value((color: (primary, 500)));"
+                ]
+            }
+        ]
+    },
+    "var-get": {
+        "description": [
+            "コンポーネントテーマ内の指定キーに対応する CSS カスタム プロパティの参照を取得します。",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "値が読み込まれるソース テーマ。"
+                ]
+            },
+            "property": {
+                "description": [
+                    "プロパティの値として割り当てられるテーマ マップからのキー。"
+                ]
+            },
+            "fallback": {
+                "description": [
+                    "CSS プロパティが定義されていない場合に使用するデフォルト値。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "テーマ内のプロパティに対応する CSS 参照。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "一連のルール内で、color プロパティにテーマからの値を割り当てます。"
+                ],
+                "code": [
+                    "[part='icon'] {",
+                    "  color: var-get($theme, 'icon-color', inherit); // var(--icon-color, inherit)",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "border-radius": {
+        "description": [
+            "指定された上限値と下限値の間で値を返します。",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "優先される値。"
+                ]
+            },
+            "min": {
+                "description": [
+                    "最小値。"
+                ]
+            },
+            "max": {
+                "description": [
+                    "最大許容値。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "クランプされた値。"
+            ]
+        }
     }
 }

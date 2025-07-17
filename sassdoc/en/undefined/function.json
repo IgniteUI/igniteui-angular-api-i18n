@@ -1,57 +1,91 @@
 {
+    "list-diff": {
+        "description": [
+            "Get the difference between two lists.",
+            ""
+        ],
+        "parameters": {
+            "list1": {
+                "description": [
+                    "The source list."
+                ]
+            },
+            "list2": {
+                "description": [
+                    "The list to check against the source list."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A list containing the diff items."
+            ]
+        }
+    },
+    "is-component": {
+        "description": [
+            "Test if a component, or list of components is in the list of known components.",
+            ""
+        ],
+        "parameters": {
+            "items": {
+                "description": [
+                    "The components list to check in."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The list of passed items."
+            ]
+        }
+    },
     "progress-circular-theme": {
         "parameters": {
             "schema": {
                 "description": [
-                    "<p>The schema used as basis for styling the component.</p>",
+                    "The schema used as basis for styling the component.",
                     ""
                 ]
             },
             "base-circle-color": {
                 "description": [
-                    "<p>The base circle fill color.</p>",
-                    ""
+                    "The base circle fill color."
                 ]
             },
             "fill-color-default": {
                 "description": [
-                    "<p>The progress circle fill color.</p>",
-                    ""
+                    "The progress circle fill color."
                 ]
             },
             "fill-color-danger": {
                 "description": [
-                    "<p>The track danger fill color.</p>",
-                    ""
+                    "The track danger fill color."
                 ]
             },
             "fill-color-warning": {
                 "description": [
-                    "<p>The track warning fill color.</p>",
-                    ""
+                    "The track warning fill color."
                 ]
             },
             "fill-color-info": {
                 "description": [
-                    "<p>The track info fill color.</p>",
-                    ""
+                    "The track info fill color."
                 ]
             },
             "fill-color-success": {
                 "description": [
-                    "<p>The track success fill color.</p>",
-                    ""
+                    "The track success fill color."
                 ]
             },
             "text-color": {
                 "description": [
-                    "<p>The value text color.</p>",
-                    ""
+                    "The value text color."
                 ]
             },
             "diameter": {
                 "description": [
-                    "<p>The progress circle diameter.</p>",
+                    "The progress circle diameter.",
                     ""
                 ]
             }
@@ -59,8 +93,7 @@
         "example": [
             {
                 "description": [
-                    "<p>Change the circle progress color</p>",
-                    ""
+                    "Change the circle progress color"
                 ],
                 "code": [
                     "$my-progress-circular-theme: progress-circular-theme(",
@@ -71,5 +104,137 @@
                 ]
             }
         ]
+    },
+    "digest-schema": {
+        "description": [
+            "Digests a theme schema and returns a resolved theme map.",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "A theme schema."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A theme map with resolved values."
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Get the resolved theme for a schema"
+                ],
+                "code": [
+                    "$custom-schema: (",
+                    "  foreground: (",
+                    "     color: ('primary', 800, .5)",
+                    "  ),",
+                    "  border-radius: (rem(5px), rem(0), rem(8px)) // default, min and max radius",
+                    ");",
+                    "$theme: digest-schema($custom-schema);"
+                ]
+            }
+        ]
+    },
+    "resolve-value": {
+        "description": [
+            "Resolves schema values, where the keys of the passed value map are the names",
+            "of the functions to be called and the value for a given key is the argument",
+            "the function should be called with.",
+            ""
+        ],
+        "parameters": {
+            "instructions": {
+                "description": [
+                    "The map to be used as instruction set."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The resolved value."
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Resolve primary 500 color"
+                ],
+                "code": [
+                    "$value: resolve-value((color: (primary, 500)));"
+                ]
+            }
+        ]
+    },
+    "var-get": {
+        "description": [
+            "Retrieves the CSS custom property reference for the given key in the component theme.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The source theme to be used to read values from."
+                ]
+            },
+            "property": {
+                "description": [
+                    "A key from the theme map to assign as value to the property."
+                ]
+            },
+            "fallback": {
+                "description": [
+                    "A value to be used if the CSS property is not defined."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The CSS reference of the property in the theme."
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Assign the color property in a set of rules to a value from the theme."
+                ],
+                "code": [
+                    "[part='icon'] {",
+                    "  color: var-get($theme, 'icon-color', inherit); // var(--icon-color, inherit)",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "border-radius": {
+        "description": [
+            "Returns a value between an upper and lower bound.",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "The preferred value."
+                ]
+            },
+            "min": {
+                "description": [
+                    "The minimum value."
+                ]
+            },
+            "max": {
+                "description": [
+                    "The maximum allowed value."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The clamped value"
+            ]
+        }
     }
 }

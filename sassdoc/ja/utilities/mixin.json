@@ -1,42 +1,156 @@
 ﻿{
-    "color-classes": {
+    "register-component": {
         "description": [
-            "<p>指定したプロパティとカラー パレットのすべての色",
-            "の CSS クラス名を生成します。",
-            "オプションでプレフィックスとサフィックスをクラス名に添付します。</p>",
+            "既知のコンポーネントのリストにコンポーネントを登録します。",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "コンポーネント名。"
+                ]
+            },
+            "deps": {
+                "description": [
+                    "コンポーネントが依存しているすべてのコンポーネントのリスト。"
+                ]
+            }
+        }
+    },
+    "add-deps": {
+        "description": [
+            "コンポーネントの内部 usedBy リストに依存関係を追加します。",
+            ""
+        ],
+        "parameters": {
+            "component": {
+                "description": [
+                    "コンポーネント名。"
+                ]
+            },
+            "deps": {
+                "description": [
+                    "コンポーネントの usedBy リストに追加する依存関係。"
+                ]
+            }
+        }
+    },
+    "dependecy-tree": {
+        "description": [
+            "グローバルなコンポーネント レジスターを更新し、各コンポーネントの usedBy リストを修正します。",
+            ""
+        ],
+        "parameters": {
+            "components": {
+                "description": [
+                    "登録済みすべてのコンポーネントのマップ。"
+                ]
+            }
+        }
+    },
+    "gen-color-class": {
+        "description": [
+            "指定した名前、バリアント、プレフィクスと接尾辞で",
+            "CSS クラス名を生成します。",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "メイン クラス名"
+                ]
+            },
+            "variant": {
+                "description": [
+                    "メイン クラス名に連結される追加文字列。"
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "name と variant 文字列に連結される suffix。"
+                ]
+            }
+        }
+    },
+    "gen-color-classes": {
+        "description": [
+            "指定したプロパティとカラー パレットのすべての色の",
+            "CSS クラス名を生成します。",
+            "オプションでプレフィックスとサフィックスをクラス名に添付します。",
             ""
         ],
         "parameters": {
             "prop": {
                 "description": [
-                    "<p>パレット カラーに割り当てられる CSS プロパティ。</p>",
-                    ""
+                    "色のパレットに割り当てられる CSS プロパティ。"
                 ]
             },
             "prefix": {
                 "description": [
-                    "<p>クラス名に連結するプレフィックス。</p>",
-                    ""
+                    "クラス名に連結するプレフィックス。"
                 ]
             },
             "suffix": {
                 "description": [
-                    "<p>クラス名に連結されるサフィックス。</p>",
-                    ""
+                    "クラス名に連結されるサフィックス。"
                 ]
             },
             "palette": {
                 "description": [
-                    "<p>CSS クラス名の生成に使用する igx パレット。</p>",
-                    ""
+                    "CSS クラス名の生成に使用するパレット。"
                 ]
             }
         },
         "example": [
             {
                 "description": [
-                    "<p>パレットの色でバックグラウンド クラスを生成します。</p>",
-                    ""
+                    "パレットの色でバックグラウンド クラスを生成します。"
+                ],
+                "code": [
+                    "// 次のようなクラス名を生成します",
+                    "// .my-primary-500-bg { ... };",
+                    "@include gen-color-classes(",
+                    "  $prop: 'background-color',",
+                    "  $prefix: 'my',",
+                    "  $suffix: 'bg'",
+                    ");"
+                ]
+            }
+        ]
+    },
+    "color-classes": {
+        "description": [
+            "指定したプロパティとカラー パレットのすべての色",
+            "の CSS クラス名を生成します。",
+            "オプションでプレフィックスとサフィックスをクラス名に添付します。",
+            ""
+        ],
+        "parameters": {
+            "prop": {
+                "description": [
+                    "パレット カラーに割り当てられる CSS プロパティ。"
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "クラス名に連結するプレフィックス。"
+                ]
+            },
+            "suffix": {
+                "description": [
+                    "クラス名に連結されるサフィックス。"
+                ]
+            },
+            "palette": {
+                "description": [
+                    "CSS クラス名の生成に使用する igx パレット。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "パレットの色でバックグラウンド クラスを生成します。"
                 ],
                 "code": [
                     "// 次のようなクラス名を生成します。",
@@ -51,34 +165,30 @@
     },
     "line-clamp": {
         "description": [
-            "<p>特定の行数でテキストを切り捨てます。</p>",
+            "特定の行数でテキストを切り捨てます。",
             ""
         ],
         "parameters": {
             "lines": {
                 "description": [
-                    "<p>表示する行数</p>",
-                    ""
+                    "表示する行数。"
                 ]
             },
             "inline": {
                 "description": [
-                    "<p>要素が inline-box または box を表示するかどうかを設定します。</p>",
-                    ""
+                    "要素が inline-box または box を表示するかどうかを設定します。"
                 ]
             },
             "vertical": {
                 "description": [
-                    "<p>要素がコンテンツを水平または垂直に配置するかどうかを設定します。</p>",
-                    ""
+                    "要素がコンテンツを水平または垂直に配置するかどうかを設定します。"
                 ]
             }
         },
         "example": [
             {
                 "description": [
-                    "<p>4 行目以降のテキストを切り捨てます。</p>",
-                    ""
+                    "4 行目以降のテキストを切り捨てます。"
                 ],
                 "code": [
                     "@include line-clamp(4, true, true);"
@@ -88,8 +198,8 @@
     },
     "ellipsis": {
         "description": [
-            "<p>E テキスト要素に text-overflow 省略記号を適用します。",
-            "Display flex 要素では動作しません。</p>",
+            "E テキスト要素に text-overflow 省略記号を適用します。",
+            "この処理は display flex の要素には機能しません。",
             ""
         ],
         "example": [
@@ -104,14 +214,13 @@
     },
     "hide-default": {
         "description": [
-            "<p>DOM から要素を非表示にします。</p>",
+            "DOM から要素を非表示にします。",
             ""
         ],
         "example": [
             {
                 "description": [
-                    "<p>例</p>",
-                    ""
+                    "例"
                 ],
                 "code": [
                     "input[type=\"checkbox\"] {",

@@ -1,42 +1,156 @@
 {
-    "color-classes": {
+    "register-component": {
         "description": [
-            "<p>Generates CSS class names for all colors from",
+            "Registers a component to the list of known components.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The component name."
+                ]
+            },
+            "deps": {
+                "description": [
+                    "A list of all components the component depends on."
+                ]
+            }
+        }
+    },
+    "add-deps": {
+        "description": [
+            "Adds dependecies to a component's internal usedBy list.",
+            ""
+        ],
+        "parameters": {
+            "component": {
+                "description": [
+                    "The component name."
+                ]
+            },
+            "deps": {
+                "description": [
+                    "The dependecies to be added to the component's usedBy list."
+                ]
+            }
+        }
+    },
+    "dependecy-tree": {
+        "description": [
+            "Modifies the global components register by updating the usedBy list for each component.",
+            ""
+        ],
+        "parameters": {
+            "components": {
+                "description": [
+                    "A map of all registered components."
+                ]
+            }
+        }
+    },
+    "gen-color-class": {
+        "description": [
+            "Generates a CSS class name for a color from a",
+            "given name, variant, prefix and suffix",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The main class name."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "An additional string to be attached to the main class name."
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "A suffix to be attached to the name and variant string."
+                ]
+            }
+        }
+    },
+    "gen-color-classes": {
+        "description": [
+            "Generates CSS class names for all colors from",
             "for a given property and color palette, with",
-            "optional prefix and suffix attached to the class name.</p>",
+            "optional prefix and suffix attached to the class name.",
             ""
         ],
         "parameters": {
             "prop": {
                 "description": [
-                    "<p>The CSS property to assign the palette color to.</p>",
-                    ""
+                    "The CSS property to assign the palette color to."
                 ]
             },
             "prefix": {
                 "description": [
-                    "<p>A prefix to be attached to the class name.</p>",
-                    ""
+                    "A prefix to be attached to the class name."
                 ]
             },
             "suffix": {
                 "description": [
-                    "<p>A suffix to be attached to the class name.</p>",
-                    ""
+                    "A suffix to be attached to the class name."
                 ]
             },
             "palette": {
                 "description": [
-                    "<p>The igx palette to use to generate css class names for.</p>",
-                    ""
+                    "The palette to use to generate css class names for."
                 ]
             }
         },
         "example": [
             {
                 "description": [
-                    "<p>Generate background classes with colors from the palette.</p>",
-                    ""
+                    "Generate background classes with colors from the palette."
+                ],
+                "code": [
+                    "// Will generate class names like",
+                    "// .my-primary-500-bg { ... };",
+                    "@include gen-color-classes(",
+                    "  $prop: 'background-color',",
+                    "  $prefix: 'my',",
+                    "  $suffix: 'bg'",
+                    ");"
+                ]
+            }
+        ]
+    },
+    "color-classes": {
+        "description": [
+            "Generates CSS class names for all colors from",
+            "for a given property and color palette, with",
+            "optional prefix and suffix attached to the class name.",
+            ""
+        ],
+        "parameters": {
+            "prop": {
+                "description": [
+                    "The CSS property to assign the palette color to."
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "A prefix to be attached to the class name."
+                ]
+            },
+            "suffix": {
+                "description": [
+                    "A suffix to be attached to the class name."
+                ]
+            },
+            "palette": {
+                "description": [
+                    "The igx palette to use to generate css class names for."
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Generate background classes with colors from the palette."
                 ],
                 "code": [
                     "// Will generate class names like",
@@ -51,34 +165,30 @@
     },
     "line-clamp": {
         "description": [
-            "<p>Truncates text to a specific number of lines.</p>",
+            "Truncates text to a specific number of lines.",
             ""
         ],
         "parameters": {
             "lines": {
                 "description": [
-                    "<p>The number of lines to show</p>",
-                    ""
+                    "The number of lines to show"
                 ]
             },
             "inline": {
                 "description": [
-                    "<p>Sets whether an element displays inline-box or box</p>",
-                    ""
+                    "Sets whether an element displays inline-box or box"
                 ]
             },
             "vertical": {
                 "description": [
-                    "<p>Sets whether an element lays out its contents horizontally or vertically</p>",
-                    ""
+                    "Sets whether an element lays out its contents horizontally or vertically"
                 ]
             }
         },
         "example": [
             {
                 "description": [
-                    "<p>Truncates text after the fourth line</p>",
-                    ""
+                    "Truncates text after the fourth line"
                 ],
                 "code": [
                     "@include line-clamp(4, true, true);"
@@ -88,8 +198,8 @@
     },
     "ellipsis": {
         "description": [
-            "<p>Applies text-overflow ellipsis to e text element.",
-            "This won&#39;t work on display flex elements.</p>",
+            "Applies text-overflow ellipsis to e text element.",
+            "This won't work on display flex elements.",
             ""
         ],
         "example": [
@@ -104,14 +214,13 @@
     },
     "hide-default": {
         "description": [
-            "<p>Hides the element from the DOM.</p>",
+            "Hides the element from the DOM.",
             ""
         ],
         "example": [
             {
                 "description": [
-                    "<p>Sample usage</p>",
-                    ""
+                    "Sample usage"
                 ],
                 "code": [
                     "input[type=\"checkbox\"] {",

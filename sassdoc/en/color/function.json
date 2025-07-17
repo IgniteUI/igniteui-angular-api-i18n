@@ -1,21 +1,20 @@
 {
     "adaptive-contrast": {
         "description": [
-            "<p>Returns a CSS runtime calculated relative color(black or white) for a given color.</p>",
+            "Returns a CSS runtime calculated relative color(black or white) for a given color.",
             ""
         ],
         "parameters": {
             "color": {
                 "description": [
-                    "<p>The base color used in the calculation.</p>",
-                    ""
+                    "The base color used in the calculation."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Returns a relative HSL color where the lightness is adjusted",
-                "based on the specified contrast level, resulting in either black or white.</p>",
+                "Returns a relative HSL color where the lightness is adjusted",
+                "based on the specified contrast level, resulting in either black or white.",
                 ""
             ]
         },
@@ -33,34 +32,31 @@
     },
     "text-contrast": {
         "description": [
-            "<p>Returns a contrast color for a passed color.</p>",
+            "Returns a contrast color for a passed color.",
             ""
         ],
         "parameters": {
             "background": {
                 "description": [
-                    "<p>The background color used to return a contrast/forground color for.</p>",
-                    ""
+                    "The background color used to return a contrast/forground color for."
                 ]
             },
             "foreground": {
                 "description": [
-                    "<p>A list of foreground colors",
-                    "that can be used with the provided background.</p>",
-                    ""
+                    "A list of foreground colors",
+                    "that can be used with the provided background."
                 ]
             },
             "contrast": {
                 "description": [
-                    "<p>The contrast level according to WCAG 2.0 standards.</p>",
-                    ""
+                    "The contrast level according to WCAG 2.0 standards."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Returns either white, black, or the provided foreground",
-                "color if it meets the required contrast level.</p>",
+                "Returns either white, black, or the provided foreground",
+                "color if it meets the required contrast level.",
                 ""
             ]
         },
@@ -75,30 +71,50 @@
             }
         ]
     },
-    "to-hsl": {
+    "to-opaque": {
         "description": [
-            "<p>Retruns a comma separated list of hue, saturation, and lightness values for a given color.</p>",
+            "Mixes two colors to produce an opaque color.",
             ""
         ],
         "parameters": {
-            "color": {
+            "color-1": {
                 "description": [
-                    "<p>The color to be converted to an HSL list of values.</p>",
-                    ""
+                    "The first color, usually transparent."
+                ]
+            },
+            "color-2": {
+                "description": [
+                    "The second color, usually opaque."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>This list of HSL values.</p>",
-                ""
+                "The color representation of the rgba value."
+            ]
+        }
+    },
+    "to-hsl": {
+        "description": [
+            "Retruns a comma separated list of hue, saturation, and lightness values for a given color.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The color to be converted to an HSL list of values."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "This list of HSL values."
             ]
         },
         "example": [
             {
                 "description": [
-                    "<p>Turn #000 into an HSL list of values</p>",
-                    ""
+                    "Turn #000 into an HSL list of values"
                 ],
                 "code": [
                     "$hsl-list: to-hsl(#000); // (0deg, 0%, 0%);"
@@ -108,27 +124,25 @@
     },
     "contrast": {
         "description": [
-            "<p>Calculates the contrast ratio between two colors.</p>",
+            "Calculates the contrast ratio between two colors.",
             ""
         ],
         "parameters": {
             "background": {
                 "description": [
-                    "<p>The background color.</p>",
-                    ""
+                    "The background color."
                 ]
             },
             "foreground": {
                 "description": [
-                    "<p>The foreground color.</p>",
+                    "The foreground color.",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The contrast ratio between the background and foreground colors.</p>",
-                ""
+                "The contrast ratio between the background and foreground colors."
             ]
         },
         "example": [
@@ -141,21 +155,20 @@
     },
     "luminance": {
         "description": [
-            "<p>Calculates the luminance for a given color.</p>",
+            "Calculates the luminance for a given color.",
             ""
         ],
         "parameters": {
             "color": {
                 "description": [
-                    "<p>The color to calculate luminance for.</p>",
+                    "The color to calculate luminance for.",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The calculated luminance of a given color</p>",
-                ""
+                "The calculated luminance of a given color"
             ]
         },
         "example": [
@@ -167,5 +180,23 @@
                 ]
             }
         ]
+    },
+    "_lcv": {
+        "description": [
+            "Calculates the linear channel value for a given sRGB color.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The sRGB color"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The calculated linear channel value"
+            ]
+        }
     }
 }

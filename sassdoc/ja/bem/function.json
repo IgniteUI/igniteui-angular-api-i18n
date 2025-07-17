@@ -1,47 +1,244 @@
 {
-    "bem-selector": {
+    "bem--selector-to-string": {
         "description": [
-            "<p>完全 BEM セレクターを生成します。</p>",
+            "セレクター値を文字列に変換します。",
+            ""
+        ],
+        "parameters": {
+            "s": {
+                "description": [
+                    "変換されるセレクター。"
+                ]
+            }
+        }
+    },
+    "bem--with-dot": {
+        "description": [
+            "BEM セレクターに点を前に追加します。",
+            ""
+        ],
+        "parameters": {
+            "x": {
+                "description": [
+                    "点を前に追加するBEM。"
+                ]
+            }
+        }
+    },
+    "bem--mod-str": {
+        "description": [
+            "キー値マップを修飾文字列に変換します。",
+            ""
+        ],
+        "parameters": {
+            "m": {
+                "description": [
+                    "変換する修飾。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "変換された修飾文字列。"
+            ]
+        }
+    },
+    "bem--elem-str": {
+        "description": [
+            "分割として使用される要素セパレーター文字列持つ要素セレクター文字列に",
+            "ブロックの名前をプレフィックスします。",
+            ""
+        ],
+        "parameters": {
+            "b": {
+                "description": [
+                    "ブロックの名前。"
+                ]
+            },
+            "e": {
+                "description": [
+                    "要素の名前。"
+                ]
+            }
+        }
+    },
+    "bem--bem-str": {
+        "description": [
+            "要素セレクターを続く修飾セレクターに貼付された",
+            "ブロック セレクター文字列を返します。",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>文字列ブロックの名前。必須。</p>",
-                    ""
+                    "ブロックの名前。"
                 ]
             },
             "elem": {
                 "description": [
-                    "<p>サブ要素の名前。<code>$mod</code> が存在しない場合は、",
-                    "$block と結合されます。$mod が存在する場合、それは <code>$block--$mod</code> の下にネストされます。</p>",
-                    ""
+                    "サブ要素の名前。"
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>ブロック修飾。</p>",
-                    ""
+                    "修飾の名前。"
+                ]
+            }
+        }
+    },
+    "bem--contains-elem": {
+        "description": [
+            "要素分割文字列は渡された文字列の一部であるかどうを確認します。",
+            ""
+        ],
+        "parameters": {
+            "x": {
+                "description": [
+                    "確認する文字列。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "文字列の最初の発生または要素分割の名前は渡された",
+                "文字列の一部ではない場合 null を返します。"
+            ]
+        }
+    },
+    "bem--contains-mod": {
+        "description": [
+            "修飾分割文字列は渡された文字列の一部であるかどうを確認します。",
+            ""
+        ],
+        "parameters": {
+            "x": {
+                "description": [
+                    "確認する文字列。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "文字列の最初の発生または修飾分割の文字列は渡された",
+                "文字列の一部ではない場合 null を返します。"
+            ]
+        }
+    },
+    "bem--contains-pseudo": {
+        "description": [
+            "渡されたセレクター文字列はコロンを含むかどうか確認します。",
+            ""
+        ],
+        "parameters": {
+            "x": {
+                "description": [
+                    "コロンの発生を確認する文字列。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "発生の指数または文字列はコロンを",
+                "含まない場合 null を返します。"
+            ]
+        }
+    },
+    "bem--extract-block": {
+        "description": [
+            "`$x` を生成した BEM ブロック名を返します。前に付いた \".\" を含みません。",
+            ""
+        ],
+        "parameters": {
+            "x": {
+                "description": [
+                    "ブロックの名前。"
+                ]
+            }
+        }
+    },
+    "bem--extract-first-selector": {
+        "description": [
+            "入れ子にされたセレクター文字列の最初のセレクターを返します。",
+            ""
+        ]
+    },
+    "bem--generate-mod-list": {
+        "description": [
+            "要素に対する修飾子のリストを生成します。",
+            ""
+        ]
+    },
+    "bem--generate-elem-selector": {
+        "description": [
+            "BEM 要素に適したセレクターを生成します。",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "ブロック名。"
+                ]
+            },
+            "elem": {
+                "description": [
+                    "要素名。"
+                ]
+            },
+            "mod": {
+                "description": [
+                    "オプションの修飾子。"
+                ]
+            },
+            "first": {
+                "description": [
+                    "(オプション) ネスト用の最初のセレクター。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "生成されたセレクター。"
+            ]
+        }
+    },
+    "bem-selector": {
+        "description": [
+            "完全 BEM セレクターを生成します。",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "文字列ブロックの名前。必須。"
+                ]
+            },
+            "elem": {
+                "description": [
+                    "サブ要素の名前。`$mod` が存在しない場合は、",
+                    "$block と結合されます。$mod が存在する場合、それは `$block--$mod` の下にネストされます。"
+                ]
+            },
+            "mod": {
+                "description": [
+                    "ブロック修飾。"
                 ]
             },
             "mods": {
                 "description": [
-                    "<p>ブロック修飾のリスト。</p>",
+                    "ブロック修飾のリスト。",
                     ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>生成された BEM セレクター文字列。</p>",
-                ""
+                "生成された BEM セレクター文字列。"
             ]
         },
         "example": [
             {
                 "description": [
-                    "<p>ブロックを含みます。</p>",
-                    ""
+                    "ブロックを含みます。"
                 ],
                 "code": [
                     "$selector: bem-selector(block); // returns .block"
@@ -49,8 +246,7 @@
             },
             {
                 "description": [
-                    "<p>要素とブロックを含みます。</p>",
-                    ""
+                    "要素とブロックを含みます。"
                 ],
                 "code": [
                     "$selector: bem-selector(block, $elem: elem); // returns .block__elem"
@@ -58,8 +254,7 @@
             },
             {
                 "description": [
-                    "<p>ブロック、要素と要素修飾を含みます。</p>",
-                    ""
+                    "ブロック、要素と要素修飾を含みます。"
                 ],
                 "code": [
                     "$selector: bem-selector(block, $elem: (elem, mod); // returns .block__elem--mod"
@@ -67,8 +262,7 @@
             },
             {
                 "description": [
-                    "<p>ブロックとブロック修飾を含みます。</p>",
-                    ""
+                    "ブロックとブロック修飾を含みます。"
                 ],
                 "code": [
                     "$selector: bem-selector(block, $mod: mod) // returns .block--mod"
@@ -76,8 +270,7 @@
             },
             {
                 "description": [
-                    "<p>ブロックおよび複数のブロック修飾子を含みます。</p>",
-                    ""
+                    "ブロックおよび複数のブロック修飾子を含みます。"
                 ],
                 "code": [
                     "$selector: bem-selector(block, $mods: (mod-1, mod-2)) // returns .block--mod-1.block--mod-2"
@@ -85,8 +278,7 @@
             },
             {
                 "description": [
-                    "<p>ブロック修飾を続くブロック サブ要素を含みます。</p>",
-                    ""
+                    "ブロック修飾を続くブロック サブ要素を含みます。"
                 ],
                 "code": [
                     "$selector: bem-selector(block, $m: mod, $e: elem); // returns .block--mod .block__elem"
@@ -96,33 +288,29 @@
     },
     "elem": {
         "description": [
-            "<p>BEM 要素セレクター文字列を返します。修飾子が指定されている場合は、要素セレクターに追加されます。</p>",
+            "BEM 要素セレクター文字列を返します。修飾子が指定されている場合は、要素セレクターに追加されます。",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>ブロックの名前。</p>",
-                    ""
+                    "ブロックの名前。"
                 ]
             },
             "elem": {
                 "description": [
-                    "<p>要素の名前。</p>",
-                    ""
+                    "要素の名前。"
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>修飾の名前。オプション。</p>",
-                    ""
+                    "修飾の名前。オプション。"
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>BEM 要素セレクター文字列。</p>",
-                ""
+                "BEM 要素セレクター文字列。"
             ]
         },
         "example": [
@@ -136,27 +324,24 @@
     },
     "mod": {
         "description": [
-            "<p>ブロックの BEM 修飾子セレクター文字列を返します。</p>",
+            "ブロックの BEM 修飾子セレクター文字列を返します。",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>ブロックの名前。</p>",
-                    ""
+                    "ブロックの名前。"
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>修飾の名前。</p>",
-                    ""
+                    "修飾の名前。"
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>BEM 修飾子セレクター文字列。</p>",
-                ""
+                "BEM 修飾子セレクター文字列。"
             ]
         },
         "example": [

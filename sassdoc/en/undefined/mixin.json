@@ -3,10 +3,75 @@
         "parameters": {
             "theme": {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "The theme used to style the component."
                 ]
             }
         }
+    },
+    "css-vars-from-theme": {
+        "description": [
+            "Parses a map of key value pairs from component themes to css variables.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The component theme to be used to generate css variables."
+                ]
+            },
+            "name": {
+                "description": [
+                    "The CSS variables name"
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "A list of ignored keywords to be excluded when generating CSS variables"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Convert theme colors to CSS variables."
+                ],
+                "code": [
+                    "$theme: digest-schema((background: color(primary, 500), foreground: contrast-color(color, 500));",
+                    ":root {",
+                    "  @include css-vars-from-theme($theme);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "border-radius": {
+        "description": [
+            "Adds border-radius style with a value between an upper and a lower bound.",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "The preferred value."
+                ]
+            },
+            "min": {
+                "description": [
+                    "The minimum value."
+                ]
+            },
+            "max": {
+                "description": [
+                    "The maximum allowed value."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include border-radius(4px);"
+                ]
+            }
+        ]
     }
 }

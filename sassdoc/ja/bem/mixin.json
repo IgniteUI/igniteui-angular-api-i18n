@@ -1,15 +1,20 @@
 ﻿{
+    "bem--apply-not": {
+        "description": [
+            "必要に応じて、内容を :not セレクターでラップします。",
+            ""
+        ]
+    },
     "bem-block": {
         "description": [
-            "<p>クラス セレクターとして展開します。このミックスインの主な目的は、",
-            "BEM ブロックの開始を明確に示すことです。</p>",
+            "クラス セレクターとして展開します。このミックスインの主な目的は、",
+            "BEM ブロックの開始を明確に示すことです。",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>ブロックの名前。</p>",
-                    ""
+                    "ブロックの名前。"
                 ]
             }
         },
@@ -28,29 +33,27 @@
     },
     "bem-elem": {
         "description": [
-            "<p>コンテキストに基づいて BEM 要素セレクターになります。",
-            "ブロックの中で、ルート レベルの <code>.block__elem</code> を作成します。",
-            "Mod または疑似セレクターの中に入れ子にされた <code>.block--mod .block__elem</code> を作成します。",
-            "$Mod を含む場合、ブロック セレクターに追加されます。複数 $mods はサポートしません。</p>",
+            "コンテキストに基づいて BEM 要素セレクターになります。",
+            "ブロックの中で、ルート レベルの `.block__elem` を作成します。",
+            "Mod または疑似セレクターの中に入れ子にされた `.block--mod .block__elem` を作成します。",
+            "$Mod を含む場合、ブロック セレクターに追加されます。複数の",
+            "$mods はサポートしません。",
             ""
         ],
         "parameters": {
             "elem": {
                 "description": [
-                    "<p>サブ要素の名前。</p>",
-                    ""
+                    "サブ要素の名前。"
                 ]
             },
             "m": {
                 "description": [
-                    "<p>修飾の名前。</p>",
-                    ""
+                    "修飾の名前。"
                 ]
             },
             "mod": {
                 "description": [
-                    "<p><code>$m</code> のエイリアス。</p>",
-                    ""
+                    "`$m` のエイリアス。"
                 ]
             }
         },
@@ -70,26 +73,23 @@
     },
     "bem-mod": {
         "description": [
-            "<p>オプションの除外を含む複数のブロック修飾子のセレクターを生成します。</p>",
+            "オプションの除外を含む複数のブロック修飾子のセレクターを生成します。",
             ""
         ],
         "parameters": {
             "mods": {
                 "description": [
-                    "<p>修飾子名のリスト。</p>",
-                    ""
+                    "修飾子名のリスト。"
                 ]
             },
             "options": {
                 "description": [
-                    "<p>オプションの構成マップ。</p>",
-                    ""
+                    "オプションの構成マップ。"
                 ]
             },
             "options.not": {
                 "description": [
-                    "<p>:not() で除外する修飾子。</p>",
-                    ""
+                    ":not() で除外する修飾子。"
                 ]
             }
         },
@@ -108,15 +108,15 @@
     },
     "bem-mods": {
         "description": [
-            "<p>block--modifier.[block--modifier...] .block__el になります。",
-            "Mixin はブロックまたはブロック要素に 2 つ以上の修飾は同時に適用されるときに役に立ちます。</p>",
+            "block--modifier.[block--modifier...] .block__el になります。",
+            "このミックスインはブロックまたはブロック要素に",
+            "2 つ以上の修飾は同時に適用されるときに役に立ちます。",
             ""
         ],
         "parameters": {
             "mods": {
                 "description": [
-                    "<p>修飾のリスト。</p>",
-                    ""
+                    "修飾のリスト。"
                 ]
             }
         },
@@ -139,32 +139,29 @@
     },
     "bem": {
         "description": [
-            "<p>完全 BEM ルールを生成します。</p>",
+            "完全 BEM ルールを生成します。",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>文字列ブロックの名前。必須。</p>",
-                    ""
+                    "文字列ブロックの名前。必須。"
                 ]
             },
             "elem": {
                 "description": [
-                    "<p>サブ要素の名前。<code>$mod</code> が存在しない場合は、",
-                    "$block と結合されます。$mod が存在する場合、それは <code>$block--$mod</code> の下にネストされます。</p>",
-                    ""
+                    "サブ要素の名前。`$mod` が存在しない場合は、",
+                    "$block と結合されます。$mod が存在する場合、それは `$block--$mod` の下にネストされます。"
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>ブロック修飾。</p>",
-                    ""
+                    "ブロック修飾。"
                 ]
             },
             "mods": {
                 "description": [
-                    "<p>ブロック修飾のリスト。</p>",
+                    "ブロック修飾のリスト。",
                     ""
                 ]
             }
@@ -172,8 +169,7 @@
         "example": [
             {
                 "description": [
-                    "<p>ブロックを含みます。</p>",
-                    ""
+                    "ブロックを含みます。"
                 ],
                 "code": [
                     "@include bem(block) {",
@@ -188,8 +184,7 @@
             },
             {
                 "description": [
-                    "<p>要素とブロックを含みます。</p>",
-                    ""
+                    "要素とブロックを含みます。"
                 ],
                 "code": [
                     " @include bem(block, $elem: elem) {",
@@ -204,8 +199,7 @@
             },
             {
                 "description": [
-                    "<p>ブロック、要素と要素修飾を含みます。</p>",
-                    ""
+                    "ブロック、要素と要素修飾を含みます。"
                 ],
                 "code": [
                     "@include bem(block, $elem: (elem, mod)) {",
@@ -220,8 +214,7 @@
             },
             {
                 "description": [
-                    "<p>ブロックとブロック修飾を含みます。</p>",
-                    ""
+                    "ブロックとブロック修飾を含みます。"
                 ],
                 "code": [
                     "@include bem(block, $mod: mod) {",
@@ -236,8 +229,7 @@
             },
             {
                 "description": [
-                    "<p>複数の修飾子を持つブロックを含みます。</p>",
-                    ""
+                    "複数の修飾子を持つブロックを含みます。"
                 ],
                 "code": [
                     "@include bem(block, $mods: (mod-1, mod-2)) {",
@@ -252,8 +244,7 @@
             },
             {
                 "description": [
-                    "<p>ブロック修飾を続くブロック サブ要素を含みます。</p>",
-                    ""
+                    "ブロック修飾を続くブロック サブ要素を含みます。"
                 ],
                 "code": [
                     "@include bem(block, $m:mod, $e:elem) {",
@@ -270,49 +261,49 @@
     },
     "block": {
         "description": [
-            "<p>bem-block と同じです。</p>",
+            "bem-block と同じです。",
             ""
         ]
     },
     "elem": {
         "description": [
-            "<p>bem-elem と同じです。</p>",
+            "bem-elem と同じです。",
             ""
         ]
     },
     "mod": {
         "description": [
-            "<p>bem-mod と同じです。</p>",
+            "bem-mod と同じです。",
             ""
         ]
     },
     "mods": {
         "description": [
-            "<p>bem-mods と同じです。</p>",
+            "bem-mods と同じです。",
             ""
         ]
     },
     "b": {
         "description": [
-            "<p>bem-block と同じです。</p>",
+            "bem-block と同じです。",
             ""
         ]
     },
     "e": {
         "description": [
-            "<p>bem-elem と同じです。</p>",
+            "bem-elem と同じです。",
             ""
         ]
     },
     "m": {
         "description": [
-            "<p>bem-mod と同じです。</p>",
+            "bem-mod と同じです。",
             ""
         ]
     },
     "mx": {
         "description": [
-            "<p>bem-mods と同じです。</p>",
+            "bem-mods と同じです。",
             ""
         ]
     }

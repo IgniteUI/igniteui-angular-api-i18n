@@ -1,15 +1,20 @@
 {
+    "bem--apply-not": {
+        "description": [
+            "Wraps content with :not selector if needed",
+            ""
+        ]
+    },
     "bem-block": {
         "description": [
-            "<p>Simply unrolls into a class-selector. The main purpose of using this mixin",
-            "is to clearly denote the start of a BEM block.</p>",
+            "Simply unrolls into a class-selector. The main purpose of using this mixin",
+            "is to clearly denote the start of a BEM block.",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>The block name.</p>",
-                    ""
+                    "The block name."
                 ]
             }
         },
@@ -28,30 +33,27 @@
     },
     "bem-elem": {
         "description": [
-            "<p>Unrolls into a proper BEM element selector, depending on the context.",
-            "Inside just a block, yields a root-level <code>.block__elem</code>.",
-            "Inside a mod or pseudo-selector, yields a nested <code>.block--mod .block__elem</code>.",
+            "Unrolls into a proper BEM element selector, depending on the context.",
+            "Inside just a block, yields a root-level `.block__elem`.",
+            "Inside a mod or pseudo-selector, yields a nested `.block--mod .block__elem`.",
             "If $mod is included, it is appended to the block selector. Multiple",
-            "$mods are not supported.</p>",
+            "$mods are not supported.",
             ""
         ],
         "parameters": {
             "elem": {
                 "description": [
-                    "<p>The sub-element name.</p>",
-                    ""
+                    "The sub-element name."
                 ]
             },
             "m": {
                 "description": [
-                    "<p>The modifier name.</p>",
-                    ""
+                    "The modifier name."
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>An alias of <code>$m</code>.</p>",
-                    ""
+                    "An alias of `$m`."
                 ]
             }
         },
@@ -71,26 +73,23 @@
     },
     "bem-mod": {
         "description": [
-            "<p>Generates selectors for multiple block modifiers with optional exclusions</p>",
+            "Generates selectors for multiple block modifiers with optional exclusions",
             ""
         ],
         "parameters": {
             "mods": {
                 "description": [
-                    "<p>List of modifier names</p>",
-                    ""
+                    "List of modifier names"
                 ]
             },
             "options": {
                 "description": [
-                    "<p>Optional configuration map</p>",
-                    ""
+                    "Optional configuration map"
                 ]
             },
             "options.not": {
                 "description": [
-                    "<p>Modifier(s) to exclude with :not()</p>",
-                    ""
+                    "Modifier(s) to exclude with :not()"
                 ]
             }
         },
@@ -109,16 +108,15 @@
     },
     "bem-mods": {
         "description": [
-            "<p>Unrolls into a block--modifier.[block--modifier...] .block__el",
+            "Unrolls into a block--modifier.[block--modifier...] .block__el",
             "This mixin is useful when we want to apply classes to a block,",
-            "or block element when two or more modifiers are applied in tandem</p>",
+            "or block element when two or more modifiers are applied in tandem",
             ""
         ],
         "parameters": {
             "mods": {
                 "description": [
-                    "<p>A list of modifiers</p>",
-                    ""
+                    "A list of modifiers"
                 ]
             }
         },
@@ -141,32 +139,29 @@
     },
     "bem": {
         "description": [
-            "<p>Generates a full BEM rule.</p>",
+            "Generates a full BEM rule.",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>A string block name. Required.</p>",
-                    ""
+                    "A string block name. Required."
                 ]
             },
             "elem": {
                 "description": [
-                    "<p>A sub-element name. If <code>$mod</code> is not present, it is",
-                    "joined with $block. If $mod is present, it is nested under <code>$block--$mod</code>.</p>",
-                    ""
+                    "A sub-element name. If `$mod` is not present, it is",
+                    "joined with $block. If $mod is present, it is nested under `$block--$mod`."
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>A block modifier.</p>",
-                    ""
+                    "A block modifier."
                 ]
             },
             "mods": {
                 "description": [
-                    "<p>A list of block modifiers.</p>",
+                    "A list of block modifiers.",
                     ""
                 ]
             }
@@ -174,8 +169,7 @@
         "example": [
             {
                 "description": [
-                    "<p>Include a block</p>",
-                    ""
+                    "Include a block"
                 ],
                 "code": [
                     "@include bem(block) {",
@@ -190,8 +184,7 @@
             },
             {
                 "description": [
-                    "<p>Include a block and an element</p>",
-                    ""
+                    "Include a block and an element"
                 ],
                 "code": [
                     " @include bem(block, $elem: elem) {",
@@ -206,8 +199,7 @@
             },
             {
                 "description": [
-                    "<p>Include block, element, and element modifier</p>",
-                    ""
+                    "Include block, element, and element modifier"
                 ],
                 "code": [
                     "@include bem(block, $elem: (elem, mod)) {",
@@ -222,8 +214,7 @@
             },
             {
                 "description": [
-                    "<p>Include block and block modifier</p>",
-                    ""
+                    "Include block and block modifier"
                 ],
                 "code": [
                     "@include bem(block, $mod: mod) {",
@@ -238,8 +229,7 @@
             },
             {
                 "description": [
-                    "<p>Include block with multiple modifiers</p>",
-                    ""
+                    "Include block with multiple modifiers"
                 ],
                 "code": [
                     "@include bem(block, $mods: (mod-1, mod-2)) {",
@@ -254,8 +244,7 @@
             },
             {
                 "description": [
-                    "<p>Include block modifier followed by block sub-element</p>",
-                    ""
+                    "Include block modifier followed by block sub-element"
                 ],
                 "code": [
                     "@include bem(block, $m:mod, $e:elem) {",
@@ -272,49 +261,49 @@
     },
     "block": {
         "description": [
-            "<p>The same as bem-block.</p>",
+            "The same as bem-block.",
             ""
         ]
     },
     "elem": {
         "description": [
-            "<p>The same as bem-elem.</p>",
+            "The same as bem-elem.",
             ""
         ]
     },
     "mod": {
         "description": [
-            "<p>The same as bem-mod.</p>",
+            "The same as bem-mod.",
             ""
         ]
     },
     "mods": {
         "description": [
-            "<p>The same as bem-mods.</p>",
+            "The same as bem-mods.",
             ""
         ]
     },
     "b": {
         "description": [
-            "<p>The same as bem-block.</p>",
+            "The same as bem-block.",
             ""
         ]
     },
     "e": {
         "description": [
-            "<p>The same as bem-elem.</p>",
+            "The same as bem-elem.",
             ""
         ]
     },
     "m": {
         "description": [
-            "<p>The same as bem-mod.</p>",
+            "The same as bem-mod.",
             ""
         ]
     },
     "mx": {
         "description": [
-            "<p>The same as bem-mods.</p>",
+            "The same as bem-mods.",
             ""
         ]
     }
