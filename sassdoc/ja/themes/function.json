@@ -51,6 +51,1857 @@
             }
         ]
     },
+    "pivot-data-selector-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            }
+        }
+    },
+    "file-input-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "file-names-background": {
+                "description": [
+                    "ファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-background--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-background--filled": {
+                "description": [
+                    "ファイル入力に値があるときのファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-background--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-foreground": {
+                "description": [
+                    "ファイル名の色。"
+                ]
+            },
+            "file-names-foreground--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのファイル名の色。"
+                ]
+            },
+            "file-names-foreground--filled": {
+                "description": [
+                    "ファイル入力に値があるときのファイル名の色。"
+                ]
+            },
+            "file-names-foreground--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのファイル名の色。"
+                ]
+            },
+            "file-selector-button-background": {
+                "description": [
+                    "ファイル入力セレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-background--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのセレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-background--filled": {
+                "description": [
+                    "ファイル入力に値があるときのセレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-background--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのセレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-foreground": {
+                "description": [
+                    "ファイル入力セレクター ボタンの前景色。"
+                ]
+            },
+            "file-selector-button-foreground--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのセレクター ボタンの前景色。"
+                ]
+            },
+            "file-selector-button-foreground--filled": {
+                "description": [
+                    "ファイル入力に値があるときのセレクター ボタンの前景色。"
+                ]
+            },
+            "file-selector-button-foreground--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのセレクター ボタンの前景色。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "フォーカスの境界線とラベルの色を変更します。"
+                ],
+                "code": [
+                    "$my-file-input-theme: file-input-theme($file-names-foreground: #09f);",
+                    "// css-vars() ミックスインへテーマを渡します。",
+                    "@include css-vars($my-file-input-theme);"
+                ]
+            }
+        ]
+    },
+    "sizable": {
+        "description": [
+            "コンポーネントのサイズに基づいて値を切り替えるために使用されます。",
+            "渡されたサイズは、比較する前に絶対値に変換されます。",
+            ""
+        ],
+        "parameters": {
+            "sm": {
+                "description": [
+                    "コンポーネントのサイズが small の場合の優先値。"
+                ]
+            },
+            "md": {
+                "description": [
+                    "コンポーネントのサイズが medium の場合の優先値。"
+                ]
+            },
+            "lg": {
+                "description": [
+                    "コンポーネントのサイズが large の場合の優先値。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "評価された値。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "--size: #{sizable(rem(40px), rem(64px), rem(88px))};"
+                ]
+            }
+        ]
+    },
+    "category-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "margin": {
+                "description": [
+                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズのブラシ色から選択されるパレットを定義します。"
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズのマーカー ブラシ色から選択されるパレットを定義します。"
+                ]
+            },
+            "negative-brushes": {
+                "description": [
+                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するパレットを定義します。"
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "自動的に割り当てられるシリーズのマーカー アウトラインの色から選択されるパレットを定義します。"
+                ]
+            },
+            "negative-outlines": {
+                "description": [
+                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するブラシを定義します。"
+                ]
+            },
+            "title-alignment": {
+                "description": [
+                    "タイトルに使用する水平方向。"
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "チャート タイトルの色を設定します。"
+                ]
+            },
+            "title-text-style": {
+                "description": [
+                    "チャート タイトルの CSS フォント プロパティを設定します。"
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "subtitle-alignment": {
+                "description": [
+                    "サブタイトルに使用する水平方向。"
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "チャート サブタイトルの色を設定します。"
+                ]
+            },
+            "subtitle-text-style": {
+                "description": [
+                    "チャート サブタイトルの CSS フォント プロパティを設定します。"
+                ]
+            },
+            "thickness": {
+                "description": [
+                    "チャートのすべてのシリーズの太さを設定します。"
+                ]
+            },
+            "trend-line-brushes": {
+                "description": [
+                    "チャートでトレンドラインの色に使用されるブラシのパレットを定義します。"
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "ポイント、折れ線、スプラインまたはバブル型のチャートのトレンドラインの太さを設定します。"
+                ]
+            },
+            "x-axis-label-margin": {
+                "description": [
+                    "X 軸のラベルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "x-axis-label-text-color": {
+                "description": [
+                    "X 軸のラベルの色を設定します。"
+                ]
+            },
+            "x-axis-label-text-style": {
+                "description": [
+                    "X 軸のラベルに CSS フォント プロパティを設定します。"
+                ]
+            },
+            "x-axis-label-vertical-alignment": {
+                "description": [
+                    "X 軸ラベルの垂直方向の配置を設定します。"
+                ]
+            },
+            "x-axis-major-stroke": {
+                "description": [
+                    "X 軸の主グリッド線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-major-stroke-thickness": {
+                "description": [
+                    "X 軸の主グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-minor-stroke": {
+                "description": [
+                    "X 軸の副グリッド線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-minor-stroke-thickness": {
+                "description": [
+                    "X 軸の副グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-strip": {
+                "description": [
+                    "X 軸の背景の縞模様に適用する色を設定します。"
+                ]
+            },
+            "x-axis-stroke": {
+                "description": [
+                    "X 軸線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-stroke-thickness": {
+                "description": [
+                    "X 軸線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-tick-length": {
+                "description": [
+                    "X 軸の目盛りの長さを設定します。"
+                ]
+            },
+            "x-axis-tick-stroke": {
+                "description": [
+                    "X 軸の目盛りに適用する色を設定します。"
+                ]
+            },
+            "x-axis-tick-stroke-thickness": {
+                "description": [
+                    "X 軸の目盛りに適用する太さを設定します。"
+                ]
+            },
+            "x-axis-title-alignment": {
+                "description": [
+                    "X 軸タイトルの水平方向の配置を設定します。"
+                ]
+            },
+            "x-axis-title-margin": {
+                "description": [
+                    "X 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "x-axis-title-text-color": {
+                "description": [
+                    "X 軸のタイトルの色を設定します。"
+                ]
+            },
+            "x-axis-title-text-style": {
+                "description": [
+                    "X 軸のタイトルに CSS フォント プロパティを設定します。"
+                ]
+            },
+            "y-axis-label-margin": {
+                "description": [
+                    "Y 軸のラベルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "y-axis-label-text-color": {
+                "description": [
+                    "Y 軸のラベルの色を設定します。"
+                ]
+            },
+            "y-axis-label-text-style": {
+                "description": [
+                    "Y 軸のラベルに CSS フォント プロパティを設定します。"
+                ]
+            },
+            "y-axis-label-vertical-alignment": {
+                "description": [
+                    "Y 軸ラベルの垂直方向の配置を設定します。"
+                ]
+            },
+            "y-axis-major-stroke": {
+                "description": [
+                    "Y 軸の主グリッド線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-major-stroke-thickness": {
+                "description": [
+                    "Y 軸の主グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-minor-stroke": {
+                "description": [
+                    "Y 軸の副グリッド線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-minor-stroke-thickness": {
+                "description": [
+                    "Y 軸の副グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-strip": {
+                "description": [
+                    "Y 軸の背景の縞模様に適用する色を設定します。"
+                ]
+            },
+            "y-axis-stroke": {
+                "description": [
+                    "Y 軸線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-stroke-thickness": {
+                "description": [
+                    "Y 軸線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-title-alignment": {
+                "description": [
+                    "Y 軸タイトルの水平方向の配置を設定します。"
+                ]
+            },
+            "y-axis-title-margin": {
+                "description": [
+                    "Y 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "y-axis-title-text-color": {
+                "description": [
+                    "Y 軸のタイトルの色を設定します。"
+                ]
+            },
+            "y-axis-title-text-style": {
+                "description": [
+                    "Y 軸のタイトルに CSS フォント プロパティを設定します。"
+                ]
+            },
+            "y-axis-tick-length": {
+                "description": [
+                    "Y 軸の目盛りの長さを設定します。"
+                ]
+            },
+            "y-axis-tick-stroke": {
+                "description": [
+                    "Y 軸の目盛りに適用する色を設定します。"
+                ]
+            },
+            "y-axis-tick-stroke-thickness": {
+                "description": [
+                    "Y 軸の目盛りに適用する太さを設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$custom-chart-theme: category-chart-theme($brushes: (red, green, blue));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($custom-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "data-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "margin": {
+                "description": [
+                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "チャート タイトルの色を設定します。"
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "チャート サブタイトルの色を設定します。"
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "自動的に割り当てられるマーカー ブラシから選択されるパレットを定義します。"
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "自動的に割り当てられるマーカー アウトラインから選択されるパレットを定義します。"
+                ]
+            },
+            "plot-area-background": {
+                "description": [
+                    "現在の Chart オブジェクトのプロット領域の背景として使用するブラシを設定します。"
+                ]
+            },
+            "title-horizontal-alignment": {
+                "description": [
+                    "タイトルに使用する水平方向。有効なオプションは 'left'、'center'、'right' です。"
+                ]
+            },
+            "subtitle-horizontal-alignment": {
+                "description": [
+                    "サブタイトルに使用する水平方向。有効なオプションは 'left'、'center'、'right' です。"
+                ]
+            },
+            "axis-label-margin": {
+                "description": [
+                    "両方の軸のラベルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "axis-label-text-color": {
+                "description": [
+                    "両方の軸のラベルの色を設定します。"
+                ]
+            },
+            "axis-label-text-style": {
+                "description": [
+                    "両方の軸のラベルに CSS フォント プロパティを設定します。"
+                ]
+            },
+            "axis-label-vertical-alignment": {
+                "description": [
+                    "X 軸ラベルの垂直方向の配置を設定します。"
+                ]
+            },
+            "axis-major-stroke": {
+                "description": [
+                    "両方の軸の主グリッド線に適用する色を設定します。"
+                ]
+            },
+            "axis-major-stroke-thickness": {
+                "description": [
+                    "両方の軸の主グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "axis-minor-stroke": {
+                "description": [
+                    "両方の軸の副グリッド線に適用する色を設定します。"
+                ]
+            },
+            "axis-minor-stroke-thickness": {
+                "description": [
+                    "両方の軸の副グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "axis-strip": {
+                "description": [
+                    "両方の軸の背景の縞模様に適用する色を設定します。"
+                ]
+            },
+            "axis-stroke": {
+                "description": [
+                    "両方の軸に適用する色を設定します。"
+                ]
+            },
+            "axis-stroke-thickness": {
+                "description": [
+                    "両方の軸に適用する太さを設定します。"
+                ]
+            },
+            "axis-tick-length": {
+                "description": [
+                    "両方の軸の目盛りの長さを設定します。"
+                ]
+            },
+            "axis-tick-stroke": {
+                "description": [
+                    "両方の軸の目盛りに適用する色を設定します。"
+                ]
+            },
+            "axis-tick-stroke-thickness": {
+                "description": [
+                    "両方の軸の目盛りに適用する太さを設定します。"
+                ]
+            },
+            "axis-title-alignment": {
+                "description": [
+                    "両方の軸の水平方向の配置を設定します。"
+                ]
+            },
+            "axis-title-margin": {
+                "description": [
+                    "両方の軸のタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "axis-title-text-color": {
+                "description": [
+                    "X 軸のタイトルの色を設定します。"
+                ]
+            },
+            "axis-title-text-style": {
+                "description": [
+                    "両方の軸のタイトルに CSS フォント プロパティを設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: data-chart-theme($brushes: (orange, blue, pink));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "doughnut-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "others-category-fill": {
+                "description": [
+                    "その他のカテゴリの塗りつぶし色を設定します。"
+                ]
+            },
+            "others-category-opacity": {
+                "description": [
+                    "その他のカテゴリの不透明度を設定します。"
+                ]
+            },
+            "others-category-stroke": {
+                "description": [
+                    "その他のカテゴリのストローク色を設定します。"
+                ]
+            },
+            "others-category-stroke-thickness": {
+                "description": [
+                    "その他のカテゴリのストロークの太さを設定します。"
+                ]
+            },
+            "selected-slice-fill": {
+                "description": [
+                    "選択されたスライスの塗りつぶし色を設定します。"
+                ]
+            },
+            "selected-slice-opacity": {
+                "description": [
+                    "選択されたスライスの不透明度を設定します。"
+                ]
+            },
+            "selected-slice-stroke": {
+                "description": [
+                    "選択されたスライスのストローク色を設定します。"
+                ]
+            },
+            "selected-slice-stroke-thickness": {
+                "description": [
+                    "選択されたスライスのストロークの太さを設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: doughnut-chart-theme($brushes: (orange, blue, pink));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "financial-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "margin": {
+                "description": [
+                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "title-alignment": {
+                "description": [
+                    "タイトルに使用する水平方向。"
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "チャート タイトルの色を設定します。"
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "チャート サブタイトルの色を設定します。"
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "subtitle-alignment": {
+                "description": [
+                    "コントロールの左右端に相対するサブタイトルの配置を決定する水平配置を取得または設定します。"
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズのブラシ色から選択されるパレットを定義します。"
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズのマーカー ブラシ色から選択されるパレットを定義します。"
+                ]
+            },
+            "negative-brushes": {
+                "description": [
+                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するパレットを定義します。"
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "自動的に割り当てられるシリーズのマーカー アウトラインの色から選択されるパレットを定義します。"
+                ]
+            },
+            "negative-outlines": {
+                "description": [
+                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するブラシを定義します。"
+                ]
+            },
+            "indicator-brushes": {
+                "description": [
+                    "財務指標に使用されるブラシを定義します。"
+                ]
+            },
+            "indicator-negative-brushes": {
+                "description": [
+                    "財務指標で負の要素に使用されるブラシを定義します。"
+                ]
+            },
+            "indicator-thickness": {
+                "description": [
+                    "自動的に割り当てられるシリーズのマーカー ブラシ色から選択されるパレットを定義します。"
+                ]
+            },
+            "plot-area-background": {
+                "description": [
+                    "現在の Chart オブジェクトのプロット領域の背景として使用するブラシを取得または設定します。"
+                ]
+            },
+            "thickness": {
+                "description": [
+                    "チャートのすべてのシリーズの太さを設定します。"
+                ]
+            },
+            "toolbar-height": {
+                "description": [
+                    "ツールバーの高さを設定します。"
+                ]
+            },
+            "trend-line-brushes": {
+                "description": [
+                    "チャートでトレンドラインの色に使用されるブラシのパレットを定義します。"
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "ポイント、折れ線、スプラインまたはバブル型のチャートのトレンドラインの太さを設定します。"
+                ]
+            },
+            "volume-brushes": {
+                "description": [
+                    "ボリューム ペインのボリューム シリーズを塗りつぶすためのブラシを定義します。"
+                ]
+            },
+            "volume-outlines": {
+                "description": [
+                    "ボリューム ペインのボリューム シリーズのアウトラインのためのブラシを定義します。"
+                ]
+            },
+            "volume-thickness": {
+                "description": [
+                    "ボリューム ペインのボリューム シリーズのアウトラインの太さを定義します。"
+                ]
+            },
+            "x-axis-label-margin": {
+                "description": [
+                    "X 軸のラベルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "x-axis-label-text-color": {
+                "description": [
+                    "X 軸のラベルの色を設定します。"
+                ]
+            },
+            "x-axis-label-vertical-alignment": {
+                "description": [
+                    "X 軸ラベルの垂直方向の配置を設定します。"
+                ]
+            },
+            "x-axis-major-stroke": {
+                "description": [
+                    "X 軸の主グリッド線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-major-stroke-thickness": {
+                "description": [
+                    "X 軸の主グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-minor-stroke": {
+                "description": [
+                    "X 軸の副グリッド線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-minor-stroke-thickness": {
+                "description": [
+                    "X 軸の副グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-strip": {
+                "description": [
+                    "X 軸の背景の縞模様に適用する色を設定します。"
+                ]
+            },
+            "x-axis-stroke": {
+                "description": [
+                    "X 軸線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-stroke-thickness": {
+                "description": [
+                    "X 軸線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-tick-length": {
+                "description": [
+                    "X 軸の目盛りの長さを設定します。"
+                ]
+            },
+            "x-axis-tick-stroke": {
+                "description": [
+                    "X 軸の目盛りに適用する色を設定します。"
+                ]
+            },
+            "x-axis-tick-stroke-thickness": {
+                "description": [
+                    "X 軸の目盛りに適用する太さを設定します。"
+                ]
+            },
+            "x-axis-title-alignment": {
+                "description": [
+                    "X 軸タイトルの水平方向の配置を設定します。"
+                ]
+            },
+            "x-axis-title-margin": {
+                "description": [
+                    "X 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "x-axis-title-text-color": {
+                "description": [
+                    "X 軸のタイトルの色を設定します。"
+                ]
+            },
+            "y-axis-label-margin": {
+                "description": [
+                    "Y 軸のラベルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "y-axis-label-text-color": {
+                "description": [
+                    "Y 軸のラベルの色を設定します。"
+                ]
+            },
+            "y-axis-label-vertical-alignment": {
+                "description": [
+                    "Y 軸ラベルの垂直方向の配置を設定します。"
+                ]
+            },
+            "y-axis-major-stroke": {
+                "description": [
+                    "Y 軸の主グリッド線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-major-stroke-thickness": {
+                "description": [
+                    "Y 軸の主グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-minor-stroke": {
+                "description": [
+                    "Y 軸の副グリッド線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-minor-stroke-thickness": {
+                "description": [
+                    "Y 軸の副グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-strip": {
+                "description": [
+                    "Y 軸の背景の縞模様に適用する色を設定します。"
+                ]
+            },
+            "y-axis-stroke": {
+                "description": [
+                    "Y 軸線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-stroke-thickness": {
+                "description": [
+                    "Y 軸線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-title-alignment": {
+                "description": [
+                    "Y 軸タイトルの水平方向の配置を設定します。"
+                ]
+            },
+            "y-axis-title-margin": {
+                "description": [
+                    "Y 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "y-axis-title-text-color": {
+                "description": [
+                    "Y 軸のタイトルの色を設定します。"
+                ]
+            },
+            "y-axis-tick-length": {
+                "description": [
+                    "Y 軸の目盛りの長さを設定します。"
+                ]
+            },
+            "y-axis-tick-stroke": {
+                "description": [
+                    "Y 軸の目盛りに適用する色を設定します。"
+                ]
+            },
+            "y-axis-tick-stroke-thickness": {
+                "description": [
+                    "Y 軸の目盛りに適用する太さを設定します。"
+                ]
+            },
+            "zoom-slider-x-axis-major-stroke": {
+                "description": [
+                    "ズームス ライダー ペインの X 軸上の主グリッド線のストローク ブラシを取得または設定します。"
+                ]
+            },
+            "zoom-slider-x-axis-major-stroke-thickness": {
+                "description": [
+                    "ズームス ライダー ペインの X 軸上の主グリッド線の太さを取得または設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: financial-chart-theme($title-alignment: left, $brushes: red, blue, yellow, pink);",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "funnel-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。",
+                    ""
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
+                ]
+            },
+            "outer-label-alignment": {
+                "description": [
+                    "チャートのどちら側にアウター ラベルを表示するかを設定します。"
+                ]
+            },
+            "outer-label-text-color": {
+                "description": [
+                    "外部ラベルで使用する色を設定します。"
+                ]
+            },
+            "outer-label-visibility": {
+                "description": [
+                    "外部ラベルを表示するかどうかを設定します。"
+                ]
+            },
+            "outline-thickness": {
+                "description": [
+                    "スライスの周りのアウトラインの太さを設定します。"
+                ]
+            },
+            "text-color": {
+                "description": [
+                    "内部ラベルで使用する色を設定します。",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: funnel-chart-theme($brushes: (orange, blue, pink));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "linear-gauge-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。",
+                    ""
+                ]
+            },
+            "backing-brush": {
+                "description": [
+                    "リニア ゲージの裏張りを塗りつぶすために使用する色を設定します。"
+                ]
+            },
+            "backing-outline": {
+                "description": [
+                    "裏張りのアウトラインに使用する色を設定します。"
+                ]
+            },
+            "backing-stroke-thickness": {
+                "description": [
+                    "裏張りのアウトラインのストロークの太さを設定します。"
+                ]
+            },
+            "font-brush": {
+                "description": [
+                    "ラベルのフォントに使用する色を設定します。"
+                ]
+            },
+            "minor-tick-stroke-thickness": {
+                "description": [
+                    "副目盛を描画する際に使用するストロークの太さを設定します。"
+                ]
+            },
+            "needle-breadth": {
+                "description": [
+                    "針の幅を設定します。"
+                ]
+            },
+            "needle-brush": {
+                "description": [
+                    "針要素の色を設定します。"
+                ]
+            },
+            "needle-inner-base-width": {
+                "description": [
+                    "針の内部ベースの幅を設定します。"
+                ]
+            },
+            "needle-inner-point-width": {
+                "description": [
+                    "針の内部ポイントの幅を設定します。"
+                ]
+            },
+            "needle-outer-base-width": {
+                "description": [
+                    "針の外部ベースの幅を設定します。"
+                ]
+            },
+            "needle-outer-point-width": {
+                "description": [
+                    "針の外部ポイントの幅を設定します。"
+                ]
+            },
+            "needle-outline": {
+                "description": [
+                    "針要素のアウトラインを描画する色を設定します。"
+                ]
+            },
+            "needle-stroke-thickness": {
+                "description": [
+                    "単一の実際値の要素を描画するときに使用するストロークの太さを設定します。"
+                ]
+            },
+            "range-brushes": {
+                "description": [
+                    "リニア ゲージ範囲のパレットとして使用される色のコレクションを設定します。"
+                ]
+            },
+            "range-outlines": {
+                "description": [
+                    "リニア ゲージ アウトラインのパレットとして使用される色のコレクションを設定します。"
+                ]
+            },
+            "scale-brush": {
+                "description": [
+                    "リニア ゲージのスケールを塗りつぶすために使用する色を設定します。"
+                ]
+            },
+            "scale-outline": {
+                "description": [
+                    "スケールのアウトラインに使用する色を設定します。"
+                ]
+            },
+            "scale-stroke-thickness": {
+                "description": [
+                    "スケールのアウトラインのストロークの太さを設定します。"
+                ]
+            },
+            "tick-brush": {
+                "description": [
+                    "主目盛に使用する色を設定します。"
+                ]
+            },
+            "tick-stroke-thickness": {
+                "description": [
+                    "目盛を描画する際に使用するストロークの太さを設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$custom-gauge-theme: linear-gauge-theme($brushes: (red, green, blue));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($custom-gauge-theme);"
+                ]
+            }
+        ]
+    },
+    "radial-gauge-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "width": {
+                "description": [
+                    "ゲージの幅 - ピクセル、文字列 (px) またはパーセンテージ (%)。"
+                ]
+            },
+            "height": {
+                "description": [
+                    "ゲージの高さ - ピクセル、文字列 (px) またはパーセンテージ (%)。"
+                ]
+            },
+            "backing-brush": {
+                "description": [
+                    "リニア ゲージの裏張りを塗りつぶすために使用する色を設定します。"
+                ]
+            },
+            "backing-outline": {
+                "description": [
+                    "裏張りのアウトラインに使用する色を設定します。"
+                ]
+            },
+            "backing-stroke-thickness": {
+                "description": [
+                    "裏張りのアウトラインのストロークの太さを設定します。"
+                ]
+            },
+            "font-brush": {
+                "description": [
+                    "ラベルのフォントに使用する色を設定します。"
+                ]
+            },
+            "minor-tick-stroke-thickness": {
+                "description": [
+                    "副目盛を描画する際に使用するストロークの太さを設定します。"
+                ]
+            },
+            "needle-brush": {
+                "description": [
+                    "針要素の色を設定します。"
+                ]
+            },
+            "needle-outline": {
+                "description": [
+                    "針要素のアウトラインを描画する色を設定します。"
+                ]
+            },
+            "needle-stroke-thickness": {
+                "description": [
+                    "単一の実際値の要素を描画するときに使用するストロークの太さを設定します。"
+                ]
+            },
+            "range-brushes": {
+                "description": [
+                    "リニア ゲージ範囲のパレットとして使用される色のコレクションを設定します。"
+                ]
+            },
+            "range-outlines": {
+                "description": [
+                    "リニア ゲージ アウトラインのパレットとして使用される色のコレクションを設定します。"
+                ]
+            },
+            "scale-brush": {
+                "description": [
+                    "リニア ゲージのスケールを塗りつぶすために使用する色を設定します。"
+                ]
+            },
+            "tick-brush": {
+                "description": [
+                    "主目盛に使用する色を設定します。"
+                ]
+            },
+            "tick-stroke-thickness": {
+                "description": [
+                    "目盛を描画する際に使用するストロークの太さを設定します。"
+                ]
+            },
+            "needle-pivot-brush": {
+                "description": [
+                    "針のピボット ポイントの色を設定します。"
+                ]
+            },
+            "needle-pivot-outline": {
+                "description": [
+                    "針のピボット ポイントのアウトラインの色を設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$custom-gauge-theme: radial-gauge-theme($brushes: (red, green, blue));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($custom-gauge-theme);"
+                ]
+            }
+        ]
+    },
+    "geo-map-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "plot-area-background": {
+                "description": [
+                    "現在の Map オブジェクトのプロット領域の背景として使用するブラシを取得または設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-map-theme: geo-map-theme($width: 550px);",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-map-theme);"
+                ]
+            }
+        ]
+    },
+    "bullet-graph-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "backing-brush": {
+                "description": [
+                    "ブレット グラフのバッキングを塗りつぶすために使用するブラシを設定します。"
+                ]
+            },
+            "backing-outline": {
+                "description": [
+                    "バッキングのアウトラインに使用するブラシを設定します。"
+                ]
+            },
+            "backing-stroke-thickness": {
+                "description": [
+                    "裏張りのアウトラインのストロークの太さを設定します。"
+                ]
+            },
+            "font-brush": {
+                "description": [
+                    "ラベルのフォントに使用するブラシを設定します。"
+                ]
+            },
+            "minor-tick-brush": {
+                "description": [
+                    "副目盛に使用するブラシを設定します。"
+                ]
+            },
+            "minor-tick-thickness": {
+                "description": [
+                    "副目盛を描画する際に使用するストロークの太さ。"
+                ]
+            },
+            "range-brushes": {
+                "description": [
+                    "ブレット グラフ範囲のパレットとして使用されるブラシのコレクションを設定します。"
+                ]
+            },
+            "range-outlines": {
+                "description": [
+                    "ブレット グラフ アウトラインのパレットとして使用されるブラシのコレクションを設定します。"
+                ]
+            },
+            "scale-background-brush": {
+                "description": [
+                    "スケールの背景ブラシを設定します。"
+                ]
+            },
+            "scale-background-outline": {
+                "description": [
+                    "スケールの背景アウトラインを設定します。"
+                ]
+            },
+            "scale-background-thickness": {
+                "description": [
+                    "スケールの背景アウトラインの太さを設定します。"
+                ]
+            },
+            "target-value-breadth": {
+                "description": [
+                    "ターゲット値要素の幅を設定します。"
+                ]
+            },
+            "target-value-brush": {
+                "description": [
+                    "比較マーカーの塗りつぶしを描画する際に使用するブラシを設定します。"
+                ]
+            },
+            "target-value-outline": {
+                "description": [
+                    "ターゲット値のアウトラインを描画する際に使用するブラシを設定します。"
+                ]
+            },
+            "target-value-thickness": {
+                "description": [
+                    "ターゲット値バーのアウトラインのストローク幅を設定します。"
+                ]
+            },
+            "tick-brush": {
+                "description": [
+                    "主目盛に使用するブラシを設定します。"
+                ]
+            },
+            "tick-stroke-thickness": {
+                "description": [
+                    "目盛を描画する際に使用するストロークの太さを設定します。"
+                ]
+            },
+            "value-brush": {
+                "description": [
+                    "実際の値要素に使用するブラシを設定します。"
+                ]
+            },
+            "value-outline": {
+                "description": [
+                    "実際の値要素のアウトラインに使用するブラシを設定します。"
+                ]
+            },
+            "value-stroke-thickness": {
+                "description": [
+                    "単一の実際値の要素を描画するときに使用するストロークの太さを設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: bullet-graph-theme($brushes: (orange, blue, pink));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "pie-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
+                ]
+            },
+            "label-extent": {
+                "description": [
+                    "スライスの端からラベルをオフセットするピクセル量を設定します。"
+                ]
+            },
+            "label-inner-color": {
+                "description": [
+                    "円チャート内に描画されるラベルの色を設定します。"
+                ]
+            },
+            "label-outer-color": {
+                "description": [
+                    "円チャートの外に描画されるラベルの色を設定します。"
+                ]
+            },
+            "labels-position": {
+                "description": [
+                    "チャート ラベルの位置を設定します。有効な値: 'none'、'center'、'insideEnd'、'outsideEnd', および 'bestFit'。"
+                ]
+            },
+            "leader-line-margin": {
+                "description": [
+                    "ラベルおよびその引き出し線の終了の間のマージンを設定します。"
+                ]
+            },
+            "leader-line-type": {
+                "description": [
+                    "外部の終了ラベルのために使用される引き出し線のタイプを設定します。有効な値: 'straight'、'spline'、および 'arc'。"
+                ]
+            },
+            "leader-line-visibility": {
+                "description": [
+                    "引き出し線が表示されるかどうかを設定します。有効な値: 'visible' および 'collapsed'。"
+                ]
+            },
+            "radius-factor": {
+                "description": [
+                    "チャートの半径のスケール率を設定します。0 と 1 の間の値。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: pie-chart-theme($brushes: (red, orange, blue));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "shape-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
+                ]
+            },
+            "margin": {
+                "description": [
+                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "title-alignment": {
+                "description": [
+                    "コントロールの左右端に相対するタイトルの配置を決定する水平配置を設定します。"
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "チャート タイトルの色を設定します。"
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "subtitle-alignment": {
+                "description": [
+                    "コントロールの左右端に相対するサブタイトルの配置を決定する水平配置を設定します。"
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "チャート サブタイトルの色を設定します。"
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "データ ポイント マーカーの塗りつぶし領域を描画するために使用されるブラシのパレットを設定します。"
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "チャート シリーズのアウトラインに使用するブラシのパレットを設定します。"
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "データ ポイント マーカーのアウトラインのを描画するために使用されるブラシのパレットを設定します。"
+                ]
+            },
+            "thickness": {
+                "description": [
+                    "このチャートのすべてのシリーズの太さを設定します。"
+                ]
+            },
+            "trend-line-brushes": {
+                "description": [
+                    "このチャートでトレンドラインの色に使用されるブラシのパレットを設定します。"
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "このチャートのトレンドラインの太さを設定します。このプロパティはポイント、折れ線、スプライン、およびバブルのチャート型のみに適用できます。"
+                ]
+            },
+            "x-axis-label-margin": {
+                "description": [
+                    "X 軸のラベルのマージンを設定します。"
+                ]
+            },
+            "x-axis-label-text-color": {
+                "description": [
+                    "X 軸のラベルの色を設定します。"
+                ]
+            },
+            "x-axis-label-vertical-alignment": {
+                "description": [
+                    "X 軸ラベルの垂直方向の配置を設定します。"
+                ]
+            },
+            "x-axis-major-stroke": {
+                "description": [
+                    "X 軸の主グリッド線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-major-stroke-thickness": {
+                "description": [
+                    "X 軸の主グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-minor-stroke": {
+                "description": [
+                    "X 軸の副グリッド線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-minor-stroke-thickness": {
+                "description": [
+                    "X 軸の副グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-strip": {
+                "description": [
+                    "X 軸の背景の縞模様に適用する色を設定します。"
+                ]
+            },
+            "x-axis-stroke": {
+                "description": [
+                    "X 軸線に適用する色を設定します。"
+                ]
+            },
+            "x-axis-stroke-thickness": {
+                "description": [
+                    "X 軸線に適用する太さを設定します。"
+                ]
+            },
+            "x-axis-title-alignment": {
+                "description": [
+                    "X 軸タイトルの水平方向の配置を設定します。"
+                ]
+            },
+            "x-axis-title-color": {
+                "description": [
+                    "X 軸のタイトルの色を設定します。"
+                ]
+            },
+            "x-axis-title-margin": {
+                "description": [
+                    "X 軸のタイトルの周りのマージンを設定します。"
+                ]
+            },
+            "y-axis-label-margin": {
+                "description": [
+                    "Y 軸のラベルのマージンを設定します。"
+                ]
+            },
+            "y-axis-label-text-color": {
+                "description": [
+                    "Y 軸のラベルの色を設定します。"
+                ]
+            },
+            "y-axis-label-vertical-alignment": {
+                "description": [
+                    "Y 軸ラベルの垂直方向の配置を設定します。"
+                ]
+            },
+            "y-axis-major-stroke": {
+                "description": [
+                    "Y 軸の主グリッド線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-major-stroke-thickness": {
+                "description": [
+                    "Y 軸の主グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-minor-stroke": {
+                "description": [
+                    "Y 軸の副グリッド線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-minor-stroke-thickness": {
+                "description": [
+                    "Y 軸の副グリッド線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-strip": {
+                "description": [
+                    "Y 軸の背景の縞模様に適用する色を設定します。"
+                ]
+            },
+            "y-axis-stroke": {
+                "description": [
+                    "Y 軸線に適用する色を設定します。"
+                ]
+            },
+            "y-axis-stroke-thickness": {
+                "description": [
+                    "Y 軸線に適用する太さを設定します。"
+                ]
+            },
+            "y-axis-title-alignment": {
+                "description": [
+                    "Y 軸タイトルの水平方向の配置を設定します。"
+                ]
+            },
+            "y-axis-title-color": {
+                "description": [
+                    "Y 軸のタイトルの色を設定します。"
+                ]
+            },
+            "y-axis-title-margin": {
+                "description": [
+                    "Y 軸のタイトルの周りのマージンを設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: shape-chart-theme($brushes: (orange, blue, pink));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "sparkline-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "target": {
+                "description": [
+                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。",
+                    ""
+                ]
+            },
+            "brush": {
+                "description": [
+                    "スパークライン ブラシを設定します。"
+                ]
+            },
+            "line-thickness": {
+                "description": [
+                    "スパークラインの線の太さを設定します。"
+                ]
+            },
+            "marker-brush": {
+                "description": [
+                    "スパークラインのマーカー ブラシを設定します。"
+                ]
+            },
+            "marker-size": {
+                "description": [
+                    "スパークラインのマーカー サイズを設定します。"
+                ]
+            },
+            "first-marker-brush": {
+                "description": [
+                    "スパークラインの始値マーカー ブラシを設定します。"
+                ]
+            },
+            "first-marker-size": {
+                "description": [
+                    "スパークラインの始値マーカー サイズを設定します。"
+                ]
+            },
+            "last-marker-brush": {
+                "description": [
+                    "スパークラインの終値マーカー ブラシを設定します。"
+                ]
+            },
+            "last-marker-size": {
+                "description": [
+                    "スパークラインの終値マーカー サイズを設定します。"
+                ]
+            },
+            "low-marker-brush": {
+                "description": [
+                    "スパークラインの最小値マーカー ブラシを設定します。"
+                ]
+            },
+            "low-marker-size": {
+                "description": [
+                    "スパークラインの最小値マーカー サイズを設定します。"
+                ]
+            },
+            "high-marker-brush": {
+                "description": [
+                    "スパークラインの最大値マーカー ブラシを設定します。"
+                ]
+            },
+            "high-marker-size": {
+                "description": [
+                    "スパークラインの最大値マーカー サイズを設定します。"
+                ]
+            },
+            "negative-brush": {
+                "description": [
+                    "スパークラインの負値ブラシを設定します。"
+                ]
+            },
+            "negative-marker-brush": {
+                "description": [
+                    "スパークラインの負値マーカー ブラシを設定します。"
+                ]
+            },
+            "negative": {
+                "description": [
+                    "marker-size [null] - スパークラインの負値マーカーのサイズを取得または設定します。"
+                ]
+            },
+            "trend-line-brush": {
+                "description": [
+                    "スパークラインのトレンドライン マーカー ブラシを設定します。"
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "スパークライン トレンドラインの太さを設定します。"
+                ]
+            },
+            "horizontal-axis-brush": {
+                "description": [
+                    "スパークラインの横軸線ブラシを設定します。"
+                ]
+            },
+            "vertical-axis-brush": {
+                "description": [
+                    "スパークラインの縦軸線ブラシを設定します。"
+                ]
+            },
+            "normal-range-fill": {
+                "description": [
+                    "スパークラインの標準範囲ブラシを設定します。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-sparkline-theme: sparkline-theme($brushes: (orange, blue, pink));",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-sparkline-theme);"
+                ]
+            }
+        ]
+    },
     "avatar-theme": {
         "description": [
             "背景色のみを指定した場合、テキスト/アイコンの色は自動的にコントラスト色に割り当てられます。",
@@ -3219,74 +5070,6 @@
             }
         ]
     },
-    "grid-toolbar-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "background-color": {
-                "description": [
-                    "ツールバーの背景色。"
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "ツールバー タイトル テキストの色。"
-                ]
-            },
-            "dropdown-background": {
-                "description": [
-                    "ツールバー  ドロップダウンの背景色。"
-                ]
-            },
-            "item-text-color": {
-                "description": [
-                    "ツールバー ドロップダウン項目のテキストの色。"
-                ]
-            },
-            "item-hover-background": {
-                "description": [
-                    "ツールバー ドロップダウン項目ホバー テストの色。"
-                ]
-            },
-            "item-hover-text-color": {
-                "description": [
-                    "ツールバー ドロップダウン項目ホバー テキストの色。"
-                ]
-            },
-            "item-focus-background": {
-                "description": [
-                    "ツールバー  ドロップダウン項目 フォーカス背景色。"
-                ]
-            },
-            "item-focus-text-color": {
-                "description": [
-                    "ツールバー ドロップダウン項目フォーカス テキストの色。"
-                ]
-            },
-            "border-color": {
-                "description": [
-                    "ツールバーの下の境界線の色。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "ツールバーの背景色を変更します。"
-                ],
-                "code": [
-                    "$my-toolbar-theme: grid-toolbar-theme(",
-                    "  $background-color: black",
-                    ");",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-toolbar-theme);"
-                ]
-            }
-        ]
-    },
     "grid-theme": {
         "parameters": {
             "schema": {
@@ -3728,14 +5511,73 @@
             }
         ]
     },
-    "pivot-data-selector-theme": {
+    "grid-toolbar-theme": {
         "parameters": {
             "schema": {
                 "description": [
                     "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
                 ]
+            },
+            "background-color": {
+                "description": [
+                    "ツールバーの背景色。"
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "ツールバー タイトル テキストの色。"
+                ]
+            },
+            "dropdown-background": {
+                "description": [
+                    "ツールバー ドロップダウンの背景色。"
+                ]
+            },
+            "item-text-color": {
+                "description": [
+                    "ツールバー ドロップダウン項目のテキストの色。"
+                ]
+            },
+            "item-hover-background": {
+                "description": [
+                    "ツールバー ドロップダウン項目ホバー テストの色。"
+                ]
+            },
+            "item-hover-text-color": {
+                "description": [
+                    "ツールバー ドロップダウン項目ホバー テキストの色。"
+                ]
+            },
+            "item-focus-background": {
+                "description": [
+                    "ツールバー ドロップダウン項目 フォーカス背景色。"
+                ]
+            },
+            "item-focus-text-color": {
+                "description": [
+                    "ツールバー ドロップダウン項目フォーカス テキストの色。"
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "ツールバーの下の境界線の色。"
+                ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "ツールバーの背景色を変更します。"
+                ],
+                "code": [
+                    "$my-toolbar-theme: grid-toolbar-theme(",
+                    "  $background-color: black",
+                    ");",
+                    "// css-vars ミックスインへテーマを渡します。",
+                    "@include css-vars($my-toolbar-theme);"
+                ]
+            }
+        ]
     },
     "highlight-theme": {
         "description": [
@@ -4578,91 +6420,6 @@
                     ");",
                     "// css-vars() ミックスインへテーマを渡します。",
                     "@include css-vars($my-progress-linear-theme);"
-                ]
-            }
-        ]
-    },
-    "query-builder-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "background": {
-                "description": [
-                    "フィルタリング行の背景色。"
-                ]
-            },
-            "header-background": {
-                "description": [
-                    "クエリ ビルダー ヘッダーの背景色。"
-                ]
-            },
-            "header-foreground": {
-                "description": [
-                    "クエリ ビルダー ヘッダーの前景色。"
-                ]
-            },
-            "header-border": {
-                "description": [
-                    "クエリ ビルダーの、ヘッダーの境界線の色。",
-                    ""
-                ]
-            },
-            "subquery-header-background": {
-                "description": [
-                    "サブクエリ ヘッダーの背景色。"
-                ]
-            },
-            "subquery-border-color": {
-                "description": [
-                    "クエリ ブロックの境界線の色。"
-                ]
-            },
-            "separator-color": {
-                "description": [
-                    "クエリ ビルダー ツリー ブロックのセパレーターの色。"
-                ]
-            },
-            "subquery-border-radius": {
-                "description": [
-                    "サブクエリ ブロックの境界線の半径。",
-                    ""
-                ]
-            },
-            "label-foreground": {
-                "description": [
-                    "クエリ ビルダーのラベル 「from」 と 「select」 の色。"
-                ]
-            },
-            "border-radius": {
-                "description": [
-                    "クエリ ビルダーの境界線の半径。",
-                    ""
-                ]
-            },
-            "color-expression-group-and": {
-                "description": [
-                    "高度なフィルタリングの 「AND」 条件グループの色。"
-                ]
-            },
-            "color-expression-group-or": {
-                "description": [
-                    "高度なフィルタリングの 「OR」 条件グループの色。",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "カスタム クエリ ビルダーの色を設定します。"
-                ],
-                "code": [
-                    "$my-query-builder-theme: query-builder-theme($background: red);",
-                    "// css-vars() ミックスインへテーマを渡します。",
-                    "@include css-vars($my-query-builder-theme);"
                 ]
             }
         ]
@@ -6190,1747 +7947,6 @@
                     "$my-watermark-theme: watermark-theme($link-background: magenta);",
                     "// css-vars() ミックスインへテーマを渡します。",
                     "@include css-vars($my-watermark-theme);"
-                ]
-            }
-        ]
-    },
-    "sizable": {
-        "description": [
-            "コンポーネントのサイズに基づいて値を切り替えるために使用されます。",
-            "渡されたサイズは、比較する前に絶対値に変換されます。",
-            ""
-        ],
-        "parameters": {
-            "sm": {
-                "description": [
-                    "コンポーネントのサイズが small の場合の優先値。"
-                ]
-            },
-            "md": {
-                "description": [
-                    "コンポーネントのサイズが medium の場合の優先値。"
-                ]
-            },
-            "lg": {
-                "description": [
-                    "コンポーネントのサイズが large の場合の優先値。"
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "評価された値。"
-            ]
-        },
-        "example": [
-            {
-                "code": [
-                    "--size: #{sizable(rem(40px), rem(64px), rem(88px))};"
-                ]
-            }
-        ]
-    },
-    "category-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "margin": {
-                "description": [
-                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズのブラシ色から選択されるパレットを定義します。"
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズのマーカー ブラシ色から選択されるパレットを定義します。"
-                ]
-            },
-            "negative-brushes": {
-                "description": [
-                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するパレットを定義します。"
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "自動的に割り当てられるシリーズのマーカー アウトラインの色から選択されるパレットを定義します。"
-                ]
-            },
-            "negative-outlines": {
-                "description": [
-                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するブラシを定義します。"
-                ]
-            },
-            "title-alignment": {
-                "description": [
-                    "タイトルに使用する水平方向。"
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "チャート タイトルの色を設定します。"
-                ]
-            },
-            "title-text-style": {
-                "description": [
-                    "チャート タイトルの CSS フォント プロパティを設定します。"
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "subtitle-alignment": {
-                "description": [
-                    "サブタイトルに使用する水平方向。"
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "チャート サブタイトルの色を設定します。"
-                ]
-            },
-            "subtitle-text-style": {
-                "description": [
-                    "チャート サブタイトルの CSS フォント プロパティを設定します。"
-                ]
-            },
-            "thickness": {
-                "description": [
-                    "チャートのすべてのシリーズの太さを設定します。"
-                ]
-            },
-            "trend-line-brushes": {
-                "description": [
-                    "チャートでトレンドラインの色に使用されるブラシのパレットを定義します。"
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "ポイント、折れ線、スプラインまたはバブル型のチャートのトレンドラインの太さを設定します。"
-                ]
-            },
-            "x-axis-label-margin": {
-                "description": [
-                    "X 軸のラベルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "x-axis-label-text-color": {
-                "description": [
-                    "X 軸のラベルの色を設定します。"
-                ]
-            },
-            "x-axis-label-text-style": {
-                "description": [
-                    "X 軸のラベルに CSS フォント プロパティを設定します。"
-                ]
-            },
-            "x-axis-label-vertical-alignment": {
-                "description": [
-                    "X 軸ラベルの垂直方向の配置を設定します。"
-                ]
-            },
-            "x-axis-major-stroke": {
-                "description": [
-                    "X 軸の主グリッド線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-major-stroke-thickness": {
-                "description": [
-                    "X 軸の主グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-minor-stroke": {
-                "description": [
-                    "X 軸の副グリッド線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-minor-stroke-thickness": {
-                "description": [
-                    "X 軸の副グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-strip": {
-                "description": [
-                    "X 軸の背景の縞模様に適用する色を設定します。"
-                ]
-            },
-            "x-axis-stroke": {
-                "description": [
-                    "X 軸線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-stroke-thickness": {
-                "description": [
-                    "X 軸線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-tick-length": {
-                "description": [
-                    "X 軸の目盛りの長さを設定します。"
-                ]
-            },
-            "x-axis-tick-stroke": {
-                "description": [
-                    "X 軸の目盛りに適用する色を設定します。"
-                ]
-            },
-            "x-axis-tick-stroke-thickness": {
-                "description": [
-                    "X 軸の目盛りに適用する太さを設定します。"
-                ]
-            },
-            "x-axis-title-alignment": {
-                "description": [
-                    "X 軸タイトルの水平方向の配置を設定します。"
-                ]
-            },
-            "x-axis-title-margin": {
-                "description": [
-                    "X 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "x-axis-title-text-color": {
-                "description": [
-                    "X 軸のタイトルの色を設定します。"
-                ]
-            },
-            "x-axis-title-text-style": {
-                "description": [
-                    "X 軸のタイトルに CSS フォント プロパティを設定します。"
-                ]
-            },
-            "y-axis-label-margin": {
-                "description": [
-                    "Y 軸のラベルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "y-axis-label-text-color": {
-                "description": [
-                    "Y 軸のラベルの色を設定します。"
-                ]
-            },
-            "y-axis-label-text-style": {
-                "description": [
-                    "Y 軸のラベルに CSS フォント プロパティを設定します。"
-                ]
-            },
-            "y-axis-label-vertical-alignment": {
-                "description": [
-                    "Y 軸ラベルの垂直方向の配置を設定します。"
-                ]
-            },
-            "y-axis-major-stroke": {
-                "description": [
-                    "Y 軸の主グリッド線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-major-stroke-thickness": {
-                "description": [
-                    "Y 軸の主グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-minor-stroke": {
-                "description": [
-                    "Y 軸の副グリッド線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-minor-stroke-thickness": {
-                "description": [
-                    "Y 軸の副グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-strip": {
-                "description": [
-                    "Y 軸の背景の縞模様に適用する色を設定します。"
-                ]
-            },
-            "y-axis-stroke": {
-                "description": [
-                    "Y 軸線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-stroke-thickness": {
-                "description": [
-                    "Y 軸線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-title-alignment": {
-                "description": [
-                    "Y 軸タイトルの水平方向の配置を設定します。"
-                ]
-            },
-            "y-axis-title-margin": {
-                "description": [
-                    "Y 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "y-axis-title-text-color": {
-                "description": [
-                    "Y 軸のタイトルの色を設定します。"
-                ]
-            },
-            "y-axis-title-text-style": {
-                "description": [
-                    "Y 軸のタイトルに CSS フォント プロパティを設定します。"
-                ]
-            },
-            "y-axis-tick-length": {
-                "description": [
-                    "Y 軸の目盛りの長さを設定します。"
-                ]
-            },
-            "y-axis-tick-stroke": {
-                "description": [
-                    "Y 軸の目盛りに適用する色を設定します。"
-                ]
-            },
-            "y-axis-tick-stroke-thickness": {
-                "description": [
-                    "Y 軸の目盛りに適用する太さを設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$custom-chart-theme: category-chart-theme($brushes: (red, green, blue));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($custom-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "data-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "margin": {
-                "description": [
-                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "チャート タイトルの色を設定します。"
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "チャート サブタイトルの色を設定します。"
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "自動的に割り当てられるマーカー ブラシから選択されるパレットを定義します。"
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "自動的に割り当てられるマーカー アウトラインから選択されるパレットを定義します。"
-                ]
-            },
-            "plot-area-background": {
-                "description": [
-                    "現在の Chart オブジェクトのプロット領域の背景として使用するブラシを設定します。"
-                ]
-            },
-            "title-horizontal-alignment": {
-                "description": [
-                    "タイトルに使用する水平方向。有効なオプションは 'left'、'center'、'right' です。"
-                ]
-            },
-            "subtitle-horizontal-alignment": {
-                "description": [
-                    "サブタイトルに使用する水平方向。有効なオプションは 'left'、'center'、'right' です。"
-                ]
-            },
-            "axis-label-margin": {
-                "description": [
-                    "両方の軸のラベルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "axis-label-text-color": {
-                "description": [
-                    "両方の軸のラベルの色を設定します。"
-                ]
-            },
-            "axis-label-text-style": {
-                "description": [
-                    "両方の軸のラベルに CSS フォント プロパティを設定します。"
-                ]
-            },
-            "axis-label-vertical-alignment": {
-                "description": [
-                    "X 軸ラベルの垂直方向の配置を設定します。"
-                ]
-            },
-            "axis-major-stroke": {
-                "description": [
-                    "両方の軸の主グリッド線に適用する色を設定します。"
-                ]
-            },
-            "axis-major-stroke-thickness": {
-                "description": [
-                    "両方の軸の主グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "axis-minor-stroke": {
-                "description": [
-                    "両方の軸の副グリッド線に適用する色を設定します。"
-                ]
-            },
-            "axis-minor-stroke-thickness": {
-                "description": [
-                    "両方の軸の副グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "axis-strip": {
-                "description": [
-                    "両方の軸の背景の縞模様に適用する色を設定します。"
-                ]
-            },
-            "axis-stroke": {
-                "description": [
-                    "両方の軸に適用する色を設定します。"
-                ]
-            },
-            "axis-stroke-thickness": {
-                "description": [
-                    "両方の軸に適用する太さを設定します。"
-                ]
-            },
-            "axis-tick-length": {
-                "description": [
-                    "両方の軸の目盛りの長さを設定します。"
-                ]
-            },
-            "axis-tick-stroke": {
-                "description": [
-                    "両方の軸の目盛りに適用する色を設定します。"
-                ]
-            },
-            "axis-tick-stroke-thickness": {
-                "description": [
-                    "両方の軸の目盛りに適用する太さを設定します。"
-                ]
-            },
-            "axis-title-alignment": {
-                "description": [
-                    "両方の軸の水平方向の配置を設定します。"
-                ]
-            },
-            "axis-title-margin": {
-                "description": [
-                    "両方の軸のタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "axis-title-text-color": {
-                "description": [
-                    "X 軸のタイトルの色を設定します。"
-                ]
-            },
-            "axis-title-text-style": {
-                "description": [
-                    "両方の軸のタイトルに CSS フォント プロパティを設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: data-chart-theme($brushes: (orange, blue, pink));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "doughnut-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "others-category-fill": {
-                "description": [
-                    "その他のカテゴリの塗りつぶし色を設定します。"
-                ]
-            },
-            "others-category-opacity": {
-                "description": [
-                    "その他のカテゴリの不透明度を設定します。"
-                ]
-            },
-            "others-category-stroke": {
-                "description": [
-                    "その他のカテゴリのストローク色を設定します。"
-                ]
-            },
-            "others-category-stroke-thickness": {
-                "description": [
-                    "その他のカテゴリのストロークの太さを設定します。"
-                ]
-            },
-            "selected-slice-fill": {
-                "description": [
-                    "選択されたスライスの塗りつぶし色を設定します。"
-                ]
-            },
-            "selected-slice-opacity": {
-                "description": [
-                    "選択されたスライスの不透明度を設定します。"
-                ]
-            },
-            "selected-slice-stroke": {
-                "description": [
-                    "選択されたスライスのストローク色を設定します。"
-                ]
-            },
-            "selected-slice-stroke-thickness": {
-                "description": [
-                    "選択されたスライスのストロークの太さを設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: doughnut-chart-theme($brushes: (orange, blue, pink));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "financial-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "margin": {
-                "description": [
-                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "title-alignment": {
-                "description": [
-                    "タイトルに使用する水平方向。"
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "チャート タイトルの色を設定します。"
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "チャート サブタイトルの色を設定します。"
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "subtitle-alignment": {
-                "description": [
-                    "コントロールの左右端に相対するサブタイトルの配置を決定する水平配置を取得または設定します。"
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズのブラシ色から選択されるパレットを定義します。"
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズのマーカー ブラシ色から選択されるパレットを定義します。"
-                ]
-            },
-            "negative-brushes": {
-                "description": [
-                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するパレットを定義します。"
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "自動的に割り当てられるシリーズのマーカー アウトラインの色から選択されるパレットを定義します。"
-                ]
-            },
-            "negative-outlines": {
-                "description": [
-                    "ウォーターフォールなどのコンテキストの色を持つチャート タイプで負の要素の描画に使用するブラシを定義します。"
-                ]
-            },
-            "indicator-brushes": {
-                "description": [
-                    "財務指標に使用されるブラシを定義します。"
-                ]
-            },
-            "indicator-negative-brushes": {
-                "description": [
-                    "財務指標で負の要素に使用されるブラシを定義します。"
-                ]
-            },
-            "indicator-thickness": {
-                "description": [
-                    "自動的に割り当てられるシリーズのマーカー ブラシ色から選択されるパレットを定義します。"
-                ]
-            },
-            "plot-area-background": {
-                "description": [
-                    "現在の Chart オブジェクトのプロット領域の背景として使用するブラシを取得または設定します。"
-                ]
-            },
-            "thickness": {
-                "description": [
-                    "チャートのすべてのシリーズの太さを設定します。"
-                ]
-            },
-            "toolbar-height": {
-                "description": [
-                    "ツールバーの高さを設定します。"
-                ]
-            },
-            "trend-line-brushes": {
-                "description": [
-                    "チャートでトレンドラインの色に使用されるブラシのパレットを定義します。"
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "ポイント、折れ線、スプラインまたはバブル型のチャートのトレンドラインの太さを設定します。"
-                ]
-            },
-            "volume-brushes": {
-                "description": [
-                    "ボリューム ペインのボリューム シリーズを塗りつぶすためのブラシを定義します。"
-                ]
-            },
-            "volume-outlines": {
-                "description": [
-                    "ボリューム ペインのボリューム シリーズのアウトラインのためのブラシを定義します。"
-                ]
-            },
-            "volume-thickness": {
-                "description": [
-                    "ボリューム ペインのボリューム シリーズのアウトラインの太さを定義します。"
-                ]
-            },
-            "x-axis-label-margin": {
-                "description": [
-                    "X 軸のラベルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "x-axis-label-text-color": {
-                "description": [
-                    "X 軸のラベルの色を設定します。"
-                ]
-            },
-            "x-axis-label-vertical-alignment": {
-                "description": [
-                    "X 軸ラベルの垂直方向の配置を設定します。"
-                ]
-            },
-            "x-axis-major-stroke": {
-                "description": [
-                    "X 軸の主グリッド線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-major-stroke-thickness": {
-                "description": [
-                    "X 軸の主グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-minor-stroke": {
-                "description": [
-                    "X 軸の副グリッド線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-minor-stroke-thickness": {
-                "description": [
-                    "X 軸の副グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-strip": {
-                "description": [
-                    "X 軸の背景の縞模様に適用する色を設定します。"
-                ]
-            },
-            "x-axis-stroke": {
-                "description": [
-                    "X 軸線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-stroke-thickness": {
-                "description": [
-                    "X 軸線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-tick-length": {
-                "description": [
-                    "X 軸の目盛りの長さを設定します。"
-                ]
-            },
-            "x-axis-tick-stroke": {
-                "description": [
-                    "X 軸の目盛りに適用する色を設定します。"
-                ]
-            },
-            "x-axis-tick-stroke-thickness": {
-                "description": [
-                    "X 軸の目盛りに適用する太さを設定します。"
-                ]
-            },
-            "x-axis-title-alignment": {
-                "description": [
-                    "X 軸タイトルの水平方向の配置を設定します。"
-                ]
-            },
-            "x-axis-title-margin": {
-                "description": [
-                    "X 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "x-axis-title-text-color": {
-                "description": [
-                    "X 軸のタイトルの色を設定します。"
-                ]
-            },
-            "y-axis-label-margin": {
-                "description": [
-                    "Y 軸のラベルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "y-axis-label-text-color": {
-                "description": [
-                    "Y 軸のラベルの色を設定します。"
-                ]
-            },
-            "y-axis-label-vertical-alignment": {
-                "description": [
-                    "Y 軸ラベルの垂直方向の配置を設定します。"
-                ]
-            },
-            "y-axis-major-stroke": {
-                "description": [
-                    "Y 軸の主グリッド線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-major-stroke-thickness": {
-                "description": [
-                    "Y 軸の主グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-minor-stroke": {
-                "description": [
-                    "Y 軸の副グリッド線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-minor-stroke-thickness": {
-                "description": [
-                    "Y 軸の副グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-strip": {
-                "description": [
-                    "Y 軸の背景の縞模様に適用する色を設定します。"
-                ]
-            },
-            "y-axis-stroke": {
-                "description": [
-                    "Y 軸線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-stroke-thickness": {
-                "description": [
-                    "Y 軸線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-title-alignment": {
-                "description": [
-                    "Y 軸タイトルの水平方向の配置を設定します。"
-                ]
-            },
-            "y-axis-title-margin": {
-                "description": [
-                    "Y 軸のタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "y-axis-title-text-color": {
-                "description": [
-                    "Y 軸のタイトルの色を設定します。"
-                ]
-            },
-            "y-axis-tick-length": {
-                "description": [
-                    "Y 軸の目盛りの長さを設定します。"
-                ]
-            },
-            "y-axis-tick-stroke": {
-                "description": [
-                    "Y 軸の目盛りに適用する色を設定します。"
-                ]
-            },
-            "y-axis-tick-stroke-thickness": {
-                "description": [
-                    "Y 軸の目盛りに適用する太さを設定します。"
-                ]
-            },
-            "zoom-slider-x-axis-major-stroke": {
-                "description": [
-                    "ズームス ライダー ペインの X 軸上の主グリッド線のストローク ブラシを取得または設定します。"
-                ]
-            },
-            "zoom-slider-x-axis-major-stroke-thickness": {
-                "description": [
-                    "ズームス ライダー ペインの X 軸上の主グリッド線の太さを取得または設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: financial-chart-theme($title-alignment: left, $brushes: red, blue, yellow, pink);",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "funnel-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。",
-                    ""
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
-                ]
-            },
-            "outer-label-alignment": {
-                "description": [
-                    "チャートのどちら側にアウター ラベルを表示するかを設定します。"
-                ]
-            },
-            "outer-label-text-color": {
-                "description": [
-                    "外部ラベルで使用する色を設定します。"
-                ]
-            },
-            "outer-label-visibility": {
-                "description": [
-                    "外部ラベルを表示するかどうかを設定します。"
-                ]
-            },
-            "outline-thickness": {
-                "description": [
-                    "スライスの周りのアウトラインの太さを設定します。"
-                ]
-            },
-            "text-color": {
-                "description": [
-                    "内部ラベルで使用する色を設定します。",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: funnel-chart-theme($brushes: (orange, blue, pink));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "linear-gauge-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。",
-                    ""
-                ]
-            },
-            "backing-brush": {
-                "description": [
-                    "リニア ゲージの裏張りを塗りつぶすために使用する色を設定します。"
-                ]
-            },
-            "backing-outline": {
-                "description": [
-                    "裏張りのアウトラインに使用する色を設定します。"
-                ]
-            },
-            "backing-stroke-thickness": {
-                "description": [
-                    "裏張りのアウトラインのストロークの太さを設定します。"
-                ]
-            },
-            "font-brush": {
-                "description": [
-                    "ラベルのフォントに使用する色を設定します。"
-                ]
-            },
-            "minor-tick-stroke-thickness": {
-                "description": [
-                    "副目盛を描画する際に使用するストロークの太さを設定します。"
-                ]
-            },
-            "needle-breadth": {
-                "description": [
-                    "針の幅を設定します。"
-                ]
-            },
-            "needle-brush": {
-                "description": [
-                    "針要素の色を設定します。"
-                ]
-            },
-            "needle-inner-base-width": {
-                "description": [
-                    "針の内部ベースの幅を設定します。"
-                ]
-            },
-            "needle-inner-point-width": {
-                "description": [
-                    "針の内部ポイントの幅を設定します。"
-                ]
-            },
-            "needle-outer-base-width": {
-                "description": [
-                    "針の外部ベースの幅を設定します。"
-                ]
-            },
-            "needle-outer-point-width": {
-                "description": [
-                    "針の外部ポイントの幅を設定します。"
-                ]
-            },
-            "needle-outline": {
-                "description": [
-                    "針要素のアウトラインを描画する色を設定します。"
-                ]
-            },
-            "needle-stroke-thickness": {
-                "description": [
-                    "単一の実際値の要素を描画するときに使用するストロークの太さを設定します。"
-                ]
-            },
-            "range-brushes": {
-                "description": [
-                    "リニア ゲージ範囲のパレットとして使用される色のコレクションを設定します。"
-                ]
-            },
-            "range-outlines": {
-                "description": [
-                    "リニア ゲージ アウトラインのパレットとして使用される色のコレクションを設定します。"
-                ]
-            },
-            "scale-brush": {
-                "description": [
-                    "リニア ゲージのスケールを塗りつぶすために使用する色を設定します。"
-                ]
-            },
-            "scale-outline": {
-                "description": [
-                    "スケールのアウトラインに使用する色を設定します。"
-                ]
-            },
-            "scale-stroke-thickness": {
-                "description": [
-                    "スケールのアウトラインのストロークの太さを設定します。"
-                ]
-            },
-            "tick-brush": {
-                "description": [
-                    "主目盛に使用する色を設定します。"
-                ]
-            },
-            "tick-stroke-thickness": {
-                "description": [
-                    "目盛を描画する際に使用するストロークの太さを設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$custom-gauge-theme: linear-gauge-theme($brushes: (red, green, blue));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($custom-gauge-theme);"
-                ]
-            }
-        ]
-    },
-    "radial-gauge-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "width": {
-                "description": [
-                    "ゲージの幅 - ピクセル、文字列 (px) またはパーセンテージ (%)。"
-                ]
-            },
-            "height": {
-                "description": [
-                    "ゲージの高さ - ピクセル、文字列 (px) またはパーセンテージ (%)。"
-                ]
-            },
-            "backing-brush": {
-                "description": [
-                    "リニア ゲージの裏張りを塗りつぶすために使用する色を設定します。"
-                ]
-            },
-            "backing-outline": {
-                "description": [
-                    "裏張りのアウトラインに使用する色を設定します。"
-                ]
-            },
-            "backing-stroke-thickness": {
-                "description": [
-                    "裏張りのアウトラインのストロークの太さを設定します。"
-                ]
-            },
-            "font-brush": {
-                "description": [
-                    "ラベルのフォントに使用する色を設定します。"
-                ]
-            },
-            "minor-tick-stroke-thickness": {
-                "description": [
-                    "副目盛を描画する際に使用するストロークの太さを設定します。"
-                ]
-            },
-            "needle-brush": {
-                "description": [
-                    "針要素の色を設定します。"
-                ]
-            },
-            "needle-outline": {
-                "description": [
-                    "針要素のアウトラインを描画する色を設定します。"
-                ]
-            },
-            "needle-stroke-thickness": {
-                "description": [
-                    "単一の実際値の要素を描画するときに使用するストロークの太さを設定します。"
-                ]
-            },
-            "range-brushes": {
-                "description": [
-                    "リニア ゲージ範囲のパレットとして使用される色のコレクションを設定します。"
-                ]
-            },
-            "range-outlines": {
-                "description": [
-                    "リニア ゲージ アウトラインのパレットとして使用される色のコレクションを設定します。"
-                ]
-            },
-            "scale-brush": {
-                "description": [
-                    "リニア ゲージのスケールを塗りつぶすために使用する色を設定します。"
-                ]
-            },
-            "tick-brush": {
-                "description": [
-                    "主目盛に使用する色を設定します。"
-                ]
-            },
-            "tick-stroke-thickness": {
-                "description": [
-                    "目盛を描画する際に使用するストロークの太さを設定します。"
-                ]
-            },
-            "needle-pivot-brush": {
-                "description": [
-                    "針のピボット ポイントの色を設定します。"
-                ]
-            },
-            "needle-pivot-outline": {
-                "description": [
-                    "針のピボット ポイントのアウトラインの色を設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$custom-gauge-theme: radial-gauge-theme($brushes: (red, green, blue));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($custom-gauge-theme);"
-                ]
-            }
-        ]
-    },
-    "geo-map-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "plot-area-background": {
-                "description": [
-                    "現在の Map オブジェクトのプロット領域の背景として使用するブラシを取得または設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-map-theme: geo-map-theme($width: 550px);",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-map-theme);"
-                ]
-            }
-        ]
-    },
-    "bullet-graph-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "backing-brush": {
-                "description": [
-                    "ブレット グラフのバッキングを塗りつぶすために使用するブラシを設定します。"
-                ]
-            },
-            "backing-outline": {
-                "description": [
-                    "バッキングのアウトラインに使用するブラシを設定します。"
-                ]
-            },
-            "backing-stroke-thickness": {
-                "description": [
-                    "裏張りのアウトラインのストロークの太さを設定します。"
-                ]
-            },
-            "font-brush": {
-                "description": [
-                    "ラベルのフォントに使用するブラシを設定します。"
-                ]
-            },
-            "minor-tick-brush": {
-                "description": [
-                    "副目盛に使用するブラシを設定します。"
-                ]
-            },
-            "minor-tick-thickness": {
-                "description": [
-                    "副目盛を描画する際に使用するストロークの太さ。"
-                ]
-            },
-            "range-brushes": {
-                "description": [
-                    "ブレット グラフ範囲のパレットとして使用されるブラシのコレクションを設定します。"
-                ]
-            },
-            "range-outlines": {
-                "description": [
-                    "ブレット グラフ アウトラインのパレットとして使用されるブラシのコレクションを設定します。"
-                ]
-            },
-            "scale-background-brush": {
-                "description": [
-                    "スケールの背景ブラシを設定します。"
-                ]
-            },
-            "scale-background-outline": {
-                "description": [
-                    "スケールの背景アウトラインを設定します。"
-                ]
-            },
-            "scale-background-thickness": {
-                "description": [
-                    "スケールの背景アウトラインの太さを設定します。"
-                ]
-            },
-            "target-value-breadth": {
-                "description": [
-                    "ターゲット値要素の幅を設定します。"
-                ]
-            },
-            "target-value-brush": {
-                "description": [
-                    "比較マーカーの塗りつぶしを描画する際に使用するブラシを設定します。"
-                ]
-            },
-            "target-value-outline": {
-                "description": [
-                    "ターゲット値のアウトラインを描画する際に使用するブラシを設定します。"
-                ]
-            },
-            "target-value-thickness": {
-                "description": [
-                    "ターゲット値バーのアウトラインのストローク幅を設定します。"
-                ]
-            },
-            "tick-brush": {
-                "description": [
-                    "主目盛に使用するブラシを設定します。"
-                ]
-            },
-            "tick-stroke-thickness": {
-                "description": [
-                    "目盛を描画する際に使用するストロークの太さを設定します。"
-                ]
-            },
-            "value-brush": {
-                "description": [
-                    "実際の値要素に使用するブラシを設定します。"
-                ]
-            },
-            "value-outline": {
-                "description": [
-                    "実際の値要素のアウトラインに使用するブラシを設定します。"
-                ]
-            },
-            "value-stroke-thickness": {
-                "description": [
-                    "単一の実際値の要素を描画するときに使用するストロークの太さを設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: bullet-graph-theme($brushes: (orange, blue, pink));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "pie-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "自動的に割り当てられるシリーズのアウトラインの色から選択されるパレットを定義します。"
-                ]
-            },
-            "label-extent": {
-                "description": [
-                    "スライスの端からラベルをオフセットするピクセル量を設定します。"
-                ]
-            },
-            "label-inner-color": {
-                "description": [
-                    "円チャート内に描画されるラベルの色を設定します。"
-                ]
-            },
-            "label-outer-color": {
-                "description": [
-                    "円チャートの外に描画されるラベルの色を設定します。"
-                ]
-            },
-            "labels-position": {
-                "description": [
-                    "チャート ラベルの位置を設定します。有効な値は: 'none'、'center'、'insideEnd'、'outsideEnd', および 'bestFit'。"
-                ]
-            },
-            "leader-line-margin": {
-                "description": [
-                    "ラベルおよびその引き出し線の終了の間のマージンを設定します。"
-                ]
-            },
-            "leader-line-type": {
-                "description": [
-                    "外部の終了ラベルのために使用される引き出し線のタイプを設定します。有効な値は: 'straight'、'spline'、および 'arc'。"
-                ]
-            },
-            "leader-line-visibility": {
-                "description": [
-                    "引き出し線が表示されるかどうかを設定します。有効な値は: 'visible' および 'collapsed'。"
-                ]
-            },
-            "radius-factor": {
-                "description": [
-                    "チャートの半径のスケール率を設定します。0 と 1 の間の値。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: pie-chart-theme($brushes: (red, orange, blue));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "shape-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。"
-                ]
-            },
-            "margin": {
-                "description": [
-                    "チャート コンテンツのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "title-alignment": {
-                "description": [
-                    "コントロールの左右端に相対するタイトルの配置を決定する水平配置を設定します。"
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "チャート タイトルの色を設定します。"
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "チャート タイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "subtitle-alignment": {
-                "description": [
-                    "コントロールの左右端に相対するサブタイトルの配置を決定する水平配置を設定します。"
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "チャート サブタイトルの色を設定します。"
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "チャート サブタイトルのマージン (top、right、bottom および left) を設定します。"
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "自動的に割り当てられるシリーズの色から選択されるパレットを定義します。"
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "データ ポイント マーカーの塗りつぶし領域を描画するために使用されるブラシのパレットを設定します。"
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "チャート シリーズのアウトラインに使用するブラシのパレットを設定します。"
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "データ ポイント マーカーのアウトラインのを描画するために使用されるブラシのパレットを設定します。"
-                ]
-            },
-            "thickness": {
-                "description": [
-                    "このチャートのすべてのシリーズの太さを設定します。"
-                ]
-            },
-            "trend-line-brushes": {
-                "description": [
-                    "このチャートでトレンドラインの色に使用されるブラシのパレットを設定します。"
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "このチャートのトレンドラインの太さを設定します。このプロパティはポイント、折れ線、スプライン、およびバブルのチャート型のみに適用できます。"
-                ]
-            },
-            "x-axis-label-margin": {
-                "description": [
-                    "X 軸のラベルのマージンを設定します。"
-                ]
-            },
-            "x-axis-label-text-color": {
-                "description": [
-                    "X 軸のラベルの色を設定します。"
-                ]
-            },
-            "x-axis-label-vertical-alignment": {
-                "description": [
-                    "X 軸ラベルの垂直方向の配置を設定します。"
-                ]
-            },
-            "x-axis-major-stroke": {
-                "description": [
-                    "X 軸の主グリッド線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-major-stroke-thickness": {
-                "description": [
-                    "X 軸の主グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-minor-stroke": {
-                "description": [
-                    "X 軸の副グリッド線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-minor-stroke-thickness": {
-                "description": [
-                    "X 軸の副グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-strip": {
-                "description": [
-                    "X 軸の背景の縞模様に適用する色を設定します。"
-                ]
-            },
-            "x-axis-stroke": {
-                "description": [
-                    "X 軸線に適用する色を設定します。"
-                ]
-            },
-            "x-axis-stroke-thickness": {
-                "description": [
-                    "X 軸線に適用する太さを設定します。"
-                ]
-            },
-            "x-axis-title-alignment": {
-                "description": [
-                    "X 軸タイトルの水平方向の配置を設定します。"
-                ]
-            },
-            "x-axis-title-color": {
-                "description": [
-                    "X 軸のタイトルの色を設定します。"
-                ]
-            },
-            "x-axis-title-margin": {
-                "description": [
-                    "X 軸のタイトルの周りのマージンを設定します。"
-                ]
-            },
-            "y-axis-label-margin": {
-                "description": [
-                    "Y 軸のラベルのマージンを設定します。"
-                ]
-            },
-            "y-axis-label-text-color": {
-                "description": [
-                    "Y 軸のラベルの色を設定します。"
-                ]
-            },
-            "y-axis-label-vertical-alignment": {
-                "description": [
-                    "Y 軸ラベルの垂直方向の配置を設定します。"
-                ]
-            },
-            "y-axis-major-stroke": {
-                "description": [
-                    "Y 軸の主グリッド線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-major-stroke-thickness": {
-                "description": [
-                    "Y 軸の主グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-minor-stroke": {
-                "description": [
-                    "Y 軸の副グリッド線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-minor-stroke-thickness": {
-                "description": [
-                    "Y 軸の副グリッド線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-strip": {
-                "description": [
-                    "Y 軸の背景の縞模様に適用する色を設定します。"
-                ]
-            },
-            "y-axis-stroke": {
-                "description": [
-                    "Y 軸線に適用する色を設定します。"
-                ]
-            },
-            "y-axis-stroke-thickness": {
-                "description": [
-                    "Y 軸線に適用する太さを設定します。"
-                ]
-            },
-            "y-axis-title-alignment": {
-                "description": [
-                    "Y 軸タイトルの水平方向の配置を設定します。"
-                ]
-            },
-            "y-axis-title-color": {
-                "description": [
-                    "Y 軸のタイトルの色を設定します。"
-                ]
-            },
-            "y-axis-title-margin": {
-                "description": [
-                    "Y 軸のタイトルの周りのマージンを設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: shape-chart-theme($brushes: (orange, blue, pink));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "sparkline-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "テーマ変数のスコープを設定するときに使用するターゲット プラットフォーム。",
-                    ""
-                ]
-            },
-            "brush": {
-                "description": [
-                    "スパークライン ブラシを設定します。"
-                ]
-            },
-            "line-thickness": {
-                "description": [
-                    "スパークラインの線の太さを設定します。"
-                ]
-            },
-            "marker-brush": {
-                "description": [
-                    "スパークラインのマーカー ブラシを設定します。"
-                ]
-            },
-            "marker-size": {
-                "description": [
-                    "スパークラインのマーカー サイズを設定します。"
-                ]
-            },
-            "first-marker-brush": {
-                "description": [
-                    "スパークラインの始値マーカー ブラシを設定します。"
-                ]
-            },
-            "first-marker-size": {
-                "description": [
-                    "スパークラインの始値マーカー サイズを設定します。"
-                ]
-            },
-            "last-marker-brush": {
-                "description": [
-                    "スパークラインの終値マーカー ブラシを設定します。"
-                ]
-            },
-            "last-marker-size": {
-                "description": [
-                    "スパークラインの終値マーカー サイズを設定します。"
-                ]
-            },
-            "low-marker-brush": {
-                "description": [
-                    "スパークラインの最小値マーカー ブラシを設定します。"
-                ]
-            },
-            "low-marker-size": {
-                "description": [
-                    "スパークラインの最小値マーカー サイズを設定します。"
-                ]
-            },
-            "high-marker-brush": {
-                "description": [
-                    "スパークラインの最大値マーカー ブラシを設定します。"
-                ]
-            },
-            "high-marker-size": {
-                "description": [
-                    "スパークラインの最大値マーカー サイズを設定します。"
-                ]
-            },
-            "negative-brush": {
-                "description": [
-                    "スパークラインの負値ブラシを設定します。"
-                ]
-            },
-            "negative-marker-brush": {
-                "description": [
-                    "スパークラインの負値マーカー ブラシを設定します。"
-                ]
-            },
-            "negative": {
-                "description": [
-                    "marker-size [null] - スパークラインの負値マーカーのサイズを取得または設定します。"
-                ]
-            },
-            "trend-line-brush": {
-                "description": [
-                    "スパークラインのトレンドライン マーカー ブラシを設定します。"
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "スパークライン トレンドラインの太さを設定します。"
-                ]
-            },
-            "horizontal-axis-brush": {
-                "description": [
-                    "スパークラインの横軸線ブラシを設定します。"
-                ]
-            },
-            "vertical-axis-brush": {
-                "description": [
-                    "スパークラインの縦軸線ブラシを設定します。"
-                ]
-            },
-            "normal-range-fill": {
-                "description": [
-                    "スパークラインの標準範囲ブラシを設定します。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-sparkline-theme: sparkline-theme($brushes: (orange, blue, pink));",
-                    "// css-vars ミックスインへテーマを渡します。",
-                    "@include css-vars($my-sparkline-theme);"
                 ]
             }
         ]

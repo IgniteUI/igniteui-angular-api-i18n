@@ -51,6 +51,1857 @@
             }
         ]
     },
+    "pivot-data-selector-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            }
+        }
+    },
+    "file-input-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "file-names-background": {
+                "description": [
+                    "The file names container background color."
+                ]
+            },
+            "file-names-background--focused": {
+                "description": [
+                    "The file names container background color when the file input is focused."
+                ]
+            },
+            "file-names-background--filled": {
+                "description": [
+                    "The file names container background color when the file input is filled."
+                ]
+            },
+            "file-names-background--disabled": {
+                "description": [
+                    "The file names container background color when the file input is disabled."
+                ]
+            },
+            "file-names-foreground": {
+                "description": [
+                    "The file names color."
+                ]
+            },
+            "file-names-foreground--focused": {
+                "description": [
+                    "The file names color when the file input is focused."
+                ]
+            },
+            "file-names-foreground--filled": {
+                "description": [
+                    "The file names color when the file input is filled."
+                ]
+            },
+            "file-names-foreground--disabled": {
+                "description": [
+                    "The file names color when the file input is disabled."
+                ]
+            },
+            "file-selector-button-background": {
+                "description": [
+                    "The file input selector button background color."
+                ]
+            },
+            "file-selector-button-background--focused": {
+                "description": [
+                    "The selector button background color when the file input is focused."
+                ]
+            },
+            "file-selector-button-background--filled": {
+                "description": [
+                    "The selector button background color when the file input is filled."
+                ]
+            },
+            "file-selector-button-background--disabled": {
+                "description": [
+                    "The selector button background color when the file input is disabled."
+                ]
+            },
+            "file-selector-button-foreground": {
+                "description": [
+                    "The file input selector button foreground color."
+                ]
+            },
+            "file-selector-button-foreground--focused": {
+                "description": [
+                    "The selector button foreground color when the file input is focused."
+                ]
+            },
+            "file-selector-button-foreground--filled": {
+                "description": [
+                    "The selector button foreground color when the file input is filled."
+                ]
+            },
+            "file-selector-button-foreground--disabled": {
+                "description": [
+                    "The selector button foreground color when the file input is disabled."
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Change the focused border and label colors"
+                ],
+                "code": [
+                    "$my-file-input-theme: file-input-theme($file-names-foreground: #09f);",
+                    "// Pass the theme to the css-vars() mixin",
+                    "@include css-vars($my-file-input-theme);"
+                ]
+            }
+        ]
+    },
+    "sizable": {
+        "description": [
+            "Used to switch between values based on the size of the component.",
+            "The passed sizes are converted to absolute values before comparing.",
+            ""
+        ],
+        "parameters": {
+            "sm": {
+                "description": [
+                    "The preferred value when the component's size is small."
+                ]
+            },
+            "md": {
+                "description": [
+                    "The preferred value when the component's size is medium."
+                ]
+            },
+            "lg": {
+                "description": [
+                    "The preferred value when the component's size is large."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The evaluated value."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "--size: #{sizable(rem(40px), rem(64px), rem(88px))};"
+                ]
+            }
+        ]
+    },
+    "category-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart content."
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series brushes colors are selected."
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series marker brushes colors are selected."
+                ]
+            },
+            "negative-brushes": {
+                "description": [
+                    "Defines the palette used for coloring negative items in a chart type with contextual coloring, such as Waterfall."
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned series outline colors are selected."
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned series marker outline colors are selected."
+                ]
+            },
+            "negative-outlines": {
+                "description": [
+                    "Defines the brushes used for drawing negative elements in a chart type with contextual coloring, such as Waterfall."
+                ]
+            },
+            "title-alignment": {
+                "description": [
+                    "The horizontal alignment to use for the title."
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart title."
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "Sets the color of the chart title."
+                ]
+            },
+            "title-text-style": {
+                "description": [
+                    "Sets the CSS font property of the chart title."
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
+                ]
+            },
+            "subtitle-alignment": {
+                "description": [
+                    "The horizontal alignment to use for the subtitle."
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "Sets the color of the chart subtitle."
+                ]
+            },
+            "subtitle-text-style": {
+                "description": [
+                    "Sets the CSS font property of the chart subtitle."
+                ]
+            },
+            "thickness": {
+                "description": [
+                    "Sets the thickness for all series in a chart."
+                ]
+            },
+            "trend-line-brushes": {
+                "description": [
+                    "Defines the palette of brushes used for coloring trend lines in a chart."
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "Sets the thickness of the trend lines in a chart of type point, line, spline or bubble."
+                ]
+            },
+            "x-axis-label-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of labels on the X-axis."
+                ]
+            },
+            "x-axis-label-text-color": {
+                "description": [
+                    "Sets the color of labels on the X-axis."
+                ]
+            },
+            "x-axis-label-text-style": {
+                "description": [
+                    "Sets the CSS font property for labels on X-axis."
+                ]
+            },
+            "x-axis-label-vertical-alignment": {
+                "description": [
+                    "Sets the vertical alignment of X-axis labels."
+                ]
+            },
+            "x-axis-major-stroke": {
+                "description": [
+                    "Sets the color to apply to major gridlines along the X-axis."
+                ]
+            },
+            "x-axis-major-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to major gridlines along the X-axis."
+                ]
+            },
+            "x-axis-minor-stroke": {
+                "description": [
+                    "Sets the color to apply to minor gridlines along the X-axis."
+                ]
+            },
+            "x-axis-minor-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to minor gridlines along the X-axis."
+                ]
+            },
+            "x-axis-strip": {
+                "description": [
+                    "Sets the color to apply to stripes along the X-axis."
+                ]
+            },
+            "x-axis-stroke": {
+                "description": [
+                    "Sets the color to apply to the X-axis line."
+                ]
+            },
+            "x-axis-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to the X-axis line."
+                ]
+            },
+            "x-axis-tick-length": {
+                "description": [
+                    "Sets the length of tickmarks along the X-axis."
+                ]
+            },
+            "x-axis-tick-stroke": {
+                "description": [
+                    "Sets the color to apply to tickmarks along the X-axis."
+                ]
+            },
+            "x-axis-tick-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to tickmarks along the X-axis."
+                ]
+            },
+            "x-axis-title-alignment": {
+                "description": [
+                    "Sets the horizontal alignment of the X-axis title."
+                ]
+            },
+            "x-axis-title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of a title on the X-axis."
+                ]
+            },
+            "x-axis-title-text-color": {
+                "description": [
+                    "Sets the color of the title on the X-axis."
+                ]
+            },
+            "x-axis-title-text-style": {
+                "description": [
+                    "Sets the CSS font property for the title on the X-axis."
+                ]
+            },
+            "y-axis-label-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of labels on the Y-axis."
+                ]
+            },
+            "y-axis-label-text-color": {
+                "description": [
+                    "Sets the color of labels on the Y-axis."
+                ]
+            },
+            "y-axis-label-text-style": {
+                "description": [
+                    "Sets the CSS font property for labels on Y-axis."
+                ]
+            },
+            "y-axis-label-vertical-alignment": {
+                "description": [
+                    "Sets the vertical alignment of Y-axis labels."
+                ]
+            },
+            "y-axis-major-stroke": {
+                "description": [
+                    "Sets the color to apply to major gridlines along the y-axis."
+                ]
+            },
+            "y-axis-major-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to major gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-minor-stroke": {
+                "description": [
+                    "Sets the color to apply to minor gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-minor-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to minor gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-strip": {
+                "description": [
+                    "Sets the color to apply to stripes along the Y-axis."
+                ]
+            },
+            "y-axis-stroke": {
+                "description": [
+                    "Sets the color to apply to the Y-axis line."
+                ]
+            },
+            "y-axis-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to the Y-axis line."
+                ]
+            },
+            "y-axis-title-alignment": {
+                "description": [
+                    "Sets the horizontal alignment of the Y-axis title."
+                ]
+            },
+            "y-axis-title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of a title on the Y-axis."
+                ]
+            },
+            "y-axis-title-text-color": {
+                "description": [
+                    "Sets the color of a title on the Y-axis."
+                ]
+            },
+            "y-axis-title-text-style": {
+                "description": [
+                    "Sets the CSS font property for the title on the Y-axis."
+                ]
+            },
+            "y-axis-tick-length": {
+                "description": [
+                    "Sets the length of tickmarks along the Y-axis."
+                ]
+            },
+            "y-axis-tick-stroke": {
+                "description": [
+                    "Sets the color to apply to tickmarks along the Y-axis."
+                ]
+            },
+            "y-axis-tick-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to tickmarks along the Y-axis."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$custom-chart-theme: category-chart-theme($brushes: (red, green, blue));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($custom-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "data-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart content."
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "Sets the color of the chart title."
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart title."
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "Sets the color of the chart subtitle."
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series colors are selected."
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned marker brushes are selected."
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned series outline colors are selected."
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned marker outlines are selected."
+                ]
+            },
+            "plot-area-background": {
+                "description": [
+                    "Sets the brush used as the background for the current Chart object's plot area."
+                ]
+            },
+            "title-horizontal-alignment": {
+                "description": [
+                    "The horizontal alignment to use for the title. Valid options are 'left', 'center', and 'right';"
+                ]
+            },
+            "subtitle-horizontal-alignment": {
+                "description": [
+                    "The horizontal alignment to use for the subtitle. Valid options are 'left', 'center', and 'right';"
+                ]
+            },
+            "axis-label-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of labels on the both axes."
+                ]
+            },
+            "axis-label-text-color": {
+                "description": [
+                    "Sets the color of labels on both axes."
+                ]
+            },
+            "axis-label-text-style": {
+                "description": [
+                    "Sets the CSS font property for labels on both axes."
+                ]
+            },
+            "axis-label-vertical-alignment": {
+                "description": [
+                    "Sets the vertical alignment of X-axis labels."
+                ]
+            },
+            "axis-major-stroke": {
+                "description": [
+                    "Sets the color to apply to major gridlines along both axes."
+                ]
+            },
+            "axis-major-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to major gridlines on both axes."
+                ]
+            },
+            "axis-minor-stroke": {
+                "description": [
+                    "Sets the color to apply to minor gridlines along  both axes."
+                ]
+            },
+            "axis-minor-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to minor gridlines along both axes."
+                ]
+            },
+            "axis-strip": {
+                "description": [
+                    "Sets the color to apply to stripes along both axes."
+                ]
+            },
+            "axis-stroke": {
+                "description": [
+                    "Sets the color to apply to both axes."
+                ]
+            },
+            "axis-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to both axes."
+                ]
+            },
+            "axis-tick-length": {
+                "description": [
+                    "Sets the length of tickmarks along both axes."
+                ]
+            },
+            "axis-tick-stroke": {
+                "description": [
+                    "Sets the color to apply to tickmarks along both axes."
+                ]
+            },
+            "axis-tick-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to tickmarks along both axes."
+                ]
+            },
+            "axis-title-alignment": {
+                "description": [
+                    "Sets the horizontal alignment of both axes."
+                ]
+            },
+            "axis-title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of a title on both axes."
+                ]
+            },
+            "axis-title-text-color": {
+                "description": [
+                    "Sets the color of the title on the X-axis."
+                ]
+            },
+            "axis-title-text-style": {
+                "description": [
+                    "Sets the CSS font property for the title on both axes."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: data-chart-theme($brushes: (orange, blue, pink));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "doughnut-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "others-category-fill": {
+                "description": [
+                    "Sets the fill color for others category."
+                ]
+            },
+            "others-category-opacity": {
+                "description": [
+                    "Sets the opacity for others category."
+                ]
+            },
+            "others-category-stroke": {
+                "description": [
+                    "Sets the others category stroke color."
+                ]
+            },
+            "others-category-stroke-thickness": {
+                "description": [
+                    "Sets the others category stroke thickness."
+                ]
+            },
+            "selected-slice-fill": {
+                "description": [
+                    "Sets the fill color of the selected slice."
+                ]
+            },
+            "selected-slice-opacity": {
+                "description": [
+                    "Sets the opacity of the selected slice."
+                ]
+            },
+            "selected-slice-stroke": {
+                "description": [
+                    "Sets the stroke color of the selected slice."
+                ]
+            },
+            "selected-slice-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness of the selected slice."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: doughnut-chart-theme($brushes: (orange, blue, pink));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "financial-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart content."
+                ]
+            },
+            "title-alignment": {
+                "description": [
+                    "The horizontal alignment to use for the title."
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "Sets the color of the chart title."
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart title."
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "Sets the color of the chart subtitle."
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
+                ]
+            },
+            "subtitle-alignment": {
+                "description": [
+                    "Gets or sets horizontal alignment which determines the subtitle position, relative to the left and right edges of the control."
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series brushes colors are selected."
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series marker brushes colors are selected."
+                ]
+            },
+            "negative-brushes": {
+                "description": [
+                    "Defines the palette used for coloring negative items in a chart type with contextual coloring, such as Waterfall."
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned series outline colors are selected."
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned series marker outline colors are selected."
+                ]
+            },
+            "negative-outlines": {
+                "description": [
+                    "Defines the brushes used for drawing negative elements in a chart type with contextual coloring, such as Waterfall."
+                ]
+            },
+            "indicator-brushes": {
+                "description": [
+                    "Defines the brushes used for financial indicators."
+                ]
+            },
+            "indicator-negative-brushes": {
+                "description": [
+                    "Defines the brushes used for negative elements in financial indicators."
+                ]
+            },
+            "indicator-thickness": {
+                "description": [
+                    "Defines the palette from which automatically assigned series marker brushes colors are selected."
+                ]
+            },
+            "plot-area-background": {
+                "description": [
+                    "Gets or sets the brush used as the background for the current Chart object's plot area."
+                ]
+            },
+            "thickness": {
+                "description": [
+                    "Sets the thickness for all series in a chart."
+                ]
+            },
+            "toolbar-height": {
+                "description": [
+                    "Sets the height of the tooolbar."
+                ]
+            },
+            "trend-line-brushes": {
+                "description": [
+                    "Defines the palette of brushes used for coloring trend lines in a chart."
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "Sets the thickness of the trend lines in a chart of type point, line, spline or bubble."
+                ]
+            },
+            "volume-brushes": {
+                "description": [
+                    "Defines the brushes to use for filling volume series in the volume pane."
+                ]
+            },
+            "volume-outlines": {
+                "description": [
+                    "Defines the brushes to use for outlining volume series in the volume pane."
+                ]
+            },
+            "volume-thickness": {
+                "description": [
+                    "Defines the outline thickness of volume series in the volume pane."
+                ]
+            },
+            "x-axis-label-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of labels on the X-axis."
+                ]
+            },
+            "x-axis-label-text-color": {
+                "description": [
+                    "Sets the color of labels on the X-axis."
+                ]
+            },
+            "x-axis-label-vertical-alignment": {
+                "description": [
+                    "Sets the vertical alignment of X-axis labels."
+                ]
+            },
+            "x-axis-major-stroke": {
+                "description": [
+                    "Sets the color to apply to major gridlines along the X-axis."
+                ]
+            },
+            "x-axis-major-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to major gridlines along the X-axis."
+                ]
+            },
+            "x-axis-minor-stroke": {
+                "description": [
+                    "Sets the color to apply to minor gridlines along the X-axis."
+                ]
+            },
+            "x-axis-minor-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to minor gridlines along the X-axis."
+                ]
+            },
+            "x-axis-strip": {
+                "description": [
+                    "Sets the color to apply to stripes along the X-axis."
+                ]
+            },
+            "x-axis-stroke": {
+                "description": [
+                    "Sets the color to apply to the X-axis line."
+                ]
+            },
+            "x-axis-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to the X-axis line."
+                ]
+            },
+            "x-axis-tick-length": {
+                "description": [
+                    "Sets the length of tickmarks along the X-axis."
+                ]
+            },
+            "x-axis-tick-stroke": {
+                "description": [
+                    "Sets the color to apply to tickmarks along the X-axis."
+                ]
+            },
+            "x-axis-tick-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to tickmarks along the X-axis."
+                ]
+            },
+            "x-axis-title-alignment": {
+                "description": [
+                    "Sets the horizontal alignment of the X-axis title."
+                ]
+            },
+            "x-axis-title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of a title on the X-axis."
+                ]
+            },
+            "x-axis-title-text-color": {
+                "description": [
+                    "Sets the color of the title on the X-axis."
+                ]
+            },
+            "y-axis-label-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of labels on the Y-axis."
+                ]
+            },
+            "y-axis-label-text-color": {
+                "description": [
+                    "Sets the color of labels on the Y-axis."
+                ]
+            },
+            "y-axis-label-vertical-alignment": {
+                "description": [
+                    "Sets the vertical alignment of Y-axis labels."
+                ]
+            },
+            "y-axis-major-stroke": {
+                "description": [
+                    "Sets the color to apply to major gridlines along the y-axis."
+                ]
+            },
+            "y-axis-major-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to major gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-minor-stroke": {
+                "description": [
+                    "Sets the color to apply to minor gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-minor-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to minor gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-strip": {
+                "description": [
+                    "Sets the color to apply to stripes along the Y-axis."
+                ]
+            },
+            "y-axis-stroke": {
+                "description": [
+                    "Sets the color to apply to the Y-axis line."
+                ]
+            },
+            "y-axis-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to the Y-axis line."
+                ]
+            },
+            "y-axis-title-alignment": {
+                "description": [
+                    "Sets the horizontal alignment of the Y-axis title."
+                ]
+            },
+            "y-axis-title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of a title on the Y-axis."
+                ]
+            },
+            "y-axis-title-text-color": {
+                "description": [
+                    "Sets the color of a title on the Y-axis."
+                ]
+            },
+            "y-axis-tick-length": {
+                "description": [
+                    "Sets the length of tickmarks along the Y-axis."
+                ]
+            },
+            "y-axis-tick-stroke": {
+                "description": [
+                    "Sets the color to apply to tickmarks along the Y-axis."
+                ]
+            },
+            "y-axis-tick-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to tickmarks along the Y-axis."
+                ]
+            },
+            "zoom-slider-x-axis-major-stroke": {
+                "description": [
+                    "Gets or sets stroke brush of major gridlines on x-axis of the zoom slider pane."
+                ]
+            },
+            "zoom-slider-x-axis-major-stroke-thickness": {
+                "description": [
+                    "Gets or sets thickness of major gridlines on x-axis of the zoom slider pane."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: financial-chart-theme($title-alignment: left, $brushes: red, blue, yellow, pink);",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "funnel-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables.",
+                    ""
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series colors are nelected."
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned series outline colors are selected."
+                ]
+            },
+            "outer-label-alignment": {
+                "description": [
+                    "Sets which side of the chart the outer labels should appear."
+                ]
+            },
+            "outer-label-text-color": {
+                "description": [
+                    "Sets the Color used for the outer labels."
+                ]
+            },
+            "outer-label-visibility": {
+                "description": [
+                    "Sets whether the outer labels are visible."
+                ]
+            },
+            "outline-thickness": {
+                "description": [
+                    "Sets the thickness of outline around slices."
+                ]
+            },
+            "text-color": {
+                "description": [
+                    "[null] Sets the Color used for the inner labels.",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: funnel-chart-theme($brushes: (orange, blue, pink));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "linear-gauge-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables.",
+                    ""
+                ]
+            },
+            "backing-brush": {
+                "description": [
+                    "Sets the color to use to fill the backing of the linear gauge."
+                ]
+            },
+            "backing-outline": {
+                "description": [
+                    "Sets the color to use for the outline of the backing."
+                ]
+            },
+            "backing-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness of the backing outline."
+                ]
+            },
+            "font-brush": {
+                "description": [
+                    "Sets the color to use for the label font."
+                ]
+            },
+            "minor-tick-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering minor ticks."
+                ]
+            },
+            "needle-breadth": {
+                "description": [
+                    "Sets the needle breadth."
+                ]
+            },
+            "needle-brush": {
+                "description": [
+                    "Sets the color to use for the needle element."
+                ]
+            },
+            "needle-inner-base-width": {
+                "description": [
+                    "Sets the width of the needle's inner base."
+                ]
+            },
+            "needle-inner-point-width": {
+                "description": [
+                    "Sets the width of the needle's inner point."
+                ]
+            },
+            "needle-outer-base-width": {
+                "description": [
+                    "Sets the width of the needle's outer base."
+                ]
+            },
+            "needle-outer-point-width": {
+                "description": [
+                    "Sets the width of the needle's outer point."
+                ]
+            },
+            "needle-outline": {
+                "description": [
+                    "Sets the color to use for the outline of needle element."
+                ]
+            },
+            "needle-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering single actual value element."
+                ]
+            },
+            "range-brushes": {
+                "description": [
+                    "Sets a collection of colors to be used as the palette for linear gauge ranges."
+                ]
+            },
+            "range-outlines": {
+                "description": [
+                    "Sets a collection of colors to be used as the palette for linear gauge outlines."
+                ]
+            },
+            "scale-brush": {
+                "description": [
+                    "Sets the color to use to fill the scale of the linear gauge."
+                ]
+            },
+            "scale-outline": {
+                "description": [
+                    "Sets the color to use for the outline of the scale."
+                ]
+            },
+            "scale-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness of the scale outline."
+                ]
+            },
+            "tick-brush": {
+                "description": [
+                    "Sets the color to use for the major tickmarks."
+                ]
+            },
+            "tick-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering ticks."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$custom-gauge-theme: linear-gauge-theme($brushes: (red, green, blue));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($custom-gauge-theme);"
+                ]
+            }
+        ]
+    },
+    "radial-gauge-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "width": {
+                "description": [
+                    "The width of the gauge in pixels, string (px) or percentage (%)."
+                ]
+            },
+            "height": {
+                "description": [
+                    "The height of the gauge in pixels, string (px) or percentage (%)."
+                ]
+            },
+            "backing-brush": {
+                "description": [
+                    "Sets the color to use to fill the backing of the linear gauge."
+                ]
+            },
+            "backing-outline": {
+                "description": [
+                    "Sets the color to use for the outline of the backing."
+                ]
+            },
+            "backing-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness of the backing outline."
+                ]
+            },
+            "font-brush": {
+                "description": [
+                    "Sets the color to use for the label font."
+                ]
+            },
+            "minor-tick-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering minor ticks."
+                ]
+            },
+            "needle-brush": {
+                "description": [
+                    "Sets the color to use for the needle element."
+                ]
+            },
+            "needle-outline": {
+                "description": [
+                    "Sets the color to use for the outline of needle element."
+                ]
+            },
+            "needle-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering single actual value element."
+                ]
+            },
+            "range-brushes": {
+                "description": [
+                    "Sets a collection of colors to be used as the palette for linear gauge ranges."
+                ]
+            },
+            "range-outlines": {
+                "description": [
+                    "Sets a collection of colors to be used as the palette for linear gauge outlines."
+                ]
+            },
+            "scale-brush": {
+                "description": [
+                    "Sets the color to use to fill the scale of the linear gauge."
+                ]
+            },
+            "tick-brush": {
+                "description": [
+                    "Sets the color to use for the major tickmarks."
+                ]
+            },
+            "tick-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering ticks."
+                ]
+            },
+            "needle-pivot-brush": {
+                "description": [
+                    "Sets the color of the needle pivot point."
+                ]
+            },
+            "needle-pivot-outline": {
+                "description": [
+                    "Sets the outline color of the needle pivot point."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$custom-gauge-theme: radial-gauge-theme($brushes: (red, green, blue));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($custom-gauge-theme);"
+                ]
+            }
+        ]
+    },
+    "geo-map-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "plot-area-background": {
+                "description": [
+                    "Gets or sets the brush used as the background for the current Map object's plot area."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-map-theme: geo-map-theme($width: 550px);",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-map-theme);"
+                ]
+            }
+        ]
+    },
+    "bullet-graph-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "backing-brush": {
+                "description": [
+                    "Sets the brush to use to fill the backing of the bullet graph."
+                ]
+            },
+            "backing-outline": {
+                "description": [
+                    "Sets the brush to use for the outline of the backing."
+                ]
+            },
+            "backing-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness of the backing outline."
+                ]
+            },
+            "font-brush": {
+                "description": [
+                    "Sets the brush to use for the label font."
+                ]
+            },
+            "minor-tick-brush": {
+                "description": [
+                    "Sets the brush to use for the minor tickmarks."
+                ]
+            },
+            "minor-tick-thickness": {
+                "description": [
+                    "Stroke thickness to use when rendering minor ticks."
+                ]
+            },
+            "range-brushes": {
+                "description": [
+                    "Sets a collection of brushes to be used as the palette for bullet graph ranges."
+                ]
+            },
+            "range-outlines": {
+                "description": [
+                    "Sets a collection of brushes to be used as the palette for bullet graph outlines."
+                ]
+            },
+            "scale-background-brush": {
+                "description": [
+                    "Sets the background brush for the scale."
+                ]
+            },
+            "scale-background-outline": {
+                "description": [
+                    "Sets the background outline for the scale."
+                ]
+            },
+            "scale-background-thickness": {
+                "description": [
+                    "Sets the background outline thickness for the scale."
+                ]
+            },
+            "target-value-breadth": {
+                "description": [
+                    "Sets the breadth of the target value element."
+                ]
+            },
+            "target-value-brush": {
+                "description": [
+                    "Sets the brush to use when rendering the fill of the comparative marker."
+                ]
+            },
+            "target-value-outline": {
+                "description": [
+                    "Sets the brush to use when rendering the outline of the target value."
+                ]
+            },
+            "target-value-thickness": {
+                "description": [
+                    "Sets the stroke thickness of the outline of the target value bar."
+                ]
+            },
+            "tick-brush": {
+                "description": [
+                    "Sets the brush to use for the major tickmarks."
+                ]
+            },
+            "tick-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering ticks."
+                ]
+            },
+            "value-brush": {
+                "description": [
+                    "Sets the brush to use for the actual value element."
+                ]
+            },
+            "value-outline": {
+                "description": [
+                    "Sets the brush to use for the outline of actual value element."
+                ]
+            },
+            "value-stroke-thickness": {
+                "description": [
+                    "Sets the stroke thickness to use when rendering single actual value element."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: bullet-graph-theme($brushes: (orange, blue, pink));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "pie-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series colors are selected."
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "Defines the palette from which automatically assigned series outline colors are selected."
+                ]
+            },
+            "label-extent": {
+                "description": [
+                    "Sets the pixel amount by which the labels are offset from the edge of the slices."
+                ]
+            },
+            "label-inner-color": {
+                "description": [
+                    "Sets the color for labels rendered inside of the pie chart."
+                ]
+            },
+            "label-outer-color": {
+                "description": [
+                    "Sets the color for labels rendered outside of the pie chart."
+                ]
+            },
+            "labels-position": {
+                "description": [
+                    "Sets the position of chart labels. Valid values are: 'none', 'center', 'insideEnd', 'outsideEnd', and 'bestFit'."
+                ]
+            },
+            "leader-line-margin": {
+                "description": [
+                    "Sets the margin between a label and the end of its leader line."
+                ]
+            },
+            "leader-line-type": {
+                "description": [
+                    "Sets what type of leader lines will be used for the outside end labels. Valid values are: 'straight', 'spline', and 'arc'."
+                ]
+            },
+            "leader-line-visibility": {
+                "description": [
+                    "Sets whether the leader lines are visible. Valid values are: 'visible' and 'collapsed'."
+                ]
+            },
+            "radius-factor": {
+                "description": [
+                    "Sets the scaling factor of the chart's radius. Value between 0 and 1."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: pie-chart-theme($brushes: (red, orange, blue));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "shape-chart-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables."
+                ]
+            },
+            "margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart content."
+                ]
+            },
+            "title-alignment": {
+                "description": [
+                    "Sets horizontal alignment which determines the title position, relative to the left and right edges of the control."
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "Sets the color of the chart title."
+                ]
+            },
+            "title-margin": {
+                "description": [
+                    "Sets the margin (top, right, bottom, left) of the chart title."
+                ]
+            },
+            "subtitle-alignment": {
+                "description": [
+                    "Sets horizontal alignment which determines the subtitle position, relative to the left and right edges of the control."
+                ]
+            },
+            "subtitle-text-color": {
+                "description": [
+                    "Sets the color of the chart subtitle."
+                ]
+            },
+            "subtitle-margin": {
+                "description": [
+                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
+                ]
+            },
+            "brushes": {
+                "description": [
+                    "Defines the palette from which automatically assigned series colors are selected."
+                ]
+            },
+            "marker-brushes": {
+                "description": [
+                    "Sets the palette of brushes used for rendering fill area of data point markers."
+                ]
+            },
+            "outlines": {
+                "description": [
+                    "Sets the palette of brushes to use for outlines on the chart series."
+                ]
+            },
+            "marker-outlines": {
+                "description": [
+                    "Sets the palette of brushes used for rendering outlines of data point markers."
+                ]
+            },
+            "thickness": {
+                "description": [
+                    "Sets the thickness for all series in this chart."
+                ]
+            },
+            "trend-line-brushes": {
+                "description": [
+                    "Sets the palette of brushes to used for coloring trend lines in this chart."
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "Sets the thickness of the trend lines in this chart. This property applies only to these chart types: point, line, spline, and bubble."
+                ]
+            },
+            "x-axis-label-margin": {
+                "description": [
+                    "Sets the margin of labels on the X-axis."
+                ]
+            },
+            "x-axis-label-text-color": {
+                "description": [
+                    "Sets color of labels on the X-axis."
+                ]
+            },
+            "x-axis-label-vertical-alignment": {
+                "description": [
+                    "Sets Vertical alignment of X-axis labels."
+                ]
+            },
+            "x-axis-major-stroke": {
+                "description": [
+                    "Sets the color to apply to major gridlines along the X-axis."
+                ]
+            },
+            "x-axis-major-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to major gridlines along the X-axis."
+                ]
+            },
+            "x-axis-minor-stroke": {
+                "description": [
+                    "Sets the color to apply to minor gridlines along the X-axis."
+                ]
+            },
+            "x-axis-minor-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to minor gridlines along the X-axis."
+                ]
+            },
+            "x-axis-strip": {
+                "description": [
+                    "Sets the color to apply to stripes along the X-axis."
+                ]
+            },
+            "x-axis-stroke": {
+                "description": [
+                    "Sets the color to apply to the X-axis line."
+                ]
+            },
+            "x-axis-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to the X-axis line."
+                ]
+            },
+            "x-axis-title-alignment": {
+                "description": [
+                    "Sets Horizontal alignment of the X-axis title."
+                ]
+            },
+            "x-axis-title-color": {
+                "description": [
+                    "Sets color of title on the X-axis."
+                ]
+            },
+            "x-axis-title-margin": {
+                "description": [
+                    "Sets the margin around the title on the X-axis."
+                ]
+            },
+            "y-axis-label-margin": {
+                "description": [
+                    "Sets the margin of labels on the Y-axis."
+                ]
+            },
+            "y-axis-label-text-color": {
+                "description": [
+                    "Sets color of labels on the Y-axis."
+                ]
+            },
+            "y-axis-label-vertical-alignment": {
+                "description": [
+                    "Sets Vertical alignment of Y-axis labels."
+                ]
+            },
+            "y-axis-major-stroke": {
+                "description": [
+                    "Sets the color to apply to major gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-major-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to major gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-minor-stroke": {
+                "description": [
+                    "Sets the color to apply to minor gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-minor-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to minor gridlines along the Y-axis."
+                ]
+            },
+            "y-axis-strip": {
+                "description": [
+                    "Sets the color to apply to stripes along the Y-axis."
+                ]
+            },
+            "y-axis-stroke": {
+                "description": [
+                    "Sets the color to apply to the Y-axis line."
+                ]
+            },
+            "y-axis-stroke-thickness": {
+                "description": [
+                    "Sets the thickness to apply to the Y-axis line."
+                ]
+            },
+            "y-axis-title-alignment": {
+                "description": [
+                    "Sets Horizontal alignment of the Y-axis title."
+                ]
+            },
+            "y-axis-title-color": {
+                "description": [
+                    "Sets color of title on the Y-axis."
+                ]
+            },
+            "y-axis-title-margin": {
+                "description": [
+                    "Sets the margin around the title on the Y-axis."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-chart-theme: shape-chart-theme($brushes: (orange, blue, pink));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-chart-theme);"
+                ]
+            }
+        ]
+    },
+    "sparkline-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The target platform to be used when scoping the theme variables.",
+                    ""
+                ]
+            },
+            "brush": {
+                "description": [
+                    "Sets the sparkline brush."
+                ]
+            },
+            "line-thickness": {
+                "description": [
+                    "Sets the line thickness of the sparkline."
+                ]
+            },
+            "marker-brush": {
+                "description": [
+                    "Sets the marker brush of the sparkline."
+                ]
+            },
+            "marker-size": {
+                "description": [
+                    "Sets the marker size of the sparkline."
+                ]
+            },
+            "first-marker-brush": {
+                "description": [
+                    "Sets the first marker brush of the sparkline."
+                ]
+            },
+            "first-marker-size": {
+                "description": [
+                    "Sets the first marker size of the sparkline."
+                ]
+            },
+            "last-marker-brush": {
+                "description": [
+                    "Sets the last marker brush of the sparkline."
+                ]
+            },
+            "last-marker-size": {
+                "description": [
+                    "Sets the last marker size of the sparkline."
+                ]
+            },
+            "low-marker-brush": {
+                "description": [
+                    "Sets the low marker brush of the sparkline."
+                ]
+            },
+            "low-marker-size": {
+                "description": [
+                    "Sets the low marker size of the sparkline."
+                ]
+            },
+            "high-marker-brush": {
+                "description": [
+                    "Sets the high marker brush of the sparkline."
+                ]
+            },
+            "high-marker-size": {
+                "description": [
+                    "Sets the high marker size of the sparkline."
+                ]
+            },
+            "negative-brush": {
+                "description": [
+                    "Sets the negative brush of the sparkline."
+                ]
+            },
+            "negative-marker-brush": {
+                "description": [
+                    "Sets the negative marker brush of the sparkline."
+                ]
+            },
+            "negative": {
+                "description": [
+                    "marker-size [null] - Sets the negative marker size of the sparkline."
+                ]
+            },
+            "trend-line-brush": {
+                "description": [
+                    "Sets the trendline brush of the sparkline."
+                ]
+            },
+            "trend-line-thickness": {
+                "description": [
+                    "Sets the thickness of the sparkline's trendline."
+                ]
+            },
+            "horizontal-axis-brush": {
+                "description": [
+                    "Sets the horizontal axis line brush of the sparkline."
+                ]
+            },
+            "vertical-axis-brush": {
+                "description": [
+                    "Sets the vertical axis line brush of the sparkline."
+                ]
+            },
+            "normal-range-fill": {
+                "description": [
+                    "Sets the normal range brush of the sparkline."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "$my-sparkline-theme: sparkline-theme($brushes: (orange, blue, pink));",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-sparkline-theme);"
+                ]
+            }
+        ]
+    },
     "avatar-theme": {
         "description": [
             "If only background color is specified, text/icon color will be assigned automatically to a contrasting color.",
@@ -3219,74 +5070,6 @@
             }
         ]
     },
-    "grid-toolbar-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "background-color": {
-                "description": [
-                    "The toolbar background color."
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "The toolbar title text color."
-                ]
-            },
-            "dropdown-background": {
-                "description": [
-                    "The toolbar drop-down background color."
-                ]
-            },
-            "item-text-color": {
-                "description": [
-                    "The toolbar drop-down item text color."
-                ]
-            },
-            "item-hover-background": {
-                "description": [
-                    "The toolbar drop-down item hover background color."
-                ]
-            },
-            "item-hover-text-color": {
-                "description": [
-                    "The toolbar drop-down item hover text color."
-                ]
-            },
-            "item-focus-background": {
-                "description": [
-                    "The toolbar drop-down item focus background color."
-                ]
-            },
-            "item-focus-text-color": {
-                "description": [
-                    "The toolbar drop-down item focus text color."
-                ]
-            },
-            "border-color": {
-                "description": [
-                    "The toolbar border-bottom color."
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "Change the toolbar background color"
-                ],
-                "code": [
-                    "$my-toolbar-theme: grid-toolbar-theme(",
-                    "  $background-color: black",
-                    ");",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-toolbar-theme);"
-                ]
-            }
-        ]
-    },
     "grid-theme": {
         "parameters": {
             "schema": {
@@ -3728,14 +5511,73 @@
             }
         ]
     },
-    "pivot-data-selector-theme": {
+    "grid-toolbar-theme": {
         "parameters": {
             "schema": {
                 "description": [
                     "The schema used as basis for styling the component."
                 ]
+            },
+            "background-color": {
+                "description": [
+                    "The toolbar background color."
+                ]
+            },
+            "title-text-color": {
+                "description": [
+                    "The toolbar title text color."
+                ]
+            },
+            "dropdown-background": {
+                "description": [
+                    "The toolbar drop-down background color."
+                ]
+            },
+            "item-text-color": {
+                "description": [
+                    "The toolbar drop-down item text color."
+                ]
+            },
+            "item-hover-background": {
+                "description": [
+                    "The toolbar drop-down item hover background color."
+                ]
+            },
+            "item-hover-text-color": {
+                "description": [
+                    "The toolbar drop-down item hover text color."
+                ]
+            },
+            "item-focus-background": {
+                "description": [
+                    "The toolbar drop-down item focus background color."
+                ]
+            },
+            "item-focus-text-color": {
+                "description": [
+                    "The toolbar drop-down item focus text color."
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "The toolbar border-bottom color."
+                ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "Change the toolbar background color"
+                ],
+                "code": [
+                    "$my-toolbar-theme: grid-toolbar-theme(",
+                    "  $background-color: black",
+                    ");",
+                    "// Pass the theme to the css-vars mixin",
+                    "@include css-vars($my-toolbar-theme);"
+                ]
+            }
+        ]
     },
     "highlight-theme": {
         "description": [
@@ -4578,91 +6420,6 @@
                     ");",
                     "// Pass the theme to the css-vars() mixin",
                     "@include css-vars($my-progress-linear-theme);"
-                ]
-            }
-        ]
-    },
-    "query-builder-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "background": {
-                "description": [
-                    "The background color of the filtering row."
-                ]
-            },
-            "header-background": {
-                "description": [
-                    "The background color of the query builder header."
-                ]
-            },
-            "header-foreground": {
-                "description": [
-                    "The foreground color of the query builder header."
-                ]
-            },
-            "header-border": {
-                "description": [
-                    "The border color of the query builder header.",
-                    ""
-                ]
-            },
-            "subquery-header-background": {
-                "description": [
-                    "The background color of the subquery header."
-                ]
-            },
-            "subquery-border-color": {
-                "description": [
-                    "The border color of the query block."
-                ]
-            },
-            "separator-color": {
-                "description": [
-                    "The separator color of the query builder tree block."
-                ]
-            },
-            "subquery-border-radius": {
-                "description": [
-                    "The border radius of the subquery block.",
-                    ""
-                ]
-            },
-            "label-foreground": {
-                "description": [
-                    "The color for query builder labels \"from\" & \"select\"."
-                ]
-            },
-            "border-radius": {
-                "description": [
-                    "The border radius of the query builder.",
-                    ""
-                ]
-            },
-            "color-expression-group-and": {
-                "description": [
-                    "The color of advanced filtering \"AND\" condition group."
-                ]
-            },
-            "color-expression-group-or": {
-                "description": [
-                    "The color of advanced filtering \"OR\" condition group.",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "Set custom query-builder colors"
-                ],
-                "code": [
-                    "$my-query-builder-theme: query-builder-theme($background: red);",
-                    "// Pass the theme to the css-vars() mixin",
-                    "@include css-vars($my-query-builder-theme);"
                 ]
             }
         ]
@@ -6190,1747 +7947,6 @@
                     "$my-watermark-theme: watermark-theme($link-background: magenta);",
                     "// Pass the theme to the css-vars() mixin",
                     "@include css-vars($my-watermark-theme);"
-                ]
-            }
-        ]
-    },
-    "sizable": {
-        "description": [
-            "Used to switch between values based on the size of the component.",
-            "The passed sizes are converted to absolute values before comparing.",
-            ""
-        ],
-        "parameters": {
-            "sm": {
-                "description": [
-                    "The preferred value when the component's size is small."
-                ]
-            },
-            "md": {
-                "description": [
-                    "The preferred value when the component's size is medium."
-                ]
-            },
-            "lg": {
-                "description": [
-                    "The preferred value when the component's size is large."
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "The evaluated value."
-            ]
-        },
-        "example": [
-            {
-                "code": [
-                    "--size: #{sizable(rem(40px), rem(64px), rem(88px))};"
-                ]
-            }
-        ]
-    },
-    "category-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart content."
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series brushes colors are selected."
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series marker brushes colors are selected."
-                ]
-            },
-            "negative-brushes": {
-                "description": [
-                    "Defines the palette used for coloring negative items in a chart type with contextual coloring, such as Waterfall."
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned series outline colors are selected."
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned series marker outline colors are selected."
-                ]
-            },
-            "negative-outlines": {
-                "description": [
-                    "Defines the brushes used for drawing negative elements in a chart type with contextual coloring, such as Waterfall."
-                ]
-            },
-            "title-alignment": {
-                "description": [
-                    "The horizontal alignment to use for the title."
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart title."
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "Sets the color of the chart title."
-                ]
-            },
-            "title-text-style": {
-                "description": [
-                    "Sets the CSS font property of the chart title."
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
-                ]
-            },
-            "subtitle-alignment": {
-                "description": [
-                    "The horizontal alignment to use for the subtitle."
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "Sets the color of the chart subtitle."
-                ]
-            },
-            "subtitle-text-style": {
-                "description": [
-                    "Sets the CSS font property of the chart subtitle."
-                ]
-            },
-            "thickness": {
-                "description": [
-                    "Sets the thickness for all series in a chart."
-                ]
-            },
-            "trend-line-brushes": {
-                "description": [
-                    "Defines the palette of brushes used for coloring trend lines in a chart."
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "Sets the thickness of the trend lines in a chart of type point, line, spline or bubble."
-                ]
-            },
-            "x-axis-label-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of labels on the X-axis."
-                ]
-            },
-            "x-axis-label-text-color": {
-                "description": [
-                    "Sets the color of labels on the X-axis."
-                ]
-            },
-            "x-axis-label-text-style": {
-                "description": [
-                    "Sets the CSS font property for labels on X-axis."
-                ]
-            },
-            "x-axis-label-vertical-alignment": {
-                "description": [
-                    "Sets the vertical alignment of X-axis labels."
-                ]
-            },
-            "x-axis-major-stroke": {
-                "description": [
-                    "Sets the color to apply to major gridlines along the X-axis."
-                ]
-            },
-            "x-axis-major-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to major gridlines along the X-axis."
-                ]
-            },
-            "x-axis-minor-stroke": {
-                "description": [
-                    "Sets the color to apply to minor gridlines along the X-axis."
-                ]
-            },
-            "x-axis-minor-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to minor gridlines along the X-axis."
-                ]
-            },
-            "x-axis-strip": {
-                "description": [
-                    "Sets the color to apply to stripes along the X-axis."
-                ]
-            },
-            "x-axis-stroke": {
-                "description": [
-                    "Sets the color to apply to the X-axis line."
-                ]
-            },
-            "x-axis-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to the X-axis line."
-                ]
-            },
-            "x-axis-tick-length": {
-                "description": [
-                    "Sets the length of tickmarks along the X-axis."
-                ]
-            },
-            "x-axis-tick-stroke": {
-                "description": [
-                    "Sets the color to apply to tickmarks along the X-axis."
-                ]
-            },
-            "x-axis-tick-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to tickmarks along the X-axis."
-                ]
-            },
-            "x-axis-title-alignment": {
-                "description": [
-                    "Sets the horizontal alignment of the X-axis title."
-                ]
-            },
-            "x-axis-title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of a title on the X-axis."
-                ]
-            },
-            "x-axis-title-text-color": {
-                "description": [
-                    "Sets the color of the title on the X-axis."
-                ]
-            },
-            "x-axis-title-text-style": {
-                "description": [
-                    "Sets the CSS font property for the title on the X-axis."
-                ]
-            },
-            "y-axis-label-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of labels on the Y-axis."
-                ]
-            },
-            "y-axis-label-text-color": {
-                "description": [
-                    "Sets the color of labels on the Y-axis."
-                ]
-            },
-            "y-axis-label-text-style": {
-                "description": [
-                    "Sets the CSS font property for labels on Y-axis."
-                ]
-            },
-            "y-axis-label-vertical-alignment": {
-                "description": [
-                    "Sets the vertical alignment of Y-axis labels."
-                ]
-            },
-            "y-axis-major-stroke": {
-                "description": [
-                    "Sets the color to apply to major gridlines along the y-axis."
-                ]
-            },
-            "y-axis-major-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to major gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-minor-stroke": {
-                "description": [
-                    "Sets the color to apply to minor gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-minor-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to minor gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-strip": {
-                "description": [
-                    "Sets the color to apply to stripes along the Y-axis."
-                ]
-            },
-            "y-axis-stroke": {
-                "description": [
-                    "Sets the color to apply to the Y-axis line."
-                ]
-            },
-            "y-axis-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to the Y-axis line."
-                ]
-            },
-            "y-axis-title-alignment": {
-                "description": [
-                    "Sets the horizontal alignment of the Y-axis title."
-                ]
-            },
-            "y-axis-title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of a title on the Y-axis."
-                ]
-            },
-            "y-axis-title-text-color": {
-                "description": [
-                    "Sets the color of a title on the Y-axis."
-                ]
-            },
-            "y-axis-title-text-style": {
-                "description": [
-                    "Sets the CSS font property for the title on the Y-axis."
-                ]
-            },
-            "y-axis-tick-length": {
-                "description": [
-                    "Sets the length of tickmarks along the Y-axis."
-                ]
-            },
-            "y-axis-tick-stroke": {
-                "description": [
-                    "Sets the color to apply to tickmarks along the Y-axis."
-                ]
-            },
-            "y-axis-tick-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to tickmarks along the Y-axis."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$custom-chart-theme: category-chart-theme($brushes: (red, green, blue));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($custom-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "data-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart content."
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "Sets the color of the chart title."
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart title."
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "Sets the color of the chart subtitle."
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series colors are selected."
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned marker brushes are selected."
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned series outline colors are selected."
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned marker outlines are selected."
-                ]
-            },
-            "plot-area-background": {
-                "description": [
-                    "Sets the brush used as the background for the current Chart object's plot area."
-                ]
-            },
-            "title-horizontal-alignment": {
-                "description": [
-                    "The horizontal alignment to use for the title. Valid options are 'left', 'center', and 'right';"
-                ]
-            },
-            "subtitle-horizontal-alignment": {
-                "description": [
-                    "The horizontal alignment to use for the subtitle. Valid options are 'left', 'center', and 'right';"
-                ]
-            },
-            "axis-label-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of labels on the both axes."
-                ]
-            },
-            "axis-label-text-color": {
-                "description": [
-                    "Sets the color of labels on both axes."
-                ]
-            },
-            "axis-label-text-style": {
-                "description": [
-                    "Sets the CSS font property for labels on both axes."
-                ]
-            },
-            "axis-label-vertical-alignment": {
-                "description": [
-                    "Sets the vertical alignment of X-axis labels."
-                ]
-            },
-            "axis-major-stroke": {
-                "description": [
-                    "Sets the color to apply to major gridlines along both axes."
-                ]
-            },
-            "axis-major-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to major gridlines on both axes."
-                ]
-            },
-            "axis-minor-stroke": {
-                "description": [
-                    "Sets the color to apply to minor gridlines along  both axes."
-                ]
-            },
-            "axis-minor-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to minor gridlines along both axes."
-                ]
-            },
-            "axis-strip": {
-                "description": [
-                    "Sets the color to apply to stripes along both axes."
-                ]
-            },
-            "axis-stroke": {
-                "description": [
-                    "Sets the color to apply to both axes."
-                ]
-            },
-            "axis-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to both axes."
-                ]
-            },
-            "axis-tick-length": {
-                "description": [
-                    "Sets the length of tickmarks along both axes."
-                ]
-            },
-            "axis-tick-stroke": {
-                "description": [
-                    "Sets the color to apply to tickmarks along both axes."
-                ]
-            },
-            "axis-tick-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to tickmarks along both axes."
-                ]
-            },
-            "axis-title-alignment": {
-                "description": [
-                    "Sets the horizontal alignment of both axes."
-                ]
-            },
-            "axis-title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of a title on both axes."
-                ]
-            },
-            "axis-title-text-color": {
-                "description": [
-                    "Sets the color of the title on the X-axis."
-                ]
-            },
-            "axis-title-text-style": {
-                "description": [
-                    "Sets the CSS font property for the title on both axes."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: data-chart-theme($brushes: (orange, blue, pink));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "doughnut-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "others-category-fill": {
-                "description": [
-                    "Sets the fill color for others category."
-                ]
-            },
-            "others-category-opacity": {
-                "description": [
-                    "Sets the opacity for others category."
-                ]
-            },
-            "others-category-stroke": {
-                "description": [
-                    "Sets the others category stroke color."
-                ]
-            },
-            "others-category-stroke-thickness": {
-                "description": [
-                    "Sets the others category stroke thickness."
-                ]
-            },
-            "selected-slice-fill": {
-                "description": [
-                    "Sets the fill color of the selected slice."
-                ]
-            },
-            "selected-slice-opacity": {
-                "description": [
-                    "Sets the opacity of the selected slice."
-                ]
-            },
-            "selected-slice-stroke": {
-                "description": [
-                    "Sets the stroke color of the selected slice."
-                ]
-            },
-            "selected-slice-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness of the selected slice."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: doughnut-chart-theme($brushes: (orange, blue, pink));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "financial-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart content."
-                ]
-            },
-            "title-alignment": {
-                "description": [
-                    "The horizontal alignment to use for the title."
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "Sets the color of the chart title."
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart title."
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "Sets the color of the chart subtitle."
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
-                ]
-            },
-            "subtitle-alignment": {
-                "description": [
-                    "Gets or sets horizontal alignment which determines the subtitle position, relative to the left and right edges of the control."
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series brushes colors are selected."
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series marker brushes colors are selected."
-                ]
-            },
-            "negative-brushes": {
-                "description": [
-                    "Defines the palette used for coloring negative items in a chart type with contextual coloring, such as Waterfall."
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned series outline colors are selected."
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned series marker outline colors are selected."
-                ]
-            },
-            "negative-outlines": {
-                "description": [
-                    "Defines the brushes used for drawing negative elements in a chart type with contextual coloring, such as Waterfall."
-                ]
-            },
-            "indicator-brushes": {
-                "description": [
-                    "Defines the brushes used for financial indicators."
-                ]
-            },
-            "indicator-negative-brushes": {
-                "description": [
-                    "Defines the brushes used for negative elements in financial indicators."
-                ]
-            },
-            "indicator-thickness": {
-                "description": [
-                    "Defines the palette from which automatically assigned series marker brushes colors are selected."
-                ]
-            },
-            "plot-area-background": {
-                "description": [
-                    "Gets or sets the brush used as the background for the current Chart object's plot area."
-                ]
-            },
-            "thickness": {
-                "description": [
-                    "Sets the thickness for all series in a chart."
-                ]
-            },
-            "toolbar-height": {
-                "description": [
-                    "Sets the height of the tooolbar."
-                ]
-            },
-            "trend-line-brushes": {
-                "description": [
-                    "Defines the palette of brushes used for coloring trend lines in a chart."
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "Sets the thickness of the trend lines in a chart of type point, line, spline or bubble."
-                ]
-            },
-            "volume-brushes": {
-                "description": [
-                    "Defines the brushes to use for filling volume series in the volume pane."
-                ]
-            },
-            "volume-outlines": {
-                "description": [
-                    "Defines the brushes to use for outlining volume series in the volume pane."
-                ]
-            },
-            "volume-thickness": {
-                "description": [
-                    "Defines the outline thickness of volume series in the volume pane."
-                ]
-            },
-            "x-axis-label-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of labels on the X-axis."
-                ]
-            },
-            "x-axis-label-text-color": {
-                "description": [
-                    "Sets the color of labels on the X-axis."
-                ]
-            },
-            "x-axis-label-vertical-alignment": {
-                "description": [
-                    "Sets the vertical alignment of X-axis labels."
-                ]
-            },
-            "x-axis-major-stroke": {
-                "description": [
-                    "Sets the color to apply to major gridlines along the X-axis."
-                ]
-            },
-            "x-axis-major-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to major gridlines along the X-axis."
-                ]
-            },
-            "x-axis-minor-stroke": {
-                "description": [
-                    "Sets the color to apply to minor gridlines along the X-axis."
-                ]
-            },
-            "x-axis-minor-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to minor gridlines along the X-axis."
-                ]
-            },
-            "x-axis-strip": {
-                "description": [
-                    "Sets the color to apply to stripes along the X-axis."
-                ]
-            },
-            "x-axis-stroke": {
-                "description": [
-                    "Sets the color to apply to the X-axis line."
-                ]
-            },
-            "x-axis-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to the X-axis line."
-                ]
-            },
-            "x-axis-tick-length": {
-                "description": [
-                    "Sets the length of tickmarks along the X-axis."
-                ]
-            },
-            "x-axis-tick-stroke": {
-                "description": [
-                    "Sets the color to apply to tickmarks along the X-axis."
-                ]
-            },
-            "x-axis-tick-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to tickmarks along the X-axis."
-                ]
-            },
-            "x-axis-title-alignment": {
-                "description": [
-                    "Sets the horizontal alignment of the X-axis title."
-                ]
-            },
-            "x-axis-title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of a title on the X-axis."
-                ]
-            },
-            "x-axis-title-text-color": {
-                "description": [
-                    "Sets the color of the title on the X-axis."
-                ]
-            },
-            "y-axis-label-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of labels on the Y-axis."
-                ]
-            },
-            "y-axis-label-text-color": {
-                "description": [
-                    "Sets the color of labels on the Y-axis."
-                ]
-            },
-            "y-axis-label-vertical-alignment": {
-                "description": [
-                    "Sets the vertical alignment of Y-axis labels."
-                ]
-            },
-            "y-axis-major-stroke": {
-                "description": [
-                    "Sets the color to apply to major gridlines along the y-axis."
-                ]
-            },
-            "y-axis-major-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to major gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-minor-stroke": {
-                "description": [
-                    "Sets the color to apply to minor gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-minor-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to minor gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-strip": {
-                "description": [
-                    "Sets the color to apply to stripes along the Y-axis."
-                ]
-            },
-            "y-axis-stroke": {
-                "description": [
-                    "Sets the color to apply to the Y-axis line."
-                ]
-            },
-            "y-axis-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to the Y-axis line."
-                ]
-            },
-            "y-axis-title-alignment": {
-                "description": [
-                    "Sets the horizontal alignment of the Y-axis title."
-                ]
-            },
-            "y-axis-title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of a title on the Y-axis."
-                ]
-            },
-            "y-axis-title-text-color": {
-                "description": [
-                    "Sets the color of a title on the Y-axis."
-                ]
-            },
-            "y-axis-tick-length": {
-                "description": [
-                    "Sets the length of tickmarks along the Y-axis."
-                ]
-            },
-            "y-axis-tick-stroke": {
-                "description": [
-                    "Sets the color to apply to tickmarks along the Y-axis."
-                ]
-            },
-            "y-axis-tick-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to tickmarks along the Y-axis."
-                ]
-            },
-            "zoom-slider-x-axis-major-stroke": {
-                "description": [
-                    "Gets or sets stroke brush of major gridlines on x-axis of the zoom slider pane."
-                ]
-            },
-            "zoom-slider-x-axis-major-stroke-thickness": {
-                "description": [
-                    "Gets or sets thickness of major gridlines on x-axis of the zoom slider pane."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: financial-chart-theme($title-alignment: left, $brushes: red, blue, yellow, pink);",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "funnel-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables.",
-                    ""
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series colors are nelected."
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned series outline colors are selected."
-                ]
-            },
-            "outer-label-alignment": {
-                "description": [
-                    "Sets which side of the chart the outer labels should appear."
-                ]
-            },
-            "outer-label-text-color": {
-                "description": [
-                    "Sets the Color used for the outer labels."
-                ]
-            },
-            "outer-label-visibility": {
-                "description": [
-                    "Sets whether the outer labels are visible."
-                ]
-            },
-            "outline-thickness": {
-                "description": [
-                    "Sets the thickness of outline around slices."
-                ]
-            },
-            "text-color": {
-                "description": [
-                    "[null] Sets the Color used for the inner labels.",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: funnel-chart-theme($brushes: (orange, blue, pink));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "linear-gauge-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables.",
-                    ""
-                ]
-            },
-            "backing-brush": {
-                "description": [
-                    "Sets the color to use to fill the backing of the linear gauge."
-                ]
-            },
-            "backing-outline": {
-                "description": [
-                    "Sets the color to use for the outline of the backing."
-                ]
-            },
-            "backing-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness of the backing outline."
-                ]
-            },
-            "font-brush": {
-                "description": [
-                    "Sets the color to use for the label font."
-                ]
-            },
-            "minor-tick-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering minor ticks."
-                ]
-            },
-            "needle-breadth": {
-                "description": [
-                    "Sets the needle breadth."
-                ]
-            },
-            "needle-brush": {
-                "description": [
-                    "Sets the color to use for the needle element."
-                ]
-            },
-            "needle-inner-base-width": {
-                "description": [
-                    "Sets the width of the needle's inner base."
-                ]
-            },
-            "needle-inner-point-width": {
-                "description": [
-                    "Sets the width of the needle's inner point."
-                ]
-            },
-            "needle-outer-base-width": {
-                "description": [
-                    "Sets the width of the needle's outer base."
-                ]
-            },
-            "needle-outer-point-width": {
-                "description": [
-                    "Sets the width of the needle's outer point."
-                ]
-            },
-            "needle-outline": {
-                "description": [
-                    "Sets the color to use for the outline of needle element."
-                ]
-            },
-            "needle-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering single actual value element."
-                ]
-            },
-            "range-brushes": {
-                "description": [
-                    "Sets a collection of colors to be used as the palette for linear gauge ranges."
-                ]
-            },
-            "range-outlines": {
-                "description": [
-                    "Sets a collection of colors to be used as the palette for linear gauge outlines."
-                ]
-            },
-            "scale-brush": {
-                "description": [
-                    "Sets the color to use to fill the scale of the linear gauge."
-                ]
-            },
-            "scale-outline": {
-                "description": [
-                    "Sets the color to use for the outline of the scale."
-                ]
-            },
-            "scale-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness of the scale outline."
-                ]
-            },
-            "tick-brush": {
-                "description": [
-                    "Sets the color to use for the major tickmarks."
-                ]
-            },
-            "tick-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering ticks."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$custom-gauge-theme: linear-gauge-theme($brushes: (red, green, blue));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($custom-gauge-theme);"
-                ]
-            }
-        ]
-    },
-    "radial-gauge-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "width": {
-                "description": [
-                    "The width of the gauge in pixels, string (px) or percentage (%)."
-                ]
-            },
-            "height": {
-                "description": [
-                    "The height of the gauge in pixels, string (px) or percentage (%)."
-                ]
-            },
-            "backing-brush": {
-                "description": [
-                    "Sets the color to use to fill the backing of the linear gauge."
-                ]
-            },
-            "backing-outline": {
-                "description": [
-                    "Sets the color to use for the outline of the backing."
-                ]
-            },
-            "backing-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness of the backing outline."
-                ]
-            },
-            "font-brush": {
-                "description": [
-                    "Sets the color to use for the label font."
-                ]
-            },
-            "minor-tick-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering minor ticks."
-                ]
-            },
-            "needle-brush": {
-                "description": [
-                    "Sets the color to use for the needle element."
-                ]
-            },
-            "needle-outline": {
-                "description": [
-                    "Sets the color to use for the outline of needle element."
-                ]
-            },
-            "needle-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering single actual value element."
-                ]
-            },
-            "range-brushes": {
-                "description": [
-                    "Sets a collection of colors to be used as the palette for linear gauge ranges."
-                ]
-            },
-            "range-outlines": {
-                "description": [
-                    "Sets a collection of colors to be used as the palette for linear gauge outlines."
-                ]
-            },
-            "scale-brush": {
-                "description": [
-                    "Sets the color to use to fill the scale of the linear gauge."
-                ]
-            },
-            "tick-brush": {
-                "description": [
-                    "Sets the color to use for the major tickmarks."
-                ]
-            },
-            "tick-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering ticks."
-                ]
-            },
-            "needle-pivot-brush": {
-                "description": [
-                    "Sets the color of the needle pivot point."
-                ]
-            },
-            "needle-pivot-outline": {
-                "description": [
-                    "Sets the outline color of the needle pivot point."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$custom-gauge-theme: radial-gauge-theme($brushes: (red, green, blue));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($custom-gauge-theme);"
-                ]
-            }
-        ]
-    },
-    "geo-map-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "plot-area-background": {
-                "description": [
-                    "Gets or sets the brush used as the background for the current Map object's plot area."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-map-theme: geo-map-theme($width: 550px);",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-map-theme);"
-                ]
-            }
-        ]
-    },
-    "bullet-graph-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "backing-brush": {
-                "description": [
-                    "Sets the brush to use to fill the backing of the bullet graph."
-                ]
-            },
-            "backing-outline": {
-                "description": [
-                    "Sets the brush to use for the outline of the backing."
-                ]
-            },
-            "backing-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness of the backing outline."
-                ]
-            },
-            "font-brush": {
-                "description": [
-                    "Sets the brush to use for the label font."
-                ]
-            },
-            "minor-tick-brush": {
-                "description": [
-                    "Sets the brush to use for the minor tickmarks."
-                ]
-            },
-            "minor-tick-thickness": {
-                "description": [
-                    "Stroke thickness to use when rendering minor ticks."
-                ]
-            },
-            "range-brushes": {
-                "description": [
-                    "Sets a collection of brushes to be used as the palette for bullet graph ranges."
-                ]
-            },
-            "range-outlines": {
-                "description": [
-                    "Sets a collection of brushes to be used as the palette for bullet graph outlines."
-                ]
-            },
-            "scale-background-brush": {
-                "description": [
-                    "Sets the background brush for the scale."
-                ]
-            },
-            "scale-background-outline": {
-                "description": [
-                    "Sets the background outline for the scale."
-                ]
-            },
-            "scale-background-thickness": {
-                "description": [
-                    "Sets the background outline thickness for the scale."
-                ]
-            },
-            "target-value-breadth": {
-                "description": [
-                    "Sets the breadth of the target value element."
-                ]
-            },
-            "target-value-brush": {
-                "description": [
-                    "Sets the brush to use when rendering the fill of the comparative marker."
-                ]
-            },
-            "target-value-outline": {
-                "description": [
-                    "Sets the brush to use when rendering the outline of the target value."
-                ]
-            },
-            "target-value-thickness": {
-                "description": [
-                    "Sets the stroke thickness of the outline of the target value bar."
-                ]
-            },
-            "tick-brush": {
-                "description": [
-                    "Sets the brush to use for the major tickmarks."
-                ]
-            },
-            "tick-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering ticks."
-                ]
-            },
-            "value-brush": {
-                "description": [
-                    "Sets the brush to use for the actual value element."
-                ]
-            },
-            "value-outline": {
-                "description": [
-                    "Sets the brush to use for the outline of actual value element."
-                ]
-            },
-            "value-stroke-thickness": {
-                "description": [
-                    "Sets the stroke thickness to use when rendering single actual value element."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: bullet-graph-theme($brushes: (orange, blue, pink));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "pie-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series colors are selected."
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "Defines the palette from which automatically assigned series outline colors are selected."
-                ]
-            },
-            "label-extent": {
-                "description": [
-                    "Sets the pixel amount by which the labels are offset from the edge of the slices."
-                ]
-            },
-            "label-inner-color": {
-                "description": [
-                    "Sets the color for labels rendered inside of the pie chart."
-                ]
-            },
-            "label-outer-color": {
-                "description": [
-                    "Sets the color for labels rendered outside of the pie chart."
-                ]
-            },
-            "labels-position": {
-                "description": [
-                    "Sets the position of chart labels. Valid values are: 'none', 'center', 'insideEnd', 'outsideEnd', and 'bestFit'."
-                ]
-            },
-            "leader-line-margin": {
-                "description": [
-                    "Sets the margin between a label and the end of its leader line."
-                ]
-            },
-            "leader-line-type": {
-                "description": [
-                    "Sets what type of leader lines will be used for the outside end labels. Valid values are: 'straight', 'spline', and 'arc'."
-                ]
-            },
-            "leader-line-visibility": {
-                "description": [
-                    "Sets whether the leader lines are visible. Valid values are: 'visible' and 'collapsed'."
-                ]
-            },
-            "radius-factor": {
-                "description": [
-                    "Sets the scaling factor of the chart's radius. Value between 0 and 1."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: pie-chart-theme($brushes: (red, orange, blue));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "shape-chart-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables."
-                ]
-            },
-            "margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart content."
-                ]
-            },
-            "title-alignment": {
-                "description": [
-                    "Sets horizontal alignment which determines the title position, relative to the left and right edges of the control."
-                ]
-            },
-            "title-text-color": {
-                "description": [
-                    "Sets the color of the chart title."
-                ]
-            },
-            "title-margin": {
-                "description": [
-                    "Sets the margin (top, right, bottom, left) of the chart title."
-                ]
-            },
-            "subtitle-alignment": {
-                "description": [
-                    "Sets horizontal alignment which determines the subtitle position, relative to the left and right edges of the control."
-                ]
-            },
-            "subtitle-text-color": {
-                "description": [
-                    "Sets the color of the chart subtitle."
-                ]
-            },
-            "subtitle-margin": {
-                "description": [
-                    "Sets the margins (top, right, bottom, left) of the chart subtitle."
-                ]
-            },
-            "brushes": {
-                "description": [
-                    "Defines the palette from which automatically assigned series colors are selected."
-                ]
-            },
-            "marker-brushes": {
-                "description": [
-                    "Sets the palette of brushes used for rendering fill area of data point markers."
-                ]
-            },
-            "outlines": {
-                "description": [
-                    "Sets the palette of brushes to use for outlines on the chart series."
-                ]
-            },
-            "marker-outlines": {
-                "description": [
-                    "Sets the palette of brushes used for rendering outlines of data point markers."
-                ]
-            },
-            "thickness": {
-                "description": [
-                    "Sets the thickness for all series in this chart."
-                ]
-            },
-            "trend-line-brushes": {
-                "description": [
-                    "Sets the palette of brushes to used for coloring trend lines in this chart."
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "Sets the thickness of the trend lines in this chart. This property applies only to these chart types: point, line, spline, and bubble."
-                ]
-            },
-            "x-axis-label-margin": {
-                "description": [
-                    "Sets the margin of labels on the X-axis."
-                ]
-            },
-            "x-axis-label-text-color": {
-                "description": [
-                    "Sets color of labels on the X-axis."
-                ]
-            },
-            "x-axis-label-vertical-alignment": {
-                "description": [
-                    "Sets Vertical alignment of X-axis labels."
-                ]
-            },
-            "x-axis-major-stroke": {
-                "description": [
-                    "Sets the color to apply to major gridlines along the X-axis."
-                ]
-            },
-            "x-axis-major-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to major gridlines along the X-axis."
-                ]
-            },
-            "x-axis-minor-stroke": {
-                "description": [
-                    "Sets the color to apply to minor gridlines along the X-axis."
-                ]
-            },
-            "x-axis-minor-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to minor gridlines along the X-axis."
-                ]
-            },
-            "x-axis-strip": {
-                "description": [
-                    "Sets the color to apply to stripes along the X-axis."
-                ]
-            },
-            "x-axis-stroke": {
-                "description": [
-                    "Sets the color to apply to the X-axis line."
-                ]
-            },
-            "x-axis-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to the X-axis line."
-                ]
-            },
-            "x-axis-title-alignment": {
-                "description": [
-                    "Sets Horizontal alignment of the X-axis title."
-                ]
-            },
-            "x-axis-title-color": {
-                "description": [
-                    "Sets color of title on the X-axis."
-                ]
-            },
-            "x-axis-title-margin": {
-                "description": [
-                    "Sets the margin around the title on the X-axis."
-                ]
-            },
-            "y-axis-label-margin": {
-                "description": [
-                    "Sets the margin of labels on the Y-axis."
-                ]
-            },
-            "y-axis-label-text-color": {
-                "description": [
-                    "Sets color of labels on the Y-axis."
-                ]
-            },
-            "y-axis-label-vertical-alignment": {
-                "description": [
-                    "Sets Vertical alignment of Y-axis labels."
-                ]
-            },
-            "y-axis-major-stroke": {
-                "description": [
-                    "Sets the color to apply to major gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-major-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to major gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-minor-stroke": {
-                "description": [
-                    "Sets the color to apply to minor gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-minor-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to minor gridlines along the Y-axis."
-                ]
-            },
-            "y-axis-strip": {
-                "description": [
-                    "Sets the color to apply to stripes along the Y-axis."
-                ]
-            },
-            "y-axis-stroke": {
-                "description": [
-                    "Sets the color to apply to the Y-axis line."
-                ]
-            },
-            "y-axis-stroke-thickness": {
-                "description": [
-                    "Sets the thickness to apply to the Y-axis line."
-                ]
-            },
-            "y-axis-title-alignment": {
-                "description": [
-                    "Sets Horizontal alignment of the Y-axis title."
-                ]
-            },
-            "y-axis-title-color": {
-                "description": [
-                    "Sets color of title on the Y-axis."
-                ]
-            },
-            "y-axis-title-margin": {
-                "description": [
-                    "Sets the margin around the title on the Y-axis."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-chart-theme: shape-chart-theme($brushes: (orange, blue, pink));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-chart-theme);"
-                ]
-            }
-        ]
-    },
-    "sparkline-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "The schema used as basis for styling the component."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform to be used when scoping the theme variables.",
-                    ""
-                ]
-            },
-            "brush": {
-                "description": [
-                    "Sets the sparkline brush."
-                ]
-            },
-            "line-thickness": {
-                "description": [
-                    "Sets the line thickness of the sparkline."
-                ]
-            },
-            "marker-brush": {
-                "description": [
-                    "Sets the marker brush of the sparkline."
-                ]
-            },
-            "marker-size": {
-                "description": [
-                    "Sets the marker size of the sparkline."
-                ]
-            },
-            "first-marker-brush": {
-                "description": [
-                    "Sets the first marker brush of the sparkline."
-                ]
-            },
-            "first-marker-size": {
-                "description": [
-                    "Sets the first marker size of the sparkline."
-                ]
-            },
-            "last-marker-brush": {
-                "description": [
-                    "Sets the last marker brush of the sparkline."
-                ]
-            },
-            "last-marker-size": {
-                "description": [
-                    "Sets the last marker size of the sparkline."
-                ]
-            },
-            "low-marker-brush": {
-                "description": [
-                    "Sets the low marker brush of the sparkline."
-                ]
-            },
-            "low-marker-size": {
-                "description": [
-                    "Sets the low marker size of the sparkline."
-                ]
-            },
-            "high-marker-brush": {
-                "description": [
-                    "Sets the high marker brush of the sparkline."
-                ]
-            },
-            "high-marker-size": {
-                "description": [
-                    "Sets the high marker size of the sparkline."
-                ]
-            },
-            "negative-brush": {
-                "description": [
-                    "Sets the negative brush of the sparkline."
-                ]
-            },
-            "negative-marker-brush": {
-                "description": [
-                    "Sets the negative marker brush of the sparkline."
-                ]
-            },
-            "negative": {
-                "description": [
-                    "marker-size [null] - Sets the negative marker size of the sparkline."
-                ]
-            },
-            "trend-line-brush": {
-                "description": [
-                    "Sets the trendline brush of the sparkline."
-                ]
-            },
-            "trend-line-thickness": {
-                "description": [
-                    "Sets the thickness of the sparkline's trendline."
-                ]
-            },
-            "horizontal-axis-brush": {
-                "description": [
-                    "Sets the horizontal axis line brush of the sparkline."
-                ]
-            },
-            "vertical-axis-brush": {
-                "description": [
-                    "Sets the vertical axis line brush of the sparkline."
-                ]
-            },
-            "normal-range-fill": {
-                "description": [
-                    "Sets the normal range brush of the sparkline."
-                ]
-            }
-        },
-        "example": [
-            {
-                "code": [
-                    "$my-sparkline-theme: sparkline-theme($brushes: (orange, blue, pink));",
-                    "// Pass the theme to the css-vars mixin",
-                    "@include css-vars($my-sparkline-theme);"
                 ]
             }
         ]
