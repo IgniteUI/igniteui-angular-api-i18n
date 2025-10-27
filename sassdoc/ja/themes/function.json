@@ -1,157 +1,4 @@
 ﻿{
-    "action-strip-theme": {
-        "description": [
-            "背景色のみを指定した場合、テキスト/アイコンの色は自動的にコントラスト色に割り当てられます。",
-            ""
-        ],
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。",
-                    ""
-                ]
-            },
-            "icon-color": {
-                "description": [
-                    "操作アイコンに使用される色。"
-                ]
-            },
-            "background": {
-                "description": [
-                    "Action Strip コンポーネントのコンテンツの背景に使用される色。"
-                ]
-            },
-            "actions-background": {
-                "description": [
-                    "操作の背景に使用される色。"
-                ]
-            },
-            "delete-action": {
-                "description": [
-                    "Action Strip コンポーネントの削除アイコンに使用される色。"
-                ]
-            },
-            "actions-border-radius": {
-                "description": [
-                    "Action Strip コンポーネント内の操作コンテナーに使用される境界線の半径。",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "Action Strip でアイコンの色と背景を変更します。"
-                ],
-                "code": [
-                    "$my-action-strip-theme: action-strip-theme($background: black);",
-                    "// css-vars() ミックスインへテーマを渡します。",
-                    "@include css-vars($my-action-strip-theme);"
-                ]
-            }
-        ]
-    },
-    "file-input-theme": {
-        "parameters": {
-            "schema": {
-                "description": [
-                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
-                ]
-            },
-            "file-names-background": {
-                "description": [
-                    "ファイル名コンテナーの背景色。"
-                ]
-            },
-            "file-names-background--focused": {
-                "description": [
-                    "ファイル入力にフォーカスがあるときのファイル名コンテナーの背景色。"
-                ]
-            },
-            "file-names-background--filled": {
-                "description": [
-                    "ファイル入力に値があるときのファイル名コンテナーの背景色。"
-                ]
-            },
-            "file-names-background--disabled": {
-                "description": [
-                    "ファイル入力が無効なときのファイル名コンテナーの背景色。"
-                ]
-            },
-            "file-names-foreground": {
-                "description": [
-                    "ファイル名の色。"
-                ]
-            },
-            "file-names-foreground--focused": {
-                "description": [
-                    "ファイル入力にフォーカスがあるときのファイル名の色。"
-                ]
-            },
-            "file-names-foreground--filled": {
-                "description": [
-                    "ファイル入力に値があるときのファイル名の色。"
-                ]
-            },
-            "file-names-foreground--disabled": {
-                "description": [
-                    "ファイル入力が無効なときのファイル名の色。"
-                ]
-            },
-            "file-selector-button-background": {
-                "description": [
-                    "ファイル入力セレクター ボタンの背景色。"
-                ]
-            },
-            "file-selector-button-background--focused": {
-                "description": [
-                    "ファイル入力にフォーカスがあるときのセレクター ボタンの背景色。"
-                ]
-            },
-            "file-selector-button-background--filled": {
-                "description": [
-                    "ファイル入力に値があるときのセレクター ボタンの背景色。"
-                ]
-            },
-            "file-selector-button-background--disabled": {
-                "description": [
-                    "ファイル入力が無効なときのセレクター ボタンの背景色。"
-                ]
-            },
-            "file-selector-button-foreground": {
-                "description": [
-                    "ファイル入力セレクター ボタンの前景色。"
-                ]
-            },
-            "file-selector-button-foreground--focused": {
-                "description": [
-                    "ファイル入力にフォーカスがあるときのセレクター ボタンの前景色。"
-                ]
-            },
-            "file-selector-button-foreground--filled": {
-                "description": [
-                    "ファイル入力に値があるときのセレクター ボタンの前景色。"
-                ]
-            },
-            "file-selector-button-foreground--disabled": {
-                "description": [
-                    "ファイル入力が無効なときのセレクター ボタンの前景色。"
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "フォーカスの境界線とラベルの色を変更します。"
-                ],
-                "code": [
-                    "$my-file-input-theme: file-input-theme($file-names-foreground: #09f);",
-                    "// css-vars() ミックスインへテーマを渡します。",
-                    "@include css-vars($my-file-input-theme);"
-                ]
-            }
-        ]
-    },
     "sizable": {
         "description": [
             "コンポーネントのサイズに基づいて値を切り替えるために使用されます。",
@@ -1893,6 +1740,58 @@
             }
         ]
     },
+    "action-strip-theme": {
+        "description": [
+            "背景色のみ指定した場合、テキスト/アイコンの色は自動的に比色に割り当てられます。",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。",
+                    ""
+                ]
+            },
+            "icon-color": {
+                "description": [
+                    "アクション アイコンに使用される色。"
+                ]
+            },
+            "background": {
+                "description": [
+                    "Action Strip コンポーネントのコンテンツの背景に使用される色。"
+                ]
+            },
+            "actions-background": {
+                "description": [
+                    "アクションの背景に使用される色。"
+                ]
+            },
+            "delete-action": {
+                "description": [
+                    "Action Strip コンポーネントの削除アイコンに使用される色。"
+                ]
+            },
+            "actions-border-radius": {
+                "description": [
+                    "Action Strip コンポーネント内のアクション コンテナーに使用される境界半径。",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Action Strip でアイコンの色と背景を変更します。"
+                ],
+                "code": [
+                    "$my-action-strip-theme: action-strip-theme($background: black);",
+                    "// css-vars() ミックスインへテーマを渡します。",
+                    "@include css-vars($my-action-strip-theme);"
+                ]
+            }
+        ]
+    },
     "avatar-theme": {
         "description": [
             "背景色のみを指定した場合、テキスト/アイコンの色は自動的にコントラスト色に割り当てられます。",
@@ -1983,8 +1882,17 @@
             },
             "border-radius": {
                 "description": [
-                    "バッジ コンポーネントに使用される境界線の半径の割合。",
-                    ""
+                    "バッジ コンポーネントに使用される境界線の半径の割合。"
+                ]
+            },
+            "size": {
+                "description": [
+                    "バッジ コンポーネントのサイズ。"
+                ]
+            },
+            "dot-size": {
+                "description": [
+                    "ドット型バッジのサイズ。"
                 ]
             }
         },
@@ -4099,6 +4007,11 @@
                     "ホバー時にチェックされたマークの色。"
                 ]
             },
+            "tick-width": {
+                "description": [
+                    "チェックされたマークの幅。"
+                ]
+            },
             "disabled-color": {
                 "description": [
                     "無効にされた境界と塗りつぶし色。"
@@ -5550,6 +5463,15 @@
             }
         ]
     },
+    "pivot-data-selector-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            }
+        }
+    },
     "highlight-theme": {
         "description": [
             "背景色のみを指定した場合、テキストの色は自動的に対比色に割り当てられます。",
@@ -6059,6 +5981,107 @@
                     "$my-icon-theme: icon-theme($color: orange);",
                     "// css-vars() ミックスインへテーマを渡します。",
                     "@include css-vars($my-icon-theme);"
+                ]
+            }
+        ]
+    },
+    "file-input-theme": {
+        "parameters": {
+            "schema": {
+                "description": [
+                    "コンポーネントのスタイル設定に基づいて使用されるスキーマ。"
+                ]
+            },
+            "file-names-background": {
+                "description": [
+                    "ファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-background--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-background--filled": {
+                "description": [
+                    "ファイル入力に値があるときのファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-background--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのファイル名コンテナーの背景色。"
+                ]
+            },
+            "file-names-foreground": {
+                "description": [
+                    "ファイル名の色。"
+                ]
+            },
+            "file-names-foreground--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのファイル名の色。"
+                ]
+            },
+            "file-names-foreground--filled": {
+                "description": [
+                    "ファイル入力に値があるときのファイル名の色。"
+                ]
+            },
+            "file-names-foreground--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのファイル名の色。"
+                ]
+            },
+            "file-selector-button-background": {
+                "description": [
+                    "ファイル入力セレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-background--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのセレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-background--filled": {
+                "description": [
+                    "ファイル入力に値があるときのセレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-background--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのセレクター ボタンの背景色。"
+                ]
+            },
+            "file-selector-button-foreground": {
+                "description": [
+                    "ファイル入力セレクター ボタンの前景色。"
+                ]
+            },
+            "file-selector-button-foreground--focused": {
+                "description": [
+                    "ファイル入力にフォーカスがあるときのセレクター ボタンの前景色。"
+                ]
+            },
+            "file-selector-button-foreground--filled": {
+                "description": [
+                    "ファイル入力に値があるときのセレクター ボタンの前景色。"
+                ]
+            },
+            "file-selector-button-foreground--disabled": {
+                "description": [
+                    "ファイル入力が無効なときのセレクター ボタンの前景色。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "フォーカスの境界線とラベルの色を変更します。"
+                ],
+                "code": [
+                    "$my-file-input-theme: file-input-theme($file-names-foreground: #09f);",
+                    "// css-vars() ミックスインへテーマを渡します。",
+                    "@include css-vars($my-file-input-theme);"
                 ]
             }
         ]
