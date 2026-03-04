@@ -252,7 +252,10 @@
         "parameters": {
             "font-family": {
                 "description": [
-                    "すべてのタイポグラフィ要素中に使用されるフォント ファミリ。"
+                    "すべてのタイポグラフィ要素中に使用されるフォント ファミリ。",
+                    "Sass リスト (例: \"Open Sans\" Helvetica、sans-serif)、",
+                    "引用符で囲まれた文字列 (例: 下位互換性のため  \"'Comic Sans MS'、sans-serif\")、",
+                    "または var(--my-font)、inherit などのその他の有効な CSS 値を受け入れます。"
                 ]
             },
             "type-scale": {
@@ -263,8 +266,27 @@
         },
         "example": [
             {
+                "description": [
+                    "font-family リストの使用"
+                ],
                 "code": [
-                    "@include typography('Roboto', $my-type-scale);"
+                    "@include typography((\"Open Sans\", Helvetica, sans-serif), $my-type-scale);"
+                ]
+            },
+            {
+                "description": [
+                    "引用符で囲まれた文字列の使用 (下位互換性あり)"
+                ],
+                "code": [
+                    "@include typography(\"'Comic Sans MS', sans-serif\", $my-type-scale);"
+                ]
+            },
+            {
+                "description": [
+                    "CSS 変数参照の使用"
+                ],
+                "code": [
+                    "@include typography(var(--my-custom-font), $my-type-scale);"
                 ]
             }
         ]
@@ -278,11 +300,6 @@
             "type-scale": {
                 "description": [
                     "タイポグラフィ スタイルを含めるときに使用するタイプ スケール。"
-                ]
-            },
-            "target": {
-                "description": [
-                    "ターゲット プラットフォーム。'angular'、'webc'、または 'blazor' のいずれかです。"
                 ]
             }
         }

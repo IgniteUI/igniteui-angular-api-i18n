@@ -252,7 +252,10 @@
         "parameters": {
             "font-family": {
                 "description": [
-                    "The font family to be used across all typographic elements."
+                    "The font family to be used across all typographic elements.",
+                    "Accepts a Sass list (e.g. \"Open Sans\", Helvetica, sans-serif), a quoted string",
+                    "(e.g. \"'Comic Sans MS', sans-serif\" for backward compatibility), or any other",
+                    "valid CSS value such as var(--my-font), inherit, etc."
                 ]
             },
             "type-scale": {
@@ -263,8 +266,27 @@
         },
         "example": [
             {
+                "description": [
+                    "Using a font-family list"
+                ],
                 "code": [
-                    "@include typography('Roboto', $my-type-scale);"
+                    "@include typography((\"Open Sans\", Helvetica, sans-serif), $my-type-scale);"
+                ]
+            },
+            {
+                "description": [
+                    "Using a quoted string (backward compatible)"
+                ],
+                "code": [
+                    "@include typography(\"'Comic Sans MS', sans-serif\", $my-type-scale);"
+                ]
+            },
+            {
+                "description": [
+                    "Using a CSS variable reference"
+                ],
+                "code": [
+                    "@include typography(var(--my-custom-font), $my-type-scale);"
                 ]
             }
         ]
@@ -278,11 +300,6 @@
             "type-scale": {
                 "description": [
                     "The type-scale to be used when including typography styles."
-                ]
-            },
-            "target": {
-                "description": [
-                    "The target platform. Could be 'angular', 'webc', or 'blazor'."
                 ]
             }
         }

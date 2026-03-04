@@ -1,23 +1,24 @@
 {
     "css-vars-from-theme": {
         "description": [
-            "Parses a map of key value pairs from component themes to css variables.",
+            "Parses a map of key value pairs from component themes to scoped CSS variables.",
+            "Emits local variables with a fallback chain: platform-specific → universal → default value.",
             ""
         ],
         "parameters": {
             "theme": {
                 "description": [
-                    "The component theme to be used to generate css variables."
+                    "The component theme used for generating CSS variables."
                 ]
             },
             "name": {
                 "description": [
-                    "The CSS variables name"
+                    "Deprecated. This parameter is ignored."
                 ]
             },
             "ignored": {
                 "description": [
-                    "A list of ignored keywords to be excluded when generating CSS variables"
+                    "A list of ignored keywords to be excluded when generating CSS variables."
                 ]
             }
         },
@@ -34,6 +35,26 @@
                 ]
             }
         ]
+    },
+    "_tokens-global": {
+        "description": [
+            "Emits global CSS variable tokens from a component theme.",
+            "Rewrites local variable references to global token names and",
+            "skips sizable expressions that cannot resolve at global scope.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The component theme map."
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "A list of ignored keywords to be excluded."
+                ]
+            }
+        }
     },
     "border-radius": {
         "description": [

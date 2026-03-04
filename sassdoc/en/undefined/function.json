@@ -163,5 +163,89 @@
                 "The clamped value"
             ]
         }
+    },
+    "_is-emittable": {
+        "description": [
+            "Returns true if a key-value pair from a theme map should be emitted as a CSS variable.",
+            "Filters out map values (nested sub-themes) and the special 'prefix' key.",
+            ""
+        ],
+        "parameters": {
+            "key": {
+                "description": [
+                    "The theme property key."
+                ]
+            },
+            "value": {
+                "description": [
+                    "The theme property value."
+                ]
+            }
+        }
+    },
+    "_is-sizable": {
+        "description": [
+            "Returns true if a value contains a sizable() expression that depends on",
+            "component-scoped variables (--is-large, --is-medium, --is-small).",
+            "These expressions cannot be resolved at global scope because CSS custom",
+            "properties resolve at the declaration scope, not the consumption scope.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The theme property value to check."
+                ]
+            }
+        }
+    },
+    "_collect-emittable-keys": {
+        "description": [
+            "Collects all emittable keys from a cleaned theme map.",
+            "Used to build the list of local variable names that need to be",
+            "rewritten to global token references.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "A theme map with ignored keys already removed."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A list of emittable key names."
+            ]
+        }
+    },
+    "_globalize-value": {
+        "description": [
+            "Rewrites local CSS variable references in a value to global token references.",
+            "For example, `var(--background)` becomes `var(--ig-avatar-background)`.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The original theme property value."
+                ]
+            },
+            "name": {
+                "description": [
+                    "The component name (e.g., 'avatar')."
+                ]
+            },
+            "keys": {
+                "description": [
+                    "The list of emittable keys whose local refs should be rewritten."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The value with all local var references rewritten to global token names."
+            ]
+        }
     }
 }

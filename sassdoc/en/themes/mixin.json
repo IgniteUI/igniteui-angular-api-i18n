@@ -1,4 +1,106 @@
 {
+    "tokens": {
+        "description": [
+            "Generates CSS variable tokens from an Ignite UI component theme.",
+            "",
+            "Supports two modes via the `$mode` parameter:",
+            "",
+            "**`'global'` (default):** Generates universal CSS variable tokens with the `ig` prefix.",
+            "Rewrites local CSS variable references (e.g., `var(--background)`) to global",
+            "token references (e.g., `var(--ig-avatar-background)`) so that derived values",
+            "like `adaptive-contrast` and `dynamic-shade` resolve correctly at any scope.",
+            "",
+            "- **Limitation:** Properties whose values contain `sizable()` expressions (e.g., `size`)",
+            "  are silently skipped when they reference component-scoped variables (`--is-large`,",
+            "  `--is-medium`, `--is-small`). These variables are set by the `sizable()` mixin at the",
+            "  component level and cannot be resolved at global scope. CSS custom properties resolve",
+            "  at the declaration scope, so a `sizable()` expression at `:root` would always evaluate",
+            "  to the largest size. To override `size` as a global token, pass a concrete value",
+            "  (e.g., `$size: 2rem`) instead of a `sizable()` expression.",
+            "",
+            "- **Note:** If theme values reference `adaptive-contrast()` derived colors, ensure",
+            "  the `adaptive-contrast()` mixin is included at the scope where tokens are declared",
+            "  so that the `--y-contrast` variable is available.",
+            "",
+            "**`'scoped'`:** Generates component-scoped CSS variables using the configured",
+            "`variable-prefix` (e.g., `igx`). Handles selector scoping and `is-root()` branching.",
+            "Includes a universal `--ig-*` fallback chain so that global tokens can override",
+            "component-scoped variables. Emits `--ig-theme` and `--ig-theme-variant` metadata.",
+            "",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The component theme map to generate tokens from."
+                ]
+            },
+            "mode": {
+                "description": [
+                    "The generation mode: 'global' for universal tokens, 'scoped' for component-level CSS variables."
+                ]
+            },
+            "scope": {
+                "description": [
+                    "Only used in 'scoped' mode. Overrides the selector from the theme map."
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "A list of ignored keywords to be excluded when generating tokens."
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Generate universal avatar tokens (global mode)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($background: red));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-background: red;",
+                    "//   --ig-avatar-color: hsla(from color(from var(--ig-avatar-background) ...) ...);",
+                    "//   ...",
+                    "// }"
+                ]
+            },
+            {
+                "description": [
+                    "Override size with a concrete value (global mode)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($size: 2rem));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-size: 2rem;",
+                    "//   ...",
+                    "// }"
+                ]
+            },
+            {
+                "description": [
+                    "Generate scoped component tokens (scoped mode)"
+                ],
+                "code": [
+                    "@include tokens(avatar-theme($schema: $schema), $mode: 'scoped');"
+                ]
+            },
+            {
+                "description": [
+                    "Generate scoped component tokens with a custom scope"
+                ],
+                "code": [
+                    "@include tokens(dialog-theme($schema: $schema), $mode: 'scoped', $scope: '.igx-dialog');"
+                ]
+            }
+        ]
+    },
     "css-vars": {
         "description": [
             "Add theme colors as CSS variables to a given scope.",

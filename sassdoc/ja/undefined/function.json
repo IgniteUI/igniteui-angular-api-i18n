@@ -163,5 +163,89 @@
                 "クランプされた値。"
             ]
         }
+    },
+    "_is-emittable": {
+        "description": [
+            "テーマ マップからのキーと値のペアを CSS 変数として発行する場合は true を返します。",
+            "マップ値 (ネストされたサブテーマ) と特殊な 'prefix' キーを除外します。",
+            ""
+        ],
+        "parameters": {
+            "key": {
+                "description": [
+                    "テーマのプロパティ キーです。"
+                ]
+            },
+            "value": {
+                "description": [
+                    "テーマのプロパティ値です。"
+                ]
+            }
+        }
+    },
+    "_is-sizable": {
+        "description": [
+            "値にコンポーネント スコープの変数 ",
+            "(--is-large, --is-medium, --is-small) に依存する sizable() 式が含まれている場合は true を返します。",
+            "CSS カスタム プロパティは消費スコープではなく宣言スコープで解決されるため、",
+            "これらの式はグローバル スコープで解決できません。",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "確認するテーマプロパティの値。"
+                ]
+            }
+        }
+    },
+    "_collect-emittable-keys": {
+        "description": [
+            "クリーン化されたテーマ マップからすべての発行可能なキーを収集します。",
+            "グローバル トークン参照に書き換える必要があるローカル変数名のリスト",
+            "を構築するために使用されます。",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "無視されたキーがすでに削除されたテーマ マップです。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "発行可能なキー名のリストです。"
+            ]
+        }
+    },
+    "_globalize-value": {
+        "description": [
+            "値内のローカル CSS 変数参照をグローバル トークン参照に書き換えます。",
+            "たとえば、`var(--background)` は `var(--ig-avatar-background)` になります。",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "元のテーマプロパティの値です。"
+                ]
+            },
+            "name": {
+                "description": [
+                    "コンポーネント名 (例: 'avatar') です。"
+                ]
+            },
+            "keys": {
+                "description": [
+                    "ローカル参照を書き換える必要がある発行可能なキーのリストです。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "すべてのローカル変数参照がグローバル トークン名に書き換えられた値です。"
+            ]
+        }
     }
 }

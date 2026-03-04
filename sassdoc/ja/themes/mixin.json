@@ -1,4 +1,106 @@
 ﻿{
+    "tokens": {
+        "description": [
+            "Ignite UI コンポーネント テーマから CSS 変数トークンを生成します。",
+            "",
+            "`$mode` パラメーターを介して 2 つのモードをサポートします。",
+            "",
+            "**`'global'` (デフォルト):** `ig` プレフィックスが付いたユニバーサル CSS 変数トークンを生成します。",
+            "ローカル CSS 変数参照 (例: `var(--background)`) をグローバル トークン参照 ",
+            "(例: `var(--ig-avatar-background)`) に書き換えて、",
+            "`adaptive-contrast` や `dynamic-shade` などの導出された値がどのスコープでも正しく解決されるようにします。",
+            "",
+            "- **制限:** 値に `sizable()` 式 (例: `size`) が含まれるプロパティは、コンポーネント スコープの変数 ",
+            "  (`--is-large`、`--is-medium`、`--is-small`) ",
+            "  を参照するときに、黙ってスキップされます。",
+            "これらの変数は、コンポーネント レベルで `sizable()` ミックスインによって設定され、グローバル スコープでは解決できません。",
+            "CSS カスタム プロパティは宣言スコープで解決されるため、`:root` の `sizable()` 式は常に最大サイズに評価されます。",
+            "`size` をグローバル トークンとしてオーバーライドするには、`sizable()` 式",
+            "の代わりに具体的な値 (例: `$size: 2rem`) を渡します。",
+            "",
+            "- *注:** テーマ値が `adaptive-contrast()` 由来の色を参照する場合は、",
+            "`--y-contrast` 変数が使用できるように、トークンが",
+            " 宣言されているスコープに `adaptive-contrast()` ミックスインが含まれていることを確認します。",
+            "",
+            "**`'scoped'`:** 設定された `variable-prefix` (例: `igx`) を使用して、コンポーネント スコープの CSS 変数を生成します。",
+            "セレクターのスコープと `is-root()` 分岐を処理します。",
+            "グローバル トークンがコンポーネント スコープの変数をオーバーライドできるように、ユニバーサル `--ig-*` フォールバック チェーンが含まれています。",
+            "`--ig-theme` および `--ig-theme-variant` メタデータを出力します。",
+            "",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "トークンを生成するコンポーネント テーマ マップです。"
+                ]
+            },
+            "mode": {
+                "description": [
+                    "生成モード: ユニバーサル トークンの場合は 'global'、コンポーネント レベルの CSS 変数の場合は 'scoped' です。"
+                ]
+            },
+            "scope": {
+                "description": [
+                    "'scoped' モードでのみ使用されます。テーマ マップからのセレクターをオーバーライドします。"
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "トークンを生成するときに除外される無視キーワードのリスト。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "ユニバーサルアバタートークンを生成します (global モード)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($background: red));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-background: red;",
+                    "//   --ig-avatar-color: hsla(from color(from var(--ig-avatar-background) ...) ...);",
+                    "//   ...",
+                    "// }"
+                ]
+            },
+            {
+                "description": [
+                    "具体的な値でサイズをオーバーライドします (global モード)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($size: 2rem));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-size: 2rem;",
+                    "//   ...",
+                    "// }"
+                ]
+            },
+            {
+                "description": [
+                    "スコープ付きコンポーネン トトークンを生成します (scoped モード)"
+                ],
+                "code": [
+                    "@include tokens(avatar-theme($schema: $schema), $mode: 'scoped');"
+                ]
+            },
+            {
+                "description": [
+                    "カスタム スコープでスコープ付きコンポーネント トークンを生成します"
+                ],
+                "code": [
+                    "@include tokens(dialog-theme($schema: $schema), $mode: 'scoped', $scope: '.igx-dialog');"
+                ]
+            }
+        ]
+    },
     "css-vars": {
         "description": [
             "テーマの色を CSS 変数として特定のスコープに追加します。",
