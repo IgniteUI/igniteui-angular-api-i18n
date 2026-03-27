@@ -43,6 +43,11 @@ jobs:
           ref: ${{ github.event.client_payload.release_tag }}
           path: igniteui-angular
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Install dependencies
         working-directory: igniteui-angular
         run: npm ci
