@@ -18,6 +18,16 @@ jobs:
         id: resolve_branch
         run: |
           TAG="${{ github.event.client_payload.release_tag }}"
+          # Fail fast if release_tag is missing or empty
+          if [[ -z "$TAG" ]]; then
+            echo "::error::release_tag is missing or empty in the repository_dispatch payload."
+            exit 1
+          fi
+          # Validate that the tag matches the expected semver pattern (e.g. v1.2.3 or 1.2.3)
+          if [[ ! "$TAG" =~ ^v?[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$ ]]; then
+            echo "::error::release_tag '$TAG' does not match the expected semver pattern (e.g. v1.2.3 or 1.2.3)."
+            exit 1
+          fi
           # Strip leading 'v' if present, then extract major.minor
           SEMVER="${TAG#v}"
           MAJOR=$(echo "$SEMVER" | cut -d. -f1)
