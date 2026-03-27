@@ -1,0 +1,99 @@
+name: update-from-dispatch
+
+on:
+  repository_dispatch:
+    types: [api-update]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve target branch
+        id: resolve_branch
+        run: |
+          TAG="${{ github.event.client_payload.release_tag }}"
+          # Fail fast if release_tag is missing or empty
+          if [[ -z "$TAG" ]]; then
+            echo "::error::release_tag is missing or empty in the repository_dispatch payload."
+            exit 1
+          fi
+          # Validate that the tag matches the expected semver pattern (e.g. v1.2.3 or 1.2.3)
+          if [[ ! "$TAG" =~ ^v?[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?$ ]]; then
+            echo "::error::release_tag '$TAG' does not match the expected semver pattern (e.g. v1.2.3 or 1.2.3)."
+            exit 1
+          fi
+          # Strip leading 'v' if present, then extract major.minor
+          SEMVER="${TAG#v}"
+          MAJOR=$(echo "$SEMVER" | cut -d. -f1)
+          MINOR=$(echo "$SEMVER" | cut -d. -f2)
+          BRANCH="${MAJOR}.${MINOR}.x"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout or create target branch
+        run: |
+          BRANCH="${{ steps.resolve_branch.outputs.branch }}"
+          git fetch origin
+          if git ls-remote --exit-code --heads origin "$BRANCH"; then
+            git checkout "$BRANCH"
+          else
+            git checkout -b "$BRANCH" origin/master
+            git push origin "$BRANCH"
+          fi
+
+      - name: Checkout igniteui-angular
+        uses: actions/checkout@v4
+        with:
+          repository: IgniteUI/igniteui-angular
+          ref: ${{ github.event.client_payload.release_tag }}
+          path: igniteui-angular
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        working-directory: igniteui-angular
+        run: npm ci
+
+      - name: Build igniteui-angular
+        working-directory: igniteui-angular
+        run: npm run build:lib
+
+      - name: Export TypeDoc JSON
+        working-directory: igniteui-angular
+        run: npm run build:typedoc:export
+
+      - name: Copy TypeDoc JSON to this repo
+        run: cp igniteui-angular/dist/igniteui-angular/docs/typescript-exported/igniteui-angular.json typedoc/en/igniteui-angular.json
+
+      - name: Export SASS API
+        working-directory: igniteui-angular
+        run: npm run build:sassdoc:export
+
+      - name: Copy SASS API to this repo
+        run: |
+          mkdir -p sassdoc/en
+          rm -rf sassdoc/en/*
+          cp -r igniteui-angular/i18nRepo/sassdoc/en/. sassdoc/en/
+
+      - name: Extract i18n translatable strings
+        run: node scripts/i18n-extract.mjs --input=typedoc/en/igniteui-angular.json --output=typedoc/en/i18n-translatable.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit; skipping commit and push."
+          else
+            git commit -m "chore: update API for ${{ github.event.client_payload.release_tag }} ($(date -u +%Y-%m-%d))"
+            git push origin HEAD
+          fi
