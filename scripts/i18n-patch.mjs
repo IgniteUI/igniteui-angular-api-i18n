@@ -90,23 +90,50 @@ function applyUnit(node, unit) {
     }
 
     if (unit.blockTags?.length) {
-        // Build a lookup of existing tags so we preserve any tags not in the unit.
-        const existingByKey = new Map(
-            (node.comment.blockTags ?? []).map(t => [`${t.tag}:${t.name ?? ''}`, t])
-        );
+        const existing = node.comment.blockTags ?? [];
+
+        // Group incoming tags by (tag, name) so we can apply them by occurrence order.
+        const incomingByKey = new Map();
         for (const incoming of unit.blockTags) {
             const key = `${incoming.tag}:${incoming.name ?? ''}`;
-            const existing = existingByKey.get(key);
-            if (existing) {
-                existing.content = textPart(incoming.text);
+            let list = incomingByKey.get(key);
+            if (!list) {
+                list = [];
+                incomingByKey.set(key, list);
+            }
+            list.push(incoming);
+        }
+
+        const result = [];
+
+        // First, walk existing tags and, for each occurrence of (tag, name),
+        // consume at most one matching incoming translation (preserving duplicates).
+        for (const existingTag of existing) {
+            const key = `${existingTag.tag}:${existingTag.name ?? ''}`;
+            const list = incomingByKey.get(key);
+            if (list && list.length) {
+                const incoming = list.shift();
+                // Preserve all properties of the existing tag except content,
+                // which we replace with the translated text.
+                const updated = { ...existingTag, content: textPart(incoming.text) };
+                result.push(updated);
             } else {
-                // New tag — append it
-                const newTag = { tag: incoming.tag, content: textPart(incoming.text) };
-                if (incoming.name) newTag.name = incoming.name;
-                existingByKey.set(key, newTag);
+                // No incoming translation for this specific occurrence; keep as-is.
+                result.push(existingTag);
             }
         }
-        node.comment.blockTags = [...existingByKey.values()];
+
+        // Any remaining incoming tags did not have a matching existing occurrence.
+        // Append them as new tags, in a stable order.
+        for (const [, list] of incomingByKey) {
+            for (const incoming of list) {
+                const newTag = { tag: incoming.tag, content: textPart(incoming.text) };
+                if (incoming.name) newTag.name = incoming.name;
+                result.push(newTag);
+            }
+        }
+
+        node.comment.blockTags = result;
     }
 }
 
