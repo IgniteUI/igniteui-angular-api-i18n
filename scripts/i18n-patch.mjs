@@ -1,0 +1,144 @@
+/**
+ * i18n-patch.mjs
+ *
+ * Reads a translated id-map JSON (produced by i18n-extract.mjs, then
+ * translated) and patches the translated strings back into the target-language
+ * typedoc JSON.
+ *
+ * Each translated comment.summary is written back as a single
+ * [{ "kind": "text", "text": "<translated>" }] array — no attempt is made to
+ * re-split it; use a separate script for that if the downstream pipeline needs
+ * the original text/code part structure.
+ *
+ * blockTags are reconstructed the same way: one content part per tag entry.
+ *
+ * Usage:
+ *   node i18n-patch.mjs
+ *   node i18n-patch.mjs --input=i18n-translatable.json --lang=ja
+ *   node i18n-patch.mjs --input=i18n-translatable.json --target=i18nRepo/typedoc/ja/igniteui-angular.json --output=out.json
+ *
+ * When patching from chunk files produced with --chunk-size:
+ *   node i18n-patch.mjs --chunks-dir=i18n-chunks --lang=ja
+ */
+
+import { readFileSync, writeFileSync, readdirSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// ── CLI args ──────────────────────────────────────────────────────────────────
+const args = Object.fromEntries(
+    process.argv.slice(2)
+        .filter(a => a.startsWith('--'))
+        .map(a => { const [k, ...v] = a.slice(2).split('='); return [k, v.join('=')]; })
+);
+
+const LANG        = args.lang   ?? 'ja';
+const CHUNKS_DIR  = args['chunks-dir'] ?? null;
+const INPUT_PATH  = args.input  ?? resolve(__dirname, 'i18n-translatable.json');
+const TARGET_PATH = args.target ?? resolve(__dirname, `i18nRepo/typedoc/${LANG}/igniteui-angular.json`);
+const OUT_PATH    = args.output ?? TARGET_PATH;
+
+// ── Build a Map<id, translationUnit> from translated input ────────────────────
+
+// translationUnit: { summary?: string, blockTags?: [{ tag, name?, text }] }
+const unitMap = new Map();
+
+function loadItems(itemsObj) {
+    for (const [id, unit] of Object.entries(itemsObj)) {
+        unitMap.set(Number(id), unit);
+    }
+}
+
+function loadFile(filePath) {
+    const data = JSON.parse(readFileSync(filePath, 'utf8'));
+    // Single-file format: { totalItems, items: { "id": unit } }
+    // Chunk-file format:  { items: { "id": unit } }
+    if (data.items && !Array.isArray(data.items)) {
+        loadItems(data.items);
+    } else {
+        console.warn(`Unrecognised format in ${filePath}, skipping.`);
+    }
+}
+
+if (CHUNKS_DIR) {
+    console.log(`Loading chunk files from ${CHUNKS_DIR} …`);
+    const files = readdirSync(CHUNKS_DIR).filter(f => f.endsWith('.json')).sort();
+    for (const file of files) loadFile(resolve(CHUNKS_DIR, file));
+    console.log(`  Loaded ${unitMap.size} translated entries from ${files.length} chunk files.`);
+} else {
+    console.log(`Loading translated entries from ${INPUT_PATH} …`);
+    loadFile(INPUT_PATH);
+    console.log(`  Loaded ${unitMap.size} translated entries.`);
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+/** Wraps a translated string into a single-part typedoc content array. */
+const textPart = text => [{ kind: 'text', text }];
+
+/**
+ * Applies a translation unit onto a typedoc comment node.
+ * Overwrites summary and blockTags with the translated strings.
+ */
+function applyUnit(node, unit) {
+    if (!node.comment) node.comment = {};
+
+    if (unit.summary !== undefined) {
+        node.comment.summary = textPart(unit.summary);
+    }
+
+    if (unit.blockTags?.length) {
+        // Build a lookup of existing tags so we preserve any tags not in the unit.
+        const existingByKey = new Map(
+            (node.comment.blockTags ?? []).map(t => [`${t.tag}:${t.name ?? ''}`, t])
+        );
+        for (const incoming of unit.blockTags) {
+            const key = `${incoming.tag}:${incoming.name ?? ''}`;
+            const existing = existingByKey.get(key);
+            if (existing) {
+                existing.content = textPart(incoming.text);
+            } else {
+                // New tag — append it
+                const newTag = { tag: incoming.tag, content: textPart(incoming.text) };
+                if (incoming.name) newTag.name = incoming.name;
+                existingByKey.set(key, newTag);
+            }
+        }
+        node.comment.blockTags = [...existingByKey.values()];
+    }
+}
+
+// ── Recursive patch walk ──────────────────────────────────────────────────────
+
+let patched = 0;
+
+function patchNode(node) {
+    if (unitMap.has(node.id)) { applyUnit(node, unitMap.get(node.id)); patched++; }
+
+    for (const sig of node.signatures ?? []) {
+        if (unitMap.has(sig.id)) { applyUnit(sig, unitMap.get(sig.id)); patched++; }
+        for (const param of sig.parameters ?? []) {
+            if (unitMap.has(param.id)) { applyUnit(param, unitMap.get(param.id)); patched++; }
+        }
+    }
+
+    if (node.getSignature && unitMap.has(node.getSignature.id)) {
+        applyUnit(node.getSignature, unitMap.get(node.getSignature.id));
+        patched++;
+    }
+
+    for (const child of node.children ?? []) patchNode(child);
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────────
+
+console.log(`Reading target JSON from ${TARGET_PATH} …`);
+const target = JSON.parse(readFileSync(TARGET_PATH, 'utf8'));
+
+for (const child of target.children ?? []) patchNode(child);
+
+console.log(`Writing ${OUT_PATH} …`);
+writeFileSync(OUT_PATH, JSON.stringify(target, null, '\t'), 'utf8');
+console.log(`Done. Patched ${patched} comment(s).`);

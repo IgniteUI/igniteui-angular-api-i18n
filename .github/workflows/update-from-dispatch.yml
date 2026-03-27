@@ -1,0 +1,77 @@
+name: update-from-dispatch
+
+on:
+  repository_dispatch:
+    types: [api-update]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve target branch
+        id: resolve_branch
+        run: |
+          TAG="${{ github.event.client_payload.release_tag }}"
+          # Strip leading 'v' if present, then extract major.minor
+          SEMVER="${TAG#v}"
+          MAJOR=$(echo "$SEMVER" | cut -d. -f1)
+          MINOR=$(echo "$SEMVER" | cut -d. -f2)
+          BRANCH="${MAJOR}.${MINOR}.x"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout or create target branch
+        run: |
+          BRANCH="${{ steps.resolve_branch.outputs.branch }}"
+          git fetch origin
+          if git ls-remote --exit-code --heads origin "$BRANCH"; then
+            git checkout "$BRANCH"
+          else
+            git checkout -b "$BRANCH" origin/master
+            git push origin "$BRANCH"
+          fi
+
+      - name: Checkout igniteui-angular
+        uses: actions/checkout@v4
+        with:
+          repository: IgniteUI/igniteui-angular
+          ref: ${{ github.event.client_payload.release_tag }}
+          path: igniteui-angular
+
+      - name: Install dependencies
+        working-directory: igniteui-angular
+        run: npm ci
+
+      - name: Build igniteui-angular
+        working-directory: igniteui-angular
+        run: npm run build:lib
+
+      - name: Export TypeDoc JSON
+        working-directory: igniteui-angular
+        run: npm run build:typedoc:export
+
+      - name: Copy TypeDoc JSON to this repo
+        run: cp igniteui-angular/dist/igniteui-angular/docs/typescript-exported/igniteui-angular.json typedoc/en/igniteui-angular.json
+
+      - name: Export SASS API
+        working-directory: igniteui-angular
+        run: npm run build:sassdoc:export
+
+      - name: Copy SASS API to this repo
+        run: cp -r igniteui-angular/i18nRepo/sassdoc/en/. sassdoc/en/
+
+      - name: Extract i18n translatable strings
+        run: node scripts/i18n-extract.mjs --input=typedoc/en/igniteui-angular.json --output=typedoc/en/i18n-translatable.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: update API for ${{ github.event.client_payload.release_tag }} ($(date -u +%Y-%m-%d))"
+          git push origin HEAD
