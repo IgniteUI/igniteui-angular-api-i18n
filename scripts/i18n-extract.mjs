@@ -40,8 +40,8 @@ const args = Object.fromEntries(
         .map(a => { const [k, ...v] = a.slice(2).split('='); return [k, v.join('=')]; })
 );
 
-const EN_PATH    = args.input       ?? resolve(__dirname, 'i18nRepo/typedoc/en/igniteui-angular.json');
-const OUT_PATH   = args.output      ?? resolve(__dirname, 'i18n-translatable.json');
+const EN_PATH    = args.input       ?? resolve(__dirname, './typedoc/en/igniteui-angular.json');
+const OUT_PATH   = args.output      ?? resolve(__dirname, './typedoc/en/i18n-translatable.json');
 const CHUNK_SIZE = parseInt(args['chunk-size'] ?? '0', 10); // 0 = no splitting
 const CHUNKS_DIR = args['chunks-dir'] ?? resolve(__dirname, 'i18n-chunks');
 

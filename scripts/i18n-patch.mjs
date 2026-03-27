@@ -36,8 +36,8 @@ const args = Object.fromEntries(
 
 const LANG        = args.lang   ?? 'ja';
 const CHUNKS_DIR  = args['chunks-dir'] ?? null;
-const INPUT_PATH  = args.input  ?? resolve(__dirname, 'i18n-translatable.json');
-const TARGET_PATH = args.target ?? resolve(__dirname, `i18nRepo/typedoc/${LANG}/igniteui-angular.json`);
+const INPUT_PATH  = args.input  ?? resolve(__dirname, `./typedoc/${LANG}/i18n-translatable.json`);
+const TARGET_PATH = args.target ?? resolve(__dirname, `./typedoc/${LANG}/igniteui-angular.json`);
 const OUT_PATH    = args.output ?? TARGET_PATH;
 
 // ── Build a Map<id, translationUnit> from translated input ────────────────────
