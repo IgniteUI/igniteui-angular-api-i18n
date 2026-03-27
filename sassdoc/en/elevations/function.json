@@ -1,152 +1,99 @@
 {
-    "_l1-shadows": {
+    "_is-shadow": {
         "description": [
-            "<p>Level 1 - Umbra Shadows</p>",
+            "Checks if the passed argument is a valid box-shadow.",
             ""
         ],
         "parameters": {
-            "color": {
+            "shadow": {
                 "description": [
-                    "<p>The color used to generate umbra shadows.</p>",
-                    ""
+                    "A list of shadow properties."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Returns a map of 24 shadow elevations with the umbra color.</p>",
-                ""
+                "Returns a boolean depending on if the passed argument is a valid shadow."
             ]
         }
     },
-    "_l2-shadows": {
+    "_transform-shadow": {
         "description": [
-            "<p>Level 2 - Penumbra Shadows</p>",
+            "Transforms the passed box-shadow list according to the elevation factor value.",
             ""
         ],
         "parameters": {
-            "color": {
+            "shadow": {
                 "description": [
-                    "<p>The color used to generate penumbra shadows.</p>",
-                    ""
+                    "A list of shadow properties."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Returns a map of 24 shadow elevations with the penumbra color.</p>",
-                ""
+                "The transformed shadow list."
             ]
         }
     },
-    "_l3-shadows": {
+    "box-shadow": {
         "description": [
-            "<p>Level 3 - Ambient Shadows</p>",
+            "Sorts out a list of valid only box-shadows.",
             ""
         ],
         "parameters": {
-            "color": {
+            "shadows": {
                 "description": [
-                    "<p>The color used to generate ambient shadows.</p>",
-                    ""
+                    "A list of shadow values."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Returns a map of 24 shadow elevations with the ambient color.</p>",
-                ""
+                "The transformed shadow list."
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  box-shadow: box-shadow((0 0 2px 3px black, 0 6px 9px orange));",
+                    "}",
+                    "",
+                    "// Output",
+                    ".my-component {",
+                    "  box-shadow:",
+                    "      0 0 calc(--ig-elevation-factor * 2px) calc(--ig-elevation-factor * 3px) black,",
+                    "      0 calc(--ig-elevation-factor * 6px) calc(--ig-elevation-factor * 9px) orange;",
+                    "}"
+                ]
+            }
+        ]
     },
-    "_elevation": {
+    "elevation": {
         "description": [
-            "<p>Returns shadow based on elevation, umbra, penumbra, and ambient shadow colors.</p>",
+            "Gets a CSS elevation variable by name.",
             ""
         ],
         "parameters": {
-            "elevation": {
+            "name": {
                 "description": [
-                    "<p>The elevation level to generate a shadow for.</p>",
-                    ""
-                ]
-            },
-            "l1-color": {
-                "description": [
-                    "<p>The umbra color.</p>",
-                    ""
-                ]
-            },
-            "l2-color": {
-                "description": [
-                    "<p>The penumbra color.</p>",
-                    ""
-                ]
-            },
-            "l3-color": {
-                "description": [
-                    "<p>The ambient color.</p>",
-                    ""
+                    "The name of the shadow."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>A string to be used as box-shadow value.</p>",
-                ""
+                "The CSS elevation variable"
             ]
-        }
-    },
-    "igx-elevation": {
-        "description": [
-            "<p>Returns an igx elevation from an igx-elevations produced map.</p>",
-            ""
-        ],
-        "parameters": {
-            "elevations": {
-                "description": [
-                    "<p>The igx-elevations map to extract the elevation from.</p>",
-                    ""
-                ]
-            },
-            "elevation": {
-                "description": [
-                    "<p>The elevation level from 1 to 24.</p>",
-                    ""
-                ]
-            }
         },
-        "returns": {
-            "description": [
-                "<p>Returns a box-shadow value.</p>",
-                ""
-            ]
-        }
-    },
-    "igx-elevations": {
-        "description": [
-            "<p>Generates a map of 24 shadows.</p>",
-            ""
-        ],
-        "parameters": {
-            "color-1": {
-                "description": [
-                    "<p>The umbra shadow color.</p>",
-                    ""
-                ]
-            },
-            "color-2": {
-                "description": [
-                    "<p>The penumbra shadow color.</p>",
-                    ""
-                ]
-            },
-            "color-3": {
-                "description": [
-                    "<p>The ambient shadow color.</p>",
-                    ""
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  box-shadow: elevation(5); // var(--ig-elevation-5)",
+                    "}"
                 ]
             }
-        }
+        ]
     }
 }

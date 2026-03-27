@@ -1,394 +1,417 @@
 ﻿{
-    "em": {
+    "pad": {
         "description": [
-            "<p>ピクセルを相対値 (em) に変換します。</p>",
+            "間隔の値を考慮したコンポーネントのサイズに基づく値を返します。",
+            "渡されたサイズは、比較する前に絶対値に変換されます。",
             ""
         ],
         "parameters": {
-            "pixels": {
+            "sm": {
                 "description": [
-                    "<p>変換するピクセル値。</p>",
-                    ""
+                    "コンポーネントのサイズが small の場合の優先値。"
                 ]
             },
-            "context": {
+            "md": {
                 "description": [
-                    "<p>対して変換するベース コンテキスト。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "rem": {
-        "description": [
-            "<p>ピクセルとルートの相対値 (rem)。</p>",
-            ""
-        ],
-        "parameters": {
-            "pixels": {
-                "description": [
-                    "<p>変換するピクセル値。</p>",
-                    ""
+                    "コンポーネントのサイズが medium の場合の優先値。"
                 ]
             },
-            "context": {
+            "lg": {
                 "description": [
-                    "<p>対して変換するベース コンテキスト。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "luminance": {
-        "description": [
-            "<p>指定された色の輝度を計算します。",
-            "<a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a> を参照してください。</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>輝度が計算するための色。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "contrast": {
-        "description": [
-            "<p>2 つの色の中間の色のコントラストの比率を計算します。",
-            "<a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a> を参照してください。</p>",
-            ""
-        ],
-        "parameters": {
-            "background": {
-                "description": [
-                    "<p>背景色。</p>",
-                    ""
+                    "コンポーネントのサイズが large の場合の優先値。"
                 ]
             },
-            "foreground": {
+            "dir": {
                 "description": [
-                    "<p>前景色。</p>",
-                    ""
+                    "優先方向 - inline (インライン) または block (ブロック)。"
                 ]
             }
         },
         "returns": {
             "description": [
-            "<p>背景色と前景色のコントラストの比率。</p>",
-            ""
+                "評価された値。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  padding: pad(4px, 8px, 16px);",
+                    "}"
+                ]
+            }
         ]
-    }
     },
-    "is-direction": {
+    "pad-inline": {
         "description": [
-            "<p><code>$value</code> は有効な方向であるかをテストします。</p>",
+            "インライン間隔を追加するために使用されます。",
             ""
         ],
         "parameters": {
-            "value": {
+            "sm": {
                 "description": [
-                    "<p>テストする値。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "is-component": {
-        "description": [
-            "<p>既知のコンポーネント リストにコンポーネントまたはコンポーネントのリストはあるかどうかテストします。</p>",
-            ""
-        ],
-        "parameters": {
-            "excludes": {
-                "description": [
-                    "<p>チェックされるコンポーネント リスト。</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>渡された項目のリスト。</p>",
-                ""
-            ]
-        }
-    },
-    "to-string": {
-        "description": [
-            "<p>数値を HEX 値文字列に変換します。</p>",
-            ""
-        ],
-        "parameters": {
-            "num": {
-                "description": [
-                    "<p>変換する数字。</p>",
-                    ""
+                    "コンポーネントのサイズが small の場合の優先値。"
                 ]
             },
-            "radix": {
+            "md": {
                 "description": [
-                    "<p>この変換に使用される base radix。</p>",
-                    ""
+                    "コンポーネントのサイズが medium の場合の優先値。"
+                ]
+            },
+            "lg": {
+                "description": [
+                    "コンポーネントのサイズが large の場合の優先値。"
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>結果の文字列。</p>",
-                ""
+                "評価された値。"
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  padding: pad-inline(4px, 8px, 16px);",
+                    "}"
+                ]
+            }
+        ]
     },
-    "hexrgba": {
+    "pad-block": {
         "description": [
-            "<p>Rgba 色を 16 進法の色に変換します。</p>",
+            "ブロック間隔を追加するために使用されます。",
             ""
         ],
         "parameters": {
-            "rgba": {
+            "sm": {
                 "description": [
-                    "<p>変換する rgba 色。</p>",
-                    ""
+                    "コンポーネントのサイズが small の場合の優先値。"
                 ]
             },
-            "background": {
+            "md": {
                 "description": [
-                    "<p>変換する背景色。</p>",
-                    ""
+                    "コンポーネントのサイズが medium の場合の優先値。"
+                ]
+            },
+            "lg": {
+                "description": [
+                    "コンポーネントのサイズが large の場合の優先値。"
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Rgba 値の 16 進法形表現。</p>",
-                ""
+                "評価された値。"
             ]
-        }
-    },
-    "extend": {
-        "description": [
-            "<p>Map オブジェクトを他の Map オブジェクトのプロパティで継承します。</p>",
-            ""
-        ],
-        "parameters": {
-            "map1": {
-                "description": [
-                    "<p>継承されるソース マップ。</p>",
-                    ""
-                ]
-            },
-            "map2": {
-                "description": [
-                    "<p>ソース マップを継承するマップ。</p>",
-                    ""
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  padding: pad-block(4px, 8px, 16px);",
+                    "}"
                 ]
             }
-        },
-        "returns": {
-            "description": [
-                "<p>2 番目のマップのプロパティで継承された元のマップを返します。</p>",
-                ""
-            ]
-        }
+        ]
     },
-    "implode": {
+    "expand-shorthand": {
         "description": [
-            "<p>リストの項目を含む文字列を返します。",
-            "項目はリストであるために繰り返しに操作します。</p>",
+            "指定された値のリストを上下左右の 4 方向に展開します。",
+            "マージンのショートハンドがブラウザによって展開される方法と同様の動作をします。",
             ""
         ],
         "parameters": {
             "list": {
                 "description": [
-                    "<p>文字列に変換される要素のリスト。</p>",
-                    ""
+                    "展開対象となる値のリスト。最大 4 つの値をサポートします。"
                 ]
             },
-            "glue": {
+            "prop": {
                 "description": [
-                    "<p>要素を接続する文字列の記号。</p>",
-                    ""
+                    "プロパティの名前。"
                 ]
             }
+        },
+        "returns": {
+            "description": [
+                "展開された値のリストを返します。"
+            ]
         }
     },
-    "--var": {
+    "clean": {
         "description": [
-            "<p>CSS プロパティ値を返します。テーマ設定によってい css &#39;--var&#39; または文字列の値を返します。</p>",
+            "マップからすべての null キーと値のペアを削除します。",
             ""
         ],
         "parameters": {
             "map": {
                 "description": [
-                    "<p>値が読み込まれるソース テーマ。</p>",
-                    ""
-                ]
-            },
-            "key": {
-                "description": [
-                    "<p>プロパティの値として割り当てられるテーマ マップからのキー。</p>",
-                    ""
+                    "クリーンアップするターゲット マップ。"
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>渡されたマップのキー値またはキー名で連結されたキーの名前。</p>",
-                ""
+                "null キーと値のペアが削除されたマップを返します。"
+            ]
+        }
+    },
+    "extend": {
+        "description": [
+            "プロセスで null 値を無視して、別の Map の値で Map を拡張します。",
+            ""
+        ],
+        "parameters": {
+            "maps": {
+                "description": [
+                    "継承されるマップ。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "結合済みのマップを返します。"
+            ]
+        }
+    },
+    "diff": {
+        "description": [
+            "2 つ以上のマップ間の差異を抽出して最初のマップと残りのマップ比較します。",
+            ""
+        ],
+        "parameters": {
+            "maps": {
+                "description": [
+                    "差分されるマップのリスト。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "固有のプロパティのマップを返します。"
             ]
         },
         "example": [
             {
                 "description": [
-                    "<p>デフォルトのアバター テーマの値に rule-set で color プロパティを割り当てられます。</p>",
-                    ""
+                    "最初のマップと比較したときの、2 番目のマップの固有のプロパティを引き出します。"
                 ],
                 "code": [
-                    "%igx-avatar-icon {",
-                    "  color: --var($avatar-theme, 'icon-color');",
-                    "}",
-                    "// legacy-support がオフの場合、次のを生成します。",
-                    "// %igx-avatar-icon {",
-                    "//   color: var(--igx-avatar-icon-color);",
-                    "// }",
-                    "// そうでない場合、'$avatar-theme’の 'icon-color’ キーの値を返します。;"
+                    "$map-1: (",
+                    "  color: orange,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$map-2: (",
+                    "  color: red,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$diffed: diff($map-1, $map-2); // returns (color: red);"
                 ]
             }
         ]
     },
-    "str-split": {
+    "map-keys-prefix": {
         "description": [
-            "<p>指定されたセパレーターを使用して、文字列をリストに分割します。</p>",
+            "マップ内のすべてのキーに、指定されたプレフィックスとセパレーターを付加します。",
             ""
         ],
         "parameters": {
-            "string": {
+            "map": {
                 "description": [
-                    "<p>分割する文字列。</p>",
-                    ""
+                    "対象のマップ。"
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "マップ内のすべてのキーに付加するプレフィックス文字列。"
                 ]
             },
             "separator": {
                 "description": [
-                    "<p>分割の文字列セパレーター</p>",
-                    ""
-                ]
-            }
-        }
-        },
-    "resolve-value": {
-        "description": [
-            "<p>マップのキーは呼び出される関数の名前で、指定したキーの値は呼び出される関数の引数の指定したインストラクション マップの値を返します。",
-            "インストラクション マップは左から右へ実行します。",
-            "最初のインストラクションの出力は次のインストラクションの入力として渡されます。</p>",
-            ""
-        ],
-        "parameters": {
-            "ctx": {
-                "description": [
-                    "<p>使用されるインストラクション マップ。</p>",
-                    ""
-                ]
-            },
-            "extra": {
-                "description": [
-                    "<p>関数が呼ばれる時に渡される引数。",
-                    "<Code>igx-color</code> と <code>igx-contrast-color</code> 関数のみ適用されます。</p>",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p><Code>igx-color</code> を解決して、80% 透明度を適用します。",
-                    ""
-                ],
-                "code": [
-                    "$instructions: (",
-                    "  igx-color: ('primary', 500),",
-                    "  rgba: .2",
-                    ");",
-                    "// $some-palette は追加の引数として渡されたパレットです。",
-                    "$resolved-color: resolve-value($instructions, $some-palette);"
-                ]
-            }
-        ]
-    },
-    "apply-palette": {
-        "description": [
-            "<p>指定したテーマ スキーマに <code>igx-palette</code> を適用します。</p>",
-            ""
-        ],
-        "parameters": {
-            "schema": {
-                "description": [
-                    "<p>テーマ スキーマ。</p>",
-                    ""
-                ]
-            },
-            "palette": {
-                "description": [
-                    "<p>Igx-palette のマップ。</p>",
-                    ""
+                    "プレフィックスとキーの間に使用するセパレーター文字列。"
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>解決したパレットの値のマップ。</p>",
-                ""
+                "キーがすべてプレフィックス付きに変換されたマップを返します。"
+            ]
+        }
+    },
+    "to-fixed": {
+        "description": [
+            "数値を特定の精度に丸めます。",
+            ""
+        ],
+        "parameters": {
+            "number": {
+                "description": [
+                    "丸められる数値。"
+                ]
+            },
+            "precision": {
+                "description": [
+                    "小数点以下の桁数を指定します。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "丸めた数値。"
+            ]
+        }
+    },
+    "to-string": {
+        "description": [
+            "数値を文字列に変換します。",
+            ""
+        ],
+        "parameters": {
+            "num": {
+                "description": [
+                    "変換する数字。"
+                ]
+            },
+            "radix": {
+                "description": [
+                    "この変換に使用される base radix。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "結果の文字列。"
+            ]
+        }
+    },
+    "unitless": {
+        "description": [
+            "変数から単位を取り除きます。",
+            ""
+        ],
+        "parameters": {
+            "var": {
+                "description": [
+                    "単位を削除する対象の変数。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "単位を取り除いた変数。"
+            ]
+        }
+    },
+    "is-root": {
+        "description": [
+            "呼ばれた範囲がドキュメントのルートの場合、true を返します。",
+            ""
+        ],
+        "returns": {
+            "description": [
+                "呼び出されたスコープに応じてブール値を返します。"
             ]
         },
         "example": [
             {
                 "description": [
-                    "<p>テーマ スキーマに <code>igx-palette</code> を適用します。</p>",
-                    ""
-                ],
-                "code": [
-                    "$custom-palette: igx-palette($primary: red, $secondary: blue);",
-                    "$custom-schema: (",
-                    "  my-color: (",
-                    "     igx-color: ('primary', 800),",
-                    "     rgba: .5",
-                    "  ),",
-                    "  roundness: 5px",
-                    ");",
-                    "$theme: apply-palette($custom-schema, $custom-palette); // 解決したパレットの値のマップ。"
-                ]
-            }
-        ]
-    },
-    "is-root": {
-        "description": [
-            "<p>呼ばれた範囲がドキュメントのルートの場合、 true を返します。</p>",
-            ""
-        ],
-        "example": [
-            {
-                "description": [
-                    "<p>現在の範囲がルートであるかどうかをチェックします。</p>",
-                    ""
+                    "現在の範囲がルートであるかどうかをチェックします。"
                 ],
                 "code": [
                     "@mixin smart-mixin() {",
                     "  $scope: if(is-root(), ':root', '&');",
                     "",
                     "  #{$scope} {",
-                    "    /* スタイルのルールをここに入れます。 */",
+                    "    /* style rules here */",
                     "  }",
                     "}"
                 ]
             }
         ]
     },
-    "random-color": {
+    "is-host": {
         "description": [
-            "<p>ランダムの色を返します。</p>",
+            "呼び出し元のスコープが :host の場合に true を返します。",
             ""
+        ],
+        "returns": {
+            "description": [
+                "呼び出されたスコープに応じてブール値を返します。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "現在の範囲が :root であるかどうかをチェックします。"
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $host: is-host();",
+                    "",
+                    "  @if is-host() {",
+                    "    /* style rules here */",
+                    "  }",
+                    "}"
+                ]
+            }
         ]
+    },
+    "split": {
+        "description": [
+            "指定されたセパレーターを使用して、文字列をリストに分割します。",
+            ""
+        ],
+        "parameters": {
+            "string": {
+                "description": [
+                    "分割する文字列。"
+                ]
+            },
+            "separator": {
+                "description": [
+                    "分割の文字列セパレーター。"
+                ]
+            }
+        }
+    },
+    "replace": {
+        "description": [
+            "文字列の 1 つ、一部、またはすべての一致を置換で置き換えた新しい文字列を返します。",
+            ""
+        ],
+        "parameters": {
+            "string": {
+                "description": [
+                    "ターゲット文字列。"
+                ]
+            },
+            "search": {
+                "description": [
+                    "検索する用語。"
+                ]
+            },
+            "replace": {
+                "description": [
+                    "検索語を置き換える文字列。"
+                ]
+            }
+        }
+    },
+    "to-number": {
+        "description": [
+            "文字列を番号に変換します。",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "ターゲット文字列。"
+                ]
+            }
+        }
     }
 }

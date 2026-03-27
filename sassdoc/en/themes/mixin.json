@@ -1,490 +1,168 @@
 {
-    "igx-avatar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-badge": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-banner": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-bottom-nav": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-button-group": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-button": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-calendar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-card": {
+    "tokens": {
         "description": [
-            "<p>Card Component</p>",
+            "Generates CSS variable tokens from an Ignite UI component theme.",
+            "",
+            "Supports two modes via the `$mode` parameter:",
+            "",
+            "**`'global'` (default):** Generates universal CSS variable tokens with the `ig` prefix.",
+            "Rewrites local CSS variable references (e.g., `var(--background)`) to global",
+            "token references (e.g., `var(--ig-avatar-background)`) so that derived values",
+            "like `adaptive-contrast` and `dynamic-shade` resolve correctly at any scope.",
+            "",
+            "- **Limitation:** Properties whose values contain `sizable()` expressions (e.g., `size`)",
+            "  are silently skipped when they reference component-scoped variables (`--is-large`,",
+            "  `--is-medium`, `--is-small`). These variables are set by the `sizable()` mixin at the",
+            "  component level and cannot be resolved at global scope. CSS custom properties resolve",
+            "  at the declaration scope, so a `sizable()` expression at `:root` would always evaluate",
+            "  to the largest size. To override `size` as a global token, pass a concrete value",
+            "  (e.g., `$size: 2rem`) instead of a `sizable()` expression.",
+            "",
+            "- **Note:** If theme values reference `adaptive-contrast()` derived colors, ensure",
+            "  the `adaptive-contrast()` mixin is included at the scope where tokens are declared",
+            "  so that the `--y-contrast` variable is available.",
+            "",
+            "**`'scoped'`:** Generates component-scoped CSS variables using the configured",
+            "`variable-prefix` (e.g., `igx`). Handles selector scoping and `is-root()` branching.",
+            "Includes a universal `--ig-*` fallback chain so that global tokens can override",
+            "component-scoped variables. Emits `--ig-theme` and `--ig-theme-variant` metadata.",
+            "",
             ""
         ],
         "parameters": {
             "theme": {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "The component theme map to generate tokens from."
                 ]
-            }
-        }
-    },
-    "igx-carousel": {
-        "parameters": {
-            "theme": {
+            },
+            "mode": {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "The generation mode: 'global' for universal tokens, 'scoped' for component-level CSS variables."
                 ]
-            }
-        }
-    },
-    "igx-checkbox": {
-        "parameters": {
-            "theme": {
+            },
+            "scope": {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "Only used in 'scoped' mode. Overrides the selector from the theme map."
                 ]
-            }
-        }
-    },
-    "igx-chip": {
-        "parameters": {
-            "theme": {
+            },
+            "ignored": {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "A list of ignored keywords to be excluded when generating tokens."
                 ]
             }
-        }
-    },
-    "igx-column-hiding": {
-        "parameters": {
-            "theme": {
+        },
+        "example": [
+            {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "Generate universal avatar tokens (global mode)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($background: red));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-background: red;",
+                    "//   --ig-avatar-color: hsla(from color(from var(--ig-avatar-background) ...) ...);",
+                    "//   ...",
+                    "// }"
                 ]
-            }
-        }
-    },
-    "igx-combo": {
-        "parameters": {
-            "theme": {
+            },
+            {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "Override size with a concrete value (global mode)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($size: 2rem));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-size: 2rem;",
+                    "//   ...",
+                    "// }"
                 ]
-            }
-        }
-    },
-    "igx-date-picker": {
-        "parameters": {
-            "theme": {
+            },
+            {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "Generate scoped component tokens (scoped mode)"
+                ],
+                "code": [
+                    "@include tokens(avatar-theme($schema: $schema), $mode: 'scoped');"
                 ]
-            }
-        }
-    },
-    "igx-dialog": {
-        "parameters": {
-            "theme": {
+            },
+            {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "Generate scoped component tokens with a custom scope"
+                ],
+                "code": [
+                    "@include tokens(dialog-theme($schema: $schema), $mode: 'scoped', $scope: '.igx-dialog');"
                 ]
             }
-        }
+        ]
     },
-    "igx-drop-down": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-expansion-panel": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-filtering": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-paginator": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-summary": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-toolbar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-icon": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-input-group": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-list": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-navbar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-navdrawer": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-overlay": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-progress-linear": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-progress-circular": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-radio": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-ripple": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-slider": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-snackbar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-switch": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-tabs": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-time-picker": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-toast": {
+    "css-vars": {
         "description": [
-            "<p>Toast Component</p>",
+            "Add theme colors as CSS variables to a given scope.",
             ""
         ],
         "parameters": {
             "theme": {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "The component theme to be used."
                 ]
-            }
-        }
-    },
-    "igx-tooltip": {
-        "parameters": {
-            "theme": {
+            },
+            "scope": {
                 "description": [
-                    "<p>The theme used to style the component.</p>",
-                    ""
+                    "The CSS variables scope to be used. (optional)"
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "Convert grid theme colors to css variables"
+                ],
+                "code": [
+                    "$my-grid-theme grid-theme(",
+                    "  $header-background: red,",
+                    "  $content-background: #222",
+                    ");",
+                    ".my-grid {",
+                    "  @include css-vars($my-grid-theme);",
+                    "}"
+                ]
+            }
+        ]
     },
-    "igx-core": {
+    "sizing": {
         "description": [
-            "<p>Includes the base for each theme.</p>",
+            "Adds sizing CSS variables to the scope.",
             ""
         ]
     },
-    "igx-theme": {
+    "sizable": {
         "description": [
-            "<p>Generates an Ignite UI for Angular global theme.</p>",
+            "Adds the required CSS properties so that the scope can react to size changes.",
             ""
         ],
-        "parameters": {
-            "palette": {
+        "example": [
+            {
                 "description": [
-                    "<p>An igx-palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "schema": {
-                "description": [
-                    "<p>The schema used as basis for styling the components.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "legacy-support": {
-                "description": [
-                    "<p>Turn off support for IE11, allowing you to use css variables to style components.</p>",
-                    ""
+                    "Sample usage"
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include sizable();",
+                    "}"
                 ]
             }
-        }
+        ]
     },
-    "igx-light-theme": {
+    "spacing": {
         "description": [
-            "<p>Creates a global theme that can be used with light backgrounds.</p>",
+            "Adds spacing CSS variables to the scope.",
             ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An igx-palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "legacy-support": {
-                "description": [
-                    "<p>Turn off support for IE11, allowing you to use css variables to style components.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-dark-theme": {
-        "description": [
-            "<p>Creates a global theme that can be used with dark backgrounds.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>An igx-palette to be used by the global theme.</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>A list of igx components to be excluded from the global theme styles.</p>",
-                    ""
-                ]
-            },
-            "legacy-support": {
-                "description": [
-                    "<p>Turn off support for IE11, allowing you to use css variables to style components.</p>",
-                    ""
-                ]
-            }
-        }
+        ]
     }
 }

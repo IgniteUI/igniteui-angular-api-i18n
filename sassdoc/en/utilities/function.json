@@ -1,383 +1,325 @@
 {
-    "em": {
+    "pad": {
         "description": [
-            "<p>Converts pixels to relative values (em).</p>",
+            "Returns a value based on the size of the component taking spacing values into consideration.",
+            "The passed sizes are converted to absolute values before comparing.",
             ""
         ],
         "parameters": {
-            "pixels": {
+            "sm": {
                 "description": [
-                    "<p>The pixel value to be converted.</p>",
-                    ""
+                    "The preferred value when the component's size is small."
                 ]
             },
-            "context": {
+            "md": {
                 "description": [
-                    "<p>The base context to convert against.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "rem": {
-        "description": [
-            "<p>Pixels to root relative values (rem).</p>",
-            ""
-        ],
-        "parameters": {
-            "pixels": {
-                "description": [
-                    "<p>The pixel value to be converted.</p>",
-                    ""
+                    "The preferred value when the component's size is medium."
                 ]
             },
-            "context": {
+            "lg": {
                 "description": [
-                    "<p>The base context to convert against.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "luminance": {
-        "description": [
-            "<p>Calculates the luminance for a given color.",
-            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a>.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The color to calculate luminance for.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "contrast": {
-        "description": [
-            "<p>Calculates the contrast ratio between two colors.",
-            "See <a href=\"https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests\">https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests</a></p>",
-            ""
-        ],
-        "parameters": {
-            "background": {
-                "description": [
-                    "<p>The background color.</p>",
-                    ""
+                    "The preferred value when the component's size is large."
                 ]
             },
-            "foreground": {
+            "dir": {
                 "description": [
-                    "<p>The foreground color.</p>",
-                    ""
+                    "The preferred direction - inline or block."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The contrast ratio between the background and foreground colors.</p>",
-                ""
+                "The evaluated value."
             ]
-        }
-    },
-    "is-direction": {
-        "description": [
-            "<p>Test if <code>$value</code> is a valid direction.</p>",
-            ""
-        ],
-        "parameters": {
-            "value": {
-                "description": [
-                    "<p>The value to test.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "is-component": {
-        "description": [
-            "<p>Test if a component, or list of components",
-            "is in the list of known components.</p>",
-            ""
-        ],
-        "parameters": {
-            "excludes": {
-                "description": [
-                    "<p>The components list to check in.</p>",
-                    ""
-                ]
-            }
         },
-        "returns": {
-            "description": [
-                "<p>The list of passed items.</p>",
-                ""
-            ]
-        }
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  padding: pad(4px, 8px, 16px);",
+                    "}"
+                ]
+            }
+        ]
     },
-    "to-string": {
+    "pad-inline": {
         "description": [
-            "<p>Converts numbers to HEX value strings.</p>",
+            "Used to add inline spacing.",
             ""
         ],
         "parameters": {
-            "num": {
+            "sm": {
                 "description": [
-                    "<p>The number to convert.</p>",
-                    ""
+                    "The preferred value when the component's size is small."
                 ]
             },
-            "radix": {
+            "md": {
                 "description": [
-                    "<p>The base radix to use for the conversion.</p>",
-                    ""
+                    "The preferred value when the component's size is medium."
+                ]
+            },
+            "lg": {
+                "description": [
+                    "The preferred value when the component's size is large."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The resulting string.</p>",
-                ""
+                "The evaluated value."
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  padding: pad-inline(4px, 8px, 16px);",
+                    "}"
+                ]
+            }
+        ]
     },
-    "hexrgba": {
+    "pad-block": {
         "description": [
-            "<p>Converts a rgba color to a hexidecimal color.</p>",
+            "Used to add block spacing.",
             ""
         ],
         "parameters": {
-            "rgba": {
+            "sm": {
                 "description": [
-                    "<p>The rgba color to convert.</p>",
-                    ""
+                    "The preferred value when the component's size is small."
                 ]
             },
-            "background": {
+            "md": {
                 "description": [
-                    "<p>The background color to convert against.</p>",
-                    ""
+                    "The preferred value when the component's size is medium."
+                ]
+            },
+            "lg": {
+                "description": [
+                    "The preferred value when the component's size is large."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The hexidecimal representation of the rgba value.</p>",
-                ""
+                "The evaluated value."
             ]
-        }
-    },
-    "extend": {
-        "description": [
-            "<p>Extends a Map object with the properties of another Map object.</p>",
-            ""
-        ],
-        "parameters": {
-            "map1": {
-                "description": [
-                    "<p>The source map to get extended.</p>",
-                    ""
-                ]
-            },
-            "map2": {
-                "description": [
-                    "<p>The map extending the source map.</p>",
-                    ""
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  padding: pad-block(4px, 8px, 16px);",
+                    "}"
                 ]
             }
-        },
-        "returns": {
-            "description": [
-                "<p>Returns the original map extended with the properties of the second map.</p>",
-                ""
-            ]
-        }
+        ]
     },
-    "implode": {
+    "expand-shorthand": {
         "description": [
-            "<p>Returns a string from the elements of a list.",
-            "Works recursively so the elements can be lists themselves.</p>",
+            "Expands the provided list of values in all four directions.",
+            "Works similar to how to browser expands shorthands for margins.",
             ""
         ],
         "parameters": {
             "list": {
                 "description": [
-                    "<p>A list of elements to be turned into a string.</p>",
-                    ""
+                    "The of values to be expanded. Supports up to four values."
                 ]
             },
-            "glue": {
+            "prop": {
                 "description": [
-                    "<p>A string symbol to join the elements by.</p>",
-                    ""
+                    "The name of the property."
                 ]
             }
+        },
+        "returns": {
+            "description": [
+                "Returns an expanded list of values."
+            ]
         }
     },
-    "--var": {
+    "clean": {
         "description": [
-            "<p>Returns a CSS property value. It could return either css &#39;--var&#39; or",
-            "a plain string value based on theme configuration.</p>",
+            "Removes all null key-value pairs from a map",
             ""
         ],
         "parameters": {
             "map": {
                 "description": [
-                    "<p>The source theme to be used to read values from.</p>",
-                    ""
-                ]
-            },
-            "key": {
-                "description": [
-                    "<p>A key from the theme map to assign as value to the property.</p>",
-                    ""
+                    "The target map to be cleaned."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The value of the key in the passed map, or the name of key concatenated with the key name.</p>",
-                ""
+                "Returns a map with null key-value pairs removed."
+            ]
+        }
+    },
+    "extend": {
+        "description": [
+            "Extends a Map with the values of another Map, disregarding null values in the process.",
+            ""
+        ],
+        "parameters": {
+            "maps": {
+                "description": [
+                    "The maps to get extended."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Returns the merged maps."
+            ]
+        }
+    },
+    "diff": {
+        "description": [
+            "Extracts the differences between two or more maps, comparing the first map against the rest.",
+            ""
+        ],
+        "parameters": {
+            "maps": {
+                "description": [
+                    "A list of maps that will be diffed."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Returns a map of the unique properties."
             ]
         },
         "example": [
             {
                 "description": [
-                    "<p>Assign the color property in a rule-set to a value from the default avatar theme.</p>",
-                    ""
+                    "Pull out the unique properties of the second map when compared to the first."
                 ],
                 "code": [
-                    "%igx-avatar-icon {",
-                    "  color: --var($avatar-theme, 'icon-color');",
-                    "}",
-                    "// If legacy-support is off, it will produce the following:",
-                    "// %igx-avatar-icon {",
-                    "//   color: var(--igx-avatar-icon-color);",
-                    "// }",
-                    "// otherwise, it will return the value for key 'icon-color' in the '$avatar-theme';"
+                    "$map-1: (",
+                    "  color: orange,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$map-2: (",
+                    "  color: red,",
+                    "  background: black,",
+                    ");",
+                    "",
+                    "$diffed: diff($map-1, $map-2); // returns (color: red);"
                 ]
             }
         ]
     },
-    "str-split": {
+    "map-keys-prefix": {
         "description": [
-            "<p>Splits a string into a list by a given separator.</p>",
+            "Prefixes the keys in a map with the specified prefix and separator.",
             ""
         ],
         "parameters": {
-            "string": {
+            "map": {
                 "description": [
-                    "<p>The string to split.</p>",
-                    ""
+                    "The target map."
+                ]
+            },
+            "prefix": {
+                "description": [
+                    "The string used to prefix all keys in the map."
                 ]
             },
             "separator": {
                 "description": [
-                    "<p>The string separator to split the string by.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "resolve-value": {
-        "description": [
-            "<p>Returns a value for a given instruction map, where the",
-            "keys of the map are the names of the functions to be called,",
-            "and the value for a given key is the arguments the function",
-            "should be called with.",
-            "The instruction set is executed left-to-right. The output of",
-            "the first instruction is then passed as input to the next, and so on.</p>",
-            ""
-        ],
-        "parameters": {
-            "ctx": {
-                "description": [
-                    "<p>The instruction map to be used.</p>",
-                    ""
-                ]
-            },
-            "extra": {
-                "description": [
-                    "<p>Additional arguments to be passed during function calls.",
-                    "Will only be applied for <code>igx-color</code> and <code>igx-contrast-color</code> functions.</p>",
-                    ""
-                ]
-            }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>Resolve <code>igx-color</code> and apply 80% opacity</p>",
-                    ""
-                ],
-                "code": [
-                    "$instructions: (",
-                    "  igx-color: ('primary', 500),",
-                    "  rgba: .2",
-                    ");",
-                    "// $some-palette is a palette we pass as extra arguments",
-                    "$resolved-color: resolve-value($instructions, $some-palette);"
-                ]
-            }
-        ]
-    },
-    "apply-palette": {
-        "description": [
-            "<p>Applies an <code>igx-palette</code> to a given theme schema.</p>",
-            ""
-        ],
-        "parameters": {
-            "schema": {
-                "description": [
-                    "<p>A theme schema.</p>",
-                    ""
-                ]
-            },
-            "palette": {
-                "description": [
-                    "<p>An igx-palette map.</p>",
-                    ""
+                    "The string used as a separator between the prefix and the key."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>A map with the resolved palette values.</p>",
-                ""
+                "Returns the modified map with all keys prefixed."
+            ]
+        }
+    },
+    "to-fixed": {
+        "description": [
+            "Rounds a number to a certain precision",
+            ""
+        ],
+        "parameters": {
+            "number": {
+                "description": [
+                    "The number to be rounded"
+                ]
+            },
+            "precision": {
+                "description": [
+                    "Specifies the number of the digits after the decimal separator"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The rounded number"
+            ]
+        }
+    },
+    "to-string": {
+        "description": [
+            "Converts a number to a string.",
+            ""
+        ],
+        "parameters": {
+            "num": {
+                "description": [
+                    "The number to convert."
+                ]
+            },
+            "radix": {
+                "description": [
+                    "The base radix to use for the conversion."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The resulting string."
+            ]
+        }
+    },
+    "unitless": {
+        "description": [
+            "Removes measurement units from variable.",
+            ""
+        ],
+        "parameters": {
+            "var": {
+                "description": [
+                    "The variable to remove the unit of."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The given variable without units."
+            ]
+        }
+    },
+    "is-root": {
+        "description": [
+            "Returns true if the scope where it's called is the root of the document.",
+            ""
+        ],
+        "returns": {
+            "description": [
+                "Returns a boolean depending on the scope where it's called"
             ]
         },
         "example": [
             {
                 "description": [
-                    "<p>Apply an <code>igx-palette</code> to theme schema</p>",
-                    ""
-                ],
-                "code": [
-                    "$custom-palette: igx-palette($primary: red, $secondary: blue);",
-                    "$custom-schema: (",
-                    "  my-color: (",
-                    "     igx-color: ('primary', 800),",
-                    "     rgba: .5",
-                    "  ),",
-                    "  roundness: 5px",
-                    ");",
-                    "$theme: apply-palette($custom-schema, $custom-palette); // A map with palette values resolved."
-                ]
-            }
-        ]
-    },
-    "is-root": {
-        "description": [
-            "<p>Returns true if the scope where it&#39;s called",
-            "is the root of the document.</p>",
-            ""
-        ],
-        "example": [
-            {
-                "description": [
-                    "<p>Check if the current scope is root</p>",
-                    ""
+                    "Check if the current scope is root"
                 ],
                 "code": [
                     "@mixin smart-mixin() {",
@@ -391,10 +333,85 @@
             }
         ]
     },
-    "random-color": {
+    "is-host": {
         "description": [
-            "<p>Returns a random color.</p>",
+            "Returns true if the scope where it's called is :host.",
             ""
+        ],
+        "returns": {
+            "description": [
+                "Returns a boolean depending on the scope where it's called"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Check if the current scope is :root"
+                ],
+                "code": [
+                    "@mixin smart-mixin() {",
+                    "  $host: is-host();",
+                    "",
+                    "  @if is-host() {",
+                    "    /* style rules here */",
+                    "  }",
+                    "}"
+                ]
+            }
         ]
+    },
+    "split": {
+        "description": [
+            "Splits a string into a list by a given separator.",
+            ""
+        ],
+        "parameters": {
+            "string": {
+                "description": [
+                    "The string to split."
+                ]
+            },
+            "separator": {
+                "description": [
+                    "The string separator to split the string by."
+                ]
+            }
+        }
+    },
+    "replace": {
+        "description": [
+            "Returns a new string with one, some, or all matches of a string replaced by a replacement.",
+            ""
+        ],
+        "parameters": {
+            "string": {
+                "description": [
+                    "The target string."
+                ]
+            },
+            "search": {
+                "description": [
+                    "The term to search form."
+                ]
+            },
+            "replace": {
+                "description": [
+                    "The string to replace the search term with."
+                ]
+            }
+        }
+    },
+    "to-number": {
+        "description": [
+            "Converts a string to a number.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The target string."
+                ]
+            }
+        }
     }
 }

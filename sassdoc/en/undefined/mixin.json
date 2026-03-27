@@ -1,0 +1,89 @@
+{
+    "css-vars-from-theme": {
+        "description": [
+            "Parses a map of key value pairs from component themes to scoped CSS variables.",
+            "Emits local variables with a fallback chain: platform-specific → universal → default value.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The component theme used for generating CSS variables."
+                ]
+            },
+            "name": {
+                "description": [
+                    "Deprecated. This parameter is ignored."
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "A list of ignored keywords to be excluded when generating CSS variables."
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Convert theme colors to CSS variables."
+                ],
+                "code": [
+                    "$theme: digest-schema((background: color(primary, 500), foreground: contrast-color(color, 500));",
+                    ":root {",
+                    "  @include css-vars-from-theme($theme);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "_tokens-global": {
+        "description": [
+            "Emits global CSS variable tokens from a component theme.",
+            "Rewrites local variable references to global token names and",
+            "skips sizable expressions that cannot resolve at global scope.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The component theme map."
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "A list of ignored keywords to be excluded."
+                ]
+            }
+        }
+    },
+    "border-radius": {
+        "description": [
+            "Adds border-radius style with a value between an upper and a lower bound.",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "The preferred value."
+                ]
+            },
+            "min": {
+                "description": [
+                    "The minimum value."
+                ]
+            },
+            "max": {
+                "description": [
+                    "The maximum allowed value."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include border-radius(4px);"
+                ]
+            }
+        ]
+    }
+}

@@ -1,196 +1,344 @@
 ﻿{
-    "igx-type-style": {
+    "em": {
         "description": [
-            "<p>インターフェイスのような style 型のマップ。</p>",
+            "ピクセルを相対値 (em) に変換します。",
+            ""
+        ],
+        "parameters": {
+            "pixels": {
+                "description": [
+                    "変換するピクセル値。"
+                ]
+            },
+            "context": {
+                "description": [
+                    "対して変換するベース コンテキスト。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "em に変換されたピクセル値を返します。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: em(10px) em(5px);",
+                    "}",
+                    "",
+                    "// 出力",
+                    ".my-component {",
+                    "  margin: 0.625em 0.3125em;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "rem": {
+        "description": [
+            "ピクセルをルート相対値 (rem) に変換します。",
+            ""
+        ],
+        "parameters": {
+            "pixels": {
+                "description": [
+                    "変換するピクセル値。"
+                ]
+            },
+            "context": {
+                "description": [
+                    "対して変換するベース コンテキスト。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "rem に変換されたピクセル値を返します。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: rem(10px) rem(5px);",
+                    "}",
+                    "",
+                    "// 出力",
+                    ".my-component {",
+                    "  margin: 0.625rem 0.3125rem;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "px": {
+        "description": [
+            "相対値 (em/rem) をピクセルに変換します。",
+            ""
+        ],
+        "parameters": {
+            "num": {
+                "description": [
+                    "変換される相対値。"
+                ]
+            },
+            "context": {
+                "description": [
+                    "対して変換するベース コンテキスト。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "ピクセルに変換された相対値を返します。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: px(3rem);",
+                    "}",
+                    "",
+                    "// 出力",
+                    ".my-component {",
+                    "  margin: 48px;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "type-style": {
+        "description": [
+            "ITypeScale リストに準拠するタイプ スタイルを含むタイプ スケール マップを作成します。",
             ""
         ],
         "parameters": {
             "font-family": {
                 "description": [
-                    "<p>Style 型のフォントのサイズ。</p>",
-                    ""
+                    "タイプ スタイルのフォント ファミリ。"
                 ]
             },
             "font-size": {
                 "description": [
-                    "<p>Style 型のフォントのサイズ。</p>",
-                    ""
+                    "タイプ スタイルのフォントのサイズ。"
                 ]
             },
             "font-weight": {
                 "description": [
-                    "<p>Style 型のフォントのウェイト。</p>",
-                    ""
+                    "タイプ スタイルのフォントのウェイト。"
+                ]
+            },
+            "font-style": {
+                "description": [
+                    "タイプ スタイルのフォント スタイル。"
                 ]
             },
             "line-height": {
                 "description": [
-                    "<p>Style 型の線の高さ。</p>",
-                    ""
+                    "タイプ スタイルの線の高さ。"
                 ]
             },
             "letter-spacing": {
                 "description": [
-                    "<p>Style 型の文字の間隔。</p>",
-                    ""
+                    "タイプ スタイルの文字の間隔。"
                 ]
             },
             "text-transform": {
                 "description": [
-                    "<p>Style 型の text-transform プロパティ。</p>",
-                    ""
+                    "タイプ スタイルの text-transform プロパティ。"
+                ]
+            },
+            "margin-top": {
+                "description": [
+                    "タイプ スタイルの margin-top プロパティ。"
+                ]
+            },
+            "margin-bottom": {
+                "description": [
+                    "タイプ スタイルの margin-bottom プロパティ。"
                 ]
             }
         },
         "returns": {
             "description": [
-            "<p>Style 型のすべての定義済みのプロパティのマップ。</p>",
-            ""
+                "タイプ スタイルのすべての定義済みのプロパティのマップ。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$main_navigation: type-style(",
+                    "   $font-size: rem(14px),",
+                    "   $font-weight: 600,",
+                    "   $letter-spacing: rem(.1px),",
+                    "   $line-height: rem(14px),",
+                    "   $text-transform: none,",
+                    ");",
+                    "",
+                    "// type-style() mixin を使用して、type-style() 関数から生成された新しいタイプ スタイルを使用します。",
+                    ".main-nav {",
+                    "  @include type-style($main_navigation);",
+                    "}"
+                ]
+            }
         ]
-    }
     },
-    "igx-type-scale": {
+    "type-scale": {
         "description": [
-            "<p>以下の項目のために style 型を含む scale 型のマップを作成します。</p>",
-            "<ul>",
-            "<li>h1</li>",
-            "<li>h2</li>",
-            "<li>h3</li>",
-            "<li>h4</li>",
-            "<li>h5</li>",
-            "<li>h6</li>",
-            "<li>subtitle-1</li>",
-            "<li>subtitle-2</li>",
-            "<li>body-1</li>",
-            "<li>body-2</li>",
-            "<li>button</li>",
-            "<li>caption</li>",
-            "<li>overline</li>",
-            "</ul>",
+            "ITypeScale リストに準拠するタイプ スタイルを含むタイプ スケール マップを作成します。",
             ""
         ],
         "parameters": {
             "h1": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は h1 要素と <code>igx-font-h1</code> クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "h2": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は h2要素と <code>igx-font-h2/code> クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "h3": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は h3要素と <code>igx-font-h3<code> クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "h4": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は h5要素と <code>igx-font-h4</code> クラスの要素。 クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "h5": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は h5要素と <code>igx-font-h5</code> クラスの要素。 クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "h6": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は h6要素と <code>igx-font-h6<code> クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "subtitle-1": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は <code>igx-font-subtitle-1</code> の要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "subtitle-2": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は <code>igx-font-subtitle-2</code> の要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "body-1": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は <code>igx-font-body-1</code> クラスの要素。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "body-2": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は <code>igx-font-body-2</code> クラスの要素。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "button": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は <code>igx-button</code> クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "caption": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は<code>igx-font-caption</code> クラスの要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
                 ]
             },
             "overline": {
                 "description": [
-                    "<p>Igx-type-style 関数に生成された style 型プロパティを含むマップ。この scale 型は <code>igx-font-overline</code> の要素をスタイル設定します。</p>",
-                    ""
+                    "type-style 関数に生成されたタイプ スタイル プロパティを含むマップ。"
+                ]
+            },
+            "_theme": {
+                "description": [
+                    "このタイプ スケールに関連するテーマ。内部使用のみ。"
                 ]
             }
         },
         "returns": {
             "description": [
-            "<p>すべての定義済み scale 型のマップ。</p>",
-            ""
+                "すべての定義済み タイプ スケールのマップ。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "// 最初に使用するタイプ スタイルを定義します",
+                    "$my-body-1: type-style(",
+                    "   $font-size: rem(14px),",
+                    ");",
+                    "",
+                    "// タイプ スタイル マップを使用して、既存のマップの 1 つをオーバーライドします。",
+                    "$type-scale: type-scale(",
+                    "  ...",
+                    "  $body-1: $my-body-1,",
+                    "  ...",
+                    ");"
+                ]
+            }
         ]
-        }
     },
-    "igx-type-scale-category": {
+    "type-scale-category": {
         "description": [
-            "<p>Scale 型カテゴリ config を取得します。</p>",
+            "タイプ スケール カテゴリ config を取得します。",
             ""
         ],
         "parameters": {
             "scale": {
                 "description": [
-                    "<p>Igx-type-scale が生成される scale 型のマップ。</p>",
-                    ""
+                    "type-scale が生成されるようにタイプ スケールのマップ参照。"
                 ]
             },
             "category": {
                 "description": [
-                    "<p>設定する必要のあるスケール カテゴリ。&#39;h1&#39;; など。</p>",
-                    ""
+                    "設定する必要のあるスケール カテゴリ。'h1' など。"
                 ]
             }
         },
         "returns": {
             "description": [
-            "<p>Scale 型での選択されたカテゴリの config マップ。</p>",
-            ""
-        ]
-    },
+                "タイプ スケールでの選択されたカテゴリの config マップ。"
+            ]
+        },
         "example": [
             {
                 "description": [
-                    "<p><code>h1</code> scale のための scale カテゴリ config の型を取得します。.</p>",
-                    ""
+                    "`h1` scale のための scale カテゴリ config の型を取得します。"
                 ],
                 "code": [
-                    "$h1-type-scale: igx-type-scale-category($default-type-scale, 'h1');"
+                    "$h1-type-scale: type-scale-category($type-scale, 'h1');"
                 ]
             }
         ]
+    },
+    "_normalize-font-family": {
+        "description": [
+            "CSS カスタム プロパティで使用するために、font-family の値を正規化します。",
+            "値が Sass 文字列の場合、引用符が解除されて生の CSS トークンが生成され、",
+            "\"'Comic Sans MS'、sans-serif\" のような文字列化された",
+            "フォント リストが正しく出力されます。",
+            "その他のすべてのタイプ (リスト、var() 式、inherit などのキーワードなど) はそのまま返されます。",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "正規化する font-family の値です。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "正規化された値です。"
+            ]
+        }
     }
 }

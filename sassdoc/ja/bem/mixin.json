@@ -1,76 +1,310 @@
 ﻿{
+    "bem--apply-not": {
+        "description": [
+            "必要に応じて、内容を :not セレクターでラップします。",
+            ""
+        ]
+    },
     "bem-block": {
         "description": [
-            "<p>Class-selector になります。この mixin の目的は BEM ブロックの開始を表すことです。</p>",
+            "クラス セレクターとして展開します。このミックスインの主な目的は、",
+            "BEM ブロックの開始を明確に示すことです。",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>ブロックの名前。</p>",
-                    ""
+                    "ブロックの名前。"
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   background: green;",
+                    "}",
+                    "",
+                    "// 出力",
+                    ".block { background: green; }"
+                ]
+            }
+        ]
     },
     "bem-elem": {
         "description": [
-            "<p>コンテキストに基づいて BEM 要素セレクターになります。",
-            "ブロックの中で、ルート レベルの <code>.block__elem</code> を作成します。",
-            "Mod または疑似セレクターの中に入れ子にされた <code>.block--mod .block__elem</code> を作成します。",
-            "$Mod を含む場合、ブロック セレクターに追加されます。複数 $mods はサポートしません。</p>",
+            "コンテキストに基づいて BEM 要素セレクターになります。",
+            "ブロックの中で、ルート レベルの `.block__elem` を作成します。",
+            "Mod または疑似セレクターの中に入れ子にされた `.block--mod .block__elem` を作成します。",
+            "$Mod を含む場合、ブロック セレクターに追加されます。複数の",
+            "$mods はサポートしません。",
             ""
         ],
         "parameters": {
             "elem": {
                 "description": [
-                    "<p>サブ要素の名前。</p>",
-                    ""
+                    "サブ要素の名前。"
                 ]
             },
             "m": {
                 "description": [
-                    "<p>修飾の名前。</p>",
-                    ""
+                    "修飾の名前。"
                 ]
             },
             "mod": {
                 "description": [
-                    "<p><code>$m</code> のエイリアス。</p>",
-                    ""
+                    "`$m` のエイリアス。"
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-elem(element) {",
+                    "     background: blue;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block__element { background: blue; }"
+                ]
+            }
+        ]
     },
     "bem-mod": {
         "description": [
-            "<p>BEM ブロック修飾になります。",
-            "この mixin は 要素修飾を生成しません。代わりに bem-elem mixin を使用してください。",
-            "操作の意味が不明なため、疑似セレクター内に bem-mod のネストはサポートしません。</p>",
-            ""
-        ],
-        "parameters": {
-            "mod": {
-                "description": [
-                    "<p>修飾の名前。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "bem-mods": {
-        "description": [
-            "<p>block--modifier.[block--modifier...] .block__el になります。 ",
-            "Mixin はブロックまたはブロック要素に 2 つ以上の修飾は同時に適用されるときに役に立ちます。</p>",
+            "オプションの除外を含む複数のブロック修飾子のセレクターを生成します。",
             ""
         ],
         "parameters": {
             "mods": {
                 "description": [
-                    "<p>修飾のリスト。</p>",
+                    "修飾子名のリスト。"
+                ]
+            },
+            "options": {
+                "description": [
+                    "オプションの構成マップ。"
+                ]
+            },
+            "options.not": {
+                "description": [
+                    ":not() で除外する修飾子。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(card) {",
+                    "  @include bem-mods(large, primary, (not: outline)) {",
+                    "    // Applies to .card--large, .card--primary",
+                    "    // but not when .card--outline is present",
+                    "  }",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "bem-mods": {
+        "description": [
+            "block--modifier.[block--modifier...] .block__el になります。",
+            "このミックスインはブロックまたはブロック要素に",
+            "2 つ以上の修飾は同時に適用されるときに役に立ちます。",
+            ""
+        ],
+        "parameters": {
+            "mods": {
+                "description": [
+                    "修飾のリスト。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include bem-block(block) {",
+                    "   @include bem-mods(error, warn) {",
+                    "     position: absolute;",
+                    "   }",
+                    "}",
+                    "// Return",
+                    ".block--error,",
+                    ".block--warn {",
+                    "    position: absolute;",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "bem": {
+        "description": [
+            "完全 BEM ルールを生成します。",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "文字列ブロックの名前。必須。"
+                ]
+            },
+            "elem": {
+                "description": [
+                    "サブ要素の名前。`$mod` が存在しない場合は、",
+                    "$block と結合されます。$mod が存在する場合、それは `$block--$mod` の下にネストされます。"
+                ]
+            },
+            "mod": {
+                "description": [
+                    "ブロック修飾。"
+                ]
+            },
+            "mods": {
+                "description": [
+                    "ブロック修飾のリスト。",
                     ""
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "ブロックを含みます。"
+                ],
+                "code": [
+                    "@include bem(block) {",
+                    "  background: blue;",
+                    "};",
+                    "",
+                    "// 出力",
+                    ".block {",
+                    "  background: blue;",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "要素とブロックを含みます。"
+                ],
+                "code": [
+                    " @include bem(block, $elem: elem) {",
+                    "   background: blue;",
+                    " }",
+                    "",
+                    "// 出力",
+                    " .block__elem {",
+                    "   background: blue;",
+                    " }"
+                ]
+            },
+            {
+                "description": [
+                    "ブロック、要素と要素修飾を含みます。"
+                ],
+                "code": [
+                    "@include bem(block, $elem: (elem, mod)) {",
+                    "  background: blue;",
+                    "}",
+                    "",
+                    "// 出力",
+                    ".block__elem--mod {",
+                    "  background: blue;",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "ブロックとブロック修飾を含みます。"
+                ],
+                "code": [
+                    "@include bem(block, $mod: mod) {",
+                    "  background: blue;",
+                    "}",
+                    "",
+                    "// 出力",
+                    ".block--mod {",
+                    "  background: blue;",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "複数の修飾子を持つブロックを含みます。"
+                ],
+                "code": [
+                    "@include bem(block, $mods: (mod-1, mod-2)) {",
+                    "   background: blue;",
+                    " }",
+                    "",
+                    " // 出力",
+                    " .block--mod-1.block--mod-2 {",
+                    "   background: blue;",
+                    " }"
+                ]
+            },
+            {
+                "description": [
+                    "ブロック修飾を続くブロック サブ要素を含みます。"
+                ],
+                "code": [
+                    "@include bem(block, $m:mod, $e:elem) {",
+                    "  background: blue;",
+                    "}",
+                    "",
+                    "// 出力",
+                    ".block--mod .block__elem {",
+                    "  background: blue;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "block": {
+        "description": [
+            "bem-block と同じです。",
+            ""
+        ]
+    },
+    "elem": {
+        "description": [
+            "bem-elem と同じです。",
+            ""
+        ]
+    },
+    "mod": {
+        "description": [
+            "bem-mod と同じです。",
+            ""
+        ]
+    },
+    "mods": {
+        "description": [
+            "bem-mods と同じです。",
+            ""
+        ]
+    },
+    "b": {
+        "description": [
+            "bem-block と同じです。",
+            ""
+        ]
+    },
+    "e": {
+        "description": [
+            "bem-elem と同じです。",
+            ""
+        ]
+    },
+    "m": {
+        "description": [
+            "bem-mod と同じです。",
+            ""
+        ]
+    },
+    "mx": {
+        "description": [
+            "bem-mods と同じです。",
+            ""
+        ]
     }
 }

@@ -1,0 +1,80 @@
+{
+    "elevations": {
+        "description": [
+            "指定したエレベーション マップの CSS 変数を生成します。",
+            ""
+        ],
+        "parameters": {
+            "elevations": {
+                "description": [
+                    "CSS 変数を生成するために使用するエレベーション マップ。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "エレベーションの CSS 変数を生成します。"
+                ],
+                "code": [
+                    "$elevations: (",
+                    "    small: box-shadow(0 .125rem .25rem rgba(0 0 0 / 75%)),",
+                    "    medium: box-shadow(0 .25rem .5rem rgba(0 0 0 / 85%)),",
+                    "    large: box-shadow(0 .75rem 1rem rgba(0 0 0 / 95%))",
+                    ");",
+                    ":root {",
+                    "    @include elevations($elevations);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "elevation": {
+        "description": [
+            "名前による立面図の box-shadow スタイルが含まれています",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "影の名前。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "その名前でボックス シャドウを含めます。"
+                ],
+                "code": [
+                    ".my-class {",
+                    "  @include elevation(small);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "configure": {
+        "description": [
+            "エレベーションの影の色を構成します。",
+            ""
+        ],
+        "parameters": {
+            "color-1": {
+                "description": [
+                    "本影の色。"
+                ]
+            },
+            "color-2": {
+                "description": [
+                    "半影の色。"
+                ]
+            },
+            "color-3": {
+                "description": [
+                    "アンビエント影の色。"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "css-vars-from-theme": {
+        "description": [
+            "コンポーネント テーマのキー値のペアのマップをスコープ付き CSS 変数に解析します。",
+            "フォールバック チェーン (プラットフォーム固有 → ユニバーサル → デフォルト値) を使用してローカル変数を出力します。",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "CSS 変数の生成に使用されるコンポーネント テーマです。"
+                ]
+            },
+            "name": {
+                "description": [
+                    "非推奨。このパラメーターは無視されます。"
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "CSS 変数の生成時に除外される無視キーワードのリストです。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "テーマの色を CSS 変数に変換します。"
+                ],
+                "code": [
+                    "$theme: digest-schema((background: color(primary, 500), foreground: contrast-color(color, 500));",
+                    ":root {",
+                    "  @include css-vars-from-theme($theme);",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "_tokens-global": {
+        "description": [
+            "コンポーネント テーマからグローバル CSS 変数トークンを出力します。",
+            "ローカル変数参照をグローバル トークン名に書き換え、",
+            "グローバル スコープで解決できない大きな式をスキップします。",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "コンポーネント テーマ マップです。"
+                ]
+            },
+            "ignored": {
+                "description": [
+                    "除外する無視キーワードのリストです。"
+                ]
+            }
+        }
+    },
+    "border-radius": {
+        "description": [
+            "指定された上限値と下限値の間で border-radius を設定するスタイルを追加します。",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "優先される値。"
+                ]
+            },
+            "min": {
+                "description": [
+                    "最小値。"
+                ]
+            },
+            "max": {
+                "description": [
+                    "最大許容値。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    "@include border-radius(4px);"
+                ]
+            }
+        ]
+    }
+}

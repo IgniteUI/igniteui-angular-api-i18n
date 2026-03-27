@@ -1,0 +1,77 @@
+{
+    "configure-colors": {
+        "description": [
+            "Configures the color module.",
+            ""
+        ],
+        "parameters": {
+            "enhanced-accessibility": {
+                "description": [
+                    "Enables features like color blind brushes for chart themes."
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    ".enhanced-accessibility {",
+                    "   @include configure-colors(true);",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "adaptive-contrast": {
+        "description": [
+            "Sets up CSS custom properties for WCAG contrast calculations.",
+            "These properties are used to determine the appropriate text contrast color",
+            "based on WCAG accessibility guidelines.",
+            ""
+        ],
+        "parameters": {
+            "level": {
+                "description": [
+                    "WCAG contrast level ('a', 'aa', or 'aaa')",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Using the mixin with default AA level"
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast();",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "Using the mixin with AAA level"
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast('aaa');",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "Generated CSS custom properties"
+                ],
+                "code": [
+                    ":root {",
+                    "  --ig-wcag-a: 0.31;    // Level A threshold",
+                    "  --ig-wcag-aa: 0.185;   // Level AA threshold",
+                    "  --ig-wcag-aaa: 0.178;  // Level AAA threshold",
+                    "  --ig-contrast-level: var(--ig-wcag-aa);",
+                    "  --y: clamp(0, (y / var(--ig-contrast-level) - 1) * -infinity, 1);",
+                    "  --y-contrast: xyz-d65 var(--y) var(--y) var(--y);",
+                    "}"
+                ]
+            }
+        ]
+    }
+}

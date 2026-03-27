@@ -1,218 +1,280 @@
 {
-    "gen-color": {
+    "palette": {
         "description": [
-            "<p>Generates a color shade from base color and saturation level.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The base color to be used to generate a color shade.</p>",
-                    ""
-                ]
-            },
-            "saturation": {
-                "description": [
-                    "<p>The saturation level used to create the color shade.</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-color": {
-        "description": [
-            "<p>Retrieves a color from a color palette.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>The source palette map.</p>",
-                    ""
-                ]
-            },
-            "color": {
-                "description": [
-                    "<p>The target color from the color palette.</p>",
-                    ""
-                ]
-            },
-            "variant": {
-                "description": [
-                    "<p>The target color shade from the color palette.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>White if no palette, color, and variant matches found.</p>",
-                ""
-            ]
-        }
-    },
-    "igx-contrast-color": {
-        "description": [
-            "<p>Retrieves a contrast text color for a given color from a color palette.</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>The source palette map.</p>",
-                    ""
-                ]
-            },
-            "color": {
-                "description": [
-                    "<p>The target color from the color palette.</p>",
-                    ""
-                ]
-            },
-            "variant": {
-                "description": [
-                    "<p>The target color shade from the color palette.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>[#fff] - Returns white if now palette, color and/or variant matches found.</p>",
-                ""
-            ]
-        }
-    },
-    "text-contrast": {
-        "description": [
-            "<p>Returns a contrast color for a passed color.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The color used to return a contrast color for.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>Returns either white or black depending on the luminance of the input color.</p>",
-                ""
-            ]
-        }
-    },
-    "generate-palette": {
-        "description": [
-            "<p>Generates a Material-like color palette for a single color.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The base color used to generate the palette.</p>",
-                    ""
-                ]
-            },
-            "saturations": {
-                "description": [
-                    "<p>The saturation list of color variants.",
-                    "Based on the Material color system.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>A map consisting of 14 color variations and 14",
-                "text contrast colors for each variation.</p>",
-                ""
-            ]
-        }
-    },
-    "grayscale-palette": {
-        "description": [
-            "<p>Generates grayscale color palette from a color.</p>",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "<p>The base color used to generate the palette.</p>",
-                    ""
-                ]
-            },
-            "shades": {
-                "description": [
-                    "<p>A map of variations as keys and opacities as values.",
-                    "Based on the Material color system.</p>",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "<p>A map consisting of 10 grayscale color variations and 10",
-                "text contrast colors for each variation.</p>",
-                ""
-            ]
-        }
-    },
-    "igx-palette": {
-        "description": [
-            "<p>Generates a color palette.</p>",
+            "Generates a color palette.",
             ""
         ],
         "parameters": {
             "primary": {
                 "description": [
-                    "<p>The primary color used to generate the primary color palette.</p>",
-                    ""
+                    "The primary color used to generate the primary color palette (required)."
                 ]
             },
             "secondary": {
                 "description": [
-                    "<p>The secondary color used to generate the secondary color palette.</p>",
-                    ""
+                    "The secondary color used to generate the secondary color palette (required)."
+                ]
+            },
+            "surface": {
+                "description": [
+                    "The color used as a background in components (required)."
+                ]
+            },
+            "gray": {
+                "description": [
+                    "The color used for generating the grayscale palette (optional)."
                 ]
             },
             "info": {
                 "description": [
-                    "<p>The information color used throughout the application.</p>",
-                    ""
+                    "The information color used throughout the application (optional)."
                 ]
             },
             "success": {
                 "description": [
-                    "<p>The success color used throughout the application.</p>",
-                    ""
+                    "The success color used throughout the application (optional)."
                 ]
             },
             "warn": {
                 "description": [
-                    "<p>The warning color used throughout the application.</p>",
-                    ""
+                    "The warning color used throughout the application (optional)."
                 ]
             },
             "error": {
                 "description": [
-                    "<p>The error color used throughout the application.</p>",
-                    ""
+                    "The error color used throughout the application (optional)."
                 ]
             },
-            "grays": {
+            "variant": {
                 "description": [
-                    "<p>The color used for generating the grayscale palette.</p>",
-                    ""
+                    "Used internally (optional)."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>A map consisting of 74 color variations, including the <code>primary</code>, <code>secondary</code>, <code>grays</code>,",
-                "<code>info</code>, <code>success</code>, <code>warn</code>, and <code>error</code> colors.</p>",
+                "A map consisting of color shades for the passed base colors (primary, secondary, gray, etc)."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "// Pass the required colors",
+                    "$my-palette: palette(",
+                    "  $primary: rebeccapurple,",
+                    "  $secondary: orange,",
+                    "  $surface: white,",
+                    ");",
+                    "",
+                    "// Include the generated palette colors as CSS variables.",
+                    "@include palette($my-palette);"
+                ]
+            }
+        ]
+    },
+    "shades": {
+        "description": [
+            "Generates color shades for a given color.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The name of the color."
+                ]
+            },
+            "color": {
+                "description": [
+                    "The base color used to generate the shades."
+                ]
+            },
+            "shades": {
+                "description": [
+                    "The list of shade variants."
+                ]
+            },
+            "surface": {
+                "description": [
+                    "The surface color. Useful if generating shades of gray (optional)."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A map consisting of color shades and their respective contrast colors.",
                 ""
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$color-name: 'accent';",
+                    "",
+                    "// Include the generated palette colors as CSS variables.",
+                    "@include palette(",
+                    "  (",
+                    "    #{$color-name}: shades($color-name, #a57865, $IColorShades),",
+                    "  )",
+                    ");"
+                ]
+            }
+        ]
+    },
+    "shade": {
+        "description": [
+            "Generates a color shade for a given base colors.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The base color name (primary, secondary, etc.) to be used to generate a color variant."
+                ]
+            },
+            "color": {
+                "description": [
+                    "The color value to be used to generate a color shade."
+                ]
+            },
+            "shade": {
+                "description": [
+                    "The color shade variant."
+                ]
+            },
+            "surface": {
+                "description": [
+                    "The surface color. Useful when generating a shade of gray (optional)."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A map containing a list of HSL values and a raw color value."
+            ]
+        }
+    },
+    "color": {
+        "description": [
+            "Retrieves a color from a color palette.",
+            ""
+        ],
+        "parameters": {
+            "palette": {
+                "description": [
+                    "The source palette map (optional)."
+                ]
+            },
+            "color": {
+                "description": [
+                    "The target color from the color palette."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "The target color shade from the color palette."
+                ]
+            },
+            "opacity": {
+                "description": [
+                    "Optional opacity to apply to the color shade."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The raw color shade or CSS variable reference from the palette.",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Getting a color from the palette"
+                ],
+                "code": [
+                    "// Without providing a palette",
+                    ".my-component-1 {",
+                    "   background: color($color: primary, $variant: 200); // var(--ig-primary-200)",
+                    " }",
+                    "",
+                    " // With a specific palette",
+                    ".my-component-2 {",
+                    "   background: color($my-palette, primary, 200); // #88c0e5",
+                    " }"
+                ]
+            },
+            {
+                "description": [
+                    "Getting a color with opacity"
+                ],
+                "code": [
+                    ".my-component-1 {",
+                    "   background: color($color: primary, $variant: 200, $opacity: 0.5); // hsl(from var(--ig-primary-200) h s l/0.5)",
+                    " }",
+                    "",
+                    " // With a specific palette",
+                    ".my-component-2 {",
+                    "   background: color($my-palette, primary, 200, $opacity: 0.5); // rgba(136, 192, 229, 0.5)",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "contrast-color": {
+        "description": [
+            "Retrieves a contrast color for a given color variant from a color palette. Works similarly to the color function.",
+            ""
+        ],
+        "parameters": {
+            "palette": {
+                "description": [
+                    "The source palette map (optional)."
+                ]
+            },
+            "color": {
+                "description": [
+                    "The target color from the color palette."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "The target color shade from the color palette."
+                ]
+            },
+            "opacity": {
+                "description": [
+                    "Optional opacity to apply to the color shade."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The raw contrast color shade or CSS variable from the palette.",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "without passing a palette"
+                ],
+                "code": [
+                    ".my-component {",
+                    "   background: color($color: 'primary', $variant: 200);",
+                    "   color: contrast-color($color: 'primary', $variant: 200);",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "chart-brushes": {
+        "description": [
+            "Returns a list of colors to be used as chart brushes. The return value depends on the value of enhanced-accessibility.",
+            ""
+        ],
+        "returns": {
+            "description": [
+                "A list of colors to be used as chart brushes."
             ]
         }
     }

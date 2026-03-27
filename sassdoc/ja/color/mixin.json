@@ -1,0 +1,77 @@
+{
+    "configure-colors": {
+        "description": [
+            "カラー モジュールを構成します。",
+            ""
+        ],
+        "parameters": {
+            "enhanced-accessibility": {
+                "description": [
+                    "チャートテーマに対して、色覚に配慮したブラシなどの機能を有効にします。"
+                ]
+            }
+        },
+        "example": [
+            {
+                "code": [
+                    ".enhanced-accessibility {",
+                    "   @include configure-colors(true);",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "adaptive-contrast": {
+        "description": [
+            "WCAG コントラスト計算用の CSS カスタム プロパティを設定します。",
+            "これらのプロパティは、WCAG アクセシビリティ ガイドラインに基づいて",
+            "適切なテキストの色を決定するために使用されます。",
+            ""
+        ],
+        "parameters": {
+            "level": {
+                "description": [
+                    "WCAG コントラスト レベル ('a'、'aa'、または 'aaa')",
+                    ""
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "デフォルトの AA レベルでミックスインを使用します。"
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast();",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "AAA レベルでミックスインを使用します。"
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include adaptive-contrast('aaa');",
+                    "}"
+                ]
+            },
+            {
+                "description": [
+                    "生成された CSS カスタムプロパティ"
+                ],
+                "code": [
+                    ":root {",
+                    "  --ig-wcag-a: 0.31;    // レベル A の閾値",
+                    "  --ig-wcag-aa: 0.185;   // レベル AA の閾値",
+                    "  --ig-wcag-aaa: 0.178;  // レベル AAA の閾値",
+                    "  --ig-contrast-level: var(--ig-wcag-aa);",
+                    "  --y: clamp(0, (y / var(--ig-contrast-level) - 1) * -infinity, 1);",
+                    "  --y-contrast: xyz-d65 var(--y) var(--y) var(--y);",
+                    "}"
+                ]
+            }
+        ]
+    }
+}

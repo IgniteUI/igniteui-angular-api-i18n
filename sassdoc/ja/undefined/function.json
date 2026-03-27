@@ -1,0 +1,251 @@
+{
+    "dynamic-shade": {
+        "description": [
+            "LCH 色空間で明度を調整することにより、色の動的なシェードを計算します。",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "シェード化する基準色。"
+                ]
+            },
+            "lightness": {
+                "description": [
+                    "移動先の目標明度値。"
+                ]
+            },
+            "percentage": {
+                "description": [
+                    "目標明度に向かって移動する割合。"
+                ]
+            },
+            "offset": {
+                "description": [
+                    "方向に基づいて加算または減算されるオフセット。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "LCH 色空間で動的にシェード化された色。"
+            ]
+        }
+    },
+    "digest-schema": {
+        "description": [
+            "テーマ スキーマを解析し、解決済みのテーマ マップを返します。",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "テーマ スキーマ。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "解決済みの値を含むテーマ マップ。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "スキーマに対する解決済みテーマを取得します。"
+                ],
+                "code": [
+                    "$custom-schema: (",
+                    "  foreground: (",
+                    "     color: ('primary', 800, .5)",
+                    "  ),",
+                    "  border-radius: (rem(5px), rem(0), rem(8px)) // デフォルト、最小、最大半径",
+                    ");",
+                    "$theme: digest-schema($custom-schema);"
+                ]
+            }
+        ]
+    },
+    "resolve-value": {
+        "description": [
+            "スキーマの値を解決します。",
+            "指定された値マップのキーが呼び出す関数名であり、",
+            "そのキーに対応する値が関数へ渡す引数となります。",
+            ""
+        ],
+        "parameters": {
+            "instructions": {
+                "description": [
+                    "命令セットとして使用するマップ。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "解決された値。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "プライマリ 500 の色を解決します。"
+                ],
+                "code": [
+                    "$value: resolve-value((color: (primary, 500)));"
+                ]
+            }
+        ]
+    },
+    "var-get": {
+        "description": [
+            "コンポーネントテーマ内の指定キーに対応する CSS カスタム プロパティの参照を取得します。",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "値が読み込まれるソース テーマ。"
+                ]
+            },
+            "property": {
+                "description": [
+                    "プロパティの値として割り当てられるテーマ マップからのキー。"
+                ]
+            },
+            "fallback": {
+                "description": [
+                    "CSS プロパティが定義されていない場合に使用するデフォルト値。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "テーマ内のプロパティに対応する CSS 参照。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "一連のルール内で、color プロパティにテーマからの値を割り当てます。"
+                ],
+                "code": [
+                    "[part='icon'] {",
+                    "  color: var-get($theme, 'icon-color', inherit); // var(--icon-color, inherit)",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "border-radius": {
+        "description": [
+            "指定された上限値と下限値の間で値を返します。",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "優先される値。"
+                ]
+            },
+            "min": {
+                "description": [
+                    "最小値。"
+                ]
+            },
+            "max": {
+                "description": [
+                    "最大許容値。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "クランプされた値。"
+            ]
+        }
+    },
+    "_is-emittable": {
+        "description": [
+            "テーマ マップからのキーと値のペアを CSS 変数として発行する場合は true を返します。",
+            "マップ値 (ネストされたサブテーマ) と特殊な 'prefix' キーを除外します。",
+            ""
+        ],
+        "parameters": {
+            "key": {
+                "description": [
+                    "テーマのプロパティ キーです。"
+                ]
+            },
+            "value": {
+                "description": [
+                    "テーマのプロパティ値です。"
+                ]
+            }
+        }
+    },
+    "_is-sizable": {
+        "description": [
+            "値にコンポーネント スコープの変数 ",
+            "(--is-large, --is-medium, --is-small) に依存する sizable() 式が含まれている場合は true を返します。",
+            "CSS カスタム プロパティは消費スコープではなく宣言スコープで解決されるため、",
+            "これらの式はグローバル スコープで解決できません。",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "確認するテーマプロパティの値。"
+                ]
+            }
+        }
+    },
+    "_collect-emittable-keys": {
+        "description": [
+            "クリーン化されたテーマ マップからすべての発行可能なキーを収集します。",
+            "グローバル トークン参照に書き換える必要があるローカル変数名のリスト",
+            "を構築するために使用されます。",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "無視されたキーがすでに削除されたテーマ マップです。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "発行可能なキー名のリストです。"
+            ]
+        }
+    },
+    "_globalize-value": {
+        "description": [
+            "値内のローカル CSS 変数参照をグローバル トークン参照に書き換えます。",
+            "たとえば、`var(--background)` は `var(--ig-avatar-background)` になります。",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "元のテーマプロパティの値です。"
+                ]
+            },
+            "name": {
+                "description": [
+                    "コンポーネント名 (例: 'avatar') です。"
+                ]
+            },
+            "keys": {
+                "description": [
+                    "ローカル参照を書き換える必要がある発行可能なキーのリストです。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "すべてのローカル変数参照がグローバル トークン名に書き換えられた値です。"
+            ]
+        }
+    }
+}

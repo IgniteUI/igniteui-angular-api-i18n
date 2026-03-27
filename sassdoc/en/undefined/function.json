@@ -1,0 +1,251 @@
+{
+    "dynamic-shade": {
+        "description": [
+            "Calculates a dynamic shade of a color by adjusting its lightness in LCH color space.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The base color to shade."
+                ]
+            },
+            "lightness": {
+                "description": [
+                    "The target lightness value to move toward."
+                ]
+            },
+            "percentage": {
+                "description": [
+                    "The percentage to move toward the target lightness."
+                ]
+            },
+            "offset": {
+                "description": [
+                    "The offset added or subtracted based on direction."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The dynamically shaded color in LCH color space"
+            ]
+        }
+    },
+    "digest-schema": {
+        "description": [
+            "Digests a theme schema and returns a resolved theme map.",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "A theme schema."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A theme map with resolved values."
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Get the resolved theme for a schema"
+                ],
+                "code": [
+                    "$custom-schema: (",
+                    "  foreground: (",
+                    "     color: ('primary', 800, .5)",
+                    "  ),",
+                    "  border-radius: (rem(5px), rem(0), rem(8px)) // default, min and max radius",
+                    ");",
+                    "$theme: digest-schema($custom-schema);"
+                ]
+            }
+        ]
+    },
+    "resolve-value": {
+        "description": [
+            "Resolves schema values, where the keys of the passed value map are the names",
+            "of the functions to be called and the value for a given key is the argument",
+            "the function should be called with.",
+            ""
+        ],
+        "parameters": {
+            "instructions": {
+                "description": [
+                    "The map to be used as instruction set."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The resolved value."
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Resolve primary 500 color"
+                ],
+                "code": [
+                    "$value: resolve-value((color: (primary, 500)));"
+                ]
+            }
+        ]
+    },
+    "var-get": {
+        "description": [
+            "Retrieves the CSS custom property reference for the given key in the component theme.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The source theme to be used to read values from."
+                ]
+            },
+            "property": {
+                "description": [
+                    "A key from the theme map to assign as value to the property."
+                ]
+            },
+            "fallback": {
+                "description": [
+                    "A value to be used if the CSS property is not defined."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The CSS reference of the property in the theme."
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Assign the color property in a set of rules to a value from the theme."
+                ],
+                "code": [
+                    "[part='icon'] {",
+                    "  color: var-get($theme, 'icon-color', inherit); // var(--icon-color, inherit)",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "border-radius": {
+        "description": [
+            "Returns a value between an upper and lower bound.",
+            ""
+        ],
+        "parameters": {
+            "radius": {
+                "description": [
+                    "The preferred value."
+                ]
+            },
+            "min": {
+                "description": [
+                    "The minimum value."
+                ]
+            },
+            "max": {
+                "description": [
+                    "The maximum allowed value."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The clamped value"
+            ]
+        }
+    },
+    "_is-emittable": {
+        "description": [
+            "Returns true if a key-value pair from a theme map should be emitted as a CSS variable.",
+            "Filters out map values (nested sub-themes) and the special 'prefix' key.",
+            ""
+        ],
+        "parameters": {
+            "key": {
+                "description": [
+                    "The theme property key."
+                ]
+            },
+            "value": {
+                "description": [
+                    "The theme property value."
+                ]
+            }
+        }
+    },
+    "_is-sizable": {
+        "description": [
+            "Returns true if a value contains a sizable() expression that depends on",
+            "component-scoped variables (--is-large, --is-medium, --is-small).",
+            "These expressions cannot be resolved at global scope because CSS custom",
+            "properties resolve at the declaration scope, not the consumption scope.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The theme property value to check."
+                ]
+            }
+        }
+    },
+    "_collect-emittable-keys": {
+        "description": [
+            "Collects all emittable keys from a cleaned theme map.",
+            "Used to build the list of local variable names that need to be",
+            "rewritten to global token references.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "A theme map with ignored keys already removed."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A list of emittable key names."
+            ]
+        }
+    },
+    "_globalize-value": {
+        "description": [
+            "Rewrites local CSS variable references in a value to global token references.",
+            "For example, `var(--background)` becomes `var(--ig-avatar-background)`.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The original theme property value."
+                ]
+            },
+            "name": {
+                "description": [
+                    "The component name (e.g., 'avatar')."
+                ]
+            },
+            "keys": {
+                "description": [
+                    "The list of emittable keys whose local refs should be rewritten."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The value with all local var references rewritten to global token names."
+            ]
+        }
+    }
+}

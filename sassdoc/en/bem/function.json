@@ -1,297 +1,354 @@
 {
     "bem--selector-to-string": {
         "description": [
-            "<p>Converts a passed selector value into plain string.</p>",
+            "Converts a passed selector value into plain string.",
             ""
         ],
         "parameters": {
             "s": {
                 "description": [
-                    "<p>The selector to be converted.</p>",
-                    ""
+                    "The selector to be converted."
                 ]
             }
         }
     },
     "bem--with-dot": {
         "description": [
-            "<p>Prepends a dot to the passed BEM selector.</p>",
+            "Prepends a dot to the passed BEM selector.",
             ""
         ],
         "parameters": {
             "x": {
                 "description": [
-                    "<p>The BEM selector to prepend a dot to.</p>",
-                    ""
+                    "The BEM selector to prepend a dot to."
                 ]
             }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>Returns</p>",
-                    ""
-                ],
-                "code": [
-                    ".#{$x}"
-                ]
-            }
-        ]
+        }
     },
     "bem--mod-str": {
         "description": [
-            "<p>Converts a key-value map into a modifier string.</p>",
+            "Converts a key-value map into a modifier string",
             ""
         ],
         "parameters": {
             "m": {
                 "description": [
-                    "<p>The modifier list to get converted.</p>",
-                    ""
+                    "The modifier to convert"
                 ]
             }
+        },
+        "returns": {
+            "description": [
+                "The converted modifier string"
+            ]
         }
     },
     "bem--elem-str": {
         "description": [
-            "<p>Prefixes the block name to an element selector string,",
-            "with the element separator string used as a divider.</p>",
+            "Prefixes the block name to an element selector string,",
+            "with the element separator string used as a divider.",
             ""
         ],
         "parameters": {
             "b": {
                 "description": [
-                    "<p>The block name.</p>",
-                    ""
+                    "The block name."
                 ]
             },
             "e": {
                 "description": [
-                    "<p>The element name.</p>",
-                    ""
+                    "The element name."
                 ]
             }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>Returns</p>",
-                    ""
-                ],
-                "code": [
-                    ".block__element"
-                ]
-            }
-        ]
+        }
     },
     "bem--bem-str": {
         "description": [
-            "<p>Returns a block selector string affixed by the modifier selector,",
-            "followed by the element selector string.</p>",
+            "Returns a block selector string affixed by the modifier selector,",
+            "followed by the element selector string.",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>The block name.</p>",
-                    ""
+                    "The block name."
                 ]
             },
             "elem": {
                 "description": [
-                    "<p>The sub-element name.</p>",
-                    ""
+                    "The sub-element name."
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>The modifier name.</p>",
-                    ""
+                    "The modifier name."
                 ]
             }
-        },
-        "example": [
-            {
-                "description": [
-                    "<p>Returns</p>",
-                    ""
-                ],
-                "code": [
-                    ".block--modifier .block__element"
-                ]
-            }
-        ]
+        }
     },
     "bem--contains-elem": {
         "description": [
-            "<p>Checks if the element separator string is part of the passed string.</p>",
+            "Checks if the element separator string is part of the passed string.",
             ""
         ],
         "parameters": {
             "x": {
                 "description": [
-                    "<p>The string to check.</p>",
-                    ""
+                    "The string to check."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Will return the index of the occurance,",
-                "or null if the element separator name is not part of the passed string.</p>",
-                ""
+                "Will return the index of the occurance,",
+                "or null if the element separator name is not part of the passed string."
             ]
         }
     },
     "bem--contains-mod": {
         "description": [
-            "<p>Checks if the modifier separator string is part of the passed string.</p>",
+            "Checks if the modifier separator string is part of the passed string.",
             ""
         ],
         "parameters": {
             "x": {
                 "description": [
-                    "<p>The string to check.</p>",
-                    ""
+                    "The string to check."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Will return the index of the occurance,",
-                "or null if the modifier separator string is not part of the passed string.</p>",
-                ""
+                "Will return the index of the occurance,",
+                "or null if the modifier separator string is not part of the passed string."
             ]
         }
     },
     "bem--contains-pseudo": {
         "description": [
-            "<p>Checks if the passed selector string contains a colon.</p>",
+            "Checks if the passed selector string contains a colon.",
             ""
         ],
         "parameters": {
             "x": {
                 "description": [
-                    "<p>The string to check for colons.</p>",
-                    ""
+                    "The string to check for colons."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>Will return the index of the occurance,",
-                "or null if the string does not contain any colons.</p>",
-                ""
+                "Will return the index of the occurance,",
+                "or null if the string does not contain any colons."
             ]
         }
     },
     "bem--extract-block": {
         "description": [
-            "<p>Returns the BEM block-name that generated <code>$x</code>. Does not include leading &quot;.&quot;.</p>",
+            "Returns the BEM block-name that generated `$x`. Does not include leading \".\".",
             ""
         ],
         "parameters": {
             "x": {
                 "description": [
-                    "<p>The block name.</p>",
-                    ""
+                    "The block name."
                 ]
             }
         }
     },
     "bem--extract-first-selector": {
         "description": [
-            "<p>Returns the first selector of a nested selector string.</p>",
+            "Returns the first selector of a nested selector string.",
             ""
-        ],
-        "parameters": {
-            "x": {
-                "description": [
-                    "<p>The selector to search for.</p>",
-                    ""
-                ]
-            }
-        }
+        ]
     },
-    "bem-selector": {
+    "bem--generate-mod-list": {
         "description": [
-            "<p>Generates a full BEM selector.</p>",
+            "Generates a list of modifiers for an element",
+            ""
+        ]
+    },
+    "bem--generate-elem-selector": {
+        "description": [
+            "Generates the appropriate selector for a BEM element",
             ""
         ],
         "parameters": {
             "block": {
                 "description": [
-                    "<p>Required. A string block name.</p>",
-                    ""
+                    "The block name"
                 ]
             },
             "elem": {
                 "description": [
-                    "<p>Optional. A sub-element name. If <code>$mod</code> is not present, it is",
-                    "joined with $block. If $mod is present, it is nested under <code>$block--$mod</code>.</p>",
-                    ""
+                    "The element name"
                 ]
             },
             "mod": {
                 "description": [
-                    "<p>Optional. A block modifier.</p>",
+                    "Optional modifier"
+                ]
+            },
+            "first": {
+                "description": [
+                    "Optional first selector for nesting"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The generated selector"
+            ]
+        }
+    },
+    "bem-selector": {
+        "description": [
+            "Generates a full BEM selector.",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "A string block name. Required."
+                ]
+            },
+            "elem": {
+                "description": [
+                    "A sub-element name. If `$mod` is not present, it is",
+                    "joined with $block. If $mod is present, it is nested under `$block--$mod`."
+                ]
+            },
+            "mod": {
+                "description": [
+                    "A block modifier."
+                ]
+            },
+            "mods": {
+                "description": [
+                    "A list of block modifiers.",
                     ""
                 ]
             }
         },
+        "returns": {
+            "description": [
+                "The generated BEM selector string"
+            ]
+        },
         "example": [
             {
                 "description": [
-                    "<p>Include a block</p>",
-                    ""
+                    "Include a block"
                 ],
                 "code": [
-                    "@include bem-selector(block); // outputs .block"
+                    "$selector: bem-selector(block); // returns .block"
                 ]
             },
             {
                 "description": [
-                    "<p>Include a block and an element</p>",
-                    ""
+                    "Include a block and an element"
                 ],
                 "code": [
-                    "@include bem-selector(block, $e:elem); // outputs .block__elem"
+                    "$selector: bem-selector(block, $elem: elem); // returns .block__elem"
                 ]
             },
             {
                 "description": [
-                    "<p>Include block, element, and element modifier</p>",
-                    ""
+                    "Include block, element, and element modifier"
                 ],
                 "code": [
-                    "@include bem-selector(block, $e:(elem,emod); // outputs .block__elem-emod"
+                    "$selector: bem-selector(block, $elem: (elem, mod); // returns .block__elem--mod"
                 ]
             },
             {
                 "description": [
-                    "<p>Include block and block modifier</p>",
-                    ""
+                    "Include block and block modifier"
                 ],
                 "code": [
-                    "@include bem-selector(block, $m:mod) // outputs .block--mod"
+                    "$selector: bem-selector(block, $mod: mod) // returns .block--mod"
                 ]
             },
             {
                 "description": [
-                    "<p>Include block and modifier value</p>",
-                    ""
+                    "Include block and multiple block modifiers"
                 ],
                 "code": [
-                    "@include bem-selector(block, $m:(mod:val)); // outputs .block--mod-val"
+                    "$selector: bem-selector(block, $mods: (mod-1, mod-2)) // returns .block--mod-1.block--mod-2"
                 ]
             },
             {
                 "description": [
-                    "<p>Include block modifier followed by block sub-element</p>",
-                    ""
+                    "Include block modifier followed by block sub-element"
                 ],
                 "code": [
-                    "@include bem-selector(block, $m:mod, $e:elem); // outputs .block--mod .block__elem"
+                    "$selector: bem-selector(block, $m: mod, $e: elem); // returns .block--mod .block__elem"
+                ]
+            }
+        ]
+    },
+    "elem": {
+        "description": [
+            "Returns a BEM element selector string. If a modifier is provided, it will be appended to the element selector.",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "The block name."
+                ]
+            },
+            "elem": {
+                "description": [
+                    "The element name."
+                ]
+            },
+            "mod": {
+                "description": [
+                    "The modifier name. Optional."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The BEM element selector string."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$selector: elem('button', 'icon') // returns '.button__icon'",
+                    "$selector: elem('button', 'icon', 'big') // returns '.button__icon--big'"
+                ]
+            }
+        ]
+    },
+    "mod": {
+        "description": [
+            "Returns a BEM modifier selector string for a block.",
+            ""
+        ],
+        "parameters": {
+            "block": {
+                "description": [
+                    "The block name."
+                ]
+            },
+            "mod": {
+                "description": [
+                    "The modifier name."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The BEM modifier selector string."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$selector: mod('button', 'primary') // returns '.button--primary'",
+                    "$selector: mod('card', 'outlined') // returns '.card--outlined'"
                 ]
             }
         ]

@@ -1,0 +1,221 @@
+{
+    "_normalize-color": {
+        "description": [
+            "Normalizes a color value to ensure consistent format output.",
+            "This fixes issues with newer Sass versions that return RGB format with floating point precision.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The color to normalize."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The normalized color in hex format."
+            ]
+        }
+    },
+    "adaptive-contrast": {
+        "description": [
+            "Returns a CSS runtime calculated relative color(black or white) for a given color.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The base color used in the calculation."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Returns a relative HSL color where the lightness is adjusted",
+                "based on the specified contrast level, resulting in either black or white.",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "   --bg: #09f;",
+                    "   background: var(--bg);",
+                    "   color: adaptive-contrast(var(--bg)); // hsl(from color(from var(--bg) var(--y-contrast)) h 0 l)",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "text-contrast": {
+        "description": [
+            "Returns a contrast color for a passed color.",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "The background color used to return a contrast/forground color for."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "A list of foreground colors",
+                    "that can be used with the provided background."
+                ]
+            },
+            "contrast": {
+                "description": [
+                    "The contrast level according to WCAG 2.0 standards."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Returns either white, black, or the provided foreground",
+                "color if it meets the required contrast level.",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "   background: #09f;",
+                    "   color: text-contrast(#09f);",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "to-opaque": {
+        "description": [
+            "Mixes two colors to produce an opaque color.",
+            ""
+        ],
+        "parameters": {
+            "color-1": {
+                "description": [
+                    "The first color, usually transparent."
+                ]
+            },
+            "color-2": {
+                "description": [
+                    "The second color, usually opaque."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The color representation of the rgba value."
+            ]
+        }
+    },
+    "to-hsl": {
+        "description": [
+            "Retruns a comma separated list of hue, saturation, and lightness values for a given color.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The color to be converted to an HSL list of values."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "This list of HSL values."
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "Turn #000 into an HSL list of values"
+                ],
+                "code": [
+                    "$hsl-list: to-hsl(#000); // (0deg, 0%, 0%);"
+                ]
+            }
+        ]
+    },
+    "contrast": {
+        "description": [
+            "Calculates the contrast ratio between two colors.",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "The background color."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "The foreground color.",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The contrast ratio between the background and foreground colors."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$conrast: contrast(#09f, #000); // 7"
+                ]
+            }
+        ]
+    },
+    "luminance": {
+        "description": [
+            "Calculates the luminance for a given color.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The color to calculate luminance for.",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The calculated luminance of a given color"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$white: luminance(#fff); // 1",
+                    "$blue: luminance(#09f); // 0.3",
+                    "$black: luminance(#000); // 0"
+                ]
+            }
+        ]
+    },
+    "_lcv": {
+        "description": [
+            "Calculates the linear channel value for a given sRGB color.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The sRGB color"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The calculated linear channel value"
+            ]
+        }
+    }
+}

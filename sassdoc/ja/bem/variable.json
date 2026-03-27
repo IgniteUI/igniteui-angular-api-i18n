@@ -1,0 +1,71 @@
+{
+    "bem--sep-elem": {
+        "example": [
+            {
+                "description": [
+                    "要素セパレーターを '__' から '-' に変更します。"
+                ],
+                "code": [
+                    "$bem--sep-elem: '-';",
+                    "",
+                    "@include b(block) {",
+                    "   @include e(element) {",
+                    "     background: blue;",
+                    "   }",
+                    "}",
+                    "",
+                    "// 生成された CSS",
+                    ".block-element { background: blue; }"
+                ]
+            }
+        ]
+    },
+    "bem--sep-mod": {
+        "example": [
+            {
+                "description": [
+                    "修飾子セパレーター を '--' から '---' に変更します。"
+                ],
+                "code": [
+                    "$bem--sep-mod: '---';",
+                    "",
+                    "@include b(block) {",
+                    "   @include m(modifier) {",
+                    "     background: red;",
+                    "   }",
+                    "}",
+                    "",
+                    "// 生成された CSS",
+                    ".block---modifier { background: red; }"
+                ]
+            }
+        ]
+    },
+    "bem--sep-mod-val": {
+        "example": [
+            {
+                "description": [
+                    "修飾子値セパレーターを '-' から '_' に変更します。"
+                ],
+                "code": [
+                    "$bem--sep-mod-val: '_';",
+                    "",
+                    "@include b(block) {",
+                    "   @include m(modifier, value) {",
+                    "     background: red;",
+                    "   }",
+                    "}",
+                    "",
+                    "// 生成された CSS",
+                    ".block--modifier_value { background: red; }"
+                ]
+            }
+        ]
+    },
+    "_bem-mod-cache": {
+        "description": [
+            "修飾文字列変換のキャッシュ。",
+            ""
+        ]
+    }
+}

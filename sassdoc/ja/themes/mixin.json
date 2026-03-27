@@ -1,491 +1,168 @@
 ﻿{
-    "igx-avatar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>“コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-badge": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-banner": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-bottom-nav": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-button-group": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-button": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-calendar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-card": {
+    "tokens": {
         "description": [
-            "<p>Card Component</p>",
+            "Ignite UI コンポーネント テーマから CSS 変数トークンを生成します。",
+            "",
+            "`$mode` パラメーターを介して 2 つのモードをサポートします。",
+            "",
+            "**`'global'` (デフォルト):** `ig` プレフィックスが付いたユニバーサル CSS 変数トークンを生成します。",
+            "ローカル CSS 変数参照 (例: `var(--background)`) をグローバル トークン参照 ",
+            "(例: `var(--ig-avatar-background)`) に書き換えて、",
+            "`adaptive-contrast` や `dynamic-shade` などの導出された値がどのスコープでも正しく解決されるようにします。",
+            "",
+            "- **制限:** 値に `sizable()` 式 (例: `size`) が含まれるプロパティは、コンポーネント スコープの変数 ",
+            "  (`--is-large`、`--is-medium`、`--is-small`) ",
+            "  を参照するときに、黙ってスキップされます。",
+            "これらの変数は、コンポーネント レベルで `sizable()` ミックスインによって設定され、グローバル スコープでは解決できません。",
+            "CSS カスタム プロパティは宣言スコープで解決されるため、`:root` の `sizable()` 式は常に最大サイズに評価されます。",
+            "`size` をグローバル トークンとしてオーバーライドするには、`sizable()` 式",
+            "の代わりに具体的な値 (例: `$size: 2rem`) を渡します。",
+            "",
+            "- *注:** テーマ値が `adaptive-contrast()` 由来の色を参照する場合は、",
+            "`--y-contrast` 変数が使用できるように、トークンが",
+            " 宣言されているスコープに `adaptive-contrast()` ミックスインが含まれていることを確認します。",
+            "",
+            "**`'scoped'`:** 設定された `variable-prefix` (例: `igx`) を使用して、コンポーネント スコープの CSS 変数を生成します。",
+            "セレクターのスコープと `is-root()` 分岐を処理します。",
+            "グローバル トークンがコンポーネント スコープの変数をオーバーライドできるように、ユニバーサル `--ig-*` フォールバック チェーンが含まれています。",
+            "`--ig-theme` および `--ig-theme-variant` メタデータを出力します。",
+            "",
             ""
         ],
         "parameters": {
             "theme": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "トークンを生成するコンポーネント テーマ マップです。"
                 ]
-            }
-        }
-    },
-    "igx-carousel": {
-        "parameters": {
-            "theme": {
+            },
+            "mode": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "生成モード: ユニバーサル トークンの場合は 'global'、コンポーネント レベルの CSS 変数の場合は 'scoped' です。"
                 ]
-            }
-        }
-    },
-    "igx-checkbox": {
-        "parameters": {
-            "theme": {
+            },
+            "scope": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "'scoped' モードでのみ使用されます。テーマ マップからのセレクターをオーバーライドします。"
                 ]
-            }
-        }
-    },
-    "igx-chip": {
-        "parameters": {
-            "theme": {
+            },
+            "ignored": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "トークンを生成するときに除外される無視キーワードのリスト。"
                 ]
             }
-        }
-    },
-    "igx-column-hiding": {
-        "parameters": {
-            "theme": {
+        },
+        "example": [
+            {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "ユニバーサルアバタートークンを生成します (global モード)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($background: red));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-background: red;",
+                    "//   --ig-avatar-color: hsla(from color(from var(--ig-avatar-background) ...) ...);",
+                    "//   ...",
+                    "// }"
                 ]
-            }
-        }
-    },
-    "igx-combo": {
-        "parameters": {
-            "theme": {
+            },
+            {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "具体的な値でサイズをオーバーライドします (global モード)"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include tokens(avatar-theme($size: 2rem));",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-avatar-size: 2rem;",
+                    "//   ...",
+                    "// }"
                 ]
-            }
-        }
-    },
-    "igx-date-picker": {
-        "parameters": {
-            "theme": {
+            },
+            {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "スコープ付きコンポーネン トトークンを生成します (scoped モード)"
+                ],
+                "code": [
+                    "@include tokens(avatar-theme($schema: $schema), $mode: 'scoped');"
                 ]
-            }
-        }
-    },
-    "igx-dialog": {
-        "parameters": {
-            "theme": {
+            },
+            {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "カスタム スコープでスコープ付きコンポーネント トークンを生成します"
+                ],
+                "code": [
+                    "@include tokens(dialog-theme($schema: $schema), $mode: 'scoped', $scope: '.igx-dialog');"
                 ]
             }
-        }
+        ]
     },
-    "igx-drop-down": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-expansion-panel": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-filtering": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-paginator": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-summary": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-grid-toolbar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-           }
-
-    },
-    "igx-grid": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-icon": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-input-group": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-list": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-navbar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-navdrawer": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-overlay": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-progress-linear": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-progress-circular": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-radio": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-ripple": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-slider": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-snackbar": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-switch": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-tabs": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-time-picker": {
-        "parameters": {
-            "theme": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-toast": {
+    "css-vars": {
         "description": [
-            "<p>トスト コンポーネント</p>",
+            "テーマの色を CSS 変数として特定のスコープに追加します。",
             ""
         ],
         "parameters": {
             "theme": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "使用するコンポーネントのテーマ。"
                 ]
-            }
-        }
-    },
-    "igx-tooltip": {
-        "parameters": {
-            "theme": {
+            },
+            "scope": {
                 "description": [
-                    "<p>コンポーネントのスタイル設定に使用されるテーマ。</p>",
-                    ""
+                    "使用する CSS 変数のスコープ。(オプション)"
                 ]
             }
-        }
+        },
+        "example": [
+            {
+                "description": [
+                    "グリッド テーマの色を CSS 変数に変換します。"
+                ],
+                "code": [
+                    "$my-grid-theme grid-theme(",
+                    "  $header-background: red,",
+                    "  $content-background: #222",
+                    ");",
+                    ".my-grid {",
+                    "  @include css-vars($my-grid-theme);",
+                    "}"
+                ]
+            }
+        ]
     },
-    "igx-core": {
+    "sizing": {
         "description": [
-            "<p>各テーマのベースを含みます。</p>",
+            "スコープにサイズ指定用の CSS 変数を追加します。",
             ""
         ]
     },
-    "igx-theme": {
+    "sizable": {
         "description": [
-            "<p>Ignite UI for Angular のグローバル テーマを生成します。.</p>",
+            "スコープがサイズの変更に対応できるように、必要な CSS プロパティを追加します。",
             ""
         ],
-        "parameters": {
-            "palette": {
+        "example": [
+            {
                 "description": [
-                    "<p>グローバル テーマに使用される igx-palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "schema": {
-                "description": [
-                    "<p>コンポーネントのスタイル設定に基づいて使用されるスキーマ。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "legacy-support": {
-                "description": [
-                    "<p>IE11 を無効にすると、css 変数を使用してコンポーネントにスタイル設定を適用できます。</p>",
-                    ""
+                    "例"
+                ],
+                "code": [
+                    ".my-component {",
+                    "  @include sizable();",
+                    "}"
                 ]
             }
-        }
+        ]
     },
-    "igx-light-theme": {
+    "spacing": {
         "description": [
-            "<p>ライト背景で使用されるグローバル テーマを作成します</p>",
+            "スコープにスペース CSS 変数を追加します。",
             ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される igx-palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "legacy-support": {
-                "description": [
-                    "<p>IE11 を無効にすると、css 変数を使用してコンポーネントにスタイル設定を適用できます。</p>",
-                    ""
-                ]
-            }
-        }
-    },
-    "igx-dark-theme": {
-        "description": [
-            "<p>ダーク背景で使用されるグローバル テーマを作成します。</p>",
-            ""
-        ],
-        "parameters": {
-            "palette": {
-                "description": [
-                    "<p>グローバル テーマに使用される igx-palette を使用します。</p>",
-                    ""
-                ]
-            },
-            "exclude": {
-                "description": [
-                    "<p>グローバル テーマのスタイルから除外される igx コンポーネントのリスト。</p>",
-                    ""
-                ]
-            },
-            "legacy-support": {
-                "description": [
-                    "<p>IE11 を無効にすると、css 変数を使用してコンポーネントにスタイル設定を適用できます。</p>",
-                    ""
-                ]
-            }
-        }
+        ]
     }
 }

@@ -1,196 +1,344 @@
 {
-    "igx-type-style": {
+    "em": {
         "description": [
-            "<p>In interface-like type style map.</p>",
+            "Converts pixels to relative values (em).",
+            ""
+        ],
+        "parameters": {
+            "pixels": {
+                "description": [
+                    "The pixel value to be converted."
+                ]
+            },
+            "context": {
+                "description": [
+                    "The base context to convert against."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Returns the pixels value converted to em."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: em(10px) em(5px);",
+                    "}",
+                    "",
+                    "// Output",
+                    ".my-component {",
+                    "  margin: 0.625em 0.3125em;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "rem": {
+        "description": [
+            "Converts pixels to root relative values (rem).",
+            ""
+        ],
+        "parameters": {
+            "pixels": {
+                "description": [
+                    "The pixel value to be converted."
+                ]
+            },
+            "context": {
+                "description": [
+                    "The base context to convert against."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Returns the pixels value converted to rem."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: rem(10px) rem(5px);",
+                    "}",
+                    "",
+                    "// Output",
+                    ".my-component {",
+                    "  margin: 0.625rem 0.3125rem;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "px": {
+        "description": [
+            "Converts relative value (em/rem) to pixel.",
+            ""
+        ],
+        "parameters": {
+            "num": {
+                "description": [
+                    "The relative value to be converted."
+                ]
+            },
+            "context": {
+                "description": [
+                    "The base context to convert against."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Returns the relative value converted to pixels."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "  margin: px(3rem);",
+                    "}",
+                    "",
+                    "// Output",
+                    ".my-component {",
+                    "  margin: 48px;",
+                    "}"
+                ]
+            }
+        ]
+    },
+    "type-style": {
+        "description": [
+            "Produces a type style map of values that adheres to the ITypeStyle map.",
             ""
         ],
         "parameters": {
             "font-family": {
                 "description": [
-                    "<p>The font size of the type style.</p>",
-                    ""
+                    "The font family of the type style."
                 ]
             },
             "font-size": {
                 "description": [
-                    "<p>The font size of the type style.</p>",
-                    ""
+                    "The font size of the type style."
                 ]
             },
             "font-weight": {
                 "description": [
-                    "<p>The font weight of the type style.</p>",
-                    ""
+                    "The font weight of the type style."
+                ]
+            },
+            "font-style": {
+                "description": [
+                    "The font style of the type style."
                 ]
             },
             "line-height": {
                 "description": [
-                    "<p>The line height of the type style.</p>",
-                    ""
+                    "The line height of the type style."
                 ]
             },
             "letter-spacing": {
                 "description": [
-                    "<p>The letter spacing of the type style.</p>",
-                    ""
+                    "The letter spacing of the type style."
                 ]
             },
             "text-transform": {
                 "description": [
-                    "<p>The text-transform property of the type style.</p>",
-                    ""
+                    "The text-transform property of the type style."
+                ]
+            },
+            "margin-top": {
+                "description": [
+                    "The margin-top property of the type style."
+                ]
+            },
+            "margin-bottom": {
+                "description": [
+                    "The margin-bottom property of the type style."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>A map of all defined type style properties.</p>",
-                ""
+                "A map of all defined type style properties."
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "$main_navigation: type-style(",
+                    "   $font-size: rem(14px),",
+                    "   $font-weight: 600,",
+                    "   $letter-spacing: rem(.1px),",
+                    "   $line-height: rem(14px),",
+                    "   $text-transform: none,",
+                    ");",
+                    "",
+                    "// Use the type-style() mixin to consume the new type style produced from the type-style() function.",
+                    ".main-nav {",
+                    "  @include type-style($main_navigation);",
+                    "}"
+                ]
+            }
+        ]
     },
-    "igx-type-scale": {
+    "type-scale": {
         "description": [
-            "<p>Creates a type scale map containing type style definitions for:</p>",
-            "<ul>",
-            "<li>h1</li>",
-            "<li>h2</li>",
-            "<li>h3</li>",
-            "<li>h4</li>",
-            "<li>h5</li>",
-            "<li>h6</li>",
-            "<li>subtitle-1</li>",
-            "<li>subtitle-2</li>",
-            "<li>body-1</li>",
-            "<li>body-2</li>",
-            "<li>button</li>",
-            "<li>caption</li>",
-            "<li>overline</li>",
-            "</ul>",
+            "Produces a type scale map containing type styles that adheres to the ITypeScale list.",
             ""
         ],
         "parameters": {
             "h1": {
                 "description": [
-                    "<p>A map containing type style properties as produced by the igx-type-style function. This type scale styles h1 elements and elements with <code>igx-font-h1</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produced by the type-style function."
                 ]
             },
             "h2": {
                 "description": [
-                    "<p>A map containing type style properties as produced by the igx-type-style function. This type scale styles h2 elements and elements with <code>igx-font-h2</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produced by the type-style function."
                 ]
             },
             "h3": {
                 "description": [
-                    "<p>A map containing type style properties as produced by the igx-type-style function. This type scale styles h3 elements and elements with <code>igx-font-h3</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produced by the type-style function."
                 ]
             },
             "h4": {
                 "description": [
-                    "<p>A map containing type style properties as produced by the igx-type-style function. This type scale styles h4 elements and elements with <code>igx-font-h4</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produced by the type-style function."
                 ]
             },
             "h5": {
                 "description": [
-                    "<p>A map containing type style properties as produced by the igx-type-style function. This type scale styles h5 elements and elements with <code>igx-font-h5</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produced by the type-style function."
                 ]
             },
             "h6": {
                 "description": [
-                    "<p>A map containing type style properties as produced by the igx-type-style function. This type scale styles h6 elements and elements with <code>igx-font-h6</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produced by the type-style function."
                 ]
             },
             "subtitle-1": {
                 "description": [
-                    "<p>A map containing type style properties as produces by the igx-type-style function. This type scale styles elements with <code>igx-font-subtitle-1</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produces by the type-style function."
                 ]
             },
             "subtitle-2": {
                 "description": [
-                    "<p>A map containing type style properties as produces by the igx-type-style function. This type scale styles elements with <code>igx-font-subtitle-2</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produces by the type-style function."
                 ]
             },
             "body-1": {
                 "description": [
-                    "<p>A map containing type style properties as produces by the igx-type-style function. This type scale styles elements with <code>igx-font-body-1</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produces by the type-style function."
                 ]
             },
             "body-2": {
                 "description": [
-                    "<p>A map containing type style properties as produces by the igx-type-style function. This type scale styles elements with <code>igx-font-body-2</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produces by the type-style function."
                 ]
             },
             "button": {
                 "description": [
-                    "<p>A map containing type style properties as produces by the igx-type-style function. This type scale styles elements with <code>igx-button</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produces by the type-style function."
                 ]
             },
             "caption": {
                 "description": [
-                    "<p>A map containing type style properties as produces by the igx-type-style function. This type scale styles elements with <code>igx-font-caption</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produces by the type-style function."
                 ]
             },
             "overline": {
                 "description": [
-                    "<p>A map containing type style properties as produces by the igx-type-style function. This type scale styles elements with <code>igx-font-overline</code> class.</p>",
-                    ""
+                    "A map containing type style properties as produces by the type-style function."
+                ]
+            },
+            "_theme": {
+                "description": [
+                    "The theme related to this type scale. Internal use only."
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>A map of all defined type scales.</p>",
-                ""
+                "A map of all defined type scales."
             ]
-        }
+        },
+        "example": [
+            {
+                "code": [
+                    "// First define type styles to use",
+                    "$my-body-1: type-style(",
+                    "   $font-size: rem(14px),",
+                    ");",
+                    "",
+                    "// Use the type style map to override one of the existing maps",
+                    "$type-scale: type-scale(",
+                    "  ...",
+                    "  $body-1: $my-body-1,",
+                    "  ...",
+                    ");"
+                ]
+            }
+        ]
     },
-    "igx-type-scale-category": {
+    "type-scale-category": {
         "description": [
-            "<p>Get type scale category config.</p>",
+            "Get type scale category config.",
             ""
         ],
         "parameters": {
             "scale": {
                 "description": [
-                    "<p>A type scale map reference as produces by igx-type-scale.</p>",
-                    ""
+                    "A type scale map reference as produces by type-scale."
                 ]
             },
             "category": {
                 "description": [
-                    "<p>The scale category you want config for. For instance - &#39;h1&#39;;</p>",
-                    ""
+                    "The scale category you want config for. For instance - 'h1';"
                 ]
             }
         },
         "returns": {
             "description": [
-                "<p>The config map for the selected category in the type scale.</p>",
-                ""
+                "The config map for the selected category in the type scale."
             ]
         },
         "example": [
             {
                 "description": [
-                    "<p>Get the type scale category config for the <code>h1</code> scale.</p>",
-                    ""
+                    "Get the type scale category config for the `h1` scale."
                 ],
                 "code": [
-                    "$h1-type-scale: igx-type-scale-category($default-type-scale, 'h1');"
+                    "$h1-type-scale: type-scale-category($type-scale, 'h1');"
                 ]
             }
         ]
+    },
+    "_normalize-font-family": {
+        "description": [
+            "Normalizes a font-family value for use in CSS custom properties.",
+            "If the value is a Sass string, it is unquoted to produce raw CSS tokens",
+            "so that a stringified font list like \"'Comic Sans MS', sans-serif\"",
+            "is emitted correctly. All other types (lists, var() expressions,",
+            "keywords like inherit, etc.) are returned as-is.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The font-family value to normalize."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The normalized value."
+            ]
+        }
     }
 }

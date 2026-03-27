@@ -1,0 +1,221 @@
+{
+    "_normalize-color": {
+        "description": [
+            "色値を正規化し、一貫したフォーマット出力を保証します。",
+            "これは、新しい Sass バージョンで浮動小数点精度の RGB 形式が返される問題を修正します。",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "正規化する色。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "16 進形式で正規化された色。"
+            ]
+        }
+    },
+    "adaptive-contrast": {
+        "description": [
+            "指定された色に対して CSS ランタイムで計算された相対色 (黒または白) を返します。"
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "計算に使用する基本色。",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "指定されたコントラスト レベルに基づいて明度が調整され、",
+                "黒または白になる相対 HSL カラーを返します。",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "   --bg: #09f;",
+                    "   background: var(--bg);",
+                    "   color: adaptive-contrast(var(--bg)); // hsl(from color(from var(--bg) var(--y-contrast)) h 0 l)",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "text-contrast": {
+        "description": [
+            "渡された色のコントラスト色を返します。",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "コントラスト色/前景色を返すために使用される背景色。"
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "指定された背景で使用できる",
+                    "前景色のリスト。"
+                ]
+            },
+            "contrast": {
+                "description": [
+                    "WCAG 2.0 規格に準拠したコントラスト レベル。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "必要なコントラスト レベルを満たす場合は、",
+                "白、黒、または指定された前景色のいずれかを返します。",
+                ""
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    ".my-component {",
+                    "   background: #09f;",
+                    "   color: text-contrast(#09f);",
+                    " }"
+                ]
+            }
+        ]
+    },
+    "to-opaque": {
+        "description": [
+            "2 色を混合して不透明色を生成します。",
+            ""
+        ],
+        "parameters": {
+            "color-1": {
+                "description": [
+                    "通常透明な最初の色。"
+                ]
+            },
+            "color-2": {
+                "description": [
+                    "2 番目の色で、通常は不透明です。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "RGBA 値の色表現。"
+            ]
+        }
+    },
+    "to-hsl": {
+        "description": [
+            "指定された色の色相、彩度、および明度の値のコンマ区切りリストを返します。",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "HSL 値リストに変換される色。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "この HSL 値のリスト。"
+            ]
+        },
+        "example": [
+            {
+                "description": [
+                    "#000 を HSL 値リストに変換します。"
+                ],
+                "code": [
+                    "$hsl-list: to-hsl(#000); // (0deg, 0%, 0%);"
+                ]
+            }
+        ]
+    },
+    "contrast": {
+        "description": [
+            "2 つの色の中間の色のコントラストの比率を計算します。",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "背景色。"
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "前景色。",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "背景色と前景色のコントラストの比率。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$conrast: contrast(#09f, #000); // 7"
+                ]
+            }
+        ]
+    },
+    "luminance": {
+        "description": [
+            "指定された色の輝度を計算します。",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "輝度が計算するための色。",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "特定の色の計算された輝度。"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$white: luminance(#fff); // 1",
+                    "$blue: luminance(#09f); // 0.3",
+                    "$black: luminance(#000); // 0"
+                ]
+            }
+        ]
+    },
+    "_lcv": {
+        "description": [
+            "指定された sRGB カラーのリニア チャネル値を計算します。",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "sRGB カラー。"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "計算されたリニア チャネル値。"
+            ]
+        }
+    }
+}
