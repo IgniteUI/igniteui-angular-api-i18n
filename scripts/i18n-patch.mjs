@@ -12,13 +12,13 @@
  *
  * blockTags are reconstructed the same way: one content part per tag entry.
  *
- * Usage:
- *   node i18n-patch.mjs
- *   node i18n-patch.mjs --input=i18n-translatable.json --lang=ja
- *   node i18n-patch.mjs --input=i18n-translatable.json --target=i18nRepo/typedoc/ja/igniteui-angular.json --output=out.json
+ * Usage (from repo root):
+ *   node scripts/i18n-patch.mjs
+ *   node scripts/i18n-patch.mjs --input=typedoc/ja/i18n-translatable.json --lang=ja
+ *   node scripts/i18n-patch.mjs --input=typedoc/ja/i18n-translatable.json --target=typedoc/ja/igniteui-angular.json --output=out.json
  *
  * When patching from chunk files produced with --chunk-size:
- *   node i18n-patch.mjs --chunks-dir=i18n-chunks --lang=ja
+ *   node scripts/i18n-patch.mjs --chunks-dir=i18n-chunks --lang=ja
  */
 
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
