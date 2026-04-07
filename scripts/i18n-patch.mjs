@@ -80,7 +80,9 @@ const textPart = text => [{ kind: 'text', text }];
 
 /**
  * Applies a translation unit onto a typedoc comment node.
- * Overwrites summary and blockTags with the translated strings.
+ * Overwrites the summary text and merges blockTags with the translated
+ * strings (updating matching tags, preserving unmatched existing ones, and
+ * appending any additional translated tags).
  */
 function applyUnit(node, unit) {
     if (!node.comment) node.comment = {};
