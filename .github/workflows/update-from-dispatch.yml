@@ -3,6 +3,11 @@ name: update-from-dispatch
 on:
   repository_dispatch:
     types: [api-update]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release tag to update from (e.g. 18.1.0)'
+        required: true
 
 jobs:
   update:
@@ -20,7 +25,7 @@ jobs:
       - name: Resolve target branch
         id: resolve_branch
         run: |
-          TAG="${{ github.event.client_payload.release_tag }}"
+          TAG="${{ github.event.inputs.release_tag || github.event.client_payload.release_tag }}"
           # Fail fast if release_tag is missing or empty
           if [[ -z "$TAG" ]]; then
             echo "::error::release_tag is missing or empty in the repository_dispatch payload."
@@ -37,6 +42,7 @@ jobs:
           MINOR=$(echo "$SEMVER" | cut -d. -f2)
           BRANCH="${MAJOR}.${MINOR}.x"
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "release_tag=$TAG" >> "$GITHUB_OUTPUT"
 
       - name: Checkout or create target branch
         run: |
@@ -53,7 +59,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: IgniteUI/igniteui-angular
-          ref: ${{ github.event.client_payload.release_tag }}
+          ref: ${{ steps.resolve_branch.outputs.release_tag }}
           path: igniteui-angular
 
       - name: Setup Node.js
@@ -97,6 +103,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit; skipping commit and push."
           else
-            git commit -m "chore: update API for ${{ github.event.client_payload.release_tag }} ($(date -u +%Y-%m-%d))"
+            git commit -m "chore: update API for ${{ steps.resolve_branch.outputs.release_tag }} ($(date -u +%Y-%m-%d))"
             git push origin HEAD
           fi
