@@ -100,8 +100,7 @@
         },
         "returns": {
             "description": [
-                "Will return the index of the occurance,",
-                "or null if the element separator name is not part of the passed string."
+                "Will return the index of the occurance, or null if the element is not part of the string."
             ]
         }
     },
@@ -119,8 +118,7 @@
         },
         "returns": {
             "description": [
-                "Will return the index of the occurance,",
-                "or null if the modifier separator string is not part of the passed string."
+                "Will return the index of the occurance, or null if the modifier is not part of the string."
             ]
         }
     },
@@ -138,8 +136,7 @@
         },
         "returns": {
             "description": [
-                "Will return the index of the occurance,",
-                "or null if the string does not contain any colons."
+                "Will return the index of the occurance, or null if the string does not contain any colons."
             ]
         }
     },
@@ -214,8 +211,7 @@
             },
             "elem": {
                 "description": [
-                    "A sub-element name. If `$mod` is not present, it is",
-                    "joined with $block. If $mod is present, it is nested under `$block--$mod`."
+                    "A sub-element name. If `$mod` is not present, it is joined with $block. If $mod is present, it is nested under `$block--$mod`."
                 ]
             },
             "mod": {
@@ -257,7 +253,7 @@
                     "Include block, element, and element modifier"
                 ],
                 "code": [
-                    "$selector: bem-selector(block, $elem: (elem, mod); // returns .block__elem--mod"
+                    "$selector: bem-selector(block, $elem: (elem, mod)); // returns .block__elem--mod"
                 ]
             },
             {
@@ -265,7 +261,7 @@
                     "Include block and block modifier"
                 ],
                 "code": [
-                    "$selector: bem-selector(block, $mod: mod) // returns .block--mod"
+                    "$selector: bem-selector(block, $mod: mod); // returns .block--mod"
                 ]
             },
             {
@@ -273,7 +269,7 @@
                     "Include block and multiple block modifiers"
                 ],
                 "code": [
-                    "$selector: bem-selector(block, $mods: (mod-1, mod-2)) // returns .block--mod-1.block--mod-2"
+                    "$selector: bem-selector(block, $mods: (mod-1, mod-2)); // returns .block--mod-1.block--mod-2"
                 ]
             },
             {
@@ -316,8 +312,8 @@
         "example": [
             {
                 "code": [
-                    "$selector: elem('button', 'icon') // returns '.button__icon'",
-                    "$selector: elem('button', 'icon', 'big') // returns '.button__icon--big'"
+                    "$selector: elem('button', 'icon'); // returns '.button__icon'",
+                    "$selector: elem('button', 'icon', 'big'); // returns '.button__icon--big'"
                 ]
             }
         ]
@@ -347,8 +343,8 @@
         "example": [
             {
                 "code": [
-                    "$selector: mod('button', 'primary') // returns '.button--primary'",
-                    "$selector: mod('card', 'outlined') // returns '.card--outlined'"
+                    "$selector: mod('button', 'primary'); // returns '.button--primary'",
+                    "$selector: mod('card', 'outlined'); // returns '.card--outlined'"
                 ]
             }
         ]
