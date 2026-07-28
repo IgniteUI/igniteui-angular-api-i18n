@@ -1646,9 +1646,9 @@
                     "Sets the negative marker brush of the sparkline."
                 ]
             },
-            "negative": {
+            "negative-marker-size": {
                 "description": [
-                    "marker-size [null] - Sets the negative marker size of the sparkline."
+                    "Sets the negative marker size of the sparkline."
                 ]
             },
             "trend-line-brush": {
@@ -2086,9 +2086,29 @@
                     "The focused border color for an item from the button group. Auto-derived from item-border-color."
                 ]
             },
+            "item-focused-hover-text-color": {
+                "description": [
+                    "The focused & hover text color for button group items. Auto-derived from item-focused-text-color."
+                ]
+            },
+            "item-focused-hover-border-color": {
+                "description": [
+                    "The focused & hover border color for an item from the button group. Auto-derived from item-focused-border-color."
+                ]
+            },
             "item-focused-hover-background": {
                 "description": [
                     "The focused & hover background color for button group items. Auto-derived from item-focused-background."
+                ]
+            },
+            "item-active-background": {
+                "description": [
+                    "The active background color for button group items. Auto-derived from item-hover-background."
+                ]
+            },
+            "item-active-border-color": {
+                "description": [
+                    "The active border color for button group items. Auto-derived from item-hover-border-color."
                 ]
             },
             "idle-shadow-color": {
@@ -2166,7 +2186,17 @@
             },
             "item-selected-focus-hover-background": {
                 "description": [
-                    "The background color for a selected item in focused & hover state in the button group. Auto-derived from item-selected-hover-background.",
+                    "The background color for a selected item in focused & hover state in the button group. Auto-derived from item-selected-hover-background."
+                ]
+            },
+            "item-selected-active-background": {
+                "description": [
+                    "The active background color for a selected item in the button group. Auto-derived from item-selected-hover-background."
+                ]
+            },
+            "item-selected-active-border-color": {
+                "description": [
+                    "The active border color for a selected item in the button group. Auto-derived from item-selected-hover-border-color.",
                     ""
                 ]
             },
@@ -3984,7 +4014,8 @@
             "",
             "PRIMARY TOKENS:",
             "- `$header-background` — The background color of the chat header.",
-            "- `$message-background` — The background color of message bubbles.",
+            "- `$sent-message-background` — The background color for sent messages.",
+            "- `$received-message-background` — The background color for received messages.",
             "",
             "Derived colors are auto-calculated for contrast.",
             "",
@@ -4003,7 +4034,7 @@
             },
             "header-background": {
                 "description": [
-                    "The background color of the chat header. PRIMARY - derives header-color."
+                    "The background color of the chat header."
                 ]
             },
             "header-color": {
@@ -4016,19 +4047,34 @@
                     "The color used for the chat header border."
                 ]
             },
-            "message-background": {
+            "sent-message-background": {
                 "description": [
-                    "The background color of the sent message bubble. PRIMARY - derives message-color, message-actions-color."
+                    "The background color for sent messages."
                 ]
             },
-            "message-color": {
+            "sent-message-color": {
                 "description": [
-                    "The text color of the chat messages. Auto-derived from message-background."
+                    "The text color of the chat messages. Auto-derived from sent-message-background."
+                ]
+            },
+            "received-message-background": {
+                "description": [
+                    "The background color for received messages."
+                ]
+            },
+            "received-message-color": {
+                "description": [
+                    "The text color for received messages. Auto-derived from received-message-background."
                 ]
             },
             "message-actions-color": {
                 "description": [
-                    "The icon color of the chat message actions. Auto-derived from message-color."
+                    "The icon color of the chat received message actions. Auto-derived from received-message-color."
+                ]
+            },
+            "message-border-radius": {
+                "description": [
+                    "The border radius of the chat messages."
                 ]
             },
             "file-background": {
@@ -4167,6 +4213,11 @@
             "disabled-color": {
                 "description": [
                     "The disabled border and fill colors."
+                ]
+            },
+            "disabled-fill-color": {
+                "description": [
+                    "The disabled border and fill colors in checked state. Auto-derived from disabled-color (material/fluent) or disabled-indeterminate-color (bootstrap/indigo)."
                 ]
             },
             "disabled-tick-color": {
@@ -4422,7 +4473,7 @@
             "Column Actions Theme",
             "",
             "PRIMARY TOKENS:",
-            "- `$background-color` — The background color of the panel.",
+            "- `$background` — The background color of the panel.",
             "",
             "Derived colors are auto-calculated for contrast.",
             "",
@@ -4436,12 +4487,22 @@
             },
             "title-color": {
                 "description": [
-                    "The text color used for the title of the list. Auto-derived from background-color."
+                    "The text color used for the title of the list. Auto-derived from foreground."
                 ]
             },
-            "background-color": {
+            "background": {
                 "description": [
-                    "The background color of the panel. PRIMARY - derives title-color.",
+                    "The background color of the panel. PRIMARY - derives foreground and title-color."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "The foreground color for content and icons in the panel. Auto-derived from background."
+                ]
+            },
+            "accent-color": {
+                "description": [
+                    "The accent color used for highlights or active states in the panel.",
                     ""
                 ]
             }
@@ -5145,6 +5206,106 @@
             ""
         ]
     },
+    "excel-filtering-theme": {
+        "description": [
+            "Excel Filtering Theme",
+            "",
+            "PRIMARY TOKENS:",
+            "- `$background` — The background color for the excel filtering area.",
+            "- `$foreground` — The foreground/text color for the excel filtering area.",
+            "- `$accent-color` — The accent color for the excel filtering area and its internal components.",
+            "",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "background": {
+                "description": [
+                    "The background color for the excel filtering area."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "The foreground/text color for the excel filtering area."
+                ]
+            },
+            "accent-color": {
+                "description": [
+                    "The accent color for the excel filtering and its internal components."
+                ]
+            },
+            "secondary-background": {
+                "description": [
+                    "The secondary background color for the excel filtering area."
+                ]
+            },
+            "header-foreground": {
+                "description": [
+                    "The excel filtering header text color."
+                ]
+            },
+            "subheader-foreground": {
+                "description": [
+                    "The excel filtering subheader text color."
+                ]
+            },
+            "actions-foreground": {
+                "description": [
+                    "The excel filtering actions text color."
+                ]
+            },
+            "actions-icon-color": {
+                "description": [
+                    "The excel filtering actions icon color."
+                ]
+            },
+            "actions-hover-foreground": {
+                "description": [
+                    "The excel filtering actions hover text color."
+                ]
+            },
+            "actions-hover-icon-color": {
+                "description": [
+                    "The excel filtering actions hover icon color."
+                ]
+            },
+            "actions-selected-icon-color": {
+                "description": [
+                    "The excel filtering actions selected icon color."
+                ]
+            },
+            "actions-hover-background": {
+                "description": [
+                    "The excel filtering actions hover background color."
+                ]
+            },
+            "actions-disabled-foreground": {
+                "description": [
+                    "The excel filtering actions disabled text color."
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "The border color used in the excel style filter."
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Change excel filtering header color"
+                ],
+                "code": [
+                    "$my-excel-filtering-theme: excel-filtering-theme($background: blue, $accent-color: orange);",
+                    "@include css-vars($my-excel-filtering-theme);"
+                ]
+            }
+        ]
+    },
     "grid-summary-theme": {
         "description": [
             "Grid Summary Theme",
@@ -5176,6 +5337,16 @@
             "result-color": {
                 "description": [
                     "The summaries value/result color. Auto-derived from background-color."
+                ]
+            },
+            "border-width": {
+                "description": [
+                    "The summaries border width."
+                ]
+            },
+            "border-style": {
+                "description": [
+                    "The summaries border style."
                 ]
             },
             "border-color": {
@@ -5225,13 +5396,9 @@
             "Grid Theme",
             "",
             "PRIMARY TOKENS:",
-            "- `$header-background` — The table header background color.",
-            "- `$content-background` — The table body background color.",
-            "- `$ghost-header-background` — The dragged header background color.",
-            "- `$group-row-background` — The grid group row background color.",
-            "- `$grouparea-background` — The grid group area background color.",
-            "",
-            "Derived colors are auto-calculated for contrast.",
+            "- `$background` — Controls the overall background color of the grid, including header and content.",
+            "- `$foreground` — Controls the overall foreground color of the grid, including text and icons.",
+            "- `$accent-color` — Controls the accent color used for interactive elements in the grid.",
             "",
             ""
         ],
@@ -5241,9 +5408,24 @@
                     "The schema used as basis for styling the component."
                 ]
             },
+            "background": {
+                "description": [
+                    "The background color of the grid."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "The foreground color of the grid."
+                ]
+            },
+            "accent-color": {
+                "description": [
+                    "The accent color used for interactive elements in the grid."
+                ]
+            },
             "header-background": {
                 "description": [
-                    "The table header background color. PRIMARY - derives header-text-color, header-border-color, and many more."
+                    "The table header background color - derives header-text-color, header-border-color, and many more."
                 ]
             },
             "header-text-color": {
@@ -5288,7 +5470,7 @@
             },
             "content-background": {
                 "description": [
-                    "The table body background color. PRIMARY - derives content-text-color, row backgrounds, cell backgrounds, borders."
+                    "The table body background color - derives content-text-color, row backgrounds, cell backgrounds, borders."
                 ]
             },
             "content-text-color": {
@@ -5308,7 +5490,7 @@
             },
             "ghost-header-background": {
                 "description": [
-                    "The dragged header background color. PRIMARY - derives ghost-header-text-color, ghost-header-icon-color."
+                    "The dragged header background color - derives ghost-header-text-color, ghost-header-icon-color."
                 ]
             },
             "row-odd-background": {
@@ -5361,9 +5543,24 @@
                     "The hover row text color. Auto-derived from row-hover-background."
                 ]
             },
+            "row-border-width": {
+                "description": [
+                    "The row bottom border width."
+                ]
+            },
+            "row-border-style": {
+                "description": [
+                    "The row bottom border style."
+                ]
+            },
             "row-border-color": {
                 "description": [
                     "The row bottom border color. Auto-derived from content-background."
+                ]
+            },
+            "action-border-color": {
+                "description": [
+                    "The color used for action borders."
                 ]
             },
             "pinned-border-width": {
@@ -5379,6 +5576,11 @@
             "pinned-border-color": {
                 "description": [
                     "The color of the pinned border. Auto-derived from content-background."
+                ]
+            },
+            "cell-active-border-width": {
+                "description": [
+                    "The border width for the active cell."
                 ]
             },
             "cell-active-border-color": {
@@ -5458,7 +5660,7 @@
             },
             "grouparea-background": {
                 "description": [
-                    "The grid group area background color. PRIMARY - derives grouparea-color, drop-area-background. Auto-derived from header-background."
+                    "The grid group area background color - derives grouparea-color, drop-area-background. Auto-derived from header-background."
                 ]
             },
             "grouparea-color": {
@@ -5468,7 +5670,7 @@
             },
             "group-row-background": {
                 "description": [
-                    "The grid group row background color. PRIMARY - derives expand-icon-color, group-row-selected-background, group-label-text, group-count-background. Auto-derived from header-background."
+                    "The grid group row background color - derives expand-icon-color, group-row-selected-background, group-label-text, group-count-background. Auto-derived from header-background."
                 ]
             },
             "group-row-selected-background": {
@@ -5571,6 +5773,11 @@
                     "The filtering row text color. Auto-derived from filtering-row-background."
                 ]
             },
+            "filtering-dialog-background": {
+                "description": [
+                    "The background color of the advanced filtering dialog."
+                ]
+            },
             "excel-filtering-header-foreground": {
                 "description": [
                     "The excel filtering header text color. Auto-derived from filtering-row-background."
@@ -5596,9 +5803,19 @@
                     "The excel filtering actions disabled text color. Auto-derived from filtering-row-background."
                 ]
             },
+            "excel-filtering-border-color": {
+                "description": [
+                    "The border color used in the excel style filter. Auto-derived from foreground and background."
+                ]
+            },
             "tree-filtered-text-color": {
                 "description": [
                     "Grouping row background color on focus."
+                ]
+            },
+            "summaries-border-color": {
+                "description": [
+                    "The border color of the summaries row."
                 ]
             },
             "summaries-patch-background": {
@@ -5640,6 +5857,31 @@
                 "description": [
                     "The border radius for column drop area."
                 ]
+            },
+            "active-state-border-style": {
+                "description": [
+                    "The border style used for row active state and cell active state."
+                ]
+            },
+            "body-column-border-color": {
+                "description": [
+                    "The border color used for the body column."
+                ]
+            },
+            "body-column-hover-border-color": {
+                "description": [
+                    "The border color used for the body column when in hovered row."
+                ]
+            },
+            "body-column-hover-selected-border-color": {
+                "description": [
+                    "The border color used for the body column when in hovered + selected row."
+                ]
+            },
+            "body-column-selected-border-color": {
+                "description": [
+                    "The border color used for the body column when in selected row."
+                ]
             }
         },
         "example": [
@@ -5660,7 +5902,9 @@
             "Grid Toolbar Theme",
             "",
             "PRIMARY TOKENS:",
-            "- `$background-color` — The toolbar background color.",
+            "- `$background` — The toolbar background and drop-down background color.",
+            "- `$foreground` — The toolbar title and drop-down item text color.",
+            "- `$accent-color` — The accent color used to derive interactive item backgrounds.",
             "- `$dropdown-background` — The toolbar drop-down background color.",
             "- `$item-hover-background` — The drop-down item hover background.",
             "- `$item-focus-background` — The drop-down item focus background.",
@@ -5675,14 +5919,24 @@
                     "The schema used as basis for styling the component."
                 ]
             },
-            "background-color": {
+            "background": {
                 "description": [
-                    "The toolbar background color. PRIMARY - derives title-text-color."
+                    "The toolbar background and drop-down background color. PRIMARY - derives title-text-color and dropdown-background."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "The toolbar title and drop-down item text color. PRIMARY - derives title-text-color and item-text-color."
+                ]
+            },
+            "accent-color": {
+                "description": [
+                    "The accent color used to derive interactive item backgrounds."
                 ]
             },
             "title-text-color": {
                 "description": [
-                    "The toolbar title text color. Auto-derived from background-color."
+                    "The toolbar title text color. Auto-derived from background."
                 ]
             },
             "dropdown-background": {
@@ -5715,6 +5969,11 @@
                     "The toolbar drop-down item focus text color. Auto-derived from dropdown-background or item-focus-background."
                 ]
             },
+            "size": {
+                "description": [
+                    "The size used for the grid toolbar min-height."
+                ]
+            },
             "border-color": {
                 "description": [
                     "The toolbar border-bottom color."
@@ -5728,7 +5987,7 @@
                 ],
                 "code": [
                     "$my-toolbar-theme: grid-toolbar-theme(",
-                    "  $background-color: black",
+                    "  $background: black",
                     ");",
                     "// Pass the theme to the css-vars mixin",
                     "@include css-vars($my-toolbar-theme);"
@@ -6506,7 +6765,7 @@
             },
             "input-prefix-background--filled": {
                 "description": [
-                    "] - The background color of an input prefix in the filled state."
+                    "The background color of an input prefix in the filled state."
                 ]
             },
             "input-prefix-color--focused": {
@@ -7104,6 +7363,16 @@
                 "description": [
                     "The border radius used for the navdrawer item."
                 ]
+            },
+            "size": {
+                "description": [
+                    "The width of the navigation drawer in its expanded (full) state."
+                ]
+            },
+            "size--mini": {
+                "description": [
+                    "The width of the navigation drawer in its mini state."
+                ]
             }
         },
         "example": [
@@ -7161,7 +7430,7 @@
             "Paginator Theme",
             "",
             "PRIMARY TOKENS:",
-            "- `$background-color` — The paginator background.",
+            "- `$background` — The paginator background.",
             "",
             "Derived colors are auto-calculated for contrast.",
             "",
@@ -7173,19 +7442,24 @@
                     "The schema used as basis for styling the component."
                 ]
             },
-            "text-color": {
+            "foreground": {
                 "description": [
-                    "The text color. Auto-derived from background-color."
+                    "The text color. Auto-derived from background."
                 ]
             },
-            "background-color": {
+            "background": {
                 "description": [
-                    "The background color of the paging panel. PRIMARY - derives text-color."
+                    "The background color of the paging panel. PRIMARY - derives foreground."
                 ]
             },
             "border-color": {
                 "description": [
                     "The border color of the paging panel."
+                ]
+            },
+            "accent-color": {
+                "description": [
+                    "The accent color used for paginator interactive elements."
                 ]
             }
         },
@@ -7219,7 +7493,7 @@
                     "The schema used as basis for styling the component."
                 ]
             },
-            "base-circle-color": {
+            "track-color": {
                 "description": [
                     "The base circle fill color."
                 ]
@@ -7385,6 +7659,16 @@
             "background": {
                 "description": [
                     "The background color of the filtering row. PRIMARY - derives label-foreground, header-background."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "The foreground color for text and icons in the query builder."
+                ]
+            },
+            "accent-color": {
+                "description": [
+                    "The accent color for highlights and interactive elements in the query builder."
                 ]
             },
             "header-background": {
@@ -8776,12 +9060,6 @@
                 "description": [
                     "The color used for the button ripple effect. Auto-derived from button-color."
                 ]
-            },
-            "disable-shadow": {
-                "description": [
-                    "<p>Sets the tabs header shadow visibility.</p>",
-                    ""
-                ]
             }
         },
         "example": [
@@ -9192,7 +9470,7 @@
         "example": [
             {
                 "code": [
-                    "scss Change the watermark link background"
+                    "scss - Change the watermark link background"
                 ]
             }
         ]
