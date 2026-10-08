@@ -43,6 +43,9 @@ jobs:
           BRANCH="${MAJOR}.${MINOR}.x"
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           echo "release_tag=$TAG" >> "$GITHUB_OUTPUT"
+          # Match the Node (and npm) version igniteui-angular releases with, so `npm ci` accepts its lock file
+          if (( MAJOR >= 22 )); then NODE_VERSION=24; else NODE_VERSION=22; fi
+          echo "node_version=$NODE_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Checkout or create target branch
         run: |
@@ -65,7 +68,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: ${{ steps.resolve_branch.outputs.node_version }}
 
       - name: Install dependencies
         working-directory: igniteui-angular
