@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -59,14 +59,14 @@ jobs:
           fi
 
       - name: Checkout igniteui-angular
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: IgniteUI/igniteui-angular
           ref: ${{ steps.resolve_branch.outputs.release_tag }}
           path: igniteui-angular
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ steps.resolve_branch.outputs.node_version }}
 
