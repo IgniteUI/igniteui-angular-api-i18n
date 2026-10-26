@@ -5,6 +5,140 @@
             ""
         ]
     },
+    "button": {
+        "parameters": {
+            "flat": {
+                "description": [
+                    "The flat theme used to style the component."
+                ]
+            },
+            "contained": {
+                "description": [
+                    "The contained theme used to style the component."
+                ]
+            },
+            "outlined": {
+                "description": [
+                    "The outlined theme used to style the component."
+                ]
+            },
+            "fab": {
+                "description": [
+                    "The fab theme used to style the component."
+                ]
+            }
+        }
+    },
+    "dock-manager": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "highlight": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "icon-button": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "label": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "overlay": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "rating": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "ripple": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "scrollbar": {
+        "description": [
+            "Emits the scrollbar tokens and the standard scrollbar properties.",
+            "`scrollbar-color`/`scrollbar-width` substitute their `var()`s on the declaring element and",
+            "inherit the resolved value, so every scope that overrides the tokens must include this mixin.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            },
+            "scope": {
+                "description": [
+                    "The selector the tokens and styles are scoped to."
+                ]
+            }
+        }
+    },
+    "_scrollbar-properties": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "tooltip": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
+    "watermark": {
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme used to style the component."
+                ]
+            }
+        }
+    },
     "css-vars-from-theme": {
         "description": [
             "Parses a map of key value pairs from component themes to scoped CSS variables.",
@@ -62,6 +196,131 @@
             "ignored": {
                 "description": [
                     "A list of ignored keywords to be excluded."
+                ]
+            }
+        }
+    },
+    "layer": {
+        "description": [
+            "Wraps the passed content in the `ig.`-prefixed cascade layer with the given name.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The cascade layer name, without the `ig.` prefix."
+                ]
+            }
+        }
+    },
+    "restore-properties": {
+        "description": [
+            "Restores selected properties from the preceding cascade layer.",
+            "This mixin is intended for narrowly scoped, unlayered component styles that need to",
+            "reject generic unlayered element styles without unlayering the component's full ruleset.",
+            ""
+        ],
+        "parameters": {
+            "properties": {
+                "description": [
+                    "CSS property names to restore."
+                ]
+            }
+        }
+    },
+    "themed": {
+        "description": [
+            "Gates the passed content behind the live `--ig-theme` / `--ig-theme-variant`",
+            "custom properties, inside the shared components cascade layer. This is the",
+            "single source of truth for coupling any emitted CSS (tokens or structural",
+            "rules) to the runtime theme signal — anything wrapped here becomes",
+            "switchable at runtime by flipping those two custom properties, regardless",
+            "of how many themes/variants were compiled into the same stylesheet.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The target theme - material, bootstrap, fluent, indigo."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "The target variant - light, dark. Omit to match any variant."
+                ]
+            }
+        }
+    },
+    "themed-block": {
+        "description": [
+            "Includes a block element for a specific component, theme, and variant.",
+            ""
+        ],
+        "parameters": {
+            "component": {
+                "description": [
+                    "The class selector of the component."
+                ]
+            },
+            "theme": {
+                "description": [
+                    "The target theme - material, bootstrap, fluent, indigo."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "The target variant - light, dark."
+                ]
+            }
+        }
+    },
+    "component-tokens": {
+        "description": [
+            "Emits the scoped CSS custom properties (tokens) for a component into the",
+            "global theme, gated by the theme's exclude list. Structural styles for the",
+            "component live in its own `*.component.scss`; this only declares the tokens",
+            "the structural rules consume.",
+            ""
+        ],
+        "parameters": {
+            "selector": {
+                "description": [
+                    "The component block selector, e.g. 'igx-avatar'."
+                ]
+            },
+            "key": {
+                "description": [
+                    "The component's schema key in `$schema`, e.g. 'avatar'."
+                ]
+            },
+            "schema": {
+                "description": [
+                    "The active theme schema (light/dark + design system)."
+                ]
+            }
+        }
+    },
+    "scope": {
+        "description": [
+            "Wraps the passed content in a named cascade layer and scopes it to the given",
+            "selector through `:where()`, keeping specificity at zero. The active schema is",
+            "yielded to the content block so callers can resolve themes against it.",
+            ""
+        ],
+        "parameters": {
+            "layer": {
+                "description": [
+                    "The cascade layer name (the `ig.` prefix is added by `layer`)."
+                ]
+            },
+            "selector": {
+                "description": [
+                    "The selector the emitted styles are scoped to."
+                ]
+            },
+            "schema": {
+                "description": [
+                    "The active theme schema, yielded to the content block."
                 ]
             }
         }
