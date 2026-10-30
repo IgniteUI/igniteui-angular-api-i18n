@@ -49,6 +49,16 @@
                 "description": [
                     "Used internally (optional)."
                 ]
+            },
+            "generator": {
+                "description": [
+                    "Either `fitted` or `legacy` (optional)."
+                ]
+            },
+            "scales": {
+                "description": [
+                    "One scale for every family, or a map keyed by family name (optional)."
+                ]
             }
         },
         "returns": {
@@ -69,8 +79,48 @@
                     "// Include the generated palette colors as CSS variables.",
                     "@include palette($my-palette);"
                 ]
+            },
+            {
+                "description": [
+                    "Keep the original multiplier-based shades"
+                ],
+                "code": [
+                    "$my-palette: palette(rebeccapurple, orange, white, $generator: 'legacy');"
+                ]
+            },
+            {
+                "description": [
+                    "Give the grayscale a different rhythm"
+                ],
+                "code": [
+                    "$my-palette: palette(rebeccapurple, orange, white, $scales: ('gray': 'carbon'));"
+                ]
             }
         ]
+    },
+    "_scale-for": {
+        "description": [
+            "Picks one family's scale out of the `$scales` argument, which may be a single spec",
+            "for every family or a map keyed by family name.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The family to look up."
+                ]
+            },
+            "scales": {
+                "description": [
+                    "The `palette()` argument, or null."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "That family's scale, or null to let the generator decide."
+            ]
+        }
     },
     "shades": {
         "description": [
@@ -97,6 +147,16 @@
                 "description": [
                     "The surface color. Useful if generating shades of gray (optional)."
                 ]
+            },
+            "generator": {
+                "description": [
+                    "Either `fitted` or `legacy` (optional)."
+                ]
+            },
+            "scale": {
+                "description": [
+                    "A preset name, a `(range:, curve:)` map, or a curve (optional)."
+                ]
             }
         },
         "returns": {
@@ -117,8 +177,113 @@
                     "  )",
                     ");"
                 ]
+            },
+            {
+                "description": [
+                    "Pick a scale for this scale"
+                ],
+                "code": [
+                    "$shades: shades('accent', #a57865, $IColorShades, $scale: 'carbon');"
+                ]
             }
         ]
+    },
+    "_contrast-source": {
+        "description": [
+            "The color a shade's contrast color is measured against. A translucent shade is seen over its",
+            "backdrop, so it is measured as the two composited; measuring the translucent color alone would",
+            "ignore its alpha and read a faint black layer as solid black. Both stay CSS variables, so the",
+            "contrast follows either one at runtime.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The family name."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "The shade variant."
+                ]
+            },
+            "shade": {
+                "description": [
+                    "The shade entry, `(css:, raw:)`, with an optional `backdrop` variant."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A CSS color to measure."
+            ]
+        }
+    },
+    "_legacy-entries": {
+        "description": [
+            "Builds the multiplier-based shades or — for a surface — the same layer roles the",
+            "`fitted` generator emits. The roles are contrast steps off the background rather than",
+            "points on a multiplier ramp, so they mean the same thing under either generator, and",
+            "having them everywhere is what lets a schema say `('surface', 'base')` unconditionally.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The name of the color."
+                ]
+            },
+            "color": {
+                "description": [
+                    "The base color used to generate the shades."
+                ]
+            },
+            "shades": {
+                "description": [
+                    "The list of shade variants."
+                ]
+            },
+            "surface": {
+                "description": [
+                    "The surface color, for the grayscale."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Each variant mapped to `(css:, raw:)`."
+            ]
+        }
+    },
+    "_surface-numbers": {
+        "description": [
+            "Builds the numeric shades of a surface from its `500` with the legacy multipliers. A legacy",
+            "surface holds its seed on `500`. A fitted surface points `500` at `base`, so its numeric",
+            "shades follow the background, including when `base` changes at runtime.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The surface color."
+                ]
+            },
+            "shades": {
+                "description": [
+                    "The requested variants; only those in `$ISurfaceNumericShades` are built."
+                ]
+            },
+            "generator": {
+                "description": [
+                    "Either `fitted` or `legacy`."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Each numeric variant mapped to `(css:, raw:)`."
+            ]
+        }
     },
     "shade": {
         "description": [
@@ -277,5 +442,658 @@
                 "A list of colors to be used as chart brushes."
             ]
         }
+    },
+    "read": {
+        "description": [
+            "Reads a color's OKLCH components as plain numbers. `color.channel()` returns units —",
+            "lightness as `70.8%`, hue as `314.6deg` — which break arithmetic silently.",
+            ""
+        ],
+        "parameters": {
+            "c": {
+                "description": [
+                    "The color to read."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Its `l`, `c` and `h`, unitless."
+            ]
+        }
+    },
+    "make": {
+        "description": [
+            "Builds an OKLCH color from unitless components.",
+            ""
+        ],
+        "parameters": {
+            "l": {
+                "description": [
+                    "Lightness, 0 to 1."
+                ]
+            },
+            "c": {
+                "description": [
+                    "Chroma."
+                ]
+            },
+            "h": {
+                "description": [
+                    "Hue, in degrees."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The color, which may fall outside sRGB."
+            ]
+        }
+    },
+    "in-srgb": {
+        "description": [
+            "Whether an OKLCH color fits inside sRGB.",
+            ""
+        ],
+        "parameters": {
+            "l": {
+                "description": [
+                    "Lightness, 0 to 1."
+                ]
+            },
+            "c": {
+                "description": [
+                    "Chroma."
+                ]
+            },
+            "h": {
+                "description": [
+                    "Hue, in degrees."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "True when the color is displayable."
+            ]
+        }
+    },
+    "max-chroma": {
+        "description": [
+            "The most chroma sRGB can hold at one lightness, found by bisection.",
+            "18 rounds narrow the search from 0.45 to about 0.0000017.",
+            ""
+        ],
+        "parameters": {
+            "l": {
+                "description": [
+                    "Lightness, 0 to 1."
+                ]
+            },
+            "h": {
+                "description": [
+                    "Hue, in degrees."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The highest in-gamut chroma there."
+            ]
+        }
+    },
+    "cusp": {
+        "description": [
+            "The peak of a hue's chroma curve.",
+            "The `max-chroma` rises then falls, so a ternary search is used.",
+            ""
+        ],
+        "parameters": {
+            "h": {
+                "description": [
+                    "Hue, in degrees."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The peak's `l` and `c`."
+            ]
+        }
+    },
+    "tent": {
+        "description": [
+            "The cusp as the two slopes of a tent, which turns the chroma available at a given lightness into a single multiply.",
+            ""
+        ],
+        "parameters": {
+            "h": {
+                "description": [
+                    "Hue, in degrees."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "`(rising-slope, falling-slope)`."
+            ]
+        }
+    },
+    "soft-min": {
+        "description": [
+            "A `min()` that curves, so the tent has no corner for a shade to land on.",
+            ""
+        ],
+        "parameters": {
+            "a": {
+                "description": [
+                    "First value."
+                ]
+            },
+            "b": {
+                "description": [
+                    "Second value."
+                ]
+            },
+            "p": {
+                "description": [
+                    "Softness. Higher tracks the true minimum more closely."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The softened minimum, or 0 if either value is non-positive."
+            ]
+        }
+    },
+    "to-srgb": {
+        "description": [
+            "Converts a color to sRGB with integer channels.",
+            ""
+        ],
+        "parameters": {
+            "c": {
+                "description": [
+                    "The color to convert."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The color as `rgb()` with rounded channels."
+            ]
+        }
+    },
+    "ceiling": {
+        "description": [
+            "How much chroma a hue can hold at one lightness, read off its tent.",
+            ""
+        ],
+        "parameters": {
+            "l": {
+                "description": [
+                    "Lightness, 0 to 1."
+                ]
+            },
+            "tent": {
+                "description": [
+                    "The hue's tent, from `tent()`."
+                ]
+            },
+            "p": {
+                "description": [
+                    "Softness of the tent's peak."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The chroma ceiling there."
+            ]
+        }
+    },
+    "_bezier": {
+        "description": [
+            "Evaluates one axis of a cubic Bézier whose outer control points are pinned at 0 and 1.",
+            ""
+        ],
+        "parameters": {
+            "t": {
+                "description": [
+                    "Position along the curve, 0 to 1."
+                ]
+            },
+            "p1": {
+                "description": [
+                    "First inner control point."
+                ]
+            },
+            "p2": {
+                "description": [
+                    "Second inner control point."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The value of that axis at `$t`."
+            ]
+        }
+    },
+    "_ease": {
+        "description": [
+            "Reads a cubic Bézier the way CSS reads a timing function: solves x for t, then returns y.",
+            ""
+        ],
+        "parameters": {
+            "x": {
+                "description": [
+                    "Progress along the x axis, 0 to 1."
+                ]
+            },
+            "curve": {
+                "description": [
+                    "Control points `(x1, y1, x2, y2)`, or null for a straight line."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The eased position, 0 to 1."
+            ]
+        }
+    },
+    "_scale": {
+        "description": [
+            "Resolves a scale argument into its `(range:, curve:, anchor:)` map.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The family name, used to look up a default in `$family-scales`."
+                ]
+            },
+            "given": {
+                "description": [
+                    "A preset name, a `(range:, curve:)` map, a bare curve, or null."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The resolved scale. Falls back to `even` for both the scale and a missing range."
+            ]
+        }
+    },
+    "_target": {
+        "description": [
+            "The contrast target for one shade, placed along the scale by its curve.",
+            "The range is walked geometrically, so equal steps are equal contrast *ratios*.",
+            ""
+        ],
+        "parameters": {
+            "scale": {
+                "description": [
+                    "A resolved `(range:, curve:)` pair."
+                ]
+            },
+            "i": {
+                "description": [
+                    "Zero-based index of the shade."
+                ]
+            },
+            "n": {
+                "description": [
+                    "How many shades the family has."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The WCAG contrast this shade should reach against its anchor."
+            ]
+        }
+    },
+    "_envelope": {
+        "description": [
+            "Tapers chroma toward both ends of a ramp, so 50 reads as a tint and 900 as a near-neutral.",
+            ""
+        ],
+        "parameters": {
+            "t": {
+                "description": [
+                    "Position along the ramp, 0 to 1."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A multiplier for the chroma ceiling at that position."
+            ]
+        }
+    },
+    "_hue-at": {
+        "description": [
+            "Corrects the hue drift OKLCH shows through the blue-violet wedge. Linear fits against CAM16.",
+            ""
+        ],
+        "parameters": {
+            "h": {
+                "description": [
+                    "The family's hue, in degrees."
+                ]
+            },
+            "l": {
+                "description": [
+                    "Lightness of the shade being built, 0 to 1."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The hue to use at that lightness. Unchanged outside the wedge."
+            ]
+        }
+    },
+    "_context": {
+        "description": [
+            "The fixed part of a solve: what the shades of this family are being built against.",
+            ""
+        ],
+        "parameters": {
+            "h": {
+                "description": [
+                    "The family's hue, in degrees."
+                ]
+            },
+            "tent": {
+                "description": [
+                    "The hue's chroma tent, from `gamut.tent()`."
+                ]
+            },
+            "anchor-y": {
+                "description": [
+                    "Luminance of whatever the contrast is measured against."
+                ]
+            },
+            "lighter": {
+                "description": [
+                    "Whether the shades sit lighter than the anchor."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A context for `_solve()`."
+            ]
+        }
+    },
+    "_solve": {
+        "description": [
+            "Finds the shade that hits a contrast target. Chroma adds light, so the lightness cannot be",
+            "computed directly; contrast is monotonic in lightness, so this bisects for it.",
+            ""
+        ],
+        "parameters": {
+            "ctx": {
+                "description": [
+                    "The family context, from `_context()`."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The WCAG contrast to reach."
+                ]
+            },
+            "chroma": {
+                "description": [
+                    "How to chroma the shade, plus the ceiling `softness` to use.",
+                    "  Either `(level:, at:, softness:)` to take that share of the ceiling with the envelope",
+                    "  applied at position `at`, or `(fixed:, softness:)` to hold chroma flat."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The solved `color` and the contrast it actually `reached`."
+            ]
+        }
+    },
+    "_shade-at": {
+        "description": [
+            "Solves one shade and reports a target the hue cannot reach, rather than emitting the",
+            "near miss silently.",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The family name, for the warning."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "The shade being built, for the warning."
+                ]
+            },
+            "ctx": {
+                "description": [
+                    "The family context, from `_context()`."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The WCAG contrast to reach."
+                ]
+            },
+            "chroma": {
+                "description": [
+                    "The chroma spec, as `_solve()` takes it."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The solved color."
+            ]
+        }
+    },
+    "_level": {
+        "description": [
+            "How much of the chroma available at its own lightness the seed actually uses.",
+            ""
+        ],
+        "parameters": {
+            "read": {
+                "description": [
+                    "The seed's OKLCH components, from `gamut.read()`."
+                ]
+            },
+            "tent": {
+                "description": [
+                    "The hue's chroma tent, from `gamut.tent()`."
+                ]
+            },
+            "chromatic": {
+                "description": [
+                    "Whether the seed carries a usable hue."
+                ]
+            },
+            "muted": {
+                "description": [
+                    "Whether to cap the result at `$_neutral-tint-cap`."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "A saturation level, 0 to 1."
+            ]
+        }
+    },
+    "_entry": {
+        "description": [
+            "Packs one finished color into the pair `shades()` expects.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The solved color."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The color as both `raw` and `css`, in sRGB with integer channels."
+            ]
+        }
+    },
+    "_layer": {
+        "description": [
+            "Steps one surface layer away from its background.",
+            ""
+        ],
+        "parameters": {
+            "ctx": {
+                "description": [
+                    "The surface context, from `_context()`, with `lighter` set for this role."
+                ]
+            },
+            "anchor": {
+                "description": [
+                    "The background the layer sits on."
+                ]
+            },
+            "c": {
+                "description": [
+                    "Chroma to hold the layer at."
+                ]
+            },
+            "target": {
+                "description": [
+                    "The WCAG contrast the layer should reach from the background."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The layer, or the anchor unchanged when there is no room in that direction."
+            ]
+        }
+    },
+    "_surface": {
+        "description": [
+            "Builds a surface family: a background plus the layers that sit on it. Layers hold the",
+            "background's chroma flat, since scaling it reads as a color shift rather than an elevation.",
+            ""
+        ],
+        "parameters": {
+            "seed": {
+                "description": [
+                    "The background color."
+                ]
+            },
+            "variants": {
+                "description": [
+                    "The roles to generate, in emit order."
+                ]
+            },
+            "sh": {
+                "description": [
+                    "The background's hue, in degrees."
+                ]
+            },
+            "tent": {
+                "description": [
+                    "The hue's chroma tent, from `gamut.tent()`."
+                ]
+            },
+            "c": {
+                "description": [
+                    "The background's chroma."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Each role mapped to `(raw:, css:)`. The translucent `container` also names the",
+                "  `backdrop` role it is laid over."
+            ]
+        }
+    },
+    "family": {
+        "description": [
+            "Generates every shade of one color family in a single pass.",
+            "The gamut cusp is found once and shared by all shades;",
+            ""
+        ],
+        "parameters": {
+            "name": {
+                "description": [
+                    "The family name."
+                ]
+            },
+            "seed": {
+                "description": [
+                    "The seed color."
+                ]
+            },
+            "variants": {
+                "description": [
+                    "The shade variants to generate."
+                ]
+            },
+            "surface": {
+                "description": [
+                    "The surface color, for neutral families."
+                ]
+            },
+            "scale": {
+                "description": [
+                    "A scale name, spec, or bare curve."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "Each variant mapped to `(raw:, css:)`."
+            ]
+        }
+    },
+    "seed-lands-on": {
+        "description": [
+            "Reports which shade sits closest to the seed in lightness. Chroma and hue are not",
+            "compared: each shade carries the chroma its hue can hold at that lightness, so the",
+            "match is rarely the seed itself. `--ig-{name}-seed` always holds the original.",
+            ""
+        ],
+        "parameters": {
+            "palette": {
+                "description": [
+                    "A generated palette."
+                ]
+            },
+            "name": {
+                "description": [
+                    "The color family to inspect."
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The variant whose lightness is closest to the seed's, or null when",
+                "  the family has no seed or no numeric shades."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$where: seed-lands-on($my-palette, 'primary'); // '300'"
+                ]
+            }
+        ]
     }
 }

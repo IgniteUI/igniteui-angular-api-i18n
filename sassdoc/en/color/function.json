@@ -1,4 +1,81 @@
 {
+    "_lcv": {
+        "description": [
+            "Calculates the linear channel value for a given sRGB color.",
+            ""
+        ],
+        "parameters": {
+            "value": {
+                "description": [
+                    "The sRGB color"
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The calculated linear channel value"
+            ]
+        }
+    },
+    "luminance": {
+        "description": [
+            "Calculates the luminance for a given color.",
+            ""
+        ],
+        "parameters": {
+            "color": {
+                "description": [
+                    "The color to calculate luminance for.",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The calculated luminance of a given color"
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$white: luminance(#fff); // 1",
+                    "$blue: luminance(#09f); // 0.3",
+                    "$black: luminance(#000); // 0"
+                ]
+            }
+        ]
+    },
+    "contrast": {
+        "description": [
+            "Calculates the contrast ratio between two colors.",
+            ""
+        ],
+        "parameters": {
+            "background": {
+                "description": [
+                    "The background color."
+                ]
+            },
+            "foreground": {
+                "description": [
+                    "The foreground color.",
+                    ""
+                ]
+            }
+        },
+        "returns": {
+            "description": [
+                "The contrast ratio between the background and foreground colors."
+            ]
+        },
+        "example": [
+            {
+                "code": [
+                    "$conrast: contrast(#09f, #000); // 7"
+                ]
+            }
+        ]
+    },
     "_normalize-color": {
         "description": [
             "Normalizes a color value to ensure consistent format output.",
@@ -26,15 +103,14 @@
         "parameters": {
             "color": {
                 "description": [
-                    "The base color used in the calculation."
+                    "The base color used in the calculation.",
+                    ""
                 ]
             }
         },
         "returns": {
             "description": [
-                "Returns a relative HSL color where the lightness is adjusted",
-                "based on the specified contrast level, resulting in either black or white.",
-                ""
+                "Returns a relative HSL color where the lightness is adjusted"
             ]
         },
         "example": [
@@ -62,8 +138,7 @@
             },
             "foreground": {
                 "description": [
-                    "A list of foreground colors",
-                    "that can be used with the provided background."
+                    "A list of foreground colors that can be used with the provided background."
                 ]
             },
             "contrast": {
@@ -74,9 +149,7 @@
         },
         "returns": {
             "description": [
-                "Returns either white, black, or the provided foreground",
-                "color if it meets the required contrast level.",
-                ""
+                "Returns either white, black, or the provided foreground color if it meets the required contrast level."
             ]
         },
         "example": [
@@ -140,82 +213,5 @@
                 ]
             }
         ]
-    },
-    "contrast": {
-        "description": [
-            "Calculates the contrast ratio between two colors.",
-            ""
-        ],
-        "parameters": {
-            "background": {
-                "description": [
-                    "The background color."
-                ]
-            },
-            "foreground": {
-                "description": [
-                    "The foreground color.",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "The contrast ratio between the background and foreground colors."
-            ]
-        },
-        "example": [
-            {
-                "code": [
-                    "$conrast: contrast(#09f, #000); // 7"
-                ]
-            }
-        ]
-    },
-    "luminance": {
-        "description": [
-            "Calculates the luminance for a given color.",
-            ""
-        ],
-        "parameters": {
-            "color": {
-                "description": [
-                    "The color to calculate luminance for.",
-                    ""
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "The calculated luminance of a given color"
-            ]
-        },
-        "example": [
-            {
-                "code": [
-                    "$white: luminance(#fff); // 1",
-                    "$blue: luminance(#09f); // 0.3",
-                    "$black: luminance(#000); // 0"
-                ]
-            }
-        ]
-    },
-    "_lcv": {
-        "description": [
-            "Calculates the linear channel value for a given sRGB color.",
-            ""
-        ],
-        "parameters": {
-            "value": {
-                "description": [
-                    "The sRGB color"
-                ]
-            }
-        },
-        "returns": {
-            "description": [
-                "The calculated linear channel value"
-            ]
-        }
     }
 }
