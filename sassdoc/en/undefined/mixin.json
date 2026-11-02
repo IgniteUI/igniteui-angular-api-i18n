@@ -303,8 +303,10 @@
     "scope": {
         "description": [
             "Wraps the passed content in a named cascade layer and scopes it to the given",
-            "selector through `:where()`, keeping specificity at zero. The active schema is",
-            "yielded to the content block so callers can resolve themes against it.",
+            "selector through `:where()`, keeping specificity at zero. Each selector of a list",
+            "gets its own `:where()`, as Chromium can't bucket multi-argument `:where()` subjects",
+            "and would match them against every element. The active schema is yielded to the",
+            "content block so callers can resolve themes against it.",
             ""
         ],
         "parameters": {
