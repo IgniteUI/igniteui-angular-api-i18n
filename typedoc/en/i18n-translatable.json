@@ -31299,160 +31299,160 @@
 		"35902": {
 			"summary": "Gets the function used to track changes in the items collection.\nBy default the object references are compared. However this can be optimized if you have unique identifier\nvalue that can be used for the comparison instead of the object ref or if you have some other property values\nin the item object that should be tracked for changes.\nThis option is similar to ngForTrackBy.\n```typescript\nconst trackFunc = this.parentVirtDir.igxForTrackBy;\n```"
 		},
-		"35977": {
+		"35982": {
 			"summary": "A function that returns whether the element is the first or not"
 		},
-		"35979": {
+		"35984": {
 			"summary": "A function that returns whether the element is the last or not"
 		},
-		"35981": {
+		"35986": {
 			"summary": "A function that returns whether the element is even or not"
 		},
-		"35983": {
+		"35988": {
 			"summary": "A function that returns whether the element is odd or not"
 		},
-		"36067": {
+		"36075": {
 			"summary": "Sets the data to be rendered.\n```html\n<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\"></ng-template>\n```"
 		},
-		"36070": {
+		"36078": {
 			"summary": "Sets the property name from which to read the size in the data object."
 		},
-		"36071": {
+		"36079": {
 			"summary": "Specifies the scroll orientation.\nScroll orientation can be \"vertical\" or \"horizontal\".\n```html\n<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\"></ng-template>\n```"
 		},
-		"36072": {
+		"36080": {
 			"summary": "Optionally pass the parent `igxFor` instance to create a virtual template scrolling both horizontally and vertically.\n```html\n<ng-template #scrollContainer igxFor let-rowData [igxForOf]=\"data\"\n      [igxForScrollOrientation]=\"'vertical'\"\n      [igxForContainerSize]=\"'500px'\"\n      [igxForItemSize]=\"'50px'\"\n      let-rowIndex=\"index\">\n      <div [style.display]=\"'flex'\" [style.height]=\"'50px'\">\n          <ng-template #childContainer igxFor let-item [igxForOf]=\"data\"\n              [igxForScrollOrientation]=\"'horizontal'\"\n              [igxForScrollContainer]=\"parentVirtDir\"\n              [igxForContainerSize]=\"'500px'\">\n                  <div [style.min-width]=\"'50px'\">{{rowIndex}} : {{item.text}}</div>\n          </ng-template>\n      </div>\n</ng-template>\n```"
 		},
-		"36073": {
+		"36081": {
 			"summary": "Sets the px-affixed size of the container along the axis of scrolling.\nFor \"horizontal\" orientation this value is the width of the container and for \"vertical\" is the height.\n```html\n<ng-template igxFor let-item [igxForOf]=\"data\" [igxForContainerSize]=\"'500px'\"\n     [igxForScrollOrientation]=\"'horizontal'\">\n</ng-template>\n```"
 		},
-		"36075": {
+		"36083": {
 			"summary": "Sets the px-affixed size of the item along the axis of scrolling.\nFor \"horizontal\" orientation this value is the width of the column and for \"vertical\" is the height or the row.\n```html\n<ng-template igxFor let-item [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" [igxForItemSize]=\"'50px'\"></ng-template>\n```"
 		},
-		"36076": {
+		"36084": {
 			"summary": "An event that is emitted after a new chunk has been loaded.\n```html\n<ng-template igxFor [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" (chunkLoad)=\"loadChunk($event)\"></ng-template>\n```\n```typescript\nloadChunk(e){\nalert(\"chunk loaded!\");\n}\n```"
 		},
-		"36079": {
+		"36087": {
 			"summary": "An event that is emitted after the rendered content size of the igxForOf has been changed."
 		},
-		"36080": {
+		"36088": {
 			"summary": "An event that is emitted after data has been changed.\n```html\n<ng-template igxFor [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" (dataChanged)=\"dataChanged($event)\"></ng-template>\n```\n```typescript\ndataChanged(e){\nalert(\"data changed!\");\n}\n```"
 		},
-		"36082": {
+		"36090": {
 			"summary": "An event that is emitted on chunk loading to emit the current state information - startIndex, endIndex, totalCount.\nCan be used for implementing remote load on demand for the igxFor data.\n```html\n<ng-template igxFor [igxForOf]=\"data\" [igxForScrollOrientation]=\"'horizontal'\" (chunkPreload)=\"chunkPreload($event)\"></ng-template>\n```\n```typescript\nchunkPreload(e){\nalert(\"chunk is loading!\");\n}\n```"
 		},
-		"36084": {
+		"36092": {
 			"summary": "The current state of the directive. It contains `startIndex` and `chunkSize`.\nstate.startIndex - The index of the item at which the current visible chunk begins.\nstate.chunkSize - The number of items the current visible chunk holds.\nThese options can be used when implementing remote virtualization as they provide the necessary state information.\n```typescript\nconst gridState = this.parentVirtDir.state;\n```"
 		},
-		"36091": {
+		"36099": {
 			"summary": "Internal track for scroll top that is being virtualized"
 		},
-		"36101": {
+		"36109": {
 			"summary": "The total count of the virtual data items, when using remote service.\nSimilar to the property totalItemCount, but this will allow setting the data count into the template.\n```html\n<ng-template igxFor let-item [igxForOf]=\"data | async\" [igxForTotalItemCount]=\"count | async\"\n [igxForContainerSize]=\"'500px'\" [igxForItemSize]=\"'50px'\"></ng-template>\n```"
 		},
-		"36105": {
+		"36113": {
 			"summary": "The total count of the virtual data items, when using remote service.\n```typescript\nthis.parentVirtDir.totalItemCount = data.Count;\n```"
 		},
-		"36115": {
+		"36123": {
 			"summary": "Gets/Sets the scroll position.\n```typescript\nconst position = directive.scrollPosition;\ndirective.scrollPosition = value;\n```"
 		},
-		"36132": {
+		"36140": {
 			"summary": "A callback method that is invoked immediately after\nAngular has completed initialization of a component's view.\nIt is invoked only once when the view is instantiated."
 		},
-		"36142": {
+		"36150": {
 			"summary": "Shifts the scroll thumb position.\n```typescript\nthis.parentVirtDir.addScroll(5);\n```"
-		},
-		"36145": {
-			"summary": "Shifts the scroll thumb position.\n```typescript\nthis.parentVirtDir.addScroll(5);\n```"
-		},
-		"36146": {
-			"summary": "negative value to scroll previous and positive to scroll next;"
-		},
-		"36148": {
-			"summary": "Scrolls to the specified index.\n```typescript\nthis.parentVirtDir.scrollTo(5);\n```"
-		},
-		"36151": {
-			"summary": "Scrolls by one item into the appropriate next direction.\nFor \"horizontal\" orientation that will be the right column and for \"vertical\" that is the lower row.\n```typescript\nthis.parentVirtDir.scrollNext();\n```"
 		},
 		"36153": {
+			"summary": "Shifts the scroll thumb position.\n```typescript\nthis.parentVirtDir.addScroll(5);\n```"
+		},
+		"36154": {
+			"summary": "negative value to scroll previous and positive to scroll next;"
+		},
+		"36156": {
+			"summary": "Scrolls to the specified index.\n```typescript\nthis.parentVirtDir.scrollTo(5);\n```"
+		},
+		"36159": {
+			"summary": "Scrolls by one item into the appropriate next direction.\nFor \"horizontal\" orientation that will be the right column and for \"vertical\" that is the lower row.\n```typescript\nthis.parentVirtDir.scrollNext();\n```"
+		},
+		"36161": {
 			"summary": "Scrolls by one item into the appropriate previous direction.\nFor \"horizontal\" orientation that will be the left column and for \"vertical\" that is the upper row.\n```typescript\nthis.parentVirtDir.scrollPrev();\n```"
 		},
-		"36155": {
+		"36163": {
 			"summary": "Scrolls by one page into the appropriate next direction.\nFor \"horizontal\" orientation that will be one view to the right and for \"vertical\" that is one view to the bottom.\n```typescript\nthis.parentVirtDir.scrollNextPage();\n```"
 		},
-		"36157": {
+		"36165": {
 			"summary": "Scrolls by one page into the appropriate previous direction.\nFor \"horizontal\" orientation that will be one view to the left and for \"vertical\" that is one view to the top.\n```typescript\nthis.parentVirtDir.scrollPrevPage();\n```"
 		},
-		"36162": {
+		"36170": {
 			"summary": "Returns the total number of items that are fully visible.\n```typescript\nthis.parentVirtDir.getItemCountInView();\n```"
 		},
-		"36164": {
+		"36172": {
 			"summary": "Returns a reference to the scrollbar DOM element.\nThis is either a vertical or horizontal scrollbar depending on the specified igxForScrollOrientation.\n```typescript\ndir.getScroll();\n```"
 		},
-		"36166": {
+		"36174": {
 			"summary": "Returns the size of the element at the specified index.\n```typescript\nthis.parentVirtDir.getSizeAt(1);\n```"
 		},
-		"36171": {
+		"36179": {
 			"summary": "Returns the scroll offset of the element at the specified index.\n```typescript\nthis.parentVirtDir.getScrollForIndex(1);\n```"
 		},
-		"36175": {
+		"36183": {
 			"summary": "Returns the index of the element at the specified offset.\n```typescript\nthis.parentVirtDir.getIndexAtScroll(100);\n```"
 		},
-		"36178": {
+		"36186": {
 			"summary": "Returns whether the target index is outside the view.\n```typescript\nthis.parentVirtDir.isIndexOutsideView(10);\n```"
 		},
-		"36213": {
+		"36221": {
 			"summary": "Gets the function used to track changes in the items collection.\nBy default the object references are compared. However this can be optimized if you have unique identifier\nvalue that can be used for the comparison instead of the object ref or if you have some other property values\nin the item object that should be tracked for changes.\nThis option is similar to ngForTrackBy.\n```typescript\nconst trackFunc = this.parentVirtDir.igxForTrackBy;\n```"
 		},
-		"36317": {
+		"36327": {
 			"summary": "Rectangle of the arrow element."
 		},
-		"36318": {
+		"36328": {
 			"summary": "Rectangle of the tooltip element."
 		},
-		"36319": {
+		"36329": {
 			"summary": "Direction in which the arrow points."
 		},
-		"36320": {
+		"36330": {
 			"summary": "Vertical offset of the arrow element from the tooltip"
 		},
-		"36321": {
+		"36331": {
 			"summary": "Horizontal offset of the arrow element from the tooltip"
 		},
-		"36322": {
+		"36332": {
 			"summary": "Positions the element as in **Connected** positioning strategy and re-positions the element in\nthe view port (calculating a different start point) in case the element is partially getting out of view"
 		},
-		"36328": {
+		"36338": {
 			"summary": "Position the element based on the PositionStrategy implementing this interface."
 		},
-		"36329": {
+		"36339": {
 			"summary": "The HTML element to be positioned"
 		},
-		"36330": {
+		"36340": {
 			"summary": "Size of the element"
 		},
-		"36331": {
+		"36341": {
 			"summary": "reference to the Document object"
 		},
-		"36332": {
+		"36342": {
 			"summary": "should be true if this is the initial call to the method"
 		},
-		"36333": {
+		"36343": {
 			"summary": "attaching target for the component to show\n```typescript\nsettings.positionStrategy.position(content, size, document, true);\n```"
 		},
-		"36339": {
+		"36349": {
 			"summary": "Sets the position of the arrow relative to the tooltip element."
 		},
-		"36340": {
+		"36350": {
 			"summary": "the arrow element of the tooltip."
 		},
-		"36341": {
+		"36351": {
 			"summary": "arrowFit object containing all necessary parameters."
 		},
-		"36381": {
+		"36391": {
 			"summary": "PositionSettings to use when position the component in the overlay"
 		},
-		"36383": {
+		"36393": {
 			"summary": "Creates clone of this position strategy",
 			"blockTags": [
 				{
@@ -31461,7 +31461,7 @@
 				}
 			]
 		},
-		"36407": {
+		"36417": {
 			"summary": "Action Strip provides templatable area for one or more actions.",
 			"blockTags": [
 				{
@@ -31494,7 +31494,7 @@
 				}
 			]
 		},
-		"36414": {
+		"36424": {
 			"summary": "Sets the context of an action strip.\nThe context should be an instance of a @Component, that has element property.\nThis element will be the placeholder of the action strip.",
 			"blockTags": [
 				{
@@ -31503,7 +31503,7 @@
 				}
 			]
 		},
-		"36417": {
+		"36427": {
 			"summary": "Gets/Sets the visibility of the Action Strip.\nCould be used to set if the Action Strip will be initially hidden.",
 			"blockTags": [
 				{
@@ -31512,7 +31512,7 @@
 				}
 			]
 		},
-		"36441": {
+		"36451": {
 			"summary": "Showing the Action Strip and appending it the specified context element.",
 			"blockTags": [
 				{
@@ -31521,7 +31521,7 @@
 				}
 			]
 		},
-		"36444": {
+		"36454": {
 			"summary": "Hiding the Action Strip and removing it from its current context element.",
 			"blockTags": [
 				{
@@ -31530,7 +31530,7 @@
 				}
 			]
 		},
-		"36517": {
+		"36527": {
 			"summary": "Combo filter function which does not distinguish between accented letters and their base letters.\nFor example, when filtering for \"resume\", this function will match both \"resume\" and \"résumé\".",
 			"blockTags": [
 				{
@@ -31539,46 +31539,46 @@
 				}
 			]
 		},
-		"36522": {
+		"36532": {
 			"summary": "Interface that encapsulates selectionChanging event arguments - old selection, new selection and cancel selection."
 		},
-		"36525": {
+		"36535": {
 			"summary": "Provides the ability to cancel the event."
 		},
-		"36526": {
+		"36536": {
 			"summary": "Provides reference to the owner component."
 		},
-		"36527": {
+		"36537": {
 			"summary": "Interface for an instance of IgxDropDownNavigationDirective"
 		},
-		"36546": {
+		"36556": {
 			"summary": "Provides reference to the owner component."
 		},
-		"36549": {
+		"36559": {
 			"summary": "Provides reference to the owner component."
 		},
-		"36550": {
+		"36560": {
 			"summary": "Provides the ability to cancel the event."
 		},
-		"36580": {
+		"36590": {
 			"summary": "Returns a reference to the `igx-expansion-panel-icon` element;\nIf `iconPosition` is `NONE` - return null;"
 		},
-		"36585": {
+		"36595": {
 			"summary": "Gets/sets the `aria-level` attribute of the header\nGet\n```typescript\n const currentAriaLevel = this.panel.header.lv;\n```\nSet\n```typescript\n this.panel.header.lv = '5';\n```\n```html\n <igx-expansion-panel-header [lv]=\"myCustomLevel\"></igx-expansion-panel-header>\n```"
 		},
-		"36586": {
+		"36596": {
 			"summary": "Gets/sets the `role` attribute of the header\nGet\n```typescript\n const currentRole = this.panel.header.role;\n```\nSet\n```typescript\n this.panel.header.role = '5';\n```\n```html\n <igx-expansion-panel-header [role]=\"'custom'\"></igx-expansion-panel-header>\n```"
 		},
-		"36591": {
+		"36601": {
 			"summary": "Gets/sets the position of the expansion-panel-header expand/collapse icon\nAccepts `left`, `right` or `none`\n```typescript\n const currentIconPosition = this.panel.header.iconPosition;\n```\nSet\n```typescript\n this.panel.header.iconPosition = 'left';\n```\n```html\n <igx-expansion-panel-header [iconPosition]=\"'right'\"></igx-expansion-panel-header>\n```"
 		},
-		"36592": {
+		"36602": {
 			"summary": "Emitted whenever a user interacts with the header host\n```typescript\n handleInteraction(event: IExpansionPanelCancelableEventArgs) {\n ...\n}\n```\n```html\n <igx-expansion-panel-header (interaction)=\"handleInteraction($event)\">\n     ...\n </igx-expansion-panel-header>\n```"
 		},
-		"36597": {
+		"36607": {
 			"summary": "Gets/sets the whether the header is disabled\nWhen disabled, the header will not handle user events and will stop their propagation\n\n```typescript\n const isDisabled = this.panel.header.disabled;\n```\nSet\n```typescript\n this.panel.header.disabled = true;\n```\n```html\n <igx-expansion-panel-header [disabled]=\"true\">\n    ...\n </igx-expansion-panel-header>\n```"
 		},
-		"36602": {
+		"36612": {
 			"summary": "Sets/gets the `id` of the expansion panel header.\n```typescript\nlet panelHeaderId =  this.panel.header.id;\n```",
 			"blockTags": [
 				{
@@ -31587,19 +31587,19 @@
 				}
 			]
 		},
-		"36624": {
+		"36634": {
 			"summary": "Gets/sets the `role` attribute of the panel body\nDefault is 'region';\nGet\n```typescript\n const currentRole = this.panel.body.role;\n```\nSet\n```typescript\n this.panel.body.role = 'content';\n```\n```html\n <igx-expansion-panel-body [role]=\"'custom'\"></igx-expansion-panel-body>\n```"
 		},
-		"36628": {
+		"36638": {
 			"summary": "Gets the `aria-label` attribute of the panel body\nDefaults to the panel id with '-region' in the end;\nGet\n```typescript\n const currentLabel = this.panel.body.label;\n```"
 		},
-		"36632": {
+		"36642": {
 			"summary": "Gets the `aria-labelledby` attribute of the panel body\nDefaults to the panel header id;\nGet\n```typescript\n const currentLabel = this.panel.body.labelledBy;\n```"
 		},
-		"36641": {
+		"36651": {
 			"summary": "Sets/gets the animation settings of the expansion panel component\nOpen and Close animation should be passed\n\nGet\n```typescript\n const currentAnimations = this.panel.animationSettings;\n```\nSet\n```typescript\n import { slideInLeft, slideOutRight } from 'igniteui-angular';\n ...\n this.panel.animationsSettings = {\n     openAnimation: slideInLeft,\n     closeAnimation: slideOutRight\n};\n```\nor via template\n```typescript\n import { slideInLeft, slideOutRight } from 'igniteui-angular';\n ...\n myCustomAnimationObject = {\n     openAnimation: slideInLeft,\n     closeAnimation: slideOutRight\n};\n```html\n <igx-expansion-panel [animationSettings]='myCustomAnimationObject'>\n ...\n </igx-expansion-panel>\n```"
 		},
-		"36644": {
+		"36654": {
 			"summary": "Sets/gets the `id` of the expansion panel component.\nIf not set, `id` will have value `\"igx-expansion-panel-0\"`;\n```html\n<igx-expansion-panel id = \"my-first-expansion-panel\"></igx-expansion-panel>\n```\n```typescript\nlet panelId =  this.panel.id;\n```",
 			"blockTags": [
 				{
@@ -31608,67 +31608,67 @@
 				}
 			]
 		},
-		"36649": {
+		"36659": {
 			"summary": "Gets/sets whether the component is collapsed (its content is hidden)\nGet\n```typescript\n const myPanelState: boolean = this.panel.collapsed;\n```\nSet\n```html\n this.panel.collapsed = true;\n```\n\nTwo-way data binding:\n```html\n<igx-expansion-panel [(collapsed)]=\"model.isCollapsed\"></igx-expansion-panel>\n```"
 		},
-		"36651": {
+		"36661": {
 			"summary": "Emitted when the expansion panel starts collapsing\n```typescript\n handleCollapsing(event: IExpansionPanelCancelableEventArgs)\n```\n```html\n <igx-expansion-panel (contentCollapsing)=\"handleCollapsing($event)\">\n     ...\n </igx-expansion-panel>\n```"
 		},
-		"36652": {
+		"36662": {
 			"summary": "Emitted when the expansion panel finishes collapsing\n```typescript\n handleCollapsed(event: IExpansionPanelEventArgs)\n```\n```html\n <igx-expansion-panel (contentCollapsed)=\"handleCollapsed($event)\">\n     ...\n </igx-expansion-panel>\n```"
 		},
-		"36653": {
+		"36663": {
 			"summary": "Emitted when the expansion panel starts expanding\n```typescript\n handleExpanding(event: IExpansionPanelCancelableEventArgs)\n```\n```html\n <igx-expansion-panel (contentExpanding)=\"handleExpanding($event)\">\n     ...\n </igx-expansion-panel>\n```"
 		},
-		"36654": {
+		"36664": {
 			"summary": "Emitted when the expansion panel finishes expanding\n```typescript\n handleExpanded(event: IExpansionPanelEventArgs)\n```\n```html\n <igx-expansion-panel (contentExpanded)=\"handleExpanded($event)\">\n     ...\n </igx-expansion-panel>\n```"
 		},
-		"36664": {
+		"36674": {
 			"summary": "Collapses the panel\n\n```html\n <igx-expansion-panel #myPanel>\n     ...\n </igx-expansion-panel>\n <button type=\"button\" igxButton (click)=\"myPanel.collapse($event)\">Collpase Panel</button>\n```"
 		},
-		"36667": {
+		"36677": {
 			"summary": "Expands the panel\n\n```html\n <igx-expansion-panel #myPanel>\n     ...\n </igx-expansion-panel>\n <button type=\"button\" igxButton (click)=\"myPanel.expand($event)\">Expand Panel</button>\n```"
 		},
-		"36670": {
+		"36680": {
 			"summary": "Toggles the panel\n\n```html\n <igx-expansion-panel #myPanel>\n     ...\n </igx-expansion-panel>\n <button type=\"button\" igxButton (click)=\"myPanel.toggle($event)\">Expand Panel</button>\n```"
 		},
-		"36819": {
+		"36829": {
 			"summary": "The data passed to the row component.\n\n```typescript\n// get the row data for the first selected row\nlet selectedRowData = this.grid.selectedRows[0].data;\n```"
 		},
-		"36822": {
+		"36832": {
 			"summary": "The index of the row.\n\n```typescript\n// get the index of the second selected row\nlet selectedRowIndex = this.grid.selectedRows[1].index;\n```"
 		},
-		"36823": {
+		"36833": {
 			"summary": "Sets whether this specific row has disabled functionality for editing and row selection.\nDefault value is `false`.\n```typescript\nthis.grid.selectedRows[0].pinned = true;\n```"
 		},
-		"36825": {
+		"36835": {
 			"summary": "Gets whether the row is pinned.\n```typescript\nlet isPinned = row.pinned;\n```"
 		},
-		"36831": {
+		"36841": {
 			"summary": "Gets the expanded state of the row.\n```typescript\nlet isExpanded = row.expanded;\n```"
 		},
-		"36845": {
+		"36855": {
 			"summary": "Gets the rendered cells in the row component.\n\n```typescript\n// get the cells of the third selected row\nlet selectedRowCells = this.grid.selectedRows[2].cells;\n```"
 		},
-		"36883": {
+		"36893": {
 			"summary": "Gets the ID of the row.\nA row in the grid is identified either by:\n- primaryKey data value,\n- the whole data, if the primaryKey is omitted.\n\n```typescript\nlet rowID = this.grid.selectedRows[2].key;\n```"
 		},
-		"36885": {
+		"36895": {
 			"summary": "The native DOM element representing the row. Could be null in certain environments.\n\n```typescript\n// get the nativeElement of the second selected row\nlet selectedRowNativeElement = this.grid.selectedRows[1].nativeElement;\n```"
 		},
-		"36910": {
+		"36920": {
 			"summary": "Updates the specified row object and the data source record with the passed value.\n\n```typescript\n// update the second selected row's value\nlet newValue = \"Apple\";\nthis.grid.selectedRows[1].update(newValue);\n```"
 		},
-		"36913": {
+		"36923": {
 			"summary": "Removes the specified row from the grid's data source.\nThis method emits `rowDeleted` event.\n\n```typescript\n// delete the third selected row from the grid\nthis.grid.selectedRows[2].delete();\n```"
 		},
-		"36918": {
+		"36928": {
 			"summary": "Pins the specified row.\nThis method emits `rowPinning``rowPinned` event.\n\n```typescript\n// pin the selected row from the grid\nthis.grid.selectedRows[0].pin();\n```"
 		},
-		"36920": {
+		"36930": {
 			"summary": "Unpins the specified row.\nThis method emits `rowPinning``rowPinned` event.\n\n```typescript\n// unpin the selected row from the grid\nthis.grid.selectedRows[0].unpin();\n```"
 		},
-		"36929": {
+		"36939": {
 			"summary": "Spawns the add row UI for the specific row.",
 			"blockTags": [
 				{
@@ -31677,19 +31677,19 @@
 				}
 			]
 		},
-		"37001": {
+		"37011": {
 			"summary": "A component used for presenting advanced filtering UI for a Grid.\nIt is used internally in the Grid, but could also be hosted in a container outside of it.\n\nExample:\n```html\n<igx-advanced-filtering-dialog\n    [grid]=\"grid1\">\n</igx-advanced-filtering-dialog>\n```"
 		},
-		"37018": {
+		"37028": {
 			"summary": "Returns the grid."
 		},
-		"37055": {
+		"37065": {
 			"summary": "Providing reference to `IgxGridCellComponent`:\n```typescript\n@ViewChild('grid', { read: IgxGridComponent })\n public grid: IgxGridComponent;\n```\n```typescript\n let column = this.grid.columnList.first;\n```\n```typescript\n let cell = column.cells[0];\n```"
 		},
-		"37059": {
+		"37069": {
 			"summary": "Represents the grid instance containing the cell"
 		},
-		"37072": {
+		"37082": {
 			"summary": "Gets the column of the cell.\n```typescript\n let cellColumn = this.cell.column;\n```",
 			"blockTags": [
 				{
@@ -31698,13 +31698,13 @@
 				}
 			]
 		},
-		"37074": {
+		"37084": {
 			"summary": "Gets whether this cell is a merged cell."
 		},
-		"37078": {
+		"37088": {
 			"summary": "Represents the row that the cell belongs to"
 		},
-		"37079": {
+		"37089": {
 			"summary": "Gets the row of the cell.\n```typescript\nlet cellRow = this.cell.row;\n```",
 			"blockTags": [
 				{
@@ -31713,7 +31713,7 @@
 				}
 			]
 		},
-		"37080": {
+		"37090": {
 			"summary": "Gets the data of the row of the cell.\n```typescript\nlet rowData = this.cell.rowData;\n```",
 			"blockTags": [
 				{
@@ -31722,7 +31722,7 @@
 				}
 			]
 		},
-		"37082": {
+		"37092": {
 			"summary": "Sets/gets the template of the cell.\n```html\n<ng-template #cellTemplate igxCell let-value>\n  <div style=\"font-style: oblique; color:blueviolet; background:red\">\n      <span>{{value}}</span>\n  </div>\n</ng-template>\n```\n```typescript\n@ViewChild('cellTemplate',{read: TemplateRef})\ncellTemplate: TemplateRef<any>;\n```\n```typescript\nthis.cell.cellTemplate = this.cellTemplate;\n```\n```typescript\nlet template =  this.cell.cellTemplate;\n```",
 			"blockTags": [
 				{
@@ -31731,7 +31731,7 @@
 				}
 			]
 		},
-		"37085": {
+		"37095": {
 			"summary": "Sets/gets the cell value.\n```typescript\nthis.cell.value = \"Cell Value\";\n```\n```typescript\nlet cellValue = this.cell.value;\n```",
 			"blockTags": [
 				{
@@ -31740,7 +31740,7 @@
 				}
 			]
 		},
-		"37086": {
+		"37096": {
 			"summary": "Gets the cell formatter.\n```typescript\nlet cellForamatter = this.cell.formatter;\n```",
 			"blockTags": [
 				{
@@ -31749,7 +31749,7 @@
 				}
 			]
 		},
-		"37093": {
+		"37103": {
 			"summary": "Gets the cell template context object.\n```typescript\n let context = this.cell.context();\n```",
 			"blockTags": [
 				{
@@ -31758,7 +31758,7 @@
 				}
 			]
 		},
-		"37095": {
+		"37105": {
 			"summary": "Gets the cell template.\n```typescript\nlet template = this.cell.template;\n```",
 			"blockTags": [
 				{
@@ -31767,7 +31767,7 @@
 				}
 			]
 		},
-		"37097": {
+		"37107": {
 			"summary": "Gets the pinned indicator template.\n```typescript\nlet template = this.cell.pinnedIndicatorTemplate;\n```",
 			"blockTags": [
 				{
@@ -31776,7 +31776,7 @@
 				}
 			]
 		},
-		"37099": {
+		"37109": {
 			"summary": "Gets the `id` of the grid in which the cell is stored.\n```typescript\nlet gridId = this.cell.gridID;\n```",
 			"blockTags": [
 				{
@@ -31785,7 +31785,7 @@
 				}
 			]
 		},
-		"37101": {
+		"37111": {
 			"summary": "Gets the `index` of the row where the cell is stored.\n```typescript\nlet rowIndex = this.cell.rowIndex;\n```",
 			"blockTags": [
 				{
@@ -31794,7 +31794,7 @@
 				}
 			]
 		},
-		"37103": {
+		"37113": {
 			"summary": "Gets the `index` of the cell column.\n```typescript\nlet columnIndex = this.cell.columnIndex;\n```",
 			"blockTags": [
 				{
@@ -31803,10 +31803,10 @@
 				}
 			]
 		},
-		"37104": {
+		"37114": {
 			"summary": "The index of the column that the cell belongs to. It counts only the visible (not hidden) columns"
 		},
-		"37105": {
+		"37115": {
 			"summary": "Returns the column visible index.\n```typescript\nlet visibleColumnIndex = this.cell.visibleColumnIndex;\n```",
 			"blockTags": [
 				{
@@ -31815,10 +31815,10 @@
 				}
 			]
 		},
-		"37108": {
+		"37118": {
 			"summary": "Optional; The `cellID` is the unique key, used to identify the cell"
 		},
-		"37109": {
+		"37119": {
 			"summary": "Gets the ID of the cell.\n```typescript\nlet cellID = this.cell.cellID;\n```",
 			"blockTags": [
 				{
@@ -31827,16 +31827,16 @@
 				}
 			]
 		},
-		"37116": {
+		"37126": {
 			"summary": "An optional title to display for the cell"
 		},
-		"37117": {
+		"37127": {
 			"summary": "An optional title to display for the cell"
 		},
-		"37120": {
+		"37130": {
 			"summary": "Represents the native HTML element of the cell itself"
 		},
-		"37121": {
+		"37131": {
 			"summary": "Returns a reference to the nativeElement of the cell.\n```typescript\nlet cellNativeElement = this.cell.nativeElement;\n```",
 			"blockTags": [
 				{
@@ -31845,10 +31845,10 @@
 				}
 			]
 		},
-		"37131": {
+		"37141": {
 			"summary": "Returns whether the cell is in edit mode."
 		},
-		"37132": {
+		"37142": {
 			"summary": "Sets/get the `role` property of the cell.\nDefault value is `\"gridcell\"`.\n```typescript\nthis.cell.role = 'grid-cell';\n```\n```typescript\nlet cellRole = this.cell.role;\n```",
 			"blockTags": [
 				{
@@ -31857,7 +31857,7 @@
 				}
 			]
 		},
-		"37134": {
+		"37144": {
 			"summary": "Gets whether the cell is editable.\n```typescript\nlet isCellReadonly = this.cell.readonly;\n```",
 			"blockTags": [
 				{
@@ -31866,7 +31866,7 @@
 				}
 			]
 		},
-		"37157": {
+		"37167": {
 			"summary": "Gets the width of the cell.\n```typescript\nlet cellWidth = this.cell.width;\n```",
 			"blockTags": [
 				{
@@ -31875,10 +31875,10 @@
 				}
 			]
 		},
-		"37161": {
+		"37171": {
 			"summary": "Indicates whether the cell is currently selected. It is false, if the sell is not selected, and true, if it is."
 		},
-		"37162": {
+		"37172": {
 			"summary": "Gets whether the cell is selected.\n```typescript\nlet isSelected = this.cell.selected;\n```",
 			"blockTags": [
 				{
@@ -31887,7 +31887,7 @@
 				}
 			]
 		},
-		"37166": {
+		"37176": {
 			"summary": "Gets whether the cell column is selected.\n```typescript\nlet isCellColumnSelected = this.cell.columnSelected;\n```",
 			"blockTags": [
 				{
@@ -31896,10 +31896,10 @@
 				}
 			]
 		},
-		"37167": {
+		"37177": {
 			"summary": "The value to display when the cell is in edit mode."
 		},
-		"37168": {
+		"37178": {
 			"summary": "Gets the current edit value while a cell is in edit mode.\nOnly for cell editing mode.\n```typescript\nlet editValue = this.cell.editValue;\n```",
 			"blockTags": [
 				{
@@ -31908,13 +31908,13 @@
 				}
 			]
 		},
-		"37171": {
+		"37181": {
 			"summary": "Indicates whether the cell can be edited."
 		},
-		"37172": {
+		"37182": {
 			"summary": "Returns whether the cell is editable."
 		},
-		"37191": {
+		"37201": {
 			"summary": "Sets/gets the highlight class of the cell.\nDefault value is `\"igx-highlight\"`.\n```typescript\nlet highlightClass = this.cell.highlightClass;\n```\n```typescript\nthis.cell.highlightClass = 'igx-cell-highlight';\n```",
 			"blockTags": [
 				{
@@ -31923,7 +31923,7 @@
 				}
 			]
 		},
-		"37192": {
+		"37202": {
 			"summary": "Sets/gets the active highlight class class of the cell.\nDefault value is `\"igx-highlight__active\"`.\n```typescript\nlet activeHighlightClass = this.cell.activeHighlightClass;\n```\n```typescript\nthis.cell.activeHighlightClass = 'igx-cell-highlight_active';\n```",
 			"blockTags": [
 				{
@@ -31932,16 +31932,16 @@
 				}
 			]
 		},
-		"37212": {
+		"37222": {
 			"summary": "A callback method that is invoked immediately after\nAngular has completed initialization of a component's view.\nIt is invoked only once when the view is instantiated."
 		},
-		"37229": {
+		"37239": {
 			"summary": "Starts/ends edit mode for the cell.\n\n```typescript\ncell.setEditMode(true);\n```"
 		},
-		"37231": {
+		"37241": {
 			"summary": "A method definition to update the value of the cell."
 		},
-		"37232": {
+		"37242": {
 			"summary": "Sets new value to the cell.\n```typescript\nthis.cell.update('New Value');\n```",
 			"blockTags": [
 				{
@@ -31950,7 +31950,7 @@
 				}
 			]
 		},
-		"37251": {
+		"37261": {
 			"summary": "If the provided string matches the text in the cell, the text gets highlighted.\n```typescript\nthis.cell.highlightText('Cell Value', true);\n```",
 			"blockTags": [
 				{
@@ -31959,7 +31959,7 @@
 				}
 			]
 		},
-		"37256": {
+		"37266": {
 			"summary": "Clears the highlight of the text in the cell.\n```typescript\nthis.cell.clearHighLight();\n```",
 			"blockTags": [
 				{
@@ -31968,10 +31968,10 @@
 				}
 			]
 		},
-		"37533": {
+		"37543": {
 			"summary": "Providing reference to `IgxColumnActionsComponent`:\n```typescript\n @ViewChild('columnActions', { read: IgxColumnActionsComponent })\n public columnActions: IgxColumnActionsComponent;"
 		},
-		"37537": {
+		"37547": {
 			"summary": "Gets/Sets the grid to provide column actions for.",
 			"blockTags": [
 				{
@@ -31980,7 +31980,7 @@
 				}
 			]
 		},
-		"37538": {
+		"37548": {
 			"summary": "Gets/sets the indentation of columns in the column list based on their hierarchy level.",
 			"blockTags": [
 				{
@@ -31989,10 +31989,10 @@
 				}
 			]
 		},
-		"37539": {
+		"37549": {
 			"summary": "Sets/Gets the css class selector.\nBy default the value of the `class` attribute is `\"igx-column-actions\"`.\n```typescript\nlet cssCLass =  this.columnHidingUI.cssClass;\n```\n```typescript\nthis.columnHidingUI.cssClass = 'column-chooser';\n```"
 		},
-		"37540": {
+		"37550": {
 			"summary": "Gets/sets the max height of the columns area.",
 			"blockTags": [
 				{
@@ -32005,7 +32005,7 @@
 				}
 			]
 		},
-		"37541": {
+		"37551": {
 			"summary": "Shows/hides the columns filtering input from the UI.",
 			"blockTags": [
 				{
@@ -32014,7 +32014,7 @@
 				}
 			]
 		},
-		"37542": {
+		"37552": {
 			"summary": "Gets the checkbox components representing column items currently present in the dropdown",
 			"blockTags": [
 				{
@@ -32023,7 +32023,7 @@
 				}
 			]
 		},
-		"37543": {
+		"37553": {
 			"summary": "Gets/sets the title of the column actions component.",
 			"blockTags": [
 				{
@@ -32032,10 +32032,10 @@
 				}
 			]
 		},
-		"37544": {
+		"37554": {
 			"summary": "An event that is emitted after a column's checked state is changed.\nProvides references to the `column` and the `checked` properties as event arguments.\n```html\n <igx-column-actions (columnToggled)=\"columnToggled($event)\"></igx-column-actions>\n```"
 		},
-		"37557": {
+		"37567": {
 			"summary": "Gets the prompt that is displayed in the filter input.",
 			"blockTags": [
 				{
@@ -32044,7 +32044,7 @@
 				}
 			]
 		},
-		"37561": {
+		"37571": {
 			"summary": "Gets the value which filters the columns list.",
 			"blockTags": [
 				{
@@ -32053,7 +32053,7 @@
 				}
 			]
 		},
-		"37565": {
+		"37575": {
 			"summary": "Gets the display order of the columns.",
 			"blockTags": [
 				{
@@ -32062,7 +32062,7 @@
 				}
 			]
 		},
-		"37569": {
+		"37579": {
 			"summary": "Gets the text of the button that unchecks all columns.",
 			"blockTags": [
 				{
@@ -32075,7 +32075,7 @@
 				}
 			]
 		},
-		"37573": {
+		"37583": {
 			"summary": "Gets the text of the button that checks all columns.",
 			"blockTags": [
 				{
@@ -32088,7 +32088,7 @@
 				}
 			]
 		},
-		"37581": {
+		"37591": {
 			"summary": "Gets/Sets the value of the `id` attribute.",
 			"blockTags": [
 				{
@@ -32101,7 +32101,7 @@
 				}
 			]
 		},
-		"37593": {
+		"37603": {
 			"summary": "Unchecks all columns and performs the appropriate action.",
 			"blockTags": [
 				{
@@ -32110,7 +32110,7 @@
 				}
 			]
 		},
-		"37595": {
+		"37605": {
 			"summary": "Checks all columns and performs the appropriate action.",
 			"blockTags": [
 				{
@@ -32119,100 +32119,100 @@
 				}
 			]
 		},
-		"37752": {
+		"37762": {
 			"summary": "Provides reference to the owner component."
 		},
-		"37758": {
+		"37768": {
 			"summary": "Set `IgxLinearProgressBarComponent` to have striped style. By default it is set to false.\n```html\n<igx-linear-bar [striped]=\"true\" [max]=\"200\" [value]=\"50\"></igx-linear-bar>\n```"
 		},
-		"37761": {
+		"37771": {
 			"summary": "Sets the value of the `role` attribute. If not provided it will be automatically set to `progressbar`.\n```html\n<igx-linear-bar role=\"progressbar\"></igx-linear-bar>\n```"
 		},
-		"37762": {
+		"37772": {
 			"summary": "Sets the value of `id` attribute. If not provided it will be automatically generated.\n```html\n<igx-linear-bar [id]=\"'igx-linear-bar-55'\" [striped]=\"true\" [max]=\"200\" [value]=\"50\"></igx-linear-bar>\n```"
 		},
-		"37767": {
+		"37777": {
 			"summary": "Set the position that defines where the text is aligned.\nPossible options - `IgxTextAlign.START` (default), `IgxTextAlign.CENTER`, `IgxTextAlign.END`.\n```typescript\npublic positionCenter: IgxTextAlign;\npublic ngOnInit() {\n    this.positionCenter = IgxTextAlign.CENTER;\n}\n //...\n```\n ```html\n<igx-linear-bar [textAlign]=\"positionCenter\"></igx-linear-bar>\n```"
 		},
-		"37768": {
+		"37778": {
 			"summary": "Set the text to be visible. By default, it is set to true.\n```html\n <igx-linear-bar [textVisibility]=\"false\"></igx-linear-bar>\n```"
 		},
-		"37769": {
+		"37779": {
 			"summary": "Set the position that defines if the text should be aligned above the progress line. By default, is set to false.\n```html\n <igx-linear-bar [textTop]=\"true\"></igx-linear-bar>\n```"
 		},
-		"37770": {
+		"37780": {
 			"summary": "Set type of the `IgxLinearProgressBarComponent`. Possible options - `default`, `success`, `info`, `warning`, and `error`.\n```html\n<igx-linear-bar [type]=\"'error'\"></igx-linear-bar>\n```"
 		},
-		"37780": {
+		"37790": {
 			"summary": "A callback method that is invoked immediately after\nAngular has completed initialization of all of the directive's\ncontent.\nIt is invoked only once when the directive is instantiated."
 		},
-		"37781": {
+		"37791": {
 			"summary": "An event, which is triggered after progress is changed.\n```typescript\npublic progressChange(event) {\n    alert(\"Progress made!\");\n}\n //...\n```\n```html\n<igx-circular-bar (progressChanged)=\"progressChange($event)\"></igx-circular-bar>\n<igx-linear-bar (progressChanged)=\"progressChange($event)\"></igx-linear-bar>\n```"
 		},
-		"37782": {
+		"37792": {
 			"summary": "Sets/Gets progressbar animation duration. By default, it is 2000ms.\n```html\n<igx-linear-bar [animationDuration]=\"3000\"></igx-linear-bar>\n<igx-circular-bar [animationDuration]=\"3000\"></igx-linear-bar>\n```"
 		},
-		"37795": {
+		"37805": {
 			"summary": "Gets the current state of the progress bar:\n- `true` if in the indeterminate state (no progress value displayed),\n- `false` if the progress bar shows the actual progress.\n\n```typescript\nconst isIndeterminate = progressBar.indeterminate;\n```"
 		},
-		"37799": {
+		"37809": {
 			"summary": "Returns the value which update the progress indicator of the `progress bar`.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic stepValue(event) {\n    let step = this.progressBar.step;\n    alert(step);\n}\n```"
 		},
-		"37803": {
+		"37813": {
 			"summary": "Gets a custom text.\n```typescript\nlet text = this.circularBar.text;\n```"
 		},
-		"37807": {
+		"37817": {
 			"summary": "Returns whether the `progress bar` has animation true/false.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic animationStatus(event) {\n    let animationStatus = this.progressBar.animate;\n    alert(animationStatus);\n}\n```"
 		},
-		"37811": {
+		"37821": {
 			"summary": "Returns the maximum progress value of the `progress bar`.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic maxValue(event) {\n    let max = this.progressBar.max;\n    alert(max);\n}\n```"
 		},
-		"37825": {
+		"37835": {
 			"summary": "Returns the `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` value in percentage.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent / IgxCircularProgressBarComponent\npublic valuePercent(event){\n    let percentValue = this.progressBar.valueInPercent;\n    alert(percentValue);\n}\n```"
-		},
-		"37827": {
-			"summary": "Returns value that indicates the current `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` position.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent / IgxCircularProgressBarComponent;\npublic getValue(event) {\n    let value = this.progressBar.value;\n    alert(value);\n}\n```"
 		},
 		"37837": {
-			"summary": "Sets the value of `id` attribute. If not provided it will be automatically generated.\n```html\n<igx-circular-bar [id]=\"'igx-circular-bar-55'\"></igx-circular-bar>\n```"
-		},
-		"37844": {
-			"summary": "Sets the text visibility. By default, it is set to true.\n```html\n<igx-circular-bar [textVisibility]=\"false\"></igx-circular-bar>\n```"
-		},
-		"37853": {
-			"summary": "Set type of the `IgxCircularProgressBarComponent`. Possible options - `default`, `success`, `info`, `warning`, and `error`.\n```html\n<igx-circular-bar [type]=\"'error'\"></igx-circular-bar>\n```"
-		},
-		"37865": {
-			"summary": "A callback method that is invoked immediately after\nAngular has completed initialization of all of the directive's\ncontent.\nIt is invoked only once when the directive is instantiated."
-		},
-		"37866": {
-			"summary": "An event, which is triggered after progress is changed.\n```typescript\npublic progressChange(event) {\n    alert(\"Progress made!\");\n}\n //...\n```\n```html\n<igx-circular-bar (progressChanged)=\"progressChange($event)\"></igx-circular-bar>\n<igx-linear-bar (progressChanged)=\"progressChange($event)\"></igx-linear-bar>\n```"
-		},
-		"37867": {
-			"summary": "Sets/Gets progressbar animation duration. By default, it is 2000ms.\n```html\n<igx-linear-bar [animationDuration]=\"3000\"></igx-linear-bar>\n<igx-circular-bar [animationDuration]=\"3000\"></igx-linear-bar>\n```"
-		},
-		"37880": {
-			"summary": "Gets the current state of the progress bar:\n- `true` if in the indeterminate state (no progress value displayed),\n- `false` if the progress bar shows the actual progress.\n\n```typescript\nconst isIndeterminate = progressBar.indeterminate;\n```"
-		},
-		"37884": {
-			"summary": "Returns the value which update the progress indicator of the `progress bar`.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic stepValue(event) {\n    let step = this.progressBar.step;\n    alert(step);\n}\n```"
-		},
-		"37888": {
-			"summary": "Gets a custom text.\n```typescript\nlet text = this.circularBar.text;\n```"
-		},
-		"37892": {
-			"summary": "Returns whether the `progress bar` has animation true/false.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic animationStatus(event) {\n    let animationStatus = this.progressBar.animate;\n    alert(animationStatus);\n}\n```"
-		},
-		"37896": {
-			"summary": "Returns the maximum progress value of the `progress bar`.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic maxValue(event) {\n    let max = this.progressBar.max;\n    alert(max);\n}\n```"
-		},
-		"37910": {
-			"summary": "Returns the `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` value in percentage.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent / IgxCircularProgressBarComponent\npublic valuePercent(event){\n    let percentValue = this.progressBar.valueInPercent;\n    alert(percentValue);\n}\n```"
-		},
-		"37912": {
 			"summary": "Returns value that indicates the current `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` position.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent / IgxCircularProgressBarComponent;\npublic getValue(event) {\n    let value = this.progressBar.value;\n    alert(value);\n}\n```"
 		},
-		"37917": {
+		"37847": {
+			"summary": "Sets the value of `id` attribute. If not provided it will be automatically generated.\n```html\n<igx-circular-bar [id]=\"'igx-circular-bar-55'\"></igx-circular-bar>\n```"
+		},
+		"37854": {
+			"summary": "Sets the text visibility. By default, it is set to true.\n```html\n<igx-circular-bar [textVisibility]=\"false\"></igx-circular-bar>\n```"
+		},
+		"37863": {
+			"summary": "Set type of the `IgxCircularProgressBarComponent`. Possible options - `default`, `success`, `info`, `warning`, and `error`.\n```html\n<igx-circular-bar [type]=\"'error'\"></igx-circular-bar>\n```"
+		},
+		"37875": {
+			"summary": "A callback method that is invoked immediately after\nAngular has completed initialization of all of the directive's\ncontent.\nIt is invoked only once when the directive is instantiated."
+		},
+		"37876": {
+			"summary": "An event, which is triggered after progress is changed.\n```typescript\npublic progressChange(event) {\n    alert(\"Progress made!\");\n}\n //...\n```\n```html\n<igx-circular-bar (progressChanged)=\"progressChange($event)\"></igx-circular-bar>\n<igx-linear-bar (progressChanged)=\"progressChange($event)\"></igx-linear-bar>\n```"
+		},
+		"37877": {
+			"summary": "Sets/Gets progressbar animation duration. By default, it is 2000ms.\n```html\n<igx-linear-bar [animationDuration]=\"3000\"></igx-linear-bar>\n<igx-circular-bar [animationDuration]=\"3000\"></igx-linear-bar>\n```"
+		},
+		"37890": {
+			"summary": "Gets the current state of the progress bar:\n- `true` if in the indeterminate state (no progress value displayed),\n- `false` if the progress bar shows the actual progress.\n\n```typescript\nconst isIndeterminate = progressBar.indeterminate;\n```"
+		},
+		"37894": {
+			"summary": "Returns the value which update the progress indicator of the `progress bar`.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic stepValue(event) {\n    let step = this.progressBar.step;\n    alert(step);\n}\n```"
+		},
+		"37898": {
+			"summary": "Gets a custom text.\n```typescript\nlet text = this.circularBar.text;\n```"
+		},
+		"37902": {
+			"summary": "Returns whether the `progress bar` has animation true/false.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic animationStatus(event) {\n    let animationStatus = this.progressBar.animate;\n    alert(animationStatus);\n}\n```"
+		},
+		"37906": {
+			"summary": "Returns the maximum progress value of the `progress bar`.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent | IgxCircularBarComponent;\npublic maxValue(event) {\n    let max = this.progressBar.max;\n    alert(max);\n}\n```"
+		},
+		"37920": {
+			"summary": "Returns the `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` value in percentage.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent / IgxCircularProgressBarComponent\npublic valuePercent(event){\n    let percentValue = this.progressBar.valueInPercent;\n    alert(percentValue);\n}\n```"
+		},
+		"37922": {
+			"summary": "Returns value that indicates the current `IgxLinearProgressBarComponent`/`IgxCircularProgressBarComponent` position.\n```typescript\n@ViewChild(\"MyProgressBar\")\npublic progressBar: IgxLinearProgressBarComponent / IgxCircularProgressBarComponent;\npublic getValue(event) {\n    let value = this.progressBar.value;\n    alert(value);\n}\n```"
+		},
+		"37927": {
 			"summary": "A component used for operating with complex filters by creating or editing conditions\nand grouping them using AND/OR logic.\nIt is used internally in the Advanced Filtering of the Grid.",
 			"blockTags": [
 				{
@@ -32221,10 +32221,10 @@
 				}
 			]
 		},
-		"37923": {
+		"37933": {
 			"summary": "Gets/sets whether the confirmation dialog should be shown when changing entity.\nDefault value is `true`."
 		},
-		"37925": {
+		"37935": {
 			"summary": "Gets the list of entities available for the IgxQueryBuilderComponent.\n\nEach entity describes a logical group of fields that can be used in queries.\nAn entity can optionally have child entities, allowing nested sub-queries.",
 			"blockTags": [
 				{
@@ -32233,52 +32233,52 @@
 				}
 			]
 		},
-		"37933": {
+		"37943": {
 			"summary": "Returns the expression tree."
 		},
-		"37936": {
+		"37946": {
 			"summary": "Gets the `locale` of the query builder.\nIf not set, defaults to application's locale."
 		},
-		"37938": {
+		"37948": {
 			"summary": "Returns the resource strings."
 		},
-		"37941": {
+		"37951": {
 			"summary": "Disables subsequent entity changes at the root level after the initial selection."
 		},
-		"37946": {
+		"37956": {
 			"summary": "Disables return fields changes at the root level."
 		},
-		"37947": {
+		"37957": {
 			"summary": "Event fired as the expression tree is changed.\n\n```html\n <igx-query-builder (expressionTreeChange)='onExpressionTreeChange()'></igx-query-builder>\n```"
 		},
-		"37961": {
+		"37971": {
 			"summary": "Returns whether the expression tree can be committed in the current state."
 		},
-		"37963": {
+		"37973": {
 			"summary": "Commits the expression tree in the current state if it is valid. If not throws an exception."
 		},
-		"37965": {
+		"37975": {
 			"summary": "Discards all unsaved changes to the expression tree."
 		},
-		"37988": {
+		"37998": {
 			"summary": "Provides reference to the owner component."
 		},
-		"37989": {
+		"37999": {
 			"summary": "Browser event"
 		},
-		"37990": {
+		"38000": {
 			"summary": "Provides the ability to cancel the event."
 		},
-		"37993": {
+		"38003": {
 			"summary": "Provides reference to the owner component."
 		},
-		"38022": {
+		"38032": {
 			"summary": "Provides reference to the owner component."
 		},
-		"38026": {
+		"38036": {
 			"summary": "Provides reference to the owner component."
 		},
-		"38027": {
+		"38037": {
 			"summary": "IgxTreeComponent allows a developer to show a set of nodes in a hierarchical fashion.",
 			"blockTags": [
 				{
@@ -32307,7 +32307,7 @@
 				}
 			]
 		},
-		"38037": {
+		"38047": {
 			"summary": "Gets/Sets tree selection mode",
 			"blockTags": [
 				{
@@ -32316,28 +32316,28 @@
 				}
 			]
 		},
-		"38040": {
+		"38050": {
 			"summary": "Get/Set how the tree should handle branch expansion.\nIf set to `true`, only a single branch can be expanded at a time, collapsing all others\n\n```html\n<igx-tree [singleBranchExpand]=\"true\">\n...\n</igx-tree>\n```\n\n```typescript\nconst tree: IgxTree = this.tree;\nthis.tree.singleBranchExpand = false;\n```"
 		},
-		"38041": {
+		"38051": {
 			"summary": "Get/Set if nodes should be expanded/collapsed when clicking over them.\n\n```html\n<igx-tree [toggleNodeOnClick]=\"true\">\n...\n</igx-tree>\n```\n\n```typescript\nconst tree: IgxTree = this.tree;\nthis.tree.toggleNodeOnClick = false;\n```"
 		},
-		"38042": {
+		"38052": {
 			"summary": "Get/Set the animation settings that branches should use when expanding/collpasing.\n\n```html\n<igx-tree [animationSettings]=\"customAnimationSettings\">\n</igx-tree>\n```\n\n```typescript\nconst animationSettings: ToggleAnimationSettings = {\n     openAnimation: growVerIn,\n     closeAnimation: growVerOut\n};\n\nthis.tree.animationSettings = animationSettings;\n```"
 		},
-		"38043": {
+		"38053": {
 			"summary": "Emitted when the node selection is changed through interaction\n\n```html\n<igx-tree (nodeSelection)=\"handleNodeSelection($event)\">\n</igx-tree>\n```\n\n```typescript\npublic handleNodeSelection(event: ITreeNodeSelectionEvent) {\n const newSelection: IgxTreeNode<any>[] = event.newSelection;\n const added: IgxTreeNode<any>[] = event.added;\n console.log(\"New selection will be: \", newSelection);\n console.log(\"Added nodes: \", event.added);\n}\n```"
 		},
-		"38044": {
+		"38054": {
 			"summary": "Emitted when a node is expanding, before it finishes\n\n```html\n<igx-tree (nodeExpanding)=\"handleNodeExpanding($event)\">\n</igx-tree>\n```\n\n```typescript\npublic handleNodeExpanding(event: ITreeNodeTogglingEventArgs) {\n const expandedNode: IgxTreeNode<any> = event.node;\n if (expandedNode.disabled) {\n     event.cancel = true;\n }\n}\n```"
 		},
-		"38045": {
+		"38055": {
 			"summary": "Emitted when a node is expanded, after it finishes\n\n```html\n<igx-tree (nodeExpanded)=\"handleNodeExpanded($event)\">\n</igx-tree>\n```\n\n```typescript\npublic handleNodeExpanded(event: ITreeNodeToggledEventArgs) {\n const expandedNode: IgxTreeNode<any> = event.node;\n console.log(\"Node is expanded: \", expandedNode.data);\n}\n```"
 		},
-		"38046": {
+		"38056": {
 			"summary": "Emitted when a node is collapsing, before it finishes\n\n```html\n<igx-tree (nodeCollapsing)=\"handleNodeCollapsing($event)\">\n</igx-tree>\n```\n\n```typescript\npublic handleNodeCollapsing(event: ITreeNodeTogglingEventArgs) {\n const collapsedNode: IgxTreeNode<any> = event.node;\n if (collapsedNode.alwaysOpen) {\n     event.cancel = true;\n }\n}\n```"
 		},
-		"38047": {
+		"38057": {
 			"summary": "Emitted when a node is collapsed, after it finishes",
 			"blockTags": [
 				{
@@ -32346,7 +32346,7 @@
 				}
 			]
 		},
-		"38048": {
+		"38058": {
 			"summary": "Emitted when the active node is changed.",
 			"blockTags": [
 				{
@@ -32355,25 +32355,25 @@
 				}
 			]
 		},
-		"38049": {
+		"38059": {
 			"summary": "A custom template to be used for the expand indicator of nodes\n```html\n<igx-tree>\n <ng-template igxTreeExpandIndicator let-expanded>\n     <igx-icon>{{ expanded ? \"close_fullscreen\": \"open_in_full\"}}</igx-icon>\n </ng-template>\n</igx-tree>\n```"
 		},
-		"38053": {
+		"38063": {
 			"summary": "Returns all **root level** nodes\n\n```typescript\nconst tree: IgxTree = this.tree;\nconst rootNodes: IgxTreeNodeComponent<any>[] = tree.rootNodes;\n```"
 		},
-		"38063": {
+		"38073": {
 			"summary": "Expands all of the passed nodes.\nIf no nodes are passed, expands ALL nodes"
 		},
-		"38064": {
+		"38074": {
 			"summary": "nodes to be expanded\n\n```typescript\nconst targetNodes: IgxTreeNode<any> = this.tree.findNodes(true, (_data: any, node: IgxTreeNode<any>) => node.data.expandable);\ntree.expandAll(nodes);\n```"
 		},
-		"38066": {
+		"38076": {
 			"summary": "Collapses all of the passed nodes.\nIf no nodes are passed, collapses ALL nodes"
 		},
-		"38067": {
+		"38077": {
 			"summary": "nodes to be collapsed\n\n```typescript\nconst targetNodes: IgxTreeNode<any> = this.tree.findNodes(true, (_data: any, node: IgxTreeNode<any>) => node.data.collapsible);\ntree.collapseAll(nodes);\n```"
 		},
-		"38069": {
+		"38079": {
 			"summary": "Deselect all nodes if the nodes collection is empty. Otherwise, deselect the nodes in the nodes collection.",
 			"blockTags": [
 				{
@@ -32382,7 +32382,7 @@
 				}
 			]
 		},
-		"38072": {
+		"38082": {
 			"summary": "Returns all of the nodes that match the passed searchTerm.\nAccepts a custom comparer function for evaluating the search term against the nodes.",
 			"blockTags": [
 				{
@@ -32395,37 +32395,22 @@
 				}
 			]
 		},
-		"38073": {
+		"38083": {
 			"summary": "The data of the searched node"
 		},
-		"38074": {
+		"38084": {
 			"summary": "A custom comparer function that evaluates the passed `searchTerm` against all nodes."
 		},
-		"38102": {
+		"38112": {
 			"summary": "Comparer function that can be used when searching through IgxTreeNode<any>[]"
 		},
-		"38112": {
+		"38122": {
 			"summary": "Browser event"
 		},
-		"38113": {
+		"38123": {
 			"summary": "Provides the ability to cancel the event."
-		},
-		"38114": {
-			"summary": "Provides reference to the owner component."
-		},
-		"38118": {
-			"summary": "Browser event"
-		},
-		"38119": {
-			"summary": "Provides the ability to cancel the event."
-		},
-		"38120": {
-			"summary": "Provides reference to the owner component."
 		},
 		"38124": {
-			"summary": "Provides reference to the owner component."
-		},
-		"38127": {
 			"summary": "Provides reference to the owner component."
 		},
 		"38128": {
@@ -32434,7 +32419,22 @@
 		"38129": {
 			"summary": "Provides the ability to cancel the event."
 		},
-		"38132": {
+		"38130": {
+			"summary": "Provides reference to the owner component."
+		},
+		"38134": {
+			"summary": "Provides reference to the owner component."
+		},
+		"38137": {
+			"summary": "Provides reference to the owner component."
+		},
+		"38138": {
+			"summary": "Browser event"
+		},
+		"38139": {
+			"summary": "Provides the ability to cancel the event."
+		},
+		"38142": {
 			"summary": "Provides reference to the owner component."
 		}
 	}
