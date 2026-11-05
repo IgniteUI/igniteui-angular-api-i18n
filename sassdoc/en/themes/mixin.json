@@ -41,6 +41,8 @@
             "Includes a universal `--ig-*` fallback chain so that global tokens can override",
             "component-scoped variables. Emits `--ig-theme` and `--ig-theme-variant` metadata.",
             "",
+            "When nested, the parent selector receives the tokens only if it matches the component selector.",
+            "",
             ""
         ],
         "parameters": {
@@ -111,6 +113,22 @@
                 ],
                 "code": [
                     "@include tokens(dialog-theme($schema: $schema), $mode: 'scoped', $scope: '.igx-dialog');"
+                ]
+            },
+            {
+                "description": [
+                    "Generate scoped component tokens inside another selector"
+                ],
+                "code": [
+                    ".dark-theme {",
+                    "  @include tokens(tooltip-theme($schema: $schema), $mode: 'scoped', $scope: '.igx-tooltip');",
+                    "}",
+                    "// Output:",
+                    "// .dark-theme .igx-tooltip,",
+                    "// .dark-theme:where(.igx-tooltip) {",
+                    "//   --background: ...;",
+                    "//   ...",
+                    "// }"
                 ]
             }
         ]
