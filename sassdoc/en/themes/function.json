@@ -4510,17 +4510,17 @@
             },
             "ghost-background": {
                 "description": [
-                    "The chip ghost background color."
+                    "The chip ghost background color. Used only in Ignite UI for Angular."
                 ]
             },
             "ghost-text-color": {
                 "description": [
-                    "The chip ghost text color."
+                    "The chip ghost text color. Used only in Ignite UI for Angular."
                 ]
             },
             "ghost-shadow": {
                 "description": [
-                    "The chip ghost shadow.",
+                    "The chip ghost shadow. Used only in Ignite UI for Angular.",
                     ""
                 ]
             },
@@ -5055,6 +5055,16 @@
                 "description": [
                     "The combo clear button foreground color when the combo is focused. Auto-derived from clear-button-background-focus."
                 ]
+            },
+            "case-icon-color": {
+                "description": [
+                    "The case sensitive icon color in inactive state for combo search input."
+                ]
+            },
+            "case-icon-color-active": {
+                "description": [
+                    "The case sensitive icon color in active state for combo search input."
+                ]
             }
         },
         "example": [
@@ -5063,7 +5073,7 @@
                     "Change the combo empty list background"
                 ],
                 "code": [
-                    "$my-combo-theme: igx-checkbox-theme($empty-list-background);",
+                    "$my-combo-theme: combo-theme($empty-list-background: white);",
                     "// Pass the theme to the tokens() mixin",
                     "@include tokens($my-combo-theme);"
                 ]
@@ -5613,7 +5623,7 @@
             },
             "expanded-margin": {
                 "description": [
-                    "The expansion panel margin in expanded state when positioned inside accordion."
+                    "The expansion panel margin in expanded state when positioned inside accordion. Used only in Ignite UI for Angular."
                 ]
             },
             "border-radius": {
@@ -7250,6 +7260,11 @@
                     "The label color in the idle state. Auto-derived from box-background or placeholder-color."
                 ]
             },
+            "filled-secondary-color": {
+                "description": [
+                    "The label color in the filled state. Auto-derived from idle-secondary-color."
+                ]
+            },
             "focused-secondary-color": {
                 "description": [
                     "The label color in the focused state. Auto-derived from focused-bottom-line-color or focused-border-color."
@@ -7352,12 +7367,17 @@
             },
             "success-secondary-color": {
                 "description": [
-                    "The success color used in the valid state."
+                    "The success color used in the valid state. Used only in Ignite UI for Angular."
                 ]
             },
             "warning-secondary-color": {
                 "description": [
-                    "The warning color used in the warning state."
+                    "The warning color used in the warning state. Used only in Ignite UI for Angular."
+                ]
+            },
+            "success-shadow-color": {
+                "description": [
+                    "The shadow color used in the valid state. Used only in Ignite UI for Angular."
                 ]
             },
             "error-secondary-color": {
@@ -8376,6 +8396,11 @@
                     "sets the color for the label."
                 ]
             },
+            "value-label": {
+                "description": [
+                    "sets the color for the value label."
+                ]
+            },
             "symbol-size": {
                 "description": [
                     "the size of the symbols."
@@ -8404,6 +8429,11 @@
             "disabled-label-color": {
                 "description": [
                     "sets the color for the label in disabled state."
+                ]
+            },
+            "disabled-value-label": {
+                "description": [
+                    "sets the color for the value label in disabled state."
                 ]
             },
             "disabled-empty-symbol-color": {
@@ -9550,12 +9580,12 @@
             },
             "tab-ripple-color": {
                 "description": [
-                    "The color used for the tab ripple effect. Auto-derived from item-active-background or item-background."
+                    "The color used for the tab ripple effect. Auto-derived from item-active-background or item-background. Used only in Ignite UI for Angular."
                 ]
             },
             "button-ripple-color": {
                 "description": [
-                    "The color used for the button ripple effect. Auto-derived from button-color."
+                    "The color used for the button ripple effect. Auto-derived from button-color. Used only in Ignite UI for Angular."
                 ]
             }
         },
@@ -9570,6 +9600,112 @@
                     " );",
                     "// Pass the theme to the tokens() mixin",
                     "@include tokens($my-tabs-theme);"
+                ]
+            }
+        ]
+    },
+    "tile-manager-theme": {
+        "description": [
+            "Tile Manager Theme",
+            "",
+            "PRIMARY TOKENS:",
+            "- `$tile-background` — The background color of the tiles. Derives header/content backgrounds and text colors.",
+            "",
+            "Derived colors are auto-calculated for contrast.",
+            "",
+            ""
+        ],
+        "parameters": {
+            "schema": {
+                "description": [
+                    "The schema used as basis for styling the component."
+                ]
+            },
+            "background": {
+                "description": [
+                    "The background color of the tile manager component."
+                ]
+            },
+            "tile-background": {
+                "description": [
+                    "The background color of the tile component. PRIMARY - derives header/content backgrounds and text colors."
+                ]
+            },
+            "title-color": {
+                "description": [
+                    "The title color of the tile component. Auto-derived from header-background."
+                ]
+            },
+            "header-background": {
+                "description": [
+                    "The background color of the tile header. Auto-derived from tile-background."
+                ]
+            },
+            "content-background": {
+                "description": [
+                    "The background color of the tile content. Auto-derived from tile-background."
+                ]
+            },
+            "content-color": {
+                "description": [
+                    "The text color of the tile content. Auto-derived from content-background."
+                ]
+            },
+            "border-color": {
+                "description": [
+                    "The border color of the tile component."
+                ]
+            },
+            "hover-border-color": {
+                "description": [
+                    "The border color of the tile component on hover."
+                ]
+            },
+            "placeholder-background": {
+                "description": [
+                    "The background color of the ghost element that appears during drag and drop and while resizing."
+                ]
+            },
+            "overlay-background": {
+                "description": [
+                    "The background color of the ghost element that appears on top of the tile that will be swapped."
+                ]
+            },
+            "ghost-border": {
+                "description": [
+                    "The border color of the ghost element that appears during drag and drop and while resizing."
+                ]
+            },
+            "divider-color": {
+                "description": [
+                    "The color of the divider inside the tile header."
+                ]
+            },
+            "border-radius": {
+                "description": [
+                    "The border radius of the tile component."
+                ]
+            },
+            "resting-shadow": {
+                "description": [
+                    "The shadow of the tile component in its resting state."
+                ]
+            },
+            "drag-shadow": {
+                "description": [
+                    "The shadow of the tile component while being dragged."
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Change the tile manager and tile backgrounds"
+                ],
+                "code": [
+                    "$my-tile-manager-theme: tile-manager-theme($background: #eee, $tile-background: white);",
+                    "// Pass the theme to the tokens() mixin",
+                    "@include tokens($my-tile-manager-theme);"
                 ]
             }
         ]
@@ -9878,7 +10014,7 @@
             },
             "drop-area-color": {
                 "description": [
-                    "The background color used for the tree node drop aria."
+                    "The background color used for the tree node drop aria. Used only in Ignite UI for Angular."
                 ]
             },
             "border-color": {

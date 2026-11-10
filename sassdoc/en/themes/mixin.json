@@ -39,7 +39,7 @@
             "**`'scoped'`:** Generates component-scoped CSS variables using the configured",
             "`variable-prefix` (e.g., `igx`). Handles selector scoping and `is-root()` branching.",
             "Includes a universal `--ig-*` fallback chain so that global tokens can override",
-            "component-scoped variables. Emits `--ig-theme` and `--ig-theme-variant` metadata.",
+            "component-scoped variables. Emits the `--ig-theme` and `--ig-theme-variant` markers through `theme-markers()`.",
             "",
             "When nested, the parent selector receives the tokens only if it matches the component selector.",
             "",
@@ -187,6 +187,44 @@
                     ".my-component {",
                     "  @include sizable();",
                     "}"
+                ]
+            }
+        ]
+    },
+    "theme-markers": {
+        "description": [
+            "Declares the `--ig-theme` and `--ig-theme-variant` markers in the current scope.",
+            "The markers inherit, so every element inside the scope reads them, including nested components.",
+            "Include it where the active theme is declared, such as `:root`, or on an element whose subtree uses another theme.",
+            "`null` and values that aren't strings are skipped.",
+            ""
+        ],
+        "parameters": {
+            "theme": {
+                "description": [
+                    "The theme name, e.g. `material`, `bootstrap`, `fluent` or `indigo`."
+                ]
+            },
+            "variant": {
+                "description": [
+                    "The theme variant, `light` or `dark`."
+                ]
+            }
+        },
+        "example": [
+            {
+                "description": [
+                    "Declare the active theme on the root"
+                ],
+                "code": [
+                    ":root {",
+                    "  @include theme-markers(material, light);",
+                    "}",
+                    "// Output:",
+                    "// :root {",
+                    "//   --ig-theme: material;",
+                    "//   --ig-theme-variant: light;",
+                    "// }"
                 ]
             }
         ]
